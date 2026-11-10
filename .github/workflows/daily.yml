@@ -3,7 +3,7 @@ name: Daily SEAFOOD INSIGHT LAB
 on:
   workflow_dispatch:
   schedule:
-    # Every day at 06:00 Asia/Seoul = previous day 21:00 UTC.
+    # 06:00 Asia/Seoul once per day (21:00 UTC previous day)
     - cron: '0 21 * * *'
 
 permissions:
@@ -18,17 +18,34 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out saved source archive
+        uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
-      - name: Research, write, and verify today's report
+      - name: Verify API configuration (without exposing keys)
         env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+          MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
+          KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
+          KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
+        run: |
+          python - <<'PYTHON'
+          import os
+          for name in ('OPENAI_API_KEY','ECOS_API_KEY','MOF_API_KEY','KAMIS_API_KEY','KAMIS_API_ID'):
+              print(f'{name}: {"configured" if os.getenv(name) else "not configured"}',flush=True)
+          PYTHON
+      - name: Collect articles, research, write and verify reports
+        env:
+          PYTHONUNBUFFERED: '1'
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-6.1-sol
           OPENAI_RESEARCH_MODEL: gpt-6.1-sol
@@ -39,21 +56,22 @@ jobs:
           MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
           KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
           KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
-        run: python build.py
-      - name: Save latest verified report for future days
+        run: python -u build.py
+      - name: Check content quality and show data coverage
+        run: python health_check.py
+      - name: Save source archive for the next run
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/data.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update seafood source archive [skip ci]"
+            git commit -m "Update seafood reading archive [skip ci]"
             git push
           fi
-      - name: Upload generated website
+      - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./site
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -61,6 +79,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy site
+      - name: Publish website
         id: deployment
         uses: actions/deploy-pages@v4
