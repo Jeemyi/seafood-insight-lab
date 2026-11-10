@@ -3,10 +3,11 @@ name: Daily SEAFOOD INSIGHT LAB
 on:
   workflow_dispatch:
   schedule:
+    # Every day at 06:00 Asia/Seoul = previous day 21:00 UTC.
     - cron: '0 21 * * *'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -19,17 +20,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
-      - name: Build seafood news and sourced analysis
+      - name: Research, write, and verify today's report
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-5-mini
+          OPENAI_MODEL: gpt-6.1-sol
+          OPENAI_RESEARCH_MODEL: gpt-6.1-sol
+          OPENAI_REASONING_EFFORT: medium
+          SEAFOOD_WEB_RESEARCH: '1'
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
         run: python build.py
+      - name: Save latest verified report for future days
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update seafood source archive [skip ci]"
+            git push
+          fi
       - name: Upload generated website
         uses: actions/upload-pages-artifact@v4
         with:
