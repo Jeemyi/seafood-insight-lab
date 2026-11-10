@@ -1,6 +1,52 @@
 {
-  "generated_at": "2026-11-10T17:55+09:00",
+  "generated_at": "2026-11-10T18:23+09:00",
   "articles": [
+    {
+      "id": "7b20906b83138dae",
+      "title": "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장",
+      "url": "https://www.newsis.com/view/NISX20261110_0003862299",
+      "source": "뉴시스·국제",
+      "published": "2026-11-10T18:13+09:00",
+      "timestamp": 1794301983,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 14.2,
+      "summary": "[서울=뉴시스] 이재우 기자 = 미국 공화당이 10일(현지 시간) 중간선거 참패 이후 당을 이끌 차기 하원 원내대표를 선출한다. 한국 정부의 쿠팡 등 미국계 기업에 대한 규제를 '차별'이라고 비판해온 짐 조던 하원 법사위원장(오하이오)이 도전장을 던져 선거 결과가 주목된다. 10일 액시오스와 워싱턴포스트(WP) 등에 따르면 하원 공화당은 이날 비밀투표를 통해 차기 소수당 원내대표를 선출한다. 당선되려면 공화당 하원의원 과반의 지지를 확보해야 한다. 공화당은 지난 3일 중간선거에서 민주당에 하원 다수당 지위를 내줬다. 마이크 존슨 하원의장이 다음날 차기 공화당 원내대표 선거 불출마를 선",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 16
+    },
+    {
+      "id": "a99c2c913a2e7669",
+      "title": "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
+      "url": "https://www.newsis.com/view/NISX20261110_0003862615",
+      "source": "뉴시스·산업",
+      "published": "2026-11-10T17:24+09:00",
+      "timestamp": 1794299066,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 14.2,
+      "summary": "[서울=뉴시스] 염준호 기자 = 메모리 공급난과 생산비 상승으로 올해 글로벌 스마트폰 유기발광다이오드(OLED) 패널 시장이 침체에 직면했지만, 폴더블·롤러블 디스플레이는 성장할 것이라는 전망이 나왔다. 카운터포인트리서치는 10일 전체 OLED 스마트폰 패널 출하량이 2025년 8억9400만대에서 올해 8억2900만대로 약 3% 가까이 줄어들 것이라는 보고서를 내놨다. 보고서는 특히 출하량 약세와 가격 압박 여파로 올해 OLED 스마트폰 패널 매출이 전년비 5% 넘게 감소할 것으로 예상했다. 반면 폴더블·롤러블 등 프리미엄 OLED 출하량은 전년 대비 23% 이상 증가하며 성장할 것으",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 21
+    },
     {
       "id": "ffd06a42b337a501",
       "title": "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
@@ -25,42 +71,42 @@
       "editorial_score": 11
     },
     {
-      "id": "96b21addaff4f28c",
-      "title": "컬리, 3분기 매출 7779억원 '역대 최대'",
-      "url": "https://www.hankyung.com/article/2026111082661",
-      "source": "한국경제·경제",
-      "published": "2026-11-10T17:26+09:00",
-      "timestamp": 1794299162,
-      "category": "온라인",
+      "id": "d4d522f532a356e3",
+      "title": "美中, 무역 휴전 2개월 연장…관세·희토류 수출통제 유예",
+      "url": "https://www.hankyung.com/article/2026110959897",
+      "source": "한국경제·국제",
+      "published": "2026-11-09T19:44+09:00",
+      "timestamp": 1794221052,
+      "category": "해외",
       "tags": [
-        "온라인"
+        "해외"
       ],
-      "score": 11.5,
+      "score": 12.5,
       "summary": "",
-      "summary_type": "제목만 확인",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
       "official": false,
       "channels": [
-        "온라인"
+        "수출"
       ],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "editorial_score": 11
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 16
     },
     {
-      "id": "1bb6c634a7de9b85",
-      "title": "컬리, 네이버 협력 통했다…3분기 매출 7779억원 '역대 최대'",
-      "url": "https://www.hankyung.com/article/202611107705g",
-      "source": "한국경제·경제",
-      "published": "2026-11-10T14:51+09:00",
-      "timestamp": 1794289868,
+      "id": "dc661d3199730f6d",
+      "title": "컬리, 3분기 매출 7779억 '역대 최대'…전년比 34.4%↑",
+      "url": "https://www.newsis.com/view/NISX20261110_0003862227",
+      "source": "뉴시스·산업",
+      "published": "2026-11-10T14:42+09:00",
+      "timestamp": 1794289339,
       "category": "온라인",
       "tags": [
         "온라인"
       ],
-      "score": 11.5,
-      "summary": "",
-      "summary_type": "제목만 확인",
+      "score": 12.2,
+      "summary": "[서울=뉴시스]권민지 기자 = 컬리가 올해 3분기 역대 최대 분기 매출을 기록하며 7개 분기 연속 영업흑자를 이어갔다. 주력인 식품·뷰티 사업의 성장에 신사업 성과가 더해지면서 외형 성장과 수익성 개선을 동시에 이뤘다. 10일 금융감독원 전자공시시스템에 따르면 컬리의 올해 3분기 연결 기준 매출은 7779억원으로 전년 동기 대비 34.4% 증가했다. 분기 기준 역대 최대 매출이다. 같은 기간 영업이익은 100억원으로 전년 동기 대비 63.5% 늘었다. 당기순이익은 61억원으로 3개 분기 연속 흑자를 기록했다. 올해 1~3분기 누적 매출은 2조2583억원으로 지난해 연간 매출인 2조36",
+      "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
       "official": false,
       "channels": [
@@ -68,7 +114,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "editorial_score": 11
+      "editorial_score": 17
     }
   ],
   "features": [
@@ -124,35 +170,157 @@
       },
       "significance": 26.10735252925082,
       "related_observations": []
+    },
+    {
+      "id": "fx_usd",
+      "name": "USD 환율",
+      "title": "원/달러 환율 변동과 수입 수산물 원가",
+      "subtitle": "한국은행 ECOS",
+      "period_start": "2026-11-03",
+      "period_end": "2026-11-10",
+      "facts": [
+        {
+          "label": "USD 환율",
+          "value": "1,355.70 원/USD",
+          "detail": "관측 2026-11-10 · 한국은행 ECOS"
+        },
+        {
+          "label": "전주 대비",
+          "value": "+1.10%",
+          "detail": "2026-11-03 대비 · 실제 계산"
+        },
+        {
+          "label": "전년 동일 시점 대비",
+          "value": "-6.76%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-2.28%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
+        }
+      ],
+      "observed": "USD 환율 1,355.70 원/USD (2026-11-10, 한국은행 ECOS 발표값) · 전주 대비 +1.10% · 전년 동기 대비 -6.76% · 과거 3년 동기 평균 대비 -2.28%",
+      "data_links": [
+        {
+          "url": "https://ecos.bok.or.kr/",
+          "label": "한국은행 ECOS 공식 통계"
+        }
+      ],
+      "article_ids": [
+        "ffd06a42b337a501"
+      ],
+      "category": "비용/거시",
+      "channels": [
+        "마트",
+        "온라인",
+        "B2B"
+      ],
+      "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
+      "source_type": "공식 공개 API",
+      "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다.",
+      "related_observations": []
+    },
+    {
+      "id": "fx_jpy",
+      "name": "JPY 환율",
+      "title": "엔화 움직임과 일본 거래·수출 채산성",
+      "subtitle": "한국은행 ECOS",
+      "period_start": "2026-11-03",
+      "period_end": "2026-11-10",
+      "facts": [
+        {
+          "label": "JPY 환율",
+          "value": "858.42 원/100JPY",
+          "detail": "관측 2026-11-10 · 한국은행 ECOS"
+        },
+        {
+          "label": "전주 대비",
+          "value": "+1.11%",
+          "detail": "2026-11-03 대비 · 실제 계산"
+        },
+        {
+          "label": "전년 동일 시점 대비",
+          "value": "-9.21%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-5.48%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
+        }
+      ],
+      "observed": "JPY 환율 858.42 원/100JPY (2026-11-10, 한국은행 ECOS 발표값) · 전주 대비 +1.11% · 전년 동기 대비 -9.21% · 과거 3년 동기 평균 대비 -5.48%",
+      "data_links": [
+        {
+          "url": "https://ecos.bok.or.kr/",
+          "label": "한국은행 ECOS 공식 통계"
+        }
+      ],
+      "article_ids": [
+        "ffd06a42b337a501"
+      ],
+      "category": "비용/거시",
+      "channels": [
+        "수출"
+      ],
+      "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
+      "source_type": "공식 공개 API",
+      "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다.",
+      "related_observations": []
     }
   ],
   "issue_candidates": [],
   "focus_topics": [
     {
+      "theme": "일본·미국 수출시장",
+      "category": "해외",
+      "score": 52.7,
+      "article_ids": [
+        "d4d522f532a356e3",
+        "7b20906b83138dae"
+      ],
+      "feature_ids": [
+        "salmon_price_volume"
+      ],
+      "source_count": 2,
+      "research_question": "국가별 수출액과 물량을 분해하면 판매량 성장과 단가 변화가 어떻게 다른가?",
+      "news_titles": [
+        "美中, 무역 휴전 2개월 연장…관세·희토류 수출통제 유예",
+        "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장"
+      ]
+    },
+    {
       "theme": "대형마트·창고형 유통 변화",
       "category": "대형마트/SSM",
-      "score": 34.0,
+      "score": 47.0,
       "article_ids": [
+        "a99c2c913a2e7669",
         "ffd06a42b337a501"
       ],
       "feature_ids": [],
-      "source_count": 1,
+      "source_count": 2,
       "research_question": "매출과 점포 변화는 같은 방향인가? 소비 이동과 공급망 영향은 어떻게 다른가?",
       "news_titles": [
+        "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
         "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력"
       ]
     },
     {
-      "theme": "일본·미국 수출시장",
-      "category": "해외",
-      "score": 30.7,
-      "article_ids": [],
-      "feature_ids": [
-        "salmon_price_volume"
+      "theme": "온라인·급식 수요",
+      "category": "온라인",
+      "score": 35.0,
+      "article_ids": [
+        "dc661d3199730f6d",
+        "7b20906b83138dae"
       ],
-      "source_count": 0,
-      "research_question": "국가별 수출액과 물량을 분해하면 판매량 성장과 단가 변화가 어떻게 다른가?",
-      "news_titles": []
+      "feature_ids": [],
+      "source_count": 2,
+      "research_question": "온라인 판매와 외식·급식 수요는 같은 품목에서 동일한 흐름인가?",
+      "news_titles": [
+        "컬리, 3분기 매출 7779억 '역대 최대'…전년比 34.4%↑",
+        "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장"
+      ]
     },
     {
       "theme": "연어·해외 원료시장",
@@ -171,112 +339,71 @@
     {
       "depth": "핵심",
       "kind": "대형마트/SSM",
-      "time_frame": "2025년 연간 굴 수출·2026년 11월 5~11일 햇굴 행사, 2026년 11월 10일 기준",
-      "headline": "굴 수출은 물량 늘고 금액 감소…마트 ‘1.5배 확보’도 소비 회복과는 거리",
-      "thesis": "굴 시장의 물량 확대가 판매금액 증가로 이어지지는 않았다. 2025년 수출은 물량이 늘었지만 금액이 감소했고, 올해 11월 롯데마트의 햇굴 물량 확대는 실제 판매가 아닌 확보 계획이다. 회원·수산대전 할인이 적용된 소매가격을 산지 시세 하락의 증거로 읽어서도 안 된다.",
-      "lead": "햇굴을 최대 35% 싸게 판다는 소식에서 확인되는 것은 특정 매장의 조건부 소비자가격이다. 이 가격이 국내 굴 공급 개선을 반영하는지, 판촉 기간에만 형성되는지는 별도의 문제다. 전년도 수출 실적까지 살펴보면, 굴이 더 많이 유통된다는 사실만으로 시장 회복을 판단하기 어려운 이유가 드러난다.",
+      "time_frame": "2026년 10월 15일~11월 11일, 11월 10일 기준",
+      "headline": "햇굴 출하 지연 뒤 최대 35% 할인…확인된 변화는 롯데마트 물량 확보 확대",
+      "thesis": "롯데마트의 햇굴 최대 35% 할인은 제철 초반 공급 공백 보도에 이어, 전년 대비 물량 확보 확대와 함께 나온 한시 행사다. 해당 유통사의 조달 규모 확대는 발표됐지만, 이를 전국 굴 공급의 정상화나 상시 판매가격의 하락 전환으로 해석할 근거는 아직 부족하다.",
+      "lead": "10월에 보도된 봉지굴 판매가격과 11월의 최대 할인율은 비교 기준부터 다르다. 두 숫자를 연결해 ‘한 달 새 굴값이 35% 내렸다’고 읽으면, 특정 상품의 가격 수준과 행사 할인 폭을 같은 가격 추세로 오인하게 된다.",
       "facts": [
         {
-          "text": "해수부의 2026년 1월 15일 발표를 수록한 자료에 따르면, 2025년 굴 수출물량은 전년 대비 4.4% 증가했지만 수출금액은 3.2% 감소했다.",
+          "text": "한국경제의 2026년 10월 18일 취재 보도는 월하굴 부족과 햇굴 성장 지연을 짚었다. 롯데마트의 10월 15~21일 국산 냉장 봉지굴 150g 판매가격은 4,990원으로 제시됐다.",
           "refs": [
-            "web-79a89db4bc5d"
+            "web-b98e568f4ece"
           ]
         },
         {
-          "text": "롯데마트는 2026년 11월 5~11일 햇굴 행사에서 확보 물량을 전년보다 약 1.5배 늘리고 최대 35% 할인한다고 밝혔다. 이는 행사 확보·판촉 계획이다.",
+          "text": "11월 5일 뉴스1 보도에 따르면 롯데마트는 햇굴 물량을 전년 대비 약 1.5배 확보하고, 11월 5~11일 최대 35% 할인한다고 밝혔다. 확보물량은 기업의 조달 발표이며 실제 판매량이나 전국 출하량이 아니다.",
           "refs": [
             "web-5c861356490e"
           ]
-        },
-        {
-          "text": "안내된 가격은 엘포인트 회원 대상 수산대전 할인을 적용한 생굴 100g 1,912원, 봉지굴 400g 7,920원이다.",
-          "refs": [
-            "web-d59a520ecef0"
-          ]
         }
       ],
-      "market_change": "두 물량 지표는 시기와 거래 단계가 다르다. 수출자료는 2025년 한 해의 실제 실적을 2024년과 비교한다. 반면 롯데마트 발표는 2026년 11월 행사에 앞서 확보한 물량을 전년과 비교한 것으로, 기준일 현재 행사도 끝나지 않았다. 수출 증가분과 마트 확보 증가분을 합쳐 전체 수요가 늘었다고 판단하거나, 수출용 굴이 내수로 이동했다고 해석할 근거는 없다.",
+      "market_change": "10월 보도에서 드러난 문제는 제철이 시작됐는데도 판매할 굴이 충분히 나오지 않는다는 것이었다. 이후 11월 발표에서는 한 유통사가 지난해보다 많은 물량을 확보하고 일주일간 할인에 나선다는 변화가 확인됐다. 다만 ‘전년 대비 확보물량 약 1.5배’와 ‘10월 대비 판매가격 하락’은 서로 다른 비교다. 11월 10일 현재 행사가 진행 중이므로, 할인 종료 뒤에도 낮은 가격이 유지되는지는 아직 관측되지 않았다.",
       "mechanism": [
-        "수출에서는 물량이 4.4% 늘고 금액이 3.2% 줄었으므로 집계상 단위중량당 수출금액이 낮아진 방향은 분명하다. 더 많이 수출해도 총수출금액 감소를 막지 못했다는 뜻이다. 다만 이 지표에는 국가별·제품별 구성 변화도 반영된다. 상대적으로 단가가 낮은 제품의 비중이 커졌을 수도 있어, 같은 규격의 굴 거래가격이 일괄적으로 하락했다고 단정할 수는 없다. 수출물량 증가를 수요의 양적 확대라고 볼 수는 있어도, 판매 여건 전반의 개선으로 확대 해석하기는 어렵다.",
-        "소매에서는 확보 물량 확대와 조건부 할인이 함께 제시됐다. 한 유통사가 전년보다 많은 물량을 확보하는 것은 국내 생산 증가뿐 아니라 유통망별 배분 변화로도 가능하다. 여기에 회원·수산대전 할인까지 적용돼 소비자가격이 정해지므로, 낮은 행사가격을 설명하기 위해 산지가격 하락을 전제할 필요는 없다. 생굴 100g과 봉지굴 400g의 안내 가격도 각각의 상품·할인 조건에 해당한다. ‘최대 35%’라는 문구를 모든 굴의 가격 하락률로 적용할 수 없는 이유다."
+        "10월 취재에서 제시된 월하굴 부족과 햇굴 성장 지연은 기존에 판매할 물량과 새로 출하될 물량 사이의 공백을 설명한다. 따라서 당시 공급 압박을 해석할 때는 연간 생산규모뿐 아니라 제철 초반의 출하 시점을 구별해야 한다. 이 보도는 출하 일정이 판매 여건을 제약했다는 근거이지, 올해 전체 굴 생산능력이 줄었다는 근거는 아니다.",
+        "11월 발표는 산지 생산량이 아니라 롯데마트가 확보한 물량을 다룬다. 확보 규모가 전년보다 커졌다는 사실은 해당 유통사의 상품 공급 여건을 설명하지만, 산지에서 10월보다 얼마나 더 출하됐는지를 보여주지는 않는다. 지연됐던 출하가 회복돼 물량 확보가 쉬워졌을 수도 있고, 공급이 빠듯한 가운데 해당 업체가 조달을 확대한 결과일 수도 있다.",
+        "가격에서도 행사 조건을 분리해야 한다. ‘최대 35%’는 행사 전체의 평균 인하율이 아니며, 제공된 자료에는 이 할인율의 기준가격과 10월 150g 상품의 일치 여부가 제시되지 않았다. 따라서 4,990원에 할인율을 적용해 11월 가격을 계산할 수 없다. 소비자가 실제로 접하는 가격 변화를 판단하려면 원산지·중량·상품형태와 할인 조건이 같은 상품끼리 비교해야 한다."
       ],
-      "structural_insight": "수출과 내수 행사는 서로 다른 방식으로 물량 지표의 한계를 보여준다. 수출에서는 실제 판매중량이 늘어도 판매금액이 줄었고, 마트에서는 확보중량이 늘어도 최종 판매중량은 아직 드러나지 않았다. 따라서 현재 확인되는 변화는 굴 시장 전체의 소비 회복보다 수출의 물량·금액 간 괴리와 특정 소매망의 행사 물량 확대다. 전년 수출의 집계단가 하락을 올해 햇굴 할인 원인으로 연결하면 연도와 상품 구성을 동시에 건너뛰게 된다.",
+      "structural_insight": "두 보도를 함께 보면 공급 공백과 대형마트 할인은 모순되는 현상이 아니다. 산지의 출하 사정과 한 유통사의 물량 확보는 범위가 다르기 때문이다. 현재 확인되는 시장 대응은 유통사 단위의 조달 확대와 기간 한정 할인이다. 출하 회복이 할인으로 이어졌다는 해석을 채택하려면, 행사 밖의 가격과 산지 물량에서도 같은 방향의 변화가 나타나야 한다.",
       "scenario_up": {
-        "condition": "행사 종료 뒤 산지 거래량 증가와 가격 하락이 함께 확인되고, 여러 유통망에서 동일 규격의 비행사 소매가격도 낮아지는 경우.",
-        "interpretation": "이번 할인에 판촉 외의 공급 개선이 반영됐다는 설명이 강해진다. 실제 행사 판매중량까지 공개돼 확보 증가분의 판매가 확인되면 소비 확대 여부도 별도로 판단할 수 있다."
+        "condition": "11월 11일 행사 종료 뒤에도 동일 원산지·규격·상품형태의 비행사 판매가격이 낮아지고, 같은 주간의 비교 가능한 산지 자료에서 출하량 증가와 가격 하락이 함께 확인되는 경우.",
+        "interpretation": "지연됐던 햇굴 출하의 회복이 소매가격에도 반영됐다는 설명이 강해진다. 할인행사가 공급 개선을 먼저 드러낸 사례로 해석할 수 있다."
       },
       "scenario_down": {
-        "condition": "산지 거래량·가격에 뚜렷한 변화가 없는 가운데 할인 종료 후 해당 상품의 가격이 복귀하고, 다른 유통망의 비행사 가격도 유지되는 경우.",
-        "interpretation": "시장 전체의 공급 완화보다는 행사 조건이 낮은 소비자가격을 만든 것으로 해석할 근거가 강해진다. 확보 물량 확대만으로 소비 회복을 판단하기는 더욱 어려워진다."
+        "condition": "행사 종료 뒤 동일 상품의 판매가격이 행사 이전 수준으로 돌아가고, 같은 기간 산지 출하량과 가격에서도 공급 개선이 확인되지 않는 경우.",
+        "interpretation": "이번 가격 인하는 전국 수급의 전환보다 유통사의 한시 판촉으로 설명하는 편이 타당해진다. 전년 대비 물량 확보 확대도 시장 전체의 공급 증가와 구별해야 한다."
       },
-      "what_changes": "11월 11일 이후에는 같은 규격·포장·회원 조건을 구분한 소매가격과 산지 거래량·가격을 대조해야 한다. 수출은 2026년 동기 국가별·제품별 물량과 금액을 확인해 동일 제품의 단가 변화와 수출 구성 변화를 나눠 봐야 한다.",
-      "one_sentence": "더 많이 수출했다는 실적과 더 많이 확보했다는 계획은 모두 물량 확대지만, 어느 쪽도 그 자체로 굴 시장의 소비·판매금액 회복을 증명하지 않는다.",
-      "limitations": "분석은 제공된 공개 보도·검색 확인 메모에 근거한다. 두 행사 보도는 같은 판촉 발표에 기반한 자료로 취급했다. 2026년 동기 산지 거래량·가격, 행사 실제 판매중량, 할인 비용 분담 및 공급자 수취가격, 수출의 국가·제품별 세부 실적은 확보되지 않았다. 수출표의 반올림된 수치로 정밀 평균단가를 산출하지 않았다.",
+      "what_changes": "먼저 11월 행사 상품의 중량과 할인 기준을 확인하고, 행사 전후 공개 판매가격을 같은 조건으로 추적해야 한다. 산지 자료가 확보되면 소매 행사와 주간을 맞추되, 깐굴과 껍데기째 굴 등 상품형태가 다른 물량·가격을 직접 연결하지 않아야 한다.",
+      "one_sentence": "이번 할인은 소비자가격을 낮추는 행사이지만, 그 배경이 출하 회복인지 유통사의 물량 집중 확보인지는 행사 밖의 가격과 산지 출하가 갈라놓는다.",
+      "limitations": "기사 전문이 아닌 제공된 공개 보도 메모를 사용했다. 11월 할인 적용 상품의 세부 규격·기준가격, 실제 입고·판매량, 같은 기간의 공식 산지 출하량·가격은 제공되지 않았다.",
       "article_ids": [
-        "web-79a89db4bc5d",
-        "web-5c861356490e",
-        "web-d59a520ecef0"
+        "web-b98e568f4ece",
+        "web-5c861356490e"
       ],
       "feature_ids": [],
       "policy_ids": [],
       "confidence": "중간",
       "channels": [
-        "마트",
-        "수출"
+        "마트"
       ],
-      "impact": "물량·판매금액 괴리와 조건부 소매 할인",
-      "followup": "행사 종료 후 동일 상품의 비행사 가격을 추적하고, 공개되는 경우 실제 판매중량을 확보량과 대조한다. 후속 굴 수출자료에서는 제품·국가 구성을 구분한 물량과 금액을 점검한다.",
+      "impact": "제철 출하 공백과 한시 소매 할인",
+      "followup": "11월 12일 이후 동일 상품의 비행사 공개가격을 확인하고, 확보 가능한 같은 주간 산지 출하량·가격과 대조한다.",
       "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
-      "character_count": 2117,
+      "character_count": 2028,
       "length_tier": "충실"
     }
   ],
   "deep_status": "AI 리서치 1편 · 공개 출처·수치 검증 통과",
   "research_sources": [
     {
-      "id": "web-2bb4e2f482ec",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=4",
-      "source": "motir.go.kr",
-      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "1. **[최근 공식자료] 산업통상부가 2026년 10월 28일 발표한 9월 매출동향에서 대형마트 매출은 전년 동월 대비 4.0%, SSM은 5.0% 증가했다.** 조사대상은 주요 오프라인 15개사·온라인 11개사이며, 산업부는 추석이 2025년 10월에서 2026년 9월로 이동한 영향을 설명했다. 따라서 이달 증가율만으로 구조적인 소비 회복을 판단하기 어렵다. [산업통상부 원문](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=4) ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=4))",
+      "id": "web-b98e568f4ece",
+      "url": "https://www.hankyung.com/article/202610166081g",
+      "source": "hankyung.com",
+      "title": "제철 굴 실컷 먹으려 했는데…마트 갔다가 한숨 | 한국경제",
+      "summary": "- **① [앞선 독자 취재｜2026년 10월 18일]** 한국경제는 11월 할인행사 보도에 앞서 월하굴 부족과 햇굴 성장 지연을 취재했으며, 롯데마트가 **10월 15~21일 국산 냉장 봉지굴 150g을 4,990원**에 판매한다고 보도했다. 이는 특정 유통업체·규격의 판매가격으로, 전국 소매평균이나 산지가격이 아니다. ([hankyung.com](https://www.hankyung.com/article/202610166081g))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "대형마트/SSM",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-755eff7e5bf2",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view?utm_source=openai",
-      "source": "motir.go.kr",
-      "title": "‘22년 연간, '22년 12월 주요유통업체 매출동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "4. **[2021~2022년 비교] 당시 공표된 주요 유통업체 조사에서 대형마트의 연간 매출 증가율은 2021년 -2.3%, 2022년 +1.4%였고, SSM은 각각 -8.4%, -0.2%였다.** 2022년 SSM 내부에서는 신선·조리식품이 0.3% 증가한 반면 농수축산물은 3.9% 감소해, 업태 전체 매출과 신선식품 세부 실적도 같은 방향이 아니었다. [산업통상부 원문](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view) ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view?utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "대형마트/SSM",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-7ec92d4bdcea",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/168549/view?categoryList=%5Bkr.go.motie.site.module.category.MecCategoryVo@50595b71,+kr.go.motie.site.module.category.MecCategoryVo@1a8280ed%5D&displayAuthor=&endDtD=&mno=&pageIndex=1&rowPageC=0&schClear=on&searchCategory=0&searchCondition=1&searchKeyword=%EC%9C%A0%ED%86%B5%EC%97%85%EC%B2%B4&startDtD=",
-      "source": "motir.go.kr",
-      "title": "'23년 연간 주요 유통업체 매출 6.3% 증가 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "5. **[매출과 점포수의 실제 비교] 2023년 12월에는 대형마트 매출이 전년 동월 대비 1.2%, 점포수가 1.1%, 점포당 매출이 0.1% 감소했고, SSM은 각각 5.2%, 2.8%, 2.3% 증가했다.** 이 시점에는 양 업태 모두 매출과 점포수의 방향이 같았지만, 2026년 9월 점포수 원표는 이번 검색에서 확보하지 못했으므로 최신 매출 반등을 점포 확대와 연결하지 않았다. [산업통상부 원문](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/168549/view) ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/168549/view?categoryList=%5Bkr.go.motie.site.module.category.MecCategoryVo@50595b71,+kr.go.motie.site.module.category.MecCategoryVo@1a8280ed%5D&displayAuthor=&endDtD=&mno=&pageIndex=1&rowPageC=0&schClear=on&searchCategory=0&searchCondition=1&searchKeyword=%EC%9C%A0%ED%86%B5%EC%97%85%EC%B2%B4&startDtD=))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "대형마트/SSM",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -289,11 +416,11 @@
       "url": "https://www.news1.kr/industry/distribution/6343167?utm_source=openai",
       "source": "news1.kr",
       "title": "롯데마트, 굴값 30% 뛰자 물량 1.5배 확보…햇굴 최대 35% 할인 - 뉴스1",
-      "summary": "6. **[확인된 가장 이른 행사 보도] 검색으로 확인한 해당 행사의 가장 이른 보도는 뉴스1의 2026년 11월 5일 오전 6시 기사로, 롯데마트는 햇굴 확보 물량을 전년보다 약 1.5배 늘리고 11월 5~11일 최대 35% 할인한다고 밝혔다.** 이는 한 유통기업의 확보·판촉 계획이며 국내 굴 생산량이나 시장 전체 공급량 증가를 뜻하지 않는다. [뉴스1 기사](https://www.news1.kr/industry/distribution/6343167) ([news1.kr](https://www.news1.kr/industry/distribution/6343167?utm_source=openai))",
+      "summary": "- **② [기업의 물량·판촉 발표｜11월 5일]** 뉴스1 보도에서 롯데마트는 햇굴 물량을 **전년 대비 약 1.5배 확보**하고 **11월 5~11일 최대 35% 할인**한다고 밝혔다. 확보물량은 해당 기업의 조달계획이며, 실제 판매량 증가나 국내 전체 공급 증가를 뜻하지 않는다. ([news1.kr](https://www.news1.kr/industry/distribution/6343167?utm_source=openai))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "대형마트/SSM",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -302,15 +429,15 @@
       "followup": "해당 원문·통계 기준일 확인"
     },
     {
-      "id": "web-d59a520ecef0",
-      "url": "https://www.slist.kr/news/articleView.html?idxno=779074&utm_source=openai",
-      "source": "slist.kr",
-      "title": "롯데마트, ‘햇굴’ 물량 1.5배 늘리고 최대 35% 할인",
-      "summary": "7. **[소매가격·규격] 행사 안내에 제시된 가격은 엘포인트 회원 대상 수산대전 할인을 적용한 생굴 100g 1,912원, 봉지굴 400g 7,920원이며, 온도 감응형 포장은 11월 중순 도입 예정이었다.** 이 가격은 조건부 행사 소매가격이고, 포장 도입 역시 기준일 현재 완료 실적이 아닌 계획으로 구분했다. [행사 조건 보도](https://www.slist.kr/news/articleView.html?idxno=779074) ([slist.kr](https://www.slist.kr/news/articleView.html?idxno=779074&utm_source=openai))",
+      "id": "web-be9175d22e4b",
+      "url": "https://mods.go.kr/boardDownload.es?bid=225&list_no=435155&seq=1",
+      "source": "mods.go.kr",
+      "title": "어업생산동향조사\n부\n보도자료\n보도시점\n2025. 2. 21.(금) 12:00\n배포\n2025",
+      "summary": "- **③ [생산량｜2020~2024년]** 통계청의 **2025년 2월 21일 발표 「2024년 어업생산동향조사 결과(잠정)」**에서 해면양식업 굴류 생산량은 **2020년 300,084톤 → 2021년 305,914톤 → 2022년 310,483톤 → 2023년 310,753톤 → 2024년 310,076톤**으로, 2024년 전년 대비 증감률은 **-0.2%**였다. 이 계열은 해면양식 생산량이며 깐굴 소매중량과 직접 비교하지 않았다. ([mods.go.kr](https://mods.go.kr/boardDownload.es?bid=225&list_no=435155&seq=1))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "대형마트/SSM",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -319,49 +446,15 @@
       "followup": "해당 원문·통계 기준일 확인"
     },
     {
-      "id": "web-c72ed2eb006b",
-      "url": "https://www.mof.go.kr/upload/whitebook/59585/book.pdf",
-      "source": "mof.go.kr",
-      "title": "제4장 품목별 유통실태 조사",
-      "summary": "8. **[생산 통계—껍데기 포함] 해수부의 『2023년 수산물 생산 및 유통산업 실태조사』에 수록된 양식굴 생산량은 2021년 305,914톤, 2022년 300,692톤으로, 2022년은 전년 대비 1.7% 감소한 잠정치다.** 이는 **각굴 기준**이므로 깐굴 판매중량이나 수출제품 중량과 직접 대조할 수 없다. [해수부 보고서, 양식굴 생산 동향](https://www.mof.go.kr/upload/whitebook/59585/book.pdf) ([mof.go.kr](https://www.mof.go.kr/upload/whitebook/59585/book.pdf))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "대형마트/SSM",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-79a89db4bc5d",
-      "url": "https://fsis.go.kr/front/contents/cmsView.do?cate_id=0404&cnts_id=38261&select_list_no=2",
-      "source": "fsis.go.kr",
-      "title": "fsis.go.kr",
-      "summary": "10. **[2024~2025년 굴 수출] 해수부의 2026년 1월 15일 발표를 수록한 수산물안전정보 자료에서 2025년 굴 수출물량은 전년 대비 4.4% 증가했으나 수출금액은 3.2% 감소했다.** 따라서 물량 증가를 매출 성장으로 읽을 수 없으며, 표의 물량·금액은 반올림돼 있어 별도의 정밀 평균단가를 계산하지 않았다. [해수부 발표 수록본](https://fsis.go.kr/front/contents/cmsView.do?cate_id=0404&cnts_id=38261&select_list_no=2) ([fsis.go.kr](https://fsis.go.kr/front/contents/cmsView.do?cate_id=0404&cnts_id=38261&select_list_no=2))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "대형마트/SSM",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-9861e09426d0",
-      "url": "https://www.yna.co.kr/amp/view/AKR20261110025400017?utm_source=openai",
+      "id": "web-dfa4994ad3b4",
+      "url": "https://www.yna.co.kr/view/AKR20260714052800052?utm_source=openai",
       "source": "yna.co.kr",
-      "title": "겨울철 굴·생선회 안전할까…식약처, 수산물 수거 검사 | 연합뉴스",
-      "summary": "12. **[최근 유통 안전관리] 식약처는 2026년 11월 10일, 2027년 2월 26일까지 온·오프라인 판매 수산물 총 720건을 집중 검사한다고 발표했다.** 생식용 굴은 대장균·노로바이러스, 과메기·배달회는 식중독균·동물용 의약품 등을 확인하며 부적합품은 판매금지·회수 대상이므로, 검사계획과 실제 부적합 발생 실적을 혼동해서는 안 된다. [연합뉴스 보도](https://www.yna.co.kr/amp/view/AKR20261110025400017) ([yna.co.kr](https://www.yna.co.kr/amp/view/AKR20261110025400017?utm_source=openai))",
+      "title": "세계가 찾는 경남 수산물…올해 상반기 수출 작년보다 19.8% ↑ | 연합뉴스",
+      "summary": "- **⑥ [지역 수출｜2026년 상반기]** 경남도 집계를 전달한 7월 14일 연합뉴스 보도에 따르면, 경남 수산물 수출액은 **1~6월 1억5,618만 미국달러, 전년 동기 대비 +19.8%**, 이 중 굴은 **4,939만 달러**였다. 냉동·통조림 굴의 일본 수출액은 전년보다 **583만 달러 이상 증가**했지만, 이는 **경남 기준 수출금액**이며 전국 생굴 수출량이나 수출단가 통계는 아니다. ([yna.co.kr](https://www.yna.co.kr/view/AKR20260714052800052?utm_source=openai))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "대형마트/SSM",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -370,15 +463,49 @@
       "followup": "해당 원문·통계 기준일 확인"
     },
     {
-      "id": "web-9772fc0387ab",
-      "url": "https://www.ssb.no/en/statbank/table/03024/",
-      "source": "ssb.no",
-      "title": "Statistikkbanken – SSB",
-      "summary": "- **제외한 수치:** 노량진 깐굴 가격 상승률은 거래 원표를 확보하지 못해 채택하지 않았다. 사용자 제공 **SSB 2026년 44주 연어 가격·물량** 역시 해당 표의 실제 관측값을 재확인하지 못해 사용하지 않았다. [SSB 표 03024](https://www.ssb.no/en/statbank/table/03024/) ([ssb.no](https://www.ssb.no/en/statbank/table/03024/))",
+      "id": "web-127f7c37ee2b",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1&utm_source=openai",
+      "source": "motir.go.kr",
+      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "summary": "- **⑦ [발표일·조사대상｜10월 28일]** 산업통상부의 「2026년 9월 주요 유통업체 매출 동향」은 **오프라인 15개·온라인 11개 업체**를 대상으로 하며, 9월 매출은 전년 동월 대비 **전체 +4.5%, 오프라인 +5.1%, 온라인 +4.0%**였다. 이는 조사대상 업체의 매출 변화이지 국내 전체 소매시장 판매물량 통계가 아니다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1&utm_source=openai))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "대형마트/SSM",
+      "category": "온라인",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-755eff7e5bf2",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view?utm_source=openai",
+      "source": "motir.go.kr",
+      "title": "‘22년 연간, '22년 12월 주요유통업체 매출동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "summary": "- **⑩ [연간 매출 증가율｜2021~2023년]** 산업통상부 연간 발표에서 대형마트 매출 증가율은 **2021년 -2.3% → 2022년 +1.4% → 2023년 +0.5%**, SSM은 **-8.4% → -0.2% → +3.7%**였다. 이는 각 연도의 전년 대비 연간 증가율로, 2026년 9월의 단월 증가율과 동일 기준의 누적 성장률처럼 연결하지 않았다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view?utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "해외",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-33a7d40c1ffc",
+      "url": "https://m.businesspost.co.kr/BP?command=mobile_view&num=451633&utm_source=openai",
+      "source": "m.businesspost.co.kr",
+      "title": "컬리 3분기 영업이익 100억으로 63.5% 증가, 7개 분기 연속 흑자 유지",
+      "summary": "- **⑫ [기업 잠정실적 발표｜11월 10일]** 컬리는 **2026년 3분기 연결 매출 7,779억원, 전년 동기 대비 +34.4%**를 발표했다. 이를 전달한 기사에는 전체 거래액 증가율 **+32.1%**, 마켓컬리 거래액 **+32.8%**도 제시돼 있지만, 매출액·거래액은 다른 지표이며 수산물 실적이나 급식 수요로 분해돼 있지 않다. 이번 조사에서는 공시 원문을 직접 확보하지 못했으므로 **기업 발표의 언론 전달 수치**로 분류했다. ([m.businesspost.co.kr](https://m.businesspost.co.kr/BP?command=mobile_view&num=451633&utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -390,35 +517,33 @@
   "archived_features": [],
   "report_archived": false,
   "report_factual_brief": false,
-  "last_report_updated_at": "2026-11-10T17:55+09:00",
+  "last_report_updated_at": "2026-11-10T18:23+09:00",
   "data_reports": [],
   "data_ai_status": "다른 자료와 비교할 수 있는 품목별 관측이 아직 없습니다.",
-  "analysis_status": "실제 공식 관측 1종 · SSB/ECOS 및 연결된 국내 공공통계 기준",
-  "sources_ok": 3,
-  "sources_total": 18,
+  "analysis_status": "실제 공식 관측 3종 · SSB/ECOS 및 연결된 국내 공공통계 기준",
+  "sources_ok": 10,
+  "sources_total": 26,
   "errors": [
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·대형마트/SSM: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·코스트코: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·대형마트/SSM: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
+    "Google 뉴스 검색·대형마트/SSM: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·온라인: ValueError",
     "Google 뉴스 검색·매장 운영: ValueError",
     "Google 뉴스 검색·B2B/급식: ValueError",
     "Google 뉴스 검색·시즌/트렌드: ValueError",
-    "Google 뉴스 검색·시즌/트렌드: ValueError",
     "Google 뉴스 검색·식품안전/소비심리: ValueError",
+    "Google 뉴스 검색·시즌/트렌드: ValueError",
     "Google 뉴스 검색·비용/거시: ValueError",
     "Google 뉴스 검색·해외: ValueError",
     "Google 뉴스 검색·해외: ValueError"
   ],
   "metric_errors": [
-    "ECOS USD: ECOS ConnectTimeout",
-    "ECOS JPY: 항목 코드 미확인",
     "ECOS NOK: 항목 코드 미확인",
-    "수산물 수출입: 비교 가능한 전년 동월 자료 없음",
-    "KAMIS: KAMIS_API_KEY / KAMIS_API_ID 미설정 — 수산물 도소매 조사 미연결"
+    "수산물 수출입: 비교 가능한 전년 동월 자료 없음"
   ],
   "demo": false,
   "policy_sources": [],
