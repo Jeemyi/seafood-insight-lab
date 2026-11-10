@@ -1,280 +1,542 @@
 {
-  "generated_at": "2026-11-10T15:48+09:00",
+  "generated_at": "2026-11-10T15:58+09:00",
   "articles": [
     {
-      "id": "ssb-public-sample",
-      "title": "SSB: 2026년 44주차 연어 수출단가 74.98 NOK/kg, 물량 28,444톤",
-      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
-      "source": "노르웨이 통계청 SSB",
-      "published": "2026-11-04T08:00:00+09:00",
-      "timestamp": 1793746800,
-      "category": "원물 수급/시세",
+      "id": "e4a844aa0f4f235e",
+      "title": "대형마트 휴무일, 이마트·롯데마트·홈플러스·코스트코 ‘쉬는 날’",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1EUzN5Y1NKMU4wWHRyUm1CU2Q2enJjcEJ1dlkwVnJYek5EWkt2Vzg2dGkzNjN4cUMzU0J4cDh2RUZaVXZhQUhHQjg4a0RfOVJvcjlpQXZMQTVoMFlrUXEzWUtKeHQ?oc=5",
+      "source": "BNT뉴스",
+      "published": "2026-11-08T00:01+09:00",
+      "timestamp": 1794063661,
+      "category": "대형마트/SSM",
       "tags": [
-        "원물 수급/시세"
+        "대형마트/SSM",
+        "코스트코"
       ],
-      "score": 17,
-      "summary": "SSB 공식 통계에서 2026년 44주차 신선·냉장 연어 수출가격은 74.98 NOK/kg으로 전년 동기 대비 6.9% 하락했다. 반면 수출량은 28,444톤으로 전년 동기 대비 14.3% 증가했다.",
-      "summary_type": "공식 주간 통계",
-      "question": "동일 주차의 가격과 물량을 함께 비교",
-      "official": true,
+      "score": 23.8,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화"
+    },
+    {
+      "id": "056b9e411aae1b50",
+      "title": "입점업체에 '갑질 의혹' … 쿠팡·배민 과징금 6천억",
+      "url": "https://www.mk.co.kr/news/economy/12202785",
+      "source": "매일경제·경제",
+      "published": "2026-11-10T02:44+09:00",
+      "timestamp": 1794246277,
+      "category": "온라인",
+      "tags": [
+        "온라인",
+        "매장 운영"
+      ],
+      "score": 12.2,
+      "summary": "국내 양대 배달 애플리케이션(앱)인 배달의민족과 쿠팡이츠가 입점 업체를 상대로 경쟁 앱보다 유리한 가격과 거래 조건을 제공하도록 강요했다는 이유로 배달 앱 합산 역대 최대 과징금을..",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격"
+    },
+    {
+      "id": "fb9da75954ddb3e3",
+      "title": "\"반도체 수출 꺾이면 내년 기준금리 내릴것\"",
+      "url": "https://www.mk.co.kr/news/economy/12202743",
+      "source": "매일경제·경제",
+      "published": "2026-11-10T02:38+09:00",
+      "timestamp": 1794245916,
+      "category": "비용/거시",
+      "tags": [
+        "비용/거시"
+      ],
+      "score": 11.2,
+      "summary": "반도체 수출 호황의 지속 여부에 따라 한국은행의 기준금리 경로가 엇갈릴 수 있다는 전망이 나왔다. 반도체 호황이 이어지면 내년 초 기준금리가 현재 3.0%에서 연 3.5%까지 오르..",
+      "summary_type": "공개 RSS 소개문",
+      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격"
+    },
+    {
+      "id": "20cf7666a2a209f6",
+      "title": "대형마트 휴무일? 이마트·롯데마트·홈플러스·코스트코 ‘할인 특가전’",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBZOTBGMHZCYTh3TlRkUUdOY1ZaV1lJdTQ2bXFrVFQyVVh0VnctZ0hFOXdjd0w4UU5KTERQamJ0RWg0NDdRS0pmY0xZSkNCYkJ1OUFUZFpNS1JZdnJxYS1wWTR1QW4?oc=5",
+      "source": "BNT뉴스",
+      "published": "2026-11-07T00:01+09:00",
+      "timestamp": 1793977262,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM",
+        "코스트코"
+      ],
+      "score": 23.8,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화"
+    },
+    {
+      "id": "1bb6c634a7de9b85",
+      "title": "컬리, 네이버 협력 통했다…3분기 매출 7779억원 '역대 최대'",
+      "url": "https://www.hankyung.com/article/202611107705g",
+      "source": "한국경제·경제",
+      "published": "2026-11-10T14:51+09:00",
+      "timestamp": 1794289868,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.5,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격"
+    },
+    {
+      "id": "f5c390c8706a4552",
+      "title": "[표] 외국환율고시표",
+      "url": "https://www.mk.co.kr/news/economy/12202754",
+      "source": "매일경제·경제",
+      "published": "2026-11-10T02:39+09:00",
+      "timestamp": 1794245982,
+      "category": "비용/거시",
+      "tags": [
+        "비용/거시"
+      ],
+      "score": 10.5,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
+      "official": false,
       "channels": [],
-      "impact": "물량 증가·단가 하락 동시 관측",
-      "followup": "다음 주 수출량·가격·원산지별 수요"
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격"
     },
     {
-      "id": "nsc-public-sample",
-      "title": "노르웨이 수산물위원회: 10월 연어 수출액 사상 최대, 물량 증가율은 더 높아",
-      "url": "https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/",
-      "source": "Norwegian Seafood Council",
-      "published": "2026-11-04T08:00:00+09:00",
-      "timestamp": 1793746200,
-      "category": "원물 수급/시세",
+      "id": "83b3a0d5cd29dbb5",
+      "title": "[똑똑한소비] 이마트, 롯데마트, 홈플러스, 쿠팡",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CSnBTYTFPY0pQTHc4eW1iX193OTdkdnZEemtja3MwY09nRDhsUTlyOEl6MGU2Z3Z6dV9FWThyYUFYcWQwelNlVkRvTjNtYkpfdkU5UDEzbThVcm8?oc=5",
+      "source": "에너지경제신문",
+      "published": "2026-10-28T21:00+09:00",
+      "timestamp": 1793188803,
+      "category": "대형마트/SSM",
       "tags": [
-        "원물 수급/시세"
+        "대형마트/SSM",
+        "온라인"
       ],
-      "score": 16,
-      "summary": "2026년 10월 노르웨이 연어 수출은 159,810톤, 수출액 약 130억 NOK를 기록했다. 전년 동월 대비 수출물량은 9%, 수출액은 6% 증가해 평균단가는 하락한 것으로 계산된다.",
-      "summary_type": "공식 월간 수출 발표",
-      "question": "금액 증가를 가격과 물량 효과로 분해",
-      "official": true,
-      "channels": [],
-      "impact": "수출액 성장보다 빠른 물량 증가",
-      "followup": "월별 물량·평균단가·국가별 수출구성"
+      "score": 20.1,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화"
     },
     {
-      "id": "homeplus-kbiz-nov-2026",
-      "source": "뉴스핌 · 중소기업중앙회 조사",
-      "title": "홈플러스 거래업체 피해 72%…대금 정산 지연과 매출 감소 집중",
-      "url": "https://ir.newspim.com/news/view/20261105000417",
-      "published": "2026-11-05T10:39:00+09:00",
-      "timestamp": 1793842740,
+      "id": "697fbeddc581fa01",
+      "title": "'쿠팡·배민 왜 비싸졌지?' 불만 폭주하더니…비밀 밝혀졌다 [박종관의 정책관통]",
+      "url": "https://www.hankyung.com/article/202611095169i",
+      "source": "한국경제·경제",
+      "published": "2026-11-10T07:30+09:00",
+      "timestamp": 1794263401,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.5,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격"
+    },
+    {
+      "id": "ffd06a42b337a501",
+      "title": "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40eW9wNnlEUU5xUFk5bGVzUktVWEZuWnk5eUllNGdneTI3a0d2dFpWdjRad0drZ3N2TmREUFdQRm80b2FRV1ZBcERfT2pqNWFpQjVJRkNfVDYzREJPaWpmWUl2anp1akx3ZWM2QzFB0gFuQVVfeXFMTjR5b3A2eURRTnFQWTlsZXNSS1VYRm5aeTl5SWU0Z2d5MjdrR3Z0WlZ2NFp3R2tnc3ZOZERQV1BGbzRvYVFXVkFwRF9Pamo1YWlCNUlGQ19UNjNEQk9pamZZSXZqenVqTHdlYzZDMUE?oc=5",
+      "source": "뉴스드림",
+      "published": "2026-11-05T08:27+09:00",
+      "timestamp": 1793834873,
       "category": "대형마트/SSM",
       "tags": [
         "대형마트/SSM"
       ],
-      "summary": "2026년 11월 발표된 중소기업중앙회 2026년 오프라인 대규모유통업체 거래 실태조사. 홈플러스 거래 중소기업 100곳 중 72.0%가 점포 축소·폐점 등으로 피해를 경험했고 이 72곳 모두 정산 지연을 피해 유형으로 답했다. 홈플러스 거래업체 63.0%는 매출 감소, 전체 대형마트 거래업체 매출 감소 응답은 37.0%, 이마트 28.0%, 롯데마트 31.0%, 하나로마트 26.0%. 전년 홈플러스 피해 경험 응답 12.9%.",
-      "summary_type": "공개 기사에 인용된 중소기업중앙회 조사",
-      "score": 18,
+      "score": 12.7,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
       "channels": [
         "마트"
       ],
-      "impact": "거래업체 피해 집중",
-      "followup": "표본 구성·시계열별 거래여건 비교"
-    },
-    {
-      "id": "homeplus-rival-july-2026",
-      "source": "조선비즈 · 매장별 판매 실적 취재",
-      "title": "홈플러스 폐점 인근 이마트·롯데마트 판매 증가",
-      "url": "https://biz.chosun.com/distribution/channel/2026/07/06/I4IYRRRE2ZA7DE3ZE6XQWGHS4E/?outputType=amp",
-      "published": "2026-07-06T10:00:00+09:00",
-      "timestamp": 1783299600,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "summary": "2026년 7월 보도. 홈플러스 기존 104개 점포 가운데 37곳 폐점, 67곳 운영. 홈플러스 폐점 점포 인근 이마트 창동·묵동점은 2026년 5월 10~31일 매출 전년동기 대비 11.4% 증가. 서울 지역 인근 롯데마트 매장은 평균 9% 증가, 일부 점포 20% 초과.",
-      "summary_type": "개별 경쟁매장 매출을 확인한 보도",
-      "score": 17,
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "상권 내 수요 이동",
-      "followup": "폐점 인근·비인근 점포 비교"
-    },
-    {
-      "id": "retail-half-2026",
-      "source": "뉴스핌 · 산업통상부 주요 유통업체 매출 동향",
-      "title": "2026년 상반기 대형마트 매출 -7.3%…SSM도 -6.6%",
-      "url": "https://mobile2.newspim.com/news/view/20260803001174",
-      "published": "2026-08-03T15:00:00+09:00",
-      "timestamp": 1785736800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "summary": "산업통상부 2026년 상반기 주요 유통업체 매출 동향에 따르면, 대형마트 매출은 전년 상반기 대비 7.3% 감소하고 SSM은 6.6% 감소했다. 같은 기간 백화점 매출은 20.1% 증가. 유통업태 전체 매출 중 대형마트 비중은 전년 상반기 10.3%에서 올해 상반기 8.5%로 하락.",
-      "summary_type": "공식 유통 매출 동향을 인용한 기사",
-      "score": 16,
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "대형마트 업태 둔화",
-      "followup": "업태별 동일점 매출과 신규 점포 영향"
+      "impact": "가격 변화 보도 · 비교 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화"
     }
   ],
   "features": [
     {
       "id": "salmon_export_price",
-      "name": "노르웨이 생연어 수출가격·물량",
-      "title": "노르웨이 연어 수출은 물량이 늘었지만 단가는 낮아졌다",
-      "subtitle": "SSB 공식 통계 · 2026년 44주차 시연",
+      "name": "노르웨이 생연어 수출가",
+      "title": "노르웨이 연어 수출가 변화가 국내 수입원가에 주는 신호",
+      "subtitle": "노르웨이 통계청 SSB",
       "period_start": "2026년 43주",
       "period_end": "2026년 44주",
       "facts": [
         {
-          "label": "신선·냉장 연어 수출가",
+          "label": "노르웨이 생연어 수출가",
           "value": "74.98 NOK/kg",
-          "detail": "44주차 · SSB"
+          "detail": "관측 2026년 44주 · 노르웨이 통계청 SSB"
         },
         {
-          "label": "전년 동주 가격",
-          "value": "-6.9%",
-          "detail": "전년 동주 대비"
+          "label": "전주 대비",
+          "value": "-1.39%",
+          "detail": "2026년 43주 대비 · 실제 계산"
         },
         {
-          "label": "전년 동주 수출물량",
-          "value": "+14.3%",
-          "detail": "28,444톤 · SSB"
+          "label": "전년 동일 시점 대비",
+          "value": "-6.91%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-5.55%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
         }
       ],
-      "observed": "2026년 44주차 신선·냉장 연어 수출가격 74.98 NOK/kg · 전년 동주 -6.9%; 같은 주 수출량 28,444톤 · 전년 동주 +14.3% (SSB 공식 발표)",
+      "observed": "노르웨이 생연어 수출가 74.98 NOK/kg (2026년 44주, 노르웨이 통계청 SSB 발표값) · 전주 대비 -1.39% · 전년 동기 대비 -6.91% · 과거 3년 동기 평균 대비 -5.55%",
       "data_links": [
         {
-          "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
-          "label": "SSB 연어 공식 가격·물량 통계"
+          "url": "https://www.ssb.no/en/statbank/table/03024/",
+          "label": "노르웨이 통계청 SSB 공식 통계"
+        }
+      ],
+      "article_ids": [],
+      "category": "원물 수급/시세",
+      "channels": [
+        "마트",
+        "온라인",
+        "B2B"
+      ],
+      "impact": "NOK 가격 하락은 원물가 하락 요인일 수 있으나 국내 매입가 하락 확정 아님",
+      "source_type": "공식 공개 API",
+      "limitations": "수출 FOB 가격과 한국 내 실제 매입가·운임·환율·가공비는 서로 다르며, 데이터의 공표 시점 및 규격 차이를 고려해야 합니다."
+    },
+    {
+      "id": "fx_usd",
+      "name": "USD 환율",
+      "title": "원/달러 환율 변동과 수입 수산물 원가",
+      "subtitle": "한국은행 ECOS",
+      "period_start": "2026-11-03",
+      "period_end": "2026-11-10",
+      "facts": [
+        {
+          "label": "USD 환율",
+          "value": "1,355.70 원/USD",
+          "detail": "관측 2026-11-10 · 한국은행 ECOS"
+        },
+        {
+          "label": "전주 대비",
+          "value": "+1.10%",
+          "detail": "2026-11-03 대비 · 실제 계산"
+        },
+        {
+          "label": "전년 동일 시점 대비",
+          "value": "-6.76%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-2.28%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
+        }
+      ],
+      "observed": "USD 환율 1,355.70 원/USD (2026-11-10, 한국은행 ECOS 발표값) · 전주 대비 +1.10% · 전년 동기 대비 -6.76% · 과거 3년 동기 평균 대비 -2.28%",
+      "data_links": [
+        {
+          "url": "https://ecos.bok.or.kr/",
+          "label": "한국은행 ECOS 공식 통계"
         }
       ],
       "article_ids": [
-        "ssb-public-sample"
+        "f5c390c8706a4552"
       ],
-      "category": "원물 수급/시세",
-      "channels": [],
-      "impact": "수출물량 증가와 단가 하락이 동시에 발생",
-      "limitations": "44주 수치는 주간 통계, 10월 수치는 월간 통계로 직접 혼합해 변화율 계산 불가"
+      "category": "비용/거시",
+      "channels": [
+        "마트",
+        "온라인",
+        "B2B"
+      ],
+      "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
+      "source_type": "공식 공개 API",
+      "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다."
+    },
+    {
+      "id": "fx_jpy",
+      "name": "JPY 환율",
+      "title": "엔화 움직임과 일본 거래·수출 채산성",
+      "subtitle": "한국은행 ECOS",
+      "period_start": "2026-11-03",
+      "period_end": "2026-11-10",
+      "facts": [
+        {
+          "label": "JPY 환율",
+          "value": "858.42 원/100JPY",
+          "detail": "관측 2026-11-10 · 한국은행 ECOS"
+        },
+        {
+          "label": "전주 대비",
+          "value": "+1.11%",
+          "detail": "2026-11-03 대비 · 실제 계산"
+        },
+        {
+          "label": "전년 동일 시점 대비",
+          "value": "-9.21%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-5.48%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
+        }
+      ],
+      "observed": "JPY 환율 858.42 원/100JPY (2026-11-10, 한국은행 ECOS 발표값) · 전주 대비 +1.11% · 전년 동기 대비 -9.21% · 과거 3년 동기 평균 대비 -5.48%",
+      "data_links": [
+        {
+          "url": "https://ecos.bok.or.kr/",
+          "label": "한국은행 ECOS 공식 통계"
+        }
+      ],
+      "article_ids": [
+        "f5c390c8706a4552"
+      ],
+      "category": "비용/거시",
+      "channels": [
+        "수출"
+      ],
+      "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
+      "source_type": "공식 공개 API",
+      "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다."
     }
   ],
+  "issue_candidates": [],
   "deep_reports": [
     {
       "depth": "핵심",
-      "kind": "대형마트/SSM",
-      "time_frame": "2026년 7~11월 공개자료 · 시연",
-      "headline": "홈플러스 납품업체 72% 피해…인근 경쟁점 매출 증가와는 다른 문제",
-      "thesis": "홈플러스 점포 축소 이후 인근 이마트·롯데마트 일부 매장의 매출은 증가했다. 그러나 홈플러스와 거래하는 중소기업은 72%가 피해를 경험했고, 피해 업체 모두 대금 정산 지연을 꼽았다. 소비자의 구매처 이동과 기존 납품업체의 거래 정상화는 별개의 문제라는 사실이 드러난다.",
-      "lead": "점포가 문을 닫으면 소비자는 다른 매장으로 이동할 수 있다. 하지만 유통업체가 사라진 자리에 다른 매장의 매출이 늘었다고 해서 기존 납품업체의 매출과 대금 회수가 자동으로 회복되는 것은 아니다. 경쟁 점포의 매출, 거래업체 설문, 대형마트 전체 매출을 나눠 보면 이런 차이가 선명해진다.",
+      "kind": "온라인",
+      "time_frame": "2026년 10월 29일 의결·11월 9일 발표, 11월 10일 후속 보도 기준",
+      "headline": "배민·쿠팡이츠 가격 조건 제재…앱별 가격 차등 제한이 쟁점",
+      "thesis": "이번 제재의 핵심은 입점업체가 경쟁 앱보다 유리한 가격과 거래 조건을 제공하도록 요구받았다는 데 있다. 공정위 발표에 더해 가격을 다르게 설정한 뒤 연락을 받았다는 판매자 증언도 나왔다. 다만 이런 요구가 소비자가격을 얼마나 높였는지는 확인되지 않았으며, 양사는 위법 판단에 반발하고 있다.",
+      "lead": "배달앱에서 더 싸게 팔라는 요구는 해당 앱 이용자에게 유리하게 보인다. 그러나 경쟁 앱보다 불리한 가격을 허용하지 않는 조건이라면, 판매자는 다른 앱에서 가격을 낮출 때도 그 영향을 고려해야 한다. 이번 사건에서 살펴볼 대목은 과징금 규모뿐 아니라, 같은 음식의 가격을 앱마다 달리 정할 여지가 얼마나 제한됐느냐다.",
       "facts": [
         {
-          "text": "중소기업중앙회 조사에서 홈플러스 거래 중소기업 100곳 중 72.0%가 피해를 경험했고, 해당 72곳 모두 정산 지연을 피해 유형으로 답했다. 63.0%는 매출 감소를 응답했다.",
+          "text": "공정위는 10월 29일 의결하고 11월 9일 발표한 자료에서 우아한형제들에 3,311억 원, 쿠팡에 3,008억 원의 과징금과 시정명령을 부과하기로 했다고 밝혔다. 금액은 모두 잠정액이며 대상은 배달의민족·쿠팡이츠 관련 행위다.",
           "refs": [
-            "homeplus-kbiz-nov-2026"
+            "web-57362d62fa40"
           ]
         },
         {
-          "text": "홈플러스 폐점 인근 이마트 창동·묵동점의 2026년 5월 10~31일 매출은 전년 동기보다 11.4% 늘었고, 서울 지역 인근 롯데마트는 평균 9% 증가했다.",
+          "text": "매일경제 소개문은 양사가 입점업체에 경쟁 앱보다 유리한 가격과 거래 조건을 제공하도록 강요했다는 것이 제재 이유라고 전했다.",
           "refs": [
-            "homeplus-rival-july-2026"
+            "056b9e411aae1b50"
           ]
         },
         {
-          "text": "산업통상부 집계에서는 2026년 상반기 전체 대형마트 매출이 전년 동기보다 7.3% 감소하고 SSM도 6.6% 줄었다.",
+          "text": "SBS의 11월 10일 보도에는 쿠팡이츠 판매가격을 다른 앱보다 높게 설정한 뒤 가격 관련 전화·문자를 받았다는 야식업체 운영자의 직접 인터뷰가 포함됐다.",
           "refs": [
-            "retail-half-2026"
+            "web-51d6c94bc367"
+          ]
+        },
+        {
+          "text": "연합뉴스가 11월 9일 확인한 입장문에서 쿠팡은 경쟁 촉진 노력에 대한 위법 판단이라고 반박했고, 우아한형제들은 위법성이 없다는 소명이 받아들여지지 않았다고 밝혔다. 양사는 의결서 검토 후 법적 절차를 포함한 대응을 정할 계획이다.",
+          "refs": [
+            "web-17f4a3171eaf"
           ]
         }
       ],
-      "market_change": "서로 다른 세 통계가 보여주는 시장은 하나가 아니다. 홈플러스 거래업체의 피해 경험률은 전년 조사 12.9%에서 올해 72.0%로 높아졌고, 인근 경쟁점에서는 매출이 늘었다. 그러나 대형마트 업태 전체는 상반기 7.3% 역성장했다. 홈플러스 점포 이탈이 특정 상권의 고객 이동을 만들었더라도 업태 전체의 소비 증가로 해석할 수는 없다.",
+      "market_change": "공정위가 문제 삼은 앱 간 가격·거래 조건 요구가 과징금과 시정명령의 대상이 됐다. 다만 공개 근거에는 제재 전후 메뉴 가격이나 주문량을 비교한 통계가 없어, 이번 결정이 이미 가격 인하나 소비 이동으로 이어졌다고 평가할 단계는 아니다.",
       "mechanism": [
-        "고객 이동과 납품망 회복 사이에 시차가 있다. 영업을 중단한 점포 인근의 소비자는 같은 장보기 수요를 다른 매장에서 해결할 수 있다. 7월 보도에 나타난 경쟁점 매출 상승은 이러한 국지적 이동과 맞닿아 있다. 다만 해당 수치는 폐점 인근의 일부 매장에서 관찰된 결과이므로, 전국 모든 이마트·롯데마트 점포가 같은 폭으로 성장했다는 의미는 아니다.",
-        "납품업체는 소비자와 다른 문제에 직면한다. 11월 중소기업중앙회 조사에서 피해를 경험한 홈플러스 거래업체가 모두 정산 지연을 답한 점이 중요하다. 구매처가 경쟁 유통사로 바뀌어도 기존 계약과 채권은 이전되지 않기 때문이다. 신규 유통망 확보와 이미 납품한 상품의 대금 회수는 각각 다른 절차를 거친다. 따라서 소비자 판매가 다른 점포로 이전되는 속도와 공급업체의 정상화 속도는 일치하지 않을 수 있다.",
-        "업태 전체의 흐름은 경쟁점 몇 곳의 매출만으로 설명되지 않는다. 산업통상부의 상반기 대형마트 매출 감소율 7.3%는 폐점 인근 점포 매출 증가와 동시에 나타났다. 집계 범위와 기준 시점이 다르므로 두 수치를 직접 빼거나 더할 수는 없다. 다만 경쟁점의 부분적 반사이익을 대형마트 산업 전체의 회복으로 일반화하기 어렵다는 점은 분명하다."
+        "판매자 인터뷰는 가격 차이를 설정한 뒤 연락을 받았다는 구체적 사례를 제시한다. 경쟁 앱보다 유리한 가격을 요구하는 조건 아래에서는 판매자가 한 앱의 가격을 정할 때 다른 앱 가격까지 함께 고려하게 된다. 이는 앱별 가격 결정이 서로 묶일 수 있다는 설명을 뒷받침하지만, 연락의 구체적 내용이나 전체 입점업체에 대한 적용 범위까지 입증하지는 않는다.",
+        "양사는 위법성을 부인하며 경쟁 촉진이라는 반론을 내놨다. 실제로 특정 앱의 가격을 낮추라는 요구와 경쟁 앱에서 더 싸게 팔지 못하게 하는 효과는 구분해야 한다. 전자는 해당 앱의 이용가격을 낮출 수 있지만, 후자의 효과까지 있었다면 경쟁 앱만의 가격 인하 여지는 좁아진다. 제공 자료로는 어느 효과가 더 컸는지, 소비자가격이 얼마나 달라졌는지 계량할 수 없다."
       ],
-      "structural_insight": "이번 변화는 상권의 경쟁과 유통망의 거래 안정성이 별도로 움직일 수 있음을 보여준다. 고객은 근처 다른 매장으로 이동하지만 기존 공급업체에는 정산 지연, 매출 감소, 판로 재편이 동시에 발생했다. 홈플러스에서 빠진 소비가 어디로 갔는지와 홈플러스에 공급하던 기업들이 거래를 어떻게 회복하는지는 서로 다른 질문이다. 산업 전체의 성장 여부도 독립적으로 확인해야 한다.",
+      "structural_insight": "공정위의 제재 사유와 판매자 증언을 함께 보면 쟁점은 개별 메뉴의 비싼 가격보다 앱 사이의 가격 관계에 있다. 따라서 ‘가격 인하 요구이므로 소비자에게 유리하다’는 해석만으로는 부족하다. 반대로 제재 사실만으로 배달음식 가격 상승의 원인이 밝혀졌다고 단정할 수도 없다. 확인된 것은 가격 조건에 대한 규제 판단이며, 전체 가격 효과는 별도 검증이 필요하다.",
       "scenario_up": {
-        "condition": "폐점 인근뿐 아니라 경쟁사 전국 기존점 매출과 실제 구매객 수까지 함께 개선된다면",
-        "interpretation": "국지적 소비 이동을 넘어 경쟁 유통망의 회복으로 해석할 근거가 늘어난다."
+        "condition": "공개 의결서와 추가 판매자 사례에서 경쟁 앱의 가격 인하가 다른 앱의 가격 조정 요구로 이어진 과정이 반복 확인될 경우",
+        "interpretation": "해당 조건이 앱별 가격 차등을 제한했다는 해석이 강화된다."
       },
       "scenario_down": {
-        "condition": "인근 점포의 매출만 오르고 업태 전체 매출 감소와 납품업체의 정산 지연이 지속된다면",
-        "interpretation": "소비가 일부 점포에 집중되는 현상과 거래망 손상은 함께 이어지고 있다는 해석이 더 설득력 있다."
+        "condition": "후속 법적 판단에서 제재 근거가 받아들여지지 않거나, 비교 가능한 거래자료에서 경쟁 앱의 독자적인 가격 인하가 제약 없이 지속된 것으로 확인될 경우",
+        "interpretation": "가격 조건이 앱 간 할인 경쟁을 제한했다는 해석을 수정해야 한다."
       },
-      "what_changes": "앞으로는 폐점 인근과 비인근 점포의 동일점 매출을 구분해서 비교해야 한다. 거래업체 피해 조사는 전년과 표본·질문 구성이 같은지도 확인할 필요가 있다. 특히 식품·수산물처럼 납품 주기가 짧은 상품은 유통망 변화의 영향을 별도 품목 통계로 확인해야 하며, 이 조사만으로 수산물 업체의 피해 규모를 계산할 수는 없다.",
-      "one_sentence": "경쟁 매장 매출이 늘어나는 것과 기존 납품업체가 회복되는 것은 같은 사건이 아니다.",
-      "limitations": "납품업체 조사는 2026년 11월 발표된 설문이고, 경쟁점 매출은 2026년 5월 일부 점포의 실적이며, 업태 매출은 상반기 전체 기준이다. 같은 기간·동일 표본의 비교가 아니며, 수산물 공급업체만 분리한 수치는 없다.",
+      "what_changes": "공개 의결서의 적용 대상·요구 방식·시정 범위와 후속 법적 판단이 우선 확인 대상이다. 가격 효과를 검증하려면 동일 업체·동일 메뉴의 앱별 표시가격에 소비자 부담 배달비와 할인을 구분한 비교가 필요하다.",
+      "one_sentence": "한 앱의 가격을 낮추라는 요구가 다른 앱의 할인 여지까지 좁혔는지가 이번 사건의 소비자 후생을 가르는 기준이다.",
+      "limitations": "공개 소개문과 제공된 검색 근거 메모를 사용했으며 기사 전문과 의결서 전체는 확인하지 않았다. 판매자 인터뷰는 개별 사례이고, 수산물 판매업체에 대한 적용이나 품목별 가격 영향은 확인되지 않았다.",
       "article_ids": [
-        "homeplus-kbiz-nov-2026",
-        "homeplus-rival-july-2026",
-        "retail-half-2026"
+        "web-57362d62fa40",
+        "056b9e411aae1b50",
+        "web-51d6c94bc367",
+        "web-17f4a3171eaf"
       ],
       "feature_ids": [],
       "policy_ids": [],
       "confidence": "중간",
       "channels": [
-        "마트"
+        "온라인"
       ],
-      "impact": "소비 이동과 거래망 피해의 차이",
-      "followup": "업태별 동일점 매출·폐점 주변 상권·납품업체 정산 지연",
-      "status": "공개자료 기반 분석 시연 · 자동 생성 결과 아님"
-    },
-    {
-      "depth": "핵심",
-      "kind": "원물 수급/시세",
-      "time_frame": "2026년 10월·44주차 · 공개자료 시연",
-      "headline": "노르웨이 연어 수출액 사상 최대…가격보다 물량이 성장 이끌어",
-      "thesis": "2026년 10월 노르웨이 연어 수출액은 사상 최고치를 기록했지만, 수출액 증가율보다 물량 증가율이 높았다. 월간 수출액을 가격과 물량으로 분해하면 성장을 주도한 것은 가격 인상이 아니라 더 많은 물량의 판매였다. 같은 시기 공식 주간 통계 역시 전년 대비 물량 증가와 단가 하락을 보여준다.",
-      "lead": "수출액이 늘었다고 연어값까지 오른 것은 아니다. 10월 수출액과 물량을 나눠 살펴보면 물량 증가가 성장을 이끌었다. 44주차 가격 통계도 같은 방향을 보여주지만, 월간 수치와 주간 수치를 하나로 계산하지는 않았다.",
-      "facts": [
-        {
-          "text": "노르웨이 수산물위원회에 따르면 2026년 10월 연어 수출량은 159,810톤으로 전년 동월보다 9% 증가했고, 수출액은 약 130억 NOK로 6% 증가했다.",
-          "refs": [
-            "nsc-public-sample"
-          ]
-        },
-        {
-          "text": "SSB의 2026년 44주차 통계에서 신선·냉장 연어 수출단가는 74.98 NOK/kg으로 전년 동주보다 6.9% 낮았고, 같은 주 수출물량은 28,444톤으로 14.3% 증가했다.",
-          "refs": [
-            "ssb-public-sample",
-            "salmon_export_price"
-          ]
-        }
-      ],
-      "market_change": "2026년 10월 연어 수출액 증가율(+6%)이 수출량 증가율(+9%)보다 낮다는 것은 월간 평균 판매단가가 낮아졌음을 의미한다. 약 1.06을 1.09로 나누면 월간 평균단가 변화율은 약 -2.8%다. 이 계산은 월간 집계의 반올림 수치를 사용한 근삿값이다.",
-      "mechanism": [
-        "첫 번째 근거는 월간 수출액과 물량의 차이다. 수출액만 보면 시장의 가격 경쟁력이 강화됐다는 결론을 내릴 수 있지만, 수출물량 증가가 더 빨라 평균단가는 오히려 하락했다. 수출액 기록이 판매단가 상승의 증거가 아닌 이유다.",
-        "두 번째 근거는 SSB의 주간 통계다. 44주차의 신선·냉장 연어 수출량은 전년 동주 대비 늘고 가격은 하락했다. 월간 통계와 관측 빈도는 달라 완전히 동일한 계산에 합칠 수 없지만, 두 자료는 물량 확대와 가격 약세가 공존한다는 동일한 방향을 독립적으로 지지한다."
-      ],
-      "structural_insight": "노르웨이의 연어 수출 기록은 가격보다 물량이 늘면서 만들어졌다. 공급이 확대되면 판매량이 늘어도 평균단가는 내려갈 수 있다. 따라서 수출액만 보고 연어 가격이 강세라고 해석해서는 안 된다. 수출량과 평균단가를 나눠 보고 주요 수입국의 소비 흐름까지 확인해야 이번 확대가 얼마나 오래 이어질지 판단할 수 있다.",
-      "scenario_up": {
-        "condition": "향후 주요 수출시장에서 소비와 재수출 물량이 동반 확대되고, 공급 증가분을 계속 흡수한다면",
-        "interpretation": "가격을 억지로 끌어올리지 않아도 물량 중심 수출 확대가 유지될 여지가 생긴다."
-      },
-      "scenario_down": {
-        "condition": "수출물량은 계속 증가하는데 주요 시장의 소비·재수출이 둔화되고 단가 하락이 확대된다면",
-        "interpretation": "수출액 기록 뒤에 공급 압력과 가격 경쟁이 심화되는 구조를 더 의심해야 한다."
-      },
-      "what_changes": "다음 분석에서는 월별 전체 연어 수출물량과 평균단가를 분리해 추적하고, 폴란드 등 가공·재수출 거점과 최종 소비국의 수요를 비교해야 한다. 한국 시장과 연결하려면 같은 시점의 관세청 수입단가와 환율을 별도로 확인해야 한다.",
-      "one_sentence": "사상 최대 수출액이라는 성적표는 가격의 호황이 아니라 물량 확대가 만든 기록일 수 있다.",
-      "limitations": "시연용 원고로, 2026년 10월 수산물위원회 월간 발표와 44주차 SSB 통계만 비교한다. 월간과 주간 수치를 직접 합산하지 않았고, 한국 수입단가나 기업별 손익은 분석 대상이 아니다.",
-      "article_ids": [
-        "nsc-public-sample",
-        "ssb-public-sample"
-      ],
-      "feature_ids": [
-        "salmon_export_price"
-      ],
-      "policy_ids": [],
-      "confidence": "중간",
-      "status": "시연 전용 · 2026년 10월 공개 공식자료 기반 · 자동 생성 결과 아님",
-      "channels": [],
-      "impact": "수출물량 주도형 성장 · 가격 약세 동반",
-      "followup": "월간 연어 수출량과 단가, 국가별 수요·재수출 물량"
+      "impact": "앱 간 가격 경쟁 조건에 대한 규제",
+      "followup": "공정위 의결서 공개와 양사 대응, 시정명령 이행 여부를 확인한다.",
+      "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+      "character_count": 1647,
+      "length_tier": "충실"
     }
   ],
-  "deep_status": "샘플 전용 — 자동 AI 생성 아님",
-  "research_sources": [],
-  "report_factual_brief": false,
+  "deep_status": "AI 리서치 1편 · 공개 출처·수치 검증 통과",
+  "research_sources": [
+    {
+      "id": "web-57362d62fa40",
+      "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156788431&pWise=main&pWiseMain=T1_1&pWiseMinistry=ministryNews&repCode=C00001",
+      "source": "m.korea.kr",
+      "title": "배달앱 불공정행위 제재 - 보도자료 | 브리핑룸 | 대한민국 정책브리핑",
+      "summary": "- **공식 결정·금액:** 공정거래위원회는 **10월 29일 의결하고 11월 9일 발표한 자료**에서 우아한형제들에 **3,311억 원**, 쿠팡에 **3,008억 원**의 과징금과 시정명령을 부과하기로 했다고 밝혔다. 두 금액 모두 **잠정액**이며, 대상은 배달의민족·쿠팡이츠 관련 행위다. 이를 쿠팡의 전체 온라인쇼핑 입점업체에 대한 제재로 확대해서는 안 된다. [공정위 원자료](https://m.korea.kr/briefing/pressReleaseView.do?newsId=156788431) ([m.korea.kr](https://m.korea.kr/briefing/pressReleaseView.do?newsId=156788431&pWise=main&pWiseMain=T1_1&pWiseMinistry=ministryNews&repCode=C00001))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "온라인",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-51d6c94bc367",
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838010",
+      "source": "news.sbs.co.kr",
+      "title": "'싸게 팔아라' 압박…'쿠팡·배민' 과징금 6천억",
+      "summary": "- **독립 취재:** SBS의 **11월 10일 현장 보도**에는 쿠팡이츠 판매가격을 다른 앱보다 높게 설정한 뒤 가격 관련 전화·문자를 받았다는 야식업체 운영자의 직접 인터뷰가 포함돼 있다. 이 인터뷰는 공정위 발표와 별개의 취재 근거지만, 해당 경험을 전체 입점업체의 공통 상황으로 일반화할 수는 없다. [SBS 취재 보도](https://news.sbs.co.kr/news/endPage.do?news_id=N1008838010) ([news.sbs.co.kr](https://news.sbs.co.kr/news/endPage.do?news_id=N1008838010))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-17f4a3171eaf",
+      "url": "https://www.yna.co.kr/view/AKR20261109079851030",
+      "source": "yna.co.kr",
+      "title": "쿠팡이츠·배민, 공정위 과징금 부과에 반발…\"법적 대응 검토\"(종합) | 연합뉴스",
+      "summary": "- **사업자 반론:** 연합뉴스가 **11월 9일 확인한 양사 입장문**에서 쿠팡은 경쟁 촉진 노력에 대한 위법 판단이라고 반박했고, 우아한형제들은 위법성이 없다는 소명이 받아들여지지 않았다고 밝혔다. 양사는 의결서 검토 후 법적 절차를 포함한 대응을 정할 계획이라고 밝혔으므로, **공정위 판단과 사업자 반론을 구분**해야 한다. [연합뉴스 반론 보도](https://www.yna.co.kr/view/AKR20261109079851030) ([yna.co.kr](https://www.yna.co.kr/view/AKR20261109079851030))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-12bc3e323347",
+      "url": "https://mods.go.kr/boardDownload.es?bid=5166&list_no=447811&seq=3",
+      "source": "mods.go.kr",
+      "title": "2026년 10월 부산·울산·경남 소비자물가동향 (요약)",
+      "summary": "- **부산:** 10월 수산물 소비자물가는 **전월 대비 0.8% 하락**, **전년 동월 대비 3.9% 상승**했다. 같은 달 농축수산물 전체는 전년 동월 대비 **1.4% 하락**했으므로, 농축수산물 전체 하락을 수산물 가격 하락으로 해석하면 안 된다. [공식 통계 원문, 요약표](https://mods.go.kr/boardDownload.es?bid=5166&list_no=447811&seq=3) ([mods.go.kr](https://mods.go.kr/boardDownload.es?bid=5166&list_no=447811&seq=3))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    }
+  ],
+  "archived_features": [],
   "report_archived": false,
-  "last_report_updated_at": "2026-11-05T10:39:00+09:00",
-  "data_reports": [],
-  "data_ai_status": "샘플 전용 — 자동 AI 생성 아님",
-  "issue_candidates": [],
-  "analysis_status": "2026년 10월 공식 과거 통계로 만든 시연 · 실시간 자료 아님",
-  "sources_ok": 0,
+  "report_factual_brief": false,
+  "last_report_updated_at": "2026-11-10T15:58+09:00",
+  "data_reports": [
+    {
+      "feature_id": "salmon_export_price",
+      "headline": "노르웨이 연어 수출가, 주간 하락에 동기 평균 하회까지",
+      "conclusion": "노르웨이 생연어 수출가는 전주뿐 아니라 전년과 과거 3년 동기 평균보다도 낮다. 다만 한국의 실제 수입원가 하락까지 확인된 것은 아니다.",
+      "market_observation": "SSB의 2026년 44주 수출가는 74.98 NOK/kg으로, 43주 대비 1.39%, 전년 동기 대비 6.91%, 과거 3년 동기 평균 대비 5.55% 낮았다.",
+      "transmission": [
+        "수출 FOB 가격은 산지 거래가격을 확인하는 출발점이다. 이번 관측은 노르웨이 크로네 표시 가격의 하락을 보여주지만, 물량 자료가 없어 공급 증가나 수요 위축을 원인으로 확정할 수 없다.",
+        "한국 도착 원가로 이어지는 경로에는 결제통화 환율과 운임 등이 추가된다. 제공된 원/달러 환율만으로 NOK 표시 수출가를 원화 매입가로 환산하거나 두 지표의 변화를 상쇄 계산할 수는 없다."
+      ],
+      "structural_insight": "핵심은 단순한 전주 하락보다 세 비교 기준을 모두 밑돈다는 점이다. 다만 동기 평균 하회만으로 계절 패턴의 이탈을 확정하지는 못한다.",
+      "alternative": "수출 규격이나 거래 구성 변화가 평균가격에 반영됐을 가능성도 있으나, 이를 구분할 자료는 없다.",
+      "scenario_support": "후속 주차에서도 전년·동기 평균 하회가 이어지면 산지 가격의 상대적 약세 판단이 강화된다.",
+      "scenario_challenge": "후속 가격이 반등해 동기 비교의 하락이 해소되면 약세 지속 해석을 재검토해야 한다.",
+      "investor_meaning": "산지 가격과 국내 도착 원가를 분리해 볼 필요가 있다. 다음에는 공개 수입통계의 노르웨이산 연어 물량·금액과 환율을 비교해야 한다.",
+      "limits": "FOB 수출가와 국내 매입가에는 운임·환율·가공비·규격 및 공표 시점 차이가 있다.",
+      "article_ids": [],
+      "confidence": "중간",
+      "length_tier": "충실",
+      "status": "공식 수치 기반 AI 분석 · 통계와 가설 구분"
+    }
+  ],
+  "data_ai_status": "AI 데이터 해설 1편 · 공식 수치와 비교기간 검증",
+  "analysis_status": "공식 자동 지표 3개 · ECOS·SSB 공개 데이터 · 비교불가 수치 제외",
+  "sources_ok": 4,
   "sources_total": 13,
-  "errors": [],
-  "metric_errors": [],
-  "demo": true,
+  "errors": [
+    "Google 뉴스 검색·온라인: ValueError",
+    "Google 뉴스 검색·코스트코: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
+    "Google 뉴스 검색·B2B/급식: ValueError",
+    "Google 뉴스 검색·매장 운영: ValueError",
+    "Google 뉴스 검색·식품안전/소비심리: ValueError",
+    "Google 뉴스 검색·해외: ValueError",
+    "Google 뉴스 검색·비용/거시: ValueError",
+    "Google 뉴스 검색·시즌/트렌드: ValueError"
+  ],
+  "metric_errors": [
+    "ECOS NOK: 항목 코드 미확인"
+  ],
+  "demo": false,
   "policy_sources": [],
   "deep_links": [
     {
