@@ -35,6 +35,9 @@ jobs:
           OPENAI_REASONING_EFFORT: medium
           SEAFOOD_WEB_RESEARCH: '1'
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+          MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
+          KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
+          KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
         run: python build.py
       - name: Save latest verified report for future days
         run: |
