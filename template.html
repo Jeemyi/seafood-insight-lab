@@ -171,6 +171,18 @@
 .demo-topics-grid small{font-size:10.5px;line-height:1.5;color:#809087}
 @media(max-width:700px){.demo-topics-grid{grid-template-columns:1fr}.demo-topics{padding:14px}}
 
+/* v5.2: publication-style narrative spacing inspired by MARKET research layout. */
+.research-body{max-width:880px;padding:14px 31px 35px}
+.research-body section{padding:24px 0}
+.research-body h4{font-size:17px;letter-spacing:-.035em;margin-bottom:14px}
+.research-body p,.research-body .mechanism li{font-size:14.2px;line-height:2.02;word-break:keep-all}
+.research-body .deep-evidence{display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:18px}
+.research-body .deep-claim{margin:0;font-weight:500;line-height:1.8}
+.research-body .mechanism li{display:block;padding:0 0 1px;margin:0 0 20px;color:#384d45}
+.research-body .mechanism li:last-child{margin-bottom:0}
+.deep-cover .report-lead{line-height:1.86;max-width:850px}
+.deep-thesis{line-height:1.88}
+@media(max-width:650px){.research-body{padding:5px 19px 20px}.research-body section{padding:20px 0}.research-body p,.research-body .mechanism li{font-size:13.6px;line-height:1.94}}
 /* v5: prose-first research and clean comparative statistics */
 .data-research-body .cross-row{padding:10px 0;border-bottom:1px solid #e8eee9}
 .cross-row b{font-size:13px;color:#245d50}
@@ -181,6 +193,7 @@
 .research-body .mechanism li{display:block;margin-bottom:16px}
 .research-body .mechanism li::before{display:none}
 @media(max-width:650px){.insight-section .insight-card .fact-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fx-context{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:12px 16px;background:#f5f7fa;border:1px solid #e2e8e8;border-radius:12px;color:#526271;font-size:12px}.fx-context b{color:#264d44}.fx-context small{width:100%;font-size:10px;color:#879397}
 </style>
 </head>
 <body>
@@ -208,7 +221,7 @@
     <div class="insight-status" id="deepStatus"></div><div class="deep-deck" id="deepDeck" aria-live="polite"></div>
   </section>
   <section class="insight-section" aria-labelledby="insight-heading">
-   <div class="insight-section-top"><div><div class="insight-overline">02 / 가격·수급 분석</div><h2 id="insight-heading">품목별 가격·수급 분석</h2><p>생산·수출입·도소매가격을 구분하고, 같은 기준의 물량·금액·단가를 비교합니다.</p></div><span class="insight-count" id="insightCount">0건</span></div>
+   <div class="insight-section-top"><div><div class="insight-overline">02 / 수산물 공식 데이터</div><h2 id="insight-heading">품목별 수급·가격 자료</h2><p>원물 생산과 수출입 물량, 도·소매가격을 비교합니다. 환율은 품목 분석의 참고자료로만 사용합니다.</p></div><span class="insight-count" id="insightCount">0건</span></div>
    <div class="insight-status" id="analysisStatus"></div>
    <div class="insight-deck" id="insightDeck" aria-live="polite"></div>
   </section>
@@ -304,18 +317,18 @@
   return `<article class="deep-report ${r.depth==='핵심'?'primary':''}">
     <div class="deep-cover"><div class="deep-top">${String(idx+1).padStart(2,'0')} · ${esc(r.kind)}</div>
     <h3>${esc(r.headline)}</h3><div class="impact-strip"><span class="effect-tag">분야 · ${esc(r.kind)}</span><span class="effect-tag">${esc(r.impact||'확인된 시장 변화')}</span></div><div class="deep-thesis"><span class="deep-section-label">핵심 내용</span>${esc(r.thesis)}</div>
-    <p class="report-lead">${esc(r.lead)}</p><p class="report-lead"><b>후속 지표:</b> ${esc(r.followup||'동일 품목·동일 기간의 공개 통계 확인')}</p><p class="deep-case-caption">${esc(r.time_frame)} · ${esc(r.status||'자료 발췌 기반 AI 해석')}</p></div>
+    <p class="report-lead">${esc(r.lead)}</p><p class="deep-case-caption">${esc(r.time_frame)} · ${esc(r.status||'자료 발췌 기반 AI 해석')}</p></div>
     <details class="report-expand"><summary>자세히 읽기</summary>
       <div class="research-body">
-        <section><h4>01 · 확인된 변화</h4><div class="deep-evidence">${facts}</div><p>${esc(r.market_change)}</p></section>
-        <section><h4>02 · 변화의 배경</h4><ol class="mechanism">${mechanisms}</ol></section>
-        <section><h4>03 · 이번 변화의 의미</h4><div class="deep-memo"><p>${esc(r.structural_insight)}</p></div></section>
-        <section><h4>04 · 앞으로 주목할 변수</h4><div class="scenario-grid">
-          <div class="scenario"><b>이런 조건이 나타난다면</b><p>${esc(r.scenario_up.condition)}</p><b>해석</b><p>${esc(r.scenario_up.interpretation)}</p></div>
-          <div class="scenario"><b>반대로 이런 조건이 나타난다면</b><p>${esc(r.scenario_down.condition)}</p><b>해석</b><p>${esc(r.scenario_down.interpretation)}</p></div>
+        <section><h4>01 · 무엇이 달라졌나</h4><div class="deep-evidence">${facts}</div><p>${esc(r.market_change)}</p></section>
+        <section><h4>02 · 변화의 배경과 시장의 흐름</h4><ol class="mechanism">${mechanisms}</ol></section>
+        <section><h4>03 · 자료를 종합하면</h4><div class="deep-memo"><p>${esc(r.structural_insight)}</p></div></section>
+        <section><h4>04 · 앞으로의 전망</h4><div class="scenario-grid">
+          <div class="scenario"><b>현재 해석을 뒷받침할 변화</b><p>${esc(r.scenario_up.condition)}</p><b>해석</b><p>${esc(r.scenario_up.interpretation)}</p></div>
+          <div class="scenario"><b>다른 방향을 시사할 변화</b><p>${esc(r.scenario_down.condition)}</p><b>해석</b><p>${esc(r.scenario_down.interpretation)}</p></div>
         </div></section>
-        <section><h4>05 · 추가로 확인할 내용</h4><p>${esc(r.what_changes)}</p></section>
-        <section><h4>출처와 유의사항</h4><div class="source-links">${articlesList}${policiesList}${metricsList}</div><p class="limits">${esc(r.limitations)}</p></section>
+        <section><h4>05 · 전망의 근거가 되는 지표</h4><p>${esc(r.what_changes)}</p></section>
+        <section><h4>자료 출처와 해석 범위</h4><div class="source-links">${articlesList}${policiesList}${metricsList}</div><p class="limits">${esc(r.limitations)}</p></section>
       </div>
     </details>
   </article>`;
@@ -328,23 +341,20 @@
   const primary=(ins.data_links||[]).map(e=>urlSafe(e.url)?`<a class="evidence-link" href="${esc(urlSafe(e.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(e.label)} · 공식 원자료</a>`:'').join('');
   const nums=(ins.facts||[]).map(f=>`<div class="fact-tile"><span class="fact-name">${esc(f.label)}</span><strong class="fact-value">${esc(f.value)}</strong><span class="fact-detail">${esc(f.detail)}</span></div>`).join('');
   const title=r?r.headline:ins.title;
-  const ai=r?`<div class="data-report-cover"><div class="mini-label">${r.status&&(r.status.includes('AI 심층')||r.status.includes('AI 분석'))?'AI 분석':'자료 해설'}</div><p>${esc(r.conclusion)}</p></div>
-   <details class="data-expand"><summary>자세히 읽기</summary><div class="data-research-body">
-   <section><h4>관측된 변화</h4><p>${esc(r.market_observation)}</p></section>
-   <section><h4>물량과 가격의 관계</h4>${r.transmission.map(t=>`<p>${esc(t)}</p>`).join('')}</section>
-   <section><h4>이 숫자가 뜻하는 것</h4><p>${esc(r.structural_insight)}</p></section>
-   <section><h4>확인할 점</h4><p>${esc(r.alternative)}</p></section>
-   <section><h4>다음 발표에서 볼 변화</h4><div class="data-scenarios"><div><b>강화할 관측</b><p>${esc(r.scenario_support)}</p></div><div><b>반대되는 관측</b><p>${esc(r.scenario_challenge)}</p></div></div></section>
-   <section><h4>이어서 비교할 자료</h4><p>${esc(r.investor_meaning)}</p></section>
-   <section><h4>비교 기준</h4><p class="limits">${esc(r.limits)}</p></section>
-   </div></details>`:`<p class="no-data-ai">수치 해설은 아직 준비되지 않았습니다. 위 값은 공식 통계로 계산한 결과입니다.</p>`;
+  const ai=r?`<div class="data-report-cover"><div class="mini-label">시장 분석 요약</div><p>${esc(r.conclusion)}</p></div>
+    <details class="data-expand"><summary>분석과 근거 읽기</summary><div class="data-research-body">
+    <section><h4>관측된 변화와 배경</h4><p>${esc(r.market_observation)}</p>${(r.transmission||[]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</section>
+    <section><h4>함께 살펴본 자료</h4><p>${esc(r.structural_insight)}</p><p>${esc(r.alternative)}</p></section>
+    <section><h4>시장 전망</h4><p>${esc(r.scenario_support)}</p><p>${esc(r.scenario_challenge)}</p><p>${esc(r.investor_meaning)}</p></section>
+    <section><h4>자료의 범위</h4><p class="limits">${esc(r.limits)}</p></section>
+    </div></details>`:'';
   const cross=(ins.related_observations||[]).map(x=>`<div class="cross-row"><b>${esc(x.name)}</b><p>${esc(x.observed)}</p><small>${esc(x.period_end)} · 기준기간과 규격이 다른 자료는 직접 합산하지 않습니다.</small></div>`).join('');
-  return `<article class="insight-card data-story-card"><div class="insight-main"><div class="insight-brow"><span class="insight-tag">${String(idx+1).padStart(2,'0')} · ${esc(ins.name)}</span><span class="insight-level">${r?(r.status&&(r.status.includes('AI 심층')||r.status.includes('AI 분석'))?'AI 분석':'통계 해설'):'공식 통계'} · ${esc(ins.period_end)}</span></div>
+  return `<article class="insight-card data-story-card"><div class="insight-main"><div class="insight-brow"><span class="insight-tag">${String(idx+1).padStart(2,'0')} · ${esc(ins.name)}</span><span class="insight-level">${r?'비교 분석':'공식 통계'} · ${esc(ins.period_end)}</span></div>
     <h3>${esc(title)}</h3><div class="impact-strip"><span class="effect-tag">분야 · ${esc(ins.category||ins.name)}</span><span class="effect-tag">${esc(ins.impact||'공식 시계열 관측')}</span></div><div class="fact-row">${nums}</div>
     <div class="insight-highlight"><span class="mini-label">공식 통계</span><p class="evidence-statement">${esc(ins.observed)}</p></div>${ai}
     ${cross?`<details class="data-expand"><summary>같은 품목의 다른 통계</summary><div class="data-research-body">${cross}</div></details>`:''}
     <p class="feature-period">비교 구간: ${esc(ins.period_start)} ~ ${esc(ins.period_end)} · 해당 통계의 집계·관측 시점 기준</p>
-   </div><div class="insight-links"><div class="insight-link-heading">공식 원자료 · 관련 보도</div>${primary}<div class="insight-related">${related||'<span>연결된 관련 뉴스는 없습니다. 공식 통계의 정량적 변화만을 검토했습니다.</span>'}</div><div class="source-note">${esc(ins.limitations||'통계의 단위·시점·규격을 확인하세요. 공개된 가격은 개별 거래가격과 다를 수 있습니다.')}</div></div></article>`;
+   </div><div class="insight-links"><div class="insight-link-heading">공식 원자료 · 관련 보도</div>${primary}<div class="insight-related">${related}</div><div class="source-note">${esc(ins.limitations||'통계의 단위·시점·규격을 확인하세요. 공개된 가격은 개별 거래가격과 다를 수 있습니다.')}</div></div></article>`;
  }
  function update(){
   const reports=data.deep_reports||[];
@@ -354,10 +364,14 @@
   $('#deepCount').textContent=`${reports.length}편${data.report_archived?' · 지난 분석':''}`;
   $('#deepStatus').textContent=data.demo?'공개된 과거 자료로 만든 화면 시연 · 실시간 자동 생성 아님':data.report_archived?`마지막 확인 ${String(data.last_report_updated_at||'').slice(0,10)} · 새 분석이 없을 때 이전 글을 유지합니다.`:(data.report_factual_brief?'오늘은 확인된 기사와 통계만 정리했습니다. 심층 분석은 아닙니다.':'최신 자료와 출처를 바탕으로 작성한 분석');
   $('#deepDeck').innerHTML=reports.map((r,i)=>deepCard(r,i)).join('');
-  const insights=data.features||[];
-  $('#insightCount').textContent=`${(data.data_reports||[]).length}편 해설 · ${insights.length}개 공식 지표`;
-  $('#analysisStatus').textContent='공식 자료 기준 · 통계 해설과 AI 심층 분석을 구분해 표시합니다.';
-  $('#insightDeck').innerHTML=insights.slice(0,14).map(insightCard).join('')||'<div class="insight-blank">공식 통계가 아직 연결되지 않았습니다. 수산물 수출입·도소매가격 API를 연결하면 이곳에 표시됩니다.</div>';
+  const allIndicators=data.features||[];
+  const insights=allIndicators.filter(f=>!String(f.id||'').startsWith('fx_') && f.role!=='context');
+  const rates=allIndicators.filter(f=>String(f.id||'').startsWith('fx_') || f.role==='context');
+  const analysisNum=(data.data_reports||[]).filter(r=>insights.some(f=>f.id===r.feature_id)).length;
+  $('#insightCount').textContent=`수산물 지표 ${insights.length}건 · 비교 분석 ${analysisNum}편`;
+  $('#analysisStatus').textContent='수산물 생산·수출입·가격을 중심으로 정리했습니다. 단일 통계는 관측값만 표시합니다.';
+  const rateNote=insights.length&&rates.length?`<div class="fx-context"><b>시장 참고 · 환율</b><span>${rates.map(f=>`${esc(f.name)} ${esc((f.facts||[])[0]?.value||'')}`).join(' · ')}</span><small>환율은 개별 어종 수입·수출 분석에 필요한 경우에만 활용합니다.</small></div>`:'';
+  $('#insightDeck').innerHTML=insights.slice(0,14).map(insightCard).join('')+(rateNote)||'<div class="insight-blank">연결된 수산물 생산·수출입·가격 자료가 아직 없습니다. 환율만으로 수산시장 분석을 작성하지 않습니다.</div>';
   // A compact evidence-led daily brief, not a promotional hero or a decorative article counter.
   const topReport=reports[0];
   const leadArticle=articles[0];
@@ -366,12 +380,12 @@
   $('#briefLead').textContent=topReport?((data.report_archived?'이전에 작성한 분석입니다. '+String(data.last_report_updated_at||'').slice(0,10)+' 기준. ':'')+topReport.thesis):
     leadArticle?'검증된 종합 리포트가 아직 없습니다. 아래에 수집된 주요 기사와 공식 통계만 표시합니다.':
     '공개 기사와 공식 통계를 확인 중입니다. 자료가 충분하지 않으면 결론을 만들어내지 않습니다.';
-  const datum=(data.features||[])[0];
+  const datum=insights[0];
   const fact1=topReport&&topReport.facts&&topReport.facts[0]?topReport.facts[0].text:'';
   const leadFact=fact1||((datum&&datum.observed)||'');
   const secondary=leadArticle?'주요 기사: '+leadArticle.title:'아직 확인된 주요 기사가 없습니다.';
   $('#briefFacts').innerHTML=`<p class="brief-evidence">${esc(leadFact||secondary)}</p>${leadFact&&leadArticle?`<p class="brief-news">${esc(secondary)}</p>`:''}`;
-  $('#briefCounts').textContent=`시장 분석 ${reports.length}편 · 공식 지표 ${(data.features||[]).length}개 · 기사 ${articles.length}건`;
+  $('#briefCounts').textContent=`시장 분석 ${reports.length}편 · 수산물 지표 ${insights.length}건 · 기사 ${articles.length}건`;
   $('#briefActions').innerHTML=topReport?'<a href="#deep-heading">분석과 근거 보기 →</a><a href="#allNews">전체 기사 확인</a>':
     '<a href="#featured-heading">주요 기사 보기 →</a><a href="#insight-heading">공식 지표 확인</a>';
   $('#headerDate').textContent=fmtDate(data.generated_at);

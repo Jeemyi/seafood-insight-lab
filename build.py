@@ -529,6 +529,16 @@ def collect():
                 ok+=1
                 all_articles.extend(feed_to_articles(src,entries,now))
     articles=dedup(all_articles)
+    # Keep macro-market commentary only when it actually mentions seafood or
+    # food distribution; a stock-market/FX table is not a seafood headline.
+    def market_news(a):
+        title=(a.get('title') or '').lower()
+        if a.get('category')=='비용/거시':
+            return any(k in title for k in ('수산','수입수산','연어','오징어','광어','어획','어업','냉동','냉장','물류','해운','식품','식자재','양식'))
+        if a.get('category')=='온라인' and any(k in title for k in ('배달의민족','배민','쿠팡이츠')):
+            return any(k in title for k in ('수산','신선','식품','식자재','수산물'))
+        return True
+    articles=[a for a in articles if market_news(a)]
     features,metric_errors=make_features(now)
     connect_evidence(features,articles)
     previous=load_previous_report()
@@ -537,17 +547,10 @@ def collect():
     issues=issues_from_articles(articles)
     search_sources,research_status=research_public_sources(articles,features,now,focus_topics)
     print('SEAFOOD research:',research_status,'topics:',[(t['theme'],t['score']) for t in focus_topics[:4]])
-    reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics)
-    data_reports,data_status=analyze_data(features,articles+search_sources,reports,now)
-    # Every numerical dataset deserves a real explanation. Machine-created
-    # calculations are visibly distinguished from researched AI essays.
-    reported={r.get('feature_id') for r in data_reports}
-    for f in features[:14]:
-        if f['id'] in reported:continue
-        explanation=deterministic_data_report(f)
-        if explanation:
-            data_reports.append(explanation)
-            reported.add(f['id'])
+    reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
+    data_reports,data_status=analyze_data([f for f in features if not f.get("id","").startswith("fx_")],articles+search_sources,reports,now)
+    # Single-source official observations stay concise source-linked cards.
+    # No scripted 7-section pseudo-analysis when research lacks independent evidence.
     last_report_updated_at=now.isoformat(timespec='minutes') if reports else None
     archive=False
     factual_brief=False
