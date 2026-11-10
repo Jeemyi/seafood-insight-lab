@@ -51,6 +51,8 @@ PLAN_PROMPT='''너는 한국의 수산업·식품유통 전문지 데스크다. 
 - 주제를 나열하지 말고, 독자가 몰랐을 핵심 발견을 '관측된 차이 → 그 차이를 설명할 수 있는 경로 → 다른 원인 → 시장 전망을 가를 후속 지표'로 설계한다.
 - evidence_ids는 입력에 포함된 공개 기사 또는 공식 지표 ID만 사용한다. 각 주제는 기본적으로 독립적인 원자료 2종 이상에 근거해야 한다. 반복 보도는 여러 출처로 세지 않는다.
 - 같은 현상과 다른 기준 기간이 뒤섞인 경우 그 차이를 숨기지 말고 분석의 대상·한계로 기록한다.
+- 서로 다른 사업자 실적과 전체시장 합계가 같은 방향으로 움직였다는 이유만으로 '시장 전체의 성장', '산업구조 변화'라고 쓰지 않는다. 제품/서비스, 거래 단계, 측정지표가 연동되는 직접적인 자료가 있어야 한다.
+- 예: 전체 온라인쇼핑 거래액, 온라인 식료품 기업 매출, 식자재 업체 취급고를 근거 없이 같은 성장으로 묶지 않는다.
 - 환율·금리 같은 거시 지표 자체를 주제로 만들지 않는다. 어종·가공 형태·수입산/국산·유통망·소비·규제가 중심이다.
 - 이론적으로 가능한 원인 목록보다 실제 확보한 근거가 뒷받침하는 원인과 대안을 우선한다.
 - 가격과 물량을 함께 읽고, 산지→수입→유통→소비의 서로 다른 시장 단계를 무리하게 동일시하지 않는다.
@@ -75,6 +77,8 @@ MAIN_PROMPT='''너는 한국어 산업·경제 전문지의 취재기자 겸 분
 - 확보된 근거로 설명할 수 있는 가장 중요한 주제 1~3편을 작성한다. 적어도 한 편은 **실제 신문 기사처럼 읽히는 완결된 심층 원고**로 작성한다. 단순 요약, 동어반복으로 채우지 않는다. 연어·환율을 우대하지 않는다.
 - 기사 후보는 수급·어종·유통사·온라인·식품안전·해외 분야에 걸쳐 제공된다. **분석할 주제는 각 분야의 새로운 사건·독립적인 근거·시장 영향력을 비교해 선정**한다. 특정 수산물을 우대하지 않는다. 같은 품목을 반복할 만큼 새 근거가 없다면 다른 분야를 우선 검토한다. 다만 분야를 골고루 채우기 위해 근거가 없는 분석을 만들지 않는다.
 - 같은 내용의 두 보도가 반복되면 리포트 2개로 나누지 않는다. 서로 다른 현상을 설명하는 경우에만 별도 리포트로 만든다.
+- 온라인쇼핑 전체 거래액 + 식료품 플랫폼 기업 매출 + 식자재 기업 취급고처럼 **관측 대상과 거래 단계가 다른 수치**를 나열해서 '유통 외형 확대'라는 느슨한 공통점으로 묶지 말 것. 수산물 또는 특정 품목의 동일 수급·거래현상을 직접 비교할 수 있어야 한다.
+- 근거가 불완전하면 '알 수 없다'를 문단마다 반복하기보다 **검증된 한 가지 변화**를 깊이 설명하는 주제로 바꾸라.
 - 대표적인 좋은 분석 흐름: 수출액 증가와 수출단가 하락처럼 겉보기에는 엇갈리는 현상을 발견 → 공식 수치와 별도 기사/통계로 물량·가격 요인을 분해 → 국가·품목·계절·채널 간 차이로 원인을 좁힘 → 시장 전체에 관해 확인된 사실을 결론으로 정리 → 반대 해석을 따져봄 → 향후 수정 조건 제시.
 - 단일 기사 요약이나 'A가 오르면 B가 오를 수 있다'는 교과서적 설명은 게시하지 말 것. headline과 thesis는 여러 근거가 결합되어야만 도출되는 **구체적인 결론**이어야 한다.
 - 기사·통계·검증된 외부 검색결과를 함께 제공한다. 가능하면 **서로 독립적인 출처 2개 이상**을 사용하되, 같은 보도자료의 재인용은 별도 근거로 과대평가하지 말 것. 출처 간 원인이 맞지 않으면 그 차이를 분석하고, 통계가 실제로 비교 가능하지 않으면 연결하지 말 것.
@@ -475,6 +479,20 @@ def _validate_main(payload,ctx):
                 reasons.append('근거에 없는 숫자 사용');continue
             if _duplicate_passages(r):
                 reasons.append('같은 문단의 내용 반복');continue
+            # A stitched general online-market/foodservice article is not a
+            # cross-market seafood insight. The cited evidence must share a
+            # measured product/channel or an explicitly linked mechanism.
+            if r['kind']=='온라인':
+                evidence_text=[str(evidence_by_id[i].get('title',''))+' '+str(evidence_by_id[i].get('summary','')) for i in cited if i in evidence_by_id]
+                food_terms=('음식료품','농축수산물','수산물 거래','신선식품 거래','수산식품','수산물 판매','생선','해산물','회초밥','식품 온라인쇼핑')
+                has_product_data=any(any(t in x for t in food_terms) for x in evidence_text)
+                if not has_product_data:
+                    reasons.append('온라인 전체 거래와 개별 업체의 실적만 연결됨 · 수산/식품 품목 근거 없음');continue
+                if any('CJ프레시웨이' in x and not any(t in x for t in ('온라인','이커머스','식품 온라인','쇼핑몰')) for x in evidence_text):
+                    reasons.append('온라인 유통과 비온라인 식자재 취급고를 동일시장으로 연결함');continue
+            weak_phrases=('판단할 수 없다','확인되지 않았다','입증하지 않는다','확인할 수 없다','제공되지 않았다','판단하기 어렵다','단정할 수 없다')
+            if sum(prose.count(p) for p in weak_phrases)>=7:
+                reasons.append('긍정적인 분석보다 불확실성·면책 설명이 지나치게 많음');continue
             if not set(r['article_ids']).issubset(allowed_a) or not set(r['feature_ids']).issubset(allowed_f):
                 reasons.append('존재하지 않는 출처 ID');continue
             # Normalize labels; metadata differences must never reject a sound report.

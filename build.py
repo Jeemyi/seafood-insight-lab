@@ -68,7 +68,15 @@ def google_feed(q):
 
 SOURCES=[(f'Google 뉴스 검색·{cat}',google_feed(q),'search',cat) for cat,q,_ in SEARCH_QUERIES] + [
     ('한국경제·경제','https://www.hankyung.com/feed/economy','news',None),
+    ('한국경제·국제','https://www.hankyung.com/feed/international','news',None),
+    ('한국경제·증권','https://www.hankyung.com/feed/finance','news',None),
     ('매일경제·경제','https://www.mk.co.kr/rss/30100041/','news',None),
+    ('매일경제·국제','https://www.mk.co.kr/rss/30300018/','news',None),
+    ('매일경제·증권','https://www.mk.co.kr/rss/50200011/','news',None),
+    ('뉴시스·산업','https://www.newsis.com/RSS/industry.xml','news',None),
+    ('뉴시스·경제','https://www.newsis.com/RSS/economy.xml','news',None),
+    ('뉴시스·국제','https://www.newsis.com/RSS/international.xml','news',None),
+    ('국가데이터처·보도자료','https://mods.go.kr/menu.es?mid=a10301010000&act=rss','news',None),
 ]
 
 DEEP_LINKS=[
@@ -221,19 +229,38 @@ def feed_to_articles(source, entries, now):
         out.append({'id':hashlib.sha1(url.encode()).hexdigest()[:16],
                     'title':title[:220], 'url':url, 'source':publisher,'published':published.isoformat(timespec='minutes'),
                     'timestamp':int(published.timestamp()),'category':category,'tags':tags,
-                    'score':score,'summary':summary[:330],'summary_type':'공개 RSS 소개문' if summary else '제목만 확인',
+                    'score':score,'summary':summary[:330],'summary_type':'공개 RSS 소개문' if summary else '',
                     'question':CATS[category]['question'],'official':False,
                     'channels':channels, 'impact':impact,'followup':follow})
     return out
 
 
+def _event_duplicate(a,b):
+    """Consolidate multiple headlines about the same company/quarter/metric.
+
+    This is a display filter, not a claim that two publications are
+    independent evidence. Keep separate releases when entities or quantities
+    differ, even if they concern the same company.
+    """
+    left=re.sub(r'[^0-9a-z가-힣]','',a['title'].lower())
+    right=re.sub(r'[^0-9a-z가-힣]','',b['title'].lower())
+    if SequenceMatcher(None,left,right).ratio()>=.80:return True
+    numbers_a=set(re.findall(r'\d{3,}',a['title']))
+    numbers_b=set(re.findall(r'\d{3,}',b['title']))
+    # A distinctive three-digit figure combined with the same company
+    # is a strong indicator of repeated coverage of one results release.
+    entities=('컬리','코스트코','홈플러스','롯데마트','이마트','쿠팡','CJ프레시웨이','노르웨이')
+    if numbers_a & numbers_b and any(ent.lower() in a['title'].lower() and ent.lower() in b['title'].lower() for ent in entities):
+        return True
+    return False
+
+
 def dedup(rows,maximum=90):
-    result=[];titles=[];urls=set()
-    for item in sorted(rows,key=lambda x:(x['score'],x['timestamp']),reverse=True):
-        key=re.sub(r'[^0-9a-z가-힣]','',item['title'].lower())
-        if item['url'] in urls or any(SequenceMatcher(None,key,t).ratio()>.89 for t in titles):continue
-        urls.add(item['url']);titles.append(key);result.append(item)
-    # Guarantee diversity of category among the highest-priority stories.
+    result=[];urls=set()
+    for item in sorted(rows,key=lambda x:(x.get('score',0),x.get('timestamp',0)),reverse=True):
+        if item['url'] in urls or any(_event_duplicate(item,other) for other in result):
+            continue
+        urls.add(item['url']);result.append(item)
     buckets={c:[] for c in CATS}
     for item in result:buckets[item['category']].append(item)
     chosen=[]
@@ -241,9 +268,29 @@ def dedup(rows,maximum=90):
         round_entries=[]
         for c in CATS:
             if buckets[c]:round_entries.append(buckets[c].pop(0))
-        round_entries.sort(key=lambda x:(x['score'],x['timestamp']),reverse=True)
+        round_entries.sort(key=lambda x:(x.get('score',0),x.get('timestamp',0)),reverse=True)
         chosen.extend(round_entries[:maximum-len(chosen)])
     return chosen
+
+
+def keep_recent_archive(current,previous,now,max_age_days=14):
+    """Retain genuinely recent verified RSS records on feed outage days.
+
+    Their original dates, source URLs and descriptions are preserved;
+    archive records are not relabeled as today's news.
+    """
+    previous_articles=previous.get('articles',[]) if previous else []
+    retain=[]
+    for a in previous_articles:
+        try:
+            pub=datetime.fromisoformat(a['published'].replace('Z','+00:00'))
+            if pub.tzinfo is None:continue
+            if not now-timedelta(days=max_age_days)<=pub<=now+timedelta(hours=2):continue
+            if not valid_url(a.get('url','')) or a.get('category') not in CATS:continue
+            retain.append(a)
+        except (ValueError,TypeError,KeyError,AttributeError):
+            pass
+    return dedup(list(current)+retain)
 
 
 def issues_from_articles(articles):
@@ -467,7 +514,7 @@ def load_previous_report():
     try:
         data=json.loads((SITE/'data.json').read_text(encoding='utf-8'))
         reports=data.get('deep_reports',[])
-        if not isinstance(reports,list) or not reports:return None
+        if not isinstance(reports,list):return None
         # Archiving a report does not make it fresh again.
         date=data.get('last_report_updated_at') or data.get('generated_at')
         if not isinstance(date,str) or len(date)<10 or data.get('demo'):return None
@@ -528,7 +575,9 @@ def collect():
             else:
                 ok+=1
                 all_articles.extend(feed_to_articles(src,entries,now))
-    articles=dedup(all_articles)
+    previous=load_previous_report()
+    articles=keep_recent_archive(dedup(all_articles),previous,now)
+    print(f'SEAFOOD feeds: {ok}/{len(SOURCES)} succeeded, {len(articles)} current/archive stories',flush=True)
     # Keep macro-market commentary only when it actually mentions seafood or
     # food distribution; a stock-market/FX table is not a seafood headline.
     def market_news(a):
@@ -540,14 +589,17 @@ def collect():
         return True
     articles=[a for a in articles if market_news(a)]
     features,metric_errors=make_features(now)
+    print(f'SEAFOOD official series: {len(features)} items; diagnostics: {len(metric_errors)}',flush=True)
     connect_evidence(features,articles)
-    previous=load_previous_report()
     previous_headlines=[r.get('headline','') for r in (previous or {}).get('reports',[])]
     focus_topics=select_market_topics(articles,features,previous_headlines)
     issues=issues_from_articles(articles)
+    print('SEAFOOD research: searching for independently cited materials',flush=True)
     search_sources,research_status=research_public_sources(articles,features,now,focus_topics)
     print('SEAFOOD research:',research_status,'topics:',[(t['theme'],t['score']) for t in focus_topics[:4]])
+    print('SEAFOOD report: composing and checking evidence-led articles',flush=True)
     reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
+    print(f'SEAFOOD report: {len(reports)} new deep reports; checking multi-source data analysis',flush=True)
     data_reports,data_status=analyze_data([f for f in features if not f.get("id","").startswith("fx_")],articles+search_sources,reports,now)
     # Single-source official observations stay concise source-linked cards.
     # No scripted 7-section pseudo-analysis when research lacks independent evidence.
@@ -556,7 +608,7 @@ def collect():
     factual_brief=False
     if not reports:
         old=previous
-        if old:
+        if old and old['reports']:
             reports=old['reports']
             last_report_updated_at=old['date']
             archive=True
@@ -573,16 +625,10 @@ def collect():
                 last_report_updated_at=now.isoformat(timespec='minutes')
                 deep_status='공개 자료를 바탕으로 정리한 주요 동향 · 심층 분석과 구분'
         if not reports:
-            # Clearly marked historical editorial, never presented as today's news.
-            sample=demo_data()
-            reports=sample['deep_reports']
-            for report in reports:
-                report['status']='지난 분석 · 공개된 2026년 10월 통계 · 신규 분석 아님'
-            last_report_updated_at='2026-11-05T10:39:00+09:00'
-            archive=True
-            deep_status='지난 시장 분석 · 2026년 10~11월 자료' 
-            search_sources=search_sources+sample['articles']
-    if not reports:raise RuntimeError('An on-screen research article is always required')
+            # Do not inject example articles into production. A site may have
+            # current verified data without a fabricated "fresh" analysis.
+            deep_status='이번 실행에서 새 심층 분석을 검증하지 못했습니다.'
+    print(f'SEAFOOD publish: {len(reports)} report(s), {len(data_reports)} data analyses, archive={archive}',flush=True)
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':articles,'features':features,
             'issue_candidates':[],'focus_topics':focus_topics,'deep_reports':reports,'deep_status':deep_status,
             'research_sources':search_sources,'archived_features':old['features'] if archive and 'old' in locals() and old else [],
