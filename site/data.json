@@ -1,6 +1,456 @@
 {
-  "generated_at": "2026-11-10T16:59+09:00",
+  "generated_at": "2026-11-10T17:41+09:00",
   "articles": [
+    {
+      "id": "ffd06a42b337a501",
+      "title": "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40eW9wNnlEUU5xUFk5bGVzUktVWEZuWnk5eUllNGdneTI3a0d2dFpWdjRad0drZ3N2TmREUFdQRm80b2FRV1ZBcERfT2pqNWFpQjVJRkNfVDYzREJPaWpmWUl2anp1akx3ZWM2QzFB0gFuQVVfeXFMTjR5b3A2eURRTnFQWTlsZXNSS1VYRm5aeTl5SWU0Z2d5MjdrR3Z0WlZ2NFp3R2tnc3ZOZERQV1BGbzRvYVFXVkFwRF9Pamo1YWlCNUlGQ19UNjNEQk9pamZZSXZqenVqTHdlYzZDMUE?oc=5",
+      "source": "뉴스드림",
+      "published": "2026-11-05T08:27+09:00",
+      "timestamp": 1793834873,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "가격 변화 보도 · 비교 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 11
+    },
+    {
+      "id": "96b21addaff4f28c",
+      "title": "컬리, 3분기 매출 7779억원 '역대 최대'",
+      "url": "https://www.hankyung.com/article/2026111082661",
+      "source": "한국경제·경제",
+      "published": "2026-11-10T17:26+09:00",
+      "timestamp": 1794299162,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.5,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 11
+    },
+    {
+      "id": "1bb6c634a7de9b85",
+      "title": "컬리, 네이버 협력 통했다…3분기 매출 7779억원 '역대 최대'",
+      "url": "https://www.hankyung.com/article/202611107705g",
+      "source": "한국경제·경제",
+      "published": "2026-11-10T14:51+09:00",
+      "timestamp": 1794289868,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.5,
+      "summary": "",
+      "summary_type": "제목만 확인",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 11
+    }
+  ],
+  "features": [
+    {
+      "id": "salmon_price_volume",
+      "name": "노르웨이 연어 가격·수출물량",
+      "title": "노르웨이 연어 수출가 -6.9% · 물량 +14.3%",
+      "subtitle": "노르웨이 통계청 SSB 신선·냉장 연어",
+      "period_start": "2025년 44주",
+      "period_end": "2026년 44주",
+      "facts": [
+        {
+          "label": "수출가격",
+          "value": "74.98 NOK/kg",
+          "detail": "2026년 44주"
+        },
+        {
+          "label": "전년 동기 수출가",
+          "value": "-6.9%",
+          "detail": "2025년 44주"
+        },
+        {
+          "label": "수출물량",
+          "value": "28,444톤",
+          "detail": "2026년 44주"
+        },
+        {
+          "label": "전년 동기 수출물량",
+          "value": "+14.3%",
+          "detail": "2025년 44주"
+        }
+      ],
+      "observed": "노르웨이 통계청 SSB 2026년 44주: 신선·냉장 연어 수출가격 74.98 NOK/kg (전년 2025년 44주 대비 -6.9%), 수출물량 28,444톤 (전년 동주 대비 +14.3%). 동일 주차·동일 제품 분류 비교.",
+      "data_links": [
+        {
+          "url": "https://www.ssb.no/en/statbank/table/03024/",
+          "label": "노르웨이 통계청 신선·냉장 연어 주간 수출 가격·물량"
+        }
+      ],
+      "article_ids": [],
+      "category": "원물 수급/시세",
+      "channels": [],
+      "impact": "가격 -6.9% · 물량 +14.3%",
+      "source_type": "공식 공개 API",
+      "series_type": "salmon_joint",
+      "limitations": "SSB 신선·냉장 연어 수출가격은 NOK/kg, 물량은 수출 톤수다. 한국 수입 원가·원화 환산가격과 다르며 월간 수출 통계와 같은 자료로 합산할 수 없다.",
+      "measurements": {
+        "species": "연어",
+        "price_nok_kg": 74.98,
+        "tonnes": 28444.0,
+        "yoy_price_pct": -6.914959652389808,
+        "yoy_qty_pct": 14.347738693467328
+      },
+      "significance": 26.10735252925082,
+      "related_observations": []
+    },
+    {
+      "id": "fx_usd",
+      "name": "USD 환율",
+      "title": "원/달러 환율 변동과 수입 수산물 원가",
+      "subtitle": "한국은행 ECOS",
+      "period_start": "2026-11-03",
+      "period_end": "2026-11-10",
+      "facts": [
+        {
+          "label": "USD 환율",
+          "value": "1,355.70 원/USD",
+          "detail": "관측 2026-11-10 · 한국은행 ECOS"
+        },
+        {
+          "label": "전주 대비",
+          "value": "+1.10%",
+          "detail": "2026-11-03 대비 · 실제 계산"
+        },
+        {
+          "label": "전년 동일 시점 대비",
+          "value": "-6.76%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-2.28%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
+        }
+      ],
+      "observed": "USD 환율 1,355.70 원/USD (2026-11-10, 한국은행 ECOS 발표값) · 전주 대비 +1.10% · 전년 동기 대비 -6.76% · 과거 3년 동기 평균 대비 -2.28%",
+      "data_links": [
+        {
+          "url": "https://ecos.bok.or.kr/",
+          "label": "한국은행 ECOS 공식 통계"
+        }
+      ],
+      "article_ids": [
+        "ffd06a42b337a501"
+      ],
+      "category": "비용/거시",
+      "channels": [
+        "마트",
+        "온라인",
+        "B2B"
+      ],
+      "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
+      "source_type": "공식 공개 API",
+      "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다.",
+      "related_observations": []
+    },
+    {
+      "id": "fx_jpy",
+      "name": "JPY 환율",
+      "title": "엔화 움직임과 일본 거래·수출 채산성",
+      "subtitle": "한국은행 ECOS",
+      "period_start": "2026-11-03",
+      "period_end": "2026-11-10",
+      "facts": [
+        {
+          "label": "JPY 환율",
+          "value": "858.42 원/100JPY",
+          "detail": "관측 2026-11-10 · 한국은행 ECOS"
+        },
+        {
+          "label": "전주 대비",
+          "value": "+1.11%",
+          "detail": "2026-11-03 대비 · 실제 계산"
+        },
+        {
+          "label": "전년 동일 시점 대비",
+          "value": "-9.21%",
+          "detail": "전년 동기 원자료 비교"
+        },
+        {
+          "label": "과거 3년 동일 시점 평균 대비",
+          "value": "-5.48%",
+          "detail": "과거 3년 같은 주차/날짜의 단순 평균"
+        }
+      ],
+      "observed": "JPY 환율 858.42 원/100JPY (2026-11-10, 한국은행 ECOS 발표값) · 전주 대비 +1.11% · 전년 동기 대비 -9.21% · 과거 3년 동기 평균 대비 -5.48%",
+      "data_links": [
+        {
+          "url": "https://ecos.bok.or.kr/",
+          "label": "한국은행 ECOS 공식 통계"
+        }
+      ],
+      "article_ids": [
+        "ffd06a42b337a501"
+      ],
+      "category": "비용/거시",
+      "channels": [
+        "수출"
+      ],
+      "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
+      "source_type": "공식 공개 API",
+      "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다.",
+      "related_observations": []
+    }
+  ],
+  "issue_candidates": [],
+  "focus_topics": [
+    {
+      "theme": "대형마트·창고형 유통 변화",
+      "category": "대형마트/SSM",
+      "score": 34.0,
+      "article_ids": [
+        "ffd06a42b337a501"
+      ],
+      "feature_ids": [],
+      "source_count": 1,
+      "research_question": "매출과 점포 변화는 같은 방향인가? 소비 이동과 공급망 영향은 어떻게 다른가?",
+      "news_titles": [
+        "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력"
+      ]
+    },
+    {
+      "theme": "일본·미국 수출시장",
+      "category": "해외",
+      "score": 30.7,
+      "article_ids": [],
+      "feature_ids": [
+        "salmon_price_volume"
+      ],
+      "source_count": 0,
+      "research_question": "국가별 수출액과 물량을 분해하면 판매량 성장과 단가 변화가 어떻게 다른가?",
+      "news_titles": []
+    },
+    {
+      "theme": "연어·해외 원료시장",
+      "category": "원물 수급/시세",
+      "score": 27.7,
+      "article_ids": [],
+      "feature_ids": [
+        "salmon_price_volume"
+      ],
+      "source_count": 0,
+      "research_question": "수출액 성장에 물량과 단가가 각각 얼마나 기여했으며 한국 수입 통계와 같은가?",
+      "news_titles": []
+    }
+  ],
+  "deep_reports": [
+    {
+      "depth": "핵심",
+      "kind": "온라인",
+      "time_frame": "2026년 9월 온라인쇼핑 및 2026년 3분기 기업 실적",
+      "headline": "온라인 거래 늘고 컬리는 최대 매출…식자재 유통에선 취급고가 매출 앞질러",
+      "thesis": "온라인쇼핑 거래액 증가와 컬리의 분기 최대 매출, CJ프레시웨이의 취급고 확대가 함께 관측됐다. 다만 CJ프레시웨이는 취급고 증가율이 매출 증가율보다 높아, 거래 외형의 확대가 같은 속도의 매출 증가로 이어지지는 않았다. 이들 지표는 유통시장의 금액 기준 확대를 보여주지만, 식품·수산물 판매량 증가나 특정 채널로의 소비 이동까지 입증하지는 않는다.",
+      "lead": "유통시장에 성장 소식이 잇따랐지만 무엇이 늘었는지는 서로 다르다. 전체 온라인시장은 거래액, 컬리는 매출, CJ프레시웨이는 매출과 취급고를 발표했다. 특히 식자재 유통에서 두 지표의 증가 속도가 갈렸다는 점은, 온라인 거래 확대를 곧바로 식재료 판매 증가로 읽기 어렵게 한다.",
+      "facts": [
+        {
+          "text": "국가데이터처가 11월 2일 발표한 2026년 9월 전체 온라인쇼핑 거래액은 24조 9,719억원으로 전년 동월 대비 4.1%, 전월 대비 2.7% 증가했다. 판매 중량이나 주문 건수가 아닌 거래금액 통계다.",
+          "refs": [
+            "web-01a1834feca0"
+          ]
+        },
+        {
+          "text": "한국경제의 11월 10일 보도 제목에 따르면 컬리의 2026년 3분기 매출은 7779억원으로 역대 최대다. 제공된 자료에는 전년 동기 증가율이나 상품군별 실적이 없다.",
+          "refs": [
+            "1bb6c634a7de9b85"
+          ]
+        },
+        {
+          "text": "CJ프레시웨이는 11월 5일 발표한 2026년 3분기 실적에서 매출 9,614억원, 취급고 1조 4,371억원을 제시했다. 전년 동기 대비 증가율은 각각 6.7%, 16.9%다.",
+          "refs": [
+            "web-818dff626522"
+          ]
+        }
+      ],
+      "market_change": "2026년 9월 전체 온라인쇼핑 거래금액은 전년 동월과 전월을 모두 웃돌았다. 별도로 관측된 3분기 기업 실적에서도 컬리는 최대 매출을 기록했고 CJ프레시웨이는 매출과 취급고가 모두 증가했다. 다만 월간 전체시장 거래액과 분기 기업 실적은 기간·대상·집계 방식이 달라, 증가율을 나란히 놓고 시장점유율 변화를 판단할 수 없다.",
+      "mechanism": [
+        "CJ프레시웨이의 취급고는 전년 동기 대비 16.9%, 매출은 6.7% 늘었다. 회사가 구분해 발표한 두 지표에서 거래 규모의 증가 속도가 매출보다 빨랐다는 사실은 분명하다. 취급고와 매출은 집계 범위와 매출 인식 방식에 따라 다르게 움직일 수 있지만, 제공된 실적 메모에는 차이를 설명할 사업별 내역이 없다. 따라서 이번 수치로 확인되는 것은 거래 외형과 매출의 성장 속도가 달랐다는 점이며, 이를 중개거래 확대나 온라인 사업 비중 상승의 결과로 확정할 수는 없다.",
+        "전체 온라인쇼핑 거래액 증가와 컬리의 최대 매출은 온라인 소비시장의 확대를 보여주는 별개 관측이다. 다만 전체시장 통계에는 식품 이외 상품과 서비스가 포함되고, 컬리 수치도 상품군별로 나뉘어 있지 않다. 거래금액은 판매 수량뿐 아니라 가격과 상품 구성의 영향을 받기 때문에, 두 자료가 함께 증가했다고 해서 신선식품이나 수산물 판매 중량이 늘었다고 결론 내릴 수 없다. 컬리의 성장을 전체 온라인시장보다 빠르다고 평가할 비교 가능한 증가율도 제공되지 않았다.",
+        "컬리 보도 제목은 네이버 협력을 실적 배경으로 제시한다. 그러나 협력 경로를 통한 매출, 신규 고객, 기존 고객 구매 변화는 확인되지 않았다. 협력이 고객 접점을 넓혔다는 해석과 기존 구매가 다른 경로로 옮겨갔다는 해석을 현재 자료로 구분할 수 없는 이유다. 최대 매출이라는 결과는 확인되지만, 그 증가분을 특정 제휴의 효과로 배분할 근거는 부족하다."
+      ],
+      "structural_insight": "이번 자료에서 공통으로 확인되는 변화는 금액 기준 외형 확대다. 반면 CJ프레시웨이 내부에서는 취급고와 매출의 성장 속도가 갈렸고, 전체 온라인시장과 컬리에는 판매량을 분리할 자료가 없다. 따라서 온라인시장 확대, 개별 유통사 성장, 식재료 실수요 회복을 하나의 현상으로 묶는 해석은 성립하지 않는다. 특히 수산물 시장에서는 이들 유통지표만으로 수요 회복을 판단하면 상품가격 상승이나 비수산 상품의 성장을 수산물 소비 증가로 오인할 수 있다.",
+      "scenario_up": {
+        "condition": "후속 온라인쇼핑 통계에서 음식료품·농축수산물 거래 증가가 확인되고, 기업의 비교 가능한 상품군별 판매 수량이나 주문 지표도 함께 늘어나는 경우.",
+        "interpretation": "현재 확인된 금액 기준 외형 확대가 식품 실수요 증가를 동반했다는 해석이 강화된다. 다만 거래액 증가만 확인된다면 가격·상품 구성 효과는 여전히 분리해야 한다."
+      },
+      "scenario_down": {
+        "condition": "후속 상품군별 통계에서 식품 거래가 전체시장 증가와 다른 방향을 보이거나, 기업의 취급고 확대가 집계 범위 변경·거래 방식 변화로 설명되는 경우.",
+        "interpretation": "이번 실적을 식품시장 전반의 성장 신호로 확대할 근거는 약해진다. 기업별 거래 구조 변화와 해당 시장의 수요 변화를 구분해 해석해야 한다."
+      },
+      "what_changes": "다음 확인 대상은 국가데이터처의 음식료품·농축수산물 세부 거래액과 기업 공시의 매출·취급고 정의 및 사업별 내역이다. 동일 기간의 상품군별 거래와 판매 수량이 확보돼야 온라인 식품시장 성장, 기업 간 경쟁 변화, 수산물 소비 확대를 각각 판단할 수 있다.",
+      "one_sentence": "온라인시장과 유통기업의 금액 지표는 함께 커졌지만, 거래 확대가 매출로 이어지는 정도와 식품 판매량의 변화는 아직 같은 방향이라고 확인되지 않았다.",
+      "limitations": "공식 통계 및 회사 발표에 관한 제공 메모와 공개 기사 제목만 활용했다. 컬리 기사 전문과 CJ프레시웨이의 사업별 상세 공시는 확인하지 않았으며, 회사 발표를 재인용한 보도는 독립 근거로 중복 계산하지 않았다. 수산물별 실적, 판매 중량, 주문 건수, 취급고와 매출 차이의 구체적인 구성은 제공되지 않았다.",
+      "article_ids": [
+        "web-01a1834feca0",
+        "1bb6c634a7de9b85",
+        "web-818dff626522"
+      ],
+      "feature_ids": [],
+      "policy_ids": [],
+      "confidence": "중간",
+      "channels": [
+        "온라인",
+        "B2B"
+      ],
+      "impact": "유통 외형 확대·거래지표 간 성장 격차",
+      "followup": "후속 월간 상품군별 온라인 거래액과 다음 분기 기업 공시를 대조해, 식품 거래 증가 여부와 취급고·매출 간 격차의 원인을 확인한다.",
+      "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+      "character_count": 2340,
+      "length_tier": "충실"
+    }
+  ],
+  "deep_status": "지난 시장 분석 · 2026-11-10 작성",
+  "research_sources": [
+    {
+      "id": "web-ccf662e01005",
+      "url": "https://mobile.newsis.com/view/NISX20261104_0003855188?utm_source=openai",
+      "source": "mobile.newsis.com",
+      "title": "롯데마트, 김장철 맞아 햇굴 35% 할인…\"사전 계약으로 물량 확보\"",
+      "summary": "1. **굴 할인 후보 기사와 같은 발표를 다룬 보도 중 이번 검색에서 확인한 가장 이른 기사는 11월 5일 오전 6시 뉴시스 기사다.** 롯데마트는 시세 상승 약 2개월 전 사전 계약하고, 통영·거제·강원 고성 등으로 매입처를 넓혀 전년 대비 약 1.5배의 물량을 마련했다고 밝혔다. 이는 **기업의 확보 물량 설명**이며, 국내 굴 생산량이나 실제 판매량 통계는 아니다. [뉴시스, 2026.11.5](https://mobile.newsis.com/view/NISX20261104_0003855188). ([mobile.newsis.com](https://mobile.newsis.com/view/NISX20261104_0003855188?utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-167ce53c3685",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1",
+      "source": "motir.go.kr",
+      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "summary": "3. **산업통상부가 10월 28일 발표한 2026년 9월 조사에서 대형마트 매출은 전년 동월 대비 4.0%, 식품 매출은 4.3%, 구매건수는 0.5% 증가했다.** 조사대상은 주요 유통업체 26개사이며, 산업부는 추석 연휴가 2025년 10월에서 2026년 9월로 이동한 영향을 설명했다. 따라서 이 반등을 곧바로 상시 수요 회복이나 수산물 판매량 증가로 해석할 수 없다. [산업통상부, 2026.10.28](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1). ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-755eff7e5bf2",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view?utm_source=openai",
+      "source": "motir.go.kr",
+      "title": "‘22년 연간, '22년 12월 주요유통업체 매출동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "summary": "5. **산업부의 연간 매출 증감률에서 대형마트는 2022년 +1.4%, 2023년 +0.5%, SSM은 각각 −0.2%, +3.7%였다.** 이는 각 연도의 전년 대비 매출 변화율이며, 2026년 9월의 월간 증감률과 동일 기간 비교가 아니다. [산업부 2022년 자료](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view), [2023년 자료](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/168549/view?searchKeyword=%EC%9C%A0%ED%86%B5%EC%97%85%EC%B2%B4). ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/166748/view?utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-c696ba7a99cc",
+      "url": "https://mods.go.kr/boardDownload.es?bid=5107&list_no=447780&seq=3&utm_source=openai",
+      "source": "mods.go.kr",
+      "title": "# 주요 부문 등락률 추이",
+      "summary": "7. **2026년 10월 전국 소비자물가 공식자료의 주요 등락품목에서 고등어는 전월 대비 2.9%, 전년 동월 대비 14.4% 상승했다.** 이는 소매단계 소비자물가지수의 변화율이며, 특정 크기 고등어의 원/kg 가격이나 산지 위판가격은 아니다. [국가데이터처, 2026년 10월 소비자물가 공식자료](https://mods.go.kr/boardDownload.es?bid=5107&list_no=447780&seq=3). ([mods.go.kr](https://mods.go.kr/boardDownload.es?bid=5107&list_no=447780&seq=3&utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-4825809120b9",
+      "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2025-12-26++10%3A00&menuSeq=971&utm_source=openai",
+      "source": "mof.go.kr",
+      "title": "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+      "summary": "9. **해수부가 2026년 2월 26일 발표한 2025년 잠정 생산통계에서 연근해어업 생산량은 97.8만 톤으로 전년 대비 16.3%, 최근 5년 평균 91.2만 톤 대비 7.2% 증가했다.** 생산금액은 4조 5,656억 원으로 전년 대비 9.4% 증가했으며, 물량 증가율과 금액 증가율은 서로 다르다. [해양수산부, 2025년 수산물 생산동향](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&menuSeq=971). ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2025-12-26++10%3A00&menuSeq=971&utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-17ace6327c99",
+      "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2026-04-13++10%3A00&menuSeq=971&utm_source=openai",
+      "source": "mof.go.kr",
+      "title": "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+      "summary": "11. **반면 2025년 원양 오징어류 생산량은 5.2만 톤으로 전년 대비 17.4% 감소했다.** 해수부는 포클랜드 해역의 어장 형성 부진을 설명했으며, 연근해 오징어 증가와 원양 오징어류 감소를 구분해야 국내 공급 변화를 잘못 읽지 않는다. [해양수산부, 원양어업 생산동향](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&menuSeq=971). ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2026-04-13++10%3A00&menuSeq=971&utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-b8a8896e0937",
+      "url": "https://www.mof.go.kr/upload/whitebook/59585/book.pdf?utm_source=openai",
+      "source": "mof.go.kr",
+      "title": "II 2023년 수산물 생산 및 유통산업 실태조사",
+      "summary": "12. **해수부의 『2023년 수산물 생산 및 유통산업 실태조사』에 수록된 2022년 오징어 생산량은 총 84,706톤으로 전년 대비 37.1% 감소했고, 일반해면어업 43.1%, 원양어업 56.9%로 구성됐다.** 같은 자료의 2022년 연근해산 생산량은 36,549톤으로 전년 대비 40.0% 감소했으며, 이는 2025년의 전년 대비 반등을 장기 공급 정상화와 구별하는 비교자료다. [해양수산부, 실태조사 오징어 편](https://www.mof.go.kr/upload/whitebook/59585/book.pdf). ([mof.go.kr](https://www.mof.go.kr/upload/whitebook/59585/book.pdf?utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
     {
       "id": "056b9e411aae1b50",
       "title": "입점업체에 '갑질 의혹' … 쿠팡·배민 과징금 6천억",
@@ -49,29 +499,6 @@
       "editorial_score": 9
     },
     {
-      "id": "1bb6c634a7de9b85",
-      "title": "컬리, 네이버 협력 통했다…3분기 매출 7779억원 '역대 최대'",
-      "url": "https://www.hankyung.com/article/202611107705g",
-      "source": "한국경제·경제",
-      "published": "2026-11-10T14:51+09:00",
-      "timestamp": 1794289868,
-      "category": "온라인",
-      "tags": [
-        "온라인"
-      ],
-      "score": 11.5,
-      "summary": "",
-      "summary_type": "제목만 확인",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "editorial_score": 11
-    },
-    {
       "id": "f5c390c8706a4552",
       "title": "[표] 외국환율고시표",
       "url": "https://www.mk.co.kr/news/economy/12202754",
@@ -90,9 +517,111 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격"
+    },
+    {
+      "id": "web-fb9da75954dd",
+      "url": "https://www.mk.co.kr/news/economy/12202743",
+      "source": "mk.co.kr",
+      "title": "\"반도체 수출 꺾이면 내년 기준금리 내릴것\" - 매일경제",
+      "summary": "- ‘일본·미국 수출시장’에 연결된 후보 기사는 실제로 반도체 경기와 기준금리 전망을 다루므로 수산물 국가별 수출 근거로 채택하지 않았다. 해당 페이지의 실제 입력일도 제공된 11월 10일과 달리 **2026년 11월 9일**이다. ([mk.co.kr](https://www.mk.co.kr/news/economy/12202743))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "비용/거시",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-01a1834feca0",
+      "url": "https://mods.go.kr/board.es?act=view&bid=241&list_no=447781&mid=a10301120300&utm_source=openai",
+      "source": "mods.go.kr",
+      "title": "2026년 9월 온라인쇼핑동향 및 3/4분기 온라인 해외 직접 판매 및 구매 동향 | 온라인쇼핑동향조사 | 도소매 · 서비스 | 보도자료 | 새소식 : 국가데이터처",
+      "summary": "1. **국가데이터처가 11월 2일 발표한 2026년 9월 온라인쇼핑 거래액은 24조 9,719억원으로 전년 동월 대비 4.1%, 전월 대비 2.7% 증가했다.** 대상은 전체 온라인쇼핑이며, 판매 중량이나 주문 건수가 아닌 거래금액 통계다. ([mods.go.kr](https://mods.go.kr/board.es?act=view&bid=241&list_no=447781&mid=a10301120300&utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "온라인",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-818dff626522",
+      "url": "https://cjnews.cj.net/cj%ED%94%84%EB%A0%88%EC%8B%9C%EC%9B%A8%EC%9D%B4-3%EB%B6%84%EA%B8%B0-%EB%A7%A4%EC%B6%9C-9614%EC%96%B5%EC%9B%90-%EC%A0%84%EB%85%84%EB%B9%84-6-7-%EC%84%B1%EC%9E%A5/?utm_source=openai",
+      "source": "cjnews.cj.net",
+      "title": "CJ프레시웨이 3분기 매출 9,614억원… 전년비 6.7% 성장 – CJ 뉴스룸",
+      "summary": "3. **CJ프레시웨이는 11월 5일 발표한 2026년 3분기 실적에서 매출 9,614억원, 취급고(GMV) 1조 4,371억원을 제시했으며, 전년 동기 대비 증가율은 각각 6.7%, 16.9%다.** 회사가 별도로 제시한 매출과 취급고는 서로 다른 지표이므로 합산하거나 같은 매출로 취급하지 않았다. ([cjnews.cj.net](https://cjnews.cj.net/cj%ED%94%84%EB%A0%88%EC%8B%9C%EC%9B%A8%EC%9D%B4-3%EB%B6%84%EA%B8%B0-%EB%A7%A4%EC%B6%9C-9614%EC%96%B5%EC%9B%90-%EC%A0%84%EB%85%84%EB%B9%84-6-7-%EC%84%B1%EC%9E%A5/?utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "비용/거시",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-48a63555035a",
+      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai",
+      "source": "ssb.no",
+      "title": "Export of salmon – SSB",
+      "summary": "7. **노르웨이 통계청(SSB)이 11월 4일 발표한 2026년 44주 신선·냉장 양식연어 수출가격은 74.98 NOK/kg이다.** 전주인 43주 대비 **1.4% 하락**, 전년인 2025년 44주 대비 **6.9% 하락**으로, 비교 기준을 구분해야 한다. ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "비용/거시",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-347bedb6ac81",
+      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
+      "source": "ssb.no",
+      "title": "Export of salmon – SSB",
+      "summary": "10. **SSB의 가격은 주간 kg당 평균 수출가격, 물량은 순중량 톤이며, 수출가액의 평가 기준은 노르웨이 국경 통과 시점의 FOB다.** 신선·냉장은 노르웨이 품목번호 03021411·03021419, 냉동은 03031311·03031319를 대상으로 하므로, 한국의 전체 연어 수입이나 필렛을 포함한 통계와 바로 대조할 수 없다. ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "비용/거시",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
+    },
+    {
+      "id": "web-e1b2aaebe13b",
+      "url": "https://47.newstomato.com/ReadNews.aspx?no=1319558",
+      "source": "47.newstomato.com",
+      "title": "CJ프레시웨이, 온라인 외형 성장에도 수익성 '뒷걸음'",
+      "summary": "- 뉴스토마토의 11월 6일 기사는 CJ프레시웨이 실적을 추가로 보도했지만, **회사 발표·전자공시와 겹치는 수치를 별도의 독립 관측치로 세지 않았다. 동일 보도자료 재인용도 독립 근거가 아니다.** ([47.newstomato.com](https://47.newstomato.com/ReadNews.aspx?no=1319558))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "비용/거시",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인"
     }
   ],
-  "features": [
+  "archived_features": [
     {
       "id": "salmon_price_volume",
       "name": "노르웨이 연어 가격·수출물량",
@@ -245,300 +774,19 @@
       "related_observations": []
     }
   ],
-  "issue_candidates": [],
-  "focus_topics": [
-    {
-      "theme": "일본·미국 수출시장",
-      "category": "해외",
-      "score": 42.7,
-      "article_ids": [
-        "fb9da75954ddb3e3"
-      ],
-      "feature_ids": [
-        "salmon_price_volume"
-      ],
-      "source_count": 1,
-      "research_question": "국가별 수출액과 물량을 분해하면 판매량 성장과 단가 변화가 어떻게 다른가?",
-      "news_titles": [
-        "\"반도체 수출 꺾이면 내년 기준금리 내릴것\""
-      ]
-    },
-    {
-      "theme": "연어·해외 원료시장",
-      "category": "원물 수급/시세",
-      "score": 27.7,
-      "article_ids": [],
-      "feature_ids": [
-        "salmon_price_volume"
-      ],
-      "source_count": 0,
-      "research_question": "수출액 성장에 물량과 단가가 각각 얼마나 기여했으며 한국 수입 통계와 같은가?",
-      "news_titles": []
-    },
-    {
-      "theme": "온라인·급식 수요",
-      "category": "온라인",
-      "score": 24.0,
-      "article_ids": [
-        "056b9e411aae1b50"
-      ],
-      "feature_ids": [],
-      "source_count": 1,
-      "research_question": "온라인 판매와 외식·급식 수요는 같은 품목에서 동일한 흐름인가?",
-      "news_titles": [
-        "입점업체에 '갑질 의혹' … 쿠팡·배민 과징금 6천억"
-      ]
-    }
-  ],
-  "deep_reports": [
-    {
-      "depth": "핵심",
-      "kind": "온라인",
-      "time_frame": "2026년 9월 온라인쇼핑 및 2026년 3분기 기업 실적",
-      "headline": "온라인 거래 늘고 컬리는 최대 매출…식자재 유통에선 취급고가 매출 앞질러",
-      "thesis": "온라인쇼핑 거래액 증가와 컬리의 분기 최대 매출, CJ프레시웨이의 취급고 확대가 함께 관측됐다. 다만 CJ프레시웨이는 취급고 증가율이 매출 증가율보다 높아, 거래 외형의 확대가 같은 속도의 매출 증가로 이어지지는 않았다. 이들 지표는 유통시장의 금액 기준 확대를 보여주지만, 식품·수산물 판매량 증가나 특정 채널로의 소비 이동까지 입증하지는 않는다.",
-      "lead": "유통시장에 성장 소식이 잇따랐지만 무엇이 늘었는지는 서로 다르다. 전체 온라인시장은 거래액, 컬리는 매출, CJ프레시웨이는 매출과 취급고를 발표했다. 특히 식자재 유통에서 두 지표의 증가 속도가 갈렸다는 점은, 온라인 거래 확대를 곧바로 식재료 판매 증가로 읽기 어렵게 한다.",
-      "facts": [
-        {
-          "text": "국가데이터처가 11월 2일 발표한 2026년 9월 전체 온라인쇼핑 거래액은 24조 9,719억원으로 전년 동월 대비 4.1%, 전월 대비 2.7% 증가했다. 판매 중량이나 주문 건수가 아닌 거래금액 통계다.",
-          "refs": [
-            "web-01a1834feca0"
-          ]
-        },
-        {
-          "text": "한국경제의 11월 10일 보도 제목에 따르면 컬리의 2026년 3분기 매출은 7779억원으로 역대 최대다. 제공된 자료에는 전년 동기 증가율이나 상품군별 실적이 없다.",
-          "refs": [
-            "1bb6c634a7de9b85"
-          ]
-        },
-        {
-          "text": "CJ프레시웨이는 11월 5일 발표한 2026년 3분기 실적에서 매출 9,614억원, 취급고 1조 4,371억원을 제시했다. 전년 동기 대비 증가율은 각각 6.7%, 16.9%다.",
-          "refs": [
-            "web-818dff626522"
-          ]
-        }
-      ],
-      "market_change": "2026년 9월 전체 온라인쇼핑 거래금액은 전년 동월과 전월을 모두 웃돌았다. 별도로 관측된 3분기 기업 실적에서도 컬리는 최대 매출을 기록했고 CJ프레시웨이는 매출과 취급고가 모두 증가했다. 다만 월간 전체시장 거래액과 분기 기업 실적은 기간·대상·집계 방식이 달라, 증가율을 나란히 놓고 시장점유율 변화를 판단할 수 없다.",
-      "mechanism": [
-        "CJ프레시웨이의 취급고는 전년 동기 대비 16.9%, 매출은 6.7% 늘었다. 회사가 구분해 발표한 두 지표에서 거래 규모의 증가 속도가 매출보다 빨랐다는 사실은 분명하다. 취급고와 매출은 집계 범위와 매출 인식 방식에 따라 다르게 움직일 수 있지만, 제공된 실적 메모에는 차이를 설명할 사업별 내역이 없다. 따라서 이번 수치로 확인되는 것은 거래 외형과 매출의 성장 속도가 달랐다는 점이며, 이를 중개거래 확대나 온라인 사업 비중 상승의 결과로 확정할 수는 없다.",
-        "전체 온라인쇼핑 거래액 증가와 컬리의 최대 매출은 온라인 소비시장의 확대를 보여주는 별개 관측이다. 다만 전체시장 통계에는 식품 이외 상품과 서비스가 포함되고, 컬리 수치도 상품군별로 나뉘어 있지 않다. 거래금액은 판매 수량뿐 아니라 가격과 상품 구성의 영향을 받기 때문에, 두 자료가 함께 증가했다고 해서 신선식품이나 수산물 판매 중량이 늘었다고 결론 내릴 수 없다. 컬리의 성장을 전체 온라인시장보다 빠르다고 평가할 비교 가능한 증가율도 제공되지 않았다.",
-        "컬리 보도 제목은 네이버 협력을 실적 배경으로 제시한다. 그러나 협력 경로를 통한 매출, 신규 고객, 기존 고객 구매 변화는 확인되지 않았다. 협력이 고객 접점을 넓혔다는 해석과 기존 구매가 다른 경로로 옮겨갔다는 해석을 현재 자료로 구분할 수 없는 이유다. 최대 매출이라는 결과는 확인되지만, 그 증가분을 특정 제휴의 효과로 배분할 근거는 부족하다."
-      ],
-      "structural_insight": "이번 자료에서 공통으로 확인되는 변화는 금액 기준 외형 확대다. 반면 CJ프레시웨이 내부에서는 취급고와 매출의 성장 속도가 갈렸고, 전체 온라인시장과 컬리에는 판매량을 분리할 자료가 없다. 따라서 온라인시장 확대, 개별 유통사 성장, 식재료 실수요 회복을 하나의 현상으로 묶는 해석은 성립하지 않는다. 특히 수산물 시장에서는 이들 유통지표만으로 수요 회복을 판단하면 상품가격 상승이나 비수산 상품의 성장을 수산물 소비 증가로 오인할 수 있다.",
-      "scenario_up": {
-        "condition": "후속 온라인쇼핑 통계에서 음식료품·농축수산물 거래 증가가 확인되고, 기업의 비교 가능한 상품군별 판매 수량이나 주문 지표도 함께 늘어나는 경우.",
-        "interpretation": "현재 확인된 금액 기준 외형 확대가 식품 실수요 증가를 동반했다는 해석이 강화된다. 다만 거래액 증가만 확인된다면 가격·상품 구성 효과는 여전히 분리해야 한다."
-      },
-      "scenario_down": {
-        "condition": "후속 상품군별 통계에서 식품 거래가 전체시장 증가와 다른 방향을 보이거나, 기업의 취급고 확대가 집계 범위 변경·거래 방식 변화로 설명되는 경우.",
-        "interpretation": "이번 실적을 식품시장 전반의 성장 신호로 확대할 근거는 약해진다. 기업별 거래 구조 변화와 해당 시장의 수요 변화를 구분해 해석해야 한다."
-      },
-      "what_changes": "다음 확인 대상은 국가데이터처의 음식료품·농축수산물 세부 거래액과 기업 공시의 매출·취급고 정의 및 사업별 내역이다. 동일 기간의 상품군별 거래와 판매 수량이 확보돼야 온라인 식품시장 성장, 기업 간 경쟁 변화, 수산물 소비 확대를 각각 판단할 수 있다.",
-      "one_sentence": "온라인시장과 유통기업의 금액 지표는 함께 커졌지만, 거래 확대가 매출로 이어지는 정도와 식품 판매량의 변화는 아직 같은 방향이라고 확인되지 않았다.",
-      "limitations": "공식 통계 및 회사 발표에 관한 제공 메모와 공개 기사 제목만 활용했다. 컬리 기사 전문과 CJ프레시웨이의 사업별 상세 공시는 확인하지 않았으며, 회사 발표를 재인용한 보도는 독립 근거로 중복 계산하지 않았다. 수산물별 실적, 판매 중량, 주문 건수, 취급고와 매출 차이의 구체적인 구성은 제공되지 않았다.",
-      "article_ids": [
-        "web-01a1834feca0",
-        "1bb6c634a7de9b85",
-        "web-818dff626522"
-      ],
-      "feature_ids": [],
-      "policy_ids": [],
-      "confidence": "중간",
-      "channels": [
-        "온라인",
-        "B2B"
-      ],
-      "impact": "유통 외형 확대·거래지표 간 성장 격차",
-      "followup": "후속 월간 상품군별 온라인 거래액과 다음 분기 기업 공시를 대조해, 식품 거래 증가 여부와 취급고·매출 간 격차의 원인을 확인한다.",
-      "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
-      "character_count": 2340,
-      "length_tier": "충실"
-    }
-  ],
-  "deep_status": "AI 리서치 1편 · 공개 출처·수치 검증 통과",
-  "research_sources": [
-    {
-      "id": "web-fb9da75954dd",
-      "url": "https://www.mk.co.kr/news/economy/12202743",
-      "source": "mk.co.kr",
-      "title": "\"반도체 수출 꺾이면 내년 기준금리 내릴것\" - 매일경제",
-      "summary": "- ‘일본·미국 수출시장’에 연결된 후보 기사는 실제로 반도체 경기와 기준금리 전망을 다루므로 수산물 국가별 수출 근거로 채택하지 않았다. 해당 페이지의 실제 입력일도 제공된 11월 10일과 달리 **2026년 11월 9일**이다. ([mk.co.kr](https://www.mk.co.kr/news/economy/12202743))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "비용/거시",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-01a1834feca0",
-      "url": "https://mods.go.kr/board.es?act=view&bid=241&list_no=447781&mid=a10301120300&utm_source=openai",
-      "source": "mods.go.kr",
-      "title": "2026년 9월 온라인쇼핑동향 및 3/4분기 온라인 해외 직접 판매 및 구매 동향 | 온라인쇼핑동향조사 | 도소매 · 서비스 | 보도자료 | 새소식 : 국가데이터처",
-      "summary": "1. **국가데이터처가 11월 2일 발표한 2026년 9월 온라인쇼핑 거래액은 24조 9,719억원으로 전년 동월 대비 4.1%, 전월 대비 2.7% 증가했다.** 대상은 전체 온라인쇼핑이며, 판매 중량이나 주문 건수가 아닌 거래금액 통계다. ([mods.go.kr](https://mods.go.kr/board.es?act=view&bid=241&list_no=447781&mid=a10301120300&utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "온라인",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-818dff626522",
-      "url": "https://cjnews.cj.net/cj%ED%94%84%EB%A0%88%EC%8B%9C%EC%9B%A8%EC%9D%B4-3%EB%B6%84%EA%B8%B0-%EB%A7%A4%EC%B6%9C-9614%EC%96%B5%EC%9B%90-%EC%A0%84%EB%85%84%EB%B9%84-6-7-%EC%84%B1%EC%9E%A5/?utm_source=openai",
-      "source": "cjnews.cj.net",
-      "title": "CJ프레시웨이 3분기 매출 9,614억원… 전년비 6.7% 성장 – CJ 뉴스룸",
-      "summary": "3. **CJ프레시웨이는 11월 5일 발표한 2026년 3분기 실적에서 매출 9,614억원, 취급고(GMV) 1조 4,371억원을 제시했으며, 전년 동기 대비 증가율은 각각 6.7%, 16.9%다.** 회사가 별도로 제시한 매출과 취급고는 서로 다른 지표이므로 합산하거나 같은 매출로 취급하지 않았다. ([cjnews.cj.net](https://cjnews.cj.net/cj%ED%94%84%EB%A0%88%EC%8B%9C%EC%9B%A8%EC%9D%B4-3%EB%B6%84%EA%B8%B0-%EB%A7%A4%EC%B6%9C-9614%EC%96%B5%EC%9B%90-%EC%A0%84%EB%85%84%EB%B9%84-6-7-%EC%84%B1%EC%9E%A5/?utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "비용/거시",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-48a63555035a",
-      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai",
-      "source": "ssb.no",
-      "title": "Export of salmon – SSB",
-      "summary": "7. **노르웨이 통계청(SSB)이 11월 4일 발표한 2026년 44주 신선·냉장 양식연어 수출가격은 74.98 NOK/kg이다.** 전주인 43주 대비 **1.4% 하락**, 전년인 2025년 44주 대비 **6.9% 하락**으로, 비교 기준을 구분해야 한다. ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "비용/거시",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-347bedb6ac81",
-      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
-      "source": "ssb.no",
-      "title": "Export of salmon – SSB",
-      "summary": "10. **SSB의 가격은 주간 kg당 평균 수출가격, 물량은 순중량 톤이며, 수출가액의 평가 기준은 노르웨이 국경 통과 시점의 FOB다.** 신선·냉장은 노르웨이 품목번호 03021411·03021419, 냉동은 03031311·03031319를 대상으로 하므로, 한국의 전체 연어 수입이나 필렛을 포함한 통계와 바로 대조할 수 없다. ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "비용/거시",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    },
-    {
-      "id": "web-e1b2aaebe13b",
-      "url": "https://47.newstomato.com/ReadNews.aspx?no=1319558",
-      "source": "47.newstomato.com",
-      "title": "CJ프레시웨이, 온라인 외형 성장에도 수익성 '뒷걸음'",
-      "summary": "- 뉴스토마토의 11월 6일 기사는 CJ프레시웨이 실적을 추가로 보도했지만, **회사 발표·전자공시와 겹치는 수치를 별도의 독립 관측치로 세지 않았다. 동일 보도자료 재인용도 독립 근거가 아니다.** ([47.newstomato.com](https://47.newstomato.com/ReadNews.aspx?no=1319558))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "비용/거시",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인"
-    }
-  ],
-  "archived_features": [],
-  "report_archived": false,
+  "report_archived": true,
   "report_factual_brief": false,
   "last_report_updated_at": "2026-11-10T16:59+09:00",
-  "data_reports": [
-    {
-      "feature_id": "salmon_price_volume",
-      "headline": "노르웨이 연어, 수출량 14.3% 늘었지만 kg당 가격은 6.9% 하락",
-      "conclusion": "같은 주차·같은 제품군에서 물량 증가와 단가 하락이 동시에 나타났다. 수출 확대를 가격 강세나 수요 호조와 동일시할 수 없는 관측이다.",
-      "market_observation": "SSB의 2026년 44주 신선·냉장 연어 수출가격은 74.98 NOK/kg으로 2025년 44주보다 6.9% 낮았다. 수출물량은 28,444톤으로 같은 기간 14.3% 증가했다.",
-      "transmission": [
-        "수출물량 증가와 평균가격 하락의 조합은 공급 확대가 가격을 누르는 상황과 부합한다. 다만 생산량·재고·수출 대상국별 주문 자료가 없어 공급 증가를 확정 원인으로 지목할 수는 없다.",
-        "SSB 가격은 노르웨이 국경 통과 시점의 FOB 기준이다. 한국 시장으로의 전달 여부는 동일 품목의 수입단가와 물량, 운임·환율을 함께 확인해야 하며, 이 수치를 한국 소비자가격 하락으로 바로 연결할 수 없다."
-      ],
-      "structural_insight": "핵심은 수출 확대의 양적 측면과 가격 측면이 갈라졌다는 점이다. 평균 수출가격이 낮아졌어도 수출량은 늘었으므로, 가격만으로 시장 위축을 판단하는 해석 역시 불충분하다.",
-      "alternative": "수출 대상국이나 크기·품질 구성 변화로 평균가격이 낮아졌을 가능성도 있다. 동일 제품 분류 비교만으로 이러한 구성 효과까지 제거되지는 않는다.",
-      "scenario_support": "후속 동일 품목 통계에서도 전년 동주 대비 물량 증가와 가격 하락이 이어지면 이번 엇갈림의 지속성이 뒷받침된다.",
-      "scenario_challenge": "물량 증가세가 사라지거나 가격이 전년 수준을 웃돌면 이번 조합을 지속적인 시장 변화로 보는 해석은 약해진다.",
-      "investor_meaning": "수산 유통에서는 해외 공급량과 평균단가를 분리해 볼 필요가 있다. 다음에는 SSB 동일 품목 주간 통계와 한국의 대응 품목 수입량·수입단가를 비교해야 한다.",
-      "limits": "한 주의 전년 동기 비교다. NOK 표시 수출가격은 한국 수입 원가가 아니며, 필렛을 포함한 전체 연어 수입이나 월간 통계와 직접 합산할 수 없다.",
-      "article_ids": [
-        "web-48a63555035a",
-        "web-347bedb6ac81"
-      ],
-      "confidence": "중간",
-      "length_tier": "충실",
-      "status": "공식 수치 기반 AI 분석 · 통계와 가설 구분"
-    },
-    {
-      "feature_id": "fx_usd",
-      "headline": "원/달러, 전주보다 1.10% 상승했지만 전년·3년 평균보다는 낮아",
-      "conclusion": "달러 환율은 단기 반등과 중장기 비교상 낮은 수준이 공존한다. 이번 주 상승만으로 달러 결제 수산물의 환산 부담이 전년보다 커졌다고 판단할 수 없다.",
-      "market_observation": "한국은행 ECOS의 2026년 11월 10일 원/달러 환율은 1,355.70원이다. 11월 3일보다 1.10% 높지만 전년 동기보다 6.76%, 과거 3년 동기 평균보다 2.28% 낮다.",
-      "transmission": [
-        "달러 표시 상품가격과 결제 조건이 같다면 원/달러 상승은 원화 환산액을 높이는 방향으로 작용한다. 이는 환산상의 조건부 경로이며, 실제 수산물 수입단가가 상승했다는 관측은 아니다.",
-        "반대로 전년 동기와 비교하면 환율 수준은 낮다. 단기 발주와 전년 대비 원가 비교가 서로 다른 신호를 받을 수 있지만, 실제 전달 여부는 계약 적용환율과 품목별 달러 수입단가로 검증해야 한다."
-      ],
-      "structural_insight": "핵심 발견은 비교 기간에 따라 환율 부담의 방향이 달라진다는 점이다. 주간 상승은 확인되지만, 전년 및 3년 동기 평균을 웃도는 고환율 상태라는 해석은 제공된 자료와 맞지 않는다.",
-      "alternative": "달러 표시 상품가격 상승이나 운임 변화가 환율의 전년 대비 하락 효과를 상쇄할 수 있다. 다만 해당 관측치가 없어 실제 상쇄 여부는 판단할 수 없다.",
-      "scenario_support": "후속 환율에서도 전주 대비 상승과 전년 동기 대비 하락이 함께 관측되면 단기 반등과 전년 대비 낮은 수준의 공존이 이어진다.",
-      "scenario_challenge": "환율이 전년 동기 수준을 웃돌면 전년 대비 환산 부담 완화라는 조건부 해석은 성립하지 않게 된다.",
-      "investor_meaning": "수입 유통 통계는 결제통화와 비교 기간을 맞춰 읽어야 한다. 다음에는 ECOS 환율과 관세청 품목별 수입금액·물량을 비교하되, 평균 수입단가의 품목 구성 변화도 확인해야 한다.",
-      "limits": "매매기준율은 실제 결제환율과 다를 수 있다. 제공된 외국환율고시표 기사에는 구체적 본문 수치가 없어 별도의 검증 근거로 사용하지 않았다. 환율 변동 원인이나 소비자가격 전가는 확인되지 않았다.",
-      "article_ids": [],
-      "confidence": "중간",
-      "length_tier": "충실",
-      "status": "공식 수치 기반 AI 분석 · 통계와 가설 구분"
-    },
-    {
-      "feature_id": "fx_jpy",
-      "headline": "100엔당 858.42원…주간 반등에도 전년보다 9.21% 낮아",
-      "conclusion": "엔화의 원화 환산 가치는 전주보다 올랐지만 전년과 3년 동기 평균보다 낮다. 일본산 수입과 엔화 결제 수출에는 서로 반대 방향의 환산 효과가 생길 수 있으나, 실제 거래 변화는 확인되지 않았다.",
-      "market_observation": "한국은행 ECOS의 2026년 11월 10일 환율은 100엔당 858.42원이다. 11월 3일 대비 1.11% 상승했지만 전년 동기 대비 9.21%, 과거 3년 동기 평균 대비 5.48% 낮았다.",
-      "transmission": [
-        "엔화 표시 수입가격이 같다면 주간 환율 상승은 일본산 수산물의 원화 환산액을 높이고, 전년 대비 낮은 환율은 반대 방향으로 작용한다. 일본 현지 가격이 없어 실제 수입가격과의 괴리는 판단할 수 없다.",
-        "엔화로 수출대금을 받는 거래에서는 같은 엔화 금액의 원화 환산액이 전년보다 줄어드는 방향이다. 다만 일본향 수출이 모두 엔화 결제인 것은 아니므로 국가별 수출액만으로 이 효과를 확정할 수 없다."
-      ],
-      "structural_insight": "같은 환율도 수입 결제와 수출 수취에서 의미가 반대다. 따라서 엔화 약세를 수산업 전체에 일률적인 호재나 악재로 분류하기보다 결제통화와 거래 방향을 먼저 구분해야 한다.",
-      "alternative": "일본 현지 상품가격이나 품목 구성 변화가 환산 효과를 상쇄할 수 있다. 달러 결제 계약에는 원/엔 환율이 직접 적용되지 않을 수도 있다.",
-      "scenario_support": "후속 관측에서도 전년 및 3년 동기 평균보다 낮은 원/엔 수준이 이어지면 엔화 고정금액에 대한 전년 대비 낮은 원화 환산 수준이 유지된다.",
-      "scenario_challenge": "원/엔 환율이 전년 동기 수준을 회복하면 전년 대비 낮은 환산 수준이라는 해석은 뒤집힌다. 실제 거래가격 변화는 별도 확인이 필요하다.",
-      "investor_meaning": "한일 수산 거래는 국가와 결제통화를 구별해 분석해야 한다. 다음에는 ECOS 원/엔 환율과 관세청 일본산 수입·일본향 수출의 품목별 금액 및 물량을 비교해야 한다.",
-      "limits": "실제 결제환율·통화와 일본 현지 수산물 가격은 제공되지 않았다. 외국환율고시표 기사 제목만으로 거래나 수출 채산성을 검증할 수 없으며, 특정 기업 손익도 추정할 수 없다.",
-      "article_ids": [],
-      "confidence": "중간",
-      "length_tier": "충실",
-      "status": "공식 수치 기반 AI 분석 · 통계와 가설 구분"
-    }
-  ],
-  "data_ai_status": "AI 데이터 해설 3편 · 공식 수치와 비교기간 검증",
+  "data_reports": [],
+  "data_ai_status": "다른 자료와 비교할 수 있는 품목별 관측이 아직 없습니다.",
   "analysis_status": "실제 공식 관측 3종 · SSB/ECOS 및 연결된 국내 공공통계 기준",
-  "sources_ok": 2,
+  "sources_ok": 3,
   "sources_total": 18,
   "errors": [
     "Google 뉴스 검색·코스트코: ValueError",
     "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·대형마트/SSM: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·대형마트/SSM: ValueError",
     "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·매장 운영: ValueError",
@@ -546,14 +794,14 @@
     "Google 뉴스 검색·온라인: ValueError",
     "Google 뉴스 검색·식품안전/소비심리: ValueError",
     "Google 뉴스 검색·시즌/트렌드: ValueError",
-    "Google 뉴스 검색·시즌/트렌드: ValueError",
     "Google 뉴스 검색·비용/거시: ValueError",
+    "Google 뉴스 검색·시즌/트렌드: ValueError",
     "Google 뉴스 검색·해외: ValueError",
     "Google 뉴스 검색·해외: ValueError"
   ],
   "metric_errors": [
     "ECOS NOK: 항목 코드 미확인",
-    "수산물 수출입: MOF_API_KEY 미설정 — 추가 통계 연동 대기",
+    "수산물 수출입: 비교 가능한 전년 동월 자료 없음",
     "KAMIS: KAMIS_API_KEY / KAMIS_API_ID 미설정 — 수산물 도소매 조사 미연결"
   ],
   "demo": false,
