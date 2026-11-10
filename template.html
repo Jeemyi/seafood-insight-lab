@@ -257,6 +257,7 @@
  function save(name,set){try{localStorage.setItem('sil_2026_'+name,JSON.stringify([...set]));}catch(e){}}
  let read=load('read'), saved=load('saved'), active='전체';
  const articles=data.articles||[];
+ const evidenceArticles=articles.concat(data.research_sources||[]);
  const fmtDate=d=>new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(d));
  const fmtTime=d=>new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit'}).format(new Date(d));
  const category=c=>`<span class="category-pill">${esc(c)}</span>`;
@@ -281,8 +282,8 @@
   </article>`;
  }
  function deepCard(r,idx){
-  const lookupA=new Map(articles.map(a=>[a.id,a]));
-  const lookupM=new Map((data.features||[]).map(f=>[f.id,f]));
+  const lookupA=new Map(evidenceArticles.map(a=>[a.id,a]));
+  const lookupM=new Map((data.features||[]).concat(data.archived_features||[]).map(f=>[f.id,f]));
   const lookupP=new Map((data.policy_sources||[]).map(p=>[p.id,p]));
   const refLink=id=>{
     const a=lookupA.get(id),m=lookupM.get(id),p=lookupP.get(id);
@@ -346,19 +347,19 @@
   const issues=data.issue_candidates||[];
   $('#issueCount').textContent=`${issues.length}건`;
   $('#issueDeck').innerHTML=issues.map(issueCard).join('')||'<div class="deep-notice">서로 다른 출처를 교차해서 읽을 만한 주제를 충분히 확보하지 못했습니다. 오늘은 분석 주제를 억지로 만들지 않습니다.</div>';
-  $('#deepCount').textContent=`${reports.length}편`;
-  $('#deepStatus').textContent=data.deep_status||'시장 분석 미실행';
-  $('#deepDeck').innerHTML=reports.map((r,i)=>deepCard(r,i)).join('')||`<div class="deep-notice"><b>오늘 게시된 주요 분석이 없습니다.</b> ${esc(data.deep_status||'원고 생성에 필요한 근거 부족')}<br>가격 동향과 주요 뉴스는 아래에서 확인할 수 있습니다.</div>`;
+  $('#deepCount').textContent=`${reports.length}편${data.report_archived?' · 지난 분석':''}`;
+  $('#deepStatus').textContent=data.demo?'공개된 과거 자료로 만든 화면 시연 · 실시간 자동 생성 아님':data.report_archived?`마지막 확인 ${String(data.last_report_updated_at||'').slice(0,10)} · 새 분석이 없을 때 이전 글을 유지합니다.`:(data.report_factual_brief?'오늘은 확인된 기사와 통계만 정리했습니다. 심층 분석은 아닙니다.':'최신 자료와 출처를 바탕으로 작성한 분석');
+  $('#deepDeck').innerHTML=reports.map((r,i)=>deepCard(r,i)).join('');
   const insights=data.features||[];
   $('#insightCount').textContent=`${(data.data_reports||[]).length} 해설 · ${insights.length}개 지표`;
-  $('#analysisStatus').textContent=(data.data_ai_status||'AI 데이터 해설 상태 미확인')+' · '+(data.analysis_status||'수치 없음');
+  $('#analysisStatus').textContent='공식 시계열과 발표 시점 기준으로 작성했습니다.';
   $('#insightDeck').innerHTML=insights.map(insightCard).join('')||'<div class="insight-blank">분석 카드 보류: 현재 자동 접근 가능한 공식 수산·환율 시계열이 부족합니다. 개념 설명으로 빈자리를 채우지 않습니다. 아래 실제 기사 목록과 데이터 출처를 확인하세요.</div>';
   // A compact evidence-led daily brief, not a promotional hero or a decorative article counter.
   const topReport=reports[0];
   const leadArticle=articles[0];
-  const mainTitle=topReport?topReport.headline:'오늘의 시장 브리핑';
+  const mainTitle=topReport?(data.report_archived?'지난 분석 · ':'')+topReport.headline:'오늘의 시장 브리핑';
   $('#brief-heading').textContent=mainTitle;
-  $('#briefLead').textContent=topReport?topReport.thesis:
+  $('#briefLead').textContent=topReport?((data.report_archived?'이전에 작성한 분석입니다. '+String(data.last_report_updated_at||'').slice(0,10)+' 기준. ':'')+topReport.thesis):
     leadArticle?'검증된 종합 리포트가 아직 없습니다. 아래에 수집된 주요 기사와 공식 통계만 표시합니다.':
     '공개 기사와 공식 통계를 확인 중입니다. 자료가 충분하지 않으면 결론을 만들어내지 않습니다.';
   const datum=(data.features||[])[0];
@@ -366,7 +367,7 @@
   const leadFact=fact1||((datum&&datum.observed)||'');
   const secondary=leadArticle?'주요 기사: '+leadArticle.title:'아직 확인된 주요 기사가 없습니다.';
   $('#briefFacts').innerHTML=`<p class="brief-evidence">${esc(leadFact||secondary)}</p>${leadFact&&leadArticle?`<p class="brief-news">${esc(secondary)}</p>`:''}`;
-  $('#briefCounts').textContent=`핵심 분석 ${reports.length}편 · 공식 지표 ${(data.features||[]).length}개 · 기사 ${articles.length}건`;
+  $('#briefCounts').textContent=`시장 분석 ${reports.length}편 · 공식 지표 ${(data.features||[]).length}개 · 기사 ${articles.length}건`;
   $('#briefActions').innerHTML=topReport?'<a href="#deep-heading">분석과 근거 보기 →</a><a href="#allNews">전체 기사 확인</a>':
     '<a href="#featured-heading">주요 기사 보기 →</a><a href="#insight-heading">공식 지표 확인</a>';
   $('#headerDate').textContent=fmtDate(data.generated_at);

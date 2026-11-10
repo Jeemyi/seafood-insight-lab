@@ -1,0 +1,14 @@
+SEAFOOD INSIGHT LAB v4 - GitHub 적용
+
+1) 기존 seafood-insight-lab 저장소의 Code 탭에서 Add file > Upload files를 누릅니다.
+2) seafood-insight-lab-v4-update-only.zip 압축을 풀어 그 안의 build.py, seafood_ai.py, template.html, CONTENT_STANDARD.md, README.md 및 site 폴더를 올립니다.
+3) 기존 파일과 이름이 같다는 표시가 나오면 Commit changes로 덮어씁니다. .github 숨김 폴더가 웹 업로드에서 누락될 수 있으므로 4번도 진행하세요.
+4) Code > .github > workflows > daily.yml을 열고 연필 아이콘으로 편집한 뒤, 별도로 받은 seafood-v4-daily.yml의 전체 내용을 복사해 붙여넣습니다. Commit changes로 저장합니다.
+   이 단계를 빠뜨리면 고급 모델 및 매일 오전 6시 실행/지난 분석 보존 기능이 적용되지 않을 수 있습니다.
+5) Settings > Secrets and variables > Actions에서 OPENAI_API_KEY가 등록되어 있는지 확인합니다. ECOS_API_KEY는 환율 자료용으로 선택입니다.
+6) Actions > Daily SEAFOOD INSIGHT LAB > Run workflow > main > Run workflow를 눌러 수동 실행합니다.
+7) build 및 deploy가 초록 체크가 되면 https://jeemyi.github.io/seafood-insight-lab/ 을 새로고침합니다.
+
+주의: 미리보기 2편은 과거 공개자료를 이용한 예시이며 실시간 자동 생성 결과가 아닙니다.
+OpenAI 모델과 웹 검색 기능 사용으로 기존 v3보다 API 비용이 늘 수 있습니다.
+코드 테스트 24개, PC/모바일 렌더링 검사를 통과했으나 실제 API 호출은 키가 없어 이 환경에서 실행하지 못했습니다.

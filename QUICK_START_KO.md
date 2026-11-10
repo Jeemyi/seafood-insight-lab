@@ -30,3 +30,13 @@
 - AI 입력 기사 후보를 분야별로 분산합니다. 수산물만이 아니라 유통·온라인·해외·안전 규정도 함께 검토합니다. 실제 분석은 근거가 충분한 주제만 게시합니다.
 - 시연 화면의 기타 3개 주제 카드는 실제 뉴스가 아니라 **분석 범위 예시**로 표시합니다.
 - 공식 자동 가격 통계는 여전히 연어(SSB)와 환율(ECOS) 중심입니다. 새 가격 통계가 자동으로 추가된 것은 아닙니다.
+
+
+## v4 적용 시 필수 확인
+1. 저장소 루트의 `build.py`, `seafood_ai.py`, `seafood_data.py`, `template.html`, `requirements.txt`를 v4 파일로 교체한다.
+2. `.github/workflows/daily.yml`도 v4로 교체한다. 기존에 직접 작성한 파일이 있다면 **꼭 편집한다.** 안 바꾸면 보고서 아카이브 저장 기능과 모델 설정이 반영되지 않는다.
+3. Settings > Secrets and variables > Actions의 `OPENAI_API_KEY`를 확인한다. `ECOS_API_KEY`는 환율용이다. 추가 키 없음.
+4. Actions > Daily SEAFOOD INSIGHT LAB > Run workflow > main > Run workflow로 수동 실행한다.
+5. `build`와 `deploy`가 모두 초록 체크인지 확인한다. 화면에 새 분석이 아닌 '지난 분석'이라고 표시되면 자료 부족/모델 실패 등으로 현재 보고서 생성에 실패한 것이다.
+
+**비용:** v4는 기본적으로 `gpt-6.1-sol`와 웹 검색을 사용하며 v3보다 OpenAI API 사용량이 늘어날 수 있다.

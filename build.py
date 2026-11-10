@@ -21,7 +21,7 @@ from xml.etree import ElementTree as ET
 import requests
 from bs4 import BeautifulSoup
 from seafood_data import make_features, SSB_LINK
-from seafood_ai import analyze, analyze_data, balanced_article_pool
+from seafood_ai import analyze, analyze_data, balanced_article_pool, research_public_sources
 
 ROOT=Path(__file__).resolve().parent
 SITE=ROOT/'site';SITE.mkdir(exist_ok=True)
@@ -263,6 +263,59 @@ def issues_from_articles(articles):
     return sorted(candidates,key=lambda x:x['priority'],reverse=True)[:6]
 
 
+def homeplus_demo():
+    """Historical public-source editorial example, never marked as a live AI report."""
+    from datetime import datetime
+    date=datetime(2026,11,5,10,39,tzinfo=KST)
+    source_1={'id':'homeplus-kbiz-nov-2026','source':'뉴스핌 · 중소기업중앙회 조사',
+       'title':'홈플러스 거래업체 피해 72%…대금 정산 지연과 매출 감소 집중',
+       'url':'https://ir.newspim.com/news/view/20261105000417',
+       'published':date.isoformat(),'timestamp':int(date.timestamp()),'category':'대형마트/SSM','tags':['대형마트/SSM'],
+       'summary':'2026년 11월 발표된 중소기업중앙회 2026년 오프라인 대규모유통업체 거래 실태조사. 홈플러스 거래 중소기업 100곳 중 72.0%가 점포 축소·폐점 등으로 피해를 경험했고 이 72곳 모두 정산 지연을 피해 유형으로 답했다. 홈플러스 거래업체 63.0%는 매출 감소, 전체 대형마트 거래업체 매출 감소 응답은 37.0%, 이마트 28.0%, 롯데마트 31.0%, 하나로마트 26.0%. 전년 홈플러스 피해 경험 응답 12.9%.',
+       'summary_type':'공개 기사에 인용된 중소기업중앙회 조사','score':18,'official':False,'channels':['마트'],
+       'impact':'거래업체 피해 집중','followup':'표본 구성·시계열별 거래여건 비교'}
+    source_2={'id':'homeplus-rival-july-2026','source':'조선비즈 · 매장별 판매 실적 취재',
+       'title':'홈플러스 폐점 인근 이마트·롯데마트 판매 증가',
+       'url':'https://biz.chosun.com/distribution/channel/2026/07/06/I4IYRRRE2ZA7DE3ZE6XQWGHS4E/?outputType=amp',
+       'published':datetime(2026,7,6,10,0,tzinfo=KST).isoformat(),'timestamp':int(datetime(2026,7,6,10,0,tzinfo=KST).timestamp()),
+       'category':'대형마트/SSM','tags':['대형마트/SSM'],
+       'summary':'2026년 7월 보도. 홈플러스 기존 104개 점포 가운데 37곳 폐점, 67곳 운영. 홈플러스 폐점 점포 인근 이마트 창동·묵동점은 2026년 5월 10~31일 매출 전년동기 대비 11.4% 증가. 서울 지역 인근 롯데마트 매장은 평균 9% 증가, 일부 점포 20% 초과.',
+       'summary_type':'개별 경쟁매장 매출을 확인한 보도','score':17,'official':False,'channels':['마트'],
+       'impact':'상권 내 수요 이동','followup':'폐점 인근·비인근 점포 비교'}
+    source_3={'id':'retail-half-2026','source':'뉴스핌 · 산업통상부 주요 유통업체 매출 동향',
+       'title':'2026년 상반기 대형마트 매출 -7.3%…SSM도 -6.6%',
+       'url':'https://mobile2.newspim.com/news/view/20260803001174',
+       'published':datetime(2026,8,3,15,0,tzinfo=KST).isoformat(),'timestamp':int(datetime(2026,8,3,15,0,tzinfo=KST).timestamp()),
+       'category':'대형마트/SSM','tags':['대형마트/SSM'],
+       'summary':'산업통상부 2026년 상반기 주요 유통업체 매출 동향에 따르면, 대형마트 매출은 전년 상반기 대비 7.3% 감소하고 SSM은 6.6% 감소했다. 같은 기간 백화점 매출은 20.1% 증가. 유통업태 전체 매출 중 대형마트 비중은 전년 상반기 10.3%에서 올해 상반기 8.5%로 하락.',
+       'summary_type':'공식 유통 매출 동향을 인용한 기사','score':16,'official':False,'channels':['마트'],
+       'impact':'대형마트 업태 둔화','followup':'업태별 동일점 매출과 신규 점포 영향'}
+    r={'depth':'핵심','kind':'대형마트/SSM','time_frame':'2026년 7~11월 공개자료 · 시연',
+       'headline':'홈플러스 납품업체 72% 피해…인근 경쟁점 매출 증가와는 다른 문제',
+       'thesis':'홈플러스 점포 축소 이후 인근 이마트·롯데마트 일부 매장의 매출은 증가했다. 그러나 홈플러스와 거래하는 중소기업은 72%가 피해를 경험했고, 피해 업체 모두 대금 정산 지연을 꼽았다. 소비자의 구매처 이동과 기존 납품업체의 거래 정상화는 별개의 문제라는 사실이 드러난다.',
+       'lead':'점포가 문을 닫으면 소비자는 다른 매장으로 이동할 수 있다. 하지만 유통업체가 사라진 자리에 다른 매장의 매출이 늘었다고 해서 기존 납품업체의 매출과 대금 회수가 자동으로 회복되는 것은 아니다. 경쟁 점포의 매출, 거래업체 설문, 대형마트 전체 매출을 나눠 보면 이런 차이가 선명해진다.',
+       'facts':[{'text':'중소기업중앙회 조사에서 홈플러스 거래 중소기업 100곳 중 72.0%가 피해를 경험했고, 해당 72곳 모두 정산 지연을 피해 유형으로 답했다. 63.0%는 매출 감소를 응답했다.','refs':[source_1['id']]},
+                {'text':'홈플러스 폐점 인근 이마트 창동·묵동점의 2026년 5월 10~31일 매출은 전년 동기보다 11.4% 늘었고, 서울 지역 인근 롯데마트는 평균 9% 증가했다.','refs':[source_2['id']]},
+                {'text':'산업통상부 집계에서는 2026년 상반기 전체 대형마트 매출이 전년 동기보다 7.3% 감소하고 SSM도 6.6% 줄었다.','refs':[source_3['id']]}],
+       'market_change':'서로 다른 세 통계가 보여주는 시장은 하나가 아니다. 홈플러스 거래업체의 피해 경험률은 전년 조사 12.9%에서 올해 72.0%로 높아졌고, 인근 경쟁점에서는 매출이 늘었다. 그러나 대형마트 업태 전체는 상반기 7.3% 역성장했다. 홈플러스 점포 이탈이 특정 상권의 고객 이동을 만들었더라도 업태 전체의 소비 증가로 해석할 수는 없다.',
+       'mechanism':['고객 이동과 납품망 회복 사이에 시차가 있다. 영업을 중단한 점포 인근의 소비자는 같은 장보기 수요를 다른 매장에서 해결할 수 있다. 7월 보도에 나타난 경쟁점 매출 상승은 이러한 국지적 이동과 맞닿아 있다. 다만 해당 수치는 폐점 인근의 일부 매장에서 관찰된 결과이므로, 전국 모든 이마트·롯데마트 점포가 같은 폭으로 성장했다는 의미는 아니다.',
+                    '납품업체는 소비자와 다른 문제에 직면한다. 11월 중소기업중앙회 조사에서 피해를 경험한 홈플러스 거래업체가 모두 정산 지연을 답한 점이 중요하다. 구매처가 경쟁 유통사로 바뀌어도 기존 계약과 채권은 이전되지 않기 때문이다. 신규 유통망 확보와 이미 납품한 상품의 대금 회수는 각각 다른 절차를 거친다. 따라서 소비자 판매가 다른 점포로 이전되는 속도와 공급업체의 정상화 속도는 일치하지 않을 수 있다.',
+                    '업태 전체의 흐름은 경쟁점 몇 곳의 매출만으로 설명되지 않는다. 산업통상부의 상반기 대형마트 매출 감소율 7.3%는 폐점 인근 점포 매출 증가와 동시에 나타났다. 집계 범위와 기준 시점이 다르므로 두 수치를 직접 빼거나 더할 수는 없다. 다만 경쟁점의 부분적 반사이익을 대형마트 산업 전체의 회복으로 일반화하기 어렵다는 점은 분명하다.'],
+       'structural_insight':'이번 변화는 상권의 경쟁과 유통망의 거래 안정성이 별도로 움직일 수 있음을 보여준다. 고객은 근처 다른 매장으로 이동하지만 기존 공급업체에는 정산 지연, 매출 감소, 판로 재편이 동시에 발생했다. 홈플러스에서 빠진 소비가 어디로 갔는지와 홈플러스에 공급하던 기업들이 거래를 어떻게 회복하는지는 서로 다른 질문이다. 산업 전체의 성장 여부도 독립적으로 확인해야 한다.',
+       'scenario_up':{'condition':'폐점 인근뿐 아니라 경쟁사 전국 기존점 매출과 실제 구매객 수까지 함께 개선된다면',
+                      'interpretation':'국지적 소비 이동을 넘어 경쟁 유통망의 회복으로 해석할 근거가 늘어난다.'},
+       'scenario_down':{'condition':'인근 점포의 매출만 오르고 업태 전체 매출 감소와 납품업체의 정산 지연이 지속된다면',
+                        'interpretation':'소비가 일부 점포에 집중되는 현상과 거래망 손상은 함께 이어지고 있다는 해석이 더 설득력 있다.'},
+       'what_changes':'앞으로는 폐점 인근과 비인근 점포의 동일점 매출을 구분해서 비교해야 한다. 거래업체 피해 조사는 전년과 표본·질문 구성이 같은지도 확인할 필요가 있다. 특히 식품·수산물처럼 납품 주기가 짧은 상품은 유통망 변화의 영향을 별도 품목 통계로 확인해야 하며, 이 조사만으로 수산물 업체의 피해 규모를 계산할 수는 없다.',
+       'one_sentence':'경쟁 매장 매출이 늘어나는 것과 기존 납품업체가 회복되는 것은 같은 사건이 아니다.',
+       'limitations':'납품업체 조사는 2026년 11월 발표된 설문이고, 경쟁점 매출은 2026년 5월 일부 점포의 실적이며, 업태 매출은 상반기 전체 기준이다. 같은 기간·동일 표본의 비교가 아니며, 수산물 공급업체만 분리한 수치는 없다.',
+       'article_ids':[source_1['id'],source_2['id'],source_3['id']],'feature_ids':[],'policy_ids':[],
+       'confidence':'중간','channels':['마트'],'impact':'소비 이동과 거래망 피해의 차이',
+       'followup':'업태별 동일점 매출·폐점 주변 상권·납품업체 정산 지연',
+       'status':'공개자료 기반 분석 시연 · 자동 생성 결과 아님'}
+    return [source_1,source_2,source_3],r
+
+
 def demo_data():
     """A clearly labeled historical demonstration using two distinct public datasets."""
     now=datetime.now(KST)
@@ -313,12 +366,63 @@ def demo_data():
       'confidence':'중간','status':'시연 전용 · 2026년 10월 공개 공식자료 기반 · 자동 생성 결과 아님',
       'channels':[],'impact':'수출물량 주도형 성장 · 가격 약세 동반',
       'followup':'월간 연어 수출량과 단가, 국가별 수요·재수출 물량'}
-    return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2],'features':[f],
-            'deep_reports':[report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
+    distribution_articles,distribution_report=homeplus_demo()
+    return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2]+distribution_articles,'features':[f],
+            'deep_reports':[distribution_report,report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
+            'research_sources':[],'report_factual_brief':False,'report_archived':False,'last_report_updated_at':datetime(2026,11,5,10,39,tzinfo=KST).isoformat(),
             'data_reports':[],'data_ai_status':'샘플 전용 — 자동 AI 생성 아님',
             'issue_candidates':[],'analysis_status':'2026년 10월 공식 과거 통계로 만든 시연 · 실시간 자료 아님',
             'sources_ok':0,'sources_total':len(SOURCES),'errors':[],
             'metric_errors':[],'demo':True, 'policy_sources':[], 'deep_links':DEEP_LINKS}
+
+
+def load_previous_report():
+    """Read repository-persisted last valid analysis, not yesterday's unverified fallback."""
+    try:
+        data=json.loads((SITE/'data.json').read_text(encoding='utf-8'))
+        reports=data.get('deep_reports',[])
+        if not isinstance(reports,list) or not reports:return None
+        # Archiving a report does not make it fresh again.
+        date=data.get('last_report_updated_at') or data.get('generated_at')
+        if not isinstance(date,str) or len(date)<10:return None
+        sources=data.get('research_sources',[])
+        return {'reports':[dict(r) for r in reports[:3]],'date':date,
+                'sources':sources,'articles':data.get('articles',[]),'features':data.get('features',[])}
+    except (OSError,ValueError,TypeError,AttributeError):return None
+
+
+def make_factual_brief(articles, features, now):
+    """Truthful fact-based fallback. Not marketed as a comprehensive AI report."""
+    best=[];used_sources=set()
+    for a in articles:
+        if len(a.get('summary',''))<55 or a['source'] in used_sources:continue
+        best.append(a);used_sources.add(a['source'])
+        if len(best)==3:break
+    if not best and not features:return []
+    category=best[0]['category'] if best else features[0]['category']
+    title=best[0]['title'] if best else features[0]['title']
+    observations=[f"{a['source']}의 {a['published'][:10]} 보도: {a['title']} — {a['summary'][:250]}" for a in best]
+    if features: observations.append(features[0]['observed'])
+    desc=' '.join(observations)
+    if not desc:return []
+    fact_refs=[{'text':x['summary'][:350], 'refs':[x['id']]} for x in best]
+    if features:fact_refs.append({'text':features[0]['observed'],'refs':[features[0]['id']]})
+    evidence_statement=' '.join(o[:280] for o in observations[:2])
+    return [{'depth':'보조','kind':category,'time_frame':now.date().isoformat()+' 기준',
+        'headline':'주요 수산·유통 동향: '+title[:70],
+        'thesis':evidence_statement,'lead':'관련 공개 기사와 공식 통계에서 직접 확인되는 내용을 정리했습니다. 여러 자료로 검증되지 않은 원인이나 수익성은 추정하지 않았습니다.',
+        'facts':fact_refs,'market_change':desc[:900],
+        'mechanism':['현재 공개된 자료만으로는 서로 다른 변화가 같은 원인에서 비롯됐다고 단정할 수 없습니다. 각 출처의 날짜와 지표를 구분해 읽어야 합니다.',
+                     '관측된 시세나 공급 변화가 유통 판매가격에 얼마나 반영되는지는 같은 기간의 거래규격과 환율, 판매 통계로 별도로 확인해야 합니다.'],
+        'structural_insight':'이번 자료에서 확인되는 변화는 기사와 공식 관측치에 한정됩니다. 수급과 유통채널 전체의 방향을 판단하려면 비교 대상 기간과 품목이 일치하는 별도 통계가 필요합니다.',
+        'scenario_up':{'condition':'같은 기준의 후속 통계에서 변화가 반복 확인될 때','interpretation':'단발성 사건보다 지속적인 시장 변화로 볼 수 있습니다.'},
+        'scenario_down':{'condition':'후속 자료에서 다른 흐름이 확인될 때','interpretation':'현재 보도만으로 방향을 단정할 수 없습니다.'},
+        'what_changes':'자료별 기준일·대상·규격을 확인하고 같은 기간의 수출입·소비 및 산지 통계와 대조해야 합니다.',
+        'one_sentence':'공개 자료에서 확인된 주요 현황을 정리했습니다.',
+        'limitations':'심층 AI 분석에 필요한 독립 근거가 충분하지 않아, 검증된 기사와 공식 지표만 정리한 자료입니다.',
+        'article_ids':[x['id'] for x in best], 'feature_ids':[features[0]['id']] if features else [],
+        'policy_ids':[],'confidence':'낮음','channels':[],'impact':'공개 자료로 확인한 현황',
+        'followup':'해당 분야의 후속 공식 통계','status':'공개 자료 요약 · 심층 분석 미완료'}]
 
 
 def collect():
@@ -339,10 +443,47 @@ def collect():
         terms=['연어','노르웨이'] if f['id']=='salmon_export_price' else ['환율','수입','외화']
         f['article_ids']=[a['id'] for a in articles if any(t in a['title'] for t in terms)][:3]
     issues=issues_from_articles(articles)
-    reports,deep_status=analyze(articles,features,now,issues)
+    search_sources,research_status=research_public_sources(articles,features,now)
+    print('SEAFOOD research:',research_status)
+    reports,deep_status=analyze(articles+search_sources,features,now,issues)
     data_reports,data_status=analyze_data(features,articles,reports,now)
+    last_report_updated_at=now.isoformat(timespec='minutes') if reports else None
+    archive=False
+    factual_brief=False
+    if not reports:
+        old=load_previous_report()
+        if old:
+            reports=old['reports']
+            last_report_updated_at=old['date']
+            archive=True
+            # Keep linked cited sources even when today's feed no longer includes them.
+            by_id={a['id']:a for a in articles+search_sources}
+            for source in old['articles']+old['sources']:
+                if source.get('id') not in by_id:
+                    search_sources.append(source);by_id[source['id']]=source
+            deep_status='지난 시장 분석 · '+last_report_updated_at[:10]+' 작성'
+        elif articles or features:
+            reports=make_factual_brief(articles,features,now)
+            if reports:
+                factual_brief=True
+                last_report_updated_at=now.isoformat(timespec='minutes')
+                deep_status='공개 자료를 바탕으로 정리한 주요 동향 · 심층 분석과 구분'
+        if not reports:
+            # Clearly marked historical editorial, never presented as today's news.
+            sample=demo_data()
+            reports=sample['deep_reports']
+            for report in reports:
+                report['status']='지난 분석 · 공개된 2026년 10월 통계 · 신규 분석 아님'
+            last_report_updated_at='2026-11-05T10:39:00+09:00'
+            archive=True
+            deep_status='지난 시장 분석 · 2026년 10~11월 자료' 
+            search_sources=search_sources+sample['articles']
+    if not reports:raise RuntimeError('An on-screen research article is always required')
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':articles,'features':features,
             'issue_candidates':issues,'deep_reports':reports,'deep_status':deep_status,
+            'research_sources':search_sources,'archived_features':old['features'] if archive and 'old' in locals() and old else [],
+            'report_archived':archive,'report_factual_brief':factual_brief,
+            'last_report_updated_at':last_report_updated_at,
             'data_reports':data_reports,'data_ai_status':data_status,
             'analysis_status':f'공식 자동 지표 {len(features)}개 · ECOS·SSB 공개 데이터 · 비교불가 수치 제외',
             'sources_ok':ok,'sources_total':len(SOURCES),'errors':errors,
