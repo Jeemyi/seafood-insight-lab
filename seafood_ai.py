@@ -69,6 +69,13 @@ MAIN_PROMPT='''너는 한국어 산업·경제 전문지의 취재기자 겸 분
 - 독자가 사이트 자체나 AI의 작성 방식에 관한 설명을 읽게 하지 말고, 실제 산업의 변화에 집중한다.
 - 단계별 필드를 채우느라 앞에서 쓴 사실을 반복하지 말 것. 각 문단은 새로운 근거나 설명을 추가해야 한다.
 
+[시장 우선순위]
+- 선택 후보의 focus_topics는 가격 급변 자체보다 업태 재편, 공급량·수입량 변화, 판매 상품형태 변화, 국가별 수요·규제 충격의 파급력을 점수화했다. 점수가 높은 주제를 먼저 살피되 보도·공식 근거가 없으면 생략한다.
+- 관측자료가 여러 개일 때 **가격·수량·수출입금액을 분해**하거나, 출하·수입·도소매 가격을 비교할 수 있는 주제가 우선이다.
+- 소매·도매와 산지가·수입가격은 다른 표본·규격이다. 표본이 다르면 동일한 가격으로 연계하지 말고 차이 자체를 명시한다.
+- KMI, 해양수산부 HSK, KAMIS, SSB, 기업 공시에서 실제 확인한 날짜·단위·품목코드만 사용하고 특정 회사의 비공개 매출·계약·원가 정보는 절대 추정하지 않는다.
+- 전망은 ‘지속되면 지속’이라는 순환논법 금지. 변화가 강화/반전될 **측정 가능한 후행 지표**(같은 HSK 코드 수입량, 다음 KMI 양성물량, 기존점 매출 등)와 인과가 성립하는 조건을 제시한다.
+- 서로 다른 원자료에서 관측된 사실과 이를 해석한 가설을 명확하게 구별한다. 복수 기사라도 같은 정부 보도자료 재인용이라면 독립 출처로 간주하지 않는다.
 [필드별 지침]
 - headline: 수치와 다른 자료를 비교해 확인한 핵심 발견을 문장으로 표현. 물음표 제목 자제.
 - thesis: 2~4문장으로 결론부터 분명히. 확인된 사실은 확신 있게, 확인되지 않은 원인 설명에만 신중하게.
@@ -83,7 +90,7 @@ MAIN_PROMPT='''너는 한국어 산업·경제 전문지의 취재기자 겸 분
 - impact: 가격·수급·산업경쟁·소비·제도와 관련한 짧은 **시장 변화 라벨**. 원가 상승/매출 기회 등 회계적 라벨을 기본으로 쓰지 말 것.
 - channels: 기사에서 직접 등장할 경우에만 구체적 시장 분야를 표시, 근거 없으면 빈 배열.
 - confidence: 근거 품질이 제한적이면 '낮음', 독립 근거와 비교가 충분하면 '중간'. '높음'은 스키마에 없음.
-- 목표 분량: 핵심 약 1200~1900자, 보조 650~1100자. 확인된 수치뿐 아니라 수요·공급·가격·유통 경로의 연결, 반대 자료, 시기별 차이를 깊게 서술한다. **문장 수나 글자 수를 채우기 위해 반복하지 말라.** 짧아도 출처·논리·결론이 완성됐으면 가능.
+- 목표 분량: 핵심 약 1500~2300자, 보조 700~1200자. 확인된 수치뿐 아니라 수요·공급·가격·유통 경로의 연결, 반대 자료, 시기별 차이를 깊게 서술한다. **문장 수나 글자 수를 채우기 위해 반복하지 말라.** 짧아도 출처·논리·결론이 완성됐으면 가능.
 
 [절대 준수]
 - 입력은 공개 RSS 제목/소개문, 공식 통계 및 웹 검색으로 확인한 공개 근거 메모이다. 원문에 접근하지 못한 경우 기사 전문을 읽었다고 주장하지 말 것. 스니펫만으로 불확실한 부분은 한계에 명시.
@@ -93,14 +100,14 @@ MAIN_PROMPT='''너는 한국어 산업·경제 전문지의 취재기자 겸 분
 - 요구된 JSON 스키마로만 응답.
 '''
 
-DATA_PROMPT='''너는 수산시장 **공식 통계 기반 데이터 분석** 편집자다. 01 핵심 분석과 결론이 중복되지 않는 경우에만 작성한다.
+DATA_PROMPT='''너는 수산시장 **공식 통계 기반 데이터 분석** 편집자다. 01번에서 같은 지표를 사용하더라도 다른 질문(가격-물량 분해·수입량과 소비가격 차이·산지와 수입간 격차)을 다루면 독립적으로 작성한다. 자료가 있으면 누락하지 않는다.
 - 공식 지표의 실제 관측치와 프로그램이 계산해 제공한 전주·전년 동기·3년 동기 평균 비교만 사용한다. 없는 비교는 만들어내지 말 것.
 - 데이터에서 먼저 이례적인 현상(가격-물량 엇갈림, 계절 패턴 이탈, 원산지별 차이, 환율과 현지 통화 가격의 괴리)을 발견하고 수치로 제시.
 - 보도·공식 시계열 등 **실제 제공된 2개 이상의 구체적 사실**로 발견을 설명할 때만 서로 연결된 원인을 말하라. 근거가 한 지표뿐이면 그 지표에 대한 분명한 관측 결론만 제시하고 인과관계를 지어내지 말 것.
 - 핵심 결론 → 정확한 수치 변화와 시점 → 시장에 전달되는 검증 가능한 경로(두 문단) → 단순 해석을 넘어선 핵심 발견 → 대안 설명 → 결론이 뒤집힐 후속 관측.
 - investor_meaning 필드에는 투자자 판단이 아니라 '수산·유통 시장의 구조적 의미 및 다음에 비교할 공개 통계'를 적는다.
 - 모든 현상을 납품가 협상이나 기업 이익률로 연결하지 말 것. 공개가격만으로 특정 기업 손익을 계산하지 말 것.
-- 목표 분량 약 500~900자. 더 짧더라도 내용이 완결되면 허용.
+- 목표 분량 약 700~1200자. 더 짧더라도 내용이 완결되면 허용.
 - 제공되지 않은 숫자나 기사 전문 내용은 창작하지 말 것. 요구된 JSON 스키마로만 응답.
 '''
 
@@ -115,7 +122,7 @@ def _call(prompt, context, schema, name, repair_note=''):
               {'role':'user','content':json.dumps(context,ensure_ascii=False)+('\n[재작성 지침] '+repair_note if repair_note else '')}]
     req={'model':os.getenv('OPENAI_MODEL',MODEL),'input':messages,
          'text':{'format':{'type':'json_schema','name':name,'schema':schema,'strict':True}},
-         'max_output_tokens':14500 if name=='seafood_deep_research_v1' else 6800,
+         'max_output_tokens':15500 if name=='seafood_deep_research_v1' else 10500,
          'reasoning':{'effort':os.getenv('OPENAI_REASONING_EFFORT','medium')},
          'store':False}
     r=requests.post(API,json=req,timeout=(12,240),headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'})
@@ -126,7 +133,7 @@ def _call(prompt, context, schema, name, repair_note=''):
     return result
 
 
-def research_public_sources(articles, features, now):
+def research_public_sources(articles, features, now, focus_topics=None):
     """One web-grounded research pass to enrich short RSS snippets.
 
     Citations are exposed to readers as external source links. This method
@@ -136,31 +143,38 @@ def research_public_sources(articles, features, now):
     """
     if not os.getenv('OPENAI_API_KEY','').strip() or os.getenv('SEAFOOD_WEB_RESEARCH','1')=='0':
         return [],'검색 미사용'
-    pool=balanced_article_pool(articles,maximum=14)
+    pool=balanced_article_pool(articles,maximum=25)
     choices=[];seen=set()
     for item in sorted(pool,key=lambda a:(a.get('score',0),a.get('timestamp',0)),reverse=True):
         if item['category'] not in seen:
             choices.append(item);seen.add(item['category'])
         if len(choices)>=5:break
+    # Topic scoring is based on market changes, not a quota of one per category.
+    if focus_topics:
+        chosen_ids=[aid for topic in focus_topics[:4] for aid in topic.get('article_ids',[])[:2]]
+        source_map={a['id']:a for a in pool}
+        focused=[source_map[i] for i in chosen_ids if i in source_map]
+        if focused:choices=list(dict((a['id'],a) for a in focused).values())[:8]
     if not choices and not features:return [],'공개 자료 없음'
     prompt=(
       '너는 수산물·식품유통 산업의 자료 조사 담당자다. 반드시 웹 검색을 통해 아래 기사 후보 가운데 중요도가 높은 2~3개 주제에 대해 '
-      '최근 30일 안의 근거와 독립적인 원자료(국가통계, KMI, 수협, 관세청, 통계청, 해외 정부, 기업 실적공시, 다른 언론의 독자 취재)를 찾아라. '
+      '최근 45일 안의 근거와 독립적인 원자료(국가통계, KMI, 수협, 관세청, 통계청, 해외 정부, 기업 실적공시, 다른 언론의 독자 취재)를 찾아라. '
       '연어에 편중하지 말고 한국 수산시장과 유통업계도 조사하라. 주제별 공식 통계의 날짜·대상·단위·변화율을 명확히 구분하라. '
       '동일 보도자료 재인용은 독립 근거가 아니라고 밝혀라. 미확인 수치는 제외하라. '
-      '최소 5~8개의 근거 문장을 작성하고, 각 문장에 검색으로 확인한 실제 출처 링크를 인용하라. '
+      '각 주제에 대해 원자료와 보도/공시를 우선하고, 가격·물량·시기별 비교가 가능한 경우 수치를 직접 연결하라. 최소 8~12개의 근거 문장을 작성하고, 각 문장에 검색으로 확인한 실제 출처 링크를 인용하라. '
       '추상적 제언·기업 원가/이익률 추정·가공한 숫자 금지. 반드시 실제 검색 결과를 이용하라. '
       '글은 한국어로 쓰되 광고/검색 요약이 아닌 사실관계를 개조식으로 정리하라.'
     )
     context={'today_kst':now.date().isoformat(),
+             'focus_topics':(focus_topics or [])[:4],
              'news_candidates':[{'title':x['title'],'category':x['category'],'source':x['source'],'url':x['url'],'published':x['published']} for x in choices],
-             'official_observations':[{'name':f['name'],'period':f['period_end'],'observed':f['observed']} for f in features[:3]]}
+             'official_observations':[{'name':f['name'],'period':f['period_end'],'observed':f['observed'],'url':f['data_links'][0]['url'] if f.get('data_links') else ''} for f in features[:11]]}
     req={'model':os.getenv('OPENAI_RESEARCH_MODEL',os.getenv('OPENAI_MODEL',MODEL)),
          'reasoning':{'effort':'low'},
          'tools':[{'type':'web_search','search_context_size':'high'}],
          'tool_choice':'required','include':['web_search_call.action.sources'],
          'input':[{'role':'system','content':prompt},{'role':'user','content':json.dumps(context,ensure_ascii=False)}],
-         'max_output_tokens':5500,'store':False}
+         'max_output_tokens':8500,'store':False}
     try:
         resp=requests.post(API,json=req,timeout=(12,240),headers={'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],'Content-Type':'application/json'})
         resp.raise_for_status()
@@ -269,8 +283,8 @@ def balanced_article_pool(articles, maximum=36):
     return selected[:maximum]
 
 
-def _main_context(articles,features,now,issues):
-    pool=balanced_article_pool(articles,maximum=42)
+def _main_context(articles,features,now,issues,focus_topics=None):
+    pool=balanced_article_pool(articles,maximum=60)
     included={a['id'] for a in pool}
     # Verified-search citations must be visible even when their scores are lower than news RSS.
     pool += [a for a in articles if a.get('id','').startswith('web-') and a['id'] not in included][:14]
@@ -278,9 +292,9 @@ def _main_context(articles,features,now,issues):
            'category':a['category'],'snippet':a.get('summary','')[:850],
            'channels':a.get('channels',[]),'impact':'관측 보도'} for a in pool]
     series=[{'id':f['id'],'name':f['name'],'period_start':f['period_start'],'period_end':f['period_end'],
-             'observed':f['observed'],'facts':f['facts'],'limits':f['limitations']} for f in features]
+             'observed':f['observed'],'facts':f['facts'],'limits':f['limitations'],'related_observations':f.get('related_observations',[])} for f in features[:17]]
     return {'now_kst':now.isoformat(),'articles':rows,'official_series':series,
-            'topic_candidates':[{'theme':i['theme'],'article_ids':i['article_ids']} for i in issues[:5]],
+            'topic_candidates':(focus_topics or [{'theme':i['theme'],'article_ids':i['article_ids']} for i in issues[:5]])[:5],
             'source_limit':'공개 RSS 소개문과 공식 시계열만 사용, 기사 전문·비공개 거래정보는 이용하지 않음'}
 
 
@@ -338,10 +352,10 @@ def _validate_main(payload,ctx):
     return good,reasons
 
 
-def analyze(articles,features,now,issues):
+def analyze(articles,features,now,issues,focus_topics=None):
     if not os.getenv('OPENAI_API_KEY','').strip():
         return [],'새로운 분석을 작성하지 못했습니다.'
-    ctx=_main_context(articles,features,now,issues)
+    ctx=_main_context(articles,features,now,issues,focus_topics)
     if not ctx['articles'] and not ctx['official_series']:
         return [],'리서치 보류: 공개 뉴스와 공식 시계열 근거를 충분히 확보하지 못했습니다.'
     note='';last_reason='근거 부족'
@@ -364,12 +378,13 @@ def analyze(articles,features,now,issues):
 
 
 def _data_context(features,articles,main_reports,now):
-    used={fid for r in main_reports for fid in r.get('feature_ids',[])}
-    eligible=[f for f in features if f['id'] not in used]
+    # Sharing an indicator with the daily research is NOT a reason to drop it.
+    # Section 02 asks a different, numeric decomposition question.
+    eligible=sorted(features,key=lambda f:f.get('significance',0),reverse=True)
     return {'now_kst':now.isoformat(),'features':[{'id':f['id'],'name':f['name'],'title':f['title'],
                   'period_start':f['period_start'],'period_end':f['period_end'],
-                  'observed':f['observed'],'facts':f['facts'], 'limitations':f['limitations'],
-                  'article_ids':f.get('article_ids',[])} for f in eligible[:4]],
+                  'observed':f['observed'],'facts':f['facts'], 'limitations':f['limitations'], 'related_observations':f.get('related_observations',[]),
+                  'article_ids':f.get('article_ids',[])} for f in eligible[:10]],
             'already_covered':[r['headline'] for r in main_reports],
             'articles':[{'id':a['id'],'title':a['title'],'snippet':a.get('summary','')[:350]} for a in articles[:25]]}
 
@@ -378,7 +393,7 @@ def _validate_data(payload,context):
     f_map={f['id']:f for f in context['features']}
     article_ids={a['id'] for a in context['articles']}
     good=[];reasons=[];used=set()
-    for r in payload.get('reports',[])[:4]:
+    for r in payload.get('reports',[])[:7]:
         try:
             fid=r['feature_id']
             if fid not in f_map or fid in used:
@@ -389,7 +404,7 @@ def _validate_data(payload,context):
                 reasons.append('완결된 설명 부족');continue
             if not isinstance(r['transmission'],list) or len(r['transmission'])<2 or any(len(x.strip())<40 for x in r['transmission']):
                 reasons.append('전파 경로 두 문단 미충족');continue
-            observed=json.dumps(f_map[fid],ensure_ascii=False)
+            observed=json.dumps(list(f_map.values()),ensure_ascii=False)
             prose=' '.join([r[k] for k in fields]+r['transmission'])
             if not _supported(prose,observed):
                 reasons.append('공식 원자료에 없는 숫자');continue
@@ -398,7 +413,7 @@ def _validate_data(payload,context):
             rr=dict(r);rr['length_tier']='충실' if len(prose)>=700 else '간결'
             rr['status']='공식 수치 기반 AI 분석 · 통계와 가설 구분'
             good.append(rr);used.add(fid)
-            if len(good)>=2:break
+            if len(good)>=4:break
         except (KeyError,ValueError,AttributeError,TypeError):
             reasons.append('출력 필드 형식 오류')
     return good,reasons

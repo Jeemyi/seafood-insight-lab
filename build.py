@@ -22,6 +22,8 @@ import requests
 from bs4 import BeautifulSoup
 from seafood_data import make_features, SSB_LINK
 from seafood_ai import analyze, analyze_data, balanced_article_pool, research_public_sources
+from seafood_editorial import (select_market_topics, connect_evidence,
+                              deterministic_data_report)
 
 ROOT=Path(__file__).resolve().parent
 SITE=ROOT/'site';SITE.mkdir(exist_ok=True)
@@ -43,16 +45,21 @@ CATS={x[0]:{'terms':x[1],'boost':x[2],'question':x[3]} for x in CATEGORIES}
 SEAFOOD_HINTS=['수산','해산','어업','어획','어류','양식','수산물','활어','회','광어','우럭','연어','새우','오징어','꽃게','방어','건어물','식품','유통','급식','마트','코스트코','쿠팡','컬리','물류','환율','냉장','냉동','포장재','수입','수출','안전','위생']
 
 SEARCH_QUERIES=[
- ('원물 수급/시세','광어 우럭 연어 오징어 꽃게 수산 시세 어획 양식',True),
+ ('원물 수급/시세','광어 우럭 산지가 출하 양성물량 수산업관측 KMI',True),
+ ('원물 수급/시세','국산 오징어 어획 원양산 페루 대왕오징어 수입량 수입단가',True),
+ ('원물 수급/시세','광어 우럭 꽃게 고등어 위판 가격 2026 수급',True),
  ('원물 수급/시세','수산물 산지가 출하량 고수온 양식 피해',True),
  ('코스트코','코스트코 수산물 납품 공급사 PB 출점 가격',True),
- ('대형마트/SSM','이마트 롯데마트 홈플러스 트레이더스 유통 수산',True),
+ ('대형마트/SSM','홈플러스 점포 폐점 매각 이마트 롯데마트 SSM 신선식품 매출',True),
+ ('대형마트/SSM','대형마트 수산식품 회초밥 코너 즉석조리 HMR 점포',True),
  ('매장 운영','수산코너 유통매장 영업신고 식품위생 인건비',True),
  ('온라인','쿠팡 컬리 SSG 수산물 수수료 유통',True),
  ('B2B/급식','군 급식 식자재 수산물 조달 편의점',True),
  ('식품안전/소비심리','수산물 비브리오 원산지 식품안전 검역',True),
+ ('시즌/트렌드','수산물 회초밥 밀키트 필렛 냉동 간편식 신상품 경쟁',True),
  ('시즌/트렌드','대방어 과메기 제철 수산물 소비 트렌드',True),
  ('비용/거시','수입 연어 환율 물류비 냉동 수산물',True),
+ ('해외','한국 수산물 일본 미국 수출 증가 물량 평균단가 규제',True),
  ('해외','수산물 일본 스시 체인 미국 수출 관세',True),
 ]
 
@@ -316,6 +323,48 @@ def homeplus_demo():
     return [source_1,source_2,source_3],r
 
 
+def squid_demo():
+    """Independent historical public official datasets, explicitly marked DEMO."""
+    t1=datetime(2026,2,26,11,0,tzinfo=KST)
+    t2=datetime(2026,2,18,10,0,tzinfo=KST)
+    a={'id':'mof-2025-squid-production','source':'해양수산부 · 국가데이터처 어업생산동향',
+       'title':'2025년 국내 연근해 오징어 생산 31,006톤·전년 대비 128.5% 증가',
+       'url':'https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&menuSeq=971',
+       'published':t1.isoformat(),'timestamp':int(t1.timestamp()),'category':'원물 수급/시세',
+       'tags':['원물 수급/시세'],'score':16,'official':True,'channels':[],
+       'summary':'해양수산부 2026.2.26 발표. 2025 연근해 오징어 31,006톤으로 2024년 13,568톤 대비 128.5% 증가. 최근 5년 평균 38,278톤보다 18.9% 적다. 같은 해 원양 오징어류는 약 5.2만 톤, 전년 대비 17.4% 감소. 연근해와 원양어업의 생산 방향이 다르다.',
+       'summary_type':'공식 연간 어업생산동향 통계','impact':'연근해 회복·원양 감소','followup':'2026년 연근해 생산 및 원양어업 물량'}
+    b={'id':'mof-2025-squid-exports','source':'해양수산부 · 2025년 수산식품 수출통계',
+       'title':'2025년 오징어 수출물량 3.1만 톤·87.8% 증가',
+       'url':'https://www.fsis.go.kr/front/api/totalView.do?cnts_id=38261&select_list_no=5&title=',
+       'published':t2.isoformat(),'timestamp':int(t2.timestamp()),'category':'해외',
+       'tags':['해외'],'score':15,'official':True,'channels':['수출'],
+       'summary':'2025년 오징어 수출 물량은 2024년 1.7만 톤에서 2025년 3.1만 톤으로 87.8% 증가했다. 수출액은 0.8억 달러에서 1.1억 달러로 48.7% 증가. 공식 성장률을 사용한 대략적 단가 변화 계산 (1.487/1.878-1)은 약 -20.8%. 물량과 금액 증가율은 별도 기준이다.',
+       'summary_type':'공식 수산식품 수출통계 · 단가 변화율 별도 계산','impact':'수출액보다 빠른 물량 성장','followup':'2026년 오징어 수출단가·물량'}
+    report={'depth':'핵심','kind':'원물 수급/시세','time_frame':'2025년 연간 통계 · 2026년 2월 발표 · 시연',
+      'headline':'오징어 어획 반등에도 5년 평균 미달…수출 성장은 물량이 주도',
+      'thesis':'2025년 국내 연근해 오징어 어획량은 전년보다 128.5% 늘었다. 그러나 최근 5년 평균에는 18.9% 못 미쳤고, 원양 오징어 생산은 오히려 줄었다. 같은 해 오징어 수출도 물량이 금액보다 빠르게 증가했다. 어획량 급증과 수출 호조라는 두 수치만으로 오징어값의 강세를 판단하기 어려운 이유다.',
+      'lead':'오징어 공급이 반등했다는 뉴스는 사실이지만 무엇을 기준으로 회복이라고 부를 것인지는 다르다. 연근해 생산량을 전년과 비교하면 급증이고, 최근 5년 평균과 비교하면 여전히 낮은 수준이다. 여기에 원양 생산과 수출단가까지 놓으면 시장의 모습은 달라진다.',
+      'facts':[{'text':'해양수산부에 따르면 2025년 연근해 오징어 생산량은 31,006톤으로 2024년 13,568톤보다 128.5% 많았지만 최근 5년 평균 38,278톤보다 18.9% 적었다.','refs':['mof-2025-squid-production']},
+               {'text':'같은 발표에서 2025년 원양 오징어류 생산량은 약 5.2만 톤으로 전년보다 17.4% 줄었다. 연근해 생산과 원양 생산이 서로 반대 방향으로 움직였다.','refs':['mof-2025-squid-production']},
+               {'text':'수산식품 수출통계에 따르면 2025년 오징어 수출물량은 약 3.1만 톤으로 87.8%, 수출액은 약 1.1억 달러로 48.7% 각각 늘었다.','refs':['mof-2025-squid-exports']}],
+      'market_change':'2024년 역대 최저 수준이었던 연근해 오징어 생산은 2025년에 31,006톤으로 반등했다. 하지만 비교 기준을 최근 5년 평균으로 바꾸면 회복 폭은 충분하지 않다. 더구나 원양 오징어류 생산은 전년 대비 감소했다. 어획이 늘었다는 한 문장에 서로 다른 조업 해역의 수급 상황이 모두 담기지 않는다.',
+      'mechanism':['연근해 생산의 증가는 기저효과를 빼고 읽어야 한다. 2024년 어획량이 13,568톤으로 매우 낮았던 만큼 전년 대비 128.5% 증가라는 높은 성장률이 나타났다. 그 결과 2025년의 31,006톤도 최근 5년 평균 38,278톤보다 적었다. 전년 대비 증가율 하나만으로 장기 생산력을 회복했다고 판단할 수 없다.',
+                   '원양 생산과 연근해 생산은 같은 오징어 공급이라는 이름 아래 있지만 조업 해역과 품목 구성이 다르다. 해양수산부는 2025년 원양 오징어류 생산이 17.4% 감소했다고 발표했다. 국내 연근해 어획은 늘었는데 원양 물량은 줄었으므로, 가공·외식·소매시장에서 실제로 활용하는 원료의 공급여건을 한 가지 연근해 통계로 일반화할 수 없다.',
+                   '수출 통계도 가격과 물량을 분리해야 한다. 오징어 수출물량 증가율 87.8%는 수출액 증가율 48.7%를 크게 웃돌았다. 공식 발표된 반올림 증가율을 이용해 계산하면 수출 평균단가는 약 20.8% 낮아진 셈이다. 판매량은 늘었지만 평균단가가 높아져서 수출이 성장한 것은 아니었다. 다만 수출 상품의 가공 형태와 세부 품목 구성 변화가 평균단가에 반영됐는지는 추가 자료로 확인해야 한다.'],
+      'structural_insight':'연근해 어획 반등, 원양 생산 감소, 수출물량 확대와 수출 평균단가 하락이 같은 해에 나타났다. 오징어시장 전체를 단일한 가격 흐름으로 설명하기 어렵다는 증거다. 국내 연근해 생산량이 전년 대비 크게 늘었다는 소식만으로 국산·원양산·수입산 원료의 공급이 모두 넉넉해졌다고 볼 수 없고, 수출 증가만으로 가격 강세를 주장할 수도 없다.',
+      'scenario_up':{'condition':'2026년 연근해 오징어 생산이 5년 평균 이상으로 회복되고 원양 생산도 반등한다면','interpretation':'전체 공급 회복 판단에 필요한 두 생산 축이 함께 개선되는 것이다. 품목·규격이 같은 시장에서 가격 흐름을 추가 확인해야 한다.'},
+      'scenario_down':{'condition':'연근해 어획이 다시 줄거나 원양 생산 감소가 이어지고 수입단가가 상승한다면','interpretation':'2025년 반등은 일시적이었을 수 있으며, 시장별 원료 공급의 차이가 더 커질 수 있다.'},
+      'what_changes':'다음에는 2026년 월별 오징어 국내 어획량과 원양 생산량을 분리해 보고, 페루 등 국가별 냉동 오징어 HSK 수입량·평균단가를 추가로 확인해야 한다. 수출에서 물량 증가율이 금액 증가율을 웃도는 현상도 다음 연간 통계에서 지속되는지 확인해야 한다.',
+      'one_sentence':'역대 최저치에서 회복된 연근해 어획과 감소한 원양 생산, 가격보다 물량이 앞선 수출은 동시에 나타날 수 있다.',
+      'limitations':'2025년 연간 공식 통계의 시연이며, 연근해 살오징어와 원양 오징어류, 수출 오징어는 세부 품목·집계 범위가 달라 물량을 합산하거나 동일 상품 가격으로 비교하지 않았다. 평균 수출단가 -20.8%는 반올림 증가율에 근거한 근삿값이다.',
+      'article_ids':['mof-2025-squid-production','mof-2025-squid-exports'],'feature_ids':[],'policy_ids':[],
+      'confidence':'중간','channels':['수출'],'impact':'어획·수출 물량과 단가의 엇갈림',
+      'followup':'국산 연근해 어획·원양 생산·냉동 오징어 수입량·단가',
+      'status':'공식 과거 통계로 만든 시연 · 오늘의 자동 분석 아님'}
+    return [a,b],report
+
+
 def demo_data():
     """A clearly labeled historical demonstration using two distinct public datasets."""
     now=datetime.now(KST)
@@ -366,11 +415,48 @@ def demo_data():
       'confidence':'중간','status':'시연 전용 · 2026년 10월 공개 공식자료 기반 · 자동 생성 결과 아님',
       'channels':[],'impact':'수출물량 주도형 성장 · 가격 약세 동반',
       'followup':'월간 연어 수출량과 단가, 국가별 수요·재수출 물량'}
+    # Official annual data illustrated separately from auto-fetched live indicators.
+    # These are actual published 2025 figures, NOT mock API observations.
+    squid_public_feature={'id':'squid_official_2025_benchmark',
+        'name':'오징어 생산·수출 비교',
+        'title':'연근해 어획 반등, 원양 생산 감소…수출은 물량 중심 증가',
+        'subtitle':'2025년 공식 연간 통계 · 과거 자료 시연',
+        'period_start':'2024년','period_end':'2025년',
+        'facts':[{'label':'연근해 오징어 생산량','value':'31,006톤','detail':'전년 대비 +128.5%'},
+                 {'label':'최근 5년 평균 대비','value':'-18.9%','detail':'5년 평균 38,278톤'},
+                 {'label':'원양 오징어 생산','value':'-17.4%','detail':'전년 대비'},
+                 {'label':'오징어 수출 물량','value':'+87.8%','detail':'수출액 +48.7%'}],
+        'observed':'2025년 연근해 오징어 생산 31,006톤(+128.5% YoY, 5년 평균 대비 -18.9%); 원양 오징어류 생산 -17.4%; 오징어 수출물량 +87.8%, 수출액 +48.7%, 이를 이용한 평균 수출단가 증감률 약 -20.8%. 각 통계의 상품 범위는 다름.',
+        'data_links':[{'url':'https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&menuSeq=971', 'label':'해양수산부 2025년 어업생산동향 발표'},
+                      {'url':'https://www.fsis.go.kr/front/api/totalView.do?cnts_id=38261&select_list_no=5&title=', 'label':'해양수산부 2025년 수산식품 수출 발표'}],
+        'article_ids':['mof-2025-squid-production','mof-2025-squid-exports'],
+        'category':'원물 수급/시세','channels':[],
+        'impact':'국내 연근해·원양 생산 차이와 수출 물량·금액의 역행',
+        'limitations':'연근해 오징어, 원양 오징어류, 수출 오징어의 범위와 가공상태가 달라 물량을 더하거나 동일 어종의 가격으로 간주하면 안 됩니다. 2025년 연간 관측이며 실시간 관측이 아닙니다.'}
+    squid_public_report={
+        'feature_id':'squid_official_2025_benchmark',
+        'headline':'오징어 어획 급증에도 장기 평균엔 못 미쳐…수출단가도 하락',
+        'conclusion':'2025년 연근해 오징어 생산은 전년보다 128.5% 늘었지만 5년 평균보다 18.9% 적었다. 원양 생산은 17.4% 감소했고 수출은 물량 증가율이 금액 증가율을 크게 웃돌았다. 오징어 시장의 회복을 한 가지 어획 통계로 판단할 수 없는 이유다.',
+        'market_observation':'해양수산부의 2025년 어업생산동향에 따르면 연근해 오징어 31,006톤, 최근 5년 평균 38,278톤이며 원양 오징어류 생산은 전년 대비 17.4% 감소했다. 별도의 연간 수산식품 수출자료에서는 오징어 수출물량 +87.8%, 수출액 +48.7%가 확인된다.',
+        'transmission':['전년 대비 어획 증가율 +128.5%만 보면 공급이 정상화된 것 같지만, 비교기간을 최근 5년 평균으로 바꾸면 18.9% 부족하다. 전년도 생산이 극히 낮았던 데 따른 기저효과를 구분해야 한다.',
+                        '같은 해 수출물량 증가율 +87.8%는 수출액 증가율 +48.7%를 웃돌았다. 두 비율로 계산한 평균 수출단가 변화율은 약 -20.8%다. 이는 수출량 증가가 수출액 확대의 주요 요인이었다는 뜻이지만, 세부 수출 제품의 구성 변화 가능성은 남는다.'],
+        'structural_insight':'국내 연근해 조업은 크게 반등했지만 장기 평균에 못 미쳤고, 원양 오징어 생산은 오히려 줄었다. 수출은 물량 중심으로 성장하면서 평균단가가 하락했다. 따라서 국내 어획 회복, 원료 공급 여건, 수출가격을 하나의 상승·하락 신호로 합쳐 해석하면 시장별 차이를 놓친다.',
+        'alternative':'연근해 오징어와 원양 오징어류는 조업 해역과 세부 품목이 다르고, 수출 통계에는 가공·규격별 구성 변화가 포함될 수 있다. 따라서 세 숫자가 서로 직접적인 원인·결과 관계라고 볼 수 없다.',
+        'scenario_support':'2026년에도 연근해 오징어 생산이 5년 평균을 웃돌고 원양 생산까지 개선되면 국내 전체 공급의 회복 근거가 강해진다.',
+        'scenario_challenge':'연근해 어획이 다시 줄거나 수출 평균단가가 회복하면서 수출물량이 감소한다면 2025년의 물량 중심 성장세가 지속된다는 해석을 수정해야 한다.',
+        'investor_meaning':'2026년 월별 국내 어획과 원양 생산을 나눠 확인하고, 냉동 오징어 HSK 수입량·수입단가를 국가별로 비교해야 한다. 특히 남미산 대왕오징어와 국산 살오징어의 용도·규격이 다르다는 점을 고려해야 한다.',
+        'limits':'2025년 연간 공식 발표에 근거한 시연용 수치 해설. 자동 AI 생성도, 2026년 최신 현황 분석도 아닙니다. 수출 평균단가 -20.8%는 공식 발표의 반올림 성장률을 이용한 근사치입니다.',
+        'article_ids':['mof-2025-squid-production','mof-2025-squid-exports'],
+        'confidence':'중간','status':'공식 공개통계 과거 시연 · AI 실시간 생성 아님'}
     distribution_articles,distribution_report=homeplus_demo()
-    return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2]+distribution_articles,'features':[f],
-            'deep_reports':[distribution_report,report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
+    squid_articles,squid_report=squid_demo()
+    salmon_public_report=deterministic_data_report(dict(f,series_type='salmon_joint',measurements={'yoy_price_pct':-6.9,'yoy_qty_pct':14.3}))
+    if salmon_public_report:
+        salmon_public_report['status']='공식 공개통계 과거 시연 · AI 실시간 생성 아님'
+    return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2]+distribution_articles+squid_articles,'features':[squid_public_feature,f],
+            'deep_reports':[distribution_report,squid_report,report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
             'research_sources':[],'report_factual_brief':False,'report_archived':False,'last_report_updated_at':datetime(2026,11,5,10,39,tzinfo=KST).isoformat(),
-            'data_reports':[],'data_ai_status':'샘플 전용 — 자동 AI 생성 아님',
+            'data_reports':[squid_public_report]+([salmon_public_report] if salmon_public_report else []),'data_ai_status':'샘플 전용 — 자동 AI 생성 아님',
             'issue_candidates':[],'analysis_status':'2026년 10월 공식 과거 통계로 만든 시연 · 실시간 자료 아님',
             'sources_ok':0,'sources_total':len(SOURCES),'errors':[],
             'metric_errors':[],'demo':True, 'policy_sources':[], 'deep_links':DEEP_LINKS}
@@ -384,17 +470,23 @@ def load_previous_report():
         if not isinstance(reports,list) or not reports:return None
         # Archiving a report does not make it fresh again.
         date=data.get('last_report_updated_at') or data.get('generated_at')
-        if not isinstance(date,str) or len(date)<10:return None
+        if not isinstance(date,str) or len(date)<10 or data.get('demo'):return None
         sources=data.get('research_sources',[])
         return {'reports':[dict(r) for r in reports[:3]],'date':date,
                 'sources':sources,'articles':data.get('articles',[]),'features':data.get('features',[])}
     except (OSError,ValueError,TypeError,AttributeError):return None
 
 
-def make_factual_brief(articles, features, now):
+def make_factual_brief(articles, features, now, focus_topics=None):
     """Truthful fact-based fallback. Not marketed as a comprehensive AI report."""
     best=[];used_sources=set()
-    for a in articles:
+    focus_ids=next((t['article_ids'] for t in (focus_topics or []) if t['article_ids']),[])
+    focused=[a for a in articles if a['id'] in focus_ids]
+    eligible=focused if focused else articles
+    if eligible:
+        lead_category=eligible[0]['category']
+        eligible=[a for a in eligible if a['category']==lead_category]
+    for a in eligible:
         if len(a.get('summary',''))<55 or a['source'] in used_sources:continue
         best.append(a);used_sources.add(a['source'])
         if len(best)==3:break
@@ -402,14 +494,14 @@ def make_factual_brief(articles, features, now):
     category=best[0]['category'] if best else features[0]['category']
     title=best[0]['title'] if best else features[0]['title']
     observations=[f"{a['source']}의 {a['published'][:10]} 보도: {a['title']} — {a['summary'][:250]}" for a in best]
-    if features: observations.append(features[0]['observed'])
+    if features and (not best or features[0]['category']==category): observations.append(features[0]['observed'])
     desc=' '.join(observations)
     if not desc:return []
     fact_refs=[{'text':x['summary'][:350], 'refs':[x['id']]} for x in best]
-    if features:fact_refs.append({'text':features[0]['observed'],'refs':[features[0]['id']]})
+    if features and (not best or features[0]['category']==category):fact_refs.append({'text':features[0]['observed'],'refs':[features[0]['id']]})
     evidence_statement=' '.join(o[:280] for o in observations[:2])
     return [{'depth':'보조','kind':category,'time_frame':now.date().isoformat()+' 기준',
-        'headline':'주요 수산·유통 동향: '+title[:70],
+        'headline':'공개자료로 확인된 시장 변화 · '+title[:70],
         'thesis':evidence_statement,'lead':'관련 공개 기사와 공식 통계에서 직접 확인되는 내용을 정리했습니다. 여러 자료로 검증되지 않은 원인이나 수익성은 추정하지 않았습니다.',
         'facts':fact_refs,'market_change':desc[:900],
         'mechanism':['현재 공개된 자료만으로는 서로 다른 변화가 같은 원인에서 비롯됐다고 단정할 수 없습니다. 각 출처의 날짜와 지표를 구분해 읽어야 합니다.',
@@ -420,7 +512,7 @@ def make_factual_brief(articles, features, now):
         'what_changes':'자료별 기준일·대상·규격을 확인하고 같은 기간의 수출입·소비 및 산지 통계와 대조해야 합니다.',
         'one_sentence':'공개 자료에서 확인된 주요 현황을 정리했습니다.',
         'limitations':'심층 AI 분석에 필요한 독립 근거가 충분하지 않아, 검증된 기사와 공식 지표만 정리한 자료입니다.',
-        'article_ids':[x['id'] for x in best], 'feature_ids':[features[0]['id']] if features else [],
+        'article_ids':[x['id'] for x in best], 'feature_ids':[features[0]['id']] if features and (not best or features[0]['category']==category) else [],
         'policy_ids':[],'confidence':'낮음','channels':[],'impact':'공개 자료로 확인한 현황',
         'followup':'해당 분야의 후속 공식 통계','status':'공개 자료 요약 · 심층 분석 미완료'}]
 
@@ -438,20 +530,29 @@ def collect():
                 all_articles.extend(feed_to_articles(src,entries,now))
     articles=dedup(all_articles)
     features,metric_errors=make_features(now)
-    # Articles are not proof of changes to private buying costs or channel profit.
-    for f in features:
-        terms=['연어','노르웨이'] if f['id']=='salmon_export_price' else ['환율','수입','외화']
-        f['article_ids']=[a['id'] for a in articles if any(t in a['title'] for t in terms)][:3]
+    connect_evidence(features,articles)
+    previous=load_previous_report()
+    previous_headlines=[r.get('headline','') for r in (previous or {}).get('reports',[])]
+    focus_topics=select_market_topics(articles,features,previous_headlines)
     issues=issues_from_articles(articles)
-    search_sources,research_status=research_public_sources(articles,features,now)
-    print('SEAFOOD research:',research_status)
-    reports,deep_status=analyze(articles+search_sources,features,now,issues)
-    data_reports,data_status=analyze_data(features,articles,reports,now)
+    search_sources,research_status=research_public_sources(articles,features,now,focus_topics)
+    print('SEAFOOD research:',research_status,'topics:',[(t['theme'],t['score']) for t in focus_topics[:4]])
+    reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics)
+    data_reports,data_status=analyze_data(features,articles+search_sources,reports,now)
+    # Every numerical dataset deserves a real explanation. Machine-created
+    # calculations are visibly distinguished from researched AI essays.
+    reported={r.get('feature_id') for r in data_reports}
+    for f in features[:14]:
+        if f['id'] in reported:continue
+        explanation=deterministic_data_report(f)
+        if explanation:
+            data_reports.append(explanation)
+            reported.add(f['id'])
     last_report_updated_at=now.isoformat(timespec='minutes') if reports else None
     archive=False
     factual_brief=False
     if not reports:
-        old=load_previous_report()
+        old=previous
         if old:
             reports=old['reports']
             last_report_updated_at=old['date']
@@ -463,7 +564,7 @@ def collect():
                     search_sources.append(source);by_id[source['id']]=source
             deep_status='지난 시장 분석 · '+last_report_updated_at[:10]+' 작성'
         elif articles or features:
-            reports=make_factual_brief(articles,features,now)
+            reports=make_factual_brief(articles,features,now,focus_topics)
             if reports:
                 factual_brief=True
                 last_report_updated_at=now.isoformat(timespec='minutes')
@@ -480,12 +581,12 @@ def collect():
             search_sources=search_sources+sample['articles']
     if not reports:raise RuntimeError('An on-screen research article is always required')
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':articles,'features':features,
-            'issue_candidates':issues,'deep_reports':reports,'deep_status':deep_status,
+            'issue_candidates':[],'focus_topics':focus_topics,'deep_reports':reports,'deep_status':deep_status,
             'research_sources':search_sources,'archived_features':old['features'] if archive and 'old' in locals() and old else [],
             'report_archived':archive,'report_factual_brief':factual_brief,
             'last_report_updated_at':last_report_updated_at,
             'data_reports':data_reports,'data_ai_status':data_status,
-            'analysis_status':f'공식 자동 지표 {len(features)}개 · ECOS·SSB 공개 데이터 · 비교불가 수치 제외',
+            'analysis_status':f'실제 공식 관측 {len(features)}종 · SSB/ECOS 및 연결된 국내 공공통계 기준',
             'sources_ok':ok,'sources_total':len(SOURCES),'errors':errors,
             'metric_errors':metric_errors,'demo':False,'policy_sources':[], 'deep_links':DEEP_LINKS}
 

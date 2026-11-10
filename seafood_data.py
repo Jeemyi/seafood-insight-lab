@@ -98,6 +98,68 @@ def _jsonstat_values(payload):
     return result
 
 
+def _choose_salmon_volume_codes(metadata):
+    chosen=_choose_salmon_codes(metadata)
+    for name,dim in _metadata_dimensions(metadata):
+        key=(name+' '+dim.get('label','')).lower()
+        if 'content' not in key and 'measure' not in key and 'statistic' not in key:continue
+        choices=_dimension_choices(dim)
+        volume=next((code for code,label in choices if
+            any(t in label.lower() for t in ('quantity','volume','weight')) and
+            any(t in label.lower() for t in ('tonne','tonnes','metric ton'))),None)
+        if volume:
+            chosen[name]=volume
+            return chosen
+    raise ValueError('SSB quantity series not available')
+
+
+def fetch_ssb_salmon_volume():
+    try:
+        metadata=_get_json(SSB_META,{'lang':'en'})
+        chosen=_choose_salmon_volume_codes(metadata)
+        params={'lang':'en'}
+        for k,v in chosen.items():params[f'valueCodes[{k}]']=v
+        values=_jsonstat_values(_get_json(SSB_DATA,params))
+        if len(values)<4:raise ValueError('SSB insufficient quantity observations')
+        return values,None
+    except Exception as exc:
+        return {},'SSB 연어 물량: '+type(exc).__name__
+
+
+def salmon_price_volume_feature(price,volume,today):
+    common=sorted(set(price)&set(volume))
+    if not common:return None
+    year,week=common[-1]
+    try:
+        if (today-date.fromisocalendar(year,week,1)).days>28:return None
+    except ValueError:return None
+    prior=(year-1,week)
+    if prior not in price or prior not in volume:return None
+    price_delta=_pct(price[prior],price[(year,week)])
+    volume_delta=_pct(volume[prior],volume[(year,week)])
+    if None in (price_delta,volume_delta):return None
+    current_price=price[(year,week)];current_volume=volume[(year,week)]
+    period=f'{year}년 {week}주';prev=f'{year-1}년 {week}주'
+    observed=(f'노르웨이 통계청 SSB {period}: 신선·냉장 연어 수출가격 {current_price:,.2f} NOK/kg '
+              f'(전년 {prev} 대비 {price_delta:+.1f}%), 수출물량 {current_volume:,.0f}톤 '
+              f'(전년 동주 대비 {volume_delta:+.1f}%). 동일 주차·동일 제품 분류 비교.')
+    return {'id':'salmon_price_volume','name':'노르웨이 연어 가격·수출물량',
+        'title':f'노르웨이 연어 수출가 {price_delta:+.1f}% · 물량 {volume_delta:+.1f}%',
+        'subtitle':'노르웨이 통계청 SSB 신선·냉장 연어','period_start':prev,
+        'period_end':period,'facts':[
+          {'label':'수출가격','value':f'{current_price:,.2f} NOK/kg','detail':period},
+          {'label':'전년 동기 수출가','value':f'{price_delta:+.1f}%','detail':prev},
+          {'label':'수출물량','value':f'{current_volume:,.0f}톤','detail':period},
+          {'label':'전년 동기 수출물량','value':f'{volume_delta:+.1f}%','detail':prev}],
+        'observed':observed,'data_links':[{'url':SSB_LINK,'label':'노르웨이 통계청 신선·냉장 연어 주간 수출 가격·물량'}],
+        'article_ids':[],'category':'원물 수급/시세','channels':[],
+        'impact':f'가격 {price_delta:+.1f}% · 물량 {volume_delta:+.1f}%',
+        'source_type':'공식 공개 API','series_type':'salmon_joint',
+        'limitations':'SSB 신선·냉장 연어 수출가격은 NOK/kg, 물량은 수출 톤수다. 한국 수입 원가·원화 환산가격과 다르며 월간 수출 통계와 같은 자료로 합산할 수 없다.',
+        'measurements':{'species':'연어','price_nok_kg':current_price,'tonnes':current_volume,'yoy_price_pct':price_delta,'yoy_qty_pct':volume_delta},
+        'significance':min(34,abs(price_delta)*1.6+abs(volume_delta)*.7)+5}
+
+
 def fetch_ssb_salmon():
     """Official open PxWeb v2 API; failures are explicit and no values invented."""
     try:
@@ -248,10 +310,14 @@ def _series_feature(fid, name, title, observations, unit, source_url, source_nam
 def make_features(now):
     features=[]; errors=[]
     salmon,ssb_error=fetch_ssb_salmon()
-    if salmon:
+    volume,volume_error=fetch_ssb_salmon_volume()
+    joint=salmon_price_volume_feature(salmon,volume,now.date()) if salmon and volume else None
+    if joint:features.append(joint)
+    if salmon and not joint:
         f=_series_feature('salmon_export_price','노르웨이 생연어 수출가','노르웨이 연어 수출가 변화가 국내 수입원가에 주는 신호',salmon,'NOK/kg',SSB_LINK,'노르웨이 통계청 SSB',now.date(),'원물 수급/시세',['마트','온라인','B2B'],'NOK 가격 하락은 원물가 하락 요인일 수 있으나 국내 매입가 하락 확정 아님', 'weekly')
         if f:features.append(f)
     if ssb_error:errors.append(ssb_error)
+    if volume_error:errors.append(volume_error)
     fx,fx_errors=fetch_ecos(now)
     errors.extend(fx_errors)
     for currency, unit, title, channels in [
@@ -268,4 +334,13 @@ def make_features(now):
         # Mixing non-matching observation dates here would be misleading;
         # show the official series separately rather than invent weekly landed cost.
         _=latest_week,fx_latest
+    # New public sources. They stay optional and never generate placeholder values.
+    from seafood_public import make_public_features
+    extra,public_errors=make_public_features(now)
+    features.extend(extra)
+    errors.extend(public_errors)
+    # Keep some FX/salmon context, but prioritize species-specific production/trade
+    # and surveyed consumer prices over three generic macro cards.
+    features.sort(key=lambda x:(x.get('significance',0),
+                 4 if x.get('series_type') in ('trade','kamis') else 0),reverse=True)
     return features,errors

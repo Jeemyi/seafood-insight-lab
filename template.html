@@ -170,6 +170,17 @@
 .demo-topics-grid b{font-size:12px;line-height:1.55;word-break:keep-all}
 .demo-topics-grid small{font-size:10.5px;line-height:1.5;color:#809087}
 @media(max-width:700px){.demo-topics-grid{grid-template-columns:1fr}.demo-topics{padding:14px}}
+
+/* v5: prose-first research and clean comparative statistics */
+.data-research-body .cross-row{padding:10px 0;border-bottom:1px solid #e8eee9}
+.cross-row b{font-size:13px;color:#245d50}
+.cross-row p{font-size:12px;margin:5px 0!important}
+.cross-row small{color:#87958d;font-size:10px}
+.insight-section .insight-card .fact-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+.research-body .mechanism{list-style:none}
+.research-body .mechanism li{display:block;margin-bottom:16px}
+.research-body .mechanism li::before{display:none}
+@media(max-width:650px){.insight-section .insight-card .fact-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -197,22 +208,13 @@
     <div class="insight-status" id="deepStatus"></div><div class="deep-deck" id="deepDeck" aria-live="polite"></div>
   </section>
   <section class="insight-section" aria-labelledby="insight-heading">
-   <div class="insight-section-top"><div><div class="insight-overline">02 / 통계</div><h2 id="insight-heading">가격·수급 동향</h2><p>공식 통계로 가격과 물량의 흐름을 비교합니다. 자료가 없는 항목은 표시하지 않습니다.</p></div><span class="insight-count" id="insightCount">0건</span></div>
+   <div class="insight-section-top"><div><div class="insight-overline">02 / 가격·수급 분석</div><h2 id="insight-heading">품목별 가격·수급 분석</h2><p>생산·수출입·도소매가격을 구분하고, 같은 기준의 물량·금액·단가를 비교합니다.</p></div><span class="insight-count" id="insightCount">0건</span></div>
    <div class="insight-status" id="analysisStatus"></div>
    <div class="insight-deck" id="insightDeck" aria-live="polite"></div>
   </section>
-  <details class="optional-issues"><summary>03 / 더 살펴볼 쟁점</summary>
-  <section class="issue-section" aria-labelledby="issues-heading">
-    <div class="insight-section-top"><div><div class="insight-overline">03 / 참고자료</div>
-      <h2 id="issues-heading">더 살펴볼 쟁점</h2>
-      <p>관련 보도를 비교하고, 아직 확인되지 않은 부분을 정리했습니다. 아래 질문은 분석 결과가 아닙니다.</p></div><span class="insight-count" id="issueCount">— ISSUES</span></div>
-    <div class="issue-deck" id="issueDeck" aria-live="polite"></div>
-  </section>
-
-  </details>
   <div class="content-grid">
   <div class="main-column">
-    <div class="section-head"><div><h2 class="section-name" id="featured-heading">주요 뉴스</h2><div class="section-sub">주요 수산·유통 뉴스와 원문 링크</div></div><button class="section-action" type="button" id="resetRead">읽음 초기화 ↻</button></div>
+    <div class="section-head"><div><h2 class="section-name" id="featured-heading">03 · 주요 뉴스</h2><div class="section-sub">주요 수산·유통 뉴스와 원문 링크</div></div><button class="section-action" type="button" id="resetRead">읽음 초기화 ↻</button></div>
     <section class="spotlight" id="featured" aria-live="polite"></section>
     <div class="section-head" id="allNews"><div><h2 class="section-name">전체 기사</h2><div class="section-sub">분야별 보기 · 검색 · 읽음 · 저장</div></div></div>
     <div class="toolbar"><div class="tabs" id="tabs" role="group" aria-label="기사 주제 필터"></div><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="기사 검색" aria-label="기사 제목 및 요약 검색"></div></div>
@@ -223,12 +225,14 @@
    <section class="sidebar-card"><div class="side-label">10-MINUTE ROUTINE</div><h2 class="side-title">10분 읽기</h2>
     <div class="routine"><div class="routine-num">02분</div><div><strong>주요 분석 읽기</strong><p>기사와 통계에서 확인된 핵심 내용 살펴보기</p></div></div>
     <div class="routine"><div class="routine-num">05분</div><div><strong>관련 기사와 원자료 확인</strong><p>가격의 단위·기준일·규격과 채널을 구분</p></div></div>
-    <div class="routine"><div class="routine-num">03분</div><div><strong>반론까지 말하기</strong><p>다른 원인으로도 설명할 수 있는지 생각하기</p></div></div>
+    <div class="routine"><div class="routine-num">03분</div><div><strong>전망 확인</strong><p>다음에 나올 물량·가격·유통 지표 확인하기</p></div></div>
    </section>
    <section class="sidebar-card"><div class="side-label">ANALYSIS FRAME</div><h2 class="side-title">자료를 보는 기준</h2><div class="chain"><b>① 기준점</b> 전주·전년·3년 동기 평균과 비교<br><b>② 비교군</b> 수입/국산·규격·어종·유통채널 구분<br><b>③ 영향 경로</b> 수급·정책·소비 → 가격·유통구조 변화<br><b>④ 다른 설명</b> 품목 규격·시차·대체 수요·시장별 차이 검토<br><b>⑤ 후속 지표</b> 위판량·수출입 물량·단가·채널별 판매 지표</div><div class="side-divider"></div><div class="footnote">공개 통계만으로 개별 업체의 거래조건을 알 수는 없습니다.</div></section>
    <section class="sidebar-card"><div class="side-label">RESEARCH STANDARD</div><h2 class="side-title">자료 해석 시 유의사항</h2><div class="study-example">국제 수출가격과 국내 매입가격은 다릅니다. 품목, 기준일, 통화, 거래 단계가 같은 자료끼리 비교합니다.</div></section>
-   <section class="sidebar-card"><div class="side-label">DEEP READING</div><h2 class="side-title">공식 자료 확인할 곳</h2>
+   <section class="sidebar-card"><div class="side-label">DEEP READING</div><h2 class="side-title">공식 통계와 보고서</h2>
    <div class="sources"><a class="source-link" href="https://www.foc.re.kr/" target="_blank" rel="noopener noreferrer">KMI 수산업관측센터 · 어종별 수급</a><br>
+   <a class="source-link" href="https://www.data.go.kr/data/15056602/openapi.do" target="_blank" rel="noopener noreferrer">해양수산부 · 수산물 HSK 수출입 통계</a><br>
+   <a class="source-link" href="https://www.kamis.or.kr/customer/reference/openapi_list.do?action=detail&boardno=1" target="_blank" rel="noopener noreferrer">aT KAMIS · 수산물 도·소매 가격</a><br>
    <a class="source-link" href="https://www.suhyup.co.kr/" target="_blank" rel="noopener noreferrer">수협중앙회 · 위판정보 확인</a><br>
    <a class="source-link" href="https://www.mof.go.kr/" target="_blank" rel="noopener noreferrer">해양수산부 · 보도자료</a><br>
    <a class="source-link" href="https://unipass.customs.go.kr/ets/" target="_blank" rel="noopener noreferrer">관세청 · 무역통계</a><br>
@@ -237,7 +241,7 @@
    <a class="source-link" href="https://en.seafood.no/market-insight/" target="_blank" rel="noopener noreferrer">Norwegian Seafood Council</a><br>
    <a class="source-link" href="https://www.ssb.no/en/statbank/table/03024/" target="_blank" rel="noopener noreferrer">SSB · 연어 수출가격·물량</a><br>
    <a class="source-link" href="https://ecos.bok.or.kr/" target="_blank" rel="noopener noreferrer">한국은행 ECOS · 환율</a></div>
-   <div class="side-divider"></div><div class="footnote">KMI·수협·관세청 등 API/RSS 연결을 확인하지 못한 지표는 링크만 제공합니다. 자동 수집·3년 평균 계산을 하는 공식 지표는 해당 섹션에 출처가 명시됩니다.</div></section>
+   <div class="side-divider"></div><div class="footnote">KMI 관측자료는 원문을 확인할 수 있도록 연결합니다. 정부 수출입·KAMIS 가격 API는 인증키가 등록된 경우에만 자동 수집하며, 집계되지 않은 자료는 만들어 표시하지 않습니다.</div></section>
    <section class="sidebar-card side-wide"><div class="side-label">SOURCES & TRANSPARENCY</div><h2 class="side-title">뉴스 출처와 계산 방식</h2>
    <div class="sources">Google 뉴스의 공개 검색 RSS 및 한국경제·매일경제의 공개 RSS 제목/소개문을 이용합니다. 기사 본문을 우회해 수집하지 않습니다. 원문 링크는 게시자가 제공하는 URL이며 일부는 Google 뉴스 경유 링크일 수 있습니다.</div>
    <div class="side-divider"></div><div class="footnote">공식 데이터: SSB PxWeb 통계 / 한국은행 ECOS(별도 인증키). 변동률은 수집값으로 계산하며, 전주·전년 동기·3년 동기 평균 중 기초값이 없는 비교는 생략합니다. AI는 수치 계산을 하지 않고 공개 근거에 대한 가능한 해석을 작성합니다. 개별 기업의 비공개 거래조건이나 실제 수익성을 추정하지 않습니다. 개인 학습용이며 AI 인과 해석은 확정 사실이 아닙니다.</div></section>
@@ -324,36 +328,36 @@
   const primary=(ins.data_links||[]).map(e=>urlSafe(e.url)?`<a class="evidence-link" href="${esc(urlSafe(e.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(e.label)} · 공식 원자료</a>`:'').join('');
   const nums=(ins.facts||[]).map(f=>`<div class="fact-tile"><span class="fact-name">${esc(f.label)}</span><strong class="fact-value">${esc(f.value)}</strong><span class="fact-detail">${esc(f.detail)}</span></div>`).join('');
   const title=r?r.headline:ins.title;
-  const ai=r?`<div class="data-report-cover"><div class="mini-label">주요 해석</div><p>${esc(r.conclusion)}</p></div>
+  const ai=r?`<div class="data-report-cover"><div class="mini-label">${r.status&&(r.status.includes('AI 심층')||r.status.includes('AI 분석'))?'AI 분석':'자료 해설'}</div><p>${esc(r.conclusion)}</p></div>
    <details class="data-expand"><summary>자세히 읽기</summary><div class="data-research-body">
-   <section><h4>01 · 숫자로 본 변화</h4><p>${esc(r.market_observation)}</p></section>
-   <section><h4>02 · 관련 시장의 움직임</h4>${r.transmission.map(t=>`<p>${esc(t)}</p>`).join('')}</section>
-   <section><h4>03 · 수치가 말해주는 점</h4><p>${esc(r.structural_insight)}</p></section>
-   <section><h4>04 · 다른 해석</h4><p>${esc(r.alternative)}</p></section>
-   <section><h4>05 · 다음에 확인할 지표</h4><div class="data-scenarios"><div><b>강화할 관측</b><p>${esc(r.scenario_support)}</p></div><div><b>반대되는 관측</b><p>${esc(r.scenario_challenge)}</p></div></div></section>
-   <section><h4>06 · 지켜볼 변화</h4><p>${esc(r.investor_meaning)}</p></section>
-   <section><h4>근거와 검증의 한계</h4><p class="limits">${esc(r.limits)}</p></section>
+   <section><h4>관측된 변화</h4><p>${esc(r.market_observation)}</p></section>
+   <section><h4>물량과 가격의 관계</h4>${r.transmission.map(t=>`<p>${esc(t)}</p>`).join('')}</section>
+   <section><h4>이 숫자가 뜻하는 것</h4><p>${esc(r.structural_insight)}</p></section>
+   <section><h4>확인할 점</h4><p>${esc(r.alternative)}</p></section>
+   <section><h4>다음 발표에서 볼 변화</h4><div class="data-scenarios"><div><b>강화할 관측</b><p>${esc(r.scenario_support)}</p></div><div><b>반대되는 관측</b><p>${esc(r.scenario_challenge)}</p></div></div></section>
+   <section><h4>이어서 비교할 자료</h4><p>${esc(r.investor_meaning)}</p></section>
+   <section><h4>비교 기준</h4><p class="limits">${esc(r.limits)}</p></section>
    </div></details>`:`<p class="no-data-ai">수치 해설은 아직 준비되지 않았습니다. 위 값은 공식 통계로 계산한 결과입니다.</p>`;
-  return `<article class="insight-card data-story-card"><div class="insight-main"><div class="insight-brow"><span class="insight-tag">${String(idx+1).padStart(2,'0')} · ${esc(ins.name)}</span><span class="insight-level">${r?'해설 포함':'공식 통계'} · ${esc(ins.period_end)}</span></div>
+  const cross=(ins.related_observations||[]).map(x=>`<div class="cross-row"><b>${esc(x.name)}</b><p>${esc(x.observed)}</p><small>${esc(x.period_end)} · 기준기간과 규격이 다른 자료는 직접 합산하지 않습니다.</small></div>`).join('');
+  return `<article class="insight-card data-story-card"><div class="insight-main"><div class="insight-brow"><span class="insight-tag">${String(idx+1).padStart(2,'0')} · ${esc(ins.name)}</span><span class="insight-level">${r?(r.status&&(r.status.includes('AI 심층')||r.status.includes('AI 분석'))?'AI 분석':'통계 해설'):'공식 통계'} · ${esc(ins.period_end)}</span></div>
     <h3>${esc(title)}</h3><div class="impact-strip"><span class="effect-tag">분야 · ${esc(ins.category||ins.name)}</span><span class="effect-tag">${esc(ins.impact||'공식 시계열 관측')}</span></div><div class="fact-row">${nums}</div>
     <div class="insight-highlight"><span class="mini-label">공식 통계</span><p class="evidence-statement">${esc(ins.observed)}</p></div>${ai}
-    <p class="feature-period">비교 구간: ${esc(ins.period_start)} ~ ${esc(ins.period_end)} · 각 지표의 발표·관측 시점 기준</p>
-   </div><div class="insight-links"><div class="insight-link-heading">공식 원자료 · 관련 보도</div>${primary}<div class="insight-related">${related||'<span>연결된 관련 뉴스는 없습니다. 공식 통계의 정량적 변화만을 검토했습니다.</span>'}</div><div class="source-note">SSB·ECOS 공식 통계 기준. 해외 수출가격은 국내 매입가격과 다르며, 원인 설명에는 추가 검증이 필요할 수 있습니다.</div></div></article>`;
+    ${cross?`<details class="data-expand"><summary>같은 품목의 다른 통계</summary><div class="data-research-body">${cross}</div></details>`:''}
+    <p class="feature-period">비교 구간: ${esc(ins.period_start)} ~ ${esc(ins.period_end)} · 해당 통계의 집계·관측 시점 기준</p>
+   </div><div class="insight-links"><div class="insight-link-heading">공식 원자료 · 관련 보도</div>${primary}<div class="insight-related">${related||'<span>연결된 관련 뉴스는 없습니다. 공식 통계의 정량적 변화만을 검토했습니다.</span>'}</div><div class="source-note">${esc(ins.limitations||'통계의 단위·시점·규격을 확인하세요. 공개된 가격은 개별 거래가격과 다를 수 있습니다.')}</div></div></article>`;
  }
  function update(){
   const reports=data.deep_reports||[];
-  const issueSection=$('.issue-section'), reportSection=$('.deep-section');
+  const reportSection=$('.deep-section');
   // Research is always the primary content. Mechanical question cards stay collapsed below the data section.
-  const issues=data.issue_candidates||[];
-  $('#issueCount').textContent=`${issues.length}건`;
-  $('#issueDeck').innerHTML=issues.map(issueCard).join('')||'<div class="deep-notice">서로 다른 출처를 교차해서 읽을 만한 주제를 충분히 확보하지 못했습니다. 오늘은 분석 주제를 억지로 만들지 않습니다.</div>';
+  const issues=[];
   $('#deepCount').textContent=`${reports.length}편${data.report_archived?' · 지난 분석':''}`;
   $('#deepStatus').textContent=data.demo?'공개된 과거 자료로 만든 화면 시연 · 실시간 자동 생성 아님':data.report_archived?`마지막 확인 ${String(data.last_report_updated_at||'').slice(0,10)} · 새 분석이 없을 때 이전 글을 유지합니다.`:(data.report_factual_brief?'오늘은 확인된 기사와 통계만 정리했습니다. 심층 분석은 아닙니다.':'최신 자료와 출처를 바탕으로 작성한 분석');
   $('#deepDeck').innerHTML=reports.map((r,i)=>deepCard(r,i)).join('');
   const insights=data.features||[];
-  $('#insightCount').textContent=`${(data.data_reports||[]).length} 해설 · ${insights.length}개 지표`;
-  $('#analysisStatus').textContent='공식 시계열과 발표 시점 기준으로 작성했습니다.';
-  $('#insightDeck').innerHTML=insights.map(insightCard).join('')||'<div class="insight-blank">분석 카드 보류: 현재 자동 접근 가능한 공식 수산·환율 시계열이 부족합니다. 개념 설명으로 빈자리를 채우지 않습니다. 아래 실제 기사 목록과 데이터 출처를 확인하세요.</div>';
+  $('#insightCount').textContent=`${(data.data_reports||[]).length}편 해설 · ${insights.length}개 공식 지표`;
+  $('#analysisStatus').textContent='공식 자료 기준 · 통계 해설과 AI 심층 분석을 구분해 표시합니다.';
+  $('#insightDeck').innerHTML=insights.slice(0,14).map(insightCard).join('')||'<div class="insight-blank">공식 통계가 아직 연결되지 않았습니다. 수산물 수출입·도소매가격 API를 연결하면 이곳에 표시됩니다.</div>';
   // A compact evidence-led daily brief, not a promotional hero or a decorative article counter.
   const topReport=reports[0];
   const leadArticle=articles[0];
@@ -380,7 +384,7 @@
   else if(!articles.length) banner.innerHTML='<div class="demo-warning"><strong>기사를 수집하지 못했습니다.</strong> 네트워크·RSS 응답·게시일 조건을 확인해 주세요. 실제 기사 대신 예시를 최신 뉴스처럼 보여주지 않습니다.</div>';
   else if(data.sources_ok<data.sources_total) banner.innerHTML=`<div class="source-warning">일부 피드(${data.sources_total-data.sources_ok}개)가 응답하지 않았습니다. 표시된 기사만으로 구성했으며, 누락된 출처가 있을 수 있습니다.</div>`;
   else banner.innerHTML='';
-  const priorityIds=[...new Set(issues.flatMap(issue=>issue.article_ids||[]))];
+  const priorityIds=[...new Set((data.focus_topics||[]).flatMap(topic=>topic.article_ids||[]))];
   const front=[...priorityIds.map(id=>articles.find(a=>a.id===id)).filter(Boolean),...articles.filter(a=>!priorityIds.includes(a.id))].slice(0,5);
   $('#featured').innerHTML=front.map(featuredCard).join('')||'<div class="empty">표시할 기사가 없습니다.</div>';
   $('#tabs').innerHTML=cats.map(c=>`<button class="tab ${active===c?'active':''}" data-cat="${esc(c)}" aria-pressed="${active===c}">${esc(c)}</button>`).join('');
