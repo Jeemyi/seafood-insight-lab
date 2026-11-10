@@ -1,0 +1,190 @@
+{
+  "generated_at": "2026-11-10T15:08+09:00",
+  "articles": [
+    {
+      "id": "ssb-public-sample",
+      "title": "SSB: 2026년 44주차 연어 수출단가 74.98 NOK/kg, 물량 28,444톤",
+      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
+      "source": "노르웨이 통계청 SSB",
+      "published": "2026-11-04T08:00:00+09:00",
+      "timestamp": 1793746800,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17,
+      "summary": "SSB 공식 통계에서 2026년 44주차 신선·냉장 연어 수출가격은 74.98 NOK/kg으로 전년 동기 대비 6.9% 하락했다. 반면 수출량은 28,444톤으로 전년 동기 대비 14.3% 증가했다.",
+      "summary_type": "공식 주간 통계",
+      "question": "동일 주차의 가격과 물량을 함께 비교",
+      "official": true,
+      "channels": [],
+      "impact": "물량 증가·단가 하락 동시 관측",
+      "followup": "다음 주 수출량·가격·원산지별 수요"
+    },
+    {
+      "id": "nsc-public-sample",
+      "title": "노르웨이 수산물위원회: 10월 연어 수출액 사상 최대, 물량 증가율은 더 높아",
+      "url": "https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/",
+      "source": "Norwegian Seafood Council",
+      "published": "2026-11-04T08:00:00+09:00",
+      "timestamp": 1793746200,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 16,
+      "summary": "2026년 10월 노르웨이 연어 수출은 159,810톤, 수출액 약 130억 NOK를 기록했다. 전년 동월 대비 수출물량은 9%, 수출액은 6% 증가해 평균단가는 하락한 것으로 계산된다.",
+      "summary_type": "공식 월간 수출 발표",
+      "question": "금액 증가를 가격과 물량 효과로 분해",
+      "official": true,
+      "channels": [],
+      "impact": "수출액 성장보다 빠른 물량 증가",
+      "followup": "월별 물량·평균단가·국가별 수출구성"
+    }
+  ],
+  "features": [
+    {
+      "id": "salmon_export_price",
+      "name": "노르웨이 생연어 수출가격·물량",
+      "title": "노르웨이 연어 수출은 물량이 늘었지만 단가는 낮아졌다",
+      "subtitle": "SSB 공식 통계 · 2026년 44주차 시연",
+      "period_start": "2026년 43주",
+      "period_end": "2026년 44주",
+      "facts": [
+        {
+          "label": "신선·냉장 연어 수출가",
+          "value": "74.98 NOK/kg",
+          "detail": "44주차 · SSB"
+        },
+        {
+          "label": "전년 동주 가격",
+          "value": "-6.9%",
+          "detail": "전년 동주 대비"
+        },
+        {
+          "label": "전년 동주 수출물량",
+          "value": "+14.3%",
+          "detail": "28,444톤 · SSB"
+        }
+      ],
+      "observed": "2026년 44주차 신선·냉장 연어 수출가격 74.98 NOK/kg · 전년 동주 -6.9%; 같은 주 수출량 28,444톤 · 전년 동주 +14.3% (SSB 공식 발표)",
+      "data_links": [
+        {
+          "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
+          "label": "SSB 연어 공식 가격·물량 통계"
+        }
+      ],
+      "article_ids": [
+        "ssb-public-sample"
+      ],
+      "category": "원물 수급/시세",
+      "channels": [],
+      "impact": "수출물량 증가와 단가 하락이 동시에 발생",
+      "limitations": "44주 수치는 주간 통계, 10월 수치는 월간 통계로 직접 혼합해 변화율 계산 불가"
+    }
+  ],
+  "deep_reports": [
+    {
+      "depth": "핵심",
+      "kind": "원물 수급/시세",
+      "time_frame": "2026년 10월·44주차 · 공개자료 시연",
+      "headline": "노르웨이 연어 수출액 사상 최대…가격보다 물량이 성장 이끌어",
+      "thesis": "2026년 10월 노르웨이 연어 수출액은 사상 최고치를 기록했지만, 수출액 증가율보다 물량 증가율이 높았다. 월간 수출액을 가격과 물량으로 분해하면 성장을 주도한 것은 가격 인상이 아니라 더 많은 물량의 판매였다. 같은 시기 공식 주간 통계 역시 전년 대비 물량 증가와 단가 하락을 보여준다.",
+      "lead": "수출액이 늘었다고 연어값까지 오른 것은 아니다. 10월 수출액과 물량을 나눠 살펴보면 물량 증가가 성장을 이끌었다. 44주차 가격 통계도 같은 방향을 보여주지만, 월간 수치와 주간 수치를 하나로 계산하지는 않았다.",
+      "facts": [
+        {
+          "text": "노르웨이 수산물위원회에 따르면 2026년 10월 연어 수출량은 159,810톤으로 전년 동월보다 9% 증가했고, 수출액은 약 130억 NOK로 6% 증가했다.",
+          "refs": [
+            "nsc-public-sample"
+          ]
+        },
+        {
+          "text": "SSB의 2026년 44주차 통계에서 신선·냉장 연어 수출단가는 74.98 NOK/kg으로 전년 동주보다 6.9% 낮았고, 같은 주 수출물량은 28,444톤으로 14.3% 증가했다.",
+          "refs": [
+            "ssb-public-sample",
+            "salmon_export_price"
+          ]
+        }
+      ],
+      "market_change": "2026년 10월 연어 수출액 증가율(+6%)이 수출량 증가율(+9%)보다 낮다는 것은 월간 평균 판매단가가 낮아졌음을 의미한다. 약 1.06을 1.09로 나누면 월간 평균단가 변화율은 약 -2.8%다. 이 계산은 월간 집계의 반올림 수치를 사용한 근삿값이다.",
+      "mechanism": [
+        "첫 번째 근거는 월간 수출액과 물량의 차이다. 수출액만 보면 시장의 가격 경쟁력이 강화됐다는 결론을 내릴 수 있지만, 수출물량 증가가 더 빨라 평균단가는 오히려 하락했다. 수출액 기록이 판매단가 상승의 증거가 아닌 이유다.",
+        "두 번째 근거는 SSB의 주간 통계다. 44주차의 신선·냉장 연어 수출량은 전년 동주 대비 늘고 가격은 하락했다. 월간 통계와 관측 빈도는 달라 완전히 동일한 계산에 합칠 수 없지만, 두 자료는 물량 확대와 가격 약세가 공존한다는 동일한 방향을 독립적으로 지지한다."
+      ],
+      "structural_insight": "노르웨이의 연어 수출 기록은 가격보다 물량이 늘면서 만들어졌다. 공급이 확대되면 판매량이 늘어도 평균단가는 내려갈 수 있다. 따라서 수출액만 보고 연어 가격이 강세라고 해석해서는 안 된다. 수출량과 평균단가를 나눠 보고 주요 수입국의 소비 흐름까지 확인해야 이번 확대가 얼마나 오래 이어질지 판단할 수 있다.",
+      "scenario_up": {
+        "condition": "향후 주요 수출시장에서 소비와 재수출 물량이 동반 확대되고, 공급 증가분을 계속 흡수한다면",
+        "interpretation": "가격을 억지로 끌어올리지 않아도 물량 중심 수출 확대가 유지될 여지가 생긴다."
+      },
+      "scenario_down": {
+        "condition": "수출물량은 계속 증가하는데 주요 시장의 소비·재수출이 둔화되고 단가 하락이 확대된다면",
+        "interpretation": "수출액 기록 뒤에 공급 압력과 가격 경쟁이 심화되는 구조를 더 의심해야 한다."
+      },
+      "what_changes": "다음 분석에서는 월별 전체 연어 수출물량과 평균단가를 분리해 추적하고, 폴란드 등 가공·재수출 거점과 최종 소비국의 수요를 비교해야 한다. 한국 시장과 연결하려면 같은 시점의 관세청 수입단가와 환율을 별도로 확인해야 한다.",
+      "one_sentence": "사상 최대 수출액이라는 성적표는 가격의 호황이 아니라 물량 확대가 만든 기록일 수 있다.",
+      "limitations": "시연용 원고로, 2026년 10월 수산물위원회 월간 발표와 44주차 SSB 통계만 비교한다. 월간과 주간 수치를 직접 합산하지 않았고, 한국 수입단가나 기업별 손익은 분석 대상이 아니다.",
+      "article_ids": [
+        "nsc-public-sample",
+        "ssb-public-sample"
+      ],
+      "feature_ids": [
+        "salmon_export_price"
+      ],
+      "policy_ids": [],
+      "confidence": "중간",
+      "status": "시연 전용 · 2026년 10월 공개 공식자료 기반 · 자동 생성 결과 아님",
+      "channels": [],
+      "impact": "수출물량 주도형 성장 · 가격 약세 동반",
+      "followup": "월간 연어 수출량과 단가, 국가별 수요·재수출 물량"
+    }
+  ],
+  "deep_status": "샘플 전용 — 자동 AI 생성 아님",
+  "data_reports": [],
+  "data_ai_status": "샘플 전용 — 자동 AI 생성 아님",
+  "issue_candidates": [],
+  "analysis_status": "2026년 10월 공식 과거 통계로 만든 시연 · 실시간 자료 아님",
+  "sources_ok": 0,
+  "sources_total": 13,
+  "errors": [],
+  "metric_errors": [],
+  "demo": true,
+  "policy_sources": [],
+  "deep_links": [
+    {
+      "title": "KMI 수산업관측센터 · 어종별 관측",
+      "url": "https://www.foc.re.kr/"
+    },
+    {
+      "title": "수협중앙회 · 위판 정보 확인",
+      "url": "https://www.suhyup.co.kr/"
+    },
+    {
+      "title": "해양수산부 · 보도자료",
+      "url": "https://www.mof.go.kr/"
+    },
+    {
+      "title": "관세청 · 수출입무역통계",
+      "url": "https://unipass.customs.go.kr/ets/"
+    },
+    {
+      "title": "aT KATI · 해외 식품시장 정보",
+      "url": "https://www.kati.net/"
+    },
+    {
+      "title": "한국수산회",
+      "url": "https://www.korfish.or.kr/"
+    },
+    {
+      "title": "노르웨이 수산물위원회",
+      "url": "https://en.seafood.no/market-insight/"
+    },
+    {
+      "title": "노르웨이 통계청 SSB 연어 수출통계",
+      "url": "https://www.ssb.no/en/statbank/table/03024/"
+    },
+    {
+      "title": "한국은행 ECOS",
+      "url": "https://ecos.bok.or.kr/"
+    }
+  ]
+}
