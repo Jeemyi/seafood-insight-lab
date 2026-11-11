@@ -10,6 +10,7 @@ import os
 import re
 from datetime import datetime
 import requests
+from seafood_research_depth import evidence_profiles, published_report_evidence, LABELS
 
 API='https://api.openai.com/v1/responses'
 MODEL='gpt-6.1-sol'
@@ -92,6 +93,8 @@ PLAN_PROMPT='''너는 한국 수산업·식품유통 전문지 편집 데스크�
 - 수치 가격 예측은 입력에 검증된 모형 결과가 있을 때만. 그 외에는 방향과 근거를 제시한다. 방향도 근거가 없으면 해당 주제를 제외한다.
 - evidence_ids는 제공된 공개 근거 ID만 사용하고 기본적으로 서로 독립적인 2개 출처 이상의 자료에 근거한다.
 - 숫자는 입력에 존재하는 수치 또는 자료에 명시된 계산값만 사용. JSON 스키마를 따를 것.
+- evidence_depth_profiles의 dimensions_missing과 observations를 먼저 읽어라. 자료가 부족한 축을 단순 경제상식으로 대체하지 말라. 실제 공급·소비·가격·수출입 자료에서 최소 두 가지 다른 수치의 움직임을 비교할 수 있는 주제를 우선한다.
+- 환율 환산은 가격 비교의 보조 과정이다. 환율 자체가 중요한 독립 사건이 아니라면 논지의 중심으로 삼지 않는다. 오래된 연간 통계만으로 당월 수급이나 가격을 단정하지 않는다.
 '''
 
 DATA_SCHEMA=obj({'reports':{'type':'array','items':obj({
@@ -145,6 +148,11 @@ MAIN_PROMPT='''너는 한국 경제지·산업 전문지의 수산시장 담당 
 - 해외 연어 기사라고 해서 국내 가공업체의 원가나 이익률, 대형마트 판매를 자동으로 연결하지 않는다. 확인한 한국 자료가 없으면 해외시장 자체를 깊이 분석하고 마무리한다.
 - 달러 기준 가격이 가능한 품목은 공인된 환율로 같은 주차 또는 같은 기간의 비교가격을 환산해 독자가 이해하기 쉬운 USD/kg를 우선한다. 검증된 환산 자료가 없으면 현지 공식통화를 유지하고 달러 가격을 지어내지 않는다.
 - 본문은 사실 → 원인 → 시장 영향 → 가장 유력한 전망으로 읽히게 작성한다. 취재 뒷이야기, 교훈, 인용 없는 가정, 형식적 반론은 쓰지 않는다.
+- context.evidence_depth_profiles는 해당 주제의 공급·가격·수요·수출입 수치를 찾았는지 보여주는 점검표다. 가능한 한 서로 다른 원출처의 실제 관측치 3개 이상을 토대로 원인과 가격·수급 방향을 분석하되, 없는 수치는 만들지 않는다. 같은 수출가격의 NOK/USD 환산은 별개의 시장 관측치 두 개가 아니다.
+- 통계의 전년 대비만 늘어놓지 말고 최근 1~3개월 변화와 기준연도 또는 장기 평균을 구분해 연결한다. 2025년 실적만 있다면 이를 근거로 2026년 현재 가격 흐름을 단정하지 말고 최신 발표를 우선한다.
+- 가격 기사면 가격 변화의 기간과 폭, 공급·수요 자료와의 관계를 설명한다. 수출 기사면 물량·금액·단가 및 주요 거래국 변화 중 실제 확보한 지표를 비교한다. 수급 기사면 국내 생산·해외 조달·규제·소비가 맞물리는지 조사한 결과를 넣는다.
+- mechanism 두 문단은 같은 이유의 반복이 아니라 서로 다른 경제적 원인/배경을 각각 수치와 시점으로 제시한다. 사실이 아닌 전제("저가 판매일 수 있다")를 문단에 넣지 않는다.
+- 핵심 분석을 완성할 근거가 모자라면 분량을 불리지 말고 보고서를 제외한다. 검증을 마치지 못했다는 변명 문장을 본문에 넣지 않는다. 내용 없이 '관측 사실과 해석 구분', '추가 분석 필요' 같은 메타 안내를 반복하지 않는다.
 - 제목은 실제 결론이 들어가는 경제지 스타일로. '인사이트'라는 단어 남발 금지. 숫자 기반 비교는 근거가 있을 때만.
 
 [필드별 역할 — 글을 잘게 쪼개기 위한 구색 채우기 금지]
@@ -171,6 +179,7 @@ DATA_PROMPT='''너는 한국 수산업 전문지의 데이터 담당 기자다. 
 - 사내보고서처럼 상품형태·취급규격을 줄줄이 나열하거나 근거 없는 국내 수입·가공 수익성 연결을 만들지 않는다. 달러 환산 근거가 있는 경우 USD/kg를 먼저 사용한다.
 - 직접 인용한 공식 데이터 ID와 공개 기사 ID만 활용하고, 비교 가능한 수치를 보존한다. 장황한 면책 문구나 소제목을 채우려는 반복 문장을 쓰지 않는다.
 - 숫자 하나뿐이라면 reports=[]로 둔다. 이는 실패가 아니라 자료가 충분할 때만 심층 분석을 하려는 결정이다.
+- evidence_depth_profiles를 참고해 서로 다른 측정 축(가격·생산·수요·수입 등)에서 실제 근거가 연결된 경우만 데이터를 분석한다. 두 통계가 같은 공식 발표를 재인용하면 독립 근거로 세지 않는다.
 ''' 
 
 
@@ -248,11 +257,14 @@ def event_search_phrase(title):
     return ' '.join(words[:5]).strip()
 
 
-def build_research_queries(choices, features, focus_topics=None):
+def build_research_queries(choices, features, focus_topics=None, depth_profiles=None):
     """Separate broad discovery from *event-specific* follow-up searches."""
     categories=list(dict.fromkeys(x.get('category') for x in choices if x.get('category')))
     questions=[]
     if focus_topics:
+        # Numeric-gap queries outrank generic category searches.
+        for profile in (depth_profiles or [])[:3]:
+            questions.extend(profile.get('gap_queries',[])[:4])
         selected_ids={i for t in focus_topics[:4] for i in t.get('article_ids',[])[:3]}
         # First search the actual news events, not merely their broad category.
         for item in choices:
@@ -276,7 +288,7 @@ def build_research_queries(choices, features, focus_topics=None):
     for f in features[:4]:
         name=str(f.get('name','')).strip()
         if name:questions.append(name+' 공식 통계 전년 비교')
-    return list(dict.fromkeys(questions))[:22]
+    return list(dict.fromkeys(questions))[:28 if focus_topics else 22]
 
 
 def infer_research_category(title, excerpt):
@@ -306,14 +318,15 @@ def research_public_sources(articles, features, now, focus_topics=None):
     if not os.getenv('OPENAI_API_KEY','').strip() or os.getenv('SEAFOOD_WEB_RESEARCH','1')=='0':
         return [],f'{phase}: 웹 검색 미사용'
     choices=choose_research_candidates(articles,focus_topics,maximum=20)
+    depth_profiles=evidence_profiles(focus_topics or [],articles,features,maximum=4)
     if not choices and not features and not focus_topics:
         # Continue searching official releases even on a complete RSS outage.
         print('SEAFOOD RESEARCH: RSS empty; primary-source discovery fallback',flush=True)
-    search_plan=build_research_queries(choices,features,focus_topics)
+    search_plan=build_research_queries(choices,features,focus_topics,depth_profiles)
     focus_rule=(
         '선정된 사건이 실제로 왜 발생했는지 확인하는 두 번째 조사다. 주제별로 같은 보도를 반복하지 말고 '
         '최초 공식 발표와 별개인 가격·출하·수요·수출입 자료를 찾아라. 첫 조사에서 빠진 자료를 우선 찾고, '
-        '근거가 없는 인과관계는 만들지 마라.'
+        '근거가 없는 인과관계는 만들지 마라. 부족한 수치(공급/수요/가격/수출입)가 무엇인지 우선 판단하고 해당 자료부터 조사하라.'
         if focus_topics else
         '첫 조사에서는 특정 업종을 미리 정하지 말고 최근 주요 사건을 넓게 찾아라. '
         '수산물 생산·가격·수출입·안전·유통을 고르게 조사하되 이슈가 중요한지는 실제 수치와 시장 영향으로 판단하라.'
@@ -328,11 +341,12 @@ def research_public_sources(articles, features, now, focus_topics=None):
       '보도자료를 여러 언론이 복제했다면 한 개의 원출처로 취급하라. '
       '각 핵심 사실을 검색 결과의 출처 링크와 함께 적고 최소한 실제 확인한 내용을 수치·기간·단위와 연결하라. '
       '확인하지 못한 수치나 회사 내부 실적을 지어내지 말라. 취재가 미완성인 전망 문장을 쓰지 말라. '
-      '결과는 한국어의 짧은 근거 문단으로 작성하고 문단별 URL 인용을 포함하라.'
+      '결과는 한국어의 짧은 근거 문단으로 작성하고 문단별 URL 인용을 포함하라. '      '수치를 찾았다면 실제 숫자·단위·발표일·집계기간·비교기간·원출처를 한 문단에 명시하라. '      '서로 다른 통계의 어종/형태/기간을 동일한 값처럼 합치지 말라. '      '외화 가격을 환산한 동일 관측치는 하나의 가격 자료로 취급하고 환율 설명을 기사 본론으로 늘리지 마라.'
     )
     context={'today_kst':now.date().isoformat(),'research_phase':phase,
              'separate_search_intents':search_plan,
              'focus_topics':(focus_topics or [])[:4],
+             'measurement_gaps_and_existing_evidence':depth_profiles,
              'news_candidates':[{'id':x['id'],'title':x['title'],'category':x['category'],
                                  'source':x.get('source'),'url':x.get('url'),
                                  'published':x.get('published')} for x in choices],
@@ -483,10 +497,12 @@ def _main_context(articles,features,now,issues,focus_topics=None):
            'category':a['category'],'snippet':a.get('summary','')[:850],
            'official':bool(a.get('official')),'url':a.get('url',''),
            'channels':a.get('channels',[]),'impact':'관측 보도'} for a in pool]
+    prioritized_features=sorted(features,key=lambda f:(f.get('role')!='context' and not str(f.get('id','')).startswith('fx_'), f.get('significance',0)),reverse=True)
     series=[{'id':f['id'],'name':f['name'],'period_start':f['period_start'],'period_end':f['period_end'],
              'observed':f['observed'],'facts':f['facts'],'data_links':f.get('data_links',[]),
-             'limits':f['limitations'],'related_observations':f.get('related_observations',[])} for f in features[:17]]
-    return {'now_kst':now.isoformat(),'articles':rows,'official_series':series,
+             'limits':f['limitations'],'related_observations':f.get('related_observations',[])} for f in prioritized_features[:20]]
+    depth=evidence_profiles((focus_topics or []),pool,prioritized_features,maximum=5)
+    return {'now_kst':now.isoformat(),'articles':rows,'official_series':series,'evidence_depth_profiles':depth,
             'topic_candidates':(focus_topics or [{'theme':i['theme'],'article_ids':i['article_ids']} for i in issues[:5]])[:5],
             'source_limit':'공개 RSS 소개문과 공식 시계열만 사용, 기사 전문·비공개 거래정보는 이용하지 않음'}
 
@@ -536,6 +552,7 @@ def make_editorial_outline(ctx, previous_headlines=None):
         'official_statistics':ctx['official_series'][:15],
         'topic_candidates':ctx.get('topic_candidates',[])[:5],
         'market_story_clusters':ctx.get('story_candidates',[])[:6],
+        'evidence_depth_profiles':ctx.get('evidence_depth_profiles',[])[:5],
         'previously_published_titles':(previous_headlines or [])[:6],
         'never_use_internal_business_documents':True,
     }
@@ -633,6 +650,14 @@ def _validate_main(payload,ctx):
             independent={_public_source_family(evidence_by_id[i]) for i in cited}
             if len(independent)<2:
                 reasons.append('서로 다른 출처 근거 부족');continue
+            if ctx.get('depth_validation'):
+                audit=published_report_evidence({**r,'facts':facts},evidence_by_id)
+                if (audit['numeric_evidence_records']<2 or
+                       audit['distinct_numeric_facts']<2 or len(audit['dimensions'])<2 or
+                       audit['distinct_sources']<2):
+                    reasons.append('심층 근거 부족: 독립 출처의 수치 2건·서로 다른 시장 변수 2개 이상 필요');continue
+                # This is not a mandatory '3 numbers per article' quota. A
+                # meaningful regulation story can be shorter if evidenced.
             # Checked numbers in all analytical paragraphs; numeric tokens must be public evidence.
             forward=(list(outlook.get(k,'') for k in ('judgment','basis','revision_trigger')) if outlook is not None else
                      [r['scenario_up']['condition'],r['scenario_down']['condition'],
@@ -678,8 +703,9 @@ def _validate_main(payload,ctx):
                 ch=aliases.get(ch,ch)
                 if ch in ('코스트코','마트','매장','온라인','B2B','수출') and ch not in clean_channels:
                     clean_channels.append(ch)
-            r=dict(r);r['channels']=clean_channels;r['facts']=facts[:5];r['policy_ids']=[];r['status']='공개 자료 기반 AI 분석 · 관측 사실과 해석 구분'
+            r=dict(r);r['channels']=clean_channels;r['facts']=facts[:5];r['policy_ids']=[];r['status']='공개 자료 기반 시장 분석'
             r['character_count']=len(prose);r['length_tier']='충실' if len(prose)>=900 else '간결'
+            r['evidence_depth']=published_report_evidence(r,evidence_by_id)
             good.append(r);seen.add(r['headline'])
             if len(good)>=3:break
         except (KeyError,TypeError,AttributeError,ValueError):
@@ -695,6 +721,8 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         return [],'리서치 보류: 공개 뉴스와 공식 시계열 근거를 충분히 확보하지 못했습니다.'
     from seafood_story_selection import build_story_clusters
     ctx['story_candidates']=build_story_clusters(ctx['articles'],ctx['official_series'],previous_headlines)
+    ctx['depth_validation']=True
+    print('SEAFOOD DEPTH - topic evidence:',[(x['anchor'],x['numeric_records'],x['dimensions_present'],x['dimensions_missing'][:2]) for x in ctx['evidence_depth_profiles'][:4]],flush=True)
     ctx['previous_headlines']=(previous_headlines or [])[:6]
     # Optional: a *continuous, verified, same-specification monthly series*
     # can yield an audited numeric forecast. The current SSB weekly snapshot,
@@ -756,7 +784,9 @@ def _data_context(features,articles,main_reports,now):
         if f.get('related_observations') or independent:
             eligible.append(f)
     eligible=sorted(eligible,key=lambda f:f.get('significance',0),reverse=True)
-    return {'now_kst':now.isoformat(),'features':[{'id':f['id'],'name':f['name'],'title':f['title'],
+    return {'now_kst':now.isoformat(),'evidence_depth_profiles':evidence_profiles(
+             [{'theme':f.get('name','')} for f in eligible],articles,features,maximum=5),
+            'features':[{'id':f['id'],'name':f['name'],'title':f['title'],
                   'period_start':f['period_start'],'period_end':f['period_end'],
                   'observed':f['observed'],'facts':f['facts'], 'limitations':f['limitations'], 'related_observations':f.get('related_observations',[]),
                   'article_ids':f.get('article_ids',[])} for f in eligible[:10]],

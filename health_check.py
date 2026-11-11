@@ -17,6 +17,16 @@ def audit(path=Path('site/data.json')):
     print('SEAFOOD AUDIT - content state:',data.get('content_state','legacy'))
     print('SEAFOOD AUDIT - primary feeds:',data.get('sources_ok'), '/', data.get('sources_total'))
     print('SEAFOOD AUDIT - research coverage:',data.get('research_coverage',{}))
+    depth=data.get('research_coverage',{}).get('topic_measurement_depth',[])
+    for topic in depth[:4]:
+        print('SEAFOOD AUDIT - quantitative evidence:',topic.get('anchor'),
+              'records=',topic.get('numeric_records',0),
+              'sources=',topic.get('independent_sources',0),
+              'dimensions=',','.join(topic.get('dimensions_present',[])))
+    if depth and not any(d.get('numeric_records',0)>=2 and
+                         d.get('independent_sources',0)>=2 and
+                         len(d.get('dimensions_present',[]))>=2 for d in depth):
+        print('::warning::No top research theme has two independent quantified observations across two market dimensions. Investigate primary data collection and focused search.')
     print('SEAFOOD AUDIT - data source families:',sorted({f.get('series_type','other') for f in feats}))
     google_errors=sum(str(e).startswith('Google 뉴스 검색') for e in data.get('errors',[]))
     if google_errors>=10:

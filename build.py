@@ -687,6 +687,13 @@ def collect():
     # The two passes may cite the same original URL. Neither is independent
     # evidence when the source is the same press release.
     search_sources=list({a['id']:a for a in discovered+targeted}.values())
+    # The newly cited research must be linked back to actual commodity data;
+    # previously this only ran before discovery, so data comparisons were lost.
+    connect_evidence(features,articles+search_sources)
+    from seafood_research_depth import evidence_profiles
+    depth_profiles=evidence_profiles(focus_for_research,articles+search_sources,features)
+    print('SEAFOOD DEPTH - measured coverage:',[(p['anchor'],p['numeric_records'],
+        p['independent_sources'],p['dimensions_present']) for p in depth_profiles],flush=True)
     focus_topics=select_market_topics(articles+search_sources,features,previous_headlines)
     research_status=f'1차: {discovery_status} / 주제별 재조사: {focus_status}'
     print('SEAFOOD RESEARCH - sources:',len(discovered),'discovery +',len(targeted),
@@ -741,6 +748,8 @@ def collect():
                                  'focused_citations':len(targeted),
                                  'unique_citations':len(search_sources),
                                  'topic_candidates':len(focus_topics),
+                                 'topic_measurement_depth':[{k:p[k] for k in ('anchor','numeric_records','independent_sources','dimensions_present','dimensions_missing')} for p in depth_profiles],
+                                 'accepted_report_evidence':[{ 'headline':r.get('headline',''), **r.get('evidence_depth',{}) } for r in reports if r.get('evidence_depth') and not archive],
                                  'feed_parsed':sum(row['raw'] for _,row in feed_stats),
                                  'feed_kept':sum(row['accepted'] for _,row in feed_stats)},
             'metric_errors':metric_errors,'demo':False,'policy_sources':[], 'deep_links':DEEP_LINKS}
