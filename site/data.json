@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T12:14+09:00",
+  "generated_at": "2026-11-11T12:36+09:00",
   "articles": [
     {
       "id": "e4a844aa0f4f235e",
@@ -477,9 +477,9 @@
       "editorial_score": 14
     },
     {
-      "id": "3ce51c70f40bf9c7",
+      "id": "ed34f2dcf1bddf05",
       "title": "아워홈, 일본·호주·뉴질랜드 코스트코 전 점포 입점…글로벌 식품사업 확대 가속",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5MN2UwblJwWUFrUUxQVm9RR2dFNW45V3QyelBZaXhCamthbTFGa1JtQnJNVUMtOGI5LVJ3OUVhTVFHMXFkOUozd1ZFX2Y2OV85X3dnSVdlaXFyOFVQRHl5U3I3Rk0tWDVzS1E?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5adWxPRmU2WjBjWVdvQWZoS0QwN2t1Q1RnY3VQUHpoZHZqeGs2bG5CdnIzeEtMMENQM1pqampJZmV0dzIwYTJROTBLTEhMNzNuempadG8xNWU1ZC1ZdG9URTc5S2xqc0lL?oc=5",
       "source": "Queen 이코노미퀸",
       "published": "2026-11-11T10:59+09:00",
       "timestamp": 1794362341,
@@ -2134,25 +2134,78 @@
   "issue_candidates": [],
   "focus_topics": [
     {
+      "theme": "글로벌 연어시장",
+      "category": "원물 수급/시세",
+      "anchor": "연어",
+      "article_ids": [
+        "web-0f6b4e4a21a9",
+        "web-9772fc0387ab",
+        "web-48a63555035a",
+        "web-9d74f46fe25d",
+        "web-c4dc2591afd2"
+      ],
+      "feature_ids": [
+        "salmon_price_volume"
+      ],
+      "score": 100,
+      "research_question": "공급·가격·수요·정책 중 비교 가능한 별도 시장자료 확보"
+    },
+    {
+      "theme": "오징어 국내외 수급",
+      "category": "원물 수급/시세",
+      "anchor": "오징어",
+      "article_ids": [
+        "285df8383f489144",
+        "854bfda62b206330",
+        "f097a84e5d59d950",
+        "d12744f0b0488a14",
+        "b3b84f3be1ff952d",
+        "27ca70a7b4939d81",
+        "web-8056b5e0f5a4",
+        "web-6853dd974a71"
+      ],
+      "feature_ids": [],
+      "score": 100,
+      "research_question": "공급·가격·수요·정책 중 비교 가능한 별도 시장자료 확보"
+    },
+    {
+      "theme": "대형마트·유통시장",
+      "category": "대형마트/SSM",
+      "anchor": "대형마트",
+      "article_ids": [
+        "e4a844aa0f4f235e",
+        "ef1a271f6dd2bad7",
+        "ac2129ce9f4bb4b3",
+        "c9a7dfafc7e7966e",
+        "eb5ff5efe2e1cc86",
+        "b68da63885e96b9c",
+        "ed34f2dcf1bddf05",
+        "83b3a0d5cd29dbb5"
+      ],
+      "feature_ids": [],
+      "score": 100,
+      "research_question": "공급·가격·수요·정책 중 비교 가능한 별도 시장자료 확보"
+    },
+    {
       "theme": "오징어·대체 수입시장",
       "category": "원물 수급/시세",
       "score": 65.0,
       "article_ids": [
         "f097a84e5d59d950",
+        "web-bd212f47c604",
+        "web-ff7f76db1185",
         "854bfda62b206330",
         "d12744f0b0488a14",
-        "web-d08559632179",
-        "web-6853dd974a71",
-        "285df8383f489144"
+        "web-6853dd974a71"
       ],
       "feature_ids": [],
       "source_count": 7,
       "research_question": "국내 생산, 원양산, 남미산 수입과 가격이 서로 다른 방향으로 움직이는가?",
       "news_titles": [
         "“한국 바다서 씨가 말랐다?” 오징어 어획량 93% 급감…대신 남미산 수입 급증",
-        "한국 오징어 어획, 2040년대 제로 경고…연안 생산량 4년 새 절반",
-        "\"오징어의 귀환\"…남미 어획량 회복에 수입 폭증",
-        "Gobierno reactiva pesca de la pota | Noticias | Diario Oficial El Peruano"
+        "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+        "\"오징어의 귀환\"…남미 어획량 회복에 수입 폭증 :: 공감언론 뉴시스 ::",
+        "한국 오징어 어획, 2040년대 제로 경고…연안 생산량 4년 새 절반"
       ]
     },
     {
@@ -2180,68 +2233,47 @@
       ]
     },
     {
-      "theme": "대형마트·창고형 유통 변화",
-      "category": "대형마트/SSM",
-      "score": 52.0,
-      "article_ids": [
-        "bd41cc67309b5c1b",
-        "web-77a1ede8170e",
-        "web-adaf486e71a9",
-        "ac2129ce9f4bb4b3",
-        "9f4d2c1a8ccdc364",
-        "b68da63885e96b9c"
-      ],
-      "feature_ids": [],
-      "source_count": 7,
-      "research_question": "매출과 점포 변화는 같은 방향인가? 소비 이동과 공급망 영향은 어떻게 다른가?",
-      "news_titles": [
-        "홈플러스, 임금·납품대금 지급 차질…대형마트 매각도 불투명",
-        "“홈플러스 납품업체 10곳 중 7곳 피해”…매출 감소 63%, 정산 지연까지 - 헤럴드경제",
-        "대형마트 납품 中企 10곳 중 4곳 매출 감소… 수수료 부담 여전 - 매일일보",
-        "[기획] 장보기까지 온라인으로…쿠팡 vs 네이버·컬리, 대형마트는 규제에 발 묶여"
-      ]
-    },
-    {
       "theme": "식품안전·규제",
       "category": "식품안전/소비심리",
       "score": 46.0,
       "article_ids": [
         "7b20906b83138dae",
-        "web-36fe04b21a41",
         "ac2129ce9f4bb4b3",
         "ca87d193caa8b4fd",
         "b229a6a1d3d9174e",
-        "web-aae49d5e1d6f"
+        "web-1b258c63952a",
+        "c69a95d4ac9e5dbd"
       ],
       "feature_ids": [],
       "source_count": 7,
       "research_question": "실제 검사 통계, 규제 발효일, 품목 범위가 유통 제한과 일치하는가?",
       "news_titles": [
         "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장",
-        "지표서비스 | e-나라지표",
         "[기획] 장보기까지 온라인으로…쿠팡 vs 네이버·컬리, 대형마트는 규제에 발 묶여",
-        "수산물 위생·검역 국제협력 강화…'K-수산물' 글로벌 수출길 대폭 넓힌다"
+        "수산물 위생·검역 국제협력 강화…'K-수산물' 글로벌 수출길 대폭 넓힌다",
+        "식약처, 김장철 앞두고 다소비 농·수산물ㆍ가공식품 등 통관·유통단계 검사 강화"
       ]
     },
     {
-      "theme": "광어·우럭 양식 수급",
+      "theme": "연어·해외 원료시장",
       "category": "원물 수급/시세",
-      "score": 41.0,
+      "score": 44.7,
       "article_ids": [
-        "6422b24519e51f4d",
-        "33126fe93d0cb0c5",
-        "81725e2fdc563f2a",
-        "27ca70a7b4939d81",
-        "web-48a63555035a"
+        "web-0f6b4e4a21a9",
+        "web-48a63555035a",
+        "web-9772fc0387ab",
+        "web-9d74f46fe25d"
       ],
-      "feature_ids": [],
-      "source_count": 5,
-      "research_question": "출하·양성물량·산지가를 함께 보면 앞으로 공급은 늘어나는가, 줄어드는가?",
+      "feature_ids": [
+        "salmon_price_volume"
+      ],
+      "source_count": 3,
+      "research_question": "수출액 성장에 물량과 단가가 각각 얼마나 기여했으며 한국 수입 통계와 같은가?",
       "news_titles": [
-        "광어양식연합회, 부산수산엑스포서 유통기업 2곳과 판로 상담",
-        "한국광어양식연합회, 부산국제수산엑스포 참가…광어 소비촉진·유통 확대 추진",
-        "한국광어양식연합회, 부산국제수산엑스포 참가...국산 양식 광어 경쟁력 홍보",
-        "울릉군, 불볼락(메바리) 양식 산업화 첫발... 오징어 잇는 새로운 수산자원 육성"
+        "﻿No growth in Norwegian seafood exports in September despite record-high salmon volumes | Norwegian Seafood Council",
+        "Export of salmon – SSB",
+        "Statistikkbanken – SSB",
+        "# Market overview and development"
       ]
     }
   ],
@@ -2249,43 +2281,51 @@
     {
       "depth": "핵심",
       "kind": "대형마트/SSM",
-      "time_frame": "관측: 2026년 7~9월 대형마트 매출과 10월 23일~11월 11일 홈플러스 지급·납품 현황. 전망: 2026년 11월~12월 초.",
-      "headline": "대형마트 매출 두 달 반등에도…홈플러스 공급 정상화는 더딜 듯",
-      "thesis": "대형마트 매출이 8~9월 전년 동월 대비 증가했지만, 홈플러스에서는 11월에도 대금 지급 차질과 일부 빈 매대가 보도됐다. 홈플러스의 단기 상품공급 회복은 업태 전체의 판매 반등보다 더딜 가능성이 크다.",
-      "lead": "추석 수요가 반영된 대형마트 판매지표와 홈플러스의 상품조달 상황이 엇갈리고 있다. 판매액이 회복되더라도 밀린 납품대금이 해소되지 않으면 다음 입고까지 원활해지기는 어렵다는 점이 드러난 사례다.",
+      "time_frame": "2026년 7~9월 납품업체 매출 조사 및 11월 초 거래 상황",
+      "headline": "홈플러스 납품사 63%가 매출 감소…연말 거래 위축 이어질 듯",
+      "thesis": "홈플러스 납품업체에 매출 감소와 대금 회수 지연이 겹치고 있다. 미정산 대금이 남은 가운데 신규 발주도 줄었다는 공개 취재를 고려하면, 연말까지 납품거래는 회복보다 위축 압력이 우세할 전망이다.",
+      "lead": "중소기업중앙회가 11월 4일 발표한 조사에서 7~9월 주거래 마트를 통한 매출이 전년보다 줄었다는 응답은 전체 대형마트 거래업체의 37.0%, 홈플러스 거래업체의 63.0%였다. 홈플러스 거래업체의 감소 응답률이 26%포인트 높았다. 이는 매출액 감소율이 아니라 매출 감소를 경험한 업체의 비중이다.",
       "facts": [
         {
-          "text": "공식 통계｜산업통상부가 2026년 10월 28일 발표한 주요 유통업체 매출 동향에서 대형마트 매출은 전년 동월 대비 7월 11.2% 감소한 뒤 8월 4.5%, 9월 4.0% 증가했다. 산업부는 추석이 2025년 10월에서 2026년 9월로 이동한 데 따른 선물세트·제수용품 판매 효과를 설명했다.",
+          "text": "중소기업중앙회 조사 인용 보도에 따르면, 2026년 7~9월 주거래 마트 경유 매출의 전년 대비 감소 응답률은 대형마트 거래 중소기업 전체 37.0%, 홈플러스 거래업체 63.0%였다.",
           "refs": [
-            "web-127f7c37ee2b"
-          ]
-        },
-        {
-          "text": "기사｜2026년 11월 8일 아시아타임즈 보도에 따르면 홈플러스는 10월 23일과 11월 6일에 8월 급여를 각각 25%씩 지급했으나, 나머지 절반과 추석 상여금의 지급일은 정하지 못했다. 제공된 11월 11일 헤럴드경제 현장보도 요약에서도 일부 매장의 빈 매대와 납품대금 지급 차질이 전해졌다.",
-          "refs": [
-            "web-44ab19ee0485"
-          ]
-        },
-        {
-          "text": "조사 인용 기사｜중소기업중앙회가 2026년 11월 4일 발표한 백화점·대형마트 입점 중소기업 900개사 조사에서 대형마트 입점업체의 37.0%가 전년 대비 매출 감소를 응답했다. 900개사는 두 업태를 합친 조사 규모이며, 홈플러스나 수산업체만의 결과는 아니다.",
-          "refs": [
+            "web-6e64f6955ece",
             "web-adaf486e71a9"
+          ]
+        },
+        {
+          "text": "같은 조사에서 홈플러스 거래업체 100개사 중 72개사는 매장 축소·폐점 등 운영 변화로 피해를 봤다고 응답했으며, 이들 모두 정산 지연을 피해 내용으로 지목했다.",
+          "refs": [
+            "web-6e64f6955ece"
+          ]
+        },
+        {
+          "text": "한국경제의 2026년 11월 6일 독립 취재를 소개한 공개 요약에서는 홈플러스 납품 식품업체에 미정산 대금이 남아 있고, 선금 거래 상품의 발주도 감소한 사례가 제시됐다.",
+          "refs": [
+            "web-c4dc2591afd2"
+          ]
+        },
+        {
+          "text": "산업통상부의 2026년 10월 28일 발표를 인용한 보도에서 9월 주요 유통업체 매출은 전년 동월 대비 4.5%, 오프라인 매출은 5.1%, 전체 식품 매출은 6.3% 증가했다. 발표는 추석 시점 이동과 명절 판매를 증가 배경으로 설명했다.",
+          "refs": [
+            "web-753d3f330772"
           ]
         }
       ],
-      "market_change": "8~9월의 플러스 전환은 각 월의 전년 동월 대비 판매액 기준이다. 7월 이후 매출이 매달 연속 증가했다는 뜻은 아니며, 특히 9월 실적에는 지난해와 달라진 추석 시점이 영향을 미쳤다.",
+      "market_change": "9월 유통시장에서는 명절 판매에 힘입어 매출액이 늘었지만, 7~9월 홈플러스 거래업체 조사에서는 매출 감소 응답이 다수를 차지했다. 주요 유통업체 매출 증가율과 납품업체의 감소 응답률은 직접 비교할 수 있는 지표가 아니다. 다만 명절을 낀 시장 전체의 판매 증가와 홈플러스 납품업체의 거래 여건이 같은 방향으로 움직이지 않았다는 점은 드러난다.",
       "mechanism": [
-        "최근 판매 반등에는 명절 수요가 구매 시기를 바꾼 효과가 섞여 있다. 지난해 10월에 잡혔던 추석 관련 판매가 올해는 9월에 반영됐기 때문에, 9월의 4.0% 증가를 평상시 구매력의 회복으로 그대로 읽기는 어렵다. 여기에 11월 발표 조사에서 입점업체의 37.0%가 전년 대비 매출 감소를 응답한 점까지 겹친다. 두 달간의 업태 평균 반등만으로 납품업체 전반의 영업 여건이 개선됐다고 판단할 근거는 약하다.",
-        "홈플러스에서는 수요와 별개로 지급 여력이 상품조달을 제약하고 있다. 11월 6일까지도 8월 급여를 나눠 지급했고, 이후 보도에는 납품대금 지연과 일부 빈 매대가 함께 등장했다. 밀린 대금은 납품업체의 자금 회수를 늦추므로 추가 출하를 늘리는 데 부담이 된다. 빈 매대 전체의 원인을 결제 문제로 돌릴 수는 없지만, 현재의 조달 불안을 설명하는 직접적인 단서는 업태 매출보다 회사의 지급 상황에 있다."
+        "먼저 대금 회수 문제가 납품업체의 자금 부담을 키우고 있다. 11월 발표 조사에서 운영 변화로 피해를 봤다는 홈플러스 거래업체 72개사 모두 정산 지연을 지목했다. 여기에 11월 6일 식품업체 취재에서도 기존 미정산 대금이 남아 있는 사례가 나왔다. 설문에서 드러난 회수 지연이 실제 납품 현장에서도 이어진 것이다. 이미 판매한 상품의 대금이 들어오지 않으면 신규 주문을 받아도 원료 구매와 생산에 쓸 현금은 부족해질 수 있다.",
+        "새 주문의 감소는 정산 문제와 별도로 매출을 누른다. 7~9월 홈플러스 거래업체의 매출 감소 응답률은 63.0%였고, 11월 취재에서는 선금 거래 상품까지 발주가 줄었다는 사례가 제시됐다. 대금 지급 조건을 바꾼 상품에서도 주문 감소가 나타났다는 점에서, 지급 지연만 해소한다고 납품 매출이 곧바로 회복될 상황은 아니다. 기존 대금을 받는 일과 새 매출을 확보하는 일이 동시에 막혀 있다."
       ],
-      "structural_insight": "홈플러스에서는 판매 회복과 매대 정상화 사이에 시차가 길어질 가능성이 크다. 수산 납품업체에도 대형마트 업태의 성장률보다 해당 거래처의 정산 일정이 더 직접적인 위험 지표가 된다. 이는 유통사의 상품 확보 문제이며, 국내 수산물 원물 부족을 뜻하지는 않는다.",
-      "what_changes": "업태 매출 반등과 홈플러스의 결제·재조달 회복을 분리해 판단한다.",
-      "one_sentence": "대형마트 판매지표가 개선돼도 홈플러스의 지급 차질이 남아 있는 한 상품공급 정상화는 늦어질 가능성이 크다.",
-      "limitations": "기사 전문이 아닌 제공된 공개 요약을 사용했다. 홈플러스 수산물별 미수금·공급중단 물량, 입점업체 조사의 실시기간과 수산업체 표본 수는 제시되지 않았다.",
+      "structural_insight": "선금 거래 상품의 발주 감소는 납품업체 보호를 위한 결제 방식 변경과 거래 회복을 구분하게 한다. 결제 조건 개선은 새로 납품하는 상품의 회수 위험을 줄일 수 있지만 주문 자체를 늘리지는 않는다. 홈플러스 납품거래의 반등에는 밀린 대금의 지급뿐 아니라 실제 발주의 회복이 함께 필요하다.",
+      "what_changes": "홈플러스 납품거래 전망을 전체 유통 매출과 분리하고, 미정산 대금과 신규 발주를 각각 추적한다.",
+      "one_sentence": "명절 판매 증가에도 홈플러스 납품업체는 기존 대금을 받는 일과 새 주문을 확보하는 일에서 동시에 압박을 받고 있다.",
+      "limitations": "공식 조사 원표와 기사 전문은 미열람했으며 공개 요약·인용 보도를 사용했다. 제공 요약 간 조사기간·전체 표본 설명에 차이가 있어 세부 설계는 비교에서 제외했다. 수산업체별 실적과 발주 감소율은 없다.",
       "article_ids": [
-        "web-127f7c37ee2b",
-        "web-44ab19ee0485",
-        "web-adaf486e71a9"
+        "web-6e64f6955ece",
+        "web-adaf486e71a9",
+        "web-c4dc2591afd2",
+        "web-753d3f330772"
       ],
       "feature_ids": [],
       "policy_ids": [],
@@ -2293,74 +2333,87 @@
       "channels": [
         "마트"
       ],
-      "impact": "홈플러스와 거래하는 수산 납품업체의 정산·추가 출하 부담이 지속될 가능성. 수산업계 전체의 피해 규모로 확대하지 않는다.",
-      "followup": "공개된 납품대금 지급 재개 내역과 같은 점포의 입고·매대 정상화 보도를 대조한다.",
+      "impact": "홈플러스 거래 중소 납품업체에 매출 감소와 현금 회수 지연이 함께 부담으로 작용한다.",
+      "followup": "홈플러스 미정산 납품대금 잔액, 정상 지급 여부, 월별 신규 발주 실적을 우선 추적한다.",
       "outlook": {
-        "direction": "제한적 회복",
-        "horizon": "2026년 11월~12월 초",
-        "judgment": "홈플러스의 단기 상품공급 회복은 제한적이며, 일부 매장의 조달 불안이 이어질 가능성이 높다.",
-        "basis": "11월 6일까지 이어진 급여 분할 지급과 11월 11일 보도된 납품대금 지급 차질·일부 빈 매대가 직접적인 운영 근거다. 앞선 8~9월 업태 매출 증가는 홈플러스의 결제 정상화를 입증하지 못하며, 9월에는 추석 시점 이동 효과도 반영됐다.",
-        "revision_trigger": "지연된 납품대금의 정상 지급 재개가 공개적으로 확인되는 경우.",
+        "direction": "축소",
+        "horizon": "2026년 11~12월",
+        "judgment": "연말까지 홈플러스의 중소 납품업체 대상 거래는 회복보다 추가 위축 압력이 우세할 것으로 판단한다.",
+        "basis": "7~9월 매출 감소 응답이 홈플러스 거래업체의 63.0%에 달했고, 운영 변화 피해업체들의 정산 지연 응답과 11월 식품업체 취재의 미정산·발주 감소 사례가 맞물린다.",
+        "revision_trigger": "누적 미정산 납품대금을 해소할 운영자금의 실제 유입.",
         "numeric_estimate": "",
         "forecast_method": "",
         "backtest": "",
         "evidence_ids": [
-          "web-44ab19ee0485",
-          "web-127f7c37ee2b",
-          "web-adaf486e71a9"
+          "web-6e64f6955ece",
+          "web-c4dc2591afd2"
         ]
       },
       "status": "공개 자료 기반 시장 분석",
-      "character_count": 1407,
+      "character_count": 1584,
       "length_tier": "충실",
       "evidence_depth": {
-        "numeric_evidence_records": 2,
+        "numeric_evidence_records": 3,
         "distinct_numeric_facts": 2,
-        "distinct_sources": 2,
+        "distinct_sources": 3,
         "dimensions": [
           "demand",
           "distribution"
         ],
         "details": [
           {
-            "source": "motir.go.kr",
-            "id": "web-127f7c37ee2b",
+            "source": "biz.heraldcorp.com",
+            "id": "web-6e64f6955ece",
+            "facets": [
+              "demand"
+            ],
+            "numbers": [
+              "37.0%",
+              "63.0%"
+            ]
+          },
+          {
+            "source": "m-i.kr",
+            "id": "web-adaf486e71a9",
+            "facets": [
+              "demand"
+            ],
+            "numbers": [
+              "37.0%",
+              "63.0%"
+            ]
+          },
+          {
+            "source": "www5.ajunews.com",
+            "id": "web-753d3f330772",
             "facets": [
               "demand",
               "distribution"
             ],
             "numbers": [
-              "11.2%",
               "4.5%",
-              "4.0%"
-            ]
-          },
-          {
-            "source": "asiatime.co.kr",
-            "id": "web-44ab19ee0485",
-            "facets": [
-              "distribution"
-            ],
-            "numbers": [
-              "25%"
+              "5.1%",
+              "6.3%"
             ]
           }
         ]
-      }
+      },
+      "archived_source": false,
+      "published_at": "2026-11-11T12:36+09:00"
     }
   ],
-  "deep_status": "AI 리서치 1편 · 공개 출처·수치 검증 통과",
+  "deep_status": "새 심층 분석 1편 · 주제별 공개 근거 검증",
   "research_sources": [
     {
-      "id": "web-48a63555035a",
-      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai",
-      "source": "ssb.no",
-      "title": "Export of salmon – SSB",
-      "summary": "**연어는 ‘수출물량 증가’와 ‘현지통화 단가 하락’이 동시에 확인된다.** 노르웨이 통계청이 **2026년 11월 4일 발표**한 **44주차, 10월 26일~11월 1일** 신선·냉장 양식연어 수출가격은 **74.98 NOK/kg**, 물량은 **28,444톤**이다. **2025년 같은 주 대비 가격은 6.9% 하락, 물량은 14.3% 증가**했다. 같은 주 가격은 **2024년 76.49, 2025년 80.55 NOK/kg**이었다. 다만 이는 노르웨이 전체 수출이며 일본·미국별 판매 실적이나 한국 수입가격은 아니다. 달러 환산가격도 별개의 가격 관측치로 세지 않았다. 원출처: SSB 표 03024. ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai))",
+      "id": "web-0f6b4e4a21a9",
+      "url": "https://seafood.mynewsdesk.com/pressreleases/no-growth-in-norwegian-seafood-exports-in-september-despite-record-high-salmon-volumes-3470674?utm_source=openai",
+      "source": "seafood.mynewsdesk.com",
+      "title": "﻿No growth in Norwegian seafood exports in September despite record-high salmon volumes | Norwegian Seafood Council",
+      "summary": "**기존 9월 사건의 공급 원인은 공식 설명이 있으나, 독립 생산통계 검증은 남아 있다.** 노르웨이수산물위원회(NSC)의 **2026년 10월 5일 발표**에 따르면 **9월 연어 수출량은 165,393톤으로 전년 동월보다 22% 증가**했다. NSC는 높은 생존율·빠른 성장·대형어 공급 증가와 가을철 출하를 배경으로 설명했다. 폴란드행은 **32,296톤, +30%**였지만, 이는 **폴란드 최종 소비량이 아니라 가공·재수출용을 포함한 수입 물량**이다. 이 설명을 확정하려면 별도 월별 도축량·생체중량·폐사율 통계와 수입국 재고 자료가 필요하다. [원출처: NSC](https://seafood.mynewsdesk.com/pressreleases/no-growth-in-norwegian-seafood-exports-in-september-despite-record-high-salmon-volumes-3470674). ([seafood.mynewsdesk.com](https://seafood.mynewsdesk.com/pressreleases/no-growth-in-norwegian-seafood-exports-in-september-despite-record-high-salmon-volumes-3470674?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "원물 수급/시세",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -2371,11 +2424,11 @@
       "editorial_score": 7
     },
     {
-      "id": "web-d0104f628e57",
-      "url": "https://www.nabo.go.kr/board/file/down.do?fid=33319286&utm_source=openai",
-      "source": "nabo.go.kr",
-      "title": "2026. 5.\n국회예산정책처Ⅰ인구·고용동향 & 이슈Ⅰ제6호\n NABO 인구·고용동향 &",
-      "summary": "**오징어는 후속 조사 우선순위가 높지만, 후보 제목의 ‘93% 급감’을 전국 연간 감소율로 쓰면 안 된다.** 국회예산정책처의 **2026년 5월 발간 자료**에서는 연근해 오징어 생산량이 **2021년 60,880톤에서 2024년 13,568톤**으로 감소한 사실이 확인된다. 반면 검색된 별도 보도는 **2026년 5월 어획량 11톤, 2025년 5월 77톤 대비 약 85% 감소**, 평년 대비 93% 감소라고 설명한다. 후보인 11월 8일 기사와 동일한 집계인지, 평년의 기준연도가 무엇인지는 미확인이다. **장기 생산 감소와 특정 월의 감소율을 분리하고, 남미산 수입 증가도 국가·품종·냉동 여부별 관세청 통계로 검증해야 한다.** ([nabo.go.kr](https://www.nabo.go.kr/board/file/down.do?fid=33319286&utm_source=openai))",
+      "id": "web-e7314fb737f0",
+      "url": "https://vasep.com.vn/van-ban/vasep/edailynews.nsf/HomePage?utm_source=openai",
+      "source": "vasep.com.vn",
+      "title": "VASEP",
+      "summary": "**② 베트남산 새우: 관세할당 철폐 ‘요청’과 실제 제도 변경을 구별해야 한다.** VASEP 공식 문서목록에서 **2026년 10월 30일자 222/CV-VASEP호**, 한·베 FTA 이행 관련 서한의 존재를 확인했다. **11월 5일 eFeedLink 보도**는 VASEP가 무관세 할당 철폐를 요구했으며, **2026년 1~9월 한국향 새우 수출액이 2억6,250만 달러로 전년 동기 대비 0.8% 증가**했다고 전한다. 같은 보도에 나온 **연간 할당 1만5,000톤, 할당 초과 관세 20%, 할당 확보 비용 수입액의 14~16%**는 현 단계에서 VASEP 주장에 근거한 보도 수치다. 한국 측 적용 품목·공매 조건과 서한 본문을 대조하기 전에는 확정 비용으로 쓰지 않는다. 원출처: VASEP 문서목록, 수치 전달 출처: eFeedLink. ([vasep.com.vn](https://vasep.com.vn/van-ban/vasep/edailynews.nsf/HomePage?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2390,15 +2443,15 @@
       "editorial_score": 7
     },
     {
-      "id": "web-44ab19ee0485",
-      "url": "https://www.asiatime.co.kr/article/20261108500031?utm_source=openai",
-      "source": "asiatime.co.kr",
-      "title": "새 주인 기다릴 여력 있나…홈플러스, 매각보다 급한 운영자금",
-      "summary": "**홈플러스는 매각 전망보다 이미 발생한 지급 차질을 중심으로 추적할 사안이다.** **2026년 11월 8일 아시아타임즈 보도**에 따르면 회사는 **10월 23일과 11월 6일에 8월 급여의 25%씩**을 지급했으나 나머지 절반과 추석 상여금 지급일을 정하지 못했다. **11월 11일 헤럴드경제 현장 보도**에서도 일부 매장의 빈 매대와 납품대금 지급 차질이 확인됐다. 다만 두 보도에서 **수산물 납품업체별 미수금, 공급중단 물량, 수산 매출 감소액은 확인되지 않았다.** 따라서 수산업계 피해 규모를 임의 추정하지 않고 결제·공급 차질 후보로 유지한다. ([asiatime.co.kr](https://www.asiatime.co.kr/article/20261108500031?utm_source=openai))",
+      "id": "web-a491c0b24920",
+      "url": "https://english.vov.vn/en/economy/vasep-proposes-abolishing-quotas-on-vietnamese-shrimp-exports-to-rok-post1075995.vov?utm_source=openai",
+      "source": "english.vov.vn",
+      "title": "VASEP proposes abolishing quotas on Vietnamese shrimp exports to RoK",
+      "summary": "**③ 새우 쿼터 문제는 신규 문제가 아니라 반복 제기된 통상 현안이다.** **2024년 2월 6일 VOV 보도**에도 VASEP의 한국향 새우 쿼터 철폐 요구와 **연간 1만5,000톤 무관세 할당**이 등장한다. 따라서 이번 후보의 새로운 사건은 ‘쿼터 문제 발생’이 아니라 **2026년 FTA 관련 서한 제출**이다. 과거 요구와 이번 요구를 별개 제도 변경으로 중복 집계하지 않아야 한다. 원출처: VOV. ([english.vov.vn](https://english.vov.vn/en/economy/vasep-proposes-abolishing-quotas-on-vietnamese-shrimp-exports-to-rok-post1075995.vov?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "대형마트/SSM",
+      "category": "원물 수급/시세",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -2406,14 +2459,14 @@
       "research_phase": "discovery",
       "impact": "공개 근거 문단",
       "followup": "해당 원문 및 통계 기준기간",
-      "editorial_score": 19
+      "editorial_score": 7
     },
     {
       "id": "web-adaf486e71a9",
       "url": "https://www.m-i.kr/news/articleView.html?idxno=2014110&utm_source=openai",
       "source": "m-i.kr",
       "title": "대형마트 납품 中企 10곳 중 4곳 매출 감소… 수수료 부담 여전 - 매일일보",
-      "summary": "**대형마트 납품업체의 매출 감소와 수수료 부담을 보여주는 최근 조사가 나왔다.** 중소기업중앙회가 **2026년 11월 4일 발표한 백화점·대형마트 입점 중소기업 900개사 조사**를 인용한 보도에서, 대형마트 입점업체의 **37.0%가 전년 대비 매출 감소**를 응답했고, **특약매입·임대을 거래 기준 평균 판매수수료율은 대형마트 20.2%, 백화점 26.1%**였다. 다만 조사 실시기간과 수산업체 표본 수는 확보하지 못했다. 이 수수료율을 **직매입 수산물 전체의 유통마진**으로 해석하지 않는다. ([m-i.kr](https://www.m-i.kr/news/articleView.html?idxno=2014110&utm_source=openai))",
+      "summary": "**④ 대형마트 납품업체의 매출 감소: 수산 납품업체 영향은 아직 분리되지 않았다.** 중소기업중앙회가 **2026년 11월 4일 발표한 조사**를 인용한 보도에서 대형마트 입점 중소기업의 **37.0%**, 홈플러스를 주거래처로 둔 업체의 **63.0%**가 전년 대비 매출 감소를 응답했다. 조사는 **7월 22일~9월 21일**, 백화점·대형마트 입점 중소기업 **총 900개사**를 대상으로 진행됐다. 이는 매출 감소를 경험한 **응답업체 비율**이지 매출 감소율이 아니다. 수산업체별 미수금·납품 중단액은 확인되지 않아 홈플러스 수산 공급망 피해액으로 환산하지 않는다. 원출처: 중소기업중앙회 조사, 확인 출처: 매일일보·대구MBC. ([m-i.kr](https://www.m-i.kr/news/articleView.html?idxno=2014110&utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2428,11 +2481,11 @@
       "editorial_score": 15
     },
     {
-      "id": "web-b9932e4c5e3c",
-      "url": "https://vasep.com.vn/van-ban/vasep/dailynews.nsf/HomePage?page=1&utm_source=openai",
-      "source": "vasep.com.vn",
-      "title": "VASEP",
-      "summary": "**VASEP의 한·베트남 FTA 관련 공식 서한 존재는 확인했으나 관세쿼터 폐지 확정은 확인하지 못했다.** VASEP 공식 문서목록에는 **2026년 10월 30일자 제222/CV-VASEP호**, 제목 「한·베트남 자유무역협정(VKFTA) 이행 상황」이 등재돼 있다. 그러나 이번에 확보한 목록만으로는 **새우 쿼터 철폐 건의의 구체적 내용, 적용 물량·세율·시행일**을 검증할 수 없다. 따라서 후보 기사는 제도변경 확정 사건이 아니라 **업계 건의 내용의 원문 확인이 필요한 사안**으로 보류한다. ([vasep.com.vn](https://vasep.com.vn/van-ban/vasep/dailynews.nsf/HomePage?page=1&utm_source=openai))",
+      "id": "web-8056b5e0f5a4",
+      "url": "https://kkk1971.com/jumunjin-squid/?utm_source=openai",
+      "source": "kkk1971.com",
+      "title": "강릉 주문진 오징어, 어쩌다 귀한 금징어가 됐을까 – 알뜰건강정보통",
+      "summary": "**⑤ ‘오징어 어획량 93% 급감’은 전국 통계로 채택 보류다.** 제공된 서울경제 기사 제목의 **93%**에 대해 어종·해역·어업·집계기간·비교기간이 일치하는 원통계를 확보하지 못했다. 별도 검색에서 발견한 **2026년 5월 11톤·평년 대비 약 93% 감소**라는 수치는 비공식 설명자료에 불과하므로 기사 제목을 입증하는 근거로 사용하지 않았다. 다음 검증에서는 통계청 어업생산동향과 산지 위판자료를 분리해, 지역·월간 감소가 전국 연간 감소로 확대 해석됐는지 확인해야 한다. ([kkk1971.com](https://kkk1971.com/jumunjin-squid/?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2447,11 +2500,30 @@
       "editorial_score": 7
     },
     {
-      "id": "web-36fe04b21a41",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3052&utm_source=openai",
-      "source": "index.go.kr",
-      "title": "지표서비스 | e-나라지표",
-      "summary": "**생산·가격·수출입의 국내 공식 월별 수치 확보가 가장 큰 공백이다.** 공식 e-나라지표는 수산물 수출입을 중량·금액으로 집계하고, 국립수산물품질관리원은 국가·품종별 수산생물 검역 및 제품별 수출검사 통계를 공표한다고 명시한다. 다만 이번 검색에서는 최근 30~45일 발표의 **국내 어종별 생산·가격표, 수산물 수출입 월별 실적, 원산지 단속 결과 수치**까지 확보하지 못했다. 검역통계도 수산생물 질병검사와 식품 안전검사를 구분해야 한다. ([index.go.kr](https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3052&utm_source=openai))",
+      "id": "web-1ac4a8b9d351",
+      "url": "https://news.sbs.co.kr/news/endPage.do?cooper=RSS&newsId=N1008808307&plink=ORI&utm_source=openai",
+      "source": "news.sbs.co.kr",
+      "title": "한국물가정보 \"황금연휴 끝난 후 장바구니 물가 안정세\"",
+      "summary": "**⑥ ‘제철 수산물 가격 급등’도 대표 어종·규격의 실측 비교가 필요하다.** **2026년 10월 21일 보도된 한국물가정보의 10월 보고서**는 연휴 이후 상당수 수산물 가격이 하락세로 전환했다고 설명한다. 이는 제공된 꽃게·전어 가격 급등 후보와 조사 지역·품목·시점이 다를 수 있어 곧바로 모순으로 판단할 수 없다. 현재는 동일 어종·원산지·크기·판매단위의 실제 가격쌍을 확보하지 못했으므로 ‘수산물 전반 급등’으로 묶지 않는다. 원자료: 한국물가정보, 확인 출처: SBS. ([news.sbs.co.kr](https://news.sbs.co.kr/news/endPage.do?cooper=RSS&newsId=N1008808307&plink=ORI&utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-1b258c63952a",
+      "url": "https://www.nfqs.go.kr/hpmg/info/actionInfoPreOpenForm.do?menuId=M0000176&utm_source=openai",
+      "source": "nfqs.go.kr",
+      "title": "국립수산물품질관리원 > 정보공개 > 사전공표목록",
+      "summary": "**⑦ 검역·수출검사 통계는 공개 경로를 확인했지만 최근 실적 수치는 미확보다.** 국립수산물품질관리원 사전공표목록에는 **국가별·품종별 수산생물 수입·수출 검역 통계**, **제품별 수산물 수출검사 통계**가 명시돼 있다. 이번 조사에서는 최근 월간 검사량·불합격량을 추출하지 못했다. 따라서 겨울철 검사계획 기사만으로 부적합 증가나 안전성 악화를 주장하지 않는다. 원출처: 국립수산물품질관리원. ([nfqs.go.kr](https://www.nfqs.go.kr/hpmg/info/actionInfoPreOpenForm.do?menuId=M0000176&utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2466,15 +2538,15 @@
       "editorial_score": 7
     },
     {
-      "id": "web-6c2a34b6a6cd",
-      "url": "https://bid24.kr/b/R26BK01732707?utm_source=openai",
-      "source": "bid24.kr",
-      "title": "2026년 4분기 구내식당 수산물 구매 계약 — 농림축산식품부 농식품인재개발원 입찰공고 | 입찰24",
-      "summary": "**학교·단체급식, 코스트코, 일반 통상·정치 후보는 이번 단계에서 핵심 수산 이슈로 채택하지 않았다.** 검색에서 확인된 급식 개별 공고나 코스트코 상품목록만으로 시장 전체의 수산 조달·판매 규모를 판단하기 어렵다. 미국 공화당 원내대표 후보 기사 역시 후속 보도상 **11월 10일 현지시간 선출 완료**로 갱신됐지만, 수산물 거래에 발생한 직접적 수치 영향은 확보하지 못했다. ([bid24.kr](https://bid24.kr/b/R26BK01732707?utm_source=openai))",
+      "id": "web-afa813702b43",
+      "url": "https://thecheck.co.kr/september-online-shopping-trends-2026/?utm_source=openai",
+      "source": "thecheck.co.kr",
+      "title": "9월 온라인쇼핑 거래액 24.9조원, 내 업종도 늘었을까? - 더체크",
+      "summary": "**⑧ 온라인 농축수산물 거래 증가를 수산물 매출 증가로 치환하면 안 된다.** 국가데이터처의 **2026년 11월 2일 발표자료를 인용한 2차 자료**에서 **9월 농축수산물 온라인 거래액 1조6,738억원, 전년 동월 대비 9.7% 증가**를 확인했다. 다만 공식 원표는 아직 확보하지 못했으며, 농산물·축산물·수산물이 합산된 값이다. 컬리 전체 실적이나 신선식품 매출과도 범위가 달라, 수산물 온라인시장 성장률로 사용하지 않는다. 원통계: 국가데이터처 온라인쇼핑동향, 확인 출처: 더체크. ([thecheck.co.kr](https://thecheck.co.kr/september-online-shopping-trends-2026/?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "온라인",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -2485,11 +2557,49 @@
       "editorial_score": 7
     },
     {
-      "id": "web-9b7adb542bb6",
-      "url": "https://www.nabo.go.kr/board/file/down.do?fid=33319286",
-      "source": "nabo.go.kr",
-      "title": "2026. 5.\n국회예산정책처Ⅰ인구·고용동향 & 이슈Ⅰ제6호\n NABO 인구·고용동향 &",
-      "summary": "**국내 생산 감소를 ‘쿼터가 부족해서 발생한 감산’으로 설명하기는 어렵다.** 국회예산정책처의 **2026년 5월 발간** 자료에서 오징어 생산량은 **2021년 60,880톤→2024년 13,568톤**, TAC 소진율은 **41%→11%**로 함께 하락했다. 허용량을 대부분 소진한 상황이 아니므로, 적어도 이 비교기간에는 쿼터 상한이 생산 감소의 직접 원인이었다는 해석을 뒷받침하지 않는다. 이 수치를 원양산·수입산까지 포함한 전체 공급량으로 확대해서도 안 된다. 원출처: 국회예산정책처. ([nabo.go.kr](https://www.nabo.go.kr/board/file/down.do?fid=33319286))",
+      "id": "web-9772fc0387ab",
+      "url": "https://www.ssb.no/en/statbank/table/03024/",
+      "source": "ssb.no",
+      "title": "Statistikkbanken – SSB",
+      "summary": "**조사 결론:** 이번 검색에서는 연어 수출 공급 증가, 베트남산 새우 쿼터 철폐 요청, 대형마트 납품업체 매출 감소를 수치가 있는 후속 취재 후보로 남겼다. 반면 국내 수산물 생산·가격, 최근 수산물 수출입, 안전검사 결과는 공식 원표 확보가 부족하다. 특히 제공된 **SSB 44주 관측값은 해당 표를 열었으나 값을 직접 읽지 못했으므로 재확인 완료로 표시하지 않았다.** ([ssb.no](https://www.ssb.no/en/statbank/table/03024/))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-48a63555035a",
+      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai",
+      "source": "ssb.no",
+      "title": "Export of salmon – SSB",
+      "summary": "**가격·물량: 전년보다 물량은 늘고 가격은 낮지만, 최근 12주 내내 가격이 하락한 것은 아니다.** 노르웨이 통계청 SSB가 **2026년 11월 4일 발표한 44주차 자료(10월 26일~11월 1일)**에서 신선·냉장 양식 연어 수출가격은 **74.98 NOK/kg**, 물량은 **28,444톤**이었다. 전년 동주 대비 각각 **−6.9%, +14.3%**, 전주 대비 **−1.4%, −0.3%**다. 같은 공식 가격표의 **33~44주 가격**은 순서대로 **72.66→73.52→71.87→69.71→70.18→71.41→73.59→73.80→72.55→74.05→76.04→74.98 NOK/kg**이었다. 따라서 ‘전년 대비 공급 증가·가격 약세’와 ‘최근 몇 주의 가격 회복’을 구분해야 한다. **12주 전체 물량 시계열은 이번 조회에서 확보하지 못했다.** [원출처: SSB](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks/artikler/salmon-price). ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-9d74f46fe25d",
+      "url": "https://www.leroyseafood.com/globalassets/02--documents/rapporter/kvartalsrapporter/2026-rapport/lsg-q3-2026-report.pdf",
+      "source": "leroyseafood.com",
+      "title": "# Market overview and development",
+      "summary": "**실제 소비의 공백은 일부 보완됐으나, 판매시점정보(POS) 실측치는 아니다.** Lerøy Seafood Group의 **2026년 3분기 보고서**는 Kontali 추정치를 인용해 **2026년 7~9월 세계 연어 소비량을 91만6,000톤, 전년 동기 대비 +7%**로 제시했다. 같은 기간 **EU 소비량은 +9%, 중국·홍콩은 +6%**, **1~9월 세계 소비량은 +9%**다. 이는 수출금액과 별개인 소비량 자료지만 **민간 추정치**이며, 보고서의 정확한 게시일과 국가별 소매 판매량·재고 조정 방법은 이번 확인에서 확보하지 못했다. 보고서가 별도로 제시한 ‘유로화 기준 수출금액 증가율’을 실제 소비량 증가율로 대체하지 않았다. [출처: Lerøy 2026년 3분기 보고서, 원자료 Kontali](https://www.leroyseafood.com/globalassets/02--documents/rapporter/kvartalsrapporter/2026-rapport/lsg-q3-2026-report.pdf). ([leroyseafood.com](https://www.leroyseafood.com/globalassets/02--documents/rapporter/kvartalsrapporter/2026-rapport/lsg-q3-2026-report.pdf))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2508,7 +2618,7 @@
       "url": "https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf?utm_source=openai",
       "source": "producempresarial.pe",
       "title": "Presentación de PowerPoint",
-      "summary": "**페루 공급 회복은 별도 공식 생산통계에서 확인된다.** 페루 생산부(PRODUCE)의 **2026년 8월 실적 자료**는 **2026년 1~8월 대왕오징어 양륙량 635,600톤**, **2025년 같은 기간 452,500톤 대비 40.5% 증가**로 집계했다. 과거 연간 양륙량은 **2023년 621,900톤, 2024년 188,300톤, 2025년 712,500톤**으로, 2024년 급감 이후 회복한 흐름이다. 검색된 파일명에는 **2026년 10월 9일**이 표시되지만 게시일은 별도로 확인하지 못했다. 이는 국내 살오징어 감소와 다른 방향의 공급 변화이며, 한국으로 실제 반입된 물량을 뜻하지는 않는다. 원출처: PRODUCE 경제연구실·월간 어업통계. ([producempresarial.pe](https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf?utm_source=openai))",
+      "summary": "**페루 공급 증가는 실제 양륙통계로 확인됐다.** 페루 생산부(PRODUCE) 경제연구실의 **2026년 8월 대왕오징어 자료**에서 **1~8월 양륙량은 잠정 63만5,600톤**, 전년 같은 기간 **45만2,500톤 대비 +40.5%**다. 같은 자료의 연간 양륙량은 **2023년 62만1,900톤, 2024년 18만8,300톤, 2025년 71만2,500톤**으로, 2024년 급감 뒤 회복한 흐름이 확인된다. 다만 자료 파일명에 **2026년 10월 9일**이 표시돼 있을 뿐 정확한 게시일은 확인하지 못했고, 본문 직접 열람도 시간초과로 실패해 **검색에 노출된 공식 표 수치까지만 확인**했다. 이 물량은 페루 대왕오징어이며 국내 살오징어 생산량과 합산하지 않았다. [원출처: PRODUCE 경제연구실](https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf). ([producempresarial.pe](https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2523,11 +2633,11 @@
       "editorial_score": 7
     },
     {
-      "id": "web-d08559632179",
-      "url": "https://elperuano.pe/noticia/303680-gobierno-reactiva-pesca-de-la-pota?utm_source=openai",
-      "source": "elperuano.pe",
-      "title": "Gobierno reactiva pesca de la pota | Noticias | Diario Oficial El Peruano",
-      "summary": "**페루의 추가 쿼터는 실제 적용기간과 물량이 확인된다.** 페루 관보의 **2026년 8월 31일 발표**에 따르면 결의 **00304-2026-PRODUCE**는 연간 대왕오징어 어획한도를 **709,659톤**으로 확대하고, 추가 **82,321톤**의 어획 가능기간을 **8월 30일~12월 31일**로 정했다. 따라서 “연말까지 조업 가능 물량을 추가했다”는 사실은 확인되지만, 이 조치만으로 한국 수입 증가분이나 가격 하락폭을 계산할 수는 없다. 원출처: 페루 생산부 결의·관보 El Peruano. ([elperuano.pe](https://elperuano.pe/noticia/303680-gobierno-reactiva-pesca-de-la-pota?utm_source=openai))",
+      "id": "web-6ea02abd8bbf",
+      "url": "https://www.gob.pe/institucion/produce/noticias/1415664-produce-establece-nuevo-limite-de-captura-para-dar-continuidad-a-la-pesca-de-calamar-gigante-o-pota-con-base-en-evidencia-cientifica?utm_source=openai",
+      "source": "gob.pe",
+      "title": "PRODUCE establece nuevo límite de captura para dar continuidad a la pesca de calamar gigante o pota con base en evidencia científica - Noticias - Ministerio de la Producción - Plataforma del Estado Peruano",
+      "summary": "**쿼터는 실제 어획량과 분리해야 하며, 7월 발표를 최신 한도로 쓰면 안 된다.** PRODUCE는 **2026년 7월 6일**, 장관결의 **00191-2026-PRODUCE**에 따라 대왕오징어 총허용어획 한도를 **589,230톤**으로 늘렸다고 발표했다. 당시 누적 어획은 종전 한도의 **95.44%**였다. 그러나 이후 공식 8월 자원자료에는 장관결의 **0304-2026-PRODUCE**에 따른 **2026년 연간 한도 710,000톤**이 제시돼 있다. 따라서 589,230톤을 현재 한도로 인용할 수 없다. **후속 결의의 정확한 발효일과 11월 11일 현재 잔여 쿼터는 이번 조사에서 확정하지 못했다.** [원출처: PRODUCE 7월 발표](https://www.gob.pe/institucion/produce/noticias/1415664-produce-establece-nuevo-limite-de-captura-para-dar-continuidad-a-la-pesca-de-calamar-gigante-o-pota-con-base-en-evidencia-cientifica), [후속 공식 통계자료](https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf). ([gob.pe](https://www.gob.pe/institucion/produce/noticias/1415664-produce-establece-nuevo-limite-de-captura-para-dar-continuidad-a-la-pesca-de-calamar-gigante-o-pota-co",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2542,11 +2652,11 @@
       "editorial_score": 7
     },
     {
-      "id": "web-5074eaededdb",
-      "url": "https://danganote.com/blog/squid-import-price-trend/?utm_source=openai",
-      "source": "danganote.com",
-      "title": "오징어 수입단가 1년 흐름 — 2025.10~2026.09 나라별 가격·환율·수입량 | 단가수첩",
-      "summary": "**최근 6개월 수입량·단가는 수치가 있는 재가공 자료를 찾았으나 공식 원자료 대조는 미완료다.** **2026년 10월 27일 게시**된 관세청 통계 재가공표의 **4~9월 수입량**은 차례로 **15,560·15,095·16,731·13,299·13,890·15,811톤**, CIF 단가는 **3.15·3.28·3.26·3.42·3.52·3.37달러/kg**이다. 그러나 대상이 **오징어·한치·갑오징어 및 여러 가공형태를 묶은 주요 30개국 집계**여서 ‘페루산 냉동 대왕오징어’ 단가로 사용할 수 없다. 전년 동월 비교와 관세청 원표를 확보하기 전까지 보조자료로만 취급한다. 출처: 단가수첩, 원자료 표기 관세청 수출입무역통계. ([danganote.com](https://danganote.com/blog/squid-import-price-trend/?utm_source=openai))",
+      "id": "web-bd212f47c604",
+      "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2026-01-05++10:00&menuSeq=971",
+      "source": "mof.go.kr",
+      "title": "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+      "summary": "**‘국내 어획량 93% 감소’는 2026년 전년 대비 수치가 아니다.** **2026년 11월 7일 뉴시스 보도**가 인용한 국립수산과학원 자료에서 연근해 살오징어 어획량은 **2009년 189,160톤→2024년 13,546톤, 약 −92.8%**다. 반면 해양수산부가 **2026년 2월 26일 발표한 2025년 생산동향**에서 연근해 오징어는 **약 3만1,000톤, 전년 대비 +128.5%**였다. 해수부는 상대적으로 낮은 수온과 봄철 동해 중부·여름철 서해 중남부의 어장 형성을 반등 배경으로 설명했다. **장기 감소와 2025년 반등은 동시에 성립하지만, 2026년 연근해 생산량은 별도 확인이 필요하다.** [원출처: 해양수산부](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&menuSeq=971), [장기 감소 수치 확인 보도](https://files.newsis.com/view/NISX20261105_0003856340). ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2026-01-05++10:00&menuSeq=971))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2558,14 +2668,14 @@
       "research_phase": "focused",
       "impact": "공개 근거 문단",
       "followup": "해당 원문 및 통계 기준기간",
-      "editorial_score": 7
+      "editorial_score": 24
     },
     {
-      "id": "web-aae49d5e1d6f",
-      "url": "https://gapjigi.com/market/item/ojingeo/?utm_source=openai",
-      "source": "gapjigi.com",
-      "title": "오징어 가격 오늘 시세 (2026년 11월 10일) — 1마리 5,104원 · 값지기",
-      "summary": "**소매가격의 단기 하락 단서는 있지만 3개월 공식 시계열은 확보하지 못했다.** 민간 가격 재게시 페이지의 **2026년 11월 10일 기준 표**에는 전국 평균 오징어 소매가격이 **10월 23일 7,029원/마리→11월 4일 5,766원→11월 10일 5,104원**으로 제시된다. 다만 해당 표만으로는 원산지·냉동 여부·중량 규격의 일관성을 확인할 수 없어 남미산 수입단가와 직접 비교하지 않았다. 국가별·국내 채널별 실제 소비량과 판매량도 이번 조사에서 확인하지 못했다. ([gapjigi.com](https://gapjigi.com/market/item/ojingeo/?utm_source=openai))",
+      "id": "web-ff7f76db1185",
+      "url": "https://files.newsis.com/view/NISX20261105_0003856340",
+      "source": "files.newsis.com",
+      "title": "\"오징어의 귀환\"…남미 어획량 회복에 수입 폭증 :: 공감언론 뉴시스 ::",
+      "summary": "**가격 공백은 아직 핵심 제약이다.** 뉴시스의 **2026년 11월 7일 보도**에서 확인되는 aT 인용 가격은 **8월 27일 냉장 오징어 대품 소매가격 5,210원/마리, 전년 대비 +15.4%**다. 이는 페루산 냉동 대왕오징어의 수입단가와 다른 관측치다. 이번 검색에서는 **최근 6개월 관세청 기준 국가·HS코드별 월별 중량과 금액**, **최근 3개월 동일 규격 가격 시계열**, **실제 판매량**을 원자료로 확보하지 못했다. 따라서 ‘페루 어획 증가→한국 수입단가 하락→국내 소비 회복’이라는 인과관계는 아직 입증되지 않았다. [확인 보도: 뉴시스, 가격 원자료 aT](https://files.newsis.com/view/NISX20261105_0003856340). ([files.newsis.com](https://files.newsis.com/view/NISX20261105_0003856340))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2577,52 +2687,14 @@
       "research_phase": "focused",
       "impact": "공개 근거 문단",
       "followup": "해당 원문 및 통계 기준기간",
-      "editorial_score": 11
+      "editorial_score": 12
     },
     {
-      "id": "web-fe66d61f2a2e",
-      "url": "https://public-inspection.federalregister.gov/2026-22660.pdf",
-      "source": "public-inspection.federalregister.gov",
-      "title": "3510-DS-P\n\n**DEPARTMENT OF COMMERCE**\n\n**Internati",
-      "summary": "**미국의 베트남산 새우 조치는 품목·기업·심사기간을 구분해야 한다.** 미국 상무부의 **2026년 11월 6일 관보 게재 예정 공식 문서**는 **2024년 2월 1일~2025년 1월 31일** 베트남산 특정 냉동 온수성 새우 거래를 심사해 Fimex에 **10.71%**, STAPIMEX에 **6.36%**의 덤핑마진을 결정했다. 이는 모든 베트남산 수산물에 일률 적용하는 세율이 아니다. 이번에 확보한 자료에는 규제 이후 국가별 수출물량·단가가 없어, 연말 판매 감소나 한국으로의 물량 전환은 확인하지 못했다. 원출처: 미국 상무부·연방관보 사전공개 문서. ([public-inspection.federalregister.gov](https://public-inspection.federalregister.gov/2026-22660.pdf))",
-      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "원물 수급/시세",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "research_phase": "focused",
-      "impact": "공개 근거 문단",
-      "followup": "해당 원문 및 통계 기준기간",
-      "editorial_score": 7
-    },
-    {
-      "id": "web-127f7c37ee2b",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1&utm_source=openai",
-      "source": "motir.go.kr",
-      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "**최근 월간 매출은 납품업체의 연간 체감 실적과 같은 방향이 아니다.** 산업통상부가 **2026년 10월 28일 발표**한 주요 유통업체 조사에서 대형마트 매출은 **2026년 7월 전년 동월 대비 11.2% 감소**, **8월 4.5% 증가**, **9월 4.0% 증가**했다. 조사대상은 오프라인 **15개사**, 온라인 **11개사**다. 산업부는 추석이 **2025년 10월에서 2026년 9월로 이동**한 데 따른 선물세트·제수용품 판매 효과를 설명했다. 따라서 8~9월 반등을 점포 경쟁력의 구조적 회복으로 단정할 수 없다. 원출처: 산업통상부. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1&utm_source=openai))",
-      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "대형마트/SSM",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "research_phase": "focused",
-      "impact": "공개 근거 문단",
-      "followup": "해당 원문 및 통계 기준기간",
-      "editorial_score": 7
-    },
-    {
-      "id": "web-77a1ede8170e",
-      "url": "https://biz.heraldcorp.com/article/10925041",
+      "id": "web-6e64f6955ece",
+      "url": "https://biz.heraldcorp.com/article/10925041?utm_source=openai",
       "source": "biz.heraldcorp.com",
       "title": "“홈플러스 납품업체 10곳 중 7곳 피해”…매출 감소 63%, 정산 지연까지 - 헤럴드경제",
-      "summary": "**홈플러스 납품 차질은 소비 이동과 별도로 정산 문제를 보여준다.** **2026년 11월 4일 발표된 중소기업중앙회 조사**를 인용한 보도에서 대형마트 납품 중소기업 **400개사 중 37.0%**가 전년 대비 매출 감소를 응답했다. 홈플러스 거래 **100개사**에서는 **63.0%**가 매출 감소, **72개사**가 점포 축소 등으로 피해를 경험했으며 그 **72개사 모두 대금 정산 지연**을 꼽았다. 이는 업체 응답 비율이지 매출 감소율이나 미지급금 총액이 아니다. 조사 실시일·매출 비교기간의 정확한 범위와 수산물 납품업체 별도 결과는 확인하지 못했다. 원출처: 중기중앙회, 확인 경로: 헤럴드경제. ([biz.heraldcorp.com](https://biz.heraldcorp.com/article/10925041))",
+      "summary": "**홈플러스의 ‘63%’는 매출 감소율이 아니라 감소했다고 응답한 업체 비율이다.** 중소기업중앙회가 **2026년 11월 4일 발표한 조사**는 대형마트 거래 중소기업 **400개사**를 대상으로 **7월 20일~10월 1일** 실시했다. **7~9월 주거래 마트 경유 매출의 전년 대비 감소 응답률**은 전체 **37.0%**, 홈플러스 거래업체 **63.0%**였다. 홈플러스 거래 **100개사 중 72개사**는 매장 축소·폐점 등 운영 변화에 따른 피해를 응답했고, 이들은 모두 정산 지연을 지목했다. 다만 **원조사 보고서 직접 열람은 확보하지 못해 발표 인용 보도로 확인**했다. [조사기간 확인 보도](https://biz.heraldcorp.com/article/10925041), [매출 측정기간 확인 보도](https://www.mt.co.kr/index.php/living/2026/11/04/2026110409510681082). ([biz.heraldcorp.com](https://biz.heraldcorp.com/article/10925041?utm_source=openai))",
       "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -2635,6 +2707,44 @@
       "impact": "공개 근거 문단",
       "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 15
+    },
+    {
+      "id": "web-c4dc2591afd2",
+      "url": "https://www.hankyung.com/article/202611069731g",
+      "source": "hankyung.com",
+      "title": "홈플러스 사태 피해 고스란히…납품 중소기업 미정산 대금 밀리고 발주도 줄었다 | 한국경제",
+      "summary": "**별도 취재는 ‘정산 지연과 발주 축소의 동시 발생’을 뒷받침하지만, 수산물 발주 감소 규모는 없다.** 한국경제의 **2026년 11월 6일 독립 취재**에서 홈플러스 납품 식품업체는 미정산 대금이 남아 있는 가운데 선금 거래 상품의 발주도 감소했다고 진술했다. 기사에 인용된 **2026년 6월 별도 조사**는 납품 중소상공인 **150개사 중 98.0%가 납품 후 60일을 넘겨 대금을 받지 못했다**고 응답했고, 극단값 제외 평균 미정산액은 **7억7,400만원**이었다. 이는 자금회수 문제의 별도 근거지만 **오징어·연어 발주량, 수산 납품업체 피해액 또는 회사 전체 미지급액으로 확대할 수 없다.** [출처: 한국경제](https://www.hankyung.com/article/202611069731g). ([hankyung.com](https://www.hankyung.com/article/202611069731g))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-753d3f330772",
+      "url": "https://www5.ajunews.com/view/20261028103540673",
+      "source": "www5.ajunews.com",
+      "title": "추석 특수에 9월 유통업체 매출 4.5% 증가…오프라인, 온라인 증가율 앞질러 | 아주경제",
+      "summary": "**시장 전체 매출과 홈플러스 거래위험도 분리해야 한다.** 산업통상부의 **2026년 10월 28일 발표**를 인용한 보도에서 **9월 주요 유통업체 26개사 매출은 전년 동월 대비 +4.5%**, 오프라인 **+5.1%**, 온라인 **+4.0%**였다. 전체 식품 매출은 **+6.3%**이며 발표는 추석 시점 이동과 명절 판매를 배경으로 설명했다. 그러나 이는 **판매금액 통계이지 수산물 판매량이 아니며**, 홈플러스 납품업체의 매출 감소 응답률과 직접 비교할 수 없다. 이번 조사에서는 **산업통상부 원표와 수산물 품목별 판매량을 확보하지 못해**, 시장 전체 수요 부진만으로 홈플러스 정산 문제를 설명하지 않았다. [발표 확인 보도: 아주경제, 원자료 산업통상부](https://www5.ajunews.com/view/20261028103540673). ([www5.ajunews.com](https://www5.ajunews.com/view/20261028103540673))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 11
     }
   ],
   "archived_features": [],
@@ -2642,24 +2752,75 @@
   "report_factual_brief": false,
   "fresh_deep_count": 1,
   "content_state": "fresh_research",
-  "last_report_updated_at": "2026-11-11T12:14+09:00",
+  "last_report_updated_at": "2026-11-11T12:36+09:00",
   "data_reports": [],
   "data_ai_status": "다른 자료와 비교할 수 있는 품목별 관측이 아직 없습니다.",
   "analysis_status": "실제 공식 관측 3종 · SSB/ECOS 및 연결된 국내 공공통계 기준",
   "sources_ok": 38,
   "sources_total": 38,
   "errors": [],
-  "research_status": "1차: discovery 근거 출처 7건 / 주제별 재조사: focused 근거 출처 9건",
+  "research_status": "1차: discovery 근거 출처 9건 / 주제별 재조사: focused 근거 출처 10건",
   "research_coverage": {
-    "discovery_citations": 7,
-    "focused_citations": 9,
-    "unique_citations": 15,
-    "topic_candidates": 5,
-    "topic_measurement_depth": [
+    "discovery_citations": 9,
+    "focused_citations": 10,
+    "unique_citations": 18,
+    "topic_candidates": 7,
+    "tracked_topics": [
+      {
+        "anchor": "연어",
+        "numeric_records": 5,
+        "independent_sources": 4,
+        "dimensions": [
+          "demand",
+          "distribution",
+          "price",
+          "supply",
+          "trade"
+        ],
+        "ready": true
+      },
       {
         "anchor": "오징어",
-        "numeric_records": 6,
-        "independent_sources": 5,
+        "numeric_records": 7,
+        "independent_sources": 7,
+        "dimensions": [
+          "distribution",
+          "policy",
+          "price",
+          "supply",
+          "trade"
+        ],
+        "ready": true
+      },
+      {
+        "anchor": "대형마트",
+        "numeric_records": 9,
+        "independent_sources": 9,
+        "dimensions": [
+          "demand",
+          "distribution",
+          "trade"
+        ],
+        "ready": true
+      }
+    ],
+    "topic_measurement_depth": [
+      {
+        "anchor": "연어",
+        "numeric_records": 5,
+        "independent_sources": 4,
+        "dimensions_present": [
+          "생산·어획·출하",
+          "실제 소비·판매",
+          "가격·수입단가",
+          "국가별 수출입"
+        ],
+        "dimensions_missing": []
+      },
+      {
+        "anchor": "오징어",
+        "numeric_records": 7,
+        "independent_sources": 7,
         "dimensions_present": [
           "생산·어획·출하",
           "국가별 수출입",
@@ -2672,8 +2833,8 @@
       },
       {
         "anchor": "대형마트",
-        "numeric_records": 8,
-        "independent_sources": 8,
+        "numeric_records": 9,
+        "independent_sources": 9,
         "dimensions_present": [
           "유통·납품",
           "실제 소비·판매"
@@ -2681,50 +2842,94 @@
         "dimensions_missing": [
           "어획·통상 규제"
         ]
+      },
+      {
+        "anchor": "오징어",
+        "numeric_records": 7,
+        "independent_sources": 7,
+        "dimensions_present": [
+          "생산·어획·출하",
+          "국가별 수출입",
+          "가격·수입단가",
+          "어획·통상 규제"
+        ],
+        "dimensions_missing": [
+          "실제 소비·판매"
+        ]
       }
     ],
     "accepted_report_evidence": [
       {
-        "headline": "대형마트 매출 두 달 반등에도…홈플러스 공급 정상화는 더딜 듯",
-        "numeric_evidence_records": 2,
+        "headline": "홈플러스 납품사 63%가 매출 감소…연말 거래 위축 이어질 듯",
+        "numeric_evidence_records": 3,
         "distinct_numeric_facts": 2,
-        "distinct_sources": 2,
+        "distinct_sources": 3,
         "dimensions": [
           "demand",
           "distribution"
         ],
         "details": [
           {
-            "source": "motir.go.kr",
-            "id": "web-127f7c37ee2b",
+            "source": "biz.heraldcorp.com",
+            "id": "web-6e64f6955ece",
+            "facets": [
+              "demand"
+            ],
+            "numbers": [
+              "37.0%",
+              "63.0%"
+            ]
+          },
+          {
+            "source": "m-i.kr",
+            "id": "web-adaf486e71a9",
+            "facets": [
+              "demand"
+            ],
+            "numbers": [
+              "37.0%",
+              "63.0%"
+            ]
+          },
+          {
+            "source": "www5.ajunews.com",
+            "id": "web-753d3f330772",
             "facets": [
               "demand",
               "distribution"
             ],
             "numbers": [
-              "11.2%",
               "4.5%",
-              "4.0%"
-            ]
-          },
-          {
-            "source": "asiatime.co.kr",
-            "id": "web-44ab19ee0485",
-            "facets": [
-              "distribution"
-            ],
-            "numbers": [
-              "25%"
+              "5.1%",
+              "6.3%"
             ]
           }
         ]
       }
     ],
-    "feed_parsed": 1244,
+    "feed_parsed": 1243,
     "feed_kept": 350
   },
   "metric_errors": [
     "ECOS NOK: 항목 코드 미확인",
+    "MOF 202610: ValueError",
+    "MOF 202609: ValueError",
+    "MOF 202510: ValueError",
+    "MOF 202609: ValueError",
+    "MOF 202608: ValueError",
+    "MOF 202509: ValueError",
+    "MOF 202608: ValueError",
+    "MOF 202607: ValueError",
+    "MOF 202508: ValueError",
+    "MOF 202607: ValueError",
+    "MOF 202606: ValueError",
+    "MOF 202507: ValueError",
+    "MOF 202606: ValueError",
+    "MOF 202605: ValueError",
+    "MOF 202506: ValueError",
+    "MOF 202605: ValueError",
+    "MOF 202604: ValueError",
+    "MOF 202505: ValueError",
     "수산물 수출입: 비교 가능한 전년 동월 자료 없음",
     "KAMIS: 최근 45일 중 비교 가능한 도소매 조사 가격 없음"
   ],
