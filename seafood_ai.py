@@ -161,7 +161,7 @@ MAIN_PROMPT='''너는 한국 경제지·산업 전문지의 수산시장 담당 
 - 예시(좋음): '폐점 인근 경쟁점 매출은 11.4% 늘었지만, 상반기 대형마트 전체 매출은 7.3% 감소했다. 폐점 반사이익이 일부 점포에 집중된 모습이다.'  (이 숫자는 문체 예시일 뿐 실제 원고에서는 제공된 근거가 있을 때만 쓴다.)
 - 예시(나쁨): '전년 대비와 장기 평균을 함께 봐야 한다.'
 - 예시(좋음): '어획량은 전년보다 128.5% 늘었지만 5년 평균에는 18.9% 못 미쳤다. 어획 반등에도 물량은 예년 수준에 도달하지 못했다.' (실제 원고에서는 반드시 근거 확인.)
-- structural_insight에는 앞 문단의 요약이나 독자 대상 충고가 아니라 **새로운 구체적 산업 판단 한 가지**를 써라. 예: 출하량 증가가 가격 하락을 상쇄했는지, 수출국별 판매가 어느 쪽에 집중됐는지, 납품 피해가 어디에 누적되는지. 독립적인 추가 결론이 없다면 간결하게 마무리하라.
+- structural_insight에는 앞 문단과 다른, 근거로 확인되는 산업 판단이 있을 때만 쓴다. 예: 출하량 증가가 가격 하락을 상쇄했는지, 수출국별 판매가 어느 쪽에 집중됐는지. 독립적인 추가 결론이 없으면 빈 문자열로 둔다. 기사 본문은 검증된 시장변화·원인·영향과 근거가 존재하면 충분하다.
 - 입증되지 않은 경제 원리, 당연한 설명, 일반론적인 주의 문장은 빼고, 근거가 불충분한 인과나 전망도 지어내지 않는다. 적절한 결론이 없으면 짧게 마무리한다.
 - 아래의 표현은 작성하지 않는다: '구조적 통찰', '관측이 강화된다', '시사한다', '시사점', '인과 경로', '조건부 경로', '양적 측면과 가격 측면', '확인할 필요가 있다', '지켜봐야 한다', '핵심은 A가 아니라 B다', '자료를 종합하면 알 수 있다'.
 - 읽는 사람이 이미 아는 일반 상식·면책성 설명을 문단마다 반복하지 않는다. 반복되는 사실은 한 번만 쓴다. 불확실성은 실질적으로 결론을 바꾸는 경우에만 한 번 짚는다.
@@ -194,13 +194,13 @@ MAIN_PROMPT='''너는 한국 경제지·산업 전문지의 수산시장 담당 
 - headline, thesis: 첫 두 문장 안에 핵심 변화와 잠정 판단. 제목이 리포트 내용을 과장하지 않아야 함.
 - lead, market_change: 독자의 배경 이해와 시간·비교대상 설명. 기사의 주요 배경은 짧게.
 - facts: 확인된 원출처 사실마다 evidence ID를 붙임. 독립 출처 두 곳 미만인 원고는 심층 분석이라고 주장하지 말 것. 서로 다른 통계의 기간을 숨기지 말 것.
-- mechanism: 서로 다른 사건·변수의 작용을 설명하는 문단 2개 이상. 각각 독립적인 새로운 정보를 추가해야 함.
-- structural_insight: 앞 문단 요약이 아닌 두 자료의 결합에서 도출되는 구체적인 산업 판단.
+- mechanism: 실제 근거가 있는 시장 영향 설명. 심층 분석은 서로 다른 내용 2개 이상이 필요하지만, 단일 공식 발표의 산업 이슈·데이터 브리핑은 0~1개여도 된다. 불필요한 문단을 만들지 않는다.
+- structural_insight: 앞 문단을 반복하지 않는 추가 산업 판단. 독립적인 추가 판단을 근거로 쓸 수 없다면 빈 문자열("") 허용. 글자 수와 필드 채우기를 위해 내용을 발명하지 않는다.
 - what_changes: 내부 검증·후속 수집용 메타데이터다. 본문에는 노출되지 않으므로 짧게 적는다.
 - one_sentence: 화면 내부 처리용 결론 요약. 다른 필드에 똑같은 문장을 복붙하지 말 것.
 - limitations: 공개 원자료의 핵심 제한만 내부 메타데이터에 짧게 기록. 본문 분량을 늘리려고 확인/검증 필요성을 독자에게 말하지 말 것. 기사 원문을 확인하지 못했으면 전문을 읽은 것처럼 쓰지 말 것.
 - output depth '핵심'은 충분한 자료가 있을 때만. 분량보다 서로 다른 근거의 연결이 우선이다.
-- 공개 출처와 공식 통계만 사용. 내부 회사의 비공개 거래조건·매출·마진·전략은 절대 쓰지 않는다.
+- 공개 출처와 공식 통계만 사용. 내부 회사의 비공개 거래조건·매출·마진·전략은 절대 쓰지 않는다. 날짜는 출처의 조사일·집계기간과 정확히 일치시킨다. 절대가격 두 개가 모두 출처에서 확인되거나 출처가 차액을 명시한 경우에만 '60원 상승' 같은 가격 차이를 작성한다. 확인되지 않은 단가 차액을 추정하거나 지어내지 않는다.
 - 필드 schema만 채우려는 장황함, 재진술, 형식적 낙관/비관 시나리오 금지. 반드시 지정 JSON 스키마로 응답한다.
 '''
 
@@ -707,16 +707,28 @@ def _validate_main(payload,ctx,diagnostics=None):
             # Presence and grounding matter; an arbitrary character quota does
             # not measure analytical quality.  It previously rejected valid
             # concise sentences before their citations were even checked.
-            required_prose=('headline','thesis','lead','market_change','structural_insight','one_sentence')
+            required_prose=('headline','thesis','lead','market_change','one_sentence')
+            # structural_insight is an optional additional inference. The
+            # prompt explicitly forbids manufacturing a new inference just to
+            # fill a field, so an empty string is never a rejection on its own.
+            # Optional display/metadata slots also need not force retries.
+            optional_fields=('structural_insight','what_changes','limitations','followup')
+            r=dict(r)
+            for optional in optional_fields:
+                if r.get(optional) is None:
+                    r[optional]=''
             malformed=[k for k in fields if not isinstance(r.get(k),str)]
             missing=[k for k in required_prose if isinstance(r.get(k),str) and not r[k].strip()]
             if malformed or missing:
                 reasons.append('필수 원고 항목 누락: '+','.join(malformed+missing));continue
             if r['kind'] not in CATEGORIES or r['headline'] in seen:
                 reasons.append('분류 또는 제목 중복');continue
-            if not isinstance(r.get('mechanism'),list) or not r['mechanism'] or any(
+            if not isinstance(r.get('mechanism'),list) or any(
                     not isinstance(x,str) or not x.strip() for x in r['mechanism']):
-                reasons.append('시장 영향 설명 누락: mechanism');continue
+                reasons.append('시장 영향 설명 형식 오류: mechanism');continue
+            # A factual one-source brief may have no separate causal paragraph;
+            # evidence_class determines its report type below. Only full deep
+            # analysis is required to have two substantive mechanisms.
             outlook=r.get('outlook')
             if outlook is not None:
                 if not isinstance(outlook,dict) or outlook.get('direction') not in (
@@ -925,6 +937,7 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         # track cannot be categorized into one of the predefined anchors.
         assignments=[({'anchor':None,'label':'전체 우선순위 시장',
                        'numeric_records':0,'sources':0},ctx)]
+    print('SEAFOOD DRAFT VALIDATOR: v5.24 structural_insight=optional numeric_guard=on',flush=True)
     print(f'SEAFOOD DRAFT TARGET: {target} validated topics; '
           f'candidate_backups={len(assignments)}; paid_call_limit={budget}',flush=True)
     calls=0;good=[];outcomes=[];published=set();seen_titles=set()
@@ -943,8 +956,19 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
             accepted=[r for r in accepted if
                       re.sub(r'\s+','',r.get('headline','')).lower() not in seen_titles]
             if issues:
-                brief=' | '.join(f"{x['part']} {x.get('source_ids',[])}: {_numeric_feedback(x['mismatches'])}"
-                                 for x in issues[:3])[:590]
+                # Show a short *public claim* excerpt, not a secret/API URL.
+                # Without it '11월', '4일' gives no indication of which
+                # sentence caused the mismatch.
+                def excerpt(issue):
+                    raw=str(issue.get('claim',''))
+                    raw=re.sub(r'https?://\S+','[URL]',raw)
+                    raw=re.sub(r'(?i)(api[_-]?key|service[_-]?key)\s*[:=]\s*[^\s&,]+',
+                               r'\1=[REDACTED]',raw)
+                    return raw[:85]
+                brief=' | '.join(
+                    f"{x['part']} {x.get('source_ids',[])} "
+                    f"claim={excerpt(x)!r}: {_numeric_feedback(x['mismatches'])}"
+                    for x in issues[:3])[:690]
                 print(f'SEAFOOD NUMERIC {"REPAIR" if repair else "AUDIT"} {anchor}: {brief}',flush=True)
             if not response.get('reports'):
                 print(f'SEAFOOD DRAFT EMPTY {anchor}: model_returned_empty_array; '
@@ -1006,6 +1030,10 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         repair_ctx=dict(local_ctx)
         repair_ctx['repair_previous_draft']={'reports':previous,'numeric_issues':issues[:4]}
         note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 결과: {reason}. "
+              'structural_insight는 유효한 추가 산업 판단이 없다면 빈 문자열이어도 된다. '
+              '대신 확인된 market_change, facts, mechanism을 실제 사건과 근거로 충실하게 작성하라. '
+              '출처 조사일은 날짜를 그대로 옮겨 쓰고, 근거에 없는 날짜·금액·가격 차액(예: 60원)은 삭제하라. '
+              '두 가격이 모두 입증되지 않으면 차액을 계산하거나 추정하지 말고 검증된 원가격만 사용하라. '
               '처음에 reports=[]였다면 원고 미작성이다. '
               'draft_source_brief의 수치와 출처 ID를 우선 사용해 검증 가능한 기사 한 편을 완성하라. '
               '중요한 공식 정책 사건이나 유의미한 공식 통계는 원출처 한 곳으로도 짧은 보고서가 가능하다. '

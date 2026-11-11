@@ -34,6 +34,73 @@ _METRICS = (
 _DATE_UNITS = {'년','년도','월','일','주','주차','개월'}
 _APPROX = re.compile(r'(?:약|가량|대략|내외|안팎|수준|정도|여\s*$)')
 
+# An exact calendar day can appear as '2026-11-09', '2026년 11월 9일',
+# '11월 9일', or '11/09'. The market *period* (11월 수입량) is not a
+# publication day; a fuzzy date must never alter a reporting period.
+_FULL_DAY=re.compile(r'(?<!\d)(?:(?P<year>(?:19|20)\d{2})\s*(?:년\s*|[-./]))?'
+    r'(?P<month>1[0-2]|0?[1-9])\s*(?:월\s*|[-./])'
+    r'(?P<day>3[01]|[12]\d|0?[1-9])\s*(?:일)?(?!\d)')
+_PUBLICATION_WORDS=re.compile(r'(?:보도|발표|공개|게시|발행|공표|기자회견|뉴스)',re.I)
+_EFFECTIVE_WORDS=re.compile(r'(?:시행|발효|적용|시작|종료|중단|금지|조업|어획|\b기준일)',re.I)
+
+
+def calendar_days(text):
+    '''Return date occurrences with simple publication / effective distinctions.'''
+    result=[]
+    for m in _FULL_DAY.finditer(str(text or '')):
+        # Decimal prices like 8.07 are NOT dates. Dotted dates must carry
+        # a year or explicit Korean calendar markers.
+        if not m.group('year') and '.' in m.group(0) and '월' not in m.group(0):
+            continue
+        if '년' in m.group(0) and '.' in m.group(0) and str(text)[m.end():].lstrip().startswith('%'):
+            continue  # e.g. 2024년 1.7% is an annual rate, not January 7th
+        try:
+            from datetime import date
+            y=int(m.group('year')) if m.group('year') else 2000
+            d=date(y,int(m.group('month')),int(m.group('day')))
+        except ValueError:continue
+        neighborhood=str(text)[max(0,m.start()-12):min(len(text),m.end()+16)]
+        kind='effective' if _EFFECTIVE_WORDS.search(neighborhood) else ('publication' if _PUBLICATION_WORDS.search(neighborhood) else 'other')
+        result.append({'year':int(m.group('year')) if m.group('year') else None,
+                       'month':d.month,'day':d.day,'kind':kind,
+                       'start':m.start(),'end':m.end(),'raw':m.group(0).strip()})
+    return result
+
+
+def _day_supported(claim,source):
+    # Different news dates may describe the same event, but a source
+    # reporting a different date does not prove the precise claimed date.
+    # Treat publication-date drift as a repairable editorial mismatch, not
+    # as evidence that a policy was enacted on that day.
+    if claim['kind']=='effective':
+        candidates=[d for d in source if d['kind'] in ('effective','other')]
+    else:candidates=source
+    from datetime import date
+    for src in candidates:
+        if claim['month']==src['month'] and claim['day']==src['day']:
+            if not (claim['year'] and src['year'] and claim['year']!=src['year']):
+                return True
+        # A follow-up news report may be written days after the official
+        # announcement. Treat close *publication* dates as context; official
+        # policy effective dates and the periods of market measurements stay exact.
+        if claim['kind']==src['kind']=='publication':
+            cy=claim['year'] or src['year']
+            sy=src['year'] or claim['year']
+            if cy is None or sy is None:continue
+            try:
+                delta=abs((date(cy,claim['month'],claim['day'])-
+                           date(sy,src['month'],src['day'])).days)
+            except ValueError:continue
+            if delta<=14:return True
+    return False
+
+
+def _mask_full_dates(text):
+    chars=list(str(text or ''))
+    for day in calendar_days(text):
+        for idx in range(day['start'],day['end']):chars[idx]=' '
+    return ''.join(chars)
+
 
 def _decimal(text: str) -> Decimal | None:
     try:
@@ -99,7 +166,7 @@ def _metric_near(text: str, start: int, end: int) -> str:
 
 
 def numeric_observations(text: str) -> list[dict]:
-    text=str(text or '')
+    text=_mask_full_dates(str(text or ''))
     found=[]
     for match in _PATTERN.finditer(text):
         raw=match.group('value')
@@ -191,10 +258,53 @@ def _similar(a: dict, b: dict) -> bool:
     return max(abs(av),abs(bv))>0 and diff/max(abs(av),abs(bv))<=rel
 
 
+def _source_supports_date_parts(claim: str, source_days: list[dict], observations: list[dict]) -> set[int]:
+    """Allow Korean calendar fragments only when a *single* observed day
+    from the cited source validates the mentioned month/day combination.
+
+    ``11월 조사 4일`` should agree with source ``2026-11-04``. Do not
+    independently mix November from one source day and 28th from another.
+    Explicit full calendar dates remain checked by _day_supported above.
+    A lone month (e.g., a monthly production period) is never inferred from a
+    daily spot-price date.
+    """
+    accepted=set()
+    parts=[(i,n) for i,n in enumerate(observations) if n['unit'] in ('date:월','date:일')]
+    for pos,(idx,item) in enumerate(parts):
+        if item['unit']!='date:월' or item['value']<1 or item['value']>12:
+            continue
+        for other_idx,other in parts[pos+1:]:
+            if other['unit']!='date:일' or other['value']<1 or other['value']>31:
+                continue
+            # The two tokens must refer to one nearby survey date, not a
+            # month-long market figure and an unrelated numbered event.
+            if other['start']-item['end']>26:
+                break
+            if other['start']<=item['start']:
+                continue
+            if any(int(item['value'])==d['month'] and int(other['value'])==d['day']
+                   for d in source_days):
+                accepted.update((idx,other_idx))
+            break
+    return accepted
+
+
 def missing_numeric_claims(claim: str, source_text: str) -> list[dict]:
     source=numeric_observations(source_text)
     missing=[]
-    for item in numeric_observations(claim):
+    # A calendar date is validated as a calendar date, never a demand/price
+    # amount. If sources have no dated context, the correct date must be
+    # supplied in source metadata before the claim can be endorsed.
+    source_days=calendar_days(source_text)
+    for day in calendar_days(claim):
+        if _day_supported(day,source_days):continue
+        missing.append({'claim':day['raw'],'unit':'calendar_day',
+                        'metric':'date:'+day['kind'],
+                        'nearest_source':source_days[0]['raw'] if source_days else None})
+    observations=numeric_observations(claim)
+    supported_fragments=_source_supports_date_parts(claim,source_days,observations)
+    for idx,item in enumerate(observations):
+        if idx in supported_fragments:continue
         if any(_similar(item, candidate) for candidate in source):continue
         compatible=[s for s in source if _compatible(item,s)]
         compatible.sort(key=lambda s:abs(s['value']-item['value']))

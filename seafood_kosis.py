@@ -156,8 +156,33 @@ def _get_rows(client, url):
     return _response_data_rows(response)
 
 
+def _fix_kosis_combined_unit(row):
+    """KOSIS fishery rows describe the table units as '톤 천원'.
+
+    For an individual production-volume cell the correct unit is tons, while
+    production-value cells are reported in thousand KRW. Preserve the original
+    row for unknown measures rather than assuming a unit conversion.
+    """
+    if not isinstance(row, dict):
+        return row
+    original_unit = str(row.get('UNIT_NM') or '').strip()
+    if not ('톤' in original_unit and '천원' in original_unit):
+        return row
+    item_id = str(row.get('ITM_ID') or '').strip().upper()
+    measure = str(row.get('ITM_NM') or '').strip()
+    if item_id == 'T01' or measure.startswith('생산량'):
+        unit = '톤'
+    elif item_id == 'T05' or measure.startswith('생산금액'):
+        unit = '천원'
+    else:
+        return row
+    return {**row, 'UNIT_NM': unit}
+
+
 def kosis_features_from_tables(tables):
-    raw = features_from_tables(tables, limit=40)
+    corrected = {name: [_fix_kosis_combined_unit(row) for row in rows]
+                 for name, rows in tables.items()}
+    raw = features_from_tables(corrected, limit=40)
     normalized = []
     for feature in raw:
         f = dict(feature)
