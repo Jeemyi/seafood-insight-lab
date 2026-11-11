@@ -17,6 +17,7 @@ dimensions and unit. We never infer prices from production quantities.
 from __future__ import annotations
 
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from hashlib import sha256
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode, quote
@@ -67,7 +68,7 @@ def _templates(raw):
     try:value=json.loads(raw)
     except (ValueError,TypeError):raise ValueError('table URL setting must be a JSON array')
     if not isinstance(value,list):raise ValueError('table URL setting must be a JSON array')
-    if len(value)>12:raise ValueError('max 12 selected statistical tables per run')
+    if len(value)>24:raise ValueError('max 24 selected statistical tables per run')
     result=[]
     for entry in value:
         if isinstance(entry,str):entry={'name':'해양수산통계','url':entry}
@@ -90,7 +91,11 @@ def _templates(raw):
 
 def _response_rows(payload):
     """Support array and common structured data wrappers, never treat errors as data."""
-    if isinstance(payload,list):return [x for x in payload if isinstance(x,dict)]
+    if isinstance(payload,list):
+        # Portal may return an error as an array with one errMsg/code object.
+        if any(isinstance(x,dict) and any(x.get(flag) for flag in ('errMsg','error','ERROR','Error')) for x in payload):
+            raise ValueError('statistical API returned an error')
+        return [x for x in payload if isinstance(x,dict)]
     if not isinstance(payload,dict):raise ValueError('unexpected JSON shape')
     # Some portal error responses also have a valid HTTP 200 code.
     for flag in ('errMsg','error','ERROR','Error'):
@@ -128,7 +133,7 @@ def _fetch(name,template,key,session=None):
         raise ValueError('invalid statistical JSON response')
 
 
-def features_from_tables(tables, limit=12):
+def features_from_tables(tables, limit=24):
     """Accept {table_name: records}. Compare identical indicator/dimension/unit only."""
     grouped=defaultdict(dict)
     for provided_name,rows in tables.items():
@@ -144,19 +149,19 @@ def features_from_tables(tables, limit=12):
             unit=str(x.get('UNIT_NM') or x.get('UNITNM') or x.get('UNIT') or '').strip()
             dims=tuple(str(x.get(f'C{i}_NM') or x.get(f'C{i}NM') or '').strip() for i in range(1,9))
             dims=tuple(y for y in dims if y)
-            identity=' '.join((table,*dims)).lower()
+            identity=' '.join((provided_name,table,*dims)).lower()
             if not any(term in identity for term in MARKET_TERMS):continue
             if not unit:continue  # No comparisons without known measurement units.
             table_id=str(x.get('TBL_ID') or x.get('TBLID') or provided_name)
             item_id=str(x.get('ITM_ID') or x.get('ITMID') or measure)
             # Table/indicator/dimensions/unit/frequency are part of series identity.
-            key=(table_id,item_id,measure,dims,unit,freq,table)
+            key=(table_id,item_id,measure,dims,unit,freq,table,provided_name)
             if period in grouped[key]:
                 # Duplicated conflicting cells are not reliable observations.
                 if grouped[key][period]!=amount:grouped[key][period]=None
             else:grouped[key][period]=amount
     features=[]
-    for (table_id,item_id,measure,dims,unit,freq,table),values in grouped.items():
+    for (table_id,item_id,measure,dims,unit,freq,table,provided_name),values in grouped.items():
         valid={p:v for p,v in values.items() if v is not None}
         if len(valid)<2:continue
         latest=max(valid)
@@ -171,10 +176,13 @@ def features_from_tables(tables, limit=12):
         pct=100*(current/before-1)
         if not math.isfinite(pct):continue
         scope=' · '.join(dims) if dims else '전체'
-        series_name=f'{table} · {scope} · {measure}'
+        # KOSIS often labels tables merely '어류' or '주요품목별'.
+        # Preserve the selected fisheries source name so the scope stays clear.
+        display_table = table if provided_name in table else f'{provided_name} · {table}'
+        series_name=f'{display_table} · {scope} · {measure}'
         hashed=sha256(repr((table_id,item_id,measure,dims,unit,freq)).encode()).hexdigest()[:12]
         fmt=lambda v:f'{v:,.1f}' if abs(v)<100 or v%1 else f'{v:,.0f}'
-        observed=(f'해양수산통계 {table}, {scope}, {measure}: {latest} {fmt(current)}{unit}, '
+        observed=(f'해양수산통계 {display_table}, {scope}, {measure}: {latest} {fmt(current)}{unit}, '
                   f'{prior} {fmt(before)}{unit}; {label} 대비 {pct:+.1f}%')
         features.append({
             'id':'mofstats_'+hashed,'name':series_name,'title':f'{series_name} {label} 대비 {pct:+.1f}%',
@@ -187,13 +195,25 @@ def features_from_tables(tables, limit=12):
             'article_ids':[],'category':'원물 수급/시세','channels':[],
             'impact':f'{measure} {label} 대비 {pct:+.1f}%',
             'source_type':'해양수산통계 공식 OpenAPI','series_type':'mof_stats',
-            'measurements':{'table':table,'item':measure,'dimensions':list(dims),'unit':unit,
+            'measurements':{'table':table,'configured_table':provided_name,'item':measure,'dimensions':list(dims),'unit':unit,
                             'frequency':freq,'period':latest,'previous_period':prior,
                             'value':current,'previous_value':before,'change_pct':pct},
             'limitations':'동일 통계표·항목·분류·단위의 비교. 통계 시점과 발표일은 다를 수 있으며 국가 전체 생산량과 품목별 수입량을 혼동하지 않는다.',
             'significance':min(50,abs(pct)*.6)+5,
         })
-    return sorted(features,key=lambda f:f['significance'],reverse=True)[:limit]
+    # Give each selected table a chance to appear before adding volatile sub-series.
+    by_table=defaultdict(list)
+    for f in features:
+        by_table[f['measurements']['configured_table']].append(f)
+    first=[];remaining=[]
+    for items in by_table.values():
+        items.sort(key=lambda f:f['significance'],reverse=True)
+        first.append(items[0])
+        remaining.extend(items[1:3])  # No one table should dominate the evidence queue.
+    first.sort(key=lambda f:f['significance'],reverse=True)
+    remaining.sort(key=lambda f:f['significance'],reverse=True)
+    if len(first)>=limit:return first[:limit]
+    return (first+remaining)[:limit]
 
 
 def fetch_statistics_features(session=None):
@@ -205,16 +225,24 @@ def fetch_statistics_features(session=None):
     except ValueError as exc:return [],['MOF statistics config: '+str(exc)]
     if not entries:return [],['MOF statistics: no tables selected']
     tables={};errors=[]
-    for name,template in entries:
+    def fetch_one(entry):
+        name,template=entry
         try:
-            rows=_fetch(name,template,key,session=session)
+            return name,_fetch(name,template,key,session=session),None
+        except (requests.RequestException,ValueError,ET.ParseError) as exc:
+            # Do not return exception strings: requests exceptions can contain a key-bearing URL.
+            return name,None,type(exc).__name__
+    # Bounded concurrency avoids turning 14 sequential timeouts into a prolonged run.
+    # Results are processed in configuration order for stable logs.
+    with ThreadPoolExecutor(max_workers=min(3,len(entries))) as pool:
+        for name,rows,error_kind in pool.map(fetch_one,entries):
+            if error_kind:
+                print(f'SEAFOOD MOF STATS table={name[:48]} error={error_kind}',flush=True)
+                errors.append('MOF statistics '+name[:35]+': '+error_kind)
+                continue
             if name in tables:tables[name].extend(rows)
             else:tables[name]=rows
             print(f'SEAFOOD MOF STATS table={name[:48]} rows={len(rows)}',flush=True)
-        except (requests.RequestException,ValueError,ET.ParseError) as exc:
-            # Never print raw URLs or secrets, even if an HTTP exception contains them.
-            print(f'SEAFOOD MOF STATS table={name[:48]} error={type(exc).__name__}',flush=True)
-            errors.append('MOF statistics '+name[:35]+': '+type(exc).__name__)
     features=features_from_tables(tables)
     print(f'SEAFOOD MOF STATS tables={len(entries)} features={len(features)}',flush=True)
     if not features and not errors:errors.append('MOF statistics: no comparable selected market statistics')
