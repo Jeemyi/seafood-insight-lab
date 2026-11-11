@@ -49,6 +49,17 @@ CATEGORIES=[
 CATS={x[0]:{'terms':x[1],'boost':x[2],'question':x[3]} for x in CATEGORIES}
 SEAFOOD_HINTS=['seafood','salmon','squid','fisheries','aquaculture','fishery','crab','shrimp','mackerel','pollock','catch','exports','imports','수산','해산','어업','어획','어류','양식','수산물','활어','회','광어','우럭','연어','새우','오징어','꽃게','방어','고등어','갈치','명태','멸치','참치','굴','가리비','주꾸미','전복','낙지','장어','건어물','식품','유통','급식','마트','홈플러스','롯데슈퍼','트레이더스','코스트코','수협','해양수산','KMI','쿠팡','컬리','물류','환율','냉장','냉동','포장재','수입','수출','안전','위생']
 
+# Preserve explicitly seafood/food-distribution-relevant search results even
+# when the title uses vocabulary outside the category's short keyword list.
+# Broad terms like 'exports', 'economy' and 'logistics' alone are insufficient.
+SECTOR_ANCHORS=(
+ '수산','해산','어업','어획','양식','활어','광어','우럭','연어','오징어','참치','고등어',
+ '꽃게','새우','굴','명태','넙치','갈치','수협','초밥','식자재','급식','대형마트',
+ '이마트','롯데마트','홈플러스','코스트코','트레이더스','쿠팡','컬리',
+ '신선식품','식품유통','seafood','salmon','squid','fishery','fisheries',
+ 'aquaculture','mackerel','shrimp','pollock','crab','sushi','costco'
+)
+
 # Broad topic queries rather than long AND keyword strings. Date relevance is
 # assessed separately so a single Google RSS search does not overconstrain recall.
 SEARCH_QUERIES=[
@@ -320,7 +331,14 @@ def classify(title,desc,forced=None):
         scored.append((matches+info['boost']/4,cat,matches))
     scored.sort(reverse=True)
     best=scored[0]
-    if best[2]<2.5:return None,[],0
+    if best[2]<2.5:
+        # A search result from a named topic should not be discarded simply
+        # because that domain is not explicitly spelled out in CATS terms.
+        # It must still contain an unambiguous sector anchor in its content.
+        anchor=any(word in text for word in SECTOR_ANCHORS)
+        if not (forced in CATS and anchor and len(title.strip())>=10):
+            return None,[],0
+        return forced,[forced],round(max(2,best[2])+CATS[forced]['boost'],1)
     cat=best[1]
     # Broad finance feeds are accepted only with clearly seafood / distribution-relevant terms.
     if forced is None and not any(kw in title.lower() for kw in SEAFOOD_HINTS):
@@ -1031,7 +1049,7 @@ def collect():
     print('SEAFOOD REPORT LANES - ready for draft:',
           [t['anchor'] for t in tracks if t['ready']],flush=True)
     reports,deep_status=(analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
-      if focus_topics and articles else ([], '최근 7일 뉴스에 연결된 심층 분석 후보가 없어 신규 원고를 작성하지 않았습니다.'))
+      if articles else ([], '수집된 최신 기사가 없어 신규 원고를 작성하지 않았습니다.'))
     news_analysis,news_analysis_status=analyze_news_digest(issue_digest,articles,features,now)
     for item in issue_digest:
         if item['id'] in news_analysis:

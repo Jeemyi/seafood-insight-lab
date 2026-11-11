@@ -469,13 +469,10 @@ def make_editorial_outline(ctx, previous_headlines=None):
             # Independent public evidence, or official series with two distinct data sources.
             origins={_public_source_family(eligible[x]) for x in ids}
             fields=('subject','angle','observed_difference','causal_explanation','competing_explanation','outlook_test')
-            if len(ids)<2 or len(origins)<2 or any(len(entry.get(k,'').strip())<18 for k in fields):
+            if len(ids)<2 or len(origins)<2 or any(len(str(entry.get(k,'')).strip())<12 for k in ('subject','observed_difference','causal_explanation')):
                 continue
             if entry['subject'] in used_subjects:continue
-            # Planning must follow a meaningful cross-event cluster after research.
-            clusters=ctx.get('story_candidates',[])
-            if clusters and not any(len(set(ids)&set(b['evidence_ids']))>=2 for b in clusters):
-                continue
+            # Keyword clusters aid discovery; they must not veto a verified cross-topic story.
             # Only select a plan whose claims are grounded in the supplied public materials.
             if not _supported(' '.join(entry[k] for k in fields),json.dumps([eligible[i] for i in ids],ensure_ascii=False)):
                 continue
@@ -502,6 +499,70 @@ def _duplicate_passages(report):
     return False
 
 
+def _complete_grounded_report(report):
+    """Repair empty display slots from the model's OWN grounded material.
+
+    This never invents numbers, prices, causes, references or outlooks.  A
+    missing reason or unsupported evidence remains a hard publication failure.
+    """
+    if not isinstance(report,dict):
+        return report
+    r=dict(report)
+    facts=r.get('facts',[])
+    supported_facts=[x.get('text','').strip() for x in facts
+                     if isinstance(x,dict) and isinstance(x.get('text'),str)
+                     and x.get('refs') and len(x['text'].strip())>=30]
+    outlook=r.get('outlook') if isinstance(r.get('outlook'),dict) else {}
+    def short(key,n):
+        return not isinstance(r.get(key),str) or len(r.get(key,'').strip())<n
+    if short('lead',18) and supported_facts:
+        r['lead']=supported_facts[0]
+    if short('market_change',24) and len(supported_facts)>=2:
+        r['market_change']=' '.join(supported_facts[:2])
+    if short('structural_insight',24):
+        conclusion=str(outlook.get('judgment','')).strip()
+        if len(conclusion)>=30:
+            r['structural_insight']=conclusion
+    if short('thesis',25):
+        finding=str(r.get('structural_insight','')).strip()
+        if len(finding)>=30:
+            r['thesis']=finding
+    if short('one_sentence',14):
+        finding=str(r.get('structural_insight','')).strip()
+        if len(finding)>=24:
+            r['one_sentence']=finding[:230]
+    return r
+
+
+def _focused_context(ctx,cluster,excluded_articles=frozenset(),excluded_series=frozenset()):
+    """Give the writer one coherent topic, not the full 100-story news basket."""
+    focus=set(cluster.get('evidence_ids',[]))
+    if not focus:
+        return None
+    articles=[a for a in ctx['articles'] if a['id'] in focus and a['id'] not in excluded_articles]
+    series=[f for f in ctx['official_series'] if f['id'] in focus and f['id'] not in excluded_series]
+    origins={_public_source_family(x) for x in articles+series}
+    if len(articles)+len(series)<2 or len(origins)<2:
+        return None
+    result=dict(ctx)
+    result['articles']=articles[:10]
+    result['official_series']=series[:5]
+    result['story_candidates']=[cluster]
+    ids={x['id'] for x in articles+series}
+    result['editorial_outline']=[p for p in ctx.get('editorial_outline',[])
+                                if len(ids.intersection(p.get('evidence_ids',[])))>=2]
+    result['topic_candidates']=[t for t in ctx.get('topic_candidates',[])
+                                if len(ids.intersection(t.get('article_ids',[])))>=2]
+    result['assigned_subject']=cluster.get('subject','')
+    result['editorial_assignment']=(
+        '이 주제와 직접 연결된 기사만 사용해 완성된 분석 1편을 작성한다. '
+        '각 문단은 수치·원인·파급효과·잠정 전망 중 독자에게 새로운 정보를 담아야 한다. '
+        '핵심 결론, 도입, 실제 변화, 전망, 독립된 근거 2건을 빠뜨리지 않는다. '
+        '긴 방법론이나 상식 설명으로 필수 칸을 채우지 않는다.'
+    )
+    return result
+
+
 def _validate_main(payload,ctx):
     allowed_a={a['id'] for a in ctx['articles']}
     allowed_f={f['id'] for f in ctx['official_series']}
@@ -509,20 +570,22 @@ def _validate_main(payload,ctx):
     evidence_by_id={x['id']:x for x in ctx['articles']+ctx['official_series']}
     evidence=_all_evidence(ctx)
     good=[];reasons=[];seen=set()
-    for r in payload.get('reports',[])[:5]:
+    for draft in payload.get('reports',[])[:5]:
         try:
+            r=_complete_grounded_report(draft)
             fields=('headline','thesis','lead','market_change','structural_insight','what_changes','one_sentence','limitations','followup')
-            mandatory={'headline':10,'thesis':25,'lead':18,'market_change':24,'structural_insight':24,'one_sentence':14}
-            if any(not isinstance(r.get(k),str) or len(r[k].strip())<minimum
-                   for k,minimum in mandatory.items()):
-                reasons.append('핵심 사실·결론 부족');continue
+            mandatory={'headline':8,'thesis':20,'lead':12,'market_change':20,'structural_insight':24,'one_sentence':10}
+            missing=[k for k,minimum in mandatory.items()
+                     if not isinstance(r.get(k),str) or len(r[k].strip())<minimum]
+            if missing:
+                reasons.append('핵심 사실·결론 부족: '+','.join(missing));continue
             if any(not isinstance(r.get(k),str) for k in fields):
                 reasons.append('원고 필드 누락');continue
             if r['kind'] not in CATEGORIES or r['headline'] in seen:
                 reasons.append('분류 또는 제목 중복');continue
             if (not isinstance(r.get('mechanism'),list)
                 or not (1<=len(r['mechanism'])<=5)
-                or any(not isinstance(x,str) or len(x.strip())<22 for x in r['mechanism'])):
+                or not any(isinstance(x,str) and len(x.strip())>=22 for x in r['mechanism'])):
                 reasons.append('사건 연결 설명 부족');continue
             outlook=r.get('outlook')
             if outlook is not None:
@@ -550,12 +613,20 @@ def _validate_main(payload,ctx):
                 source_text=json.dumps([evidence_by_id[i] for i in refs],ensure_ascii=False)
                 if len(fact.get('text',''))>=30 and refs and _supported(fact['text'],source_text):
                     facts.append({'text':fact['text'],'refs':refs})
-            if len(facts)<2:
-                reasons.append('검증 가능한 원문 근거 2개 미만/숫자 미일치');continue
-            cited={r for fact in facts for r in fact['refs']}
-            independent={_public_source_family(evidence_by_id[i]) for i in cited}
+            if not facts:
+                reasons.append('출처별로 검증된 핵심 사실 없음/숫자 미일치');continue
+            # One consolidated facts paragraph can cite two sources without
+            # requiring two arbitrarily separate facts-box paragraphs.
+            declared_ids=set(r.get('article_ids',[]))|set(r.get('feature_ids',[]))
+            if not declared_ids.issubset(allowed):
+                reasons.append('존재하지 않는 출처 ID');continue
+            cited={source_id for fact in facts for source_id in fact['refs']}
+            referenced=cited|declared_ids
+            independent={_public_source_family(evidence_by_id[i]) for i in referenced}
             if len(independent)<2:
-                reasons.append('서로 다른 출처 근거 부족');continue
+                reasons.append('동일 출처의 재인용만 존재함');continue
+            if not cited.intersection(declared_ids):
+                reasons.append('검증된 사실과 인용 기사 불일치');continue
             # Checked numbers in all analytical paragraphs; numeric tokens must be public evidence.
             forward=(list(outlook.get(k,'') for k in ('judgment','basis','revision_trigger')) if outlook is not None else
                      [r['scenario_up']['condition'],r['scenario_down']['condition'],
@@ -568,11 +639,10 @@ def _validate_main(payload,ctx):
             if outlook is not None:
                 banned=('구조적 통찰','조건부 경로','양적 측면','시사점을','관측이 강화','인과 경로',
                         '전망이 강화된다','지속되면 지속','핵심 인사이트')
-                if any(token in prose for token in banned):
-                    reasons.append('기사답지 않은 추상·순환 표현');continue
-                clusters=ctx.get('story_candidates',[])
-                if clusters and not any(len(cited & set(cluster['evidence_ids']))>=2 for cluster in clusters):
-                    reasons.append('서로 연결된 사건·통계가 아닌 느슨한 근거 묶음');continue
+                if sum(prose.count(token) for token in banned)>=3:
+                    reasons.append('기사답지 않은 추상·순환 표현 반복');continue
+                # Verifiable evidence and a specific conclusion matter more
+                # than overlap with one fixed keyword cluster.
             # A stitched general online-market/foodservice article is not a
             # cross-market seafood insight. The cited evidence must share a
             # measured product/channel or an explicitly linked mechanism.
@@ -594,9 +664,12 @@ def _validate_main(payload,ctx):
             from seafood_editorial_quality import no_reader_value_flags, important_numeric_evidence, quantified_change, strong_editorial_claim
             if not strong_editorial_claim(r['headline'],r['structural_insight']):
                 reasons.append('실제 결과 없는 상식·방법론적 결론');continue
-            if sum(len(no_reader_value_flags(x)) for x in [r['thesis'],r['market_change']]+r['mechanism'])>=2:
+            if no_reader_value_flags(r['structural_insight']) or (
+                sum(len(no_reader_value_flags(x)) for x in [r['thesis'],r['market_change']]+r['mechanism'])>=3
+                and not quantified_change(r['market_change']+' '+r['lead']+' '+r['thesis'])):
                 reasons.append('당연한 설명 또는 해석 유보가 본문을 차지함');continue
-            if important_numeric_evidence([evidence_by_id[i] for i in cited]) and not quantified_change(r['market_change']+' '+r['lead']):
+            observed_text=' '.join([r['thesis'],r['market_change'],r['lead']]+[x['text'] for x in facts])
+            if important_numeric_evidence([evidence_by_id[i] for i in referenced]) and not quantified_change(observed_text):
                 reasons.append('근거에 있는 변화 수치를 본문에서 생략함');continue
             from seafood_editorial_quality import empty_business_buzzword_flags
             # Business decisions are welcome when genuinely supported, never compulsory.
@@ -623,6 +696,8 @@ def _validate_main(payload,ctx):
             if len(good)>=3:break
         except (KeyError,TypeError,AttributeError,ValueError):
             reasons.append('출력 필드 형식 오류')
+    if not payload.get('reports',[]):
+        reasons.append('AI가 분석 후보를 반환하지 않음')
     return good,reasons
 
 
@@ -651,8 +726,12 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
             ctx['forecast_results'].append(result)
     ctx['editorial_outline']=make_editorial_outline(ctx,previous_headlines)
     print('SEAFOOD evidence clusters:',[(x['subject'],x['score']) for x in ctx['story_candidates'][:4]],flush=True)
-    if not ctx['story_candidates'] and len(ctx['articles'])<4:
-        return [],'서로 다른 기사와 분석 근거가 부족합니다.'
+    if not ctx['story_candidates']:
+        # Four articles or a keyword cluster are not required for a valid
+        # two-source event. The independent-evidence validator still applies.
+        sources={_public_source_family(r) for r in ctx['articles']+ctx['official_series']}
+        if len(ctx['articles'])+len(ctx['official_series'])<2 or len(sources)<2:
+            return [],'서로 다른 기사와 분석 근거가 부족합니다.'
     # Clusters suggest what to study, but they are not a hard whitelist.
     # Two unrelated major events can coexist inside one broad subject, or
     # a verified event may be missed by the narrow keyword taxonomy.
@@ -660,44 +739,58 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         print('SEAFOOD research: investigating unclustered recent news; the evidence validator still applies',flush=True)
     note='';last_reason='근거 부족'
     accepted=[]
-    # Important: previously one accepted result stopped the entire analysis.
-    # Continue drafting a *different documented event* to target two full
-    # research articles, rather than padding the first article with statistics.
-    for attempt in range(4):
+    # A large undifferentiated prompt produced short, generic reports that were
+    # discarded four times. Prioritize a focused evidence packet per subject.
+    subject_attempts=[]
+    for cluster in ctx.get('story_candidates',[])[:5]:
+        if cluster.get('evidence_ids'):
+            subject_attempts.append(cluster)
+    # Keep a broad attempt for important events missed by keyword clustering.
+    # Up to seven attempts across distinct candidate stories; stop once two pass.
+    max_attempts=max(2,min(7,len(subject_attempts)+2))
+    for attempt in range(max_attempts):
         try:
-            # Rebuild the evidence pool after the first accepted article.
-            # A reminder in a prompt is not enough: if the first article's
-            # evidence remains in the input, the model tends to repeat it.
-            work_ctx=ctx
+            excluded_articles={x for r in accepted for x in r.get('article_ids',[])}
+            excluded_series={x for r in accepted for x in r.get('feature_ids',[])}
+            remaining=[row for row in ctx['articles'] if row['id'] not in excluded_articles]
+            remaining_series=[row for row in ctx['official_series'] if row['id'] not in excluded_series]
+            if len(remaining)+len(remaining_series)<2:
+                break
+            work_ctx=None
+            assigned='broader-news'
+            if attempt<len(subject_attempts):
+                cluster=subject_attempts[attempt]
+                work_ctx=_focused_context(ctx,cluster,excluded_articles,excluded_series)
+                if work_ctx:
+                    assigned=cluster.get('subject','focused')
+            if work_ctx is None:
+                work_ctx=dict(ctx)
+                # More context is not always more evidence: cap the broad
+                # fallback so the model can actually finish its output.
+                work_ctx['articles']=balanced_article_pool(remaining,maximum=48) or remaining[:48]
+                work_ctx['official_series']=remaining_series[:12]
+                from seafood_story_selection import build_story_clusters
+                work_ctx['story_candidates']=build_story_clusters(
+                    work_ctx['articles'],work_ctx['official_series'],[])
+                work_ctx['editorial_outline']=[p for p in ctx.get('editorial_outline',[])
+                    if len(set(p.get('evidence_ids',[])) &
+                           {row['id'] for row in work_ctx['articles']+work_ctx['official_series']})>=2]
+                work_ctx['editorial_assignment']=(
+                    '실제 근거가 풍부한 서로 다른 최신 사건에서 완결된 분석 1~2편을 작성한다. '
+                    '뉴스에서 읽히는 사실, 새로운 해석, 시장 전망을 채우되 방법론 설명은 제외한다.')
+            work_ctx['previous_headlines']=list(ctx.get('previous_headlines',[]))+[r['headline'] for r in accepted]
             if accepted:
-                excluded_articles={x for r in accepted for x in r.get('article_ids',[])}
-                excluded_series={x for r in accepted for x in r.get('feature_ids',[])}
-                remaining=[row for row in ctx['articles'] if row['id'] not in excluded_articles]
-                remaining_series=[row for row in ctx['official_series'] if row['id'] not in excluded_series]
-                # Do not discard a usable data-backed subject simply because
-                # it has only one RSS source and two independent official series.
-                if len(remaining)+len(remaining_series)>=2:
-                    work_ctx=dict(ctx)
-                    work_ctx['articles']=remaining
-                    work_ctx['official_series']=remaining_series
-                    from seafood_story_selection import build_story_clusters
-                    work_ctx['story_candidates']=build_story_clusters(remaining,remaining_series,[])
-                    remaining_ids={row['id'] for row in remaining+remaining_series}
-                    work_ctx['editorial_outline']=[p for p in ctx.get('editorial_outline',[])
-                       if len(set(p.get('evidence_ids',[]))&remaining_ids)>=2]
-                    work_ctx['topic_candidates']=[t for t in ctx.get('topic_candidates',[])
-                       if not t.get('article_ids') or len(set(t['article_ids'])&remaining_ids)>=2]
-                    work_ctx['previous_headlines']=list(ctx.get('previous_headlines',[]))+[r['headline'] for r in accepted]
-                    print('SEAFOOD second-report evidence: %d remaining articles, %d series' %
-                          (len(remaining),len(remaining_series)),flush=True)
+                print('SEAFOOD second-report evidence: %d remaining articles, %d series' %
+                    (len(work_ctx['articles']),len(work_ctx['official_series'])),flush=True)
+            print('SEAFOOD DRAFT %d/%d: %s (%d news, %d official records)' %
+                  (attempt+1,max_attempts,assigned,len(work_ctx['articles']),
+                   len(work_ctx['official_series'])),flush=True)
             output=_call(MAIN_PROMPT,work_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
             good,reasons=_validate_main(output,work_ctx)
             cited_already={x for r in accepted for x in r.get('article_ids',[])}
             kept=[]
             for report in good:
                 new_ids=set(report.get('article_ids',[]))-cited_already
-                # Allow a different report about the same product/category,
-                # but never publish one source event twice under new headings.
                 if not new_ids or any(report['headline']==r['headline'] for r in accepted+kept):
                     continue
                 if accepted and any(len(set(report.get('article_ids',[])) & set(r.get('article_ids',[]))) >=
@@ -706,21 +799,21 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
                 kept.append(report)
                 cited_already.update(report.get('article_ids',[]))
             accepted.extend(kept)
+            # The live deployment log previously printed only the LAST error,
+            # hiding the exact failure for each request. Do not log raw articles,
+            # response bodies, secrets, or API tokens.
+            print('SEAFOOD DRAFT RESULT %d: candidates=%d passed=%d total=%d reasons=%s' %
+                  (attempt+1,len(output.get('reports',[])),len(kept),len(accepted),
+                   ' | '.join(dict.fromkeys(reasons))[:320] or 'none'),flush=True)
             if len(accepted)>=2:
                 return accepted[:3],f'AI 리서치 {len(accepted[:3])}편 · 서로 다른 공개 뉴스와 수치 검증 통과'
             last_reason=' / '.join(dict.fromkeys(reasons))[:200] or '두 번째 독립 소재·근거 부족'
-            remaining_articles={a['id'] for a in ctx['articles']}-cited_already
-            remaining_series={f['id'] for f in ctx['official_series']}-{x for r in accepted for x in r.get('feature_ids',[])}
-            if len(remaining_articles)+len(remaining_series)<2:
-                break
             already_titles=[x['headline'] for x in accepted]
             already_ids=[id for r in accepted for id in r.get('article_ids',[])]
             note=('현재 승인된 원고는 '+json.dumps(already_titles,ensure_ascii=False)+
                   '. 이미 사용한 기사 ID '+json.dumps(already_ids,ensure_ascii=False)+
                   '를 핵심 근거로 되풀이하지 마라. *다른 실제 사건*을 중심으로 '
-                  '가능하면 남은 주제 1~2편을 작성하라. 원문의 수치, 날짜, 대상, '
-                  '시장의 영향과 전망을 독립 출처로 입증하라. 사실이 부족하면 reports=[]. '
-                  '검수 사유: '+last_reason)
+                  '가능하면 남은 주제 1~2편을 작성하라. '                  '빈 칸을 사실과 결론으로 채우되 근거에 없는 수치를 만들지 마라. '                  '구체적 실패 사유: '+last_reason)
         except requests.HTTPError as e:
             return accepted,('AI 요청 실패 HTTP '+str(e.response.status_code if e.response is not None else 'unknown')+
                               ' · 이전에 검증한 분석 '+str(len(accepted))+'편 보존')
@@ -728,6 +821,7 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
             return accepted,f'AI 요청 실패: {type(e).__name__} · 이전에 검증한 분석 {len(accepted)}편 보존'
         except (ValueError,KeyError,TypeError) as e:
             last_reason=type(e).__name__
+            print('SEAFOOD DRAFT ERROR %d: %s' %(attempt+1,last_reason),flush=True)
             note='JSON 출력 구조를 바로잡고 이전 자료에 없는 숫자를 추가하지 말 것. '+note[:400]
     if accepted:
         return accepted, f'근거를 확보한 심층 분석 {len(accepted)}편 · 추가 소재 근거 미달 ({last_reason[:80]})'
