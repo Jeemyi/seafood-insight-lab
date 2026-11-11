@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>SEAFOOD INSIGHT LAB — 결론부터 읽는 수산 시장 리서치</title>
+<title>SEAFOOD INSIGHT LAB — 수산·식품유통 시장 분석</title>
 <meta name="description" content="수산물 수급·가격·유통·소비·정책 변화를 공개 뉴스와 공식 통계로 비교하는 수산시장 리서치">
 <style>
 :root{--ink:#1b273c;--ink2:#566278;--ink3:#8590a3;--paper:#f6f8fb;--card:#fff;--line:#e6eaf1;--accent:#244e9e;--pale:#eaf0fc;--mint:#dff7ee;--strong:#142847;--orange:#cd783e;--shadow:0 12px 36px rgba(22,42,74,.055)}
@@ -194,6 +194,10 @@
 .research-body .mechanism li::before{display:none}
 @media(max-width:650px){.insight-section .insight-card .fact-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .fx-context{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:12px 16px;background:#f5f7fa;border:1px solid #e2e8e8;border-radius:12px;color:#526271;font-size:12px}.fx-context b{color:#264d44}.fx-context small{width:100%;font-size:10px;color:#879397}
+.outlook-section .forecast-lead{border-left:3px solid #357c6e;padding-left:15px}
+.outlook-kicker{font-weight:800;color:#226b57;font-size:12px;margin-bottom:9px}
+.outlook-condition{color:#59636f;font-size:13px;margin-top:11px}
+.outlook-number{font-weight:800;color:#245c53}
 </style>
 </head>
 <body>
@@ -201,7 +205,7 @@
 <main class="shell">
   <nav class="brief-nav" aria-label="주요 메뉴"><a href="#dailyBrief">오늘의 브리핑</a><a href="#deep-heading">핵심 분석</a><a href="#insight-heading">데이터 분석</a><a href="#featured-heading">주요 뉴스</a><a href="#allNews">기사 검색</a></nav>
   <section class="daily-brief" id="dailyBrief" aria-labelledby="brief-heading">
-    <div class="brief-meta"><span class="brief-kicker">TODAY'S SEAFOOD BRIEF</span><span id="updateInfo">자료 갱신 확인 중</span></div>
+    <div class="brief-meta"><span class="brief-kicker">오늘의 수산시장</span><span id="updateInfo">자료 갱신 확인 중</span></div>
     <div class="brief-layout"><div class="brief-main"><h1 id="brief-heading">오늘의 시장 브리핑</h1><p class="brief-lead" id="briefLead">확인된 시장 변화와 출처를 불러오고 있습니다.</p><div class="brief-actions" id="briefActions"><a href="#deep-heading">핵심 분석 보기</a><a href="#allNews">기사 살펴보기</a></div></div><aside class="brief-facts" aria-label="브리핑 근거"><div class="brief-fact-head">자료 현황</div><div id="briefFacts">수집된 뉴스와 통계를 확인하고 있습니다.</div><div id="briefCounts" class="brief-counts"></div></aside></div>
   </section>
   <section class="demo-topics" id="demoTopics" hidden aria-label="다른 분야 구성 예시">
@@ -234,15 +238,8 @@
     <div class="feed-utilities"><span id="listCount">기사 0건</span><div class="checks"><label><input id="unreadOnly" type="checkbox"> 안 읽은 기사만</label><label><input id="savedOnly" type="checkbox"> 저장만</label></div></div>
     <section id="list" aria-live="polite"></section>
   </div>
-  <aside class="sidebar" aria-label="효율적인 뉴스 읽기 가이드">
-   <section class="sidebar-card"><div class="side-label">10-MINUTE ROUTINE</div><h2 class="side-title">10분 읽기</h2>
-    <div class="routine"><div class="routine-num">02분</div><div><strong>주요 분석 읽기</strong><p>기사와 통계에서 확인된 핵심 내용 살펴보기</p></div></div>
-    <div class="routine"><div class="routine-num">05분</div><div><strong>관련 기사와 원자료 확인</strong><p>가격의 단위·기준일·규격과 채널을 구분</p></div></div>
-    <div class="routine"><div class="routine-num">03분</div><div><strong>전망 확인</strong><p>다음에 나올 물량·가격·유통 지표 확인하기</p></div></div>
-   </section>
-   <section class="sidebar-card"><div class="side-label">ANALYSIS FRAME</div><h2 class="side-title">자료를 보는 기준</h2><div class="chain"><b>① 기준점</b> 전주·전년·3년 동기 평균과 비교<br><b>② 비교군</b> 수입/국산·규격·어종·유통채널 구분<br><b>③ 영향 경로</b> 수급·정책·소비 → 가격·유통구조 변화<br><b>④ 다른 설명</b> 품목 규격·시차·대체 수요·시장별 차이 검토<br><b>⑤ 후속 지표</b> 위판량·수출입 물량·단가·채널별 판매 지표</div><div class="side-divider"></div><div class="footnote">공개 통계만으로 개별 업체의 거래조건을 알 수는 없습니다.</div></section>
-   <section class="sidebar-card"><div class="side-label">RESEARCH STANDARD</div><h2 class="side-title">자료 해석 시 유의사항</h2><div class="study-example">국제 수출가격과 국내 매입가격은 다릅니다. 품목, 기준일, 통화, 거래 단계가 같은 자료끼리 비교합니다.</div></section>
-   <section class="sidebar-card"><div class="side-label">DEEP READING</div><h2 class="side-title">공식 통계와 보고서</h2>
+  <aside class="sidebar" aria-label="공식 자료와 출처">
+   <section class="sidebar-card"><div class="side-label">자료 찾아보기</div><h2 class="side-title">공식 통계와 보고서</h2>
    <div class="sources"><a class="source-link" href="https://www.foc.re.kr/" target="_blank" rel="noopener noreferrer">KMI 수산업관측센터 · 어종별 수급</a><br>
    <a class="source-link" href="https://www.data.go.kr/data/15056602/openapi.do" target="_blank" rel="noopener noreferrer">해양수산부 · 수산물 HSK 수출입 통계</a><br>
    <a class="source-link" href="https://www.kamis.or.kr/customer/reference/openapi_list.do?action=detail&boardno=1" target="_blank" rel="noopener noreferrer">aT KAMIS · 수산물 도·소매 가격</a><br>
@@ -255,7 +252,7 @@
    <a class="source-link" href="https://www.ssb.no/en/statbank/table/03024/" target="_blank" rel="noopener noreferrer">SSB · 연어 수출가격·물량</a><br>
    <a class="source-link" href="https://ecos.bok.or.kr/" target="_blank" rel="noopener noreferrer">한국은행 ECOS · 환율</a></div>
    <div class="side-divider"></div><div class="footnote">KMI 관측자료는 원문을 확인할 수 있도록 연결합니다. 정부 수출입·KAMIS 가격 API는 인증키가 등록된 경우에만 자동 수집하며, 집계되지 않은 자료는 만들어 표시하지 않습니다.</div></section>
-   <section class="sidebar-card side-wide"><div class="side-label">SOURCES & TRANSPARENCY</div><h2 class="side-title">뉴스 출처와 계산 방식</h2>
+   <section class="sidebar-card side-wide"><div class="side-label">출처 안내</div><h2 class="side-title">뉴스 출처와 계산 방식</h2>
    <div class="sources">Google 뉴스의 공개 검색 RSS 및 한국경제·매일경제의 공개 RSS 제목/소개문을 이용합니다. 기사 본문을 우회해 수집하지 않습니다. 원문 링크는 게시자가 제공하는 URL이며 일부는 Google 뉴스 경유 링크일 수 있습니다.</div>
    <div class="side-divider"></div><div id="feedHealth" class="footnote"></div><div class="footnote">공식 데이터: SSB PxWeb 통계 / 한국은행 ECOS(별도 인증키). 변동률은 수집값으로 계산하며, 전주·전년 동기·3년 동기 평균 중 기초값이 없는 비교는 생략합니다. AI는 수치 계산을 하지 않고 공개 근거에 대한 가능한 해석을 작성합니다. 개별 기업의 비공개 거래조건이나 실제 수익성을 추정하지 않습니다. 개인 학습용이며 AI 인과 해석은 확정 사실이 아닙니다.</div></section>
   </aside>
@@ -311,6 +308,10 @@
   };
   const facts=(r.facts||[]).map(f=>`<div class="deep-claim">${esc(f.text)}<div>${(f.refs||[]).map(refLink).join('')}</div></div>`).join('');
   const mechanisms=(r.mechanism||[]).map(s=>`<li>${esc(s)}</li>`).join('');
+  const outlook=r.outlook;
+  const forecastHtml=outlook?
+    `<section class="outlook-section"><h4>04 · 앞으로의 전망</h4><div class="deep-memo forecast-lead"><div class="outlook-kicker">${esc(outlook.horizon)} · ${esc(outlook.direction)}</div><p><strong>${esc(outlook.judgment)}</strong></p><p>${esc(outlook.basis)}</p>${outlook.numeric_estimate?`<p class="outlook-number">수치 전망 · ${esc(outlook.numeric_estimate)}</p>`:''}</div><p class="outlook-condition">전망이 달라질 수 있는 경우: ${esc(outlook.revision_trigger)}</p>${outlook.forecast_method?`<p class="limits">계산 방식: ${esc(outlook.forecast_method)} · 검증: ${esc(outlook.backtest)}</p>`:''}</section>`:
+    `<section><h4>04 · 앞으로의 전망</h4><p>${esc((r.scenario_up||{}).interpretation||'')}</p><p class="limits">${esc((r.scenario_down||{}).interpretation||'')}</p></section>`;
   const articlesList=(r.article_ids||[]).map(id=>lookupA.get(id)).filter(Boolean).filter(a=>urlSafe(a.url)).map(a=>`<a href="${esc(urlSafe(a.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(a.title)} · ${esc(a.source)}</a>`).join('');
   const metricsList=(r.feature_ids||[]).map(id=>lookupM.get(id)).filter(Boolean).flatMap(f=>f.data_links||[]).map(l=>`<a href="${esc(urlSafe(l.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(l.label)} · 원자료</a>`).join('');
   const policiesList=(r.policy_ids||[]).map(id=>lookupP.get(id)).filter(Boolean).map(p=>`<a href="${esc(urlSafe(p.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(p.title)} · 공식문서</a>`).join('');
@@ -321,13 +322,10 @@
     <details class="report-expand"><summary>자세히 읽기</summary>
       <div class="research-body">
         <section><h4>01 · 무엇이 달라졌나</h4><div class="deep-evidence">${facts}</div><p>${esc(r.market_change)}</p></section>
-        <section><h4>02 · 변화의 배경과 시장의 흐름</h4><ol class="mechanism">${mechanisms}</ol></section>
-        <section><h4>03 · 자료를 종합하면</h4><div class="deep-memo"><p>${esc(r.structural_insight)}</p></div></section>
-        <section><h4>04 · 앞으로의 전망</h4><div class="scenario-grid">
-          <div class="scenario"><b>현재 해석을 뒷받침할 변화</b><p>${esc(r.scenario_up.condition)}</p><b>해석</b><p>${esc(r.scenario_up.interpretation)}</p></div>
-          <div class="scenario"><b>다른 방향을 시사할 변화</b><p>${esc(r.scenario_down.condition)}</p><b>해석</b><p>${esc(r.scenario_down.interpretation)}</p></div>
-        </div></section>
-        <section><h4>05 · 전망의 근거가 되는 지표</h4><p>${esc(r.what_changes)}</p></section>
+        <section><h4>02 · 변화의 배경</h4><ol class="mechanism">${mechanisms}</ol></section>
+        <section><h4>03 · 시장에 미칠 영향</h4><div class="deep-memo"><p>${esc(r.structural_insight)}</p></div></section>
+        ${forecastHtml}
+        <section><h4>추가로 확인할 지표</h4><p>${esc(r.what_changes)}</p></section>
         <section><h4>자료 출처와 해석 범위</h4><div class="source-links">${articlesList}${policiesList}${metricsList}</div><p class="limits">${esc(r.limitations)}</p></section>
       </div>
     </details>
@@ -345,7 +343,7 @@
     <details class="data-expand"><summary>분석과 근거 읽기</summary><div class="data-research-body">
     <section><h4>관측된 변화와 배경</h4><p>${esc(r.market_observation)}</p>${(r.transmission||[]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</section>
     <section><h4>함께 살펴본 자료</h4><p>${esc(r.structural_insight)}</p><p>${esc(r.alternative)}</p></section>
-    <section><h4>시장 전망</h4><p>${esc(r.scenario_support)}</p><p>${esc(r.scenario_challenge)}</p><p>${esc(r.investor_meaning)}</p></section>
+    <section><h4>시장 전망</h4>${r.outlook?`<div class="outlook-kicker">${esc(r.outlook.horizon)} · ${esc(r.outlook.direction)}</div><p><strong>${esc(r.outlook.judgment)}</strong></p><p>${esc(r.outlook.basis)}</p><p class="limits">전망이 달라질 수 있는 경우: ${esc(r.outlook.revision_trigger)}</p>`:`<p>${esc(r.scenario_support||'')}</p><p>${esc(r.investor_meaning||'')}</p>`}</section>
     <section><h4>자료의 범위</h4><p class="limits">${esc(r.limits)}</p></section>
     </div></details>`:'';
   const cross=(ins.related_observations||[]).map(x=>`<div class="cross-row"><b>${esc(x.name)}</b><p>${esc(x.observed)}</p><small>${esc(x.period_end)} · 기준기간과 규격이 다른 자료는 직접 합산하지 않습니다.</small></div>`).join('');

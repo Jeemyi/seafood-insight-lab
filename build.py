@@ -500,6 +500,28 @@ def demo_data():
     salmon_public_report=deterministic_data_report(dict(f,series_type='salmon_joint',measurements={'yoy_price_pct':-6.9,'yoy_qty_pct':14.3}))
     if salmon_public_report:
         salmon_public_report['status']='공식 공개통계 과거 시연 · AI 실시간 생성 아님'
+    # Editorial *format* examples, explicitly historical and not forecasts
+    # calculated from a currently connected time-series model.
+    demo_outlooks=[
+      {'direction':'축소','horizon':'2026년 말~2027년 초 당시 관점',
+       'judgment':'홈플러스 점포 축소의 영향은 일부 경쟁 매장의 매출 증가로 나타나겠지만, 기존 납품업체의 정산과 판로 회복은 상대적으로 더딜 것으로 예상된다.',
+       'basis':'폐점 인근 경쟁점 실적이 증가한 반면 홈플러스 거래업체의 정산 지연과 매출 감소가 동시에 확인됐기 때문이다.',
+       'revision_trigger':'폐점 지역 밖에서도 경쟁사의 기존점 매출과 기존 납품업체 정산이 동시에 개선되는 경우',
+       'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['homeplus-kbiz-nov-2026','homeplus-rival-july-2026']},
+      {'direction':'혼조','horizon':'2025년 통계를 본 2026년 당시 관점',
+       'judgment':'연근해 오징어는 저점에서 회복됐지만 원양 공급까지 정상화됐다고 보기는 어려워, 상품과 원산지별 수급 차이가 당분간 이어질 것으로 예상된다.',
+       'basis':'연근해 어획은 5년 평균을 밑돈 가운데 원양 생산이 감소했고, 수출물량이 수출액보다 빠르게 늘었다.',
+       'revision_trigger':'동일 어종·규격 기준으로 연근해·원양 생산과 주요 수입 물량이 함께 회복되는 경우',
+       'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['mof-2025-squid-production','mof-2025-squid-exports']},
+      {'direction':'하락','horizon':'2026년 10월 자료를 본 단기 전망 예시',
+       'judgment':'노르웨이 연어 수출량 확대가 이어지는 상황에서는 평균 수출가격의 빠른 반등보다 당분간 가격 약세가 이어질 가능성에 무게가 실린다.',
+       'basis':'10월 수출물량 증가율이 수출액 증가율을 웃돌았고 44주차 가격도 전년 동기보다 낮았기 때문이다.',
+       'revision_trigger':'수출물량 증가세가 둔화되면서도 주요 수입국의 구매량이 줄지 않는 경우',
+       'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['nsc-public-sample','ssb-public-sample']}
+    ]
+    for r,outlook in zip((distribution_report,squid_report,report),demo_outlooks):
+        r['outlook']=outlook
+        r['status']='과거 공개자료를 사용한 문체·전망 형식 시연 · 실제 예측 결과 아님'
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2]+distribution_articles+squid_articles,'features':[squid_public_feature,f],
             'deep_reports':[distribution_report,squid_report,report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
             'research_sources':[],'report_factual_brief':False,'report_archived':False,'last_report_updated_at':datetime(2026,11,5,10,39,tzinfo=KST).isoformat(),
@@ -592,11 +614,13 @@ def collect():
     print(f'SEAFOOD official series: {len(features)} items; diagnostics: {len(metric_errors)}',flush=True)
     connect_evidence(features,articles)
     previous_headlines=[r.get('headline','') for r in (previous or {}).get('reports',[])]
-    focus_topics=select_market_topics(articles,features,previous_headlines)
+    # Research comes BEFORE final topic selection. Keyword-matched RSS headlines
+    # no longer predetermine what the analysis will discuss.
     issues=issues_from_articles(articles)
-    print('SEAFOOD research: searching for independently cited materials',flush=True)
-    search_sources,research_status=research_public_sources(articles,features,now,focus_topics)
-    print('SEAFOOD research:',research_status,'topics:',[(t['theme'],t['score']) for t in focus_topics[:4]])
+    print('SEAFOOD research: investigate events across the market before selecting a headline',flush=True)
+    search_sources,research_status=research_public_sources(articles,features,now,focus_topics=None)
+    focus_topics=select_market_topics(articles+search_sources,features,previous_headlines)
+    print('SEAFOOD research:',research_status,'reconsidered themes:',[(t['theme'],t['score']) for t in focus_topics[:4]],flush=True)
     print('SEAFOOD report: composing and checking evidence-led articles',flush=True)
     reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
     print(f'SEAFOOD report: {len(reports)} new deep reports; checking multi-source data analysis',flush=True)
