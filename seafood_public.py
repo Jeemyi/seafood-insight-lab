@@ -190,7 +190,13 @@ def fetch_mof_features(today):
                 except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
                     errors.append(f'MOF {m}: {type(exc).__name__}')
         if candidate in fetched and _shift_month(candidate,-12) in fetched:
+            this=fetched.get(candidate,[]);prior=fetched.get(_shift_month(candidate,-12),[])
+            valid_this=_normalize_trade(this);valid_prior=_normalize_trade(prior)
+            shared=set(valid_this)&set(valid_prior)
             features=trade_features_from_months(fetched,candidate)
+            print(f'SEAFOOD MOF {candidate}: raw={len(this)} prior_raw={len(prior)} '
+                  f'recognized={len(valid_this)} prior_recognized={len(valid_prior)} '
+                  f'shared_hsk={len(shared)} published={len(features)}',flush=True)
             if features:return features,errors
     return [],errors+['수산물 수출입: 비교 가능한 전년 동월 자료 없음']
 
@@ -198,7 +204,9 @@ def _kamis_items(payload):
     if not isinstance(payload,dict):return []
     data=payload.get('data',payload.get('price',{}))
     if isinstance(data,dict):
-        if str(data.get('error_code',data.get('result_code','000'))) in ('900','200'):return []
+        result_code=str(data.get('error_code',data.get('result_code','000')))
+        if result_code in ('900','200'):
+            raise ValueError('KAMIS API denied or unavailable (result code '+result_code+')')
         items=data.get('item',data.get('items',[]))
     else:items=data
     if isinstance(items,dict):items=[items]
@@ -263,8 +271,13 @@ def fetch_kamis_features():
         futures={name:pool.submit(_request_kamis,code,key,ident) for name,code in [('도매','02'),('소매','01')]}
         for name,future in futures.items():
             try:data[name]=future.result()
-            except (requests.RequestException,ValueError,KeyError,TypeError) as exc:errors.append(f'KAMIS {name}: {type(exc).__name__}')
-    return kamis_features_from_rows(data.get('도매',[]),data.get('소매',[])),errors
+            except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
+                errors.append(f'KAMIS {name}: {type(exc).__name__} {str(exc)[:75]}')
+    results=kamis_features_from_rows(data.get('도매',[]),data.get('소매',[]))
+    print(f'SEAFOOD KAMIS: wholesale_raw={len(data.get("도매",[]))} '
+          f'retail_raw={len(data.get("소매",[]))} published={len(results)}',flush=True)
+    if not results and not errors:errors.append('KAMIS: API 응답은 있었지만 게시 가능한 날짜·품목·비교 가격 없음')
+    return results,errors
 
 def make_public_features(now):
     with ThreadPoolExecutor(max_workers=2) as pool:

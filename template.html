@@ -198,15 +198,88 @@
 .outlook-kicker{font-weight:800;color:#226b57;font-size:12px;margin-bottom:9px}
 .outlook-condition{color:#59636f;font-size:13px;margin-top:11px}
 .outlook-number{font-weight:800;color:#245c53}
+/* v5.5: compact editorial research UI. Space serves content rather than decoration. */
+:root{--ink:#192f41;--ink2:#5b6d7f;--ink3:#8090a0;--paper:#fff;--card:#fff;--line:#dee6ec;--accent:#245f86;--pale:#eef4f8;--strong:#173a53;--shadow:none}
+body{font-size:13px;line-height:1.72;background:#fff;color:var(--ink);letter-spacing:-.012em}
+.shell{max-width:1160px;padding:0 21px}
+header{background:#173a53;color:#fff;border:0;border-top:4px solid #0f283a}
+.topline{height:59px}.brand{font-size:17px;font-weight:850;letter-spacing:-.5px}.brand-symbol{background:#2a6387;border-radius:6px;width:30px;height:30px;font-size:13px}.header-label{color:#b2c5d1;font-size:10px;letter-spacing:.7px}.top-meta{font-size:10px;color:#ccdae3}.top-meta .dot{width:6px;height:6px}
+.brief-nav{margin:0 -21px 0;background:#f3f6f8;border-bottom:1px solid var(--line);padding:0 21px;gap:0;min-height:38px}
+.brief-nav a{border:0;border-radius:0;background:transparent;padding:10px 14px;color:#506b81;font-weight:780;font-size:11px}
+.brief-nav a:first-child{padding-left:0}.brief-nav a:hover{background:transparent;color:#164a70}
+.daily-brief{margin:0 0 12px;padding:22px 0 17px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none}
+.brief-meta{margin:0 0 7px;color:#8293a0;font-size:10px}.brief-kicker{color:#466d88;font-size:9px;letter-spacing:1.5px}
+.brief-layout{grid-template-columns:minmax(0,1.7fr) minmax(235px,.8fr);gap:24px}
+.brief-main h1{font-size:clamp(23px,2.9vw,30px);line-height:1.35;letter-spacing:-.8px;margin:0 0 7px;color:#1a344b}
+.brief-lead{font-size:13px;line-height:1.8;color:#54697a;margin:0 0 9px;max-width:77ch}
+.brief-actions{gap:12px}.brief-actions a{color:#225c86;font-size:11px;padding-bottom:0;border-bottom:0}
+.brief-facts{border-left:1px solid var(--line);padding-left:17px}.brief-fact-head{color:#476c87;font-size:10px;letter-spacing:.45px;margin:1px 0 8px}
+.brief-evidence{font-size:11.5px;font-weight:720;color:#334d60;line-height:1.75}.brief-news{font-size:10.5px}.brief-counts{color:#8b99a5;font-size:10px;padding-top:7px;margin-top:7px}
+.demo-warning,.source-warning{padding:9px 12px;margin:9px 0 12px;font-size:11px;border-radius:5px}
+.deep-section{padding:8px 0 15px}.insight-section{padding:8px 0 17px}
+.insight-section-top{margin:0 0 10px;gap:12px}.insight-section-top h2{font-size:19px!important;letter-spacing:-.4px;margin:1px 0 2px}
+.insight-section-top p,.deep-desc{font-size:11px!important;color:#80909c!important;line-height:1.6!important;margin:2px 0 0!important}
+.insight-overline{font-size:9px!important;color:#527997!important;letter-spacing:1px;font-weight:850}
+.insight-count{font-size:10px!important;color:#8595a2!important}.insight-status,.deep-status{font-size:10px!important;line-height:1.65!important;padding:4px 0 8px!important;color:#8291a1!important}
+.deep-deck{display:block;gap:0}
+.report-choice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:10px 0 11px}
+.report-choice-item{display:flex;flex-direction:column;align-items:start;gap:4px;border:1px solid #dfe7eb;background:#f7f9fa;border-radius:6px;padding:12px 13px;text-align:left;min-height:111px;min-width:0;color:var(--ink)}
+.report-choice-item:hover{border-color:#90b0c7}.report-choice-item.selected{border-color:#7da8c2;background:#eef5f9;box-shadow:inset 3px 0 #29628b}
+.report-choice-item small{font-size:10px;font-weight:850;letter-spacing:.3px;color:#4c7795}
+.report-choice-item strong{font-size:12.5px;letter-spacing:-.12px;line-height:1.5;color:#19384f;word-break:keep-all}
+.report-choice-item span{font-size:10.5px;color:#6a8091;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.deep-report,.deep-report.primary,.deep-report.case{background:#fff;border:0;border-top:2px solid #214b68;border-radius:0;box-shadow:none!important;margin:0!important;overflow:visible}
+.deep-report[hidden]{display:none!important}.deep-cover,.deep-report.primary .deep-cover,.deep-report.case .deep-cover{background:#fff;border:0!important;padding:15px 0 10px!important}
+.deep-top{font-size:10px;color:#567b98;font-weight:850;letter-spacing:.75px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.publish-badge{font-size:10px;background:#eff3f6;color:#6b8295;border-radius:3px;padding:2px 6px;letter-spacing:0}
+.deep-cover h3{font-size:clamp(19px,2.7vw,24px)!important;line-height:1.4;letter-spacing:-.6px;margin:8px 0 9px!important;word-break:keep-all;color:#19384f}
+.compact-thesis{font-size:13px;line-height:1.82;color:#375066;margin:0!important;max-width:83ch;font-weight:650;word-break:keep-all}
+.deep-case-caption{font-size:10px!important;color:#8997a5!important;margin:7px 0 0!important}
+.compact-article-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(215px,.85fr);gap:25px;padding:0 0 14px}
+.compact-article-body{min-width:0}.compact-article-body .compact-lead{font-size:13px;line-height:1.88;color:#455a6c;font-weight:580;margin:5px 0 14px;border-left:3px solid #7599b1;background:#f6f9fa;padding:10px 12px;word-break:keep-all}
+.compact-article-body section{padding:0;margin:0 0 13px;border:0}
+.compact-article-body h4{font-size:14px;color:#223f56;line-height:1.5;letter-spacing:-.3px;margin:15px 0 5px;font-weight:850;word-break:keep-all}
+.compact-article-body p{font-size:13px;color:#3d5264;line-height:1.83;margin:0 0 9px;word-break:keep-all;max-width:78ch}
+.compact-article-body p strong{color:#183950;font-weight:850}
+.compact-conclusion{border-top:1px solid #9cb6c7;margin-top:18px;padding:11px 0 0}
+.compact-conclusion>span{font-size:10px;font-weight:850;color:#336990;letter-spacing:.25px}
+.compact-conclusion p{margin:6px 0;font-size:12.5px;line-height:1.78;color:#3b556a}
+.compact-conclusion p:first-of-type{font-size:13.3px;color:#1d455f}
+.compact-conclusion .forecast-figure{font-size:11px;color:#315d81}
+.compact-evidence{background:#f6f8fa;border-left:1px solid #dfe7eb;padding:14px 14px 16px;min-width:0}
+.evidence-head{border-bottom:1px solid #dce4e9;font-size:10px;font-weight:900;color:#50768e;letter-spacing:.65px;padding-bottom:9px;margin-bottom:8px}
+.evidence-list{padding:0 0 0 16px;margin:0;list-style:disc}
+.evidence-list li{font-size:11.3px;line-height:1.73;color:#40566b;border-bottom:1px solid #e2e9ee;padding:9px 0;word-break:keep-all}.evidence-list li::marker{color:#5b8da7}
+.compact-sources{margin-top:13px}.compact-sources summary{cursor:pointer;font-size:11px;color:#235e88;font-weight:800;padding:6px 0}.compact-sources .source-links{display:grid;gap:7px;padding:7px 0}.compact-sources .source-links a{font-size:10.5px;line-height:1.65;color:#245c83;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+.source-limits{font-size:10px;color:#8493a0;line-height:1.7;margin:9px 0 0}
+.insight-deck{display:grid;grid-template-columns:1fr;gap:9px}.insight-card,.insight-card:first-child{box-shadow:none;border:1px solid var(--line);border-radius:7px;padding:14px!important;background:#fff;grid-column:auto}
+.insight-card h3{font-size:16px;line-height:1.5;letter-spacing:-.2px;margin:7px 0}
+.fact-row{gap:7px!important}.fact-tile{border-radius:4px!important;padding:10px!important}.fact-name{font-size:10px!important}.fact-value{font-size:16px!important}.fact-detail{font-size:10px!important}
+.insight-highlight,.data-report-cover{background:#f2f6f9!important;border-left:3px solid #547c97!important;border-radius:0 5px 5px 0;padding:10px 12px!important;margin-top:9px!important}
+.insight-section .data-report-cover p,.insight-section .insight-highlight p{font-size:12px!important;line-height:1.8!important}
+.data-expand{margin-top:9px!important;border-radius:5px!important}.data-expand>summary{padding:9px 12px!important;font-size:11px!important;background:#f7f9fa!important;color:#2a6187!important}
+.insight-links{padding:9px 0 0!important;margin-top:10px!important}.fx-context{border-radius:5px}
+.content-grid{grid-template-columns:minmax(0,1fr) 240px;gap:18px;padding-bottom:28px}
+.section-head{margin:8px 0 9px}.section-name{font-size:18px}.section-sub{font-size:10px}
+.spotlight{gap:7px;margin-bottom:15px}.featured-card{grid-template-columns:32px minmax(0,1fr);gap:10px;padding:12px 13px;border-radius:6px;box-shadow:none}
+.rank{width:27px;height:27px;border-radius:4px;font-size:11px}.featured-card h3{font-size:14px;margin:4px 0;line-height:1.5}.summary{font-size:11.5px;line-height:1.68;margin:2px 0 6px}.item-meta{font-size:10px;gap:5px}.impact-strip{margin:5px 0}.effect-tag{font-size:10px;border-radius:3px;padding:2px 5px}
+.card-end{margin-top:8px;gap:7px}.toolbar{padding:9px 0;gap:8px}.tab{font-size:11px;padding:6px 8px;border-radius:5px}.search-wrap input{height:30px;font-size:11px}
+.list-article{padding:11px 12px;gap:9px;border-radius:0!important}.list-article:first-child{border-radius:6px 6px 0 0!important}.list-article:last-child{border-radius:0 0 6px 6px!important}.list-title{font-size:12.5px;margin:3px 0}.list-summary{font-size:10.5px}
+.sidebar{gap:9px;top:12px}.sidebar-card{border-radius:7px;padding:14px}.side-label{color:#3f7895;font-size:9px}.side-title{font-size:13px;margin:4px 0 8px}.sources{font-size:10.5px}.footnote{font-size:10px}
+footer{padding:14px 0 18px;background:#f5f7f9;font-size:10px}
+@media(max-width:990px){.content-grid{grid-template-columns:1fr}.sidebar{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.shell{padding:0 14px}.topline{min-height:54px;height:auto;padding:8px 0}.header-label{display:none}.brief-nav{margin:0 -14px;padding:0 14px;overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.brief-nav a{padding:9px 11px}.daily-brief{padding:15px 0 11px}.brief-layout{grid-template-columns:1fr;gap:9px}.brief-facts{padding:9px 0 0;border-left:0;border-top:1px solid var(--line)}.report-choice{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:5px}.report-choice-item{min-width:210px;width:210px;scroll-snap-align:start}.compact-article-grid{grid-template-columns:1fr;gap:9px}.compact-evidence{border-left:0;border-top:1px solid var(--line);display:block;padding:11px 12px}.evidence-list{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}.compact-article-body p{font-size:12.7px;line-height:1.82}.compact-article-body .compact-lead{font-size:12.8px}.deep-cover h3{font-size:21px!important}.sidebar{grid-template-columns:1fr}}
+@media(max-width:430px){.brand{font-size:14px}.top-meta{font-size:9px}.evidence-list{grid-template-columns:1fr}.insight-section .insight-card .fact-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 </style>
 </head>
 <body>
 <header><div class="shell topline"><div class="brand"><span class="brand-symbol">S/</span>SEAFOOD INSIGHT LAB <span class="header-label">수산·유통 시장 리서치</span></div><div class="top-meta"><span><span class="dot" id="statusDot"></span><span id="headerStatus">뉴스 데이터 확인 중</span></span><span id="headerDate"></span></div></div></header>
 <main class="shell">
-  <nav class="brief-nav" aria-label="주요 메뉴"><a href="#dailyBrief">오늘의 브리핑</a><a href="#deep-heading">핵심 분석</a><a href="#insight-heading">데이터 분석</a><a href="#featured-heading">주요 뉴스</a><a href="#allNews">기사 검색</a></nav>
+  <nav class="brief-nav" aria-label="주요 메뉴"><a href="#dailyBrief">시장 요약</a><a href="#deep-heading">심층 분석</a><a href="#insight-heading">데이터 분석</a><a href="#featured-heading">주요 뉴스</a><a href="#allNews">기사 검색</a></nav>
   <section class="daily-brief" id="dailyBrief" aria-labelledby="brief-heading">
-    <div class="brief-meta"><span class="brief-kicker">오늘의 수산시장</span><span id="updateInfo">자료 갱신 확인 중</span></div>
-    <div class="brief-layout"><div class="brief-main"><h1 id="brief-heading">오늘의 시장 브리핑</h1><p class="brief-lead" id="briefLead">확인된 시장 변화와 출처를 불러오고 있습니다.</p><div class="brief-actions" id="briefActions"><a href="#deep-heading">핵심 분석 보기</a><a href="#allNews">기사 살펴보기</a></div></div><aside class="brief-facts" aria-label="브리핑 근거"><div class="brief-fact-head">자료 현황</div><div id="briefFacts">수집된 뉴스와 통계를 확인하고 있습니다.</div><div id="briefCounts" class="brief-counts"></div></aside></div>
+    <div class="brief-meta"><span class="brief-kicker">MARKET INTELLIGENCE / DAILY RESEARCH</span><span id="updateInfo">자료 갱신 확인 중</span></div>
+    <div class="brief-layout"><div class="brief-main"><h1 id="brief-heading">주요 이슈와 시장 전망</h1><p class="brief-lead" id="briefLead">확인된 시장 변화와 출처를 불러오고 있습니다.</p><div class="brief-actions" id="briefActions"><a href="#deep-heading">핵심 분석 보기</a><a href="#allNews">기사 살펴보기</a></div></div><aside class="brief-facts" aria-label="브리핑 근거"><div class="brief-fact-head">KEY EVIDENCE / 핵심 근거</div><div id="briefFacts">수집된 뉴스와 통계를 확인하고 있습니다.</div><div id="briefCounts" class="brief-counts"></div></aside></div>
   </section>
   <section class="demo-topics" id="demoTopics" hidden aria-label="다른 분야 구성 예시">
     <div class="demo-topics-head"><strong>다른 분야도 함께 다룹니다</strong><span>아래는 구성 예시이며, 실제 분석 결과가 아닙니다.</span></div>
@@ -219,19 +292,19 @@
   <div id="warning"></div>
   <section class="deep-section" aria-labelledby="deep-heading">
     <div class="insight-section-top"><div><div class="insight-overline">01 / 시장 분석</div>
-    <h2 id="deep-heading">주요 시장 분석</h2>
-    <p class="deep-desc">주요 보도와 통계를 종합해 수산·유통시장의 변화를 짚었습니다.</p></div>
+    <h2 id="deep-heading">심층 분석</h2>
+    <p class="deep-desc">공개된 보도와 통계에서 확인한 변화와 시장 전망</p></div>
     <span class="insight-count" id="deepCount">0편</span></div>
     <div class="insight-status" id="deepStatus"></div><div class="deep-deck" id="deepDeck" aria-live="polite"></div>
   </section>
   <section class="insight-section" aria-labelledby="insight-heading">
-   <div class="insight-section-top"><div><div class="insight-overline">02 / 수산물 공식 데이터</div><h2 id="insight-heading">품목별 수급·가격 자료</h2><p>원물 생산과 수출입 물량, 도·소매가격을 비교합니다. 환율은 품목 분석의 참고자료로만 사용합니다.</p></div><span class="insight-count" id="insightCount">0건</span></div>
+   <div class="insight-section-top"><div><div class="insight-overline">02 / 수산물 공식 데이터</div><h2 id="insight-heading">시장 데이터 분석</h2><p>원물 생산과 수출입 물량, 도·소매가격을 비교합니다. 환율은 품목 분석의 참고자료로만 사용합니다.</p></div><span class="insight-count" id="insightCount">0건</span></div>
    <div class="insight-status" id="analysisStatus"></div>
    <div class="insight-deck" id="insightDeck" aria-live="polite"></div>
   </section>
   <div class="content-grid">
   <div class="main-column">
-    <div class="section-head"><div><h2 class="section-name" id="featured-heading">03 · 주요 뉴스</h2><div class="section-sub">주요 수산·유통 뉴스와 원문 링크</div></div><button class="section-action" type="button" id="resetRead">읽음 초기화 ↻</button></div>
+    <div class="section-head"><div><h2 class="section-name" id="featured-heading">03 / 주요 뉴스</h2><div class="section-sub">주요 수산·유통 뉴스와 원문 링크</div></div><button class="section-action" type="button" id="resetRead">읽음 초기화 ↻</button></div>
     <section class="spotlight" id="featured" aria-live="polite"></section>
     <div class="section-head" id="allNews"><div><h2 class="section-name">전체 기사</h2><div class="section-sub">분야별 보기 · 검색 · 읽음 · 저장</div></div></div>
     <div class="toolbar"><div class="tabs" id="tabs" role="group" aria-label="기사 주제 필터"></div><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="기사 검색" aria-label="기사 제목 및 요약 검색"></div></div>
@@ -279,8 +352,8 @@
  const summary=a=>a.summary?esc(a.summary):'';
  const checkBtn=a=>`<button class="small-btn ${read.has(a.id)?'saved':''}" data-action="read" data-id="${esc(a.id)}" aria-pressed="${read.has(a.id)}">${read.has(a.id)?'✓ 읽음':'○ 읽음 표시'}</button>`;
  const saveBtn=a=>`<button class="small-btn ${saved.has(a.id)?'saved':''}" data-action="save" data-id="${esc(a.id)}" aria-pressed="${saved.has(a.id)}">${saved.has(a.id)?'★ 저장됨':'☆ 저장'}</button>`;
- function featuredCard(a,index){return `<article class="featured-card ${read.has(a.id)?'reading-done':''}"><div class="rank">${String(index+1).padStart(2,'0')}</div><div><div class="item-meta">${category(a.category)}${a.official?'<span class="official-pill">공식 자료</span>':''}<span>${esc(a.source)}</span><span>·</span><span>${esc(fmtDate(a.published))}</span></div><h3>${urlSafe(a.url)?`<a class="story-link" href="${esc(urlSafe(a.url))}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>`:esc(a.title)}</h3>${a.summary?`<p class="summary">${summary(a)}</p>`:""}<div class="impact-strip"><span class="effect-tag">시장 분야 · ${esc(a.category||'분류 확인')}</span><span class="effect-tag">${esc(a.impact||'영향 추가 검증')}</span></div><div class="question"><span class="q-mark">후속 확인</span> ${esc(a.followup||'관련 시장 통계')}</div><div class="card-end">${openButton(a)}${checkBtn(a)}${saveBtn(a)}${a.summary_type?`<span class="item-meta">${esc(a.summary_type)}</span>`:""}</div></div></article>`;}
- function listCard(a){return `<article class="list-article ${read.has(a.id)?'reading-done':''}"><div class="list-date">${esc(fmtTime(a.published))}</div><div><div class="item-meta">${category(a.category)} <span>${esc(a.source)}</span>${a.official?'<span class="official-pill">공식</span>':''}</div><div class="list-title">${urlSafe(a.url)?`<a class="story-link" href="${esc(urlSafe(a.url))}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>`:esc(a.title)}</div>${a.summary?`<p class="list-summary">${summary(a)}</p>`:""}<div class="item-meta" style="margin-top:6px">시장: ${esc(a.category||'기타')} · ${esc(a.impact||'추가 검증')} · 후속: ${esc(a.followup||'자료 확인')}</div><div class="item-meta" style="margin-top:7px">${esc(fmtDate(a.published))}</div></div><div class="list-actions"><button class="icon-btn ${saved.has(a.id)?'active':''}" data-action="save" data-id="${esc(a.id)}" aria-label="${saved.has(a.id)?'저장 취소':'저장'}" title="저장">${saved.has(a.id)?'★':'☆'}</button><button class="icon-btn ${read.has(a.id)?'active':''}" data-action="read" data-id="${esc(a.id)}" aria-label="${read.has(a.id)?'읽음 취소':'읽음 표시'}" title="읽음">${read.has(a.id)?'✓':'○'}</button></div></article>`;}
+ function featuredCard(a,index){return `<article class="featured-card ${read.has(a.id)?'reading-done':''}"><div class="rank">${String(index+1).padStart(2,'0')}</div><div><div class="item-meta">${category(a.category)}${a.official?'<span class="official-pill">공식 자료</span>':''}<span>${esc(a.source)}</span><span>·</span><span>${esc(fmtDate(a.published))}</span></div><h3>${urlSafe(a.url)?`<a class="story-link" href="${esc(urlSafe(a.url))}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>`:esc(a.title)}</h3>${a.summary?`<p class="summary">${summary(a)}</p>`:""}<div class="impact-strip"><span class="effect-tag">시장 분야 · ${esc(a.category||'분류 확인')}</span><span class="effect-tag">${esc(a.impact||'영향 추가 검증')}</span></div><div class="card-end">${openButton(a)}${checkBtn(a)}${saveBtn(a)}${a.summary_type?`<span class="item-meta">${esc(a.summary_type)}</span>`:""}</div></div></article>`;}
+ function listCard(a){return `<article class="list-article ${read.has(a.id)?'reading-done':''}"><div class="list-date">${esc(fmtTime(a.published))}</div><div><div class="item-meta">${category(a.category)} <span>${esc(a.source)}</span>${a.official?'<span class="official-pill">공식</span>':''}</div><div class="list-title">${urlSafe(a.url)?`<a class="story-link" href="${esc(urlSafe(a.url))}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>`:esc(a.title)}</div>${a.summary?`<p class="list-summary">${summary(a)}</p>`:""}<div class="item-meta" style="margin-top:6px">시장: ${esc(a.category||'기타')} · ${esc(a.impact||'추가 검증')}</div><div class="item-meta" style="margin-top:7px">${esc(fmtDate(a.published))}</div></div><div class="list-actions"><button class="icon-btn ${saved.has(a.id)?'active':''}" data-action="save" data-id="${esc(a.id)}" aria-label="${saved.has(a.id)?'저장 취소':'저장'}" title="저장">${saved.has(a.id)?'★':'☆'}</button><button class="icon-btn ${read.has(a.id)?'active':''}" data-action="read" data-id="${esc(a.id)}" aria-label="${read.has(a.id)?'읽음 취소':'읽음 표시'}" title="읽음">${read.has(a.id)?'✓':'○'}</button></div></article>`;}
 
  function issueCard(issue,idx){
   const articleMap=new Map(articles.map(a=>[a.id,a]));
@@ -299,37 +372,39 @@
   const lookupA=new Map(evidenceArticles.map(a=>[a.id,a]));
   const lookupM=new Map((data.features||[]).concat(data.archived_features||[]).map(f=>[f.id,f]));
   const lookupP=new Map((data.policy_sources||[]).map(p=>[p.id,p]));
-  const refLink=id=>{
-    const a=lookupA.get(id),m=lookupM.get(id),p=lookupP.get(id);
-    if(a&&urlSafe(a.url))return `<a class="deep-ref" target="_blank" rel="noopener noreferrer" href="${esc(urlSafe(a.url))}">${esc(a.source)} ↗</a>`;
-    if(p&&urlSafe(p.url))return `<a class="deep-ref" target="_blank" rel="noopener noreferrer" href="${esc(urlSafe(p.url))}">${esc(p.publisher)} · 원문 ↗</a>`;
-    if(m)return `<span class="deep-ref">공식 관측 지표 ${esc(m.name)}</span>`;
-    return '';
-  };
-  const facts=(r.facts||[]).map(f=>`<div class="deep-claim">${esc(f.text)}<div>${(f.refs||[]).map(refLink).join('')}</div></div>`).join('');
-  const mechanisms=(r.mechanism||[]).map(s=>`<li>${esc(s)}</li>`).join('');
+  const sources=(r.article_ids||[]).map(id=>lookupA.get(id)).filter(Boolean).filter(a=>urlSafe(a.url));
+  const seen=new Set();
+  const articlesList=sources.map(a=>{const url=urlSafe(a.url);if(seen.has(url))return '';seen.add(url);return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(a.source)} · ${esc(a.title)} ↗</a>`;}).join('');
+  const metricLinks=(r.feature_ids||[]).map(id=>lookupM.get(id)).filter(Boolean).flatMap(f=>f.data_links||[]).filter(l=>urlSafe(l.url)).map(l=>`<a href="${esc(urlSafe(l.url))}" target="_blank" rel="noopener noreferrer">${esc(l.label)} · 공식 자료 ↗</a>`).join('');
+  const policyLinks=(r.policy_ids||[]).map(id=>lookupP.get(id)).filter(Boolean).filter(p=>urlSafe(p.url)).map(p=>`<a href="${esc(urlSafe(p.url))}" target="_blank" rel="noopener noreferrer">${esc(p.title)} · 공식 문서 ↗</a>`).join('');
+  const facts=(r.facts||[]).slice(0,5).map(f=>`<li><span>${esc(f.text)}</span></li>`).join('');
+  const mechanisms=(r.mechanism||[]).filter(Boolean).map(m=>`<p>${esc(m)}</p>`).join('');
   const outlook=r.outlook;
-  const forecastHtml=outlook?
-    `<section class="outlook-section"><h4>04 · 앞으로의 전망</h4><div class="deep-memo forecast-lead"><div class="outlook-kicker">${esc(outlook.horizon)} · ${esc(outlook.direction)}</div><p><strong>${esc(outlook.judgment)}</strong></p><p>${esc(outlook.basis)}</p>${outlook.numeric_estimate?`<p class="outlook-number">수치 전망 · ${esc(outlook.numeric_estimate)}</p>`:''}</div><p class="outlook-condition">전망이 달라질 수 있는 경우: ${esc(outlook.revision_trigger)}</p>${outlook.forecast_method?`<p class="limits">계산 방식: ${esc(outlook.forecast_method)} · 검증: ${esc(outlook.backtest)}</p>`:''}</section>`:
-    `<section><h4>04 · 앞으로의 전망</h4><p>${esc((r.scenario_up||{}).interpretation||'')}</p><p class="limits">${esc((r.scenario_down||{}).interpretation||'')}</p></section>`;
-  const articlesList=(r.article_ids||[]).map(id=>lookupA.get(id)).filter(Boolean).filter(a=>urlSafe(a.url)).map(a=>`<a href="${esc(urlSafe(a.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(a.title)} · ${esc(a.source)}</a>`).join('');
-  const metricsList=(r.feature_ids||[]).map(id=>lookupM.get(id)).filter(Boolean).flatMap(f=>f.data_links||[]).map(l=>`<a href="${esc(urlSafe(l.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(l.label)} · 원자료</a>`).join('');
-  const policiesList=(r.policy_ids||[]).map(id=>lookupP.get(id)).filter(Boolean).map(p=>`<a href="${esc(urlSafe(p.url))}" target="_blank" rel="noopener noreferrer">↗ ${esc(p.title)} · 공식문서</a>`).join('');
-  return `<article class="deep-report ${r.depth==='핵심'?'primary':''}">
-    <div class="deep-cover"><div class="deep-top">${String(idx+1).padStart(2,'0')} · ${esc(r.kind)}</div>
-    <h3>${esc(r.headline)}</h3><div class="impact-strip"><span class="effect-tag">분야 · ${esc(r.kind)}</span><span class="effect-tag">${esc(r.impact||'확인된 시장 변화')}</span></div><div class="deep-thesis"><span class="deep-section-label">핵심 내용</span>${esc(r.thesis)}</div>
-    <p class="report-lead">${esc(r.lead)}</p><p class="deep-case-caption">${esc(r.time_frame)} · ${esc(r.status||'자료 발췌 기반 AI 해석')}</p></div>
-    <details class="report-expand"><summary>자세히 읽기</summary>
-      <div class="research-body">
-        <section><h4>01 · 무엇이 달라졌나</h4><div class="deep-evidence">${facts}</div><p>${esc(r.market_change)}</p></section>
-        <section><h4>02 · 변화의 배경</h4><ol class="mechanism">${mechanisms}</ol></section>
-        <section><h4>03 · 시장에 미칠 영향</h4><div class="deep-memo"><p>${esc(r.structural_insight)}</p></div></section>
-        ${forecastHtml}
-        <section><h4>추가로 확인할 지표</h4><p>${esc(r.what_changes)}</p></section>
-        <section><h4>자료 출처와 해석 범위</h4><div class="source-links">${articlesList}${policiesList}${metricsList}</div><p class="limits">${esc(r.limitations)}</p></section>
-      </div>
-    </details>
-  </article>`;
+  const mainForecast=outlook&&outlook.direction!=='전망 제외'&&outlook.judgment?
+    `<div class="compact-conclusion"><span>시장 전망 · ${esc(outlook.horizon)}</span><p><strong>${esc(outlook.judgment)}</strong></p>${outlook.basis?`<p>${esc(outlook.basis)}</p>`:''}${outlook.numeric_estimate?`<p class="forecast-figure">검증된 모형 추정 · ${esc(outlook.numeric_estimate)}</p>`:''}</div>`:'';
+  const sourceHtml=(articlesList+metricLinks+policyLinks)||'<span>연결된 공개 원문이 없습니다.</span>';
+  const publishedLabel=data.report_archived?'지난 분석 · '+String(data.last_report_updated_at||'').slice(0,10):data.report_factual_brief?'공개자료 요약':data.demo?'시연용 분석':'새 심층 분석';
+  return `<article class="deep-report ${idx===0?'primary':''}" data-report-index="${idx}" ${idx===0?'':'hidden'}>
+    <div class="deep-cover"><div class="deep-top">${String(idx+1).padStart(2,'0')} / ${esc(r.kind)} <span class="publish-badge">${esc(publishedLabel)}</span></div>
+      <h3>${esc(r.headline)}</h3><p class="compact-thesis">${esc(r.thesis)}</p><div class="deep-case-caption">${esc(r.time_frame||'')} · ${esc(r.status||'공개자료 기반')}</div></div>
+    <div class="compact-article-grid">
+     <div class="compact-article-body">
+       ${r.lead?`<p class="compact-lead">${esc(r.lead)}</p>`:''}
+       ${r.market_change?`<section><h4>시장 변화</h4><p>${esc(r.market_change)}</p></section>`:''}
+       ${mechanisms?`<section><h4>변화의 배경</h4>${mechanisms}</section>`:''}
+       ${r.structural_insight?`<section><h4>시장에 미치는 영향</h4><p><strong>${esc(r.structural_insight)}</strong></p></section>`:''}
+       ${mainForecast}
+     </div>
+     <aside class="compact-evidence"><div class="evidence-head">KEY EVIDENCE / 핵심 근거</div>
+      <ul class="evidence-list">${facts||'<li>연결된 공식 통계 및 보도를 확인하세요.</li>'}</ul>
+      <details class="compact-sources"><summary>기사·통계 원문 보기</summary><div class="source-links">${sourceHtml}</div>${r.limitations?`<p class="source-limits">${esc(r.limitations)}</p>`:''}</details>
+     </aside>
+    </div>
+   </article>`;
+ }
+ function renderReportTabs(reports){
+   if(reports.length<2)return '';
+   return `<div class="report-choice" role="group" aria-label="시장 분석 선택">${reports.map((r,i)=>`<button type="button" class="report-choice-item ${i===0?'selected':''}" data-report-choice="${i}" aria-pressed="${i===0}"><small>${String(i+1).padStart(2,'0')} · ${esc(r.kind)}</small><strong>${esc(r.headline)}</strong><span>${esc((r.one_sentence||r.thesis||'').slice(0,125))}</span></button>`).join('')}</div>`;
  }
  function insightCard(ins,idx){
   const lookup=new Map(articles.map(a=>[a.id,a]));
@@ -342,9 +417,9 @@
   const ai=r?`<div class="data-report-cover"><div class="mini-label">시장 분석 요약</div><p>${esc(r.conclusion)}</p></div>
     <details class="data-expand"><summary>분석과 근거 읽기</summary><div class="data-research-body">
     <section><h4>관측된 변화와 배경</h4><p>${esc(r.market_observation)}</p>${(r.transmission||[]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</section>
-    <section><h4>함께 살펴본 자료</h4><p>${esc(r.structural_insight)}</p><p>${esc(r.alternative)}</p></section>
-    <section><h4>시장 전망</h4>${r.outlook?`<div class="outlook-kicker">${esc(r.outlook.horizon)} · ${esc(r.outlook.direction)}</div><p><strong>${esc(r.outlook.judgment)}</strong></p><p>${esc(r.outlook.basis)}</p><p class="limits">전망이 달라질 수 있는 경우: ${esc(r.outlook.revision_trigger)}</p>`:`<p>${esc(r.scenario_support||'')}</p><p>${esc(r.investor_meaning||'')}</p>`}</section>
-    <section><h4>자료의 범위</h4><p class="limits">${esc(r.limits)}</p></section>
+    <section><h4>시장에 미치는 영향</h4><p><strong>${esc(r.structural_insight)}</strong></p></section>
+    <section><h4>시장 전망</h4>${r.outlook?`<div class="outlook-kicker">${esc(r.outlook.horizon)} · ${esc(r.outlook.direction)}</div><p><strong>${esc(r.outlook.judgment)}</strong></p><p>${esc(r.outlook.basis)}</p>`:`<p>${esc(r.scenario_support||'')}</p><p>${esc(r.investor_meaning||'')}</p>`}</section>
+    <details class="compact-sources"><summary>통계 범위</summary><p class="limits">${esc(r.limits)}</p></details>
     </div></details>`:'';
   const cross=(ins.related_observations||[]).map(x=>`<div class="cross-row"><b>${esc(x.name)}</b><p>${esc(x.observed)}</p><small>${esc(x.period_end)} · 기준기간과 규격이 다른 자료는 직접 합산하지 않습니다.</small></div>`).join('');
   return `<article class="insight-card data-story-card"><div class="insight-main"><div class="insight-brow"><span class="insight-tag">${String(idx+1).padStart(2,'0')} · ${esc(ins.name)}</span><span class="insight-level">${r?'비교 분석':'공식 통계'} · ${esc(ins.period_end)}</span></div>
@@ -360,21 +435,20 @@
   // Research is always the primary content. Mechanical question cards stay collapsed below the data section.
   const issues=[];
   $('#deepCount').textContent=`${reports.length}편`;
-  $('#deepStatus').textContent=data.demo?'공개된 과거 자료로 만든 화면 시연 · 실시간 자동 생성 아님':data.report_archived?`분석 작성일 ${String(data.last_report_updated_at||'').slice(0,10)} · 최근 자료도 함께 확인하세요.`:(data.report_factual_brief?'오늘은 확인된 기사와 통계만 정리했습니다. 심층 분석은 아닙니다.':'최신 자료와 출처를 바탕으로 작성한 분석');
-  $('#deepDeck').innerHTML=reports.map((r,i)=>deepCard(r,i)).join('')||'<div class="deep-notice">현재 공개자료를 분석 중입니다. 검증된 심층 원고가 없는 경우 기사와 공식 통계를 먼저 확인할 수 있습니다.</div>';
+  $('#deepStatus').textContent=data.demo?'시연용 콘텐츠 · 실제 자동 생성 결과 아님':data.report_archived?`지난 분석 · 최초 작성 ${String(data.last_report_updated_at||'').slice(0,10)} · 이번 실행에서 새 심층 분석을 발행하지 못했습니다.`:(data.report_factual_brief?'공개자료 요약 · 새 심층 분석과 구분':'새로운 공개 근거로 작성한 시장 분석');
+  $('#deepDeck').innerHTML=(renderReportTabs(reports)+reports.map((r,i)=>deepCard(r,i)).join(''))||'<div class="deep-notice">현재 공개자료를 분석 중입니다. 검증된 심층 원고가 없는 경우 기사와 공식 통계를 먼저 확인할 수 있습니다.</div>';
   const allIndicators=data.features||[];
   const insights=allIndicators.filter(f=>!String(f.id||'').startsWith('fx_') && f.role!=='context');
   const rates=allIndicators.filter(f=>String(f.id||'').startsWith('fx_') || f.role==='context');
   const analysisNum=(data.data_reports||[]).filter(r=>insights.some(f=>f.id===r.feature_id)).length;
   $('#insightCount').textContent=`수산물 지표 ${insights.length}건 · 비교 분석 ${analysisNum}편`;
-  $('#analysisStatus').textContent='수산물 생산·수출입·가격을 중심으로 정리했습니다. 단일 통계는 관측값만 표시합니다.';
+  $('#analysisStatus').textContent='생산·수출입·가격 자료를 기간과 단위에 맞춰 비교했습니다.';
   const rateNote=insights.length&&rates.length?`<div class="fx-context"><b>시장 참고 · 환율</b><span>${rates.map(f=>`${esc(f.name)} ${esc((f.facts||[])[0]?.value||'')}`).join(' · ')}</span><small>환율은 개별 어종 수입·수출 분석에 필요한 경우에만 활용합니다.</small></div>`:'';
   $('#insightDeck').innerHTML=insights.slice(0,14).map(insightCard).join('')+(rateNote)||'<div class="insight-blank">연결된 수산물 생산·수출입·가격 자료가 아직 없습니다. 환율만으로 수산시장 분석을 작성하지 않습니다.</div>';
   // A compact evidence-led daily brief, not a promotional hero or a decorative article counter.
   const topReport=reports[0];
   const leadArticle=articles[0];
-  const mainTitle=topReport?topReport.headline:'오늘의 시장 브리핑';
-  $('#brief-heading').textContent=mainTitle;
+  $('#brief-heading').textContent='주요 이슈와 시장 전망';
   $('#briefLead').textContent=topReport?topReport.thesis:
     leadArticle?'검증된 종합 리포트가 아직 없습니다. 아래에 수집된 주요 기사와 공식 통계만 표시합니다.':
     '공개 기사와 공식 통계를 확인 중입니다. 자료가 충분하지 않으면 결론을 만들어내지 않습니다.';
@@ -383,7 +457,7 @@
   const leadFact=fact1||((datum&&datum.observed)||'');
   const secondary=leadArticle?'주요 기사: '+leadArticle.title:'아직 확인된 주요 기사가 없습니다.';
   $('#briefFacts').innerHTML=`<p class="brief-evidence">${esc(leadFact||secondary)}</p>${leadFact&&leadArticle?`<p class="brief-news">${esc(secondary)}</p>`:''}`;
-  $('#briefCounts').textContent=`시장 분석 ${reports.length}편 · 수산물 지표 ${insights.length}건 · 기사 ${articles.length}건`;
+  $('#briefCounts').textContent=(data.demo?'시연용 분석 '+reports.length+'편':data.report_archived?'지난 분석':'새 분석 '+(data.fresh_deep_count??reports.length)+'편')+' · 공식 자료 '+insights.length+'종 · '+(data.generated_at?fmtDate(data.generated_at):'');
   $('#briefActions').innerHTML=topReport?'<a href="#deep-heading">분석과 근거 보기 →</a><a href="#allNews">전체 기사 확인</a>':
     '<a href="#featured-heading">주요 기사 보기 →</a><a href="#insight-heading">공식 지표 확인</a>';
   $('#headerDate').textContent=fmtDate(data.generated_at);
@@ -392,7 +466,7 @@
   $('#updateInfo').textContent=data.demo?'샘플 미리보기 · 실시간 자료 아님':`마지막 업데이트 ${fmtDate(data.generated_at)}`;
   $('#feedHealth').textContent=data.demo?'':`RSS 응답 ${data.sources_ok}/${data.sources_total} · 응답이 없던 출처의 뉴스는 포함되지 않았습니다. 최근 14일 기록은 원래 발행일을 보존합니다.`;
   const banner=$('#warning');
-  $('#demoTopics').hidden=!data.demo;
+  $('#demoTopics').hidden=true; // Avoid redundant demonstration cards on compact pages.
   if(data.demo) banner.innerHTML='<div class="demo-warning"><strong>화면 체험용 데모입니다.</strong> 뉴스 목록은 공개된 과거 공식자료를 바탕으로 재구성한 시연용 항목이며, 숫자는 과거 관측치입니다. <code>python build.py</code> 실행 시 최신 RSS 기사와 공식 수산·환율 지표로 교체됩니다.</div>';
   else if(!articles.length) banner.innerHTML='<div class="demo-warning"><strong>기사를 수집하지 못했습니다.</strong> 네트워크·RSS 응답·게시일 조건을 확인해 주세요. 실제 기사 대신 예시를 최신 뉴스처럼 보여주지 않습니다.</div>';
   else if(data.sources_ok<data.sources_total) banner.innerHTML=''; // Collection diagnostics are displayed in Sources & Transparency
@@ -410,6 +484,7 @@
  }
  document.addEventListener('click',e=>{
   const btn=e.target.closest('button'); if(!btn)return;
+  if(btn.hasAttribute('data-report-choice')){const choice=Number(btn.dataset.reportChoice);$('#deepDeck').querySelectorAll('[data-report-index]').forEach((p,i)=>p.hidden=i!==choice);$('#deepDeck').querySelectorAll('[data-report-choice]').forEach((b,i)=>{b.classList.toggle('selected',i===choice);b.setAttribute('aria-pressed',String(i===choice));});return;}
   if(btn.dataset.cat){active=btn.dataset.cat;update();return;}
   const {action,id}=btn.dataset;
   if(action&&id){const target=action==='read'?read:saved;target.has(id)?target.delete(id):target.add(id);save(action,target);update();}

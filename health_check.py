@@ -13,12 +13,16 @@ def audit(path=Path('site/data.json')):
     print('SEAFOOD AUDIT - news articles:',len(articles))
     print('SEAFOOD AUDIT - official observations:',len(feats))
     print('SEAFOOD AUDIT - deep reports:',len(reports),'archived:',data.get('report_archived',False))
+    print('SEAFOOD AUDIT - NEW evidence-validated research:',data.get('fresh_deep_count',0))
+    print('SEAFOOD AUDIT - content state:',data.get('content_state','legacy'))
     print('SEAFOOD AUDIT - primary feeds:',data.get('sources_ok'), '/', data.get('sources_total'))
     print('SEAFOOD AUDIT - data source families:',sorted({f.get('series_type','other') for f in feats}))
     for err in data.get('metric_errors',[]):
         print('::warning::Official data source:',str(err)[:240])
+    if not data.get('demo') and data.get('fresh_deep_count',0)==0:
+        print('::warning::No NEW evidence-validated research published. Workflow success is NOT an editorial success; archived/summary work must be labeled.')
     if not reports:
-        print('::warning::No evidence-validated deep report in this run. See research logs; do not infer quality from green checks.')
+        print('::warning::No displayed deep report in this run. See research logs; do not infer quality from green checks.')
     if data.get('sources_total') and data.get('sources_ok',0)/max(1,data['sources_total'])<.35:
         print('::warning::Most live RSS sources did not respond. Recent archived articles, if any, retain original dates.')
     return True

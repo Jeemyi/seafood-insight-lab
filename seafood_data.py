@@ -312,7 +312,12 @@ def make_features(now):
     salmon,ssb_error=fetch_ssb_salmon()
     volume,volume_error=fetch_ssb_salmon_volume()
     joint=salmon_price_volume_feature(salmon,volume,now.date()) if salmon and volume else None
-    if joint:features.append(joint)
+    if joint:
+        from seafood_currency import fetch_weekly_usd_nok, add_usd_to_salmon
+        weekly_fx, rate_error = fetch_weekly_usd_nok(now)
+        add_usd_to_salmon(joint, salmon, weekly_fx)
+        features.append(joint)
+        if rate_error: errors.append(rate_error)
     if salmon and not joint:
         f=_series_feature('salmon_export_price','노르웨이 생연어 수출가','노르웨이 연어 수출가 변화가 국내 수입원가에 주는 신호',salmon,'NOK/kg',SSB_LINK,'노르웨이 통계청 SSB',now.date(),'원물 수급/시세',['마트','온라인','B2B'],'NOK 가격 하락은 원물가 하락 요인일 수 있으나 국내 매입가 하락 확정 아님', 'weekly')
         if f:features.append(f)
@@ -326,7 +331,9 @@ def make_features(now):
         ('NOK','원/NOK','노르웨이 크로네 환율과 연어 매입원가','마트·온라인·B2B')]:
         if currency not in fx:continue
         f=_series_feature('fx_'+currency.lower(), currency+' 환율',title,fx[currency],unit,ECOS_LINK,'한국은행 ECOS',now.date(),'비용/거시',channels.split('·'),'환율 변화는 결제통화·계약시점에 따라 반영 시차 발생')
-        if f:features.append(f)
+        if f:
+            f['role']='context'   # FX is an explanatory input, not a seafood-market report.
+            features.append(f)
     # Apply conversion only when both primary observations exist. Never claim landed cost.
     if salmon and 'NOK' in fx:
         latest_week=max(salmon)

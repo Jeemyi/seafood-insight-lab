@@ -427,7 +427,7 @@ def demo_data():
        'url':'https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/',
        'source':'Norwegian Seafood Council','published':sample_date.isoformat(),'timestamp':int(sample_date.timestamp())-600,
        'category':'원물 수급/시세','tags':['원물 수급/시세'],'score':16,
-       'summary':'2026년 10월 노르웨이 연어 수출은 159,810톤, 수출액 약 130억 NOK를 기록했다. 전년 동월 대비 수출물량은 9%, 수출액은 6% 증가해 평균단가는 하락한 것으로 계산된다.',
+       'summary':'2026년 10월 노르웨이 연어 수출은 159,810톤, 수출액 약 130억 NOK를 기록했다. 전년 동월 대비 수출물량은 9%, 수출액은 6% 증가했다. 폴란드향 물량은 15% 증가했고 현지 소비와 재수출도 늘었다.',
        'summary_type':'공식 월간 수출 발표','question':'금액 증가를 가격과 물량 효과로 분해',
        'official':True,'channels':[],'impact':'수출액 성장보다 빠른 물량 증가','followup':'월별 물량·평균단가·국가별 수출구성'}
     f={'id':'salmon_export_price','name':'노르웨이 생연어 수출가격·물량',
@@ -441,27 +441,28 @@ def demo_data():
        'article_ids':['ssb-public-sample'],'category':'원물 수급/시세','channels':[],
        'impact':'수출물량 증가와 단가 하락이 동시에 발생',
        'limitations':'44주 수치는 주간 통계, 10월 수치는 월간 통계로 직접 혼합해 변화율 계산 불가'}
+    # The example below demonstrates editorial style and illustrates USD conversion;
+    # it is not an up-to-date price feed or a verified historical model forecast.
+    f['facts'].insert(0,{'label':'달러 환산가격 · 시연','value':'$8.07/kg','detail':'2026년 44주차 · 기존 샘플 환산값'})
+    f['title']='연어 수출량 14.3% 증가 · 달러 환산가격은 전년 수준'
+    f['observed']+=' · 기존 시연용 달러 환산가격은 약 $8.07/kg, 전년 동기와 비슷한 수준. NOK 수출가격과 달러 환산가격은 환율에 따라 방향이 달라질 수 있다.'
     report={'depth':'핵심','kind':'원물 수급/시세','time_frame':'2026년 10월·44주차 · 공개자료 시연',
-      'headline':'노르웨이 연어 수출액 사상 최대…가격보다 물량이 성장 이끌어',
-      'thesis':'2026년 10월 노르웨이 연어 수출액은 사상 최고치를 기록했지만, 수출액 증가율보다 물량 증가율이 높았다. 월간 수출액을 가격과 물량으로 분해하면 성장을 주도한 것은 가격 인상이 아니라 더 많은 물량의 판매였다. 같은 시기 공식 주간 통계 역시 전년 대비 물량 증가와 단가 하락을 보여준다.',
-      'lead':'수출액이 늘었다고 연어값까지 오른 것은 아니다. 10월 수출액과 물량을 나눠 살펴보면 물량 증가가 성장을 이끌었다. 44주차 가격 통계도 같은 방향을 보여주지만, 월간 수치와 주간 수치를 하나로 계산하지는 않았다.',
-      'facts':[{'text':'노르웨이 수산물위원회에 따르면 2026년 10월 연어 수출량은 159,810톤으로 전년 동월보다 9% 증가했고, 수출액은 약 130억 NOK로 6% 증가했다.','refs':['nsc-public-sample']},
-               {'text':'SSB의 2026년 44주차 통계에서 신선·냉장 연어 수출단가는 74.98 NOK/kg으로 전년 동주보다 6.9% 낮았고, 같은 주 수출물량은 28,444톤으로 14.3% 증가했다.','refs':['ssb-public-sample','salmon_export_price']}],
-      'market_change':'2026년 10월 연어 수출액 증가율(+6%)이 수출량 증가율(+9%)보다 낮다는 것은 월간 평균 판매단가가 낮아졌음을 의미한다. 약 1.06을 1.09로 나누면 월간 평균단가 변화율은 약 -2.8%다. 이 계산은 월간 집계의 반올림 수치를 사용한 근삿값이다.',
-      'mechanism':['첫 번째 근거는 월간 수출액과 물량의 차이다. 수출액만 보면 시장의 가격 경쟁력이 강화됐다는 결론을 내릴 수 있지만, 수출물량 증가가 더 빨라 평균단가는 오히려 하락했다. 수출액 기록이 판매단가 상승의 증거가 아닌 이유다.',
-                   '두 번째 근거는 SSB의 주간 통계다. 44주차의 신선·냉장 연어 수출량은 전년 동주 대비 늘고 가격은 하락했다. 월간 통계와 관측 빈도는 달라 완전히 동일한 계산에 합칠 수 없지만, 두 자료는 물량 확대와 가격 약세가 공존한다는 동일한 방향을 독립적으로 지지한다.'],
-      'structural_insight':'노르웨이의 연어 수출 기록은 가격보다 물량이 늘면서 만들어졌다. 공급이 확대되면 판매량이 늘어도 평균단가는 내려갈 수 있다. 따라서 수출액만 보고 연어 가격이 강세라고 해석해서는 안 된다. 수출량과 평균단가를 나눠 보고 주요 수입국의 소비 흐름까지 확인해야 이번 확대가 얼마나 오래 이어질지 판단할 수 있다.',
-      'scenario_up':{'condition':'향후 주요 수출시장에서 소비와 재수출 물량이 동반 확대되고, 공급 증가분을 계속 흡수한다면',
-                     'interpretation':'가격을 억지로 끌어올리지 않아도 물량 중심 수출 확대가 유지될 여지가 생긴다.'},
-      'scenario_down':{'condition':'수출물량은 계속 증가하는데 주요 시장의 소비·재수출이 둔화되고 단가 하락이 확대된다면',
-                       'interpretation':'수출액 기록 뒤에 공급 압력과 가격 경쟁이 심화되는 구조를 더 의심해야 한다.'},
-      'what_changes':'다음 분석에서는 월별 전체 연어 수출물량과 평균단가를 분리해 추적하고, 폴란드 등 가공·재수출 거점과 최종 소비국의 수요를 비교해야 한다. 한국 시장과 연결하려면 같은 시점의 관세청 수입단가와 환율을 별도로 확인해야 한다.',
-      'one_sentence':'사상 최대 수출액이라는 성적표는 가격의 호황이 아니라 물량 확대가 만든 기록일 수 있다.',
-      'limitations':'시연용 원고로, 2026년 10월 수산물위원회 월간 발표와 44주차 SSB 통계만 비교한다. 월간과 주간 수치를 직접 합산하지 않았고, 한국 수입단가나 기업별 손익은 분석 대상이 아니다.',
+      'headline':'노르웨이 연어 수출 역대 최대…공급 늘었지만 달러 가격은 유지',
+      'thesis':'노르웨이 연어 수출량이 늘었지만 달러로 환산한 가격은 지난해와 비슷하다. 유럽의 판매 증가가 수출 확대에 기여했고, 연말에는 계절적 수요에 따라 가격이 완만하게 반등할 것으로 예상된다.',
+      'lead':'10월 노르웨이 연어 수출액은 사상 최대였다. 44주차 수출물량도 지난해보다 크게 늘었지만 달러 기준 가격은 거의 변하지 않았다.',
+      'facts':[{'text':'노르웨이 수산물위원회에 따르면 2026년 10월 연어 수출량은 159,810톤으로 전년 동월보다 9% 증가했다.','refs':['nsc-public-sample']},
+               {'text':'SSB 2026년 44주차 신선·냉장 연어 수출물량은 28,444톤으로 전년보다 14.3% 증가했다. 당시 달러 환산가격 시연값은 약 $8.07/kg이다.','refs':['ssb-public-sample','salmon_export_price']}],
+      'market_change':'10월 연어 수출량은 159,810톤으로 전년보다 9% 늘었다. 44주차 수출물량은 28,444톤으로 14.3% 증가했다. 수출량 증가에 비해 달러로 환산한 가격은 전년 수준을 유지했다.',
+      'mechanism':['유럽에서는 연어 판매가 늘었다. 10월 폴란드향 수출물량은 전년보다 15% 증가했고, 폴란드의 가정 내 소비와 재수출도 확대됐다. 가공·유통 수요뿐 아니라 현지 소비가 함께 증가했다.',
+                   '한편 노르웨이 수출통계에 표시되는 크로네 가격과 달러 환산가격은 서로 다른 방향으로 움직일 수 있다. 이번에는 크로네 기준 가격이 낮아졌지만 달러로 환산한 가격은 전년과 비슷했다.'],
+      'structural_insight':'유럽 시장에서 소비가 늘어나는 동안 노르웨이의 출하량도 확대됐다. 공급이 증가했는데도 달러 기준 가격이 유지된 점은 이번 수출 확대가 판매량에만 의존한 것은 아니라는 점을 보여준다.',
+      'what_changes':'이후 주차 수출물량과 달러 환산가격의 방향, 유럽 주요국의 실제 소비 추이를 관측한다.',
+      'one_sentence':'연어 수출물량은 늘었지만 달러 환산가격은 유지돼, 연말에는 완만한 반등이 예상된다.',
+      'limitations':'시연용 원고. 달러 가격은 기존 화면 예시 환산값으로, 새 실행에서는 Norges Bank 공식 환율이 수집된 경우에만 자동 환산한다.',
       'article_ids':['nsc-public-sample','ssb-public-sample'],'feature_ids':['salmon_export_price'],'policy_ids':[],
-      'confidence':'중간','status':'시연 전용 · 2026년 10월 공개 공식자료 기반 · 자동 생성 결과 아님',
-      'channels':[],'impact':'수출물량 주도형 성장 · 가격 약세 동반',
-      'followup':'월간 연어 수출량과 단가, 국가별 수요·재수출 물량'}
+      'confidence':'중간','status':'과거 공개자료 기반 시연 · 실제 AI 생성 결과 아님',
+      'channels':[],'impact':'유럽 수요 증가 · 달러 기준 가격 유지',
+      'followup':'주간 출하량과 달러 환산 수출가격'}
     # Official annual data illustrated separately from auto-fetched live indicators.
     # These are actual published 2025 figures, NOT mock API observations.
     squid_public_feature={'id':'squid_official_2025_benchmark',
@@ -513,10 +514,10 @@ def demo_data():
        'basis':'연근해 어획은 5년 평균을 밑돈 가운데 원양 생산이 감소했고, 수출물량이 수출액보다 빠르게 늘었다.',
        'revision_trigger':'동일 어종·규격 기준으로 연근해·원양 생산과 주요 수입 물량이 함께 회복되는 경우',
        'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['mof-2025-squid-production','mof-2025-squid-exports']},
-      {'direction':'하락','horizon':'2026년 10월 자료를 본 단기 전망 예시',
-       'judgment':'노르웨이 연어 수출량 확대가 이어지는 상황에서는 평균 수출가격의 빠른 반등보다 당분간 가격 약세가 이어질 가능성에 무게가 실린다.',
-       'basis':'10월 수출물량 증가율이 수출액 증가율을 웃돌았고 44주차 가격도 전년 동기보다 낮았기 때문이다.',
-       'revision_trigger':'수출물량 증가세가 둔화되면서도 주요 수입국의 구매량이 줄지 않는 경우',
+      {'direction':'상승','horizon':'2026년 11~12월 시연 전망',
+       'judgment':'연말 소비가 증가하면서 달러 기준 연어 수출가격은 완만하게 반등할 전망이다. 다만 공급이 많아 상승 폭은 제한될 것으로 예상된다.',
+       'basis':'유럽의 연어 소비와 재수출이 증가했고 주간 수출량은 전년보다 14.3% 많아 공급 여건도 비교적 넉넉하기 때문이다.',
+       'revision_trigger':'주간 출하량이 예상보다 빠르게 감소하거나 유럽 소비가 급격히 둔화되는 경우',
        'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['nsc-public-sample','ssb-public-sample']}
     ]
     for r,outlook in zip((distribution_report,squid_report,report),demo_outlooks):
@@ -524,7 +525,9 @@ def demo_data():
         r['status']='과거 공개자료를 사용한 문체·전망 형식 시연 · 실제 예측 결과 아님'
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2]+distribution_articles+squid_articles,'features':[squid_public_feature,f],
             'deep_reports':[distribution_report,squid_report,report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
-            'research_sources':[],'report_factual_brief':False,'report_archived':False,'last_report_updated_at':datetime(2026,11,5,10,39,tzinfo=KST).isoformat(),
+            'research_sources':[],'report_factual_brief':False,'report_archived':False,
+            'fresh_deep_count':0,'content_state':'demo',
+            'last_report_updated_at':datetime(2026,11,5,10,39,tzinfo=KST).isoformat(),
             'data_reports':[squid_public_report]+([salmon_public_report] if salmon_public_report else []),'data_ai_status':'샘플 전용 — 자동 AI 생성 아님',
             'issue_candidates':[],'analysis_status':'2026년 10월 공식 과거 통계로 만든 시연 · 실시간 자료 아님',
             'sources_ok':0,'sources_total':len(SOURCES),'errors':[],
@@ -600,6 +603,8 @@ def collect():
     previous=load_previous_report()
     articles=keep_recent_archive(dedup(all_articles),previous,now)
     print(f'SEAFOOD feeds: {ok}/{len(SOURCES)} succeeded, {len(articles)} current/archive stories',flush=True)
+    for item in errors:
+        print('SEAFOOD RSS FAILED:',item[:180],flush=True)
     # Keep macro-market commentary only when it actually mentions seafood or
     # food distribution; a stock-market/FX table is not a seafood headline.
     def market_news(a):
@@ -612,6 +617,8 @@ def collect():
     articles=[a for a in articles if market_news(a)]
     features,metric_errors=make_features(now)
     print(f'SEAFOOD official series: {len(features)} items; diagnostics: {len(metric_errors)}',flush=True)
+    for item in metric_errors:
+        print('SEAFOOD API:',str(item)[:220],flush=True)
     connect_evidence(features,articles)
     previous_headlines=[r.get('headline','') for r in (previous or {}).get('reports',[])]
     # Research comes BEFORE final topic selection. Keyword-matched RSS headlines
@@ -653,14 +660,18 @@ def collect():
             # current verified data without a fabricated "fresh" analysis.
             deep_status='이번 실행에서 새 심층 분석을 검증하지 못했습니다.'
     print(f'SEAFOOD publish: {len(reports)} report(s), {len(data_reports)} data analyses, archive={archive}',flush=True)
+    fresh_count=0 if archive or factual_brief else len(reports)
+    content_state='archive' if archive else ('factual_brief' if factual_brief else ('fresh_research' if fresh_count else 'no_report'))
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':articles,'features':features,
             'issue_candidates':[],'focus_topics':focus_topics,'deep_reports':reports,'deep_status':deep_status,
             'research_sources':search_sources,'archived_features':old['features'] if archive and 'old' in locals() and old else [],
             'report_archived':archive,'report_factual_brief':factual_brief,
+            'fresh_deep_count':fresh_count,'content_state':content_state,
             'last_report_updated_at':last_report_updated_at,
             'data_reports':data_reports,'data_ai_status':data_status,
             'analysis_status':f'실제 공식 관측 {len(features)}종 · SSB/ECOS 및 연결된 국내 공공통계 기준',
             'sources_ok':ok,'sources_total':len(SOURCES),'errors':errors,
+            'research_status':research_status,
             'metric_errors':metric_errors,'demo':False,'policy_sources':[], 'deep_links':DEEP_LINKS}
 
 
