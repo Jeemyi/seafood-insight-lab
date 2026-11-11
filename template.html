@@ -334,20 +334,25 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
 .report-filters{display:none}
 @media(max-width:760px){.market-headline-cards{display:flex;overflow-x:auto;gap:8px}.market-topic-card{min-width:215px;max-width:265px;min-height:115px}.deep-report,.deep-report.primary,.deep-report.case{padding:16px 14px!important}}
 
+/* v5.14: Section title is part of the page canvas, not an isolated white card. */
+.daily-brief,.daily-brief#dailyBrief{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.daily-brief::before,.daily-brief::after{box-shadow:none!important;background:transparent!important}
+.brief-main{background:transparent}.brief-meta{background:transparent}
+@media(max-width:760px){.daily-brief,.daily-brief#dailyBrief{padding:13px 0 10px!important}}
 </style>
 </head>
 <body>
 <header><div class="shell topline"><div class="brand"><span class="brand-symbol">S/</span>SEAFOOD INSIGHT LAB <span class="header-label">수산·유통 시장 리서치</span></div><div class="top-meta"><span><span class="dot" id="statusDot"></span><span id="headerStatus">뉴스 데이터 확인 중</span></span><span id="headerDate"></span></div></div></header>
 <main class="shell page-shell">
-  <nav class="brief-nav" aria-label="주요 메뉴"><a href="#dailyBrief">시장 요약</a><a href="#deep-heading">심층 분석</a><a href="#insight-heading">데이터 분석</a><a href="#featured-heading">주요 뉴스</a><a href="#allNews">기사 검색</a></nav>
+  <nav class="brief-nav" aria-label="주요 메뉴"><a href="#allNews">기사 검색</a><a href="#featured-heading">주요 뉴스</a><a href="#dailyBrief">시장 요약</a><a href="#deep-heading">AI 분석</a><a href="#insight-heading">공식 데이터</a></nav>
   <section class="daily-brief" id="dailyBrief" aria-labelledby="brief-heading">
     <div class="brief-meta"><span class="brief-kicker">MARKET INTELLIGENCE / DAILY RESEARCH</span><span id="updateInfo">자료 갱신 확인 중</span></div>
-    <div class="brief-layout"><div class="brief-main"><h1 id="brief-heading">주요 이슈와 시장 전망</h1><p class="brief-lead" id="briefLead">확인된 시장 변화와 출처를 불러오고 있습니다.</p><div class="brief-actions" id="briefActions"><a href="#deep-heading">핵심 분석 보기</a><a href="#allNews">기사 살펴보기</a></div></div><aside class="brief-facts" aria-label="브리핑 근거"><div class="brief-fact-head">KEY EVIDENCE / 핵심 근거</div><div id="briefFacts">수집된 뉴스와 통계를 확인하고 있습니다.</div><div id="briefCounts" class="brief-counts"></div></aside></div>
+    <div class="brief-layout"><div class="brief-main"><h1 id="brief-heading">주요 이슈와 시장 전망</h1><p class="brief-lead" id="briefLead">확인된 시장 변화와 출처를 불러오고 있습니다.</p><div class="brief-actions" id="briefActions"><a href="#allNews">실제 기사 모아보기</a><a href="#deep-heading">AI 시장 분석 보기</a></div></div><aside class="brief-facts" aria-label="브리핑 근거"><div class="brief-fact-head">KEY EVIDENCE / 핵심 근거</div><div id="briefFacts">수집된 뉴스와 통계를 확인하고 있습니다.</div><div id="briefCounts" class="brief-counts"></div></aside></div>
   </section>
   <div class="research-workspace">
   <aside id="researchToc" class="research-toc" aria-label="오늘의 목차">
     <div class="toc-heading">오늘의 목차</div>
-    <div id="reportToc" class="toc-links"><a href="#deep-heading">01　심층 분석</a><a href="#insight-heading">02　시장 데이터</a></div>
+    <div id="reportToc" class="toc-links"><a href="#deep-heading">01　주요 분석</a><a href="#insight-heading">02　시장 데이터</a></div>
     <p class="toc-help">분석 제목을 누르면 해당 보고서가 열립니다.</p>
   </aside>
   <div class="research-main">
@@ -364,7 +369,7 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   <div id="warning"></div>
   <section class="deep-section" aria-labelledby="deep-heading">
     <div class="insight-section-top"><div><div class="insight-overline">01 / 시장 분석</div>
-    <h2 id="deep-heading">심층 분석</h2>
+    <h2 id="deep-heading">주요 분석</h2>
     <p class="deep-desc">공개된 보도와 통계에서 확인한 변화와 시장 전망</p></div>
     <span class="insight-count" id="deepCount">0편</span></div>
     <div class="insight-status" id="deepStatus"></div><div class="deep-deck" id="deepDeck" aria-live="polite"></div>
@@ -457,7 +462,7 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   const mainForecast=outlook&&outlook.direction!=='전망 제외'&&outlook.judgment?
     `<div class="compact-conclusion"><span>시장 전망 · ${esc(outlook.horizon)}</span><p><strong>${esc(outlook.judgment)}</strong></p>${outlook.basis?`<p>${esc(outlook.basis)}</p>`:''}${outlook.numeric_estimate?`<p class="forecast-figure">검증된 모형 추정 · ${esc(outlook.numeric_estimate)}</p>`:''}</div>`:'';
   const sourceHtml=(articlesList+metricLinks+policyLinks)||'<span>연결된 공개 원문이 없습니다.</span>';
-  const publishedLabel=r.archived_source?'지난 분석 · 최초 작성 '+String(r.published_at||data.last_report_updated_at||'').slice(0,10):data.report_factual_brief?'공개자료 요약':data.demo?'시연용 분석':'새 심층 분석';
+  const publishedLabel=r.archived_source?'지난 분석 · 최초 작성 '+String(r.published_at||data.last_report_updated_at||'').slice(0,10):data.report_factual_brief?'공개자료 요약':data.demo?'시연용 분석':'새 '+(r.report_type||'심층 시장 분석');
   return `<article id="research-story-${idx+1}" class="deep-report ${idx===0?'primary':''}" data-report-index="${idx}" data-report-kind="${reportMarket(r)}">
     <div class="deep-cover"><div class="deep-top">${String(idx+1).padStart(2,'0')} / ${esc(r.kind)} <span class="publish-badge">${esc(publishedLabel)}</span></div>
       <h3>${esc(r.headline)}</h3><p class="compact-thesis">${esc(r.thesis)}</p><div class="deep-case-caption">${esc(r.time_frame||'')} · ${esc(r.status||'공개자료 기반')}</div></div>
@@ -500,11 +505,11 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   const ai=r?`<div class="data-report-cover"><div class="mini-label">시장 분석 요약</div><p>${esc(r.conclusion)}</p></div>
     <details class="data-expand"><summary>분석과 근거 읽기</summary><div class="data-research-body">
     <section><h4>관측된 변화와 배경</h4><p>${esc(r.market_observation)}</p>${(r.transmission||[]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</section>
-    <section><h4>시장에 미치는 영향</h4><p><strong>${esc(r.structural_insight)}</strong></p></section>
-    <section><h4>시장 전망</h4>${r.outlook?`<div class="outlook-kicker">${esc(r.outlook.horizon)} · ${esc(r.outlook.direction)}</div><p><strong>${esc(r.outlook.judgment)}</strong></p><p>${esc(r.outlook.basis)}</p>`:`<p>${esc(r.scenario_support||'')}</p><p>${esc(r.investor_meaning||'')}</p>`}</section>
+    ${r.structural_insight?`<section><h4>시장에 미치는 영향</h4><p><strong>${esc(r.structural_insight)}</strong></p></section>`:''}
+    ${r.outlook&&r.outlook.direction!=='전망 제외'&&r.outlook.judgment?`<section><h4>시장 전망</h4><div class="outlook-kicker">${esc(r.outlook.horizon)} · ${esc(r.outlook.direction)}</div><p><strong>${esc(r.outlook.judgment)}</strong></p>${r.outlook.basis?`<p>${esc(r.outlook.basis)}</p>`:''}</section>`:''}
     <details class="compact-sources"><summary>통계 범위</summary><p class="limits">${esc(r.limits)}</p></details>
     </div></details>`:'';
-  const cross=(ins.related_observations||[]).map(x=>`<div class="cross-row"><b>${esc(x.name)}</b><p>${esc(x.observed)}</p><small>${esc(x.period_end)} · 기준기간과 규격이 다른 자료는 직접 합산하지 않습니다.</small></div>`).join('');
+  const cross=(ins.related_observations||[]).map(x=>`<div class="cross-row"><b>${esc(x.name)}</b><p>${esc(x.observed)}</p><small>${esc(x.period_end)}</small></div>`).join('');
   return `<article class="insight-card data-story-card"><div class="insight-main"><div class="insight-brow"><span class="insight-tag">${String(idx+1).padStart(2,'0')} · ${esc(ins.name)}</span><span class="insight-level">${r?'비교 분석':'공식 통계'} · ${esc(ins.period_end)}</span></div>
     <h3>${esc(title)}</h3><div class="impact-strip"><span class="effect-tag">분야 · ${esc(ins.category||ins.name)}</span><span class="effect-tag">${esc(ins.impact||'공식 시계열 관측')}</span></div><div class="fact-row">${nums}</div>
     <div class="insight-highlight"><span class="mini-label">공식 통계</span><p class="evidence-statement">${esc(ins.observed)}</p></div>${ai}
@@ -520,8 +525,8 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   $('#deepCount').textContent=`${reports.length}편 · 신규 ${data.fresh_deep_count??0}편`;
   // All cards represent actually published topics; no fixed sample species.
   $('#marketHeadlineCards').innerHTML=reports.map((r,i)=>
-    `<button type="button" data-report-choice="${i}" aria-pressed="${i===0}" class="market-topic-card ready ${i===0?'selected':''}"><span class="market-topic-label">${String(i+1).padStart(2,'0')} · ${esc(r.market_label||r.kind||'시장 분석')} <em>${r.archived_source?'지난 분석':'새 분석'}</em></span><strong>${esc(r.headline)}</strong><small>${esc((r.one_sentence||r.thesis||'').slice(0,96))}</small></button>`).join('')||
-    '<div class="deep-notice">이번 실행에서 검증된 신규 심층 보고서가 없습니다. 아래의 공식 자료와 뉴스를 확인할 수 있습니다.</div>';
+    `<button type="button" data-report-choice="${i}" aria-pressed="${i===0}" class="market-topic-card ready ${i===0?'selected':''}"><span class="market-topic-label">${String(i+1).padStart(2,'0')} · ${esc(r.market_label||r.kind||'시장 분석')} <em>${r.archived_source?'지난 분석':esc(r.report_type||'새 분석')}</em></span><strong>${esc(r.headline)}</strong><small>${esc((r.one_sentence||r.thesis||'').slice(0,96))}</small></button>`).join('')||
+    '<div class="deep-notice">이번 실행에서 검증된 신규 시장 분석이 없습니다. 아래의 공식 자료와 뉴스를 확인할 수 있습니다.</div>';
   $('#reportToc').innerHTML=reports.map((r,i)=>
       `<a href="#research-story-${i+1}" data-report-choice="${i}"><b>${String(i+1).padStart(2,'0')}</b><span>${esc(r.headline)}</span></a>`).join('')+
       `<a href="#insight-heading"><b>${String(reports.length+1).padStart(2,'0')}</b><span>공식 데이터</span></a><a href="#allNews"><b>${String(reports.length+2).padStart(2,'0')}</b><span>전체 기사</span></a>`;
@@ -556,7 +561,8 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   $('#headerStatus').textContent=data.demo?'데모 미리보기':(articles.length?'뉴스 수집 완료':'수집 확인 필요');
   $('#statusDot').style.background=data.demo?'#df9a49':(articles.length?'#269d7f':'#db7c6b');
   $('#updateInfo').textContent=data.demo?'샘플 미리보기 · 실시간 자료 아님':`마지막 업데이트 ${fmtDate(data.generated_at)}`;
-  $('#feedHealth').textContent=data.demo?'':`RSS 응답 ${data.sources_ok}/${data.sources_total} · 응답이 없던 출처의 뉴스는 포함되지 않았습니다. 최근 14일 기록은 원래 발행일을 보존합니다.`;
+  const nc=data.news_collection||{};
+  $('#feedHealth').textContent=data.demo?'':`RSS 응답 ${data.sources_ok}/${data.sources_total} · 이번 실행에서 확인한 기사 ${nc.seen_this_run??'확인 중'}건 · 이전 기록 재사용 ${nc.archive_retained??'확인 중'}건 · Google 뉴스 RSS ${nc.google_ok??0}/${nc.google_total??30} · 기사 본문이 아닌 RSS 제목·소개문·원문 링크를 수집합니다.`;
   const banner=$('#warning');
   $('#demoTopics').hidden=true; // Avoid redundant demonstration cards on compact pages.
   if(data.demo) banner.innerHTML='<div class="demo-warning"><strong>화면 체험용 데모입니다.</strong> 뉴스 목록은 공개된 과거 공식자료를 바탕으로 재구성한 시연용 항목이며, 숫자는 과거 관측치입니다. <code>python build.py</code> 실행 시 최신 RSS 기사와 공식 수산·환율 지표로 교체됩니다.</div>';

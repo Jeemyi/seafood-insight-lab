@@ -16,6 +16,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
+from threading import Lock
+from time import monotonic, sleep
 from urllib.parse import quote, urlparse
 from xml.etree import ElementTree as ET
 
@@ -85,6 +87,30 @@ SEARCH_QUERIES=[
 ]
 
 NEWS_LOOKBACK_DAYS=30
+
+# The 30 Google News feeds share one provider. Pace requests to avoid an
+# accidental 7-request burst, while retaining parallelism for other feeds.
+_GOOGLE_LOCK=Lock()
+_GOOGLE_NEXT_AT=0.0
+_GOOGLE_UNAVAILABLE_COUNT=0
+_GOOGLE_MIN_INTERVAL=0.85
+
+def _pace_google_request():
+    global _GOOGLE_NEXT_AT
+    with _GOOGLE_LOCK:
+        wait=max(0.0,_GOOGLE_NEXT_AT-monotonic())
+        if wait:sleep(wait)
+        _GOOGLE_NEXT_AT=monotonic()+_GOOGLE_MIN_INTERVAL
+
+def _google_unavailable():
+    with _GOOGLE_LOCK:
+        return _GOOGLE_UNAVAILABLE_COUNT>=3
+
+def _record_google_result(success=False,status=None):
+    global _GOOGLE_UNAVAILABLE_COUNT
+    with _GOOGLE_LOCK:
+        if success:_GOOGLE_UNAVAILABLE_COUNT=0
+        elif status in (403,429):_GOOGLE_UNAVAILABLE_COUNT+=1
 
 def google_feed(q,lookback_days=NEWS_LOOKBACK_DAYS):
     # Google News supports OR. The period concerns collection, not an article's
@@ -159,20 +185,39 @@ def parse_feed(content):
 
 def fetch_feed(src):
     label,url,kind,category=src
-    try:
-        r=requests.get(url,timeout=(7,18),headers=HEADERS)
-        r.raise_for_status()
-        items=parse_feed(r.content)
-        if not items:
-            content_type=str(r.headers.get('Content-Type',''))[:70]
-            root_tag='unknown'
-            try:root_tag=ET.fromstring(r.content).tag.rsplit('}',1)[-1]
-            except ET.ParseError:pass
-            return src,[],f'{label}: empty RSS (status={r.status_code}, type={content_type}, root={root_tag})'
-        return src,items[:65],None
-    except Exception as e:
-        # Never put full URLs or API keys in logs.
-        return src,[],f'{label}: {type(e).__name__}: {str(e)[:90] if isinstance(e, (ValueError, ET.ParseError)) else "request failed"}' 
+    is_google=urlparse(url).netloc.lower()=='news.google.com'
+    if is_google and _google_unavailable():
+        return src,[],f'{label}: Google News temporary access failure (3 HTTP 403/429 responses; remaining queries skipped)'
+    for attempt in range(2):
+        try:
+            if is_google:
+                if _google_unavailable():
+                    return src,[],f'{label}: Google News temporary access failure (provider circuit open)'
+                _pace_google_request()
+            r=requests.get(url,timeout=(7,18),headers=HEADERS)
+            r.raise_for_status()
+            if is_google:_record_google_result(success=True)
+            items=parse_feed(r.content)
+            if not items:
+                content_type=str(r.headers.get('Content-Type',''))[:70]
+                root_tag='unknown'
+                try:root_tag=ET.fromstring(r.content).tag.rsplit('}',1)[-1]
+                except ET.ParseError:pass
+                return src,[],f'{label}: empty RSS (status={r.status_code}, type={content_type}, root={root_tag})'
+            return src,items[:65],None
+        except requests.HTTPError as exc:
+            # Do not emit request URLs (which can contain private parameters).
+            status=exc.response.status_code if exc.response is not None else None
+            if attempt==0 and status in (429,500,502,503,504):
+                sleep(1.2)
+                continue
+            if is_google:_record_google_result(status=status)
+            return src,[],f'{label}: HTTP {status if status is not None else "unknown"} ({"Google News" if is_google else "publisher RSS"})'
+        except requests.RequestException as exc:
+            return src,[],f'{label}: {type(exc).__name__} (request/network failure)'
+        except (ValueError,ET.ParseError) as exc:
+            return src,[],f'{label}: {type(exc).__name__}: {str(exc)[:90]}'
+    return src,[],f'{label}: request exhausted'
 
 
 def classify(title,desc,forced=None):
@@ -636,7 +681,7 @@ def make_factual_brief(articles, features, now, focus_topics=None):
 def collect():
     now=datetime.now(KST)
     all_articles=[];errors=[];ok=0;feed_stats=[]
-    with ThreadPoolExecutor(max_workers=7) as pool:
+    with ThreadPoolExecutor(max_workers=4) as pool:
         futures=[pool.submit(fetch_feed,s) for s in SOURCES]
         for future in as_completed(futures):
             src,entries,err=future.result()
@@ -648,10 +693,22 @@ def collect():
                 all_articles.extend(accepted)
                 feed_stats.append((src[0],diagnostic))
     previous=load_previous_report()
-    articles=keep_recent_archive(dedup(all_articles),previous,now)
+    observed_this_run=dedup(all_articles)
+    articles=keep_recent_archive(observed_this_run,previous,now)
+    observed_urls={item['url'] for item in observed_this_run}
+    archive_retained=sum(item['url'] not in observed_urls for item in articles)
+    google_ok=sum(label.startswith('Google 뉴스') for label,_ in feed_stats)
+    google_total=sum(urlparse(src[1]).netloc.lower()=='news.google.com' for src in SOURCES)
+    news_collection={'seen_this_run':len(observed_this_run),'archive_retained':archive_retained,
+                     'google_ok':google_ok,'google_total':google_total,
+                     'publisher_ok':ok-google_ok,'publisher_total':len(SOURCES)-google_total}
     fresh_news=sum((now-datetime.fromisoformat(x['published'])).days<=7 for x in articles)
     print(f'SEAFOOD feeds: {ok}/{len(SOURCES)} succeeded, '
           f'{len(articles)} dated stories (last 7d={fresh_news}; max lookback={NEWS_LOOKBACK_DAYS}d)',flush=True)
+    print('SEAFOOD RSS CURRENT RUN: observed='+str(news_collection['seen_this_run'])+
+          ' archive_reused='+str(archive_retained)+
+          ' GoogleNews='+str(google_ok)+'/'+str(google_total)+
+          ' publisher='+str(news_collection['publisher_ok'])+'/'+str(news_collection['publisher_total']),flush=True)
     for item in errors:
         print('SEAFOOD RSS FAILED:',item[:200],flush=True)
     for label,stat in sorted(feed_stats):
@@ -789,6 +846,7 @@ def collect():
             'data_reports':data_reports,'data_ai_status':data_status,
             'analysis_status':f'실제 공식 관측 {len(features)}종 · SSB/ECOS 및 연결된 국내 공공통계 기준',
             'sources_ok':ok,'sources_total':len(SOURCES),'errors':errors,
+            'news_collection':news_collection,
             'research_status':research_status,
             'research_coverage':{'discovery_citations':len(discovered),
                                  'focused_citations':len(targeted),
