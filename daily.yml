@@ -1,0 +1,94 @@
+name: Daily SEAFOOD INSIGHT LAB
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 06:00 Asia/Seoul once per day (21:00 UTC previous day)
+    - cron: '0 21 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: seafood-insight-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out saved source archive
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify API configuration (without exposing keys)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+          MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
+          MOF_STATS_API_KEY: ${{ secrets.MOF_STATS_API_KEY }}
+          MOF_STATS_TABLE_URLS: ${{ secrets.MOF_STATS_TABLE_URLS }}
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+          KOSIS_TABLE_URLS: ${{ secrets.KOSIS_TABLE_URLS }}
+          KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
+          KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
+        run: |
+          python - <<'PYTHON'
+          import os
+          for name in ('OPENAI_API_KEY','ECOS_API_KEY','MOF_API_KEY','MOF_STATS_API_KEY','MOF_STATS_TABLE_URLS','KOSIS_API_KEY','KOSIS_TABLE_URLS','KAMIS_API_KEY','KAMIS_API_ID'):
+              print(f'{name}: {"configured" if os.getenv(name) else "not configured"}',flush=True)
+          PYTHON
+      - name: Collect articles, research, write and verify reports
+        env:
+          PYTHONUNBUFFERED: '1'
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-6.1-sol
+          OPENAI_RESEARCH_MODEL: gpt-6.1-sol
+          OPENAI_REASONING_EFFORT: high
+          SEAFOOD_EDITORIAL_PLAN: '1'
+          SEAFOOD_WEB_RESEARCH: '1'
+          SEAFOOD_RESEARCH_ROUNDS: '2'
+          SEAFOOD_DRAFT_CALL_LIMIT: '6'
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+          MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
+          MOF_STATS_API_KEY: ${{ secrets.MOF_STATS_API_KEY }}
+          MOF_STATS_TABLE_URLS: ${{ secrets.MOF_STATS_TABLE_URLS }}
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+          KOSIS_TABLE_URLS: ${{ secrets.KOSIS_TABLE_URLS }}
+          KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
+          KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
+        run: python -u build.py
+      - name: Check content quality and show data coverage
+        run: python health_check.py
+      - name: Save source archive for the next run
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update seafood reading archive [skip ci]"
+            git push
+          fi
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4

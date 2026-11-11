@@ -76,6 +76,12 @@ SEARCH_QUERIES=[
  ('해외','일본 수산물 수출',True),
  ('해외','미국 수산물 관세',True),
  ('해외','한국 수산물 수출',True),
+ # New official releases can be weeks/months ahead of the legacy MOF tables.
+ # They are research leads only; claimed quantities still need verified sources.
+ ('원물 수급/시세','site:mods.go.kr 어업생산동향조사',True),
+ ('원물 수급/시세','site:foc.re.kr 수산업관측 생산량 가격',True),
+ ('원물 수급/시세','site:kmi.re.kr 수산관측 주요 품목',True),
+ ('해외','site:mof.go.kr 수산물 수출입 실적',True),
 ]
 
 NEWS_LOOKBACK_DAYS=30

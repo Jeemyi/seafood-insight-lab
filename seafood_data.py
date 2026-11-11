@@ -346,8 +346,17 @@ def make_features(now):
     extra,public_errors=make_public_features(now)
     features.extend(extra)
     errors.extend(public_errors)
-    # Keep some FX/salmon context, but prioritize species-specific production/trade
-    # and surveyed consumer prices over three generic macro cards.
-    features.sort(key=lambda x:(x.get('significance',0),
-                 4 if x.get('series_type') in ('trade','kamis','mof_stats') else 0),reverse=True)
+    # Observation-year freshness is not a headline publication date. Older MOF
+    # tables are still available as context but do not displace 2025/2026 data.
+    from seafood_freshness import label_features
+    features=label_features(features,now)
+    for type_name in ('mof_stats','kosis_stats','enara_fisheries'):
+        same=[x for x in features if x.get('series_type')==type_name]
+        if same:
+            print(f'SEAFOOD STAT FRESHNESS {type_name}: current={sum(x.get("data_freshness")=="current" for x in same)} historical={sum(x.get("data_freshness")=="historical" for x in same)}',flush=True)
+    # Recent observed series lead. No generic FX or historical total is made
+    # a primary 2026 seafood market signal merely by its large percentage.
+    features.sort(key=lambda x:(x.get('role') not in ('context','historical_context'),
+                 x.get('significance',0),
+                 4 if x.get('series_type') in ('trade','kamis','kosis_stats','enara_fisheries') else 0),reverse=True)
     return features,errors

@@ -297,19 +297,23 @@ def _kamis_day(value, as_of):
     from datetime import datetime
     raw=str(value or '').strip()
     if not raw:return None
-    # KAMIS can append a weekday, e.g. '2026.11.04(수)', or a clock time.
-    raw=re.sub(r'\([^)]*\)','',raw)
+    # API 'day1' is often '당일 (11/04)'. Its parentheses contain the real
+    # SURVEY date, not disposable commentary. Keep them before removing weekday.
+    survey=re.search(r'\b(?:당일|전일|전주|전월)?\s*\(\s*(\d{1,4}[/.-]\d{1,2}(?:[/.-]\d{1,2})?)\s*\)',raw)
+    if survey:raw=survey.group(1)
+    else:raw=re.sub(r'\([^)]*\)','',raw)
     cleaned=(raw.replace('년','-').replace('월','-').replace('일','')
              .replace('/','-').replace('.','-').replace(' ','').strip('-'))
     cleaned=re.sub(r'[^0-9:-].*$','',cleaned).strip('-')
     for pattern in ('%Y-%m-%d','%Y-%m-%d-%H:%M:%S','%y-%m-%d'):
         try:return datetime.strptime(cleaned,pattern).date()
         except ValueError:pass
-    for pattern in ('%m-%d',):
+    short=re.fullmatch(r'(\d{1,2})-(\d{1,2})',cleaned)
+    if short:
         try:
-            partial=datetime.strptime(cleaned,pattern)
-            candidate=date(as_of.year,partial.month,partial.day)
-            if candidate>as_of+timedelta(days=2):candidate=date(as_of.year-1,partial.month,partial.day)
+            month,day=int(short.group(1)),int(short.group(2))
+            candidate=date(as_of.year,month,day)
+            if candidate>as_of+timedelta(days=2):candidate=date(as_of.year-1,month,day)
             return candidate
         except ValueError:pass
     return None
@@ -457,14 +461,23 @@ def fetch_kamis_features(as_of=None):
 def make_public_features(now):
     """Independent sources; one failed API does not suppress the other datasets."""
     from seafood_mof_statistics import fetch_statistics_features
-    with ThreadPoolExecutor(max_workers=3) as pool:
+    from seafood_kosis import fetch_kosis_features
+    from seafood_recent_official import fetch_national_fisheries_features
+    with ThreadPoolExecutor(max_workers=5) as pool:
         task_mof=pool.submit(fetch_mof_features,now.date())
         task_kamis=pool.submit(fetch_kamis_features,now.date())
         task_stats=pool.submit(fetch_statistics_features)
+        task_kosis=pool.submit(fetch_kosis_features)
+        task_national=pool.submit(fetch_national_fisheries_features,today=now.date())
         try:trade,trade_errors=task_mof.result()
         except Exception as exc:trade,trade_errors=[],['MOF: '+type(exc).__name__]
         try:prices,price_errors=task_kamis.result()
         except Exception as exc:prices,price_errors=[],['KAMIS: '+type(exc).__name__]
         try:statistics,stats_errors=task_stats.result()
         except Exception as exc:statistics,stats_errors=[],['MOF statistics: '+type(exc).__name__]
-    return trade+prices+statistics,trade_errors+price_errors+stats_errors
+        try:kosis,kosis_errors=task_kosis.result()
+        except Exception as exc:kosis,kosis_errors=[],['KOSIS: '+type(exc).__name__]
+        try:national,national_errors=task_national.result()
+        except Exception as exc:national,national_errors=[],['e-Nara: '+type(exc).__name__]
+    return (trade+prices+statistics+kosis+national,
+            trade_errors+price_errors+stats_errors+kosis_errors+national_errors)

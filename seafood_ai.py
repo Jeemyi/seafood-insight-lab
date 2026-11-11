@@ -585,10 +585,13 @@ def _main_context(articles,features,now,issues,focus_topics=None):
            'category':a['category'],'snippet':a.get('summary','')[:850],
            'official':bool(a.get('official')),'url':a.get('url',''),
            'channels':a.get('channels',[]),'impact':'관측 보도'} for a in pool]
-    prioritized_features=sorted(features,key=lambda f:(f.get('role')!='context' and not str(f.get('id','')).startswith('fx_'), f.get('significance',0)),reverse=True)
+    prioritized_features=sorted(features,key=lambda f:(f.get('role') not in ('context','historical_context'),
+                              f.get('significance',0)),reverse=True)
     series=[{'id':f['id'],'name':f['name'],'period_start':f['period_start'],'period_end':f['period_end'],
              'observed':f['observed'],'facts':f['facts'],'data_links':f.get('data_links',[]),
-             'limits':f['limitations'],'related_observations':f.get('related_observations',[])} for f in prioritized_features[:20]]
+             'limits':f['limitations'],'related_observations':f.get('related_observations',[]),
+             'data_freshness':f.get('data_freshness','unknown'),
+             'historical_context':f.get('role')=='historical_context'} for f in prioritized_features[:20]]
     depth=evidence_profiles((focus_topics or []),pool,prioritized_features,maximum=5)
     return {'now_kst':now.isoformat(),'articles':rows,'official_series':series,'evidence_depth_profiles':depth,
             'topic_candidates':(focus_topics or [{'theme':i['theme'],'article_ids':i['article_ids']} for i in issues[:5]])[:5],
@@ -755,6 +758,10 @@ def _validate_main(payload,ctx,diagnostics=None):
             if not facts:
                 reasons.append('검증 가능한 출처 연결 사실 없음');continue
             cited={ref for fact in facts for ref in fact['refs']}
+            # Historical official tables remain valid background evidence,
+            # but cannot alone substantiate a newly published market change.
+            if cited and all(evidence_by_id[sid].get('historical_context') for sid in cited):
+                reasons.append('현재 시장 근거 없이 과거 통계만 인용');continue
             report_type,audit=evidence_class(r,facts,evidence_by_id)
             if not report_type:
                 reasons.append('심층·산업 이슈·데이터 브리핑 중 어느 유형에도 근거 미달');continue
@@ -1042,7 +1049,7 @@ def _data_context(features,articles,main_reports,now):
     # A genuine commodity dataset must have a relevant second source/observation.
     eligible=[]
     for f in features:
-        if f.get('role')=='context' or f.get('id','').startswith('fx_'):
+        if f.get('role') in ('context','historical_context') or f.get('id','').startswith('fx_'):
             continue
         linked=[a for a in articles if a.get('id') in set(f.get('article_ids',[]))]
         nontrivial=[a for a in linked if len(a.get('summary',''))>=55 and
