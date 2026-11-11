@@ -10,6 +10,7 @@ import calendar
 import hashlib
 import html
 import json
+import os
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
@@ -44,29 +45,47 @@ CATEGORIES=[
 CATS={x[0]:{'terms':x[1],'boost':x[2],'question':x[3]} for x in CATEGORIES}
 SEAFOOD_HINTS=['수산','해산','어업','어획','어류','양식','수산물','활어','회','광어','우럭','연어','새우','오징어','꽃게','방어','건어물','식품','유통','급식','마트','코스트코','쿠팡','컬리','물류','환율','냉장','냉동','포장재','수입','수출','안전','위생']
 
+# Broad topic queries rather than long AND keyword strings. Date relevance is
+# assessed separately so a single Google RSS search does not overconstrain recall.
 SEARCH_QUERIES=[
- ('원물 수급/시세','광어 우럭 산지가 출하 양성물량 수산업관측 KMI',True),
- ('원물 수급/시세','국산 오징어 어획 원양산 페루 대왕오징어 수입량 수입단가',True),
- ('원물 수급/시세','광어 우럭 꽃게 고등어 위판 가격 2026 수급',True),
- ('원물 수급/시세','수산물 산지가 출하량 고수온 양식 피해',True),
- ('코스트코','코스트코 수산물 납품 공급사 PB 출점 가격',True),
- ('대형마트/SSM','홈플러스 점포 폐점 매각 이마트 롯데마트 SSM 신선식품 매출',True),
- ('대형마트/SSM','대형마트 수산식품 회초밥 코너 즉석조리 HMR 점포',True),
- ('매장 운영','수산코너 유통매장 영업신고 식품위생 인건비',True),
- ('온라인','쿠팡 컬리 SSG 수산물 수수료 유통',True),
- ('B2B/급식','군 급식 식자재 수산물 조달 편의점',True),
- ('식품안전/소비심리','수산물 비브리오 원산지 식품안전 검역',True),
- ('시즌/트렌드','수산물 회초밥 밀키트 필렛 냉동 간편식 신상품 경쟁',True),
- ('시즌/트렌드','대방어 과메기 제철 수산물 소비 트렌드',True),
- ('비용/거시','수입 연어 환율 물류비 냉동 수산물',True),
- ('해외','한국 수산물 일본 미국 수출 증가 물량 평균단가 규제',True),
- ('해외','수산물 일본 스시 체인 미국 수출 관세',True),
+ # Independent, short searches. Do not combine many unrelated words with OR:
+ # Google News may return no RSS items for such compound queries.
+ ('원물 수급/시세','수산물 가격',True),
+ ('원물 수급/시세','오징어 어획',True),
+ ('원물 수급/시세','광어 산지가',True),
+ ('원물 수급/시세','고등어 어획량',True),
+ ('원물 수급/시세','연어 수입',True),
+ ('원물 수급/시세','수산물 양식',True),
+ ('원물 수급/시세','수산물 수입량',True),
+ ('코스트코','코스트코 식품',True),
+ ('대형마트/SSM','홈플러스 납품',True),
+ ('대형마트/SSM','대형마트 신선식품',True),
+ ('대형마트/SSM','이마트 트레이더스',True),
+ ('매장 운영','수산물 매장',True),
+ ('온라인','온라인 수산물',True),
+ ('온라인','신선식품 배송',True),
+ ('B2B/급식','급식 수산물',True),
+ ('B2B/급식','식자재 유통',True),
+ ('식품안전/소비심리','수산물 검역',True),
+ ('식품안전/소비심리','수산물 원산지',True),
+ ('시즌/트렌드','제철 수산물',True),
+ ('시즌/트렌드','수산물 소비',True),
+ ('비용/거시','냉동 수산물 운임',True),
+ ('비용/거시','수산물 수입 가격',True),
+ ('해외','노르웨이 연어',True),
+ ('해외','일본 수산물 수출',True),
+ ('해외','미국 수산물 관세',True),
+ ('해외','한국 수산물 수출',True),
 ]
 
-def google_feed(q):
-    return 'https://news.google.com/rss/search?q='+quote(q+' when:14d')+'&hl=ko&gl=KR&ceid=KR:ko'
+NEWS_LOOKBACK_DAYS=30
 
-SOURCES=[(f'Google 뉴스 검색·{cat}',google_feed(q),'search',cat) for cat,q,_ in SEARCH_QUERIES] + [
+def google_feed(q,lookback_days=NEWS_LOOKBACK_DAYS):
+    # Google News supports OR. The period concerns collection, not an article's
+    # publication date, and older items are never relabeled as new today.
+    return 'https://news.google.com/rss/search?q='+quote(q+f' when:{lookback_days}d')+'&hl=ko&gl=KR&ceid=KR:ko'
+
+SOURCES=[(f'Google 뉴스 검색·{cat}·{q}',google_feed(q),'search',cat) for cat,q,_ in SEARCH_QUERIES] + [
     ('한국경제·경제','https://www.hankyung.com/feed/economy','news',None),
     ('한국경제·국제','https://www.hankyung.com/feed/international','news',None),
     ('한국경제·증권','https://www.hankyung.com/feed/finance','news',None),
@@ -77,6 +96,8 @@ SOURCES=[(f'Google 뉴스 검색·{cat}',google_feed(q),'search',cat) for cat,q,
     ('뉴시스·경제','https://www.newsis.com/RSS/economy.xml','news',None),
     ('뉴시스·국제','https://www.newsis.com/RSS/international.xml','news',None),
     ('국가데이터처·보도자료','https://mods.go.kr/menu.es?mid=a10301010000&act=rss','news',None),
+    ('KOSIS·주요 월간동향','https://kosis.kr/rss/trend_rss.jsp','news',None),
+    ('KOSIS·최근 수록 통계','https://kosis.kr/rss/themes_rss.jsp','news',None),
 ]
 
 DEEP_LINKS=[
@@ -136,10 +157,16 @@ def fetch_feed(src):
         r=requests.get(url,timeout=(7,18),headers=HEADERS)
         r.raise_for_status()
         items=parse_feed(r.content)
-        if not items:raise ValueError('empty feed')
+        if not items:
+            content_type=str(r.headers.get('Content-Type',''))[:70]
+            root_tag='unknown'
+            try:root_tag=ET.fromstring(r.content).tag.rsplit('}',1)[-1]
+            except ET.ParseError:pass
+            return src,[],f'{label}: empty RSS (status={r.status_code}, type={content_type}, root={root_tag})'
         return src,items[:65],None
     except Exception as e:
-        return src,[],f'{label}: {type(e).__name__}'
+        # Never put full URLs or API keys in logs.
+        return src,[],f'{label}: {type(e).__name__}: {str(e)[:90] if isinstance(e, (ValueError, ET.ParseError)) else "request failed"}' 
 
 
 def classify(title,desc,forced=None):
@@ -208,20 +235,29 @@ def impact_fields(title,cat):
     return channels,label,follow
 
 
-def feed_to_articles(source, entries, now):
+def feed_to_articles(source, entries, now, diagnostics=None):
     label,_,kind,forced=source
     out=[]
+    dropped={'date':0,'link_or_title':0,'topic':0}
     for row in entries:
         title=clean(row.get('title'))
         title,publisher=extract_publisher(title,label)
         url=valid_url(str(row.get('link','')).strip())
         published=stamp(row)
-        if not title or not url or not published:continue
-        if not now-timedelta(days=14)<=published<=now+timedelta(hours=2):continue
+        if not title or not url or not published:
+            dropped['link_or_title']+=1
+            continue
+        if not now-timedelta(days=NEWS_LOOKBACK_DAYS)<=published<=now+timedelta(hours=2):
+            dropped['date']+=1
+            continue
         summary=clean(row.get('summary') or row.get('description'))
         category,tags,score=classify(title,summary,forced)
-        if not category:continue
-        if not any(k in title.lower()+' '+summary[:120].lower() for k in SEAFOOD_HINTS):continue
+        if not category:
+            dropped['topic']+=1
+            continue
+        if not any(k in title.lower()+' '+summary[:120].lower() for k in SEAFOOD_HINTS):
+            dropped['topic']+=1
+            continue
         if len(summary)<44 or 'Google 뉴스' in summary[:25]:
             summary='' if len(summary)<44 else summary
         if (now-published).total_seconds() < 48*3600:score+=2.5
@@ -232,6 +268,8 @@ def feed_to_articles(source, entries, now):
                     'score':score,'summary':summary[:330],'summary_type':'공개 RSS 소개문' if summary else '',
                     'question':CATS[category]['question'],'official':False,
                     'channels':channels, 'impact':impact,'followup':follow})
+    if diagnostics is not None:
+        diagnostics.update(raw=len(entries),accepted=len(out),**dropped)
     return out
 
 
@@ -591,7 +629,7 @@ def make_factual_brief(articles, features, now, focus_topics=None):
 
 def collect():
     now=datetime.now(KST)
-    all_articles=[];errors=[];ok=0
+    all_articles=[];errors=[];ok=0;feed_stats=[]
     with ThreadPoolExecutor(max_workers=7) as pool:
         futures=[pool.submit(fetch_feed,s) for s in SOURCES]
         for future in as_completed(futures):
@@ -599,12 +637,21 @@ def collect():
             if err:errors.append(err)
             else:
                 ok+=1
-                all_articles.extend(feed_to_articles(src,entries,now))
+                diagnostic={}
+                accepted=feed_to_articles(src,entries,now,diagnostic)
+                all_articles.extend(accepted)
+                feed_stats.append((src[0],diagnostic))
     previous=load_previous_report()
     articles=keep_recent_archive(dedup(all_articles),previous,now)
-    print(f'SEAFOOD feeds: {ok}/{len(SOURCES)} succeeded, {len(articles)} current/archive stories',flush=True)
+    fresh_news=sum((now-datetime.fromisoformat(x['published'])).days<=7 for x in articles)
+    print(f'SEAFOOD feeds: {ok}/{len(SOURCES)} succeeded, '
+          f'{len(articles)} dated stories (last 7d={fresh_news}; max lookback={NEWS_LOOKBACK_DAYS}d)',flush=True)
     for item in errors:
-        print('SEAFOOD RSS FAILED:',item[:180],flush=True)
+        print('SEAFOOD RSS FAILED:',item[:200],flush=True)
+    for label,stat in sorted(feed_stats):
+        if stat['accepted']==0 or stat['raw']>=15 and stat['accepted']/stat['raw']<.10:
+            print(f"SEAFOOD RSS FILTERED: {label}: parsed={stat['raw']} kept={stat['accepted']} "
+                  f"missing_title_date_link={stat['link_or_title']} old={stat['date']} unrelated={stat['topic']}",flush=True)
     # Keep macro-market commentary only when it actually mentions seafood or
     # food distribution; a stock-market/FX table is not a seafood headline.
     def market_news(a):
@@ -624,10 +671,28 @@ def collect():
     # Research comes BEFORE final topic selection. Keyword-matched RSS headlines
     # no longer predetermine what the analysis will discuss.
     issues=issues_from_articles(articles)
-    print('SEAFOOD research: investigate events across the market before selecting a headline',flush=True)
-    search_sources,research_status=research_public_sources(articles,features,now,focus_topics=None)
+    provisional_topics=select_market_topics(articles,features,previous_headlines,max_topics=7)
+    print('SEAFOOD DISCOVERY - provisional research leads:',
+          [(t['theme'],t['score']) for t in provisional_topics[:5]],flush=True)
+    discovered,discovery_status=research_public_sources(articles,features,now,focus_topics=None)
+    broad_pool=articles+discovered
+    focus_for_research=select_market_topics(broad_pool,features,previous_headlines,max_topics=7)
+    print('SEAFOOD RESEARCH - focused targets:',
+          [(t['theme'],len(t.get('article_ids',[])),len(t.get('feature_ids',[])))
+           for t in focus_for_research[:4]],flush=True)
+    targeted=[];focus_status='후속 조사 대상 없음'
+    if focus_for_research and os.getenv('SEAFOOD_RESEARCH_ROUNDS','2')!='1':
+        targeted,focus_status=research_public_sources(
+            broad_pool,features,now,focus_topics=focus_for_research[:4])
+    # The two passes may cite the same original URL. Neither is independent
+    # evidence when the source is the same press release.
+    search_sources=list({a['id']:a for a in discovered+targeted}.values())
     focus_topics=select_market_topics(articles+search_sources,features,previous_headlines)
-    print('SEAFOOD research:',research_status,'reconsidered themes:',[(t['theme'],t['score']) for t in focus_topics[:4]],flush=True)
+    research_status=f'1차: {discovery_status} / 주제별 재조사: {focus_status}'
+    print('SEAFOOD RESEARCH - sources:',len(discovered),'discovery +',len(targeted),
+          'focused =>',len(search_sources),'unique citations',flush=True)
+    print('SEAFOOD research:',research_status,
+          'final themes:',[(t['theme'],t['score']) for t in focus_topics[:4]],flush=True)
     print('SEAFOOD report: composing and checking evidence-led articles',flush=True)
     reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
     print(f'SEAFOOD report: {len(reports)} new deep reports; checking multi-source data analysis',flush=True)
@@ -672,6 +737,12 @@ def collect():
             'analysis_status':f'실제 공식 관측 {len(features)}종 · SSB/ECOS 및 연결된 국내 공공통계 기준',
             'sources_ok':ok,'sources_total':len(SOURCES),'errors':errors,
             'research_status':research_status,
+            'research_coverage':{'discovery_citations':len(discovered),
+                                 'focused_citations':len(targeted),
+                                 'unique_citations':len(search_sources),
+                                 'topic_candidates':len(focus_topics),
+                                 'feed_parsed':sum(row['raw'] for _,row in feed_stats),
+                                 'feed_kept':sum(row['accepted'] for _,row in feed_stats)},
             'metric_errors':metric_errors,'demo':False,'policy_sources':[], 'deep_links':DEEP_LINKS}
 
 

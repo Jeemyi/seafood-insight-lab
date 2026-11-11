@@ -9,12 +9,13 @@ from __future__ import annotations
 
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date
+from datetime import date, timedelta
 import calendar
 import math
 import os
 import re
 import requests
+from xml.etree import ElementTree as ET
 
 MOF_URL='https://apis.data.go.kr/1192000/select0080List/getselect0080List'
 MOF_PAGE='https://www.data.go.kr/data/15056602/openapi.do'
@@ -54,7 +55,7 @@ def _body_rows(payload):
     if not isinstance(obj,dict):raise ValueError('bad API wrapper')
     header=obj.get('header',{})
     if isinstance(header,dict) and header.get('resultCode') not in (None,'00','0',0):
-        raise ValueError('MOF API returned error')
+        raise ValueError('MOF API returned resultCode='+str(header.get('resultCode'))+' / '+str(header.get('resultMsg',''))[:60])
     body=obj.get('body',obj)
     if not isinstance(body,dict):raise ValueError('bad API body')
     items=body.get('items',body.get('item',[]))
@@ -71,7 +72,15 @@ def _request_mof_month(month,key,session=None):
         resp=client.get(MOF_URL,params={'serviceKey':key,'numOfRows':1000,'pageNo':page,'type':'json','baseDt':month},
                         timeout=(8,25),headers=HEADERS)
         resp.raise_for_status()
-        items,total=_body_rows(resp.json())
+        payload=resp.json()
+        items,total=_body_rows(payload)
+        if page==1 and not items:
+            wrapper=payload.get('response',payload) if isinstance(payload,dict) else {}
+            body=wrapper.get('body',{}) if isinstance(wrapper,dict) else {}
+            header=wrapper.get('header',{}) if isinstance(wrapper,dict) else {}
+            print(f'SEAFOOD MOF API {month}: empty first page; reported_total={total}; '
+                  f'result={header.get("resultCode","not_provided") if isinstance(header,dict) else "unknown"}; '
+                  f'body_keys={list(body)[:7] if isinstance(body,dict) else "not_dict"}',flush=True)
         rows.extend(items)
         if not items or len(rows)>=total:break
         page+=1
@@ -200,6 +209,19 @@ def fetch_mof_features(today):
             if features:return features,errors
     return [],errors+['수산물 수출입: 비교 가능한 전년 동월 자료 없음']
 
+def _kamis_xml_payload(content):
+    """Some KAMIS installations return XML even when JSON is requested."""
+    root=ET.fromstring(content)
+    data=root.find('data') if root.tag!='data' else root
+    if data is None:
+        return {'data':{'error_code':root.findtext('error_code','001'),'item':[]}}
+    code=data.findtext('error_code') or data.findtext('result_code') or '000'
+    rows=[]
+    for node in data.findall('item'):
+        rows.append({child.tag:(child.text or '') for child in node})
+    return {'data':{'error_code':code,'item':rows}}
+
+
 def _kamis_items(payload):
     if not isinstance(payload,dict):return []
     data=payload.get('data',payload.get('price',{}))
@@ -207,36 +229,46 @@ def _kamis_items(payload):
         result_code=str(data.get('error_code',data.get('result_code','000')))
         if result_code in ('900','200'):
             raise ValueError('KAMIS API denied or unavailable (result code '+result_code+')')
+        if result_code not in ('000','0','001'):
+            raise ValueError('KAMIS unexpected result code '+result_code)
         items=data.get('item',data.get('items',[]))
     else:items=data
     if isinstance(items,dict):items=[items]
     return [row for row in items if isinstance(row,dict)] if isinstance(items,list) else []
 
-def _request_kamis(cls,key,ident):
-    resp=requests.get(KAMIS_URL,params={'action':'dailyPriceByCategoryList','p_cert_key':key,
-                    'p_cert_id':ident,'p_returntype':'json','p_product_cls_code':cls,
-                    'p_item_category_code':'600','p_convert_kg_yn':'Y'},
-                    timeout=(8,25),headers=HEADERS)
+def _request_kamis(cls,key,ident,day=None):
+    params={'action':'dailyPriceByCategoryList','p_cert_key':key,
+            'p_cert_id':ident,'p_returntype':'json','p_product_cls_code':cls,
+            'p_item_category_code':'600','p_convert_kg_yn':'Y'}
+    if day is not None:
+        params['p_regday']=day.isoformat()
+    resp=requests.get(KAMIS_URL,params=params,timeout=(8,25),headers=HEADERS)
     resp.raise_for_status()
-    return _kamis_items(resp.json())
+    try:payload=resp.json()
+    except (ValueError,requests.exceptions.JSONDecodeError):
+        if not resp.content.lstrip().startswith(b'<'):
+            raise ValueError('KAMIS response is neither JSON nor XML')
+        payload=_kamis_xml_payload(resp.content)
+    return _kamis_items(payload)
 
-def kamis_features_from_rows(wholesale,retail,limit=8):
+def kamis_features_from_rows(wholesale,retail,limit=8,as_of=None):
     results=[]
-    from datetime import datetime, timedelta
+    from datetime import datetime
+    as_of=as_of or date.today()
     for cls,rows,channel in [('도매',wholesale,'도매'),('소매',retail,'소매')]:
         for row in rows:
             name=str(row.get('item_name','')).strip()
             if not name or not any(re.search(pat,name) for _,pat in SPECIES):continue
-            cur=_float(row.get('dpr1'));week=_float(row.get('dpr3'));year=_float(row.get('dpr6'))
+            cur=_float(row.get('dpr1'));week=_float(row.get('dpr3'));month=_float(row.get('dpr5'));year=_float(row.get('dpr6'))
             if cur is None or cur<=0:continue
             datekey=str(row.get('day1') or row.get('lastest_date') or '').strip().replace('.','-')
             try:sample_date=datetime.strptime(datekey[:10],'%Y-%m-%d').date()
             except ValueError:continue
-            if (date.today()-sample_date).days>21 or (sample_date-date.today()).days>2:continue
+            if (as_of-sample_date).days>45 or (sample_date-as_of).days>2:continue
             unit=str(row.get('unit','')).strip() or 'KAMIS 조사단위'
             kind=str(row.get('kind_name','')).strip()
             rank=str(row.get('rank','')).strip()
-            pct_week=_pct(cur,week);pct_year=_pct(cur,year)
+            pct_week=_pct(cur,week);pct_month=_pct(cur,month);pct_year=_pct(cur,year)
             # Use explicit surveyed size, grade, variety to prevent invalid price comparisons.
             full=f'{name} {kind} {rank}'.strip()
             key=re.sub(r'\s+','_',full)
@@ -245,44 +277,78 @@ def kamis_features_from_rows(wholesale,retail,limit=8):
             if pct_week is not None:
                 facts.append({'label':'1주 전 대비','value':f'{pct_week:+.1f}%','detail':str(row.get('day3',''))})
                 pieces.append(f'1주 전 {week:,.0f}원/{unit}, {pct_week:+.1f}%')
+            if pct_month is not None:
+                facts.append({'label':'1개월 전 대비','value':f'{pct_month:+.1f}%','detail':str(row.get('day5',''))})
+                pieces.append(f'1개월 전 {month:,.0f}원/{unit}, {pct_month:+.1f}%')
             if pct_year is not None:
                 facts.append({'label':'전년 조사 대비','value':f'{pct_year:+.1f}%','detail':str(row.get('day6',''))})
                 pieces.append(f'전년 조사 {year:,.0f}원/{unit}, {pct_year:+.1f}%')
             if len(facts)<2:continue
             results.append({'id':f'kamis_{cls}_{key}','name':f'{full} {cls}가격',
-                'title':f'{full} {cls}가격'+(f' 전년 대비 {pct_year:+.1f}%' if pct_year is not None else f' 전주 대비 {pct_week:+.1f}%'),
-                'subtitle':f'KAMIS {cls} 조사 · {datekey}', 'period_start':str(row.get('day6') or row.get('day3') or ''),
+                'title':f'{full} {cls}가격'+(f' 전년 대비 {pct_year:+.1f}%' if pct_year is not None else (f' 전주 대비 {pct_week:+.1f}%' if pct_week is not None else f' 전월 대비 {pct_month:+.1f}%')),
+                'subtitle':f'KAMIS {cls} 조사 · {datekey}', 'period_start':str(row.get('day6') or row.get('day3') or row.get('day5') or ''),
                 'period_end':datekey,'facts':facts,'observed':' · '.join(pieces),
                 'data_links':[{'url':KAMIS_PAGE,'label':'aT KAMIS 수산물 도소매 가격 공식 API'}],
                 'article_ids':[],'category':'원물 수급/시세','channels':[],
                 'impact':f'{cls} 관측가격 변화','source_type':'공식 공개 API','series_type':'kamis',
                 'limitations':f'KAMIS 조사품목 {name}, 품종 {kind or "미표시"}, 등급 {rank or "미표시"}, 단위 {unit}, {cls} 조사값. 조사 지역·표본 변경, 행사 및 거래 규격에 따라 차이 발생. 산지가/수입통관가격과 단위 및 대상이 다르므로 직접 비교 불가.',
-                'measurements':{'item':name,'kind':kind,'rank':rank,'unit':unit,'channel':cls,'current_price':cur,'week_price':week,'year_price':year,
-                                'week_pct':pct_week,'yoy_pct':pct_year,'date':datekey},
-                'significance':min(40,abs(pct_year or pct_week or 0))+(7 if any(k in name for k in ('광어','오징어','고등어','연어','꽃게')) else 0)})
-    return sorted(results,key=lambda r:r['significance'],reverse=True)[:limit]
+                'measurements':{'item':name,'kind':kind,'rank':rank,'unit':unit,'channel':cls,'current_price':cur,'week_price':week,'month_price':month,'year_price':year,
+                                'week_pct':pct_week,'month_pct':pct_month,'yoy_pct':pct_year,'date':datekey},
+                'significance':min(40,abs(pct_year or pct_week or pct_month or 0))+(7 if any(k in name for k in ('광어','오징어','고등어','연어','꽃게')) else 0)})
+    # A lookback search can return the same commodity on several dates. Keep
+    # the latest valid survey observation, not the most dramatic old move.
+    newest={}
+    for feature in results:
+        key=feature['id']
+        if key not in newest or feature['measurements']['date']>newest[key]['measurements']['date']:
+            newest[key]=feature
+    return sorted(newest.values(),key=lambda r:r['significance'],reverse=True)[:limit]
 
-def fetch_kamis_features():
+def fetch_kamis_features(as_of=None):
+    """Use latest publication, then prior survey days when the newest is absent.
+
+    A retrieved historical observation retains its original survey date. A
+    genuine 1-week, 1-month or 1-year comparator is required for a report.
+    """
     key=os.getenv('KAMIS_API_KEY','').strip()
     ident=os.getenv('KAMIS_API_ID','').strip()
     if not (key and ident):return [],['KAMIS: KAMIS_API_KEY / KAMIS_API_ID 미설정 — 수산물 도소매 조사 미연결']
-    errors=[];data={}
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        futures={name:pool.submit(_request_kamis,code,key,ident) for name,code in [('도매','02'),('소매','01')]}
-        for name,future in futures.items():
-            try:data[name]=future.result()
-            except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-                errors.append(f'KAMIS {name}: {type(exc).__name__} {str(exc)[:75]}')
-    results=kamis_features_from_rows(data.get('도매',[]),data.get('소매',[]))
-    print(f'SEAFOOD KAMIS: wholesale_raw={len(data.get("도매",[]))} '
-          f'retail_raw={len(data.get("소매",[]))} published={len(results)}',flush=True)
-    if not results and not errors:errors.append('KAMIS: API 응답은 있었지만 게시 가능한 날짜·품목·비교 가격 없음')
+    as_of=as_of or date.today()
+    errors=[]
+    found={'도매':[],'소매':[]}
+    attempts=[None]+[as_of-timedelta(days=n) for n in (3,7,14,21,28,42)]
+    for day in attempts:
+        # Continue probing only groups for which no comparable observations exist.
+        need=[(name,code) for name,code in (('도매','02'),('소매','01'))
+              if not kamis_features_from_rows(found[name] if name=='도매' else [],
+                 found[name] if name=='소매' else [],as_of=as_of)]
+        if not need:break
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            futures={name:pool.submit(_request_kamis,code,key,ident,day) for name,code in need}
+            for name,future in futures.items():
+                try:
+                    rows=future.result()
+                    found[name].extend(rows)
+                    print(f'SEAFOOD KAMIS {name} request={day.isoformat() if day else "latest"}: raw={len(rows)} '
+                          f'comparable={len(kamis_features_from_rows(rows if name=="도매" else [],rows if name=="소매" else [],as_of=as_of))}',flush=True)
+                except (requests.RequestException,ValueError,KeyError,TypeError,ET.ParseError) as exc:
+                    kind=type(exc).__name__
+                    # Date and type, but no credentials or raw URLs, appear in logs.
+                    errors.append(f'KAMIS {name} {day.isoformat() if day else "latest"}: {kind}: {str(exc)[:60] if isinstance(exc,ValueError) else "request failed"}')
+                    # Auth failures cannot be fixed by trying older dates.
+                    if isinstance(exc,ValueError) and 'denied or unavailable' in str(exc):
+                        print('SEAFOOD KAMIS authorization failed; stop historical retries',flush=True)
+                        return [],errors
+    results=kamis_features_from_rows(found['도매'],found['소매'],as_of=as_of)
+    print(f'SEAFOOD KAMIS: wholesale_raw={len(found["도매"])} '
+          f'retail_raw={len(found["소매"])} published={len(results)}',flush=True)
+    if not results and not errors:errors.append('KAMIS: 최근 45일 중 비교 가능한 도소매 조사 가격 없음')
     return results,errors
 
 def make_public_features(now):
     with ThreadPoolExecutor(max_workers=2) as pool:
         task_mof=pool.submit(fetch_mof_features,now.date())
-        task_kamis=pool.submit(fetch_kamis_features)
+        task_kamis=pool.submit(fetch_kamis_features,now.date())
         try:trade,trade_errors=task_mof.result()
         except Exception as exc:trade,trade_errors=[],['MOF: '+type(exc).__name__]
         try:prices,price_errors=task_kamis.result()

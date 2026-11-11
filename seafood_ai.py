@@ -196,59 +196,166 @@ def _call(prompt, context, schema, name, repair_note=''):
     return result
 
 
-def research_public_sources(articles, features, now, focus_topics=None):
-    """One web-grounded research pass to enrich short RSS snippets.
+def choose_research_candidates(articles, focus_topics=None, maximum=20):
+    """Keep multiple important events per category, not just one headline.
 
-    Citations are exposed to readers as external source links. This method
-    cannot guarantee page-level verification, so downstream numeric checking
-    still uses the returned research memo as attributed evidence, not as a
-    substitute for independent primary-statistics verification.
+    Sources are leads. Reprinting one release does not constitute independent
+    evidence; that is verified later against originating publisher/agency.
     """
+    from seafood_editorial import evaluate_article
+    pool=balanced_article_pool(articles,maximum=max(36,maximum*3))
+    by_id={a['id']:a for a in articles if a.get('id')}
+    chosen=[];used=set();counts={}
+    def add(item):
+        if not item or item['id'] in used or len(chosen)>=maximum:return
+        cat=item.get('category','')
+        if counts.get(cat,0)>=4:return
+        chosen.append(item);used.add(item['id'])
+        counts[cat]=counts.get(cat,0)+1
+    # A selected event needs more than a single representative headline.
+    if focus_topics:
+        for topic in focus_topics[:5]:
+            for aid in topic.get('article_ids',[])[:4]:add(by_id.get(aid))
+    ranked=sorted(pool,key=lambda a:(evaluate_article(dict(a)),a.get('score',0),a.get('timestamp',0)),reverse=True)
+    # Broad market pass: cover distinct kinds of changes without forcing them
+    # into output articles or making news count itself a signal of importance.
+    for item in ranked:
+        if counts.get(item.get('category',''),0)<2:add(item)
+    for item in ranked:add(item)
+    return chosen[:maximum]
+
+
+_RESEARCH_QUERIES={
+    '원물 수급/시세':['수산물 가격 생산량 통계','수산업관측센터 어종별 가격','관세청 수산물 수입'],
+    '코스트코':['코스트코 한국 점포 식품 공시','회원제 창고형 마트 식품 매출'],
+    '대형마트/SSM':['대형마트 월간 매출 산업통상부','대형마트 납품 거래 실태조사'],
+    '매장 운영':['대형마트 점포 폐점 출점 공시','수산 매장 영업 규제'],
+    '온라인':['온라인쇼핑 농축수산물 거래액 통계','신선식품 온라인 거래 동향'],
+    'B2B/급식':['학교 급식 식자재 입찰','단체급식 수산물 조달'],
+    '식품안전/소비심리':['수산물 검역 통계 공식','수산물 원산지 단속 발표'],
+    '시즌/트렌드':['수산물 소비자 구매 통계','수산물 제철 가격 추이'],
+    '비용/거시':['수산물 수입단가 환율','냉동 물류 운임 수산물'],
+    '해외':['해양수산부 수산물 수출 통계','Norwegian seafood exports salmon statistics','Japan seafood import tariff'],
+}
+
+
+def event_search_phrase(title):
+    """Generate a short event-level lead, never broad Boolean keyword soup."""
+    words=re.findall(r'[A-Za-z가-힣][A-Za-z가-힣0-9·-]*',str(title))
+    ignore={'단독','속보','종합','뉴스','보도자료','발표','기자','현장','정부는',
+            '올해','지난해','지난달','속보입니다','어떻게','왜','전망','이슈'}
+    words=[w for w in words if len(w)>1 and w.lower() not in ignore]
+    return ' '.join(words[:5]).strip()
+
+
+def build_research_queries(choices, features, focus_topics=None):
+    """Separate broad discovery from *event-specific* follow-up searches."""
+    categories=list(dict.fromkeys(x.get('category') for x in choices if x.get('category')))
+    questions=[]
+    if focus_topics:
+        selected_ids={i for t in focus_topics[:4] for i in t.get('article_ids',[])[:3]}
+        # First search the actual news events, not merely their broad category.
+        for item in choices:
+            if item.get('id') in selected_ids:
+                phrase=event_search_phrase(item.get('title'))
+                if phrase:questions.append(phrase)
+                if len(questions)>=8:break
+        for topic in focus_topics[:4]:
+            theme=topic.get('theme','')
+            questions.append(f'{theme} 공식 통계')
+            cat=topic.get('category','')
+            if cat in _RESEARCH_QUERIES:questions.extend(_RESEARCH_QUERIES[cat][:1])
+    else:
+        # Incident discovery should also survive a full RSS outage.
+        for item in choices[:6]:
+            phrase=event_search_phrase(item.get('title'))
+            if phrase:questions.append(phrase)
+        categories=list(dict.fromkeys([
+            '원물 수급/시세','해외','대형마트/SSM','식품안전/소비심리']+categories))
+        for cat in categories[:9]:questions.extend(_RESEARCH_QUERIES.get(cat,[])[:2])
+    for f in features[:4]:
+        name=str(f.get('name','')).strip()
+        if name:questions.append(name+' 공식 통계 전년 비교')
+    return list(dict.fromkeys(questions))[:22]
+
+
+def infer_research_category(title, excerpt):
+    """Classify the cited passage itself, not the first article in the query."""
+    text=(str(title)+' '+str(excerpt)[:800]).lower()
+    rules=[
+        ('코스트코',('코스트코','costco','커클랜드')),
+        ('대형마트/SSM',('홈플러스','대형마트','롯데마트','이마트','트레이더스','ssm')),
+        ('온라인',('수산물 온라인','신선식품 온라인','온라인 신선식품','쿠팡 신선','컬리 수산')),
+        ('B2B/급식',('학교급식','군급식','단체급식','급식 수산물','식자재 납품')),
+        ('식품안전/소비심리',('수산물 검역','수산물 검사','수산물 안전','수산물 원산지')),
+        ('해외',('수산물 수출','수산물 수입','수출 연어','salmon export','seafood export','대미 관세')),
+        ('원물 수급/시세',('연어','salmon','광어','넙치','우럭','오징어','고등어','어획량','어업생산','수산업','수산물 가격','수산물 생산','양식 어류','꽃게','새우','tuna','shrimp')),
+    ]
+    for cat,terms in rules:
+        if any(t in text for t in terms):return cat
+    return None
+
+
+def research_public_sources(articles, features, now, focus_topics=None):
+    """Web-grounded discovery / targeted fact research, two separate passes.
+
+    Only an attributed, cited excerpt may become evidence. Links returned by
+    the search tool without a cited passage are not converted to invented facts.
+    """
+    phase='focused' if focus_topics else 'discovery'
     if not os.getenv('OPENAI_API_KEY','').strip() or os.getenv('SEAFOOD_WEB_RESEARCH','1')=='0':
-        return [],'검색 미사용'
-    pool=balanced_article_pool(articles,maximum=25)
-    choices=[];seen=set()
-    for item in sorted(pool,key=lambda a:(a.get('score',0),a.get('timestamp',0)),reverse=True):
-        if item['category'] not in seen:
-            choices.append(item);seen.add(item['category'])
-        if len(choices)>=8:break
-    # Topic scoring is based on market changes, not a quota of one per category.
-    if focus_topics and os.getenv('SEAFOOD_PRESELECT_TOPIC','0')=='1':
-        chosen_ids=[aid for topic in focus_topics[:4] for aid in topic.get('article_ids',[])[:2]]
-        source_map={a['id']:a for a in pool}
-        focused=[source_map[i] for i in chosen_ids if i in source_map]
-        if focused:choices=list(dict((a['id'],a) for a in focused).values())[:8]
-    if not choices and not features:return [],'공개 자료 없음'
-    prompt=(
-      '너는 수산물·식품유통 산업의 자료 조사 담당자다. 반드시 웹 검색을 통해 아래 기사 후보 가운데 서로 다른 사건이 엮일 수 있는 3~5개 후보에 대해 '
-      '최근 45일 이슈를 출발점으로 과거 3~5년의 비교 통계도 찾아 독립적인 원자료(국가통계, KMI, 수협, 관세청, 통계청, 해외 정부, 기업 실적공시, 다른 언론의 독자 취재)를 찾아라. '
-      '연어에 편중하지 말고 한국 수산시장과 유통업계도 조사하라. 주제별 공식 통계의 날짜·대상·단위·변화율을 명확히 구분하라. '
-      '동일 보도자료 재인용은 독립 근거가 아니라고 밝혀라. 미확인 수치는 제외하라. RSS 뉴스 후보가 빈약하거나 유통·거시 기사만 있다면 수산물 공식자료를 직접 검색하고 시장 전체의 중요한 변화를 찾아라. '
-      '각 주제의 최초 사건 보도, 생산·수입·가격과 같은 서로 다른 통계, 수요·유통 변화를 구분해서 조사하라. 숫자는 기준기간·통화·어종·규격별로 명확히 구분하며, 수산물·대형유통 분야를 우선해 최소 8~12개의 확인 가능한 근거 문장을 작성하고, 각 문장에 검색으로 확인한 실제 출처 링크를 인용하라. '
-      '추상적 제언·기업 원가/이익률 추정·가공한 숫자 금지. 반드시 실제 검색 결과를 이용하라. '
-      '글은 한국어로 쓰되 광고/검색 요약이 아닌 사실관계를 개조식으로 정리하라.'
+        return [],f'{phase}: 웹 검색 미사용'
+    choices=choose_research_candidates(articles,focus_topics,maximum=20)
+    if not choices and not features and not focus_topics:
+        # Continue searching official releases even on a complete RSS outage.
+        print('SEAFOOD RESEARCH: RSS empty; primary-source discovery fallback',flush=True)
+    search_plan=build_research_queries(choices,features,focus_topics)
+    focus_rule=(
+        '선정된 사건이 실제로 왜 발생했는지 확인하는 두 번째 조사다. 주제별로 같은 보도를 반복하지 말고 '
+        '최초 공식 발표와 별개인 가격·출하·수요·수출입 자료를 찾아라. 첫 조사에서 빠진 자료를 우선 찾고, '
+        '근거가 없는 인과관계는 만들지 마라.'
+        if focus_topics else
+        '첫 조사에서는 특정 업종을 미리 정하지 말고 최근 주요 사건을 넓게 찾아라. '
+        '수산물 생산·가격·수출입·안전·유통을 고르게 조사하되 이슈가 중요한지는 실제 수치와 시장 영향으로 판단하라.'
     )
-    context={'today_kst':now.date().isoformat(),
+    prompt=(
+      '너는 공개 자료를 조사하는 한국 수산시장 산업 리서처다. 반드시 웹 검색을 사용하라. '
+      +focus_rule+
+      ' 제공한 검색문은 각각 별개의 검색 의도이며, 하나의 긴 검색문으로 합치지 마라. '
+      '최근 30~45일 발표를 우선하되 원인과 계절성을 확인할 과거 1~5년 비교통계는 별도로 찾아라. '
+      '시장에 영향을 미친 실제 사건, 그 규모, 관련 공식통계, 발표일과 측정기간을 구분하라. '
+      'KMI, 수협, 해양수산부, 관세청, 통계청, 식약처, 기업 공시, 해외 정부 통계와 독립 취재를 우선한다. '
+      '보도자료를 여러 언론이 복제했다면 한 개의 원출처로 취급하라. '
+      '각 핵심 사실을 검색 결과의 출처 링크와 함께 적고 최소한 실제 확인한 내용을 수치·기간·단위와 연결하라. '
+      '확인하지 못한 수치나 회사 내부 실적을 지어내지 말라. 취재가 미완성인 전망 문장을 쓰지 말라. '
+      '결과는 한국어의 짧은 근거 문단으로 작성하고 문단별 URL 인용을 포함하라.'
+    )
+    context={'today_kst':now.date().isoformat(),'research_phase':phase,
+             'separate_search_intents':search_plan,
              'focus_topics':(focus_topics or [])[:4],
-             'news_candidates':[{'title':x['title'],'category':x['category'],'source':x['source'],'url':x['url'],'published':x['published']} for x in choices],
-             'official_observations':[{'name':f['name'],'period':f['period_end'],'observed':f['observed'],'url':f['data_links'][0]['url'] if f.get('data_links') else ''} for f in features if not f.get('id','').startswith('fx_')][:11],
-             'research_targets_when_news_feed_is_thin':[
-               '국내 광어·우럭 최근 양식 출하량·산지가·양성물량 (KMI 원자료)',
-               '국내 오징어 연근해·원양 생산량과 냉동 수입물량·평균단가 (해양수산부/관세청)',
-               '국내 대형마트·창고형·SSM 신선식품 판매 변화 (유통업체 매출동향/기업 공시)',
-               '일본·미국 수산물 수출 물량·단가와 현지 규제 시행 (해수부/관세청/현지 공식 발표)',
-               '수산물 안전·검역·통관제도 변경과 실제 수출입 영향 (공식 발표·품목별 통계)' ]}
+             'news_candidates':[{'id':x['id'],'title':x['title'],'category':x['category'],
+                                 'source':x.get('source'),'url':x.get('url'),
+                                 'published':x.get('published')} for x in choices],
+             'official_observations':[{'name':f.get('name'),'period':f.get('period_end'),
+                                       'observed':f.get('observed'),
+                                       'url':f['data_links'][0]['url'] if f.get('data_links') else ''}
+                                      for f in features if not str(f.get('id','')).startswith('fx_')][:12]}
+    print(f'SEAFOOD RESEARCH {phase}: {len(choices)} event leads, '
+          f'{len(search_plan)} independent search intents',flush=True)
     req={'model':os.getenv('OPENAI_RESEARCH_MODEL',os.getenv('OPENAI_MODEL',MODEL)),
          'reasoning':{'effort':'low'},
          'tools':[{'type':'web_search','search_context_size':'high'}],
          'tool_choice':'required','include':['web_search_call.action.sources'],
-         'input':[{'role':'system','content':prompt},{'role':'user','content':json.dumps(context,ensure_ascii=False)}],
+         'input':[{'role':'system','content':prompt},
+                  {'role':'user','content':json.dumps(context,ensure_ascii=False)}],
          'max_output_tokens':8500,'store':False}
     try:
-        resp=requests.post(API,json=req,timeout=(12,240),headers={'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],'Content-Type':'application/json'})
+        resp=requests.post(API,json=req,timeout=(12,240),headers={
+            'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],
+            'Content-Type':'application/json'})
         resp.raise_for_status()
         body=resp.json()
-        collected=[];urls=set()
+        collected=[];urls=set();citation_count=0
         for item in body.get('output',[]):
             if item.get('type')!='message':continue
             for content in item.get('content',[]):
@@ -261,23 +368,38 @@ def research_public_sources(articles, features, now, focus_topics=None):
                     parsed=urlparse(url)
                     if parsed.scheme not in ('http','https') or not parsed.netloc or url in urls:continue
                     pos=anno.get('start_index',0)
-                    # The cited search sentence, not a fabricated full-article quote.
+                    if not isinstance(pos,int) or pos<0 or pos>len(full):continue
                     start=max(0,full.rfind('\n',0,pos)+1)
                     end=full.find('\n',pos)
                     excerpt=full[start:end if end!=-1 else len(full)].strip()[:850]
                     if len(excerpt)<35:continue
-                    urls.add(url)
+                    title=anno.get('title') or '검색으로 확인한 공개 근거'
+                    # Do not attach an irrelevant citation to the first news
+                    # topic simply because the search generated that citation.
+                    category=infer_research_category(title,excerpt)
+                    if not category:
+                        continue
+                    urls.add(url);citation_count+=1
                     collected.append({'id':'web-'+__import__('hashlib').sha1(url.encode()).hexdigest()[:12],
                         'url':url,'source':parsed.netloc.removeprefix('www.'),
-                        'title':anno.get('title') or '웹 검색 출처',
-                        'summary':excerpt,'summary_type':'검색 결과의 출처 표기 · 원문 확인 권장',
+                        'title':title,'summary':excerpt,
+                        'summary_type':'웹 검색 인용 문단 · 원문 미열람',
                         'published':'발행일 별도 확인','timestamp':0,
-                        'category':next((a['category'] for a in choices if any(x in excerpt for x in (a['title'][:12],a['category']))),choices[0]['category'] if choices else CATEGORIES[0]),
-                        'channels':[],'tags':[],'score':0,'official':False,
-                        'impact':'외부 원문 근거','followup':'해당 원문·통계 기준일 확인'})
-        return collected[:20],('보강 출처 '+str(len(collected[:20]))+'건')
+                        'category':category,'channels':[],'tags':[],'score':0,
+                        'official':False,'research_phase':phase,
+                        'impact':'공개 근거 문단','followup':'해당 원문 및 통계 기준기간'} )
+        print(f'SEAFOOD RESEARCH {phase}: citation_passages={citation_count}, '
+              f'usable={min(24,len(collected))}',flush=True)
+        return collected[:24],f'{phase} 근거 출처 {len(collected[:24])}건'
+    except requests.HTTPError as exc:
+        status=exc.response.status_code if exc.response is not None else 'unknown'
+        code='unknown'
+        if exc.response is not None:
+            try:code=str(exc.response.json().get('error',{}).get('code') or 'unknown')[:40]
+            except (ValueError,TypeError,AttributeError):pass
+        return [],f'{phase} 웹 검색 HTTP {status} (code={code})'
     except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-        return [],'웹 근거 검색 실패: '+type(exc).__name__
+        return [],f'{phase} 웹 검색 실패: {type(exc).__name__}'
 
 
 def _numeric_tokens(text):
@@ -432,9 +554,11 @@ def make_editorial_outline(ctx, previous_headlines=None):
             if len(ids)<2 or len(origins)<2 or any(len(entry.get(k,'').strip())<18 for k in fields):
                 continue
             if entry['subject'] in used_subjects:continue
-            # Planning must follow a meaningful cross-event cluster after research.
-            clusters=ctx.get('story_candidates',[])
-            if clusters and not any(len(set(ids)&set(b['evidence_ids']))>=2 for b in clusters):
+            # The old exact cluster-ID intersection silently eliminated valid
+            # independent sources when keyword clustering missed the event.
+            # Keep the actual relevance test without making the heuristic a gate.
+            from seafood_story_selection import shared_market_anchor
+            if not shared_market_anchor([eligible[i] for i in ids]):
                 continue
             # Only select a plan whose claims are grounded in the supplied public materials.
             if not _supported(' '.join(entry[k] for k in fields),json.dumps([eligible[i] for i in ids],ensure_ascii=False)):
@@ -523,9 +647,9 @@ def _validate_main(payload,ctx):
                         '전망이 강화된다','지속되면 지속','핵심 인사이트')
                 if any(token in prose for token in banned):
                     reasons.append('기사답지 않은 추상·순환 표현');continue
-                clusters=ctx.get('story_candidates',[])
-                if clusters and not any(len(cited & set(cluster['evidence_ids']))>=2 for cluster in clusters):
-                    reasons.append('서로 연결된 사건·통계가 아닌 느슨한 근거 묶음');continue
+                from seafood_story_selection import shared_market_anchor
+                if not shared_market_anchor([evidence_by_id[i] for i in cited]):
+                    reasons.append('인용 자료가 동일 품목·시장에 관한 근거가 아님');continue
             # A stitched general online-market/foodservice article is not a
             # cross-market seafood insight. The cited evidence must share a
             # measured product/channel or an explicitly linked mechanism.
@@ -600,6 +724,7 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         try:
             output=_call(MAIN_PROMPT,ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
             good,reasons=_validate_main(output,ctx)
+            print(f'SEAFOOD research draft attempt {attempt+1}: proposed={len(output.get("reports",[]))} valid={len(good)}',flush=True)
             if good:return good,f'AI 리서치 {len(good)}편 · 공개 출처·수치 검증 통과'
             last_reason=' / '.join(dict.fromkeys(reasons))[:220] or '주제와 근거 부족'
             print(f'SEAFOOD research QC attempt {attempt+1}: '+last_reason,flush=True)
