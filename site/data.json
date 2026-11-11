@@ -1,20 +1,314 @@
 {
-  "generated_at": "2026-11-11T11:11+09:00",
+  "generated_at": "2026-11-11T11:42+09:00",
   "articles": [
     {
-      "id": "bfdb759f53660292",
-      "title": "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863181",
-      "source": "뉴시스·산업",
-      "published": "2026-11-11T09:10+09:00",
-      "timestamp": 1794355851,
+      "id": "e4a844aa0f4f235e",
+      "title": "대형마트 휴무일, 이마트·롯데마트·홈플러스·코스트코 ‘쉬는 날’",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1EUzN5Y1NKMU4wWHRyUm1CU2Q2enJjcEJ1dlkwVnJYek5EWkt2Vzg2dGkzNjN4cUMzU0J4cDh2RUZaVXZhQUhHQjg4a0RfOVJvcjlpQXZMQTVoMFlrUXEzWUtKeHQ?oc=5",
+      "source": "BNT뉴스",
+      "published": "2026-11-08T00:01+09:00",
+      "timestamp": 1794063661,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM",
+        "코스트코"
+      ],
+      "score": 23.8,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "285df8383f489144",
+      "title": "[기후의 역습(247)] 동해에 오징어가 없다?!⋯2040년대 한국 연근해 '어획 0' 경고",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9iak9MWk9qVExBeGxaUDRqelVYSkRERklJbno1OUZJZTdQVGZ2TzIzNG9jN2J6SHBqb3lGb0NBTVA4cTJhdXBaRzEyZ1NoOWpOc0lrdk5iTnhSWGVGWG8xSg?oc=5",
+      "source": "포커스온경제",
+      "published": "2026-11-10T13:30+09:00",
+      "timestamp": 1794285023,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 19.9,
+      "summary": "[기후의 역습(247)] 동해에 오징어가 없다?!⋯2040년대 한국 연근해 '어획 0' 경고 포커스온경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 7
+    },
+    {
+      "id": "d4ec88f16cab1fa5",
+      "title": "CJ프레시웨이, 3분기 매출 전년比 6.7%↑...온라인 식자재 유통·단체급식 성장 '견인'",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fcG1LYXFCSlhDZGJFNFJKUVpvVS1wdGVlUUNyQVdweG81bGY0ejFhSHdqM3VueUxiMlpUcGtRZ0xHWllicE9rTjhzTnI0My1uREgxZ19wVmRVREV5T0haeUs3bjg?oc=5",
+      "source": "베타뉴스",
+      "published": "2026-11-05T18:55+09:00",
+      "timestamp": 1793872537,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 19.1,
+      "summary": "CJ프레시웨이, 3분기 매출 전년比 6.7%↑...온라인 식자재 유통·단체급식 성장 '견인' 베타뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "온라인",
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 15
+    },
+    {
+      "id": "ef1a271f6dd2bad7",
+      "title": "아워홈, ‘코스트코’ 타고 해외 유통망 확대…일본·오세아니아 진출",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE92MzF1UUF3R01FNzdVU3dUU3JwdEcxOFhIVmtXX2xMRHUxY3dPSDBJemJXWUtvemNicEtDY2FnLUQxeHhqeUpianRzbllIUjg4cUI1Z1dIcUhhaDg5anM1QWJyTkxyWVc1cklqTdIBbEFVX3lxTE92MzF1UUF3R01FNzdVU3dUU3JwdEcxOFhIVmtXX2xMRHUxY3dPSDBJemJXWUtvemNicEtDY2FnLUQxeHhqeUpianRzbllIUjg4cUI1Z1dIcUhhaDg5anM1QWJyTkxyWVc1cklqTQ?oc=5",
+      "source": "직썰",
+      "published": "2026-11-11T10:33+09:00",
+      "timestamp": 1794360816,
       "category": "코스트코",
       "tags": [
+        "코스트코"
+      ],
+      "score": 18.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
         "코스트코",
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "ac2129ce9f4bb4b3",
+      "title": "[기획] 장보기까지 온라인으로…쿠팡 vs 네이버·컬리, 대형마트는 규제에 발 묶여",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5oUC03V0pjdksyLWpLMldzQXBrQTN0VWVxenpuOG5RQlpxcU1BalpVMWNVM2VHU3lCLWNOM0xYUF9lWGp0eHA1b3J2cjRRUU1DNHg5ZU81XzhTWUNrVFIyVlRkZlM?oc=5",
+      "source": "매일일보",
+      "published": "2026-10-22T16:00+09:00",
+      "timestamp": 1792652400,
+      "category": "온라인",
+      "tags": [
+        "온라인",
+        "대형마트/SSM"
+      ],
+      "score": 17.4,
+      "summary": "[기획] 장보기까지 온라인으로…쿠팡 vs 네이버·컬리, 대형마트는 규제에 발 묶여 매일일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 14
+    },
+    {
+      "id": "14398b2242283f7b",
+      "title": "식약처, 겨울철 수산물 안전관리 강화",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPNWR2ZDViV3h0YzNsa1lpMFNCQ3FHckM3N2ZRS1o4S2hGeHE1WUJCNGM2WVdBZFA0V2dSTnRrUXJjWWVtb0M0WDlObFpUZ296bHpWQUdvaXZ2cEJ0c2g2aUxYV19sdXc?oc=5",
+      "source": "한국식품의약신문",
+      "published": "2026-11-10T11:59+09:00",
+      "timestamp": 1794279574,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 16.9,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 7
+    },
+    {
+      "id": "0f8e3405cc27528c",
+      "title": "VASEP는 한국에서 베트남산 새우에 대한 관세 쿼터 철폐를 제안했습니다.",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcXRPMVBpajdZd3hDd0wzYXI3TklYanBONEtKOXJhT1NZWEtjNzdfTHFubTAySDJKb1d3OS1CUGJ1TjZNZmNxNmR1VkdlVml4Rkduby1KNDhuYmdHWF9JNGFVM2JtUE9ycm0xQjlvU1k3Xzl2Y1p3RXh1VkRQQ1h6ajlQMzZPdVY3VkJ3VnB5WENkUlZVQ05mNU5n?oc=5",
+      "source": "Vietnam.vn",
+      "published": "2026-11-10T12:59+09:00",
+      "timestamp": 1794283164,
+      "category": "해외",
+      "tags": [
+        "해외",
+        "원물 수급/시세"
+      ],
+      "score": 15.2,
+      "summary": "VASEP는 한국에서 베트남산 새우에 대한 관세 쿼터 철폐를 제안했습니다. Vietnam.vn",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 16
+    },
+    {
+      "id": "1bda8e4ee4b719c7",
+      "title": "수협쇼핑, 11월 한 달간 김장철 수산물·제철 수산물 대규모 할인행사 개최",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9SRE1iWHlYN2VBREVDX2RNSWk5UXBvR0Vjakp6X043WXJ2TUctZ1k3SGxUUVVkcUlkTEtXR0twdXZMQVp4UmY1a3RtQjJGMUF3b3V0V1NuRVRaYl9naGtWMUpLd21VT1A2a1o5X25YQQ?oc=5",
+      "source": "어업in수산",
+      "published": "2026-11-05T17:25+09:00",
+      "timestamp": 1793867140,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 14.4,
+      "summary": "수협쇼핑, 11월 한 달간 김장철 수산물·제철 수산물 대규모 할인행사 개최 어업in수산",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": -3
+    },
+    {
+      "id": "1d614376c6bd89b8",
+      "title": "[모집] 군산 수산물종합센터 신규 입점자 7명… 11월 4~6일 접수",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE83TEVkYkU0dTZaTEVPRGhDY2FVUGdaT3FoV0xyMnpIYW04RWY0LUJSbS1PbXVuMmREQUdiblgwT1B3dV9nQWZ5Yk11ZEw5YWwyaklaclJkc05sZ0RoT0JGUmRaU1FUZ0ZBNjNuM0xVYzY?oc=5",
+      "source": "투데이 군산",
+      "published": "2026-11-03T08:40+09:00",
+      "timestamp": 1793662832,
+      "category": "매장 운영",
+      "tags": [
         "매장 운영"
       ],
-      "score": 14.2,
-      "summary": "[서울=뉴시스]이주혜 기자 = 아워홈이 일본과 호주, 뉴질랜드 코스트코에 K-푸드 제품을 입점시키며 글로벌 소비자와의 접점을 확대하고 있다. 올해 해외 수출 매출도 증가한 것으로 나타났다. 아워홈은 지난 1일부터 일본 코스트코 37개 점포에서 '아워홈 진미채 볶음'과 '아워홈 진한 뼈없는 갈비탕' 정규 판매를 시작했다고 11일 밝혔다. 지난 8월에는 호주 코스트코 15개 점포와 뉴질랜드 코스트코 1개 점포에 '아워홈 알타리 깍두기'가 정규 입점했다. 아워홈은 글로벌 식품사업을 새로운 성장동력으로 키우고 있다. 현지화 전략과 함께 해외 유통채널 입점도 늘려가는 중이다. 올해 1~10월 ",
+      "score": 10.7,
+      "summary": "[모집] 군산 수산물종합센터 신규 입점자 7명… 11월 4~6일 접수 투데이 군산",
+      "summary_type": "공개 RSS 소개문",
+      "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "c9a7dfafc7e7966e",
+      "title": "롯데마트 이마트 홈플러스 대형마트 휴무일 오늘 문 열까",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1oVlQ4OUczQkFyeF84TkFLdEhtbW92RHRBdHNjRWM4TVpabGsyejZWVURQcTdCWGExRGJqR3JCUkIzdUpSalcxaUgyZTNPckdxRWFsZnRzdW5HcHJFdHZLVTdXd2xCV1RzalhkRjUyRDTSAXRBVV95cUxPTC1GQl94LS1tY21heEFUR3ExSktlbG1WTnhEVDZnUUNUZ1Yyb2g2Nmtib2xZZGZaVmg5dy1yUUQxNTVOenZKV0pIQmk3aFY0UVJlTVJ1OERjWklPRnVrRWxrVzUwRVM0ZTNjdjc3SmxQVVBteA?oc=5",
+      "source": "뉴스클레임",
+      "published": "2026-10-18T16:00+09:00",
+      "timestamp": 1792306800,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 23.8,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "33126fe93d0cb0c5",
+      "title": "한국광어양식연합회, 부산국제수산엑스포 참가…광어 소비촉진·유통 확대 추진",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE91c3dYQUk5dHFMNUowQmRkZTM1MTlmQnExMjZ0dzBBMXFKNGlFMUdUWEpONkg1ejBEbDJCQzJNSU9pV2FxVVEzZUZKYk5WUVRwYTJnck43LVFJeG4tb0FfNF9xR3FpMDR0ektN?oc=5",
+      "source": "내외경제TV",
+      "published": "2026-11-10T10:19+09:00",
+      "timestamp": 1794273572,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세",
+        "시즌/트렌드"
+      ],
+      "score": 19.9,
+      "summary": "한국광어양식연합회, 부산국제수산엑스포 참가…광어 소비촉진·유통 확대 추진 내외경제TV",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 7
+    },
+    {
+      "id": "596203201730415b",
+      "title": "예산군 학교급식 지역산 식재료 비중 78.2%…4개월 연속 충남 1위",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5sTjBHbktfQ1ptLU5ueUQ0cldRbEJuc1U3WUVid2w4TGF4ZzhyOEZlMUZaU0x2OVV0QkNiUXNUVWRvZEFKVWwzUzVKTnczXzllblNsM1ZLLS0xNW4zbUdxYjBQc2pCWkhLbWJSaA?oc=5",
+      "source": "농수축산신문",
+      "published": "2026-11-09T15:31+09:00",
+      "timestamp": 1794205897,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 17.9,
+      "summary": "예산군 학교급식 지역산 식재료 비중 78.2%…4개월 연속 충남 1위 농수축산신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 11
+    },
+    {
+      "id": "d007b7db2b77115f",
+      "title": "겨울철 수산물 식중독 예방…식약처, 굴·과메기 등 720건 검사",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0xanFNMVc2SWJKR28tamVtU2RNZlF1eVUzVVJhQTJ5TUxVQWh2ckMwZlNtR0hIcWxpR2NiNWJfTmRMS2xTU0FWZ0htQTI3VFhuQndVeGpmNEpGU0Nyd21Bby02MFJod3pGcEFWTV9n?oc=5",
+      "source": "간호사신문",
+      "published": "2026-11-10T09:27+09:00",
+      "timestamp": 1794270443,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "원물 수급/시세",
+        "시즌/트렌드"
+      ],
+      "score": 16.9,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "정책·식품안전 변화",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 7
+    },
+    {
+      "id": "05eb4c7e7f9b7559",
+      "title": "아워홈, 일본·호주 코스트코 뚫었다…올해 누적 수출 매출 13% 증가 - 머니투데이",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1EVmpPQWQ3M1JwMjlhQTRoZi0zcm5MN0UwM2QwMGlRRGFsU0pGTlZfQ0IxdlBTX1FMNXktclBkdTNpZWZFa2JkenRaSDdrNVpwVHV0N0lUM1Q1VEg4SW9idTNjdElPb2ZGVnfSAW9BVV95cUxQYlVmRnRxcGVzdUluYmpKNHE4WTIteDAxZ1lhTXVQSk41MFV0VHJxUjJyY2xabEsyVkhqdDZQRFN1MGRPcVB5d0FyLVJZcmRZSjc4SXc3d212OUx4T1VvUzZqVkVoNkNsMzM0dmpETlE?oc=5",
+      "source": "머니투데이",
+      "published": "2026-11-11T11:02+09:00",
+      "timestamp": 1794362552,
+      "category": "코스트코",
+      "tags": [
+        "코스트코"
+      ],
+      "score": 16.2,
+      "summary": "아워홈, 일본·호주 코스트코 뚫었다…올해 누적 수출 매출 13% 증가 - 머니투데이 머니투데이",
       "summary_type": "공개 RSS 소개문",
       "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
       "official": false,
@@ -24,7 +318,28 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
-      "editorial_score": 13
+      "editorial_score": 11
+    },
+    {
+      "id": "a2130fd7076bac4c",
+      "title": "\"미 중간선거 결과, 관세 기조 유지…해양수산 영향 제한\"",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0xdTNMLWdSSnE1eVFhU3VwQmQ1ajM1Z3BuLWNvREZ1bnBjeTZLUl8ydHkzWW0zRVRfa21tcDBtV2RRZmszWkV0TnFvNGZMRzdHQ2RBb21vLU5Sc0tvWndUSHdvNU1oblZfRzlDYzNLdlZKeUdRdmowddIBeEFVX3lxTE0xdTNMLWdSSnE1eVFhU3VwQmQ1ajM1Z3BuLWNvREZ1bnBjeTZLUl8ydHkzWW0zRVRfa21tcDBtV2RRZmszWkV0TnFvNGZMRzdHQ2RBb21vLU5Sc0tvWndUSHdvNU1oblZfRzlDYzNLdlZKeUdRdmowdQ?oc=5",
+      "source": "뉴시스",
+      "published": "2026-11-10T11:37+09:00",
+      "timestamp": 1794278222,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 15.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 16
     },
     {
       "id": "7b20906b83138dae",
@@ -50,41 +365,62 @@
       "editorial_score": 16
     },
     {
-      "id": "a99c2c913a2e7669",
-      "title": "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
-      "url": "https://www.newsis.com/view/NISX20261110_0003862615",
-      "source": "뉴시스·산업",
-      "published": "2026-11-10T17:24+09:00",
-      "timestamp": 1794299066,
-      "category": "원물 수급/시세",
+      "id": "2c51a529ee14cc86",
+      "title": "“무조건 먹어야 한다”…전문가가 추천한 11월 제철 수산물 '7가지'",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1IVmNCLXFkUVltWEtGajh1cUc4SEZIQ0R5QlBwcGJhZV9tbWZxN3dFejM2V1lXaXVBQkdveldfdjZaSmZGN0NnSFhJU0FqTFlzTlBuXzF3?oc=5",
+      "source": "위키트리",
+      "published": "2026-11-11T09:55+09:00",
+      "timestamp": 1794358500,
+      "category": "시즌/트렌드",
       "tags": [
-        "원물 수급/시세"
+        "시즌/트렌드"
       ],
-      "score": 14.2,
-      "summary": "[서울=뉴시스] 염준호 기자 = 메모리 공급난과 생산비 상승으로 올해 글로벌 스마트폰 유기발광다이오드(OLED) 패널 시장이 침체에 직면했지만, 폴더블·롤러블 디스플레이는 성장할 것이라는 전망이 나왔다. 카운터포인트리서치는 10일 전체 OLED 스마트폰 패널 출하량이 2025년 8억9400만대에서 올해 8억2900만대로 약 3% 가까이 줄어들 것이라는 보고서를 내놨다. 보고서는 특히 출하량 약세와 가격 압박 여파로 올해 OLED 스마트폰 패널 매출이 전년비 5% 넘게 감소할 것으로 예상했다. 반면 폴더블·롤러블 등 프리미엄 OLED 출하량은 전년 대비 23% 이상 증가하며 성장할 것으",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "score": 13.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
       "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "수급·물량 변화 보도",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "editorial_score": 21
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
     },
     {
-      "id": "dc9de6c23d6fbd79",
-      "title": "회생 안간힘 홈플러스, 상품 재입고…생필품·먹거리 할인전",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863182",
-      "source": "뉴시스·산업",
-      "published": "2026-11-11T10:03+09:00",
-      "timestamp": 1794358999,
+      "id": "3a26e15bb6486ee0",
+      "title": "市, 로컬푸드 매장에 수산가공식품 입점 확대… 타 지자체까지 판로 넓힌다",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE90cWl5QUFraVcxZ3dPVjJZdTY1U1RWS3pjQnppeUl4Rm1UZmdlMGpmU2tBWk96RmhLQ0FfWEpGQlBwakJlTVVjak5Felg2UF9xc1hVdDFnZXZRWDlDVjV2VXVzT1FHeXlPbUVGejlpRGg?oc=5",
+      "source": "투데이 군산",
+      "published": "2026-10-29T10:05+09:00",
+      "timestamp": 1793235900,
+      "category": "매장 운영",
+      "tags": [
+        "매장 운영"
+      ],
+      "score": 10.7,
+      "summary": "市, 로컬푸드 매장에 수산가공식품 입점 확대… 타 지자체까지 판로 넓힌다 투데이 군산",
+      "summary_type": "공개 RSS 소개문",
+      "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "매장"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "b68da63885e96b9c",
+      "title": "이마트·트레이더스·에브리데이 '쓱데이' 10일간…한우 반값에 로봇청소기 49만9000원",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KSzUyWndfcU9la0FNRWM3b19yYlJZOFd3aFJsN0tlekZEbDVyWjFVSmNkNUx6bEhmSmxZdURrSENnNDJqbV94Sm83ZnNvVUJnSHV3MGNRX2JtdjBTVmdKRFlXY3JJNU4w?oc=5",
+      "source": "데일리팝",
+      "published": "2026-10-30T16:00+09:00",
+      "timestamp": 1793343600,
       "category": "대형마트/SSM",
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 13.2,
-      "summary": "[서울=뉴시스]권민지 기자 = 홈플러스가 장바구니 물가 부담을 낮추기 위해 삼겹살과 제철 과일, 간편식 등 인기 먹거리와 생필품을 할인 판매한다. 홈플러스는 12일부터 18일까지 신선식품과 생필품 할인전을 진행한다고 11일 밝혔다. 이번 행사를 위해 인기 상품 4500여종의 재입고를 완료했다. 행사 기간 캐나다산 '보리 먹고 자란 돼지' 삼겹살·목심은 멤버특가 40% 할인한 100g당 1380원에 판매한다. 미국산 프라임 척아이롤은 30% 할인한 100g당 3430원에 선보인다. 무항생제 닭다리살·오리 슬라이스 구이(400g)는 50% 할인한 7990원에 판매한다. 제철 과일도 할인한",
+      "score": 20.1,
+      "summary": "이마트·트레이더스·에브리데이 '쓱데이' 10일간…한우 반값에 로봇청소기 49만9000원 데일리팝",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
@@ -93,97 +429,487 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "editorial_score": 4
+      "editorial_score": 11
     },
     {
-      "id": "d4d522f532a356e3",
-      "title": "美中, 무역 휴전 2개월 연장…관세·희토류 수출통제 유예",
-      "url": "https://www.hankyung.com/article/2026110959897",
-      "source": "한국경제·국제",
-      "published": "2026-11-09T19:44+09:00",
-      "timestamp": 1794221052,
-      "category": "해외",
+      "id": "81725e2fdc563f2a",
+      "title": "한국광어양식연합회, 부산국제수산엑스포 참가...국산 양식 광어 경쟁력 홍보",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9BVVhwTXNIeUZIR05jVVRyWjZZV0dqWGc0V19KWW1qTmFTSU5URkt5TkFmX2wwd0xyOUVfcl9nREVkV1F2SzZYVU5Ccndvc1dDV2hXMFBJYzdXNWd3VDZKZjFkelZtQU5pbDg0UkN3eFl1THlvSWhvZkhhYmo?oc=5",
+      "source": "글로벌에픽",
+      "published": "2026-11-10T09:55+09:00",
+      "timestamp": 1794272134,
+      "category": "원물 수급/시세",
       "tags": [
-        "해외"
+        "원물 수급/시세",
+        "시즌/트렌드"
       ],
-      "score": 12.5,
-      "summary": "",
-      "summary_type": "",
-      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "score": 19.9,
+      "summary": "한국광어양식연합회, 부산국제수산엑스포 참가...국산 양식 광어 경쟁력 홍보 글로벌에픽",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "유통시장 구조 변화",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 1
+    },
+    {
+      "id": "ca87d193caa8b4fd",
+      "title": "수산물 위생·검역 국제협력 강화…'K-수산물' 글로벌 수출길 대폭 넓힌다",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8yY05BX3Z3UFhpbGVVUEVTVVVxZy11aWg2MW1qV281T3RSYmtuN0taeHVLV21HZktYQjB4MTZtcXd3UmdteC1pVmlmU0ltM00xN2ZRZ3Nya0dKTVlVMzhR?oc=5",
+      "source": "뉴스1",
+      "published": "2026-11-04T07:00+09:00",
+      "timestamp": 1793743200,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 16.4,
+      "summary": "수산물 위생·검역 국제협력 강화…'K-수산물' 글로벌 수출길 대폭 넓힌다 뉴스1",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
       "official": false,
       "channels": [
         "수출"
       ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "무역통계·원산지별 가격·규제 시행일",
-      "editorial_score": 16
+      "impact": "정책·식품안전 변화",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 14
     },
     {
-      "id": "a114f581835f5d94",
-      "title": "일본엔 진미채·호주엔 깍두기…코스트코 뚫고 K푸드 알리는 아워홈",
-      "url": "https://www.hankyung.com/article/202611119329g",
-      "source": "한국경제·경제",
-      "published": "2026-11-11T09:32+09:00",
-      "timestamp": 1794357125,
+      "id": "ed34f2dcf1bddf05",
+      "title": "아워홈, 일본·호주·뉴질랜드 코스트코 전 점포 입점…글로벌 식품사업 확대 가속",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5adWxPRmU2WjBjWVdvQWZoS0QwN2t1Q1RnY3VQUHpoZHZqeGs2bG5CdnIzeEtMMENQM1pqampJZmV0dzIwYTJROTBLTEhMNzNuempadG8xNWU1ZC1ZdG9URTc5S2xqc0lL?oc=5",
+      "source": "Queen 이코노미퀸",
+      "published": "2026-11-11T10:59+09:00",
+      "timestamp": 1794362341,
       "category": "코스트코",
       "tags": [
-        "코스트코"
+        "코스트코",
+        "매장 운영"
       ],
-      "score": 13.5,
-      "summary": "",
-      "summary_type": "",
+      "score": 16.2,
+      "summary": "아워홈, 일본·호주·뉴질랜드 코스트코 전 점포 입점…글로벌 식품사업 확대 가속 Queen 이코노미퀸",
+      "summary_type": "공개 RSS 소개문",
       "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
       "official": false,
       "channels": [
         "코스트코",
         "수출"
       ],
-      "impact": "시장 동향 · 후속 근거 확인",
+      "impact": "유통시장 구조 변화",
       "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
       "editorial_score": 7
     },
     {
-      "id": "595f9c1871ad046b",
-      "title": "트럼프의 행동대장, 공화당 하원 리더로 선출…'탄핵방어 모드' [워싱턴나우+]",
-      "url": "https://www.hankyung.com/article/202611118840i",
-      "source": "한국경제·국제",
-      "published": "2026-11-11T07:10+09:00",
-      "timestamp": 1794348646,
+      "id": "9ee710fbe1d441f1",
+      "title": "[식자재유통업계 10월 동향] CJ프레시웨이 ‘식봄’ 통해 공영도매시장 농산물 판매...농협경제지주 축산경제와 축산물 공급 업무협약 체결",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE80cjJnYVNwTzVqeVVwWnNaRVM5NTZTZWk4anpYc3VyWjl5M0MzMWRJY2NLOFQtYTNoeVFjRE1WUzlKMHFta1JVZUNiNllia1FndjVLb3ZSdWFQVHVFZXJEZHd3QjhCQQ?oc=5",
+      "source": "여성소비자신문",
+      "published": "2026-11-11T09:12+09:00",
+      "timestamp": 1794355966,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 16.2,
+      "summary": "[식자재유통업계 10월 동향] CJ프레시웨이 ‘식봄’ 통해 공영도매시장 농산물 판매...농협경제지주 축산경제와 축산물 공급 업무협약 체결 여성소비자신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "수급·물량 변화 보도",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 11
+    },
+    {
+      "id": "fa3918f2d0e3aefc",
+      "title": "KMI, 美 중간선거 해양수산 영향 분석…관세·운임 변화는 '제한적'",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1JUDMySjV3Q0ttZklQRG4xOGs0Q3BSN2hzMnVGMk5DUTJ2SS01TE1ILUF1T0J4THJMZ3B4TlZ5SjVVcVhNTnNJUjlZVW4xVV9zYmlzWmlyTWl0RmxhN2hXNGozU0RLa1ZsOFFWQWh3?oc=5",
+      "source": "국제뉴스",
+      "published": "2026-11-09T20:06+09:00",
+      "timestamp": 1794222398,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 15.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 16
+    },
+    {
+      "id": "97478f58f5115477",
+      "title": "‘학부모 참관룩’ 매출 목표 8배…컬리, 식품 넘어 패션사업 키운다",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUExOdVEtMkFHcGVkdWJOSFBJeXIweUd1bjFEaWloY01mX2xjQjFkZ2tMY0hfTFB6Rk9TaV81UVJfVVBkamdWTkNWUmVaTDVJX3Z0NUpYZHNMdUR5aWhVQVJvZFJIRWRCVTlycjlBZG9VWm9kV29sQzJWMzJlbktleA?oc=5",
+      "source": "이데일리",
+      "published": "2026-11-10T15:59+09:00",
+      "timestamp": 1794293956,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 14.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 7
+    },
+    {
+      "id": "949bb2e298629fa1",
+      "title": "식약처, 겨울철 수산물 720건 집중 검사…굴·과메기 등 대상",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBIbEpGYUotdXJfQTNCQUwyNWUtRFo3dkw3aHhvRHJvVHpxdEQ5aWV4S3I4ZDZyRWN1dWM2eXRKVWx3MnVZV2VWNzVJS1VRQXBBbW13Z053VUY5X3lISG1SSTBiZUFOY3cxSjFLRjRhRjM?oc=5",
+      "source": "신아일보",
+      "published": "2026-11-10T13:36+09:00",
+      "timestamp": 1794285373,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드",
+        "원물 수급/시세",
+        "식품안전/소비심리"
+      ],
+      "score": 13.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "정책·식품안전 변화",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "83b3a0d5cd29dbb5",
+      "title": "[똑똑한소비] 이마트, 롯데마트, 홈플러스, 쿠팡",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CSnBTYTFPY0pQTHc4eW1iX193OTdkdnZEemtja3MwY09nRDhsUTlyOEl6MGU2Z3Z6dV9FWThyYUFYcWQwelNlVkRvTjNtYkpfdkU5UDEzbThVcm8?oc=5",
+      "source": "에너지경제신문",
+      "published": "2026-10-28T21:00+09:00",
+      "timestamp": 1793188803,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM",
+        "온라인"
+      ],
+      "score": 20.1,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "6422b24519e51f4d",
+      "title": "광어양식연합회, 부산수산엑스포서 유통기업 2곳과 판로 상담",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBZb1JyckZXdkpvZjZIOHE2WEdxUXNFZzM4Nl93VldnZzlycXRKa2RKbTdheVp1ZXdmMnFHVFNVbEtmemZfU0FDSXotQkZFSmJvRExuZXRBeU5BczZvQXN0ZEotZmxLSTlH?oc=5",
+      "source": "공감신문",
+      "published": "2026-11-10T09:28+09:00",
+      "timestamp": 1794270498,
       "category": "원물 수급/시세",
       "tags": [
         "원물 수급/시세"
       ],
-      "score": 13.5,
+      "score": 19.9,
       "summary": "",
       "summary_type": "",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
       "official": false,
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량"
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 11
     },
     {
-      "id": "5e30b55cfb322e10",
-      "title": "\"이번엔 속초 떡 맛집\" 이마트24, 육구방앗간 '찹쌀모찌' 한정판매",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863123",
-      "source": "뉴시스·산업",
-      "published": "2026-11-11T08:54+09:00",
-      "timestamp": 1794354860,
+      "id": "b1e5fef27f34d30c",
+      "title": "아워홈, 일본 코스트코 37개 점포 입점…호주·뉴질랜드 이어 판로 확대",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBKcmtTZVlMNGVlOGZTM2FQa05QaVkta0xVeEEycW9yUzhLcW9heTVYX3JiSkMzWFZPZXNoSW9aNEYwVzhWa1JfM3VhOVR4dDU2dzI4Slp5YnViUG92N0J4TjRGYVV5eFhrRTlsd29oQUVycVU?oc=5",
+      "source": "소비자가 만드는 신문",
+      "published": "2026-11-11T10:57+09:00",
+      "timestamp": 1794362268,
+      "category": "코스트코",
+      "tags": [
+        "코스트코",
+        "매장 운영"
+      ],
+      "score": 16.2,
+      "summary": "아워홈, 일본 코스트코 37개 점포 입점…호주·뉴질랜드 이어 판로 확대 소비자가 만드는 신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "수출"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "5f805d96bf27780e",
+      "title": "[충남/예산군] 급식 한 끼가 바꾼 '지역 먹거리' 흐름…'지역산 공급률' 4개월째 충남 선두",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE12RC14Q25YNF9xVEVlalJPNXN5UFYzd19EdjNYR3BsOXhTUWpDZEo5Znl2bk5XNEU2QUswYW53VFpVUFB4WFNXak1LZV9EUW1PQmxsX2RKYTQ2OTFRU2htV2hCZzkyY3d5c09IUHlzLVZjdw?oc=5",
+      "source": "한국지방정부신문",
+      "published": "2026-11-10T14:20+09:00",
+      "timestamp": 1794288008,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 16.2,
+      "summary": "[충남/예산군] 급식 한 끼가 바꾼 '지역 먹거리' 흐름…'지역산 공급률' 4개월째 충남 선두 한국지방정부신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "수급·물량 변화 보도",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 11
+    },
+    {
+      "id": "8269b5ad20ea1a1f",
+      "title": "김장철 수입 고춧가루·젓갈 안전할까…식약처, 수입식품 검사 강화",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5zZkdYV1BaZXFRMDZKN2J0S0VFYjN1dnJOdWhySXJTdWFDaWVSTVZickNTTF9qTTYwUjFhaV9hWXpWb01PRGItS3RrOWpwWVU?oc=5",
+      "source": "CCBS뉴스",
+      "published": "2026-11-09T18:00+09:00",
+      "timestamp": 1794214802,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 15.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "정책·식품안전 변화",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 7
+    },
+    {
+      "id": "4e9a905a2463c3fd",
+      "title": "‘신선식품’ 배송에 냉장·냉동 설비 없는 일반 탑차·승용차 투입…컬리 풀콜드체인 ‘구멍’",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5WX2RxclZVMnRyZjI4TW5kVjlYTDAyYWtoNmxNNEg4QllzMGc4RGFNLVdpQV9fSEs5eC13WFFGVU4xZFNLOEE5VFFQNDJROUgxUVdMQjk0a3pGeG9YVmsxZUFHZmh6RW9mQmlaRDFBYw?oc=5",
+      "source": "뉴스퀘스트",
+      "published": "2026-11-10T15:29+09:00",
+      "timestamp": 1794292198,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 14.2,
+      "summary": "‘신선식품’ 배송에 냉장·냉동 설비 없는 일반 탑차·승용차 투입…컬리 풀콜드체인 ‘구멍’ 뉴스퀘스트",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 7
+    },
+    {
+      "id": "c69a95d4ac9e5dbd",
+      "title": "겨울철 식탁 오르는 생굴·과메기…식약처, 노로바이러스 등 안전성 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1QNkN2UmJjWmRJRjdLdVhxNGhnLWpzU09aYnM0ellUZW40MERCOFlUd190NERnQ2kyYWdZaDRmTDZ2ODdnZXFlRWp6czZuR1hXejUxV21hZ3VOdnQtcjBLdENTMnlBSm9UaUZQZA?oc=5",
+      "source": "와이드경제",
+      "published": "2026-11-10T11:27+09:00",
+      "timestamp": 1794277654,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드",
+        "원물 수급/시세",
+        "식품안전/소비심리"
+      ],
+      "score": 13.2,
+      "summary": "겨울철 식탁 오르는 생굴·과메기…식약처, 노로바이러스 등 안전성 집중 점검 와이드경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "cb9a49901548764e",
+      "title": "미국이 베트남산 새우에 대한 반덤핑 관세를 인상했습니다. 연말 수출 상황은 어떻게 될까요?",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQY0pfTEUzb2tNM090ZUNKUl9mczJMQlVUMWJDSTkyLXBoaDJSSmJwcWJSLUdOWlhZZEQ1a0dJVFJrR0lQVThUTC04TTZ1cGsyMXNLYmc3dXN1MFZ6V2pjdHJQaE1JQnF3UEppSW5lT194TTJScUxHbl94Q1B0a3VxTGZyZUpWaXQxNzRYQ3NlMlRYQjN0bjIzTEZxbw?oc=5",
+      "source": "Vietnam.vn",
+      "published": "2026-11-06T10:12+09:00",
+      "timestamp": 1793927550,
+      "category": "해외",
+      "tags": [
+        "해외",
+        "원물 수급/시세"
+      ],
+      "score": 12.7,
+      "summary": "미국이 베트남산 새우에 대한 반덤핑 관세를 인상했습니다. 연말 수출 상황은 어떻게 될까요? Vietnam.vn",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "가격 변화 보도 · 비교 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 16
+    },
+    {
+      "id": "a4e58c97b4c25277",
+      "title": "이마트 ‘쓱데이’·롯데마트 ‘통큰데이’…대형마트 할인 경쟁",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1EeU01SGRRelUwSnBvU29NVVJHYzVnTWJNakRYNE1ZSkF6Y29JbWV1dHVrUTd2Zl9wY0VDOGVqelI1SmtETWtfUWFLdVpoTDUzcWpIZlhBM0NMM190Y0E?oc=5",
+      "source": "뉴스투데이",
+      "published": "2026-10-28T16:00+09:00",
+      "timestamp": 1793170800,
       "category": "대형마트/SSM",
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 13.2,
-      "summary": "[서울=뉴시스]오제일 기자 = 이마트24가 속초 유명 떡집 '육구방앗간' 대표 상품을 편의점 업계 최초로 한정 판매한다고 11일 밝혔다. '떡 팝업 행사 시즌2'다. 이마트24는 육구방앗간 대표 상품인 '찹쌀모찌(9EA)'를 13일 오전 11시부터 플래그십 스토어 '트렌드랩 성수점'에서 선보인다. 육구방앗간은 밀가루 없이 찹쌀만을 쪄내는 전통 방식을 고수하고 있으며, 참쌀모찌는 MZ세대에게 인기가 많은 제품이다. 지난 9월 진행한 떡 팝업 행사 시즌1의 인기에 힘입어 진행되는 후속 팝업이다. 당시 '영도다리떡방', '익산농협떡방앗간'의 인기 상품이 판매됐는데, 당일 오전 동이 났다. ",
-      "summary_type": "공개 RSS 소개문",
+      "score": 20.1,
+      "summary": "",
+      "summary_type": "",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
       "channels": [
         "마트"
       ],
-      "impact": "시장 동향 · 후속 근거 확인",
+      "impact": "유통시장 구조 변화",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
       "editorial_score": 2
+    },
+    {
+      "id": "854bfda62b206330",
+      "title": "한국 오징어 어획, 2040년대 제로 경고…연안 생산량 4년 새 절반",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5TTVpad1ZFbUVIZTEtbGxhQ09tVVh5TkNJaGxZX0otMDR0UWNwcUY3b2FpSlQ2OU1QQkU4QlduQnRDcHVKZVBlRU92NXBJcUJwMnBnQ0dSSm92OGNkR2pNT3ZWT0s4QU9ERGN0LVhB?oc=5",
+      "source": "www.famtimes.co.kr",
+      "published": "2026-11-10T07:00+09:00",
+      "timestamp": 1794261600,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 19.9,
+      "summary": "한국 오징어 어획, 2040년대 제로 경고…연안 생산량 4년 새 절반 www.famtimes.co.kr",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 12
+    },
+    {
+      "id": "ac882572f5dc4275",
+      "title": "日 코스트코에 파는 아워홈 밑반찬…글로벌 식품사업 키운다",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HUFBYNkR6T2RIY2NaQzVkalJtbnRYSURoblM1RnVGMU9QMFE4aTQ0U0s3aUN6Qzlnb2Z1V2NJUXNyNXludEtkaHFrbmlwVVkxaUdZYXNlcFRjdzNpS0h4U1JoZXVWTmNLRTQyZQ?oc=5",
+      "source": "ER 이코노믹리뷰",
+      "published": "2026-11-11T10:37+09:00",
+      "timestamp": 1794361035,
+      "category": "코스트코",
+      "tags": [
+        "코스트코"
+      ],
+      "score": 16.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "d1464d2f62d89211",
+      "title": "예산군, 4개월 연속 학교급식 식재료 1위",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBlR29VRUJ4N194WWFRbkFaMVdPV2tWRXJJb3BhcVNBejNwS2VJeE5nVlYxcTNNeFdmVUxUR0ltZjZfM21GSE1BOWEwVGl5ZzNveWtaRWNqakJrQk9TODNTQkFzeWJWenYteUwyUXRB?oc=5",
+      "source": "충남내포뉴스",
+      "published": "2026-11-09T09:48+09:00",
+      "timestamp": 1794185339,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 15.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
+    },
+    {
+      "id": "037893e73a5853b3",
+      "title": "식약처, 겨울철 다소비 수산물 집중 수거·검사",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1pOEVQY3Y1S2w4UlpneEpFNXhXbUd2ZHVRNjNRdU50ZEpvSFMwU09ZTkk2M1VrMUxwRlBZTWVSV0pJandlVGtDbm4yTURXNWp2X21DOTljWlpWZEZRNW5TbHV6clRISjhGU3c?oc=5",
+      "source": "한국시사경제",
+      "published": "2026-11-10T20:30+09:00",
+      "timestamp": 1794310204,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 13.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "정책·식품안전 변화",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 7
+    },
+    {
+      "id": "9f4d2c1a8ccdc364",
+      "title": "삼성전자·테슬라, 美 정부에 \"베트남 관세 시 부품·스마트폰 공급망 차질 우려\" 전달",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5GWWtCazg4ajcxWUlWdUNLQ1lEMmVPanlxb0VBZmZMbG54eVNxTjdWVWZQWUxvQnlyOTlsU2lXZldEMmdNbURWSGV2VkVkNlQwUlZLS2p0RUloVno5VFJlX3htaEVLN0E?oc=5",
+      "source": "초이스스탁US",
+      "published": "2026-11-02T13:21+09:00",
+      "timestamp": 1793593260,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 12.7,
+      "summary": "삼성전자·테슬라, 美 정부에 \"베트남 관세 시 부품·스마트폰 공급망 차질 우려\" 전달 초이스스탁US",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "수급·물량 변화 보도",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 20
     },
     {
       "id": "dc661d3199730f6d",
@@ -209,17 +935,222 @@
       "editorial_score": 17
     },
     {
-      "id": "ffd06a42b337a501",
-      "title": "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40eW9wNnlEUU5xUFk5bGVzUktVWEZuWnk5eUllNGdneTI3a0d2dFpWdjRad0drZ3N2TmREUFdQRm80b2FRV1ZBcERfT2pqNWFpQjVJRkNfVDYzREJPaWpmWUl2anp1akx3ZWM2QzFB0gFuQVVfeXFMTjR5b3A2eURRTnFQWTlsZXNSS1VYRm5aeTl5SWU0Z2d5MjdrR3Z0WlZ2NFp3R2tnc3ZOZERQV1BGbzRvYVFXVkFwRF9Pamo1YWlCNUlGQ19UNjNEQk9pamZZSXZqenVqTHdlYzZDMUE?oc=5",
-      "source": "뉴스드림",
-      "published": "2026-11-05T08:27+09:00",
-      "timestamp": 1793834873,
+      "id": "4ba77cf081a319c9",
+      "title": "완도군, 부산국제수산엑스포서 252만달러 수출상담…70만달러 협약",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9DN1NZSWtsQnZ6dmNTeWtKTkVuZGUtNVduc0dmamUzNlZ4VUlUYkg5aGhuZkcydWpaQ1FSNm1nWEphQVJvVkNGdVpjU0gwY09UY2ZHU2IxbTJrTFlMbXJ5Vm15RnV0cGpFVWs4djRpZWRwRkk4RXNPMUFWMVVfUQ?oc=5",
+      "source": "더파워",
+      "published": "2026-11-09T16:20+09:00",
+      "timestamp": 1794208832,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "c2850b59d1514557",
+      "title": "가을 제철 수산물 가격 들썩… 꽃게·전어 두 배 급등",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1LM3lpUkw5YnlwR2dtRUxmbjl4YUZic3VGSXFvU3hQUVhqOWR0cHJfLXVwZ2xESlh6c19mdkNqWm5PX0hlOHI2eU95dE14NjAwVnJJNFpxb1BtX0tOMklHRWl1R0Y?oc=5",
+      "source": "중도일보",
+      "published": "2026-10-27T16:00+09:00",
+      "timestamp": 1793084400,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세",
+        "시즌/트렌드"
+      ],
+      "score": 19.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "가격 변화 보도 · 비교 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 15
+    },
+    {
+      "id": "72cdf48f05aecf13",
+      "title": "“동네 슈퍼, 다시 뜬다”…대형마트와 편의점 사이 ‘SSM의 반격’",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMjYtTkRNRDI2NXJqRzBMZmFfSkYwbjdTNUk3QzdPZU1iZEo0M1V3OG5CQlA2c2l0LWdCTmFjQm1RUnBnX05jRjdKT2RyVk8tRTB0eG5PS3hzSGJDMUFBSjJSSHJvSkduWmNzUUxnUW56aGJzTmIwVm4yVzRGVTFjdQ?oc=5",
+      "source": "이데일리",
+      "published": "2026-11-11T05:38+09:00",
+      "timestamp": 1794343081,
       "category": "대형마트/SSM",
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 12.7,
+      "score": 18.9,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "2758a93f6626e817",
+      "title": "아워홈, 코스트코 타고 K푸드 글로벌 공략",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBEMEJKeC1nMGtMY29vMWROcVdzWm5QLURaX2dJcmpzWlNpMDNyWEJSUTZJZE5zN3BEVFdGZlNySVliM3VOQUhDQ0FxNUd5aXpLcEdZREJZRWlGYXdGSDRDSXR3SWlEa0dUM2lnenFQSlM?oc=5",
+      "source": "신아일보",
+      "published": "2026-11-11T10:26+09:00",
+      "timestamp": 1794360374,
+      "category": "코스트코",
+      "tags": [
+        "코스트코"
+      ],
+      "score": 16.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "1da74f229cd5c499",
+      "title": "CJ프레시웨이, 급식·식자재 유통 경쟁력 강화…중장기 성장 기반 다진다",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5UTXJkXy13OEZIV0ZVd19LMlhKOTVjWEdNaWF4Znk5RDVyYkF5LWpCUHlUME4tSVE2MEJYU0NuSUVleW9BSUtGcE9BY0diME5OZG5qaTdfdjBVNTktSU1TRTFOLUMySE96Vmo1QWN1VlA?oc=5",
+      "source": "위키리크스한국",
+      "published": "2026-11-06T10:01+09:00",
+      "timestamp": 1793926861,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 15.4,
+      "summary": "CJ프레시웨이, 급식·식자재 유통 경쟁력 강화…중장기 성장 기반 다진다 위키리크스한국",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
+    },
+    {
+      "id": "29027e012557aa97",
+      "title": "겨울철 다소비 수산물 안전 살핀다",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1LSV9HZzNNZVp0ck11SnZyRU9wMHJrZVJyaDh0TzBmMDhoUVRVbjVXT2xocEpqTDJPblc2NHhJZnV3Z3c2SF96Si1ZLUpPOTRlX3RoZVFOMnF2Y1dtYmJ3aUtmVGRkV0di?oc=5",
+      "source": "대한급식신문",
+      "published": "2026-11-10T15:09+09:00",
+      "timestamp": 1794290940,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "B2B/급식"
+      ],
+      "score": 13.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 7
+    },
+    {
+      "id": "d4d522f532a356e3",
+      "title": "美中, 무역 휴전 2개월 연장…관세·희토류 수출통제 유예",
+      "url": "https://www.hankyung.com/article/2026110959897",
+      "source": "한국경제·국제",
+      "published": "2026-11-09T19:44+09:00",
+      "timestamp": 1794221052,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 12.5,
+      "summary": "",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 16
+    },
+    {
+      "id": "928c894d8d32d0e7",
+      "title": "컬리는 왜 ‘풀콜드체인’을 포기했을까?: 새벽배송에 승용차 동원한 이유",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAxOHRlNFBQYy1DcWtNRFVTcmtsX1ktNHphdl9zSGVEZ2UyeVYxREdTM1lJSEVYQlpvRmEydUR3dW9uSGpYaE5OeWlFei1ydThSVlkzQXRSZlNkQXRrd2ptYzA4MVh0a1VTQW9IaXJBZXpyMzRpVHN5TkFDaGhzdw?oc=5",
+      "source": "네이버 프리미엄콘텐츠",
+      "published": "2026-11-09T08:00+09:00",
+      "timestamp": 1794178800,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "컬리는 왜 ‘풀콜드체인’을 포기했을까?: 새벽배송에 승용차 동원한 이유 네이버 프리미엄콘텐츠",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 7
+    },
+    {
+      "id": "b229a6a1d3d9174e",
+      "title": "식약처, 김장철 앞두고 다소비 농·수산물ㆍ가공식품 등 통관·유통단계 검사 강화",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1SZ1hFRXQ1a3hSeG5UclZXMlFzVUx4VEozdDZrMi14V3RaVVB1c0h3Y3F6bmRQN3B2SGlUejlUZTJYVDFKc1FVX0JNRm1vWkpoOUpvTC1jemVpYWlidHpFZnlIWmtXQy1oVmc4?oc=5",
+      "source": "BBS불교방송",
+      "published": "2026-11-09T08:41+09:00",
+      "timestamp": 1794181264,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드",
+        "식품안전/소비심리"
+      ],
+      "score": 10.7,
+      "summary": "식약처, 김장철 앞두고 다소비 농·수산물ㆍ가공식품 등 통관·유통단계 검사 강화 BBS불교방송",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "정책·식품안전 변화",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "1afb67c3e7a73cb7",
+      "title": "이마트 트레이더스 의정부점, 12월 10일 문 연다",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAybXpEVTEtdEdWZkUwZDBFS1lZS3l3d29zbWd0X2NDRkdRZ21scEpMZ2p0eklzcUtzLTN0cXk5MHFtbkx1LWlWMzd2T0dKSGlwWUhwY2pybUVUUE42cHZzSmY3NnVkM0tERUFKdg?oc=5",
+      "source": "경기북부탑뉴스",
+      "published": "2026-11-10T09:47+09:00",
+      "timestamp": 1794271628,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
       "summary": "",
       "summary_type": "",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -227,9 +1158,737 @@
       "channels": [
         "마트"
       ],
-      "impact": "가격 변화 보도 · 비교 확인",
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "f097a84e5d59d950",
+      "title": "“한국 바다서 씨가 말랐다?” 오징어 어획량 93% 급감…대신 남미산 수입 급증",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1NbVlYMHpxMURWajEwR3FvamttS1B3bFlueFFLbnNjRnc3QldScVVEaVV0MlBXaVY2aTRORVdkdkhVZ2tHRzA3b2JxV0xRWms0OFHSAVNBVV95cUxNaHVzXzdub0RqeXdwVUdBRXJMMkVqYnpsVjRXR05MRThSNEgwOHY0aGdkSFRqUFNWSi1FZTR0ZUhUTUU1MUcwbVdDWUdEU0RBTG45VQ?oc=5",
+      "source": "서울경제",
+      "published": "2026-11-08T15:35+09:00",
+      "timestamp": 1794119719,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.4,
+      "summary": "“한국 바다서 씨가 말랐다?” 오징어 어획량 93% 급감…대신 남미산 수입 급증 서울경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 34
+    },
+    {
+      "id": "f45247445ad2f20a",
+      "title": "아워홈, 일본·호주·뉴질랜드 코스트코 전 점포 입점",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAyZEx4aUJoRHluMTFxT3Q2SVg2SjBjRGMwNk0wdGZUWmZCejQ2NDZrbmVTbkFGWUhqTXNiSTNMM0o2ZjBHUmZMYXd1a2tMWUdLOFhPbnB3LXBnOTNYOVRZc0FNbXc?oc=5",
+      "source": "인더뉴스",
+      "published": "2026-11-11T10:13+09:00",
+      "timestamp": 1794359595,
+      "category": "코스트코",
+      "tags": [
+        "코스트코",
+        "매장 운영"
+      ],
+      "score": 16.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "수출"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "c2e827a8f0382bd1",
+      "title": "CJ프레시웨이, 3분기 매출 9614억…단체급식 성장 이끌어",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1laHBtU0JhdldPanYyRWdGQWxBOWVpWnlILVZQZzJUeWwtTnVDRzZmWWYya3hyOV9RYUxHLWg1RVZVb0N2M2ctaVRIYk9VMzdLOXBRRGtuQ0hqUQ?oc=5",
+      "source": "한국경제",
+      "published": "2026-11-05T16:38+09:00",
+      "timestamp": 1793864325,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 15.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
+    },
+    {
+      "id": "a6e8c4466acf2b5e",
+      "title": "화성특례시, 경기미 원산지 표시 지도점검 부정 유통 방지",
+      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTFB6dEVUSlhvVGJFeGo2TTcwMVlvaDdFU09ucUxabEh4Z1V1LUFOOE9HbTU3Q2h2VzFSSmVIaTJuaDFNZw?oc=5",
+      "source": "화성인터넷신문",
+      "published": "2026-10-15T16:00+09:00",
+      "timestamp": 1792047600,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 12.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 7
+    },
+    {
+      "id": "9d047bc3d8619281",
+      "title": "해수부, ‘대한민국 수산대전–코리아 수산 페스타’ 개최",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBneG51LWZsa2w0RWUySXppb0xSdGluZVdxLWJqQjFnb2xYTTZhVzJxbGhsZTZvT3hpa2I3b1VFTEs4YmI0SmFnZHFSQUtReXJKbEVUVTh4d19lN25zUlBvWFFGZmEteXZmbEVQM1N0aw?oc=5",
+      "source": "어업in수산",
+      "published": "2026-10-27T16:00+09:00",
+      "timestamp": 1793084400,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 7
+    },
+    {
+      "id": "8c50ee0f5f0da2c6",
+      "title": "찬 바람 불 때 꼭 먹어야 하는 제철 수산물·과일·채소 12선과 위기브 명품 답례품 & 세액공제 혜택",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1vYjBHTG5FXzlycFcxVlBDNkZ4SmdMT0dBeXhtMGlXM3NrSTVpczk4UFhaaWY2ZHRyb2dFTUlDdWVIbU5lMHB6RlBPZ3lxYkJXRGR2UmJR?oc=5",
+      "source": "고향사랑기부제 위기브",
+      "published": "2026-11-03T16:29+09:00",
+      "timestamp": 1793690957,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 10.7,
+      "summary": "찬 바람 불 때 꼭 먹어야 하는 제철 수산물·과일·채소 12선과 위기브 명품 답례품 & 세액공제 혜택 고향사랑기부제 위기브",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "0944c9408c3230a5",
+      "title": "완도산 수산물, 일본 수출 상담 41건 778만 달러 성과",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBwWThZX2pta0VBSjRUUThubnVGczU3MFMtNDg0QzVtZ0lyLUZJX1lyTnVPTF9RbC1TaEhJaWdXRDZ1NnFpd0IxV0IxX1d3bkdPNF91V1Q2VVp1MjhZaFdCazNOeERqYUJsQURibEVKei1xUEpZY1pNUUZGYw?oc=5",
+      "source": "빅데이터뉴스",
+      "published": "2026-10-23T16:00+09:00",
+      "timestamp": 1792738800,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 10.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 7
+    },
+    {
+      "id": "d12744f0b0488a14",
+      "title": "\"오징어의 귀환\"…남미 어획량 회복에 수입 폭증",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GTXZoWURjNnBZQ2wybzVDQ0U3UWhLbUdrbFZiSXphbHJvYWREWk5aMEc3SUlsbE5kbHpoX19WeTRqU1lCTjV4R01tY1hVeTRxRkdkZG1FcUc4dHYwTlRzddIBeEFVX3lxTE0wcmQ2c0hmWU9RVk9IdExEMmkwZ3FBeGtncUF4ak4zTDBMaHJld1lqNkQ2aU1lMlV0Z1ZUQWp6UGt2YlZGSFJ0YTc4bEVTSGJuTThtRFlOa1d3ZHBHcnNhVU1KamF5T2lPLVBkbi1JSGlwcFlFU1RoeA?oc=5",
+      "source": "뉴시스",
+      "published": "2026-11-07T16:01+09:00",
+      "timestamp": 1794034860,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 12
+    },
+    {
+      "id": "bd41cc67309b5c1b",
+      "title": "홈플러스, 임금·납품대금 지급 차질…대형마트 매각도 불투명",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5lTTFvcHRkSmFoM0c2dFQtNTA5Q3Zpanc1dlF5TTVxZFRjaC1Nb0YyeWF3RGtYNnZDOXNhNVF5UEYwY2NHSWY3dVd1bktfTjd2d09WMVlCbzRRWTZKNjFWWE1qRUdjbUdCdFJWZlZ5X2c?oc=5",
+      "source": "시장경제신문",
+      "published": "2026-11-08T11:56+09:00",
+      "timestamp": 1794106598,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 16.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 19
+    },
+    {
+      "id": "8bf2ed938e189b01",
+      "title": "아워홈, 일본 코스트코 37개 점포 입점…K-푸드 글로벌 유통망 확대",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1Edk94X0J2bzZudE1fVUlCVEE1V0pPaVVranJXVmtnWlNiRzk3LWZWYUNUZUJiTy1LME5kempMSHhHRXN5ZmotdTFFZnYzMXFWa2I2WkNDajlBVXJFUkVQWHFsODMwSXJRNndPSXRaMnk?oc=5",
+      "source": "스마트경제",
+      "published": "2026-11-11T09:53+09:00",
+      "timestamp": 1794358428,
+      "category": "코스트코",
+      "tags": [
+        "코스트코",
+        "매장 운영"
+      ],
+      "score": 16.2,
+      "summary": "아워홈, 일본 코스트코 37개 점포 입점…K-푸드 글로벌 유통망 확대 스마트경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "수출"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "96797033b0acadcc",
+      "title": "CJ프레시웨이, 식자재 유통·급식사업 실적 동반 개선",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9RazNZX3NQVVBJbFVTOTVrNTgtTG9QamFGVWdYMWtvX2ZVSDJfYWVIV1VtOTUxSG1lM0NrRDY1RkxvRnlkNDRMZHdoLWJ2dG5ZSXRSVHQxZHN4QUQ5aWVEeG1LMTJoUVkzUEtz?oc=5",
+      "source": "라이센스뉴스",
+      "published": "2026-11-05T16:03+09:00",
+      "timestamp": 1793862191,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 15.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
+    },
+    {
+      "id": "786d643ac9dac1c0",
+      "title": "쿠팡, 햇상품 600여개 할인전",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9zYzV3RGpnLVZzR1luMTFxbk1rZjh3eUdmb0E3cm1uRVA3UG9LdzlNWTdyc1N3a3JTUHRUc0NlVlJRbkxtWjZIdlNJeEdBTmJ2TXlBOERQVWFtNzNRcDgtczMyQjlFeEhZQ2Iw?oc=5",
+      "source": "BBS불교방송",
+      "published": "2026-10-23T16:00+09:00",
+      "timestamp": 1792738800,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 2
+    },
+    {
+      "id": "1120697dc8eafd17",
+      "title": "홈앤쇼핑, 라이브커머스에 'PIP' 적용…제철 수산물 특집 방송",
+      "url": "https://news.google.com/rss/articles/CBMisgZBVV95cUxPVHd6dmlBT2VDSjBtNTJYUkxIQV9qcGRjdkhySVRpU3hPVXJCVDNCVjFaaVRjODI0NzBXM0pIVndUQmJtWmhVYUN4OEFhQnVVcFNPd2NrbW5hVG42M294LXVEM1lqYjRKX19NMXFZeEZubThEUjV6X2ZueFJWc1BuOFpKV096ckNDLTBoRXFKcTVzbzc4cjlPcXNlZlNoVUdJbnJWVGlQalBaRTk0dWRReFh0X3ZDbW5JTUk5UzF0emJLTWM5RFNlcE9KY0Y0NG1IZnUxanVkbk9Xblk5bFlHS0lmZk8tZmU2U1dpV0M2elJEZldqTzAzRUJBVjlfZXBwN0NDVUlyQ2pGcWxzNnZ4RVh3dVZUdHRZYmdHY1JwTmU3WkdHNkpOTVEzMjJ6UHJnWXk4X0ZvOHFycGRaZExkN2dSU2dyUDFZanp4RFVINUFObjB5eWdOMUowM2pXM3gtOHRfSGc2Y0RWMkhzVlJCSUpISER0Y0VnNXc0S3o3UVFybzdydUdhOFVKZW5uT2wyUzZNV3JTQ3l1aE9tU0Y1VTN4WEtIdjNCalVlNDI2eWs5RU1lc2phQzFIem5KLWNYa0Q0Y296WkNlMEYwSWRzTWMzajltaHFyVVlYN09pVU1lWDdXOXNVcWpYMUJydjdrS09zb0Z1UVF4VXZvT29BM2JtRzY4ZU13SXU5ajFLMl9RRmxrVDF0bXUtbW9rcDdhcHNLVTVrelZHSWppa0pUMUNOcGx5R1ktQklhYWZtNl9VbmJvaERqa1ZZLTREZFcxVXNmWXQtbklhMVJkQUhOVW0tdGI1WXBJZnM4eU5qOGFGcm1uYVdnTWpwSEpqa1VySXRKM3JyWUJhN1U3NjQ4WTFyMEpsSTJCaGU3bHpLb1lvOXpOMk1vZEhZNzBYTXFxeWF4RGw1azFxSzZXSkJJUlBJbC12bnVMS24yRGNOZkxTbGxJaFU5THkxU1RXOVRjbVhVM01ucHV2aGl2N25MYmV2U2tMMk1VdnNDdURUeWxNRnAxbTNoVmhScjk0X04tWVQ4STAybFcxRk1oblRaekY3ckdpV1g0LW9fal8wN0szUQ?oc=5",
+      "source": "전자신문",
+      "published": "2026-11-03T10:12+09:00",
+      "timestamp": 1793668334,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 10.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "3bd2b78400389f39",
+      "title": "김장철 앞서 농·수산물 300곳 위생점검",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82T29FWTNYc0FBU1dNNUUxaEh6T3FWazlxLVZyLWpxU0J3dXpDNWNVeThiVHdadnRoeHdfeFB5SVZXaHRSN0diRHFaQWFNTjhZWFQ3dDZyZFNjd2J6X29YaE5zeVNwdVBC?oc=5",
+      "source": "대한급식신문",
+      "published": "2026-10-31T16:00+09:00",
+      "timestamp": 1793430000,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드",
+        "B2B/급식"
+      ],
+      "score": 10.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "정책·식품안전 변화",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "editorial_score": 11
+    },
+    {
+      "id": "0fd5f927e90bdc03",
+      "title": "강원도, 프랑스·미국 수출시장 공략…수산물 소비 촉진",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zWURmMXhWTjc2OGdLbDlzU1IwbkpSVE9GdG5wdjlIaXBhQzl2bFdmLWQ0ZzNTZG10eVJvVEZIMjJuSThPLWM4Zk5rUjFWSDBoWXJzV21adEpzMlnSAWBBVV95cUxPZzVTYVdkRUtlTjhRVzNKMDNPMVhBM0UtVXdXbHhiRkUxdmp4dGhydC10VlVfVEoxd2RHTHppNVB6U3g3VFhHTE9wV18yYm5hOGw4cHJld0tfUi1XNEdSMm0?oc=5",
+      "source": "연합뉴스",
+      "published": "2026-10-27T16:00+09:00",
+      "timestamp": 1793084400,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 8.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 7
+    },
+    {
+      "id": "072e4fa4ca2a0e69",
+      "title": "어획량 감소에 수꽃게 시세 2배로…고등어는 하락",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1nanBheU9xYlZIOERJcExtUGRnWWJYaXlCU214cC12TXNHVG1xYVlSVHR0cEk4RlJNNUVLTXJ3SUU5LTR0SjdPVklZcFl5dzlwNDR6NWI4SUNuTHNUQkZFOdIBYEFVX3lxTE1nanBheU9xYlZIOERJcExtUGRnWWJYaXlCU214cC12TXNHVG1xYVlSVHR0cEk4RlJNNUVLTXJ3SUU5LTR0SjdPVklZcFl5dzlwNDR6NWI4SUNuTHNUQkZFOQ?oc=5",
+      "source": "연합뉴스",
+      "published": "2026-10-28T16:00+09:00",
+      "timestamp": 1793170800,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 12
+    },
+    {
+      "id": "ccb3c7dc40bedefa",
+      "title": "동아제약, 이마트 트레이더스에 조르단 고불소 치약 출시",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE90TmNDRzRKNk54YTlWQnNycGJ5VU1XV0FXQzR0d0M3S0ZscEF5RDNGMmdLWnBxLUhySmN1Mi0teWNsWlhwVVNFQk51Q1FzOW5nQkEta096VUVZOU53NlcxUlJvdmg5a2tTNkdYX0xGONIBc0FVX3lxTE1KeXlOZ1d3R2hsT0R5SUhyMDlZVEpWV09YSGdwRF91QV8xanhWUmRNVTVQT1JJeVpCZXg2NlRZWDFSUUJrRjhMYlBJbzJrV1ZDOER4VmFKVk9jYUhnMW9ScGpFcUdCMnZIV05YdDBOV1ZidDg?oc=5",
+      "source": "데일리한국",
+      "published": "2026-11-06T17:00+09:00",
+      "timestamp": 1793952015,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 16.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "e6404e3c0d8d53b3",
+      "title": "아워홈, 일본 코스트코 37개 점포 진입…오세아니아 수출도 확대",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBxbTlUTS1zR0dVVGlGaWRrZ3kzazdlSGV3c1JtaDZWdHVnWHJXZ01ab25OQ3FubjdISXhFMnRjRVUxSmUycHlScVg0bFZVdmhDMXRuYXFDbkYxWVR5TFRCUmF0RUpvTHV4NTJvcUgxRTNtTTA3cHpZYmJR?oc=5",
+      "source": "로이슈",
+      "published": "2026-11-11T09:38+09:00",
+      "timestamp": 1794357534,
+      "category": "코스트코",
+      "tags": [
+        "코스트코"
+      ],
+      "score": 16.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "수출"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "1716affc26ce1492",
+      "title": "대전교육청, 3분기 학교급식 수산물 방사능 검사 결과 모두 ‘적합’",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5JT1V1ZENPYzJKQmVZVjhXSGNSNnNNZjhtVzdSMnJMSjdKRzhSTG1jdXNaRU1KYWVJQ2NkNjdfREllYXV2MTdVRW5JR3NqV0poSWZjSkRqenN6LURQTXpUVExKZVhXSkZmTFE?oc=5",
+      "source": "금강일보",
+      "published": "2026-11-05T14:54+09:00",
+      "timestamp": 1793858091,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식",
+        "식품안전/소비심리"
+      ],
+      "score": 15.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
+    },
+    {
+      "id": "daeafb2fce9f7739",
+      "title": "G마켓 '이마트 연계 퀵배송' 올해 출시 가닥, 장승환 형제기업 SSG닷컴과 차별화 관건",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1QcnNlWTJPckE3VDRiSlRoNmc2T3JkRVctZmhDaVROOEhIZlBTNF9GM1F4bGNBQlJoWjQwdnBqd2xwc0ZHNmxCemU1OWNjRGtaYzFBNTdUbHVLdDJ6Vm5pMXVjYlhlc3o5R2xrbWZmNU9tNVk?oc=5",
+      "source": "비즈니스포스트",
+      "published": "2026-10-21T16:00+09:00",
+      "timestamp": 1792566000,
+      "category": "온라인",
+      "tags": [
+        "온라인",
+        "대형마트/SSM"
+      ],
+      "score": 11.7,
+      "summary": "G마켓 '이마트 연계 퀵배송' 올해 출시 가닥, 장승환 형제기업 SSG닷컴과 차별화 관건 비즈니스포스트",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 7
+    },
+    {
+      "id": "e86ae5afeac1da0f",
+      "title": "홈앤쇼핑, 4일 '두유부부'와 제철 수산물 라이브커머스 진행",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5HaEZkRDZNeGp2UUhXT0FaWTkzQzFkMHRTRjlnMl9GSkRpaFVvM0x2TkxvVlVTclFrOThJSFZjaWFBVXA3RDR0bGFHZ19kRlRTZWhYcnNkRzJFN0luaDZTbnFDMFI?oc=5",
+      "source": "뉴스1",
+      "published": "2026-11-03T08:47+09:00",
+      "timestamp": 1793663253,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 10.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 7
+    },
+    {
+      "id": "25ff7babcfb9b08f",
+      "title": "부산 기업 19곳 중국 칭다오 공략…조선·수산 수출길 넓힌다",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBReEpzRGthNmEyQ1Byc1hDVWZibFJxemRJME5UaXc1Tjl4SjhRZ1RLaUVuc2E5WlRETG85VlYwSUpnSkN0Smt3WVJrdEJ1UTdsdzdESzZKWm1QVHNIcmlmTdIBeEFVX3lxTE5aeEpjTFRqZWpGMTc3eXQ5TmM3U2VkaFJIb2F0d2lFOHlCOTlPeEw5Ni1zd0VSZGVETElKN3dxMzYyMHZaTE5wNlBQdnB6Y0ZqTldZSnBOdG9BelVXbzYxei1FdENuZkY2dFdMZlhTYlc0aVloSnBNXw?oc=5",
+      "source": "뉴시스",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 8.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "editorial_score": 11
+    },
+    {
+      "id": "f7286b7d6ed91934",
+      "title": "고수온으로 양식어류 117만 마리 폐사",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5vNmNhdEtTcG5HOW5CQWdTMl9ZWkhxWDQxbGtwVERhTm9XMzJENC1mUC04Y0d5VzFRWmlfYzJIdUk3WW13U1U3WWhOemZHczBqT0didmdlUEdsaW9zZ1Q2YUJjSTl3clRJT3c?oc=5",
+      "source": "수산인신문",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 14
+    },
+    {
+      "id": "68e21a18b5c0bacd",
+      "title": "이마트 창고형 매장 트레이더스, 불법 무급 연장근무 횡행 논란",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAwRmtuV0E0ZHdPTkNQWnAzQ2diYWdmUWk1ZGlDRjJUNXpmVXdoOFlFNlJLNlFhTF9lRm1JUFlUU0hHN29iaTJzZXBpdzh0eXYtV21iSQ?oc=5",
+      "source": "비즈한국",
+      "published": "2026-11-06T17:00+09:00",
+      "timestamp": 1793952000,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 16.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "매장"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 7
+    },
+    {
+      "id": "367ff7070f5c1ece",
+      "title": "아워홈, 日·호주 코스트코 전 점포 입점…해외 B2C 승부수",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5SblFYY0RsaGwtRFgwMEFzd3FCQksyUC1tMVY0SDB5ZGFwb0I5dE96dlJhQ0NWRm5FclU5WnVNaFBSa1BySkVVc2ZQeW05Y2puWGMtU2JjYjRDWnl4ZmlmT2lKamh5c0VY?oc=5",
+      "source": "동행일보",
+      "published": "2026-11-11T09:33+09:00",
+      "timestamp": 1794357180,
+      "category": "코스트코",
+      "tags": [
+        "코스트코",
+        "매장 운영"
+      ],
+      "score": 16.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코"
+      ],
+      "impact": "유통시장 구조 변화",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "c2d8fcc3841a4e9c",
+      "title": "대전 학교급식 수산물 97건 방사능 검사...모두 '적합'",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5KVHdNZ0NYWC1pU1B6alNZU280SkhXNDJHRTFLMmlXaGpVbU9yOERPd01iYUVGa2U0TFBxeDJrNHRFRTdDbWJEYlZhUUl5bHNOUnBOOVZ3?oc=5",
+      "source": "위키트리",
+      "published": "2026-11-05T10:54+09:00",
+      "timestamp": 1793843640,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식",
+        "식품안전/소비심리"
+      ],
+      "score": 15.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
+    },
+    {
+      "id": "b5fd9612ddaa4c0f",
+      "title": "네이버·토스도 장바구니 쟁탈전…쿠팡과 맞붙는 온라인 장보기",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4xblZJY196U0xZNmx2Q0NCSThQYXphSk0xMWp6azloZTZZQ3V1TnRQVTZaeGlRcVIzbHE1LVFsV3JZSkpQZ1ZwRjJSTHl2ZUV4T0JxSnIzb29jOE5aWVdNRmpQeGQ?oc=5",
+      "source": "매일일보",
+      "published": "2026-10-12T16:00+09:00",
+      "timestamp": 1791788400,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "editorial_score": 7
+    },
+    {
+      "id": "7d22457bc53cf375",
+      "title": "생굴·과메기 20% 추가 쿠폰…홈앤쇼핑, ‘두유부부’와 수산물 라이브",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1yRDBxX1FncXFsbW5ZUHdWb1M0T21RMWlYbWJadE1CT0g0TVM4Y0FDYU5URzFkcm51OWRpMDhIZjdzZXZaaURQajlNMHNTT0J3QXc3QnRn?oc=5",
+      "source": "헤럴드경제",
+      "published": "2026-11-03T08:19+09:00",
+      "timestamp": 1793661580,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드",
+        "원물 수급/시세"
+      ],
+      "score": 10.7,
+      "summary": "생굴·과메기 20% 추가 쿠폰…홈앤쇼핑, ‘두유부부’와 수산물 라이브 헤럴드경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "editorial_score": 11
+    },
+    {
+      "id": "b3b84f3be1ff952d",
+      "title": "울릉군 '불볼락 시범 양식' 업무 협약…'오징어 대체' 새 수산물 개발",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5uVTBwdE5GZV9QOGVyZkdiRFVkZzcwbFVEaTQ5SC0wY0dhTnRjNVFVOUlTUlZtTnpaOE91cVRydEtmUUlobHNZeENIWHB4SnMyVFB0VFN1Q0stM0dOenVV?oc=5",
+      "source": "뉴스1",
+      "published": "2026-10-21T16:00+09:00",
+      "timestamp": 1792566000,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "editorial_score": 7
+    },
+    {
+      "id": "bf2d07e19b8c5364",
+      "title": "홈플러스 납품업체 63% 매출 감소…대형마트 거래 중소기업 ‘한숨’",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8zQ3h3eWJHbkdlaTZNRGoyT0duaTNMZnV2UFZxNDl3bzlXazd4bXpRbk9XdVI4SUxfdDRfamNNOUxNSmxxYUJlQ0N4WFh5RHZMNHp0bkdNcGd3UQ?oc=5",
+      "source": "경북매일",
+      "published": "2026-11-04T15:26+09:00",
+      "timestamp": 1793773560,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 16.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
       "editorial_score": 11
+    },
+    {
+      "id": "30d88f3fefddd31b",
+      "title": "일본엔 진미채·호주엔 깍두기…코스트코 뚫고 K푸드 알리는 아워홈",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnNzRlY0xLNnJiWjVWdlVRRmRHc1d1WDB0SUVMS1MwYnV1cnBSa0I4VVUyeFN2enRtNzltUldHYzFfd3pleV9QTjhHbEE2MGlMZWltSlVJSHQ5UQ?oc=5",
+      "source": "한국경제",
+      "published": "2026-11-11T09:32+09:00",
+      "timestamp": 1794357125,
+      "category": "코스트코",
+      "tags": [
+        "코스트코"
+      ],
+      "score": 16.2,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
+      "id": "1f03b9a0c8159be6",
+      "title": "대전 교육청, 학교급식 방사능 걱정 NO! 수산물 모두 적합",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBUclZNNzRKSlVONmpnbnQ3VDd1b2UtQkU2ZUxZVE0zNlAzeTljLV9zNjVyZlJiaUZGMHVFNkcwUTladXNqc2xGTFYxVU9NU1hORW9ra29xNGt3ajQ?oc=5",
+      "source": "데일리연합",
+      "published": "2026-11-05T10:21+09:00",
+      "timestamp": 1793841690,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식",
+        "식품안전/소비심리"
+      ],
+      "score": 15.4,
+      "summary": "",
+      "summary_type": "",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "editorial_score": 7
     },
     {
       "id": "c76ff23a19e3a5a7",
@@ -255,49 +1914,45 @@
       "editorial_score": 7
     },
     {
-      "id": "f44c94ce0a9d2c2f",
-      "title": "'쿠팡 보고서' 주도한 美 정치인, 하원 원내대표로 '승격' [이상은의 워싱턴나우]",
-      "url": "https://www.hankyung.com/article/202611118803i",
-      "source": "한국경제·국제",
-      "published": "2026-11-11T07:05+09:00",
-      "timestamp": 1794348342,
-      "category": "온라인",
+      "id": "683fd999d6445360",
+      "title": "11월 제철 수산물 ′삼치·가리비′ 선정",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9kMnRqeXJncFluU0JNMFEySkNMWkg5UE91RlpXOVF5S0RXeGRfUU43THg0YVExZl92NVFEdXJvUm5vNVlCb2c2blU2MjRVaUZuTGhRdWZtU1YwTTVyeW14cVN30gFaQVVfeXFMUExFWVFkbXpad0FQRW94bTd6NTYtek9vOGxMQmhvWjdNN18wU2J5cV9idDR2bUZGaWs3VWFBb2VPRmhLOXQtenhrNjFrenc2REFKT2lxRkl2TUxB?oc=5",
+      "source": "쿡앤셰프",
+      "published": "2026-11-02T15:02+09:00",
+      "timestamp": 1793599348,
+      "category": "시즌/트렌드",
       "tags": [
-        "온라인"
+        "시즌/트렌드"
       ],
-      "score": 11.5,
+      "score": 10.7,
       "summary": "",
       "summary_type": "",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
       "official": false,
-      "channels": [
-        "온라인"
-      ],
+      "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
       "editorial_score": 7
     },
     {
-      "id": "f73430d005c9a5dc",
-      "title": "[속보]美공화 차기 하원 대표에 짐 조던…'쿠팡 보고서' 관여",
-      "url": "https://www.newsis.com/view/NISX20261111_0003862927",
-      "source": "뉴시스·국제",
-      "published": "2026-11-11T04:36+09:00",
-      "timestamp": 1794339384,
-      "category": "온라인",
+      "id": "27ca70a7b4939d81",
+      "title": "울릉군, 불볼락(메바리) 양식 산업화 첫발... 오징어 잇는 새로운 수산자원 육성",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVVW91ZXRvVGFqSWNETDhQcWpHMUprVHdtc25RRG5VcUhIeS1tT2FNZWZrdFBJb3lQNkpvX2dMd1RNNDZiUEhRN2o2X2w2ajFSZW5ELTVrWjlBSDUwalBCQVQ0bjRUVEXSAWtBVV95cUxOV0xyVGFjM2xDVGZyNENaZF9sbnN5N1lnbGJ4c3owT0RZUTRKa29iemRmc2pzcGt3eFNDQ2VzNWRIRWFFMTVRM3VTNkR4NFM3cGJXU1BZUTRHOHl3dHdNNGxkR05OS3ROQ0prdw?oc=5",
+      "source": "시사통신",
+      "published": "2026-10-21T16:00+09:00",
+      "timestamp": 1792566000,
+      "category": "원물 수급/시세",
       "tags": [
-        "온라인"
+        "원물 수급/시세"
       ],
-      "score": 11.5,
-      "summary": "",
-      "summary_type": "",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "score": 17.4,
+      "summary": "울릉군, 불볼락(메바리) 양식 산업화 첫발... 오징어 잇는 새로운 수산자원 육성 시사통신",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
       "official": false,
-      "channels": [
-        "온라인"
-      ],
+      "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
       "editorial_score": 7
     }
   ],
@@ -406,7 +2061,10 @@
         }
       ],
       "article_ids": [
-        "ffd06a42b337a501"
+        "14398b2242283f7b",
+        "1bda8e4ee4b719c7",
+        "1d614376c6bd89b8",
+        "33126fe93d0cb0c5"
       ],
       "category": "비용/거시",
       "channels": [
@@ -457,7 +2115,10 @@
         }
       ],
       "article_ids": [
-        "ffd06a42b337a501"
+        "14398b2242283f7b",
+        "1bda8e4ee4b719c7",
+        "1d614376c6bd89b8",
+        "33126fe93d0cb0c5"
       ],
       "category": "비용/거시",
       "channels": [
@@ -473,16 +2134,38 @@
   "issue_candidates": [],
   "focus_topics": [
     {
+      "theme": "오징어·대체 수입시장",
+      "category": "원물 수급/시세",
+      "score": 65.0,
+      "article_ids": [
+        "f097a84e5d59d950",
+        "web-36eac39b6414",
+        "854bfda62b206330",
+        "d12744f0b0488a14",
+        "web-51313be50c53",
+        "web-c3b4dfbf1efa"
+      ],
+      "feature_ids": [],
+      "source_count": 7,
+      "research_question": "국내 생산, 원양산, 남미산 수입과 가격이 서로 다른 방향으로 움직이는가?",
+      "news_titles": [
+        "“한국 바다서 씨가 말랐다?” 오징어 어획량 93% 급감…대신 남미산 수입 급증",
+        "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+        "한국 오징어 어획, 2040년대 제로 경고…연안 생산량 4년 새 절반",
+        "\"오징어의 귀환\"…남미 어획량 회복에 수입 폭증"
+      ]
+    },
+    {
       "theme": "일본·미국 수출시장",
       "category": "해외",
-      "score": 58.7,
+      "score": 62.7,
       "article_ids": [
+        "cb9a49901548764e",
+        "0f8e3405cc27528c",
         "d4d522f532a356e3",
-        "bfdb759f53660292",
-        "web-bfdb759f5366",
-        "7b20906b83138dae",
-        "web-48eb0ad57a1d",
-        "web-91894353629a"
+        "9f4d2c1a8ccdc364",
+        "05eb4c7e7f9b7559",
+        "a2130fd7076bac4c"
       ],
       "feature_ids": [
         "salmon_price_volume"
@@ -490,228 +2173,244 @@
       "source_count": 6,
       "research_question": "국가별 수출액과 물량을 분해하면 판매량 성장과 단가 변화가 어떻게 다른가?",
       "news_titles": [
+        "미국이 베트남산 새우에 대한 반덤핑 관세를 인상했습니다. 연말 수출 상황은 어떻게 될까요?",
+        "VASEP는 한국에서 베트남산 새우에 대한 관세 쿼터 철폐를 제안했습니다.",
         "美中, 무역 휴전 2개월 연장…관세·희토류 수출통제 유예",
-        "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑",
-        "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑ :: 공감언론 뉴시스 ::",
-        "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장"
-      ]
-    },
-    {
-      "theme": "광어·우럭 양식 수급",
-      "category": "원물 수급/시세",
-      "score": 51.0,
-      "article_ids": [
-        "a99c2c913a2e7669",
-        "web-41a10b0db891",
-        "web-bf95b6cffcb8",
-        "web-2e5546a68ff2",
-        "web-91894353629a"
-      ],
-      "feature_ids": [],
-      "source_count": 5,
-      "research_question": "출하·양성물량·산지가를 함께 보면 앞으로 공급은 늘어나는가, 줄어드는가?",
-      "news_titles": [
-        "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
-        "국립수산과학원",
-        "수산관측",
-        "한국광어양식연합회, 부산수산엑스포서 국산 광어 우수성 알려"
+        "삼성전자·테슬라, 美 정부에 \"베트남 관세 시 부품·스마트폰 공급망 차질 우려\" 전달"
       ]
     },
     {
       "theme": "대형마트·창고형 유통 변화",
       "category": "대형마트/SSM",
-      "score": 44.0,
+      "score": 52.0,
       "article_ids": [
-        "a99c2c913a2e7669",
-        "bfdb759f53660292",
-        "ffd06a42b337a501",
-        "web-bfdb759f5366",
-        "web-9362591c87b8",
-        "5e30b55cfb322e10"
+        "bd41cc67309b5c1b",
+        "ac2129ce9f4bb4b3",
+        "9f4d2c1a8ccdc364",
+        "b68da63885e96b9c",
+        "bf2d07e19b8c5364",
+        "e4a844aa0f4f235e"
       ],
       "feature_ids": [],
-      "source_count": 4,
+      "source_count": 7,
       "research_question": "매출과 점포 변화는 같은 방향인가? 소비 이동과 공급망 영향은 어떻게 다른가?",
       "news_titles": [
-        "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
-        "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑",
-        "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
-        "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑ :: 공감언론 뉴시스 ::"
+        "홈플러스, 임금·납품대금 지급 차질…대형마트 매각도 불투명",
+        "[기획] 장보기까지 온라인으로…쿠팡 vs 네이버·컬리, 대형마트는 규제에 발 묶여",
+        "삼성전자·테슬라, 美 정부에 \"베트남 관세 시 부품·스마트폰 공급망 차질 우려\" 전달",
+        "이마트·트레이더스·에브리데이 '쓱데이' 10일간…한우 반값에 로봇청소기 49만9000원"
       ]
     },
     {
-      "theme": "연어·해외 원료시장",
-      "category": "원물 수급/시세",
-      "score": 41.7,
+      "theme": "식품안전·규제",
+      "category": "식품안전/소비심리",
+      "score": 46.0,
       "article_ids": [
-        "web-48eb0ad57a1d",
-        "web-91894353629a",
-        "web-9772fc0387ab"
-      ],
-      "feature_ids": [
-        "salmon_price_volume"
-      ],
-      "source_count": 2,
-      "research_question": "수출액 성장에 물량과 단가가 각각 얼마나 기여했으며 한국 수입 통계와 같은가?",
-      "news_titles": [
-        "Norwegian seafood exports remained stable in October",
-        "Record exports of Norwegian seafood in 2023 due to price growth and weak krone",
-        "Statistikkbanken – SSB"
-      ]
-    },
-    {
-      "theme": "온라인·급식 수요",
-      "category": "온라인",
-      "score": 38.0,
-      "article_ids": [
-        "dc661d3199730f6d",
         "7b20906b83138dae",
-        "web-96bf5d3c9bdf"
+        "ac2129ce9f4bb4b3",
+        "ca87d193caa8b4fd",
+        "b229a6a1d3d9174e",
+        "web-f4132d79504a",
+        "web-160d40b459f1"
       ],
       "feature_ids": [],
-      "source_count": 3,
-      "research_question": "온라인 판매와 외식·급식 수요는 같은 품목에서 동일한 흐름인가?",
+      "source_count": 7,
+      "research_question": "실제 검사 통계, 규제 발효일, 품목 범위가 유통 제한과 일치하는가?",
       "news_titles": [
-        "컬리, 3분기 매출 7779억 '역대 최대'…전년比 34.4%↑",
         "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장",
-        "보도자료 김장 재료부터 수산물까지 최대 50% 할인, 김장철 소비자 장바구니 부담 줄인다 해양수산부"
+        "[기획] 장보기까지 온라인으로…쿠팡 vs 네이버·컬리, 대형마트는 규제에 발 묶여",
+        "수산물 위생·검역 국제협력 강화…'K-수산물' 글로벌 수출길 대폭 넓힌다",
+        "식약처, 김장철 앞두고 다소비 농·수산물ㆍ가공식품 등 통관·유통단계 검사 강화"
+      ]
+    },
+    {
+      "theme": "해양수산 공급변동",
+      "category": "원물 수급/시세",
+      "score": 44.0,
+      "article_ids": [
+        "web-36eac39b6414",
+        "c2850b59d1514557",
+        "072e4fa4ca2a0e69",
+        "0f8e3405cc27528c",
+        "a2130fd7076bac4c",
+        "fa3918f2d0e3aefc"
+      ],
+      "feature_ids": [],
+      "source_count": 6,
+      "research_question": "산지 생산·위판·수입 및 소비자가격에 일관된 변화가 있는가?",
+      "news_titles": [
+        "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+        "가을 제철 수산물 가격 들썩… 꽃게·전어 두 배 급등",
+        "어획량 감소에 수꽃게 시세 2배로…고등어는 하락",
+        "VASEP는 한국에서 베트남산 새우에 대한 관세 쿼터 철폐를 제안했습니다."
       ]
     }
   ],
   "deep_reports": [
     {
       "depth": "핵심",
-      "kind": "대형마트/SSM",
-      "time_frame": "2026년 9월 유통통계·11월 수산물 판촉, 11월 29일까지 전망",
-      "headline": "수산물 200억원 할인 지원…11월 가격 경쟁, 행사 상품에 집중",
-      "thesis": "마트 구매건수가 매출보다 더디게 늘어난 가운데 정부 할인 지원과 햇굴 가격 인하가 11월 수산물 판촉에 힘을 싣고 있다. 이달 말까지는 원물 시세의 동반 하락보다 행사 대상 상품을 중심으로 한 가격 경쟁이 두드러질 가능성이 크다.",
-      "lead": "9월 대형마트 매출은 전년 동월보다 4.0% 늘었지만 구매건수 증가율은 0.5%에 그쳤다. 결제 횟수가 크게 늘지 않은 상황에서 11월 수산물 판매에는 정부 지원을 활용해 소비자의 지출을 낮출 수 있는 판촉 기회가 생겼다.",
+      "kind": "해외",
+      "time_frame": "2026년 10월·44주 실적과 11월 전망",
+      "headline": "노르웨이 연어 수출물량 증가세…달러 환산가격은 작년 수준",
+      "thesis": "노르웨이 연어 수출물량이 10월 월간 실적과 44주 주간 통계에서 모두 전년보다 늘었다. 11월에도 물량 확대가 이어질 가능성이 크지만, 크로네 기준 가격 하락을 달러 기준 할인으로 받아들여서는 안 된다.",
+      "lead": "44주 신선·냉장 연어 수출가격은 달러 환산 기준 kg당 8.07달러로, 전년 동주 8.03달러와 비슷했다. 현지통화 가격은 하락했지만 환율이 이를 상쇄했다. 이 달러 가격은 공식 수출가격을 주간 평균환율로 환산한 참고값이며 실제 달러 계약가격은 아니다.",
       "facts": [
         {
-          "text": "[공식 통계] 산업통상부의 2026년 9월 주요 유통업체 매출동향에 따르면 대형마트 전체 매출은 전년 동월 대비 4.0%, 식품 매출은 4.3%, 구매건수는 0.5% 증가했다.",
+          "text": "공식 통계 환산값 | 제공된 SSB·Norges Bank 연계 시계열에서 44주 달러 환산가격은 8.07달러/kg으로 전년 동주 대비 0.5% 상승했다. 크로네 기준 가격과 달러 환산가격의 전년 대비 방향이 달랐다.",
           "refs": [
-            "web-9362591c87b8"
+            "salmon_price_volume"
           ]
         },
         {
-          "text": "[정부 발표] 해양수산부는 10월 27일 발표에서 10월 28일~11월 29일 ‘코리아 수산 페스타’를 진행한다고 밝혔다. 오프라인 24개사와 온라인 32개사가 참여하며, 정부 예산 200억원으로 구매액의 20%를 1인당 1만원 한도에서 지원한다. 업체 자체 할인을 합친 최대 할인율은 50%이며 모든 상품에 일률적으로 적용되는 비율은 아니다.",
+          "text": "공식기관 발표 요약 | 노르웨이수산물위원회의 2026년 10월 전체 연어 수출량은 15만9,810톤, 수출액은 130억 NOK였다. 전년 동월 대비 증가율은 각각 9%, 6%로 물량 증가율이 수출액 증가율을 웃돌았다.",
           "refs": [
-            "web-96bf5d3c9bdf"
-          ]
-        },
-        {
-          "text": "[언론 보도] 11월 5일 뉴스드림은 롯데마트의 햇굴 가격 최대 35% 인하를 보도했다.",
-          "refs": [
-            "ffd06a42b337a501"
+            "web-e549fe6c17af"
           ]
         }
       ],
-      "market_change": "9월 통계에서 매출 증가에 비해 결제 건수 증가는 작았다. 이후 11월에는 정부의 수산물 구매 지원과 유통업체의 품목별 가격 인하가 나란히 등장했다. 매출 증가율만으로 소비 회복을 평가하기보다, 할인 행사가 실제 구매를 얼마나 늘리는지가 중요해진 상황이다.",
+      "market_change": "10월의 사상 최대 월간 수출액은 가격 상승보다 물량 증가에 힘입었다. 월간 전체 연어와 주간 신선·냉장 연어는 집계 범위가 다르지만, 두 자료 모두 크로네 기준으로는 단가가 낮아지는 가운데 수출량이 늘어난 모습을 보여준다.",
       "mechanism": [
-        "정부 지원은 어획·양식 단계가 아니라 구매 단계에 투입된다. 참여 판매처는 원물 매입가격이 같은 폭으로 내려가지 않아도 소비자가 내는 금액을 낮출 수 있다. 따라서 이번 행사에서 나타나는 소매가격 인하는 공급 증가에 따른 원물 가격 하락과 구분된다.",
-        "롯데마트의 햇굴 가격 인하는 개별 수산물을 앞세운 가격 경쟁의 사례다. 여기에 마트와 온라인을 함께 포괄하는 정부 지원이 이어지면서 판촉 경쟁은 행사 적용 상품에 집중될 여지가 커졌다. 다만 햇굴 인하율과 정부 지원율의 중복 적용 여부는 제시되지 않았으므로 두 비율을 합산할 수는 없다."
+        "수출액보다 물량이 빠르게 늘면 중량당 평균 수출단가는 낮아진다. 10월 월간 실적에서 나타난 이 관계가 44주 신선·냉장 연어 통계에서도 이어졌다. 따라서 최근 수출 호조를 노르웨이 연어의 가격 상승세로 해석하기보다는 해외로 나가는 물량이 늘어난 결과로 읽는 편이 타당하다.",
+        "통화 기준을 바꾸면 구매가격의 모습은 달라진다. 크로네 강세가 현지통화 가격 하락을 상쇄하면서 달러 환산가격은 지난해 수준을 유지했다. 달러로 가격을 비교하는 해외 구매자에게는 크로네 가격 하락률만큼의 할인 효과가 생기지 않은 셈이다."
       ],
-      "structural_insight": "11월 수산물 판매에서는 저렴한 원물 확보뿐 아니라 정부 지원의 적용 여부도 가격 경쟁력의 한 변수가 된다. 같은 품목이라도 행사 대상인지에 따라 실구매가격이 달라질 수 있어, 일부 할인 상품의 가격 하락이 수산물 전체의 시세 하락으로 번지지는 않을 수 있다.",
-      "what_changes": "원물 가격과 보조금 적용 후 소매가격을 분리하고, 행사 상품의 구매건수 변화를 우선 비교한다.",
-      "one_sentence": "11월 수산물 시장은 공급발 가격 인하보다 구매 지원을 활용한 판촉 경쟁이 앞설 가능성이 크다.",
-      "limitations": "9월 구매건수는 대형마트 전체 지표다. 햇굴 보도는 제목만 제공돼 규격·기준가격·행사 조건은 사용하지 않았으며, 정부 지원과의 중복 적용도 가정하지 않았다.",
+      "structural_insight": "노르웨이 연어 수출은 달러 환산가격을 크게 낮추지 않은 상태에서도 물량을 늘렸다. 수출 확대를 전적으로 저가 판매의 결과로 볼 수 없으며, 현지통화 단가 약세와 해외 거래규모 확대가 함께 진행되는 시장이다.",
+      "what_changes": "수출액 증가를 가격 상승과 분리하고, NOK 가격과 USD 환산가격을 구분한다.",
+      "one_sentence": "연어 수출 호조는 물량이 이끌고 있으며, 현지통화 가격 약세가 달러 기준 가격 하락으로 이어지지는 않았다.",
+      "limitations": "월간 통계는 전체 연어, 주간 통계는 신선·냉장 연어다. 달러 환산값은 입력 공식 시계열 기준이다. 수출국 전체 실적으로 한국향 가격·판매량을 추론하지 않았다.",
       "article_ids": [
-        "web-9362591c87b8",
-        "web-96bf5d3c9bdf",
-        "ffd06a42b337a501"
+        "web-e549fe6c17af"
       ],
-      "feature_ids": [],
+      "feature_ids": [
+        "salmon_price_volume"
+      ],
       "policy_ids": [],
       "confidence": "중간",
       "channels": [
-        "마트",
-        "온라인"
+        "수출"
       ],
-      "impact": "행사 대상 수산물의 실구매가격 인하와 판매처 간 판촉 경쟁에 영향을 준다.",
-      "followup": "행사 대상 품목별 동일 규격 가격과 할인 적용 구매건수, 지원예산 집행률을 후속 비교한다.",
+      "impact": "해외 연어시장에서는 가격 급등보다 수출물량 확대가 최근 거래 증가를 설명한다.",
+      "followup": "11월 월간 수출물량과 주간 신선·냉장 연어 실적을 각각 전년 동기와 대조한다.",
       "outlook": {
         "direction": "확대",
-        "horizon": "2026년 11월 11~29일",
-        "judgment": "남은 11월에는 정부 지원을 활용하는 행사 상품을 중심으로 마트·온라인의 수산물 판촉 경쟁이 확대될 가능성이 크다.",
-        "basis": "11월 29일까지 예정된 구매 지원이 오프라인 24개사와 온라인 32개사에 걸쳐 진행되고, 개별 유통업체의 햇굴 가격 인하도 등장했다. 9월 대형마트 구매건수 증가율은 매출 증가율에 못 미쳤다.",
-        "revision_trigger": "참여 판매처에 배정된 지원예산이 행사 종료일 전에 소진되는 경우다.",
+        "horizon": "2026년 11월 노르웨이 연어 수출물량의 전년 동월 대비 방향",
+        "judgment": "11월 노르웨이 연어 수출물량은 전년 동월보다 많은 수준을 이어갈 가능성이 크다.",
+        "basis": "10월 전체 연어 수출량이 전년 동월 대비 9% 증가했고, 44주 신선·냉장 연어 수출량도 전년 동주 대비 14.3% 늘어 최근 물량 확대가 월간·주간 자료에서 함께 나타났다.",
+        "revision_trigger": "노르웨이의 11월 연어 도축량이 전년 동월보다 감소하는 경우.",
         "numeric_estimate": "",
         "forecast_method": "",
         "backtest": "",
         "evidence_ids": [
-          "web-96bf5d3c9bdf",
-          "ffd06a42b337a501",
-          "web-9362591c87b8"
+          "salmon_price_volume",
+          "web-e549fe6c17af"
         ]
       },
       "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
-      "character_count": 1339,
+      "character_count": 1237,
+      "length_tier": "충실"
+    },
+    {
+      "depth": "핵심",
+      "kind": "원물 수급/시세",
+      "time_frame": "2009~2024년 장기 변화와 2025년 국내 생산·페루산 수입 실적",
+      "headline": "국내 오징어 반등에도 페루산 수입 두 배…2025년 공급 회복은 두 갈래",
+      "thesis": "2025년에는 국내 연근해 오징어 생산과 페루산 오징어 수입이 함께 늘었다. 남미산 수입 확대를 국내 어획 감소의 대체 현상만으로 설명하기보다, 국내와 해외의 공급 회복이 겹친 결과로 읽어야 한다.",
+      "lead": "11월 초 오징어 보도에 등장한 ‘93% 급감’은 최근 1년의 변화가 아니다. 2009년과 2024년을 비교한 장기 감소율로, 이듬해 국내 생산이 반등한 사실과 구분해야 한다.",
+      "facts": [
+        {
+          "text": "보도 인용 통계 | 제공된 뉴시스 보도 요약에서 연근해 오징어 생산량의 92.8% 감소는 2009년 18만9,160톤과 2024년 1만3,546톤을 비교한 수치다.",
+          "refs": [
+            "d12744f0b0488a14",
+            "web-36eac39b6414"
+          ]
+        },
+        {
+          "text": "공식 통계 | 해양수산부가 2026년 2월 26일 발표한 2025년 생산통계에서 연근해 오징어 생산량은 약 3만1,000톤으로 전년보다 128.5% 증가했다. 해수부는 상대적으로 낮은 수온에 따른 어장 형성을 배경으로 설명했다.",
+          "refs": [
+            "web-36eac39b6414"
+          ]
+        },
+        {
+          "text": "해외 공식자료 | 페루 중앙은행의 피우라 지역 보고서는 2025년 1~5월 대왕오징어 양륙량을 21만5,400톤으로 집계했다. 전년 동기 대비 283.3% 증가했으며, 보고서는 기후조건 정상화 이후 자원 가용성이 회복됐다고 설명했다.",
+          "refs": [
+            "web-51313be50c53"
+          ]
+        },
+        {
+          "text": "보도 인용 통계 | 2026년 11월 7일 뉴시스가 식약처 통계를 인용한 내용에 따르면, 한국의 2025년 페루산 오징어 수입량은 4만7,000톤으로 전년보다 109.7% 증가했다. 이는 2026년 수입 실적이 아니다.",
+          "refs": [
+            "d12744f0b0488a14",
+            "web-51313be50c53"
+          ]
+        }
+      ],
+      "market_change": "2025년 국내 생산은 전년보다 크게 늘었지만 2009년 수준에는 크게 못 미쳤다. 장기적인 생산 기반 축소 속에서 한 해의 반등이 나타난 것이며, 같은 해 페루산 반입도 확대됐다.",
+      "mechanism": [
+        "국내 반등은 어장 여건 변화와 맞물렸다. 해수부 설명에 따르면 봄철 동해 중부와 여름철 서해 중·남부에 어장이 형성됐다. 장기 감소율만으로 최근 공급을 설명하면 이런 회복을 빠뜨리고, 반대로 높은 전년 대비 증가율만 보면 과거보다 작아진 생산 규모를 놓치게 된다.",
+        "남미에서는 한국의 어획 사정과 별개로 현지 공급 여건이 개선됐다. 피우라 지역의 대왕오징어 양륙 회복과 한국의 연간 페루산 반입 증가가 함께 나타났다. 국내 생산이 늘어난 해에도 수입이 확대됐다는 점에서, 당시 수입 증가는 국내산 부족을 메우는 움직임만으로는 설명되지 않는다."
+      ],
+      "structural_insight": "국내 어획이 회복되면 수입 거래가 곧 줄어든다는 관계는 2025년 실적에서 나타나지 않았다. 국내 연근해산과 페루산 대왕오징어는 어종·제품 구성이 다른 만큼, 국내 생산 회복과 냉동 수입시장 확대가 함께 진행될 수 있다. 국내 어획량 하나를 전체 오징어 시장의 공급 지표로 삼기에는 시장이 나뉘어 있다.",
+      "what_changes": "장기 감소율과 2025년 반등을 분리하고, 수입 증가 원인에 페루 현지 공급 회복을 반영한다.",
+      "one_sentence": "2025년 오징어 공급은 국내산의 반등과 페루산 반입 확대가 동시에 이끌었다.",
+      "limitations": "2026년 생산·수입·재고 자료가 없다. 페루 공식자료는 피우라 지역의 2025년 1~5월 양륙량이며 전국 연간 생산량이 아니다. 한국 수입량은 보도 인용값으로 식약처 원표가 제공되지 않았다. 기사 전문은 사용하지 않았다.",
+      "article_ids": [
+        "web-36eac39b6414",
+        "web-51313be50c53",
+        "d12744f0b0488a14"
+      ],
+      "feature_ids": [],
+      "policy_ids": [],
+      "confidence": "중간",
+      "channels": [],
+      "impact": "국내 생산 반등만으로 수입 수요 축소를 예상하거나, 장기 어획 감소율을 최근 공급 감소율로 적용하는 판단을 경계해야 한다.",
+      "followup": "2026년 연근해 오징어 생산량과 페루산 수입중량·단가를 동일 누적기간으로 연결한다.",
+      "outlook": {
+        "direction": "전망 제외",
+        "horizon": "2026년 11~12월",
+        "judgment": "2025년의 동반 공급 회복은 분명하지만, 이 자료만으로 2026년 말 오징어 가격이나 수입물량의 방향을 정하지 않는다.",
+        "basis": "국내 생산과 한국의 페루산 반입은 2025년 연간 실적이고, 페루 현지 자료는 같은 해 1~5월 지역 통계다. 현재 수급을 결정할 2026년 생산·수입·재고가 포함되지 않았다.",
+        "revision_trigger": "2026년 동일 누적기간의 국내 생산·수입·재고를 연결한 수급자료 공개.",
+        "numeric_estimate": "",
+        "forecast_method": "",
+        "backtest": "",
+        "evidence_ids": [
+          "web-36eac39b6414",
+          "web-51313be50c53",
+          "d12744f0b0488a14"
+        ]
+      },
+      "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+      "character_count": 1303,
       "length_tier": "충실"
     }
   ],
-  "deep_status": "AI 리서치 1편 · 공개 출처·수치 검증 통과",
+  "deep_status": "AI 리서치 2편 · 공개 출처·수치 검증 통과",
   "research_sources": [
     {
-      "id": "web-dc9de6c23d6f",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863182",
-      "source": "newsis.com",
-      "title": "회생 안간힘 홈플러스, 상품 재입고…생필품·먹거리 할인전 :: 공감언론 뉴시스 ::",
-      "summary": "1. **[최근 사건·기업 발표]** 뉴시스의 **11월 11일 보도**에 따르면 홈플러스는 **11월 12~18일** 신선식품·생필품 할인전을 진행하며, 이를 위해 인기 상품 **4,500여 종을 재입고했다고 발표**했다. 이는 회사가 밝힌 행사 준비 상황이지, 납품 정상화율이나 실제 판매 회복을 확인한 통계는 아니다. ([newsis.com](https://www.newsis.com/view/NISX20261111_0003863182))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "id": "web-45fc84ff5c39",
+      "url": "https://www.hankyung.com/article/2026102765327?utm_source=openai",
+      "source": "hankyung.com",
+      "title": "\"제철이라 싸질 줄 알았는데\"…가격 두 배 뛴 '가을 별미'",
+      "summary": "**① 국내 가격: ‘수산물 전체 상승’보다 어종별 차별화가 핵심이다.** 10월 27일 보도에 인용된 수협노량진수산 자료의 **측정기간은 10월 12~17일**이다. 수꽃게 평균 경락가격은 **2만400원/kg, 전년 동기 대비 92.45% 상승**, 전어는 **1만4,900원/kg**으로 확인된다. 이는 소매가격이 아니라 특정 도매시장의 경락가격이다. 현장 취재에서도 물량 감소와 구매 부담이 확인됐지만, 전국 생산량 감소율이나 수온의 기여도까지 입증한 자료는 아직 확보하지 못했다. **가격 이슈는 채택하되 원인 확정은 보류**한다. [한국경제](https://www.hankyung.com/article/2026102765327) · [SBS Biz 현장 취재](https://biz.sbs.co.kr/amp/article/20000342487) ([hankyung.com](https://www.hankyung.com/article/2026102765327?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "원물 수급/시세",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 2
-    },
-    {
-      "id": "web-9362591c87b8",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view",
-      "source": "motir.go.kr",
-      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "2. **[독립 공식통계·매출과 구매건수]** 산업통상부의 **2026년 9월 주요 유통업체 매출동향**에서 대형마트 매출은 전년 동월 대비 **4.0%**, 식품 매출은 **4.3%**, 구매건수는 **0.5%** 증가했다. SSM은 전체 매출 **5.0%**, 농수축산물 매출 **10.0%** 증가로 집계됐지만, 농수축산물 증가율을 수산물 단독 실적으로 해석할 수는 없다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "코스트코",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
-    },
-    {
-      "id": "web-96bf5d3c9bdf",
-      "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=69114&menuSeq=971",
-      "source": "mof.go.kr",
-      "title": "보도자료 김장 재료부터 수산물까지 최대 50% 할인, 김장철 소비자 장바구니 부담 줄인다 해양수산부",
-      "summary": "4. **[최근 사건·정부 원발표]** 해양수산부는 **10월 27일 발표**에서 **10월 28일~11월 29일** ‘코리아 수산 페스타’를 실시한다고 밝혔다. 오프라인 **24개사**, 온라인 **32개사**가 참여하고 정부 예산 **200억 원**으로 구매액의 **20%를 1인당 1만 원 한도**에서 지원하며, 업체 자체 할인을 합친 **최대 할인율은 50%**다. 이는 모든 상품에 일률적으로 적용되는 할인율이 아니다. ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=69114&menuSeq=971))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "온라인",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 6
     },
     {
       "id": "web-48eb0ad57a1d",
       "url": "https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/",
       "source": "en.seafood.no",
       "title": "Norwegian seafood exports remained stable in October",
-      "summary": "5. **[최근 공급·가격·해외 원자료]** 노르웨이수산물위원회(NSC)의 **11월 4일 발표**에 따르면 **2026년 10월 고등어 수출**은 **13,787톤·7억5,800만 NOK**로, 전년 동월보다 물량 **50%**, 금액 **45%** 감소했다. **냉동 통고등어 수출가격은 54 NOK/kg**으로 월간 최고치를 기록했으며, 주요 수출시장은 한국·일본·베트남이었다. 이 가격은 한국 도착가격이나 국내 소매가격이 아니다. ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "summary": "**② 해외 공급: 노르웨이 고등어 수출 급감이 추가 핵심 후보로 발견됐다.** 노르웨이수산물위원회가 공개한 **2026년 10월 실적**에서 고등어 수출은 **1만3,787톤으로 전년 동월 대비 50% 감소**, 수출액은 **7억5,800만 NOK로 45% 감소**했다. 평균 수출가격은 **10% 상승**했다. 위원회는 어획쿼터 축소와 수출 가능 물량 감소를 원인으로 제시했다. 한국향 물량·통관단가를 추가 대조해야 하지만, 단순 판촉 기사보다 수입 원물 수급과 직접 연결되는 조사 대상이다. [노르웨이수산물위원회 원문](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/) ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
       "category": "해외",
@@ -719,71 +2418,113 @@
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     },
     {
-      "id": "web-91894353629a",
-      "url": "https://en.seafood.no/news-and-media/news-archive/record-exports-of-norwegian-seafood-in-2023-due-to-price-growth-and-weak-krone/?utm_source=openai",
+      "id": "web-e549fe6c17af",
+      "url": "https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/?utm_source=openai",
       "source": "en.seafood.no",
-      "title": "Record exports of Norwegian seafood in 2023 due to price growth and weak krone",
-      "summary": "6. **[3년 전 비교·연간 수출]** NSC의 **2023년 연간자료**에서 노르웨이 고등어 수출은 **307,800톤·67억 NOK**로, 전년보다 물량은 **10% 감소**, 금액은 **7% 증가**했다. 당시에도 한국은 일본·중국과 함께 주요 시장이었으며, 이 연간 수치를 2026년 10월 한 달 실적과 직접 비교해 감소율을 산출하지 않았다. ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/record-exports-of-norwegian-seafood-in-2023-due-to-price-growth-and-weak-krone/?utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "title": "Norwegian seafood exports remained stable in October",
+      "summary": "**③ 연어: 수출물량 증가와 수출액 증가를 분리해서 봐야 한다.** 같은 위원회의 **2026년 10월 실적**은 연어 수출 **15만9,810톤, 130억 NOK**, 전년 동월 대비 각각 **9%, 6% 증가**다. 월간 수출액은 사상 최대지만 물량 증가율이 더 높다. 따라서 ‘최대 수출액’을 곧바로 단가 상승으로 해석할 수 없다. 사용자가 제공한 **44주 SSB 가격 74.98 NOK/kg·물량 2만8,444톤**은 해당 통계표에 접속했으나 셀을 읽지 못해 이번 조사에서 독립 검증한 수치로 채택하지 않았다. [위원회 월간 원문](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/) · [SSB 통계표](https://www.ssb.no/en/statbank/table/03024/) ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     },
     {
-      "id": "web-2e5546a68ff2",
-      "url": "https://web3.newspim.com/news/view/20261110000223?utm_source=openai",
-      "source": "web3.newspim.com",
-      "title": "한국광어양식연합회, 부산수산엑스포서 국산 광어 우수성 알려",
-      "summary": "7. **[최근 사건·생산자단체 발표]** 뉴스핌의 **11월 10일 보도**에 따르면 한국광어양식연합회는 **11월 4~6일 부산국제수산엑스포**에서 국산 양식 광어 홍보·소비촉진 활동을 진행했다고 밝혔다. 행사 개최는 확인되지만, 해당 보도만으로 소비량이나 판매량 증가가 입증되는 것은 아니다. ([web3.newspim.com](https://web3.newspim.com/news/view/20261110000223?utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "id": "web-6f7e67638cc9",
+      "url": "https://mbiz.heraldcorp.com/article/10932994?utm_source=openai",
+      "source": "mbiz.heraldcorp.com",
+      "title": "판매대는 텅텅·직원들은 불안…홈플러스 추락, 출구는 없나 [비즈360] - 헤럴드경제",
+      "summary": "**④ 유통: 홈플러스는 매각 전망보다 납품대금 정산 차질이 중요하다.** **11월 11일 현장·업계 취재**에서는 일부 매장의 빈 매대와 상품 공급 차질이 확인됐다. 별도 보도는 **10월 30일 지급 예정 신선식품 대금** 가운데 농·수산물은 **10%를 거래보증금에서 차감하고 90%를 지급**했다고 전했다. 다만 정산 비율은 회사 공시나 계약서가 아니라 업계 취재에 기반한 수치다. **수산 납품업체의 현금 회수 문제로 우선 채택**하되, 미지급 총액·업체 수·수산부문 매출 손실은 확인되지 않았다. [헤럴드경제 현장 취재](https://mbiz.heraldcorp.com/article/10932994) · [정산 방식 보도](https://www.factinnews.co.kr/news/articleView.html?idxno=300961) ([mbiz.heraldcorp.com](https://mbiz.heraldcorp.com/article/10932994?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "대형마트/SSM",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     },
     {
-      "id": "web-41a10b0db891",
-      "url": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_D_DATE_BEGIN=2024-11-11&NEWS_D_DATE_END=2025-11-11&NEWS_D_SUBJECT=&NEWS_SEQ=4629&PARENT_NEWS_HG_CODE=&selectPage=9",
-      "source": "nifs.go.kr",
-      "title": "국립수산과학원",
-      "summary": "8. **[공식 생산통계·광어]** 국립수산과학원에 게시된 해양수산부의 **2024년 어업생산 분석**에서 양식 넙치 생산량은 **2023년 40,089톤→2024년 40,125톤**, 전년 대비 **0.1% 증가**였다. 자료에 제시된 **최근 5년 평균 42,973톤보다는 6.6% 적었다**. 연간 생산량으로, 특정 규격의 최근 출하량·산지가·양성물량과는 다른 지표다. ([nifs.go.kr](https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_D_DATE_BEGIN=2024-11-11&NEWS_D_DATE_END=2025-11-11&NEWS_D_SUBJECT=&NEWS_SEQ=4629&PARENT_NEWS_HG_CODE=&selectPage=9))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "id": "web-4abbf16d00c4",
+      "url": "https://www.efeedlink.com/articles/vietnams-seafood-exporters-urge-removal-of-south-koreas-shrimp-tariff-quota-in-vkfta-upgrade-talks?utm_source=openai",
+      "source": "efeedlink.com",
+      "title": "Vietnam's seafood exporters urge removal of South Korea's shrimp tariff quota in VKFTA upgrade talks | eFeedLink",
+      "summary": "**⑤ 통상: 베트남 새우 관세할당 철폐는 ‘시행’이 아니라 ‘요청’이다.** **11월 5일 보도**에 따르면 VASEP는 한·베트남 FTA 개선 논의에서 한국의 새우 관세할당 철폐를 요구했다. 보도가 제시한 현행 조건은 **연간 1만5,000톤 무관세, 초과분 관세 20%**다. VASEP 집계로 **2026년 1~9월 대한국 새우 수출액은 2억6,250만 달러, 전년 동기 대비 0.8% 증가**했다. 입찰권 확보 비용 **14~16%**는 협회가 전달한 업체 의견이며 공식 관세율과 구별해야 한다. 원문·한국 측 관세 공고를 추가 확보하기 전에는 **관세 인하 확정이나 조달원가 하락으로 쓰지 않는다.** [보도 원문](https://www.efeedlink.com/articles/vietnams-seafood-exporters-urge-removal-of-south-koreas-shrimp-tariff-quota-in-vkfta-upgrade-talks) ([efeedlink.com](https://www.efeedlink.com/articles/vietnams-seafood-exporters-urge-removal-of-south-koreas-shrimp-tariff-quota-in-vkfta-upgrade-talks?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "해외",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     },
     {
-      "id": "web-bfdb759f5366",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863181",
-      "source": "newsis.com",
-      "title": "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑ :: 공감언론 뉴시스 ::",
-      "summary": "10. **[최근 사건·기업 발표]** 뉴시스의 **11월 11일 보도**에 따르면 아워홈은 **11월 1일부터 일본 코스트코 37개 점포**에서 진미채 볶음과 갈비탕의 정규 판매를 시작했다고 밝혔다. 회사가 제시한 **2026년 1~10월 해외 수출 매출 약 13% 증가**는 전체 해외 수출 매출에 관한 것으로, 진미채·수산식품만의 증가율이나 수출물량 증가율이 아니다. ([newsis.com](https://www.newsis.com/view/NISX20261111_0003863181))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "id": "web-f4132d79504a",
+      "url": "https://www.yna.co.kr/view/AKR20261110025400017?utm_source=openai",
+      "source": "yna.co.kr",
+      "title": "겨울철 굴·생선회 안전할까…식약처, 수산물 수거 검사 | 연합뉴스",
+      "summary": "**⑥ 안전: 겨울철 720건 검사는 적발 실적이 아닌 검사 계획이다.** **11월 10일 발표**, 검사기간은 **2026년 11월 9일~2027년 2월 26일**이다. 생식용 굴·과메기·배달회·마른김 등 **720건**을 대상으로 노로바이러스·식중독균·중금속 등을 검사한다. 발표를 인용한 연합뉴스에 따르면 **2025년 수산물 생산량은 393만 톤**, 그중 **1·2·11·12월 생산이 약 38%**였다. 계절적 관리 강화의 근거는 있지만, 현재 위해 발생 증가나 소비 위축이 확인된 사건은 아니다. 같은 발표를 옮긴 기사들은 한 건으로 처리했다. [연합뉴스](https://www.yna.co.kr/view/AKR20261110025400017) · [검사 시작일 확인](https://www.etoday.co.kr/news/view/2646289) ([yna.co.kr](https://www.yna.co.kr/view/AKR20261110025400017?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-f997efe2632e",
+      "url": "https://v.daum.net/v/Xn3FOzoMml?utm_source=openai",
+      "source": "v.daum.net",
+      "title": "“울릉도 특대 오징어 10마리 17만 원이 바가지?”... 사라진 어군과 땀방울이 만든 ‘눈물의 가격’",
+      "summary": "**오징어 ‘93% 급감’은 비교기간 확인 전 채택을 보류한다.** 검색에서 찾은 과거 보도는 **2026년 5월경 기사에서 ‘지난해 12월 기준, 평년 대비 93% 감소’**라고 설명한다. 따라서 제공 후보 제목의 수치를 **2026년 최근 어획량의 전년 대비 감소율**로 옮겨 쓰면 안 된다. 이번에는 서울경제 해당 기사 본문과 국립수산과학원 원통계, 남미산 수입 증가량을 연결하지 못했다. **생산 해역·어종·측정기간·평년 산정연도부터 재확인이 필요하다.** [검색에서 확인한 과거 보도](https://v.daum.net/v/Xn3FOzoMml) ([v.daum.net](https://v.daum.net/v/Xn3FOzoMml?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-160d40b459f1",
+      "url": "https://data.edmgr.kr/dataView.do?id=www-data-go-kr-data-filedata-15102781&utm_source=openai",
+      "source": "data.edmgr.kr",
+      "title": "교육데이터 활용•지원 서비스",
+      "summary": "**남은 검증 공백.** 국내 수산물 수출입은 해수부의 **관세청 자료 기반 월별 통계**, 검역은 수산물품질관리원의 **국가별·품종별 검역통계** 공개 경로까지 확인했지만 최신 수치 추출은 완료하지 못했다. 학교·단체급식, 코스트코 식품·수산 매출, 소비자 구매, 원산지 적발 실적도 핵심 사건으로 확정할 자료가 부족하다. **최근 국내 생산량과 과거 1~5년 동월 비교 역시 미완성**이므로, 현재 우선순위는 **국내 꽃게·전어 가격 → 노르웨이 고등어 공급 → 홈플러스 정산 차질 → 베트남 새우 통상 요청**으로 둔다. [해수부 수출입 통계 안내](https://data.edmgr.kr/dataView.do?id=www-data-go-kr-data-filedata-15102781) · [수품원 공식 공개목록](https://www.nfqs.go.kr/hpmg/info/actionInfoPreOpenForm.do?menuId=M0000176) ([data.edmgr.kr](https://data.edmgr.kr/dataView.do?id=www-data-go-kr-data-filedata-15102781&utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
       "category": "코스트코",
@@ -791,99 +2532,189 @@
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 11
+      "research_phase": "discovery",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
     },
     {
-      "id": "web-e058520f72c6",
-      "url": "https://fta.kmi.re.kr/data/pubMatrl/1c89fef0371753419744.pdf",
+      "id": "web-36eac39b6414",
+      "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?=&bbsSeq=10&docSeq=65372&menuSeq=971",
+      "source": "mof.go.kr",
+      "title": "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+      "summary": "**‘93% 급감’은 최근 1년의 변화가 아니다. 최근 연간 생산은 오히려 반등했다.** 해양수산부가 **2026년 2월 26일 발표한 2025년 생산통계**에서 연근해 오징어는 **약 3만1,000톤, 전년 대비 128.5% 증가**했다. 해수부는 상대적으로 낮은 수온으로 봄철 동해 중부와 여름철 서해 중·남부에 어장이 형성됐다고 설명했다. 반면 11월 7일 뉴시스가 인용한 **92.8% 감소는 2009년 18만9,160톤과 2024년 1만3,546톤의 비교**다. 따라서 장기 감소와 2025년 회복을 함께 적어야 하며, 이를 ‘2026년 어획량 93% 급감’으로 옮기면 기간이 잘못된다. ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?=&bbsSeq=10&docSeq=65372&menuSeq=971))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 24
+    },
+    {
+      "id": "web-51313be50c53",
+      "url": "https://www.bcrp.gob.pe/docs/Proyeccion-Institucional/Encuentros-Regionales/2025/piura/ies-piura-2025.pdf?utm_source=openai",
+      "source": "bcrp.gob.pe",
+      "title": "BANCO CENTRAL DE RESERVA DEL PERÚ",
+      "summary": "**남미 공급 회복은 국내 보도와 별개인 해외 공식자료로 뒷받침된다.** 페루 중앙은행의 피우라 지역 보고서는 **2025년 1~5월 대왕오징어 양륙량 21만5,400톤, 전년 동기 대비 283.3% 증가**를 제시하고 기후조건 정상화 이후 자원 가용성이 회복됐다고 설명한다. 한국 반입에 대해서는 11월 7일 뉴시스가 식약처 통계를 인용해 **2025년 페루산 오징어 수입 4만7,000톤, 전년 대비 109.7% 증가**라고 보도했다. 현지 공급 회복과 한국 반입 증가는 확인되지만, 이 수입량은 이번 조사에서 식약처 원표까지 재확인하지 못했다. 또한 **2026년 수입 실적이 아니라 2025년 실적**이다. ([bcrp.gob.pe](https://www.bcrp.gob.pe/docs/Proyeccion-Institucional/Encuentros-Regionales/2025/piura/ies-piura-2025.pdf?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-c3b4dfbf1efa",
+      "url": "https://fta.kmi.re.kr/sub01/view.php?attribute=&bid=itmSuply&btype=&idx=888&page=0&sv=&sw=&view=&utm_source=openai",
       "source": "fta.kmi.re.kr",
-      "title": "18 FTA 수산물 수입 동향",
-      "summary": "12. **[KMI 수입통계·물량과 금액 분리]** KMI의 FTA 수산물 수입동향에서 **2025년 1~3월 오징어 수입량은 26.3천 톤으로 전년 동기 대비 12.7% 증가**, 수입액은 **1억1,150만 미국 달러로 4.6% 감소**했다. 전체 수입량 중 **냉동품 비중은 75.9%**, 조미·자숙품은 **22.9%**여서, 전체 오징어 수입통계를 냉동 원물만의 통계로 인용해서는 안 된다. ([fta.kmi.re.kr](https://fta.kmi.re.kr/data/pubMatrl/1c89fef0371753419744.pdf))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "title": "품목별 수급동향 | FTA 체결국 주요 수입 품목 정보 | FTA 소식 | FTA 이행에 따른 어업인등 지원센터",
+      "summary": "**국내산 가격 상승과 수입산 가격 하락을 한 문장으로 묶을 근거는 부족하다.** KMI 자료에서 연근해 오징어 생산단가는 **2023년 1만999원/kg → 2024년 1만4,108원/kg**, 원양산은 **6,088원/kg → 5,966원/kg**으로 방향이 달랐다. 그러나 페루산 냉동 오징어 수입단가는 같은 기간 **1.9달러/kg → 2.1달러/kg**으로 올랐다. 이는 생산단가와 수입단가의 비교이지 소매가격 비교가 아니다. 또 KMI의 수급표상 수입량은 원물 환산수율 적용 물량이므로 식약처 반입중량과 직접 비교하지 않았다. ([fta.kmi.re.kr](https://fta.kmi.re.kr/sub01/view.php?attribute=&bid=itmSuply&btype=&idx=888&page=0&sv=&sw=&view=&utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "원물 수급/시세",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     },
     {
-      "id": "web-bf95b6cffcb8",
-      "url": "https://www.kmi.re.kr/library/10110/contents/6068142?utm_source=openai",
-      "source": "kmi.re.kr",
-      "title": "수산관측",
-      "summary": "- KMI 도서관에서 **2026년 9월 광어·우럭 관측자료의 발간 기록**은 확인했으나, 최근 관측 원문의 출하량·규격별 산지가·양성물량은 확보하지 못해 숫자를 싣지 않았다. 따라서 이번 결과는 해당 품목의 최근 45일 수급을 완결한 조사는 아니다. ([kmi.re.kr](https://www.kmi.re.kr/library/10110/contents/6068142?utm_source=openai))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "id": "web-6aaa33abb860",
+      "url": "https://baotintuc.vn/kien-nghi-bai-bo-han-ngach-thue-quan-doi-voi-tom-viet-nam-trong-vkfta-post1401447.html?utm_source=openai",
+      "source": "baotintuc.vn",
+      "title": "VASEP kiến nghị bỏ hạn ngạch thuế quan tôm Việt Nam tại Hàn Quốc",
+      "summary": "**한국의 베트남산 새우 관세할당 폐지 요구는 신규 규제 변경이 아니라 반복된 협상 요구다.** **2026년 10월 30일 VASEP 서한**을 다룬 베트남 통신 보도는 무관세 할당 **연 1만5,000톤**, 할당 밖 관세 **20%**, 입찰 접근비용 **수입액의 14~16%**라는 협회 주장을 전한다. 별도로 확보한 **2024년 4월 15일 VASEP 원문 서한**에는 대상 **7개 HSK 품목**의 한국 수입량이 **2022년 3만6,265톤, 2023년 2만9,944톤**이라고 적혀 있다. 할당을 웃도는 거래규모는 요구의 배경이지만, 비용률은 협회 주장이고 **한국의 할당 폐지·관세 인하가 발효됐다는 근거는 아니다.** ([baotintuc.vn](https://baotintuc.vn/kien-nghi-bai-bo-han-ngach-thue-quan-doi-voi-tom-viet-nam-trong-vkfta-post1401447.html?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "원물 수급/시세",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     },
     {
-      "id": "web-9772fc0387ab",
-      "url": "https://www.ssb.no/en/statbank/table/03024/",
+      "id": "web-6bc95e1fe742",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-02-23/pdf/FR-2026-02-23.pdf?utm_source=openai",
+      "source": "govinfo.gov",
+      "title": "Federal Register / Vol. 91, No. 35 / Monday, February 23, 2026 / Notices 8431",
+      "summary": "**미국 반덤핑 인상을 ‘베트남산 새우 전체의 동일 세율 인상’으로 처리하면 안 된다.** 미국 정부의 **2026년 2월 23일 연방관보**에서도 의무조사 기업, 별도세율 기업, 베트남 전체 적용 기업의 예치율을 구분한다. 다만 후보 기사에 대응하는 **11월 6일 최종판정 원문은 접근 제한으로 직접 검증하지 못했다.** 이번 조사에서는 해당 판정의 기업별 인상폭과 적용 개시일을 확정하지 않았으며, 미국 관세가 한국향 물량 증가를 유발했다는 인과관계도 채택하지 않았다. ([govinfo.gov](https://www.govinfo.gov/content/pkg/FR-2026-02-23/pdf/FR-2026-02-23.pdf?utm_source=openai))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-347bedb6ac81",
+      "url": "https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks",
       "source": "ssb.no",
-      "title": "Statistikkbanken – SSB",
-      "summary": "- 제공된 **SSB 2026년 44주 연어 가격·물량 및 달러 환산치**는 해당 표에서 관측값을 독립적으로 재확인하지 못해 제외했다. ([ssb.no](https://www.ssb.no/en/statbank/table/03024/))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "title": "Export of salmon – SSB",
+      "summary": "**연어는 물량 증가와 현지통화 단가 하락이 동시에 확인된다.** 노르웨이 통계청이 **2026년 11월 4일 발표한 44주차** 자료에서 신선·냉장 연어 수출량은 **2만8,444톤, 전년 동주 대비 14.3% 증가**, 가격은 **74.98 NOK/kg, 6.9% 하락**이다. 같은 분류의 물량·단가 증감률을 곱하면 수출금액은 **약 6.4% 증가한 것으로 계산**된다. 다만 이는 노르웨이 전체 수출이며 일본·미국향 실적이 아니다. 제공된 달러 환산가격 **8.07달러/kg**은 Norges Bank 환율 원계열을 재확인하지 못해 검증값에서 제외했다. ([ssb.no](https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "원물 수급/시세",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-167ce53c3685",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1",
+      "source": "motir.go.kr",
+      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "summary": "**업태 매출 회복과 홈플러스 공급망 차질은 구분해야 한다.** 산업통상부의 **10월 28일 발표, 2026년 9월 측정자료**에서 대형마트 매출은 **전년 동월 대비 4.0%**, 식품 매출은 **4.3%**, 구매건수는 **0.5% 증가**했다. 추석이 **2025년 10월에서 2026년 9월로 이동한 효과**가 포함돼 있다. 반면 11월 11일 독립 취재는 홈플러스 일부 매장의 빈 매대와 **8월 급여 절반·9~10월 급여 미지급**을 보도했다. 업태 전체의 월간 매출 증가가 개별 기업의 현금 지급 능력 회복을 뜻하지는 않는다. 수산물 납품업체별 미수금·중단 물량과 창고형 점포 증감은 확인하지 못했다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "대형마트/SSM",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
+      "editorial_score": 7
+    },
+    {
+      "id": "web-54675eec6b97",
+      "url": "https://impfood.mfds.go.kr/CFCII02F02/getCntntsDetail?cntntsSn=671675",
+      "source": "impfood.mfds.go.kr",
+      "title": "홈 > 안전정보 > 수입검사관련정보 > 통관단계 검사지시 > 2026년 김장철 대비 김장재료 통관검사 강화",
+      "summary": "**김장철 검사는 수산물 전반의 유통 제한이 아니라 품목·기간이 정해진 통관검사 강화다.** 식약처의 **10월 28일 원공고**는 검사기간을 **11월 9~20일, 접수일 기준 10일**로 명시한다. 수산물 대상은 민물새우와 염장 새우·젓새우이며, 민물새우는 **납·카드뮴 및 동물용의약품**, 염장품은 **납·카드뮴**을 검사한다. 액젓·조미액젓은 별도 가공식품으로 총질소·보존료·대장균군 검사가 지정됐다. 이 공고에는 검사 건수·부적합률·폐기량이 없어, 검사 강화만으로 위해 증가나 시장 공급 감소를 판단할 수 없다. ([impfood.mfds.go.kr](https://impfood.mfds.go.kr/CFCII02F02/getCntntsDetail?cntntsSn=671675))",
+      "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "원물 수급/시세",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "research_phase": "focused",
+      "impact": "공개 근거 문단",
+      "followup": "해당 원문 및 통계 기준기간",
       "editorial_score": 7
     }
   ],
   "archived_features": [],
   "report_archived": false,
   "report_factual_brief": false,
-  "fresh_deep_count": 1,
+  "fresh_deep_count": 2,
   "content_state": "fresh_research",
-  "last_report_updated_at": "2026-11-11T11:11+09:00",
+  "last_report_updated_at": "2026-11-11T11:42+09:00",
   "data_reports": [],
   "data_ai_status": "다른 자료와 비교할 수 있는 품목별 관측이 아직 없습니다.",
   "analysis_status": "실제 공식 관측 3종 · SSB/ECOS 및 연결된 국내 공공통계 기준",
-  "sources_ok": 10,
-  "sources_total": 26,
-  "errors": [
-    "Google 뉴스 검색·코스트코: ValueError",
-    "Google 뉴스 검색·대형마트/SSM: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·대형마트/SSM: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·B2B/급식: ValueError",
-    "Google 뉴스 검색·시즌/트렌드: ValueError",
-    "Google 뉴스 검색·온라인: ValueError",
-    "Google 뉴스 검색·식품안전/소비심리: ValueError",
-    "Google 뉴스 검색·시즌/트렌드: ValueError",
-    "Google 뉴스 검색·비용/거시: ValueError",
-    "Google 뉴스 검색·매장 운영: ValueError",
-    "Google 뉴스 검색·해외: ValueError",
-    "Google 뉴스 검색·해외: ValueError"
-  ],
-  "research_status": "보강 출처 11건",
+  "sources_ok": 38,
+  "sources_total": 38,
+  "errors": [],
+  "research_status": "1차: discovery 근거 출처 8건 / 주제별 재조사: focused 근거 출처 8건",
+  "research_coverage": {
+    "discovery_citations": 8,
+    "focused_citations": 8,
+    "unique_citations": 16,
+    "topic_candidates": 5,
+    "feed_parsed": 1249,
+    "feed_kept": 356
+  },
   "metric_errors": [
     "ECOS NOK: 항목 코드 미확인",
     "수산물 수출입: 비교 가능한 전년 동월 자료 없음",
-    "KAMIS: API 응답은 있었지만 게시 가능한 날짜·품목·비교 가격 없음"
+    "KAMIS: 최근 45일 중 비교 가능한 도소매 조사 가격 없음"
   ],
   "demo": false,
   "policy_sources": [],
