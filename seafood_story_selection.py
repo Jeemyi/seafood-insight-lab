@@ -94,17 +94,3 @@ def build_story_clusters(articles, features, previous_headlines=None, limit=7):
              'measurable_records':numeric_count,'score':score,
              'observations':[{'id':x['row']['id'],'text':x['text'][:330]} for x in unique[:6]]})
     return sorted(results,key=lambda r:r['score'],reverse=True)[:limit]
-
-
-def shared_market_anchor(records):
-    """Whether different documents describe the same concrete market.
-
-    This is a modest relevance guard, not a proof of economic causation. The
-    model and the numeric/source checks must still verify the actual linkage.
-    """
-    texts=[_record_text(r) for r in records]
-    if len(texts)<2:return None
-    for name,words in SUBJECTS:
-        if sum(any(word.lower() in text for word in words) for text in texts)>=2:
-            return name
-    return None

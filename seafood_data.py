@@ -126,7 +126,12 @@ def fetch_ssb_salmon_volume():
         return {},'SSB 연어 물량: '+type(exc).__name__
 
 
-def salmon_price_volume_feature(price,volume,today):
+def salmon_price_volume_feature(price, volume, today, usd_per_nok=None):
+    """Show USD/kg only if ECB dates cover both comparison weeks.
+
+    Absent matching exchange rates, publish the verified volume observation,
+    but never show a NOK price as though it were a USD purchasing price.
+    """
     common=sorted(set(price)&set(volume))
     if not common:return None
     year,week=common[-1]
@@ -135,29 +140,43 @@ def salmon_price_volume_feature(price,volume,today):
     except ValueError:return None
     prior=(year-1,week)
     if prior not in price or prior not in volume:return None
-    price_delta=_pct(price[prior],price[(year,week)])
     volume_delta=_pct(volume[prior],volume[(year,week)])
-    if None in (price_delta,volume_delta):return None
-    current_price=price[(year,week)];current_volume=volume[(year,week)]
+    if volume_delta is None:return None
+    current_volume=volume[(year,week)]
     period=f'{year}년 {week}주';prev=f'{year-1}년 {week}주'
-    observed=(f'노르웨이 통계청 SSB {period}: 신선·냉장 연어 수출가격 {current_price:,.2f} NOK/kg '
-              f'(전년 {prev} 대비 {price_delta:+.1f}%), 수출물량 {current_volume:,.0f}톤 '
-              f'(전년 동주 대비 {volume_delta:+.1f}%). 동일 주차·동일 제품 분류 비교.')
-    return {'id':'salmon_price_volume','name':'노르웨이 연어 가격·수출물량',
-        'title':f'노르웨이 연어 수출가 {price_delta:+.1f}% · 물량 {volume_delta:+.1f}%',
-        'subtitle':'노르웨이 통계청 SSB 신선·냉장 연어','period_start':prev,
-        'period_end':period,'facts':[
-          {'label':'수출가격','value':f'{current_price:,.2f} NOK/kg','detail':period},
-          {'label':'전년 동기 수출가','value':f'{price_delta:+.1f}%','detail':prev},
-          {'label':'수출물량','value':f'{current_volume:,.0f}톤','detail':period},
-          {'label':'전년 동기 수출물량','value':f'{volume_delta:+.1f}%','detail':prev}],
-        'observed':observed,'data_links':[{'url':SSB_LINK,'label':'노르웨이 통계청 신선·냉장 연어 주간 수출 가격·물량'}],
-        'article_ids':[],'category':'원물 수급/시세','channels':[],
-        'impact':f'가격 {price_delta:+.1f}% · 물량 {volume_delta:+.1f}%',
-        'source_type':'공식 공개 API','series_type':'salmon_joint',
-        'limitations':'SSB 신선·냉장 연어 수출가격은 NOK/kg, 물량은 수출 톤수다. 한국 수입 원가·원화 환산가격과 다르며 월간 수출 통계와 같은 자료로 합산할 수 없다.',
-        'measurements':{'species':'연어','price_nok_kg':current_price,'tonnes':current_volume,'yoy_price_pct':price_delta,'yoy_qty_pct':volume_delta},
-        'significance':min(34,abs(price_delta)*1.6+abs(volume_delta)*.7)+5}
+    facts=[{'label':'연어 수출량','value':f'{current_volume:,.0f}톤','detail':period},
+           {'label':'수출물량 전년 동기 대비','value':f'{volume_delta:+.1f}%','detail':prev}]
+    obs=f'노르웨이 통계청 SSB {period} 신선·냉장 연어 수출량 {current_volume:,.0f}톤(전년 동주 {volume_delta:+.1f}%).'
+    title=f'노르웨이 연어 수출량 전년 대비 {volume_delta:+.1f}%'
+    measurements={'species':'연어','tonnes':current_volume,'yoy_qty_pct':volume_delta}
+    links=[{'url':SSB_LINK,'label':'노르웨이 통계청 · 연어 수출 통계'}]
+    series_type='salmon_volume'
+    significance=abs(volume_delta)*.7+5
+    usd_per_nok=usd_per_nok or {}
+    if (year,week) in usd_per_nok and prior in usd_per_nok:
+        current_usd=price[(year,week)]*usd_per_nok[(year,week)]
+        prior_usd=price[prior]*usd_per_nok[prior]
+        price_delta=_pct(prior_usd,current_usd)
+        if price_delta is not None and all(math.isfinite(v) for v in (current_usd,prior_usd)):
+            facts=[{'label':'연어 수출가 · 달러 환산','value':f'${current_usd:.2f}/kg',
+                    'detail':f'{period} · ECB 주간 환율 적용'},
+                   {'label':'달러 기준 전년 동기 대비','value':f'{price_delta:+.1f}%','detail':prev}]+facts
+            title=f'노르웨이 연어 수출가 {price_delta:+.1f}% · 물량 {volume_delta:+.1f}%'
+            obs=f'{period} 신선·냉장 연어 수출가 ${current_usd:.2f}/kg(전년 동주 {price_delta:+.1f}%) · 수출량 {current_volume:,.0f}톤({volume_delta:+.1f}%). SSB 가격을 ECB 동일 주차 일별 환율 평균으로 달러 환산.'
+            measurements.update(price_usd_kg=round(current_usd,4),yoy_price_pct=round(price_delta,2))
+            links.append({'url':'https://data.ecb.europa.eu/data/datasets/EXR',
+                          'label':'유럽중앙은행(ECB) · 일별 환율'})
+            series_type='salmon_joint'
+            significance+=abs(price_delta)*1.6
+    return {'id':'salmon_price_volume','name':'노르웨이 연어 수출가격·물량',
+        'title':title,'subtitle':'노르웨이 통계청 SSB · ECB 달러 환산',
+        'period_start':prev,'period_end':period,'facts':facts,'observed':obs,
+        'data_links':links,'article_ids':[],'category':'원물 수급/시세',
+        'channels':[],'impact':f'수출물량 {volume_delta:+.1f}%' +
+            (f' · 달러 가격 {measurements["yoy_price_pct"]:+.1f}%' if 'yoy_price_pct' in measurements else ''),
+        'source_type':'공식 공개 API','series_type':series_type,
+        'limitations':'가격은 SSB 수출가격의 ECB 환율 환산값이며 계약·국내 소비자가격은 아니다.' if series_type=='salmon_joint' else 'ECB 달러환율이 확보되지 않아 가격은 표시하지 않았다.',
+        'measurements':measurements,'significance':min(50,significance)}
 
 
 def fetch_ssb_salmon():
@@ -311,52 +330,35 @@ def make_features(now):
     features=[]; errors=[]
     salmon,ssb_error=fetch_ssb_salmon()
     volume,volume_error=fetch_ssb_salmon_volume()
-    joint=salmon_price_volume_feature(salmon,volume,now.date()) if salmon and volume else None
-    if joint:
-        from seafood_currency import fetch_weekly_usd_nok, add_usd_to_salmon
-        weekly_fx, rate_error = fetch_weekly_usd_nok(now)
-        add_usd_to_salmon(joint, salmon, weekly_fx)
-        features.append(joint)
-        if rate_error: errors.append(rate_error)
-    if salmon and not joint:
-        f=_series_feature('salmon_export_price','노르웨이 생연어 수출가','노르웨이 연어 수출가 변화가 국내 수입원가에 주는 신호',salmon,'NOK/kg',SSB_LINK,'노르웨이 통계청 SSB',now.date(),'원물 수급/시세',['마트','온라인','B2B'],'NOK 가격 하락은 원물가 하락 요인일 수 있으나 국내 매입가 하락 확정 아님', 'weekly')
-        if f:features.append(f)
+    from seafood_currency import fetch_ecb_usd_per_nok
+    usd_per_nok={}
+    if salmon:
+        usd_per_nok,ecb_error=fetch_ecb_usd_per_nok(now.date())
+        if ecb_error:errors.append(ecb_error)
+    joint=salmon_price_volume_feature(salmon,volume,now.date(),usd_per_nok) if salmon and volume else None
+    if joint:features.append(joint)
+    # No legacy NOK price-only fallback: raw Norwegian-currency observations
+    # remain internal until a supported USD comparison can be constructed.
     if ssb_error:errors.append(ssb_error)
     if volume_error:errors.append(volume_error)
     fx,fx_errors=fetch_ecos(now)
     errors.extend(fx_errors)
-    for currency, unit, title, channels in [
-        ('USD','원/USD','원/달러 환율 변동과 수입 수산물 원가','마트·온라인·B2B'),
-        ('JPY','원/100JPY','엔화 움직임과 일본 거래·수출 채산성','수출'),
-        ('NOK','원/NOK','노르웨이 크로네 환율과 연어 매입원가','마트·온라인·B2B')]:
+    for currency,unit,title,channels in [
+        ('USD','원/USD','원/달러 환율','마트·온라인·B2B'),
+        ('JPY','원/100JPY','엔화 환율','수출')]:
         if currency not in fx:continue
-        f=_series_feature('fx_'+currency.lower(), currency+' 환율',title,fx[currency],unit,ECOS_LINK,'한국은행 ECOS',now.date(),'비용/거시',channels.split('·'),'환율 변화는 결제통화·계약시점에 따라 반영 시차 발생')
+        f=_series_feature('fx_'+currency.lower(),currency+' 환율',title,fx[currency],unit,
+                          ECOS_LINK,'한국은행 ECOS',now.date(),'비용/거시',channels.split('·'),'참고 환율')
         if f:
-            f['role']='context'   # FX is an explanatory input, not a seafood-market report.
+            f['role']='context'
             features.append(f)
-    # Apply conversion only when both primary observations exist. Never claim landed cost.
-    if salmon and 'NOK' in fx:
-        latest_week=max(salmon)
-        fx_latest=max(fx['NOK'])
-        # Mixing non-matching observation dates here would be misleading;
-        # show the official series separately rather than invent weekly landed cost.
-        _=latest_week,fx_latest
     # New public sources. They stay optional and never generate placeholder values.
     from seafood_public import make_public_features
     extra,public_errors=make_public_features(now)
     features.extend(extra)
     errors.extend(public_errors)
-    # Observation-year freshness is not a headline publication date. Older MOF
-    # tables are still available as context but do not displace 2025/2026 data.
-    from seafood_freshness import label_features
-    features=label_features(features,now)
-    for type_name in ('mof_stats','kosis_stats','enara_fisheries'):
-        same=[x for x in features if x.get('series_type')==type_name]
-        if same:
-            print(f'SEAFOOD STAT FRESHNESS {type_name}: current={sum(x.get("data_freshness")=="current" for x in same)} historical={sum(x.get("data_freshness")=="historical" for x in same)}',flush=True)
-    # Recent observed series lead. No generic FX or historical total is made
-    # a primary 2026 seafood market signal merely by its large percentage.
-    features.sort(key=lambda x:(x.get('role') not in ('context','historical_context'),
-                 x.get('significance',0),
-                 4 if x.get('series_type') in ('trade','kamis','kosis_stats','enara_fisheries') else 0),reverse=True)
+    # Keep some FX/salmon context, but prioritize species-specific production/trade
+    # and surveyed consumer prices over three generic macro cards.
+    features.sort(key=lambda x:(x.get('significance',0),
+                 4 if x.get('series_type') in ('trade','kamis') else 0),reverse=True)
     return features,errors

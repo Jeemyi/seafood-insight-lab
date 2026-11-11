@@ -18,22 +18,24 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from threading import Lock
 from time import monotonic, sleep
-from urllib.parse import quote, urlparse
+from urllib.parse import quote, urlparse, parse_qs, unquote
 from xml.etree import ElementTree as ET
 
 import requests
 from bs4 import BeautifulSoup
 from seafood_data import make_features, SSB_LINK
-from seafood_ai import analyze, analyze_data, balanced_article_pool, research_public_sources
+from seafood_ai import analyze, analyze_data, balanced_article_pool, research_public_sources, analyze_news_digest
 from seafood_editorial import (select_market_topics, connect_evidence,
                               deterministic_data_report)
+from seafood_newsroom import (retain_archive,split_archive,make_issue_digest,
+                              ARCHIVE_DAYS,WINDOW_DAYS,MAX_ARCHIVE)
 
 ROOT=Path(__file__).resolve().parent
 SITE=ROOT/'site';SITE.mkdir(exist_ok=True)
 KST=timezone(timedelta(hours=9))
 HEADERS={'User-Agent':'SeafoodInsightLab/1.0 (public RSS research dashboard)'}
 CATEGORIES=[
- ('원물 수급/시세',['광어','넙치','우럭','방어','연어','오징어','꽃게','문어','새우','장어','과메기','건어물','수산물 시세','어획','어황','양식','적조','고수온','금어기','수산물 가격','생연어','출하량','위판'],8,'어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가'),
+ ('원물 수급/시세',['salmon','squid','fisheries','aquaculture','seafood prices','fishery','crab','shrimp','mackerel','pollock','광어','넙치','우럭','방어','연어','오징어','꽃게','문어','새우','장어','과메기','건어물','수산물 시세','어획','어황','양식','적조','고수온','금어기','수산물 가격','생연어','출하량','위판'],8,'어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가'),
  ('코스트코',['코스트코','costco','커클랜드','kirkland','회원제 창고형','코스트코코리아'],8,'신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가'),
  ('대형마트/SSM',['이마트','트레이더스','롯데마트','롯데슈퍼','홈플러스','서원유통','에브리데이','gs더프레시','대형마트','ssm','노브랜드','의무휴업','새벽배송 규제','유통사 소싱','비딩'],7,'대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가'),
  ('매장 운영',['최저임금','매장 운영','수산코너','영업신고','식품위생법','리뉴얼','폐점','신규 출점','입점','수산 매장','매장 인건비','백화점 식품'],5,'점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가'),
@@ -45,7 +47,7 @@ CATEGORIES=[
  ('해외',['일본 수출','일본 스시','스시로','겐키스시','미국 수출','mmpa','대미 수산','관세','수출지원','수산 수출','해외 수산','미국 한인','해외 통관'],5,'국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가')
 ]
 CATS={x[0]:{'terms':x[1],'boost':x[2],'question':x[3]} for x in CATEGORIES}
-SEAFOOD_HINTS=['수산','해산','어업','어획','어류','양식','수산물','활어','회','광어','우럭','연어','새우','오징어','꽃게','방어','건어물','식품','유통','급식','마트','코스트코','쿠팡','컬리','물류','환율','냉장','냉동','포장재','수입','수출','안전','위생']
+SEAFOOD_HINTS=['seafood','salmon','squid','fisheries','aquaculture','fishery','crab','shrimp','mackerel','pollock','catch','exports','imports','수산','해산','어업','어획','어류','양식','수산물','활어','회','광어','우럭','연어','새우','오징어','꽃게','방어','고등어','갈치','명태','멸치','참치','굴','가리비','주꾸미','전복','낙지','장어','건어물','식품','유통','급식','마트','홈플러스','롯데슈퍼','트레이더스','코스트코','수협','해양수산','KMI','쿠팡','컬리','물류','환율','냉장','냉동','포장재','수입','수출','안전','위생']
 
 # Broad topic queries rather than long AND keyword strings. Date relevance is
 # assessed separately so a single Google RSS search does not overconstrain recall.
@@ -84,6 +86,55 @@ SEARCH_QUERIES=[
  ('원물 수급/시세','site:foc.re.kr 수산업관측 생산량 가격',True),
  ('원물 수급/시세','site:kmi.re.kr 수산관측 주요 품목',True),
  ('해외','site:mof.go.kr 수산물 수출입 실적',True),
+ ('원물 수급/시세','수산물 도매가격',True),
+ ('원물 수급/시세','수산물 위판 실적',True),
+ ('원물 수급/시세','수산물 공급 부족',True),
+ ('원물 수급/시세','수산업 고수온 양식 피해',True),
+ ('원물 수급/시세','넙치 출하량',True),
+ ('원물 수급/시세','우럭 양식 가격',True),
+ ('원물 수급/시세','고등어 수입 가격',True),
+ ('원물 수급/시세','명태 수급',True),
+ ('원물 수급/시세','꽃게 어획',True),
+ ('원물 수급/시세','새우 수입 관세',True),
+ ('원물 수급/시세','참치 어획 규제',True),
+ ('원물 수급/시세','갈치 산지가',True),
+ ('원물 수급/시세','양식장 폐사 피해',True),
+ ('원물 수급/시세','생굴 수급',True),
+ ('원물 수급/시세','fresh salmon export price Norway',True),
+ ('원물 수급/시세','global fishmeal prices',True),
+ ('원물 수급/시세','squid catches Peru China Korea',True),
+ ('원물 수급/시세','seafood wholesale prices Korea',True),
+ ('대형마트/SSM','홈플러스 회생 폐점',True),
+ ('대형마트/SSM','대형마트 매출 점포',True),
+ ('대형마트/SSM','이마트 식품 매출',True),
+ ('대형마트/SSM','롯데마트 신선식품',True),
+ ('대형마트/SSM','슈퍼마켓 SSM 매출',True),
+ ('코스트코','코스트코 신규 출점',True),
+ ('코스트코','코스트코 매출 식품',True),
+ ('온라인','컬리 신선식품',True),
+ ('온라인','쿠팡 신선식품',True),
+ ('온라인','SSG닷컴 식품',True),
+ ('B2B/급식','식자재 가격 급식',True),
+ ('B2B/급식','CJ프레시웨이 식자재',True),
+ ('B2B/급식','학교급식 식재료 수산',True),
+ ('식품안전/소비심리','수입수산물 부적합',True),
+ ('식품안전/소비심리','수산물 원산지 위반',True),
+ ('식품안전/소비심리','수산물 검역 금지',True),
+ ('식품안전/소비심리','seafood import ban regulation',True),
+ ('시즌/트렌드','수산물 소비 추세',True),
+ ('비용/거시','수산물 냉동 물류비',True),
+ ('해외','한국 수산식품 수출 실적',True),
+ ('해외','수산물 수입 통관',True),
+ ('해외','Japan seafood imports Korea',True),
+ ('해외','Norway Seafood Council exports',True),
+ ('해외','NOAA seafood imports MMPA',True),
+ ('해외','EU seafood trade regulation',True),
+ ('해외','Russia pollock export supply',True),
+ ('해외','US seafood tariff',True),
+ ('해외','China seafood imports prices',True),
+ ('해외','site:newsis.com 수산물 유통',True),
+ ('해외','site:yna.co.kr 수산물 수입',True),
+ ('원물 수급/시세','site:fishnews.co.kr 수산',True),
 ]
 
 NEWS_LOOKBACK_DAYS=30
@@ -117,7 +168,41 @@ def google_feed(q,lookback_days=NEWS_LOOKBACK_DAYS):
     # publication date, and older items are never relabeled as new today.
     return 'https://news.google.com/rss/search?q='+quote(q+f' when:{lookback_days}d')+'&hl=ko&gl=KR&ceid=KR:ko'
 
-SOURCES=[(f'Google 뉴스 검색·{cat}·{q}',google_feed(q),'search',cat) for cat,q,_ in SEARCH_QUERIES] + [
+def bing_feed(q):
+    # Bing's public news RSS is an independent fallback. Its format is
+    # unofficial, so failures are logged as such rather than hidden.
+    return 'https://www.bing.com/news/search?q='+quote(q)+'&format=rss&setmkt=ko-KR'
+
+# Direct publisher feeds are kept even when BOTH search aggregators fail.
+# The limited Bing portfolio covers broad sectors without 30 extra requests.
+BING_QUERIES=[
+    ('원물 수급/시세','수산물 생산 가격'),
+    ('원물 수급/시세','Norway salmon exports'),
+    ('원물 수급/시세','Peru squid fishing quota'),
+    ('원물 수급/시세','aquaculture seafood prices'),
+    ('원물 수급/시세','오징어 어획 수출'),
+    ('원물 수급/시세','연어 노르웨이 가격'),
+    ('원물 수급/시세','광어 양식 출하'),
+    ('대형마트/SSM','홈플러스 이마트 유통'),
+    ('코스트코','코스트코 식품 유통'),
+    ('온라인','온라인 신선식품'),
+    ('B2B/급식','급식 식자재 수산'),
+    ('식품안전/소비심리','수산물 안전 검역'),
+    ('식품안전/소비심리','seafood import inspection recall'),
+    ('해외','수산물 수출 관세'),
+    ('해외','Japan seafood import tariff'),
+    ('원물 수급/시세','fish prices Norway salmon'),
+    ('원물 수급/시세','fisheries catch quota Japan'),
+    ('원물 수급/시세','수산물 위판가격'),
+    ('대형마트/SSM','대형마트 영업 점포 폐점'),
+    ('B2B/급식','식자재 식품 수급'),
+    ('해외','seafood exports Korea trade'),
+    ('해외','China seafood import policy'),
+    ('식품안전/소비심리','수산물 수입 검사 부적합'),
+]
+SOURCES=[(f'Bing 뉴스 검색·{cat}·{q}',bing_feed(q),'search',cat)
+         for cat,q in BING_QUERIES] + [
+
     ('한국경제·경제','https://www.hankyung.com/feed/economy','news',None),
     ('한국경제·국제','https://www.hankyung.com/feed/international','news',None),
     ('한국경제·증권','https://www.hankyung.com/feed/finance','news',None),
@@ -127,10 +212,15 @@ SOURCES=[(f'Google 뉴스 검색·{cat}·{q}',google_feed(q),'search',cat) for c
     ('뉴시스·산업','https://www.newsis.com/RSS/industry.xml','news',None),
     ('뉴시스·경제','https://www.newsis.com/RSS/economy.xml','news',None),
     ('뉴시스·국제','https://www.newsis.com/RSS/international.xml','news',None),
+    ('연합뉴스·전체','https://www.yna.co.kr/rss/news.xml','news',None),
+    ('동아일보·전체','https://rss.donga.com/total.xml','news',None),
+    ('매일경제·전체','https://www.mk.co.kr/rss/30000001/','news',None),
+    ('뉴시스·속보','https://www.newsis.com/RSS/sokbo.xml','news',None),
     ('국가데이터처·보도자료','https://mods.go.kr/menu.es?mid=a10301010000&act=rss','news',None),
     ('KOSIS·주요 월간동향','https://kosis.kr/rss/trend_rss.jsp','news',None),
     ('KOSIS·최근 수록 통계','https://kosis.kr/rss/themes_rss.jsp','news',None),
-]
+] + [(f'Google 뉴스 검색·{cat}·{q}',google_feed(q),'search',cat) for cat,q,_ in SEARCH_QUERIES]
+
 
 DEEP_LINKS=[
  {'title':'KMI 수산업관측센터 · 어종별 관측','url':'https://www.foc.re.kr/'},
@@ -176,7 +266,7 @@ def parse_feed(content):
             if tag=='link':
                 value=child.attrib.get('href') or value
             key={'pubDate':'published','description':'summary','date':'published'}.get(tag,tag)
-            if key in ('title','link','summary','published','updated') and value:
+            if key in ('title','link','summary','published','updated','source') and value:
                 result.setdefault(key,value)
         if result.get('title') and result.get('link'):
             entries.append(result)
@@ -204,7 +294,7 @@ def fetch_feed(src):
                 try:root_tag=ET.fromstring(r.content).tag.rsplit('}',1)[-1]
                 except ET.ParseError:pass
                 return src,[],f'{label}: empty RSS (status={r.status_code}, type={content_type}, root={root_tag})'
-            return src,items[:65],None
+            return src,items[:100],None
         except requests.HTTPError as exc:
             # Do not emit request URLs (which can contain private parameters).
             status=exc.response.status_code if exc.response is not None else None
@@ -293,7 +383,12 @@ def feed_to_articles(source, entries, now, diagnostics=None):
     for row in entries:
         title=clean(row.get('title'))
         title,publisher=extract_publisher(title,label)
+        if (label.startswith('Bing 뉴스') or label.startswith('Google 뉴스')) and row.get('source'):
+            publisher=clean(row['source'])[:90]
         url=valid_url(str(row.get('link','')).strip())
+        if url and urlparse(url).netloc.lower().endswith('bing.com'):
+            inner=parse_qs(urlparse(url).query).get('url',[''])[0]
+            url=valid_url(unquote(inner)) or url
         published=stamp(row)
         if not title or not url or not published:
             dropped['link_or_title']+=1
@@ -306,11 +401,13 @@ def feed_to_articles(source, entries, now, diagnostics=None):
         if not category:
             dropped['topic']+=1
             continue
-        if not any(k in title.lower()+' '+summary[:120].lower() for k in SEAFOOD_HINTS):
+        if not any(k in title.lower()+' '+summary.lower()[:320] for k in SEAFOOD_HINTS):
             dropped['topic']+=1
             continue
-        if len(summary)<44 or 'Google 뉴스' in summary[:25]:
-            summary='' if len(summary)<44 else summary
+        if 'Google 뉴스' in summary[:25]:
+            summary=''
+        # Retain an accurate headline-only record when publisher RSS has no abstract.
+        # Never synthesize a summary from the headline and call it article content.
         if (now-published).total_seconds() < 48*3600:score+=2.5
         channels,impact,follow=impact_fields(title,category)
         out.append({'id':hashlib.sha1(url.encode()).hexdigest()[:16],
@@ -382,12 +479,26 @@ def keep_recent_archive(current,previous,now,max_age_days=14):
     return dedup(list(current)+retain)
 
 
+def load_news_archive():
+    """Separate persistent news history, independent of rolling AI report copies."""
+    try:
+        payload=json.loads((SITE/'news_archive.json').read_text(encoding='utf-8'))
+        rows=payload.get('articles',[]) if isinstance(payload,dict) else payload
+        return rows if isinstance(rows,list) else []
+    except (OSError,ValueError,TypeError,AttributeError):
+        return []
+
+
 def issues_from_articles(articles):
     candidates=[]
     for cat in CATS:
         matches=[a for a in articles if a['category']==cat and len(a['summary'])>=40]
         distinct={a['source'] for a in matches}
         if len(matches)<2 or len(distinct)<2:continue
+        # The same copied press headline at two outlets is not two market events.
+        headline_forms={re.sub(r'[^a-z0-9\uac00-\ud7a3]','',a.get('title','').lower())
+                        for a in matches}
+        if len(headline_forms)<2:continue
         selected=[];sources=set()
         for a in matches:
             if a['source'] in sources and len(sources)<2:continue
@@ -456,6 +567,21 @@ def homeplus_demo():
        'confidence':'중간','channels':['마트'],'impact':'소비 이동과 거래망 피해의 차이',
        'followup':'업태별 동일점 매출·폐점 주변 상권·납품업체 정산 지연',
        'status':'공개자료 기반 분석 시연 · 자동 생성 결과 아님'}
+    # The same numeric facts can produce an article with a concrete business result.
+    r.update({
+       'headline':'홈플러스 폐점 인근 이마트 매출 +11.4%…거래업체 72%는 피해',
+       'thesis':'홈플러스 폐점 인근 이마트 두 곳의 매출은 11.4%, 롯데마트 인근 매장은 평균 9% 증가했다. 반면 홈플러스 거래 중소기업 100곳 중 72곳은 피해를 겪었고, 해당 72곳 모두 정산 지연을 호소했다. 고객은 경쟁점으로 옮겨갔지만 기존 공급업체의 미수금은 남았다.',
+       'lead':'홈플러스 기존 104개 점포 중 37곳이 폐점했다. 폐점 인근 경쟁점에는 고객이 몰렸지만, 해당 유통사와 거래했던 중소기업의 대금 회수는 별개로 진행됐다.',
+       'market_change':'홈플러스는 기존 점포 104곳 가운데 37곳을 폐점했다. 폐점 인근 이마트 창동·묵동점 매출은 2026년 5월 10~31일 전년 동기보다 11.4% 증가했다. 같은 시기 서울 지역 인근 롯데마트는 평균 9% 늘었다.',
+       'mechanism':[
+          '일부 경쟁점은 폐점 점포의 고객을 확보하면서 매출이 늘었다. 하지만 산업통상부의 2026년 상반기 전체 대형마트 매출은 오히려 7.3% 감소했고, 기업형 슈퍼마켓(SSM)도 6.6% 줄었다. 특정 상권의 고객 이동이 업태 전체의 매출 회복으로 이어진 것은 아니었다.',
+          '11월 중소기업중앙회 조사에서는 홈플러스 거래 중소기업 100곳 중 72곳이 피해를 경험했다. 피해를 본 72곳 모두 정산 지연을 꼽았고, 조사 대상 100곳 중 63곳은 매출 감소도 겪었다. 인근 마트의 판매가 늘어도 홈플러스가 지급해야 할 기존 납품대금은 해결되지 않았다.'
+       ],
+       'structural_insight':'홈플러스 점포 축소는 인근 경쟁점에 매출 증가를 가져왔지만, 기존 납품업체에는 정산 지연과 거래 감소를 남겼다. 일부 매장의 반사이익과 납품망의 손실이 동시에 발생한 것이다.',
+       'what_changes':'',
+       'one_sentence':'폐점 인근 매출 +11.4%, 홈플러스 거래업체 피해 72%…소비 이전에도 미수금 문제는 계속됐다.',
+       'limitations':'경쟁점 매출은 5월 일부 점포, 납품업체 피해는 11월 설문, 전체 업태 매출은 상반기 통계다.'
+    })
     return [source_1,source_2,source_3],r
 
 
@@ -498,6 +624,18 @@ def squid_demo():
       'confidence':'중간','channels':['수출'],'impact':'어획·수출 물량과 단가의 엇갈림',
       'followup':'국산 연근해 어획·원양 생산·냉동 오징어 수입량·단가',
       'status':'공식 과거 통계로 만든 시연 · 오늘의 자동 분석 아님'}
+    report.update({
+      'headline':'2025년 연근해 오징어 3만1,006톤…5년 평균보다 18.9% 적어',
+      'thesis':'2025년 연근해 오징어 생산량은 3만1,006톤으로 전년보다 128.5% 증가했다. 다만 최근 5년 평균 3만8,278톤에는 18.9% 못 미쳤다. 2024년 생산이 1만3,568톤에 그쳤던 영향이 컸다.',
+      'lead':'2024년의 매우 낮은 어획량이 2025년 증가율을 키웠다. 생산량 자체는 여전히 최근 5년 평균보다 7,272톤 적다.',
+      'market_change':'2025년 연근해 오징어 어획은 전년 1만3,568톤에서 3만1,006톤으로 증가했다. 원양 오징어류 생산은 같은 기간 17.4% 감소했다.',
+      'mechanism':['2024년 생산량이 1만3,568톤에 불과했던 만큼 전년 대비 128.5%라는 증가율이 크게 나타났다. 2025년 생산량도 최근 5년 평균보다 7,272톤 적었다.',
+                   '2025년 오징어 수출물량은 3.1만 톤으로 87.8% 늘었고 수출액은 1.1억 달러로 48.7% 증가했다. 공표된 증가율 기준 평균 수출단가는 약 20.8% 낮아졌다.'],
+      'structural_insight':'국내 연근해 오징어는 2024년의 급감에서 일부 회복됐지만, 5년 평균 생산량에는 미치지 못했다. 수출에서는 물량 증가가 금액 증가를 앞섰고, 평균 수출단가는 약 20.8% 낮아졌다.',
+      'what_changes':'',
+      'one_sentence':'연근해 오징어 생산량은 5년 평균에 못 미쳤고, 수출 평균단가는 약 20.8% 하락했다.',
+      'limitations':'2025년 연간 공개자료로 구성한 과거 시연이며 2026년 최신 뉴스가 아니다.'
+    })
     return [a,b],report
 
 
@@ -552,6 +690,34 @@ def demo_data():
       'confidence':'중간','status':'과거 공개자료 기반 시연 · 실제 AI 생성 결과 아님',
       'channels':[],'impact':'유럽 수요 증가 · 달러 기준 가격 유지',
       'followup':'주간 출하량과 달러 환산 수출가격'}
+    # Historical USD conversion was supplied in the prior editorial sample.
+    # It is a *demonstration* figure, not the result of a new live ECB request.
+    f['facts']=[{'label':'연어 수출가 · 달러 환산 시연','value':'$8.07/kg',
+                 'detail':'2026년 44주차 · 과거 샘플 값'},
+                {'label':'달러 환산가격 전년 동주 대비','value':'+0.5%',
+                 'detail':'이전 샘플에서 사용한 값'},
+                {'label':'수출량','value':'28,444톤','detail':'44주차 · 전년 대비 +14.3%'}]
+    f['title']='연어 수출량 +14.3% · 달러 가격 시연 +0.5%'
+    f['observed']='2026년 44주차 노르웨이 신선·냉장 연어 수출량 28,444톤(+14.3%). 과거 편집 시연에서 제시된 달러 환산 수출가 $8.07/kg(+0.5%). 이 환산가격은 새 ECB 조회로 다시 확인한 수치는 아니다.'
+    f['measurements']={'species':'연어','tonnes':28444,'yoy_qty_pct':14.3,'price_usd_kg':8.07,'yoy_price_pct':0.5}
+    f['data_links'].append({'url':'https://data.ecb.europa.eu/data/datasets/EXR','label':'유럽중앙은행 · 환율 기준 자료'})
+    a['title']='노르웨이 연어 주간 수출량 28,444톤…전년보다 14.3% 증가'
+    a['summary']='2026년 44주차 신선·냉장 연어 수출량은 28,444톤으로 전년 같은 주보다 14.3% 증가했다. 가격은 별도 ECB 환율 환산이 가능한 경우에만 달러로 표시한다.'
+    a2['summary']+=' 10월 전체 수산물 수출액은 전년과 거의 같았다. 양식어류 수출비중은 전년 72%에서 76%로 높아졌고, 대구·고등어 등 자연산 어종은 낮은 어획쿼터로 수출물량이 줄었다. 폴란드향 수출은 32,664톤(+15%), 폴란드 가정 내 연어 소비는 19%, 재수출물량은 10% 증가했다.'
+    report.update({
+      'headline':'노르웨이 연어 수출량 14.3% 증가…달러 환산가는 8달러대 유지',
+      'thesis':'2026년 44주차 노르웨이 신선·냉장 연어 수출량은 28,444톤으로 전년 동주보다 14.3% 증가했다. 기존 시연의 달러 환산가격은 kg당 8.07달러로 전년보다 약 0.5% 높았다. 유럽 소비가 증가한 가운데 출하량도 확대됐다.',
+      'lead':'10월 노르웨이 연어 수출량은 159,810톤으로 전년 대비 9% 증가했다. 폴란드향 수출은 32,664톤으로 15% 늘었다.',
+      'market_change':'10월 연어 수출량은 159,810톤(+9%)이었다. 44주차에는 28,444톤(+14.3%)을 기록했고 달러 환산가격 시연값은 kg당 8.07달러(+0.5%)였다.',
+      'mechanism':[
+          '유럽의 주요 유통·가공 거점인 폴란드향 수출량은 10월 32,664톤으로 지난해 같은 달보다 15% 증가했다. 폴란드의 가정 내 연어 소비는 19%, 재수출량은 10% 늘었다.',
+          '연말을 앞두고 노르웨이의 주간 수출물량이 전년보다 14.3% 많은 수준을 유지했다. 계절적인 소비 증가가 나타나더라도 공급이 크게 줄지 않는다면 가격 상승 폭은 제한될 전망이다.'
+      ],
+      'structural_insight':'노르웨이 연어는 공급과 유럽 판매가 동시에 확대됐다. 44주차 수출물량이 14.3% 증가한 가운데 달러 환산가격 시연값은 전년보다 0.5% 높았고, 폴란드의 내수 소비와 재수출도 증가했다.',
+      'what_changes':'',
+      'one_sentence':'노르웨이 연어 수출량 +14.3%, 달러 환산가격 시연 +0.5%…연말에는 완만한 반등이 예상된다.',
+      'limitations':'환산가격 8.07달러는 이전 대화에서 사용한 과거 시연값이며, 이번 실행에서 ECB 조회로 검증한 수치는 아니다.'
+    })
     # Official annual data illustrated separately from auto-fetched live indicators.
     # These are actual published 2025 figures, NOT mock API observations.
     squid_public_feature={'id':'squid_official_2025_benchmark',
@@ -586,41 +752,111 @@ def demo_data():
         'article_ids':['mof-2025-squid-production','mof-2025-squid-exports'],
         'confidence':'중간','status':'공식 공개통계 과거 시연 · AI 실시간 생성 아님'}
     distribution_articles,distribution_report=homeplus_demo()
+    latest_hypermarket={'id':'homeplus-local-retail-nov9-2026',
+       'source':'한국경제 · 유통시장 취재',
+       'title':'똑같이 반값 한우 내걸었는데…이마트 매출 급증, 홈플러스는 제자리',
+       'url':'https://www.hankyung.com/article/202611093646g',
+       'published':datetime(2026,11,9,12,9,tzinfo=KST).isoformat(),
+       'timestamp':int(datetime(2026,11,9,12,9,tzinfo=KST).timestamp()),
+       'category':'대형마트/SSM','tags':['대형마트/SSM'],
+       'score':20,'official':False,'channels':['마트'],
+       'summary':'2026년 11월 9일 보도. 10월 말 할인행사 기간 이마트의 추정 카드 결제액은 비교기간(10월 16~19일)보다 132% 증가했으나 홈플러스는 거의 변하지 않았다. 별도 집계에서 홈플러스 폐점 주변 이마트 창동·묵동점의 5월 10~31일 매출은 전년보다 11.4% 늘었다. 같은 기간 이마트 전체 기존점은 5.2% 증가해 증가율 차이는 6.2%포인트였다(단순 계산).',
+       'summary_type':'대형마트 점포별 판매 실적 취재','impact':'폐점 지역 판매 점포의 매출 변화',
+       'followup':'매출이 증가한 상권의 품목별 매장 발주 변화'}
+    distribution_report['article_ids']=[distribution_articles[0]['id'],latest_hypermarket['id'],distribution_articles[1]['id']]
+    distribution_report['facts'][1]={'text':'2026년 11월 9일 보도에 따르면 홈플러스 폐점 인근 이마트 창동·묵동점의 5월 10~31일 매출은 전년 대비 11.4% 증가했다. 같은 기간 이마트 전체 기존점 증가율은 5.2%였다.','refs':[latest_hypermarket['id']]}
+    distribution_articles.insert(1,latest_hypermarket)
+    distribution_report.update({
+       'headline':'홈플러스 폐점 인근 이마트 매출 11.4% 증가…납품업체는 판로 확보 경쟁 심화',
+       'thesis':'홈플러스가 문을 닫은 지역의 이마트 창동·묵동점 매출은 전년보다 11.4% 늘었다. 같은 기간 이마트 전체 기존점 증가율 5.2%를 6.2%포인트 웃돌았다. 한편 홈플러스 거래 중소기업 100곳 중 63곳은 매출 감소를 겪었다. 일부 유통사의 매출 확대와 기존 납품업체의 판로 축소가 동시에 나타나면서 신규 납품처를 둘러싼 경쟁이 심해질 가능성이 있다.',
+       'lead':'폐점 인근 이마트의 매출 증가율은 기존점 평균보다 높았다. 그러나 홈플러스 거래업체의 63%는 매출 감소를 경험했다.',
+       'market_change':'홈플러스가 37개 점포를 폐점한 뒤, 폐점 인근 이마트 창동·묵동점의 2026년 5월 10~31일 매출이 11.4% 증가했다. 같은 기간 이마트 전체 기존점 증가율은 5.2%, 인근 롯데마트 매장의 평균 증가율은 9%였다. 11월 중소기업중앙회 조사에서는 홈플러스 거래 중소기업의 72%가 피해를 경험했고, 63%가 매출 감소를 답했다.',
+       'mechanism':[
+          '대형마트 전체 매출은 2026년 상반기 7.3% 감소했지만, 홈플러스가 빠진 일부 지역에서는 기존 이마트와 롯데마트의 매출이 늘었다. 새 점포를 열지 않은 유통사가 기존 매장으로 매출을 가져온 만큼, 추가 매출이 고정비 증가를 크게 동반하지 않는다면 수익성 개선에 유리할 수 있다. 다만 매출 증가에 따른 이익 규모는 공개되지 않았다.',
+          '반면 홈플러스 거래업체 100곳 가운데 63곳은 매출 감소를 겪었다. 홈플러스 납품량이 줄어든 업체들이 다른 유통사로 판매를 늘리려 할 경우 신규 입점과 판촉 조건을 둘러싼 경쟁은 더 치열해질 수 있다. 판매가 늘어난 유통사는 매입처 선택지가 넓어지는 반면, 납품업체의 가격 협상력은 상대적으로 약해질 여지가 있다.'
+       ],
+       'structural_insight':'홈플러스 점포 축소가 장기화되면 이마트·롯데마트는 일부 지역에서 신규 출점 없이 매출을 늘릴 수 있다. 반대로 납품업체들은 줄어든 판매처를 대체하기 위해 남은 유통망의 입점과 발주량을 놓고 경쟁할 가능성이 크다. 지역별 판매 실적과 거래업체 피해조사가 함께 보여주는 변화는 유통사와 납품업체의 협상력 차이다.',
+       'one_sentence':'폐점 인근 이마트 매출 +11.4%, 홈플러스 거래업체 63% 매출 감소…판로 확보 경쟁이 심화될 수 있다.',
+       'what_changes':'',
+       'outlook':{'direction':'확대','horizon':'향후 홈플러스 점포 축소가 이어지는 기간',
+                  'judgment':'기존 점포를 보유한 다른 대형마트는 일부 지역의 매출을 추가로 확보할 수 있고, 홈플러스 납품업체들은 다른 유통망을 확보하기 위한 경쟁이 심해질 가능성이 크다.',
+                  'basis':'폐점 주변 점포의 매출 증가율은 이마트 기존점 평균을 웃돈 반면 홈플러스 거래업체 63%가 매출 감소를 경험했다.',
+                  'revision_trigger':'경쟁 유통사의 지역별 매출 확대가 줄어들거나 홈플러스 거래업체의 매출 감소가 뚜렷하게 개선되는 경우',
+                  'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['homeplus-kbiz-nov-2026','homeplus-rival-july-2026']},
+       'limitations':'5월 일부 점포의 매출과 11월 거래업체 설문을 연결한 시연 원고이며, 실제 납품단가 변화와 기업별 이익 증감은 확인되지 않았다.',
+       'status':'과거 공개자료로 만든 편집 시연 · 실제 AI 자동 발행 아님'
+    })
     squid_articles,squid_report=squid_demo()
     salmon_public_report=deterministic_data_report(dict(f,series_type='salmon_joint',measurements={'yoy_price_pct':-6.9,'yoy_qty_pct':14.3}))
     if salmon_public_report:
         salmon_public_report['status']='공식 공개통계 과거 시연 · AI 실시간 생성 아님'
-    # Editorial *format* examples, explicitly historical and not forecasts
-    # calculated from a currently connected time-series model.
-    demo_outlooks=[
-      {'direction':'축소','horizon':'2026년 말~2027년 초 당시 관점',
-       'judgment':'홈플러스 점포 축소의 영향은 일부 경쟁 매장의 매출 증가로 나타나겠지만, 기존 납품업체의 정산과 판로 회복은 상대적으로 더딜 것으로 예상된다.',
-       'basis':'폐점 인근 경쟁점 실적이 증가한 반면 홈플러스 거래업체의 정산 지연과 매출 감소가 동시에 확인됐기 때문이다.',
-       'revision_trigger':'폐점 지역 밖에서도 경쟁사의 기존점 매출과 기존 납품업체 정산이 동시에 개선되는 경우',
-       'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['homeplus-kbiz-nov-2026','homeplus-rival-july-2026']},
-      {'direction':'혼조','horizon':'2025년 통계를 본 2026년 당시 관점',
-       'judgment':'연근해 오징어는 저점에서 회복됐지만 원양 공급까지 정상화됐다고 보기는 어려워, 상품과 원산지별 수급 차이가 당분간 이어질 것으로 예상된다.',
-       'basis':'연근해 어획은 5년 평균을 밑돈 가운데 원양 생산이 감소했고, 수출물량이 수출액보다 빠르게 늘었다.',
-       'revision_trigger':'동일 어종·규격 기준으로 연근해·원양 생산과 주요 수입 물량이 함께 회복되는 경우',
-       'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['mof-2025-squid-production','mof-2025-squid-exports']},
-      {'direction':'상승','horizon':'2026년 11~12월 시연 전망',
-       'judgment':'연말 소비가 증가하면서 달러 기준 연어 수출가격은 완만하게 반등할 전망이다. 다만 공급이 많아 상승 폭은 제한될 것으로 예상된다.',
-       'basis':'유럽의 연어 소비와 재수출이 증가했고 주간 수출량은 전년보다 14.3% 많아 공급 여건도 비교적 넉넉하기 때문이다.',
-       'revision_trigger':'주간 출하량이 예상보다 빠르게 감소하거나 유럽 소비가 급격히 둔화되는 경우',
-       'numeric_estimate':'','forecast_method':'','backtest':'','evidence_ids':['nsc-public-sample','ssb-public-sample']}
-    ]
-    for r,outlook in zip((distribution_report,squid_report,report),demo_outlooks):
-        r['outlook']=outlook
-        r['status']='과거 공개자료를 사용한 문체·전망 형식 시연 · 실제 예측 결과 아님'
-    return {'generated_at':now.isoformat(timespec='minutes'),'articles':[a,a2]+distribution_articles+squid_articles,'features':[squid_public_feature,f],
-            'deep_reports':[distribution_report,squid_report,report],'deep_status':'샘플 전용 — 자동 AI 생성 아님',
-            'research_sources':[],'report_factual_brief':False,'report_archived':False,
+    # No illustrative forecasts on the homepage: business action must follow observed evidence.
+    distribution_report['status']='과거 공개자료로 만든 분석 시연'
+    # Historical mock should look like the real production time filter:
+    # older news stays out of the 7-day homepage. Evidence may be older.
+    # Second independent editorial demonstration: Norway's export mix changed
+    # as wild-caught quotas restricted raw materials while farmed salmon volume grew.
+    # Based on two independently published original sources; not an AI-live report.
+    a3={'id':'ssb-salmon-week45-2026','source':'노르웨이 통계청 SSB',
+        'title':'노르웨이 신선 연어 45주차 수출 28,277톤…전년보다 17.3% 증가',
+        'url':'https://www.ssb.no/en/utenriksokonomi/utenrikshandel/statistikk/eksport-av-laks/artikler/salmon-price',
+        'published':datetime(2026,11,11,8,0,tzinfo=KST).isoformat(),
+        'timestamp':int(datetime(2026,11,11,8,0,tzinfo=KST).timestamp()),
+        'category':'원물 수급/시세','tags':['원물 수급/시세'],'score':17,
+        'official':True,'channels':['수출'],
+        'summary':'2026년 45주차 노르웨이 신선·냉장 연어 수출은 28,277톤. 전년 동주 24,111톤보다 17.3% 증가했고 전주 28,444톤보다 0.6% 감소했다. 가격은 수출통계 원문에 별도로 제공된다.',
+        'summary_type':'SSB 주간 원자료','impact':'연어 주간 수출량 증가','followup':'11월 이후 출하 변화'}
+    salmon_report={
+        'depth':'핵심','kind':'원물 수급/시세',
+        'time_frame':'2026년 10~11월 공개자료 · 시연',
+        'headline':'노르웨이 수산물 수출 정체에도 양식 비중 76%…연어가 성장 떠받쳐',
+        'thesis':'10월 노르웨이 수산물 수출액은 전년과 거의 같았지만, 양식어류가 차지하는 비중은 72%에서 76%로 높아졌다. 대구·고등어 등 자연산 어종은 어획쿼터 축소로 수출물량이 줄어든 반면 연어 수출량은 9%, 수출액은 6% 증가했다. 수산물 수출 실적이 양식 생산에 더 크게 좌우되는 방향으로 바뀌고 있다.',
+        'lead':'노르웨이 수산물위원회는 2026년 10월 수산물 총수출액이 전년 동월과 사실상 비슷했다고 발표했다. 같은 기간 양식어류 수출 비중은 76%까지 높아졌다.',
+        'facts':[
+            {'text':'노르웨이 수산물위원회에 따르면 2026년 10월 전체 수산물 수출액은 전년 동월과 거의 같았고, 양식어류 수출 비중은 전년 72%에서 76%로 높아졌다. 대구·고등어의 수출량은 어획쿼터 감소와 함께 줄었다.','refs':['nsc-public-sample']},
+            {'text':'10월 연어 수출은 159,810톤으로 전년 동월보다 9% 늘었고 수출액도 6% 증가했다. 11월 2~8일 신선·냉장 연어 수출은 28,277톤으로 전년 동주보다 17.3% 많았다.','refs':['nsc-public-sample','ssb-salmon-week45-2026']},
+            {'text':'10월 폴란드향 연어 수출량은 32,664톤으로 전년 대비 15% 증가했다. 현지 가정 내 연어 소비는 올해 들어 19%, 재수출물량은 10% 증가했다.','refs':['nsc-public-sample']}
+        ],
+        'market_change':'10월 노르웨이 연어 수출량은 159,810톤(+9%), 수출액은 전년 대비 +6%였다. 반면 어획쿼터가 축소된 대구·고등어 등 자연산 어종은 수출물량이 감소했다. 그 결과 양식어류의 수출액 비중은 72%에서 76%로 4%p 상승했다.',
+        'mechanism':[
+            '대구와 고등어는 정해진 어획쿼터가 원료 공급을 제한한다. 올해는 수출가격이 높아진 어종도 있었지만 물량 감소를 상쇄하지 못했다. 반면 연어는 출하량이 늘면서 전체 수산물 수출실적을 지탱했다. 총수출액이 정체돼도 양식어류 비중이 높아진 이유다.',
+            '연어 수출 확대는 유럽 가공·유통 물량뿐 아니라 실제 소비 증가와도 연결돼 있다. 노르웨이의 폴란드향 연어 수출은 10월 32,664톤(+15%)을 기록했고, 폴란드의 가정 내 소비는 올해 들어 19% 증가했다. 폴란드에서 다른 국가로 보내는 재수출물량도 10% 늘었다.'
+        ],
+        'structural_insight':'노르웨이 수산업의 수출 성적을 결정하는 무게중심이 양식어류 쪽으로 옮겨가고 있다. 자연산은 어획쿼터가 제한되면 높은 판매가격에도 공급량을 늘리기 어렵지만, 연어 수출물량 확대는 전체 실적의 감소를 완충했다. 앞으로 자연산 어획제한이 유지된다면 노르웨이 수산물 수출의 성장과 변동성은 연어 출하량과 주요 유럽 판매시장의 수요에 더 크게 좌우될 가능성이 높다.',
+        'scenario_up':{'condition':'자연산 어획쿼터 제한이 유지되고 연어 출하가 확대된다면',
+                       'interpretation':'연어를 포함한 양식어류의 수출 비중은 당분간 높은 수준을 유지할 가능성이 크다.'},
+        'scenario_down':{'condition':'자연산 어종의 어획쿼터가 확대되고 수출물량이 회복된다면',
+                         'interpretation':'자연산 수출 회복에 따라 양식어류의 비중 상승은 둔화할 수 있다.'},
+        'what_changes':'올해 말까지는 노르웨이 전체 수산물 수출에서 양식어류가 차지하는 비중이 높은 수준을 유지할 것으로 예상된다. 11월 첫째 주에도 신선 연어의 수출량은 전년 동주보다 17.3% 많았다.',
+        'one_sentence':'양식어류 비중 72%→76%…자연산 어획 제한 속 연어가 노르웨이 수출 실적을 지탱했다.',
+        'limitations':'2026년 10월 월간 수출 실적과 11월 첫째 주 수출량을 각각 제시했다. 두 기간의 수치를 직접 합산하지 않았다.',
+        'article_ids':['nsc-public-sample','ssb-salmon-week45-2026'],
+        'feature_ids':[],'policy_ids':[],'confidence':'중간',
+        'channels':['수출'],'impact':'노르웨이 수산물 수출의 양식어류 의존도 확대',
+        'followup':'연어 월별 출하량·대구와 고등어의 어획쿼터·수출 실적',
+        'status':'과거 공개자료로 만든 분석 시연 · 자동 AI 생성 아님'
+    }
+    demo_recent=[a3,latest_hypermarket,distribution_articles[0]]
+    demo_older=[a,a2]
+    demo_sources=distribution_articles[2:]+squid_articles+[a2]
+    demo_issues=make_issue_digest(demo_recent,[],now)
+    return {'generated_at':now.isoformat(timespec='minutes'),'articles':demo_recent,'features':[],
+            'issue_digest':demo_issues,'archived_articles':demo_older,
+            'news_collection':{'fresh_24h':0,'fresh_7d':len(demo_recent),'archive_8_30d':len(demo_older)},
+            'deep_reports':[distribution_report,salmon_report],'deep_status':'서로 다른 두 소재의 과거 공개자료 분석 시연',
+            'research_sources':demo_sources,'report_factual_brief':False,'report_archived':False,
             'fresh_deep_count':0,'content_state':'demo',
             'last_report_updated_at':datetime(2026,11,5,10,39,tzinfo=KST).isoformat(),
-            'data_reports':[squid_public_report]+([salmon_public_report] if salmon_public_report else []),'data_ai_status':'샘플 전용 — 자동 AI 생성 아님',
-            'issue_candidates':[],'analysis_status':'2026년 10월 공식 과거 통계로 만든 시연 · 실시간 자료 아님',
+            'data_reports':[],'data_ai_status':'샘플 전용 — 자동 AI 생성 아님',
+            'issue_candidates':[],'analysis_status':'2026년 과거 공개자료를 사용한 시연 · 실시간 자료 아님',
             'sources_ok':0,'sources_total':len(SOURCES),'errors':[],
-            'metric_errors':[],'demo':True, 'policy_sources':[], 'deep_links':DEEP_LINKS}
+            'metric_errors':[],'demo':True, 'policy_sources':[], 'deep_links':DEEP_LINKS,
+            'report_archive':[{'id':'demo-homeplus-20261105','published_at':'2026-11-05T10:39:00+09:00',
+               'headline':distribution_report['headline'], 'kind':distribution_report['kind'],
+               'report':distribution_report, 'sources':distribution_articles, 'features':[]},
+                {'id':'demo-salmon-20261111','published_at':'2026-11-11T08:00:00+09:00',
+                 'headline':salmon_report['headline'],'kind':salmon_report['kind'],
+                 'report':salmon_report,'sources':[a2,a3],'features':[]}] }
 
 
 def load_previous_report():
@@ -681,7 +917,7 @@ def make_factual_brief(articles, features, now, focus_topics=None):
 def collect():
     now=datetime.now(KST)
     all_articles=[];errors=[];ok=0;feed_stats=[]
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=9) as pool:
         futures=[pool.submit(fetch_feed,s) for s in SOURCES]
         for future in as_completed(futures):
             src,entries,err=future.result()
@@ -693,21 +929,33 @@ def collect():
                 all_articles.extend(accepted)
                 feed_stats.append((src[0],diagnostic))
     previous=load_previous_report()
-    observed_this_run=dedup(all_articles)
-    articles=keep_recent_archive(observed_this_run,previous,now)
+    observed_this_run=retain_archive(all_articles,[],now,maximum=MAX_ARCHIVE)
+    previous_items=load_news_archive()+(previous.get('articles',[]) if previous else [])
+    full_archive=retain_archive(observed_this_run,previous_items,now)
     observed_urls={item['url'] for item in observed_this_run}
-    archive_retained=sum(item['url'] not in observed_urls for item in articles)
+    archive_retained=sum(item['url'] not in observed_urls for item in full_archive)
+    articles,archived_articles=split_archive(full_archive,now)
+    for article in articles+archived_articles:
+        article['collection_status']='이번 실행 재수집' if article['url'] in observed_urls else '이전 수집 보존'
     google_ok=sum(label.startswith('Google 뉴스') for label,_ in feed_stats)
     google_total=sum(urlparse(src[1]).netloc.lower()=='news.google.com' for src in SOURCES)
+    bing_ok=sum(label.startswith('Bing 뉴스') for label,_ in feed_stats)
+    bing_total=sum(urlparse(src[1]).netloc.lower()=='www.bing.com' for src in SOURCES)
     news_collection={'seen_this_run':len(observed_this_run),'archive_retained':archive_retained,
                      'google_ok':google_ok,'google_total':google_total,
-                     'publisher_ok':ok-google_ok,'publisher_total':len(SOURCES)-google_total}
-    fresh_news=sum((now-datetime.fromisoformat(x['published'])).days<=7 for x in articles)
+                     'bing_ok':bing_ok,'bing_total':bing_total,
+                     'publisher_ok':ok-google_ok-bing_ok,'publisher_total':len(SOURCES)-google_total-bing_total,
+                     'fresh_24h':sum((now-datetime.fromisoformat(x['published'])).total_seconds()<86400 for x in articles),
+                     'observed_fresh_24h':sum(0<=(now-datetime.fromisoformat(x['published'])).total_seconds()<86400 for x in observed_this_run),
+                     'fresh_7d':len(articles),'archive_8_30d':len(archived_articles),
+                     'archive_days':ARCHIVE_DAYS,'window_days':WINDOW_DAYS}
+    fresh_news=len(articles)
     print(f'SEAFOOD feeds: {ok}/{len(SOURCES)} succeeded, '
-          f'{len(articles)} dated stories (last 7d={fresh_news}; max lookback={NEWS_LOOKBACK_DAYS}d)',flush=True)
+          f'{len(full_archive)} dated stories (last 7d={fresh_news}; max lookback={NEWS_LOOKBACK_DAYS}d)',flush=True)
     print('SEAFOOD RSS CURRENT RUN: observed='+str(news_collection['seen_this_run'])+
           ' archive_reused='+str(archive_retained)+
           ' GoogleNews='+str(google_ok)+'/'+str(google_total)+
+          ' Bing='+str(bing_ok)+'/'+str(bing_total)+
           ' publisher='+str(news_collection['publisher_ok'])+'/'+str(news_collection['publisher_total']),flush=True)
     for item in errors:
         print('SEAFOOD RSS FAILED:',item[:200],flush=True)
@@ -725,11 +973,15 @@ def collect():
             return any(k in title for k in ('수산','신선','식품','식자재','수산물'))
         return True
     articles=[a for a in articles if market_news(a)]
+    archived_articles=[a for a in archived_articles if market_news(a)]
+    # News remains the primary product, regardless of statistical API availability.
     features,metric_errors=make_features(now)
     print(f'SEAFOOD official series: {len(features)} items; diagnostics: {len(metric_errors)}',flush=True)
     for item in metric_errors:
         print('SEAFOOD API:',str(item)[:220],flush=True)
     connect_evidence(features,articles)
+    issue_digest=make_issue_digest(articles,features,now)
+    print('SEAFOOD NEWSROOM: recent='+str(len(articles))+' issue_digest='+str(len(issue_digest))+' archives='+str(len(archived_articles)),flush=True)
     previous_headlines=[r.get('headline','') for r in (previous or {}).get('reports',[])]
     # Research comes BEFORE final topic selection. Keyword-matched RSS headlines
     # no longer predetermine what the analysis will discuss.
@@ -764,6 +1016,11 @@ def collect():
         p['independent_sources'],p['dimensions_present']) for p in depth_profiles],flush=True)
     focus_topics=research_targets(articles+search_sources,features,
         select_market_topics(articles+search_sources,features,previous_headlines))
+    # An old public dataset or retrieved background page is NOT a current news
+    # event. A deep topic needs an actual recent RSS anchor from this run/archive.
+    current_article_ids={a['id'] for a in articles}
+    focus_topics=[t for t in focus_topics
+                  if current_article_ids.intersection(t.get('article_ids',[]))]
     tracks=coverage_tracks(articles+search_sources,features,focus_topics)
     research_status=f'1차: {discovery_status} / 주제별 재조사: {focus_status}'
     print('SEAFOOD RESEARCH - sources:',len(discovered),'discovery +',len(targeted),
@@ -773,7 +1030,13 @@ def collect():
     print('SEAFOOD report: composing and checking evidence-led articles',flush=True)
     print('SEAFOOD REPORT LANES - ready for draft:',
           [t['anchor'] for t in tracks if t['ready']],flush=True)
-    reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
+    reports,deep_status=(analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
+      if focus_topics and articles else ([], '최근 7일 뉴스에 연결된 심층 분석 후보가 없어 신규 원고를 작성하지 않았습니다.'))
+    news_analysis,news_analysis_status=analyze_news_digest(issue_digest,articles,features,now)
+    for item in issue_digest:
+        if item['id'] in news_analysis:
+            item['analysis']=news_analysis[item['id']]
+    print('SEAFOOD NEWS ANALYSIS:',news_analysis_status,flush=True)
     print(f'SEAFOOD report: {len(reports)} new deep reports; checking multi-source data analysis',flush=True)
     # New reports can cover ANY evidenced market; archive by derived subject.
     from seafood_topic_tracks import track_for_report
@@ -782,64 +1045,32 @@ def collect():
     for r in reports:
         r['archived_source']=False
         r['published_at']=now.isoformat(timespec='minutes')
-    if previous:
-        for archived in previous.get('reports',[]):
-            if len(reports)>=2:break
-            anchor=track_for_report(archived)
-            if not anchor or anchor in current_anchors:continue
-            # Keep source dates explicit; never call an old piece today's research.
-            older=dict(archived)
-            older['archived_source']=True
-            older['published_at']=older.get('published_at') or previous.get('date')
-            reports.append(older)
-            current_anchors.add(anchor)
-            for source in previous.get('articles',[])+previous.get('sources',[]):
-                if source.get('id') not in {s.get('id') for s in articles+search_sources}:
-                    search_sources.append(source)
+    # Previous work is stored in report_archive.json, never promoted to today's main analysis.
     if reports and fresh_count==0 and all(r.get('archived_source') for r in reports):
         print('SEAFOOD publish: no fresh report; all displayed reports retain original date',flush=True)
-    data_reports,data_status=analyze_data([f for f in features if not f.get("id","").startswith("fx_")],articles+search_sources,reports,now)
+    # Official figures are back-data: do not turn unrelated indicators into standalone reports.
+    cited_ids=set(fid for issue in issue_digest for fid in issue.get('feature_ids',[]))
+    cited_ids.update(fid for r in reports for fid in r.get('feature_ids',[]))
+    relevant_features=[f for f in features if f.get('id') in cited_ids and not f.get('id','').startswith('fx_')]
+    data_reports,data_status=(analyze_data(relevant_features,articles+search_sources,reports,now)
+                              if relevant_features else ([], '관련 뉴스에 연결된 공식 자료가 없어 독립 통계 분석을 생성하지 않았습니다.'))
     # Single-source official observations stay concise source-linked cards.
     # No scripted 7-section pseudo-analysis when research lacks independent evidence.
     last_report_updated_at=now.isoformat(timespec='minutes') if reports else None
     archive=False
     factual_brief=False
     if not reports:
-        old=previous
-        if old and old['reports']:
-            reports=[dict(r,archived_source=True,
-                          published_at=r.get('published_at') or old['date'])
-                     for r in old['reports'][:2]]
-            last_report_updated_at=old['date']
-            archive=True
-            # Keep linked cited sources even when today's feed no longer includes them.
-            by_id={a['id']:a for a in articles+search_sources}
-            for source in old['articles']+old['sources']:
-                if source.get('id') not in by_id:
-                    search_sources.append(source);by_id[source['id']]=source
-            deep_status='지난 시장 분석 · '+last_report_updated_at[:10]+' 작성'
-        elif articles or features:
-            reports=make_factual_brief(articles,features,now,focus_topics)
-            if reports:
-                factual_brief=True
-                last_report_updated_at=now.isoformat(timespec='minutes')
-                deep_status='공개 자료를 바탕으로 정리한 주요 동향 · 심층 분석과 구분'
-        if not reports:
-            # Do not inject example articles into production. A site may have
-            # current verified data without a fabricated "fresh" analysis.
-            deep_status='이번 실행에서 새 심층 분석을 검증하지 못했습니다.'
+        # Keep the news list useful; do not fill the main analysis with an old report.
+        deep_status='새 분석 없음'
     print(f'SEAFOOD publish: {len(reports)} report(s), {len(data_reports)} data analyses, archive={archive}',flush=True)
-    fresh_count=0 if archive or factual_brief else fresh_count
-    if reports and fresh_count==0 and all(r.get('archived_source') for r in reports):
-        archive=True
-        deep_status='지난 시장 분석 · 신규 심층 분석 0편'
-    mixed=bool(fresh_count and any(r.get('archived_source') for r in reports))
-    if mixed:deep_status=f'새 분석 {fresh_count}편 · 지난 분석 {len(reports)-fresh_count}편 (작성일 별도 표시)'
-    content_state=('mixed_research' if mixed else 'archive' if archive else
-        'factual_brief' if factual_brief else ('fresh_research' if fresh_count else 'no_report'))
+    mixed=False
+    content_state='fresh_research' if reports else 'no_report'
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':articles,'features':features,
+            'archived_articles':archived_articles,'issue_digest':issue_digest,
+            'news_analysis_status':news_analysis_status,
+            'archive_span_days':ARCHIVE_DAYS,
             'issue_candidates':[],'focus_topics':focus_topics,'deep_reports':reports,'deep_status':deep_status,
-            'research_sources':search_sources,'archived_features':old['features'] if archive and 'old' in locals() and old else [],
+            'research_sources':search_sources,'archived_features':[],
             'report_archived':archive,'report_factual_brief':factual_brief,
             'fresh_deep_count':fresh_count,'content_state':content_state,
             'last_report_updated_at':last_report_updated_at,
@@ -865,8 +1096,32 @@ def collect():
 
 
 def publish(data):
+    from seafood_report_archive import read_archive, merge_archive, write_archive
+    from datetime import datetime
+    if not data.get('demo'):
+        previous_data = None
+        try:
+            previous_data=json.loads((SITE/'data.json').read_text(encoding='utf-8'))
+        except (OSError,ValueError,TypeError):
+            pass
+        when=datetime.fromisoformat(data['generated_at'])
+        old_archive=read_archive(SITE/'report_archive.json')
+        sources=data.get('articles',[])+data.get('archived_articles',[])+data.get('research_sources',[])
+        features=data.get('features',[])+data.get('archived_features',[])
+        entries=merge_archive(data.get('deep_reports',[]),sources,features,previous_data,old_archive,when)
+        data['report_archive']=entries
+        data['deep_reports']=[r for r in data.get('deep_reports',[]) if not r.get('archived_source')]
+        write_archive(SITE/'report_archive.json',entries,when)
+    else:
+        data.setdefault('report_archive',[])
     output=json.dumps(data,ensure_ascii=False,indent=2)
     (SITE/'data.json').write_text(output,encoding='utf-8')
+    # The archive survives an RSS outage or a day with no new deep analysis.
+    if not data.get('demo'):
+        archive=retain_archive(data.get('articles',[])+data.get('archived_articles',[]),
+                               load_news_archive(),datetime.fromisoformat(data['generated_at']))
+        (SITE/'news_archive.json').write_text(json.dumps({'updated_at':data['generated_at'],
+            'retention_days':ARCHIVE_DAYS,'articles':archive},ensure_ascii=False,indent=2),encoding='utf-8')
     templ=(ROOT/'template.html').read_text(encoding='utf-8')
     js='const NEWS_DATA='+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+';'
     if '/*__INITIAL_DATA__*/' not in templ:raise RuntimeError('template injection marker absent')

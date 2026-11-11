@@ -10,12 +10,6 @@ import os
 import re
 from datetime import datetime
 import requests
-from seafood_research_depth import evidence_profiles, published_report_evidence, LABELS
-from seafood_report_policy import evidence_class
-from seafood_prose_quality import review_prose, repair_guidance, drop_detached_caveats
-from seafood_numeric_audit import (numeric_observations, missing_numeric_claims,
-                                   supported as tolerant_supported,
-                                   evidence_number_inventory)
 
 API='https://api.openai.com/v1/responses'
 MODEL='gpt-6.1-sol'
@@ -78,7 +72,7 @@ _PLAN_ITEM['properties'].update({
 })
 _PLAN_ITEM['required']+=['why_events_connected','tentative_outlook','outlook_horizon']
 
-PLAN_PROMPT='''너는 한국 수산업·식품유통 전문지 편집 데스크다. 먼저 후보 기사·통계들을 검토한 다음, 서로 다른 사건이 연결되어 새로운 결론을 내릴 수 있는 주제 최대 3개를 고른다. 충분하지 않으면 0~2개여도 괜찮다.
+PLAN_PROMPT='''너는 한국 수산업·식품유통 전문지 편집 데스크다. 먼저 후보 기사·통계들을 검토한 다음, 서로 다른 사건이 연결되어 새로운 결론을 내릴 수 있는 서로 다른 주요 이슈를 3~4개까지 우선 검토한다. 실제 기사·독립 근거가 갖춰진 최소 두 개를 우선 선정하되 부족하면 만들어내지 않는다.
 
 [소재 선정 기준 — 중요도 순서]
 - 품목별 국내외 공급·가격·수요가 충돌하거나, 양식 생산·수입대체·어획규제·유통점포 변동이 실제 공급/판매에 영향을 주는 사건을 우선한다.
@@ -90,6 +84,11 @@ PLAN_PROMPT='''너는 한국 수산업·식품유통 전문지 편집 데스크�
 - 중요한 뉴스라도 연결 근거가 없으면 심층 분석에서 제외하고 기사 목록으로 둔다. 분야별 할당 금지, 연어 우대 금지. 특정 수산물을 우대하지 않는다.
 - 과거 글과 동일한 결론을 반복하지 않는다. 비공개 회사 자료는 사용하지 않는다.
 
+[편집 전 선별]
+- 수출·어획·생산 연간 통계 한 건이 사실일 뿐이라면, 최근 7일의 사건을 밀어내고 '오늘의 핵심 분석'으로 올리지 않는다. 영향을 받은 계약·업체·가격·공급의 구체적 결과가 있는 뉴스를 우선한다.
+- 동일 품목 두 통계가 다른 방향인 사실 자체는 연결 가치가 아니다. 그 두 숫자가 실제로 같은 거래시장이나 행동 결과를 설명할 때만 연결한다.
+- 실질적인 결론 없이 '서로 다른 현상이 나타났다'를 설명하는 원고는 기획안에서 제외한다.
+
 [판단·전망]
 - observed_difference는 구체적인 두 변수의 변화. causal_explanation은 근거로 좁힌 설명이며 일반적인 경제원리는 근거가 아니다.
 - why_events_connected에 두 사건을 같은 글로 다뤄야 하는 이유를 써라. competing_explanation은 실제 근거로 비교할 만한 가장 강한 대안 한 가지다.
@@ -98,8 +97,14 @@ PLAN_PROMPT='''너는 한국 수산업·식품유통 전문지 편집 데스크�
 - 수치 가격 예측은 입력에 검증된 모형 결과가 있을 때만. 그 외에는 방향과 근거를 제시한다. 방향도 근거가 없으면 해당 주제를 제외한다.
 - evidence_ids는 제공된 공개 근거 ID만 사용하고 기본적으로 서로 독립적인 2개 출처 이상의 자료에 근거한다.
 - 숫자는 입력에 존재하는 수치 또는 자료에 명시된 계산값만 사용. JSON 스키마를 따를 것.
-- evidence_depth_profiles의 dimensions_missing과 observations를 먼저 읽어라. 자료가 부족한 축을 단순 경제상식으로 대체하지 말라. 실제 공급·소비·가격·수출입 자료에서 최소 두 가지 다른 수치의 움직임을 비교할 수 있는 주제를 우선한다.
-- 환율 환산은 가격 비교의 보조 과정이다. 환율 자체가 중요한 독립 사건이 아니라면 논지의 중심으로 삼지 않는다. 오래된 연간 통계만으로 당월 수급이나 가격을 단정하지 않는다.
+
+[산업 기사로서 읽을 가치]
+- 구매·영업·유통 현장에 실제로 영향을 미치는 변화라면 그 영향까지 설명한다. 다만 모든 사건을 구매·영업의 행동지침으로 끝내지 않는다.
+- 독자의 판단을 바꿀 만한 새로운 사실 또는 예측을 우선한다. 단순 통계 증감, 환율 상식, 어종 분류, 형식적 방법론 안내는 시장 결론이 아니다.
+- 해외 시세는 확인 가능한 USD/kg와 기준기간·변화폭을 우선 제시한다. 검증되지 않은 USD 환산값을 만들어내거나 환율 환산의 일반론을 본문에 붙이지 않는다.
+- 다른 기사·공식 발표·업종 실적에서 연결 근거가 있다면 실제 작용 경로와 파급효과를 구체적으로 밝히고 가장 개연성 높은 전망을 선택한다.
+- 한국 산업·경제 전문지에서 자연스럽게 읽히는 제목과 문장을 사용한다. 지표는 주장을 뒷받침하는 증거이지 그 자체가 통찰이 아니다.
+- 구체적인 사실이 뒷받침되지 않는 단어('경쟁점', '소비 이전', '구조적 의미', '관측 사실을 종합하면')로 글을 포장하지 않는다.
 '''
 
 DATA_SCHEMA=obj({'reports':{'type':'array','items':obj({
@@ -126,25 +131,25 @@ _DATA_ITEM['required'].append('outlook')
 
 MAIN_PROMPT='''너는 한국 경제지·산업 전문지의 수산시장 담당 기자이자 데이터 분석가다. 금융시장 리포트에 준하는 논리·가독성을 갖추되, 보고서는 산업 전문지 기사처럼 자연스러운 한국어로 쓴다.
 
-[기사의 목적]
-한 기사나 한 지표를 길게 풀어쓰는 것이 아니라, 서로 다른 자료와 사건을 연결해서 새로운 시장 판단을 제시한다. 한 번의 요청에서는 지정된 중요 시장 주제 한 편만 작성한다. 하루 기사 편수 목표는 프로그램이 별도로 관리한다. 편수를 채우기 위한 원고는 만들지 않는다. 핵심은 '누가 무엇을 발표했다'보다 '복수의 사건이 같은 시장에 어떻게 작용하고 앞으로 어떤 결과가 유력한가'다.
+[발행 스타일 — 실제 독자가 읽을 글]
+- 제목은 사건·구체적 수치·중요한 시장 변화까지 담는다. 예: '홈플러스 폐점 인근 이마트 매출 11.4% 증가…납품업체는 판로 확보 경쟁 심화'. 실제 출처가 뒷받침할 때만 해당 수치를 쓰고, 제목을 복사하지 않는다.
+- 사건의 실질 영향이나 다음 시장 방향이 없는 기사는 본문을 늘리지 말고 다음 후보로 이동한다.
+- '무엇이 달라졌나', '왜 달라졌나', '영업·구매에서 활용할 점', '영향과 판단', '여기서 얻는 인사이트' 같은 소제목을 모델 출력 텍스트에 포함하지 않는다.
+- 실무를 언급해야 한다는 의무가 없다. 가격, 공급, 경쟁, 제도, 소비의 영향을 가장 자연스럽게 설명하라.
+- 늘었다/줄었다라고만 하지 말고 공식 근거에 있는 원수치·변화율·기준일을 쓰되 숫자는 주장의 근거일 뿐 결론이 아니다.
+- 일반적으로 이미 알려진 진술을 결론으로 채우지 말라: '점포가 폐점하면 인근 매출이 늘 수 있다', '상권과 매장마다 다르다', '환율 변화로 표시 가격이 다를 수 있다', '하나의 지표로 시장을 판단할 수 없다'.
+- 가능한 경우 한 기사에서 관측되지 않는 파급효과를 독립 기사·공식 자료와 연결해 논리적으로 추론하고, 가장 설득력 있는 시장 전망을 제시하라. 충분한 논리와 근거가 있다면 확신이 100%가 아니어도 판단을 피하지 않는다.
+- facts와 mechanism에는 서로 다른 내용을 넣고, structural_insight에는 반론이 아니라 구체적인 시장 결론을 써라. what_changes는 자연스러운 후속 전망이 없는 한 빈 문자열로 둔다.
 
-[기사 유형에 맞는 구성 — 단일 경직 조건 금지]
-- 먼저 시장 전체에서 중요 사건을 선정한다. 품목·국가별 기사 할당은 없다.
-- 심층 시장 분석: 비교 가능한 독립 근거와 둘 이상의 시장 변수를 연결해 충분히 설명할 수 있는 경우.
-- 주요 산업 이슈: 중요한 규제·검역·통상·유통 사건은 신뢰할 공식 1차 발표 1곳만으로도 다룰 수 있다. 발표에 없는 파급 효과를 사실로 단정하지 말고 공식 근거를 명시한다.
-- 데이터 브리핑: 공식 가격·생산·교역 통계 1종이 의미 있는 변화를 보이면 독립 단신으로 정리한다. 두 변수를 채우려고 무관한 자료를 섞거나 전망을 지어내지 않는다.
-- 발표일, 보도일, 실제 조사일, 통계 기준월, 법령 시행일을 구분한다. 다른 시점의 관측값은 추세 설명에 사용해도 같은 시점 수치라고 주장하지 않는다.
-- 2026-11-09와 11월 9일은 같은 날이다. 서로 다른 기관의 반올림·집계법 차이는 비교 대상이 같은 경우에만 설명하고 허용한다.
-- 자료가 일부 부족하면 곧바로 빈 배열을 반환하지 말고 가능한 한 검증 가능한 유형으로 전환해 작성하라. 아무 공식/공개 근거도 없다면 반드시 빈 배열이다.
-- '전망 제외'는 전망이 유효하지 않은 사실 위주의 규제·공식 지표 브리핑에만 사용한다. 전망을 넣기 위해 없는 값을 만들지 않는다.
+[기사의 목적]
+서로 다른 기사·통계를 무리하게 이어 붙이지 않는다. 사건의 실질적 원인과 결과가 연결될 때만 하나의 기사로 분석한다. 서로 다른 핵심 이슈를 매일 2~3편 발행하는 것을 목표로 한다. 서로 다른 근거를 확보할 수 있는 후보를 우선 분석한다. 실제 근거가 부족할 때는 숫자나 사건을 만들어 2편을 채우지 않는다. 단독으로 중요한 사건은 뉴스 해석에서 다루고, 서로 다른 독립 자료를 결합해 새로운 결론을 낼 수 있을 때 심층 분석한다.
 
 [주제·근거]
-- 특정 수산물을 우대하지 않는다. 사전에 검토한 editorial_outline과 market_story_clusters를 먼저 읽는다. 심층 분석은 연관된 독립 근거 2곳 이상을 사용한다. 다만 중요한 공식 규제 발표나 단일 공식 통계는 해당 자료가 입증하는 범위의 산업 이슈·데이터 브리핑으로 작성한다. 같은 발표의 기사 복제는 독립 근거로 세지 않는다.
+- 특정 수산물을 우대하지 않는다. 사전에 검토한 editorial_outline과 market_story_clusters를 먼저 읽는다. 실제로 연관된 공개 근거 2개 이상을 사용하고, 같은 발표의 기사 복제는 독립 근거로 세지 않는다.
 - ① 중요한 관측(연도·월·어종·규격) → ② 다른 사건/지표와 맞물리는 지점 → ③ 공급·수요·대체재·유통경로에 미치는 실질 영향 → ④ 하나의 잠정 전망이라는 흐름으로 논증한다.
 - 분석 중 새로운 공개자료가 더 중요해 보이면 논지를 수정하되 연결 고리가 끊긴 사건을 같은 글에 넣지 않는다. 온라인쇼핑 전체 거래액, 컬리 매출, CJ프레시웨이 취급고 등 무관한 실적을 '식품시장 확대'로 억지로 엮지 않는다.
 - 출처별 날짜·대상·통화·분류가 다르면 비교할 수 있는 범위만 비교한다. 한 주의 연어 FOB 가격과 한국 소비자가격을 동일시하지 않는다.
-- 서로 다른 사건을 입증하기 어렵다면 심층 리포트를 강행하지 말고 신뢰 가능한 공식 발표·관측값에 근거한 산업 이슈 또는 데이터 브리핑 형식으로 축소한다.
+- 데이터가 부족해 서로 다른 사건을 논증할 수 없다면 새 심층 리포트를 만들지 않는다. 기사와 공식 데이터 표시는 별도로 한다.
 
 [분명한 잠정 전망: 예측의 수준 구별]
 - 가장 유력한 가격·물량·규제·유통 변화의 방향을 하나 선택한다. 방향을 정할 근거가 충분하지 않다면 outlook.direction='전망 제외'로 두되, 전망 없는 소재가 분석 가치까지 낮다면 보고서 자체를 제외하라.
@@ -153,73 +158,56 @@ MAIN_PROMPT='''너는 한국 경제지·산업 전문지의 수산시장 담당 
 - 공식 시계열로 검증한 forecast_results가 입력에 포함된 **해당 품목·규격·기간에 한해서만** outlook.numeric_estimate, forecast_method, backtest 작성. 없으면 이 세 필드는 빈 문자열로 둔다. 모델 스스로 예측 가격, 신뢰구간, 확률을 만드는 행위 금지.
 - 지금 근거만으로 예상 방향은 말할 수 있으나 상승 폭이 불명이라면 정확한 숫자는 생략한다. 근거가 약한 전망을 확실한 사실처럼 쓰지 않는다.
 
-[한국어 문체 — 결과 중심 경제 기사]
+[한국어 문체]
 - 한국인 기자가 쓴 산업 기사처럼 구체적 사실이 앞에 오고 뒤에 배경과 판단이 이어져야 한다.
-- 본문의 각 문단은 '실제로 확인된 수치/사건 → 시장에서 일어난 변화 또는 입증되는 영향'을 전달한다. 수치가 없는 설명은 새로운 사실이나 구체적인 경제적 영향을 밝힐 때만 남긴다.
-- 독자에게 분석법을 가르치지 마라. 'A와 B는 서로 다른 질문이다', '합쳐서 해석하면 안 된다', '단정할 수 없다', '따로 확인해야 한다', '이를 구분해야 한다', '해석하면 시장별 차이를 놓친다', '상권 경쟁과 거래 안정성은 별개다' 같은 수업식 결론을 작성하지 않는다.
-- 예시(나쁨): '점포별 매출과 업태 전체 실적은 다른 질문이므로 구분해야 한다.'
-- 예시(좋음): '폐점 인근 경쟁점 매출은 11.4% 늘었지만, 상반기 대형마트 전체 매출은 7.3% 감소했다. 폐점 반사이익이 일부 점포에 집중된 모습이다.'  (이 숫자는 문체 예시일 뿐 실제 원고에서는 제공된 근거가 있을 때만 쓴다.)
-- 예시(나쁨): '전년 대비와 장기 평균을 함께 봐야 한다.'
-- 예시(좋음): '어획량은 전년보다 128.5% 늘었지만 5년 평균에는 18.9% 못 미쳤다. 어획 반등에도 물량은 예년 수준에 도달하지 못했다.' (실제 원고에서는 반드시 근거 확인.)
-- structural_insight에는 앞 문단과 다른, 근거로 확인되는 산업 판단이 있을 때만 쓴다. 예: 출하량 증가가 가격 하락을 상쇄했는지, 수출국별 판매가 어느 쪽에 집중됐는지. 독립적인 추가 결론이 없으면 빈 문자열로 둔다. 기사 본문은 검증된 시장변화·원인·영향과 근거가 존재하면 충분하다.
-- 입증되지 않은 경제 원리, 당연한 설명, 일반론적인 주의 문장은 빼고, 근거가 불충분한 인과나 전망도 지어내지 않는다. 적절한 결론이 없으면 짧게 마무리한다.
 - 아래의 표현은 작성하지 않는다: '구조적 통찰', '관측이 강화된다', '시사한다', '시사점', '인과 경로', '조건부 경로', '양적 측면과 가격 측면', '확인할 필요가 있다', '지켜봐야 한다', '핵심은 A가 아니라 B다', '자료를 종합하면 알 수 있다'.
-- 읽는 사람이 이미 아는 일반 상식·면책성 설명을 문단마다 반복하지 않는다. 반복되는 사실은 한 번만 쓴다. 불확실성은 실질적으로 결론을 바꾸는 경우에만 한 번 짚는다.
-- '추가 검증이 필요하다', '확인해야 한다', '단정하기 어렵다', '별도로 살펴봐야 한다'로 본문을 채우지 않는다. 조사 중 확인되지 않은 사실은 억지로 넣지 않고 뺀다. 조사 방법을 설명하는 대신 조사 결과를 제시한다.
-- 독자가 경제신문을 읽는 것처럼 문장이 자연스럽게 이어지게 쓴다. 번역투·추상적 명사 남용('시장 흡수', '수요가 뒷받침되는 국면', '경로가 작동')을 피하고 익숙한 한국어 동사로 풀어 쓴다.
-- 사내 보고서에서 쓰던 상품 규격이나 업무 용어를 문장에 억지로 끼우지 않는다. 예를 들어 '필렛·슬라이스·초밥용 네타·소포장 회' 같은 목록은 해당 상품별 가격·수요가 실제 결론에 필요한 경우가 아니라면 삭제한다.
-- 해외 연어 기사라고 해서 국내 가공업체의 원가나 이익률, 대형마트 판매를 자동으로 연결하지 않는다. 확인한 한국 자료가 없으면 해외시장 자체를 깊이 분석하고 마무리한다.
-- 달러 기준 가격이 가능한 품목은 공인된 환율로 같은 주차 또는 같은 기간의 비교가격을 환산해 독자가 이해하기 쉬운 USD/kg를 우선한다. 검증된 환산 자료가 없으면 현지 공식통화를 유지하고 달러 가격을 지어내지 않는다.
-- 본문은 사실 → 원인 → 시장 영향 → 가장 유력한 전망으로 읽히게 작성한다. 취재 뒷이야기, 교훈, 인용 없는 가정, 형식적 반론은 쓰지 않는다.
-- context.evidence_depth_profiles는 해당 주제의 공급·가격·수요·수출입 수치를 찾았는지 보여주는 점검표다. 가능한 한 서로 다른 원출처의 실제 관측치 3개 이상을 토대로 원인과 가격·수급 방향을 분석하되, 없는 수치는 만들지 않는다. 같은 수출가격의 NOK/USD 환산은 별개의 시장 관측치 두 개가 아니다.
-- 수치 우선은 '많을수록 좋다'가 아니다. 핵심 주장과 직접 연결된 절대 규모(톤·금액·가격), 변화율, 비교 기준 기간을 실제 출처가 제공하는 범위에서 우선 사용한다. 변화율만 있으면 원물량을 지어내지 않는다. 관련성 낮은 통계는 수치가 풍부해도 제외한다.
-- 각 문단이 전달하는 **새 정보**를 먼저 결정하라: 시장 변화에는 변동 규모·누가 영향을 받았는지, 배경에는 새로 확인한 원인·계약/생산/유통 메커니즘, 영향에는 구체적인 수익·물량·공급망 변화, 전망에는 자료가 뒷받침하는 시간·변수를 쓴다. 같은 수치와 결론을 세 문단에서 반복하지 않는다.
-- 경제 일반론('고객은 다른 매장으로 이동할 수 있다')을 길게 풀지 않는다. 확인된 시장 자료가 없다면 억지로 '왜'를 추측하지 말고 관측과 영향만 서술한다. 정량 지표 없이도 공식 규제의 적용 대상·기한·변경 사항처럼 결정적 사실은 구체적으로 기술한다.
-- 예시(나쁨): '경쟁점에는 반사이익이 있고 납품업체는 어려워질 수 있다.'
-- 예시(좋음): '폐점 인근 두 이마트 점포의 매출은 11.4% 증가했다. 거래업체 조사에서 63%는 매출 감소를 응답했고, 피해업체 72곳은 모두 정산 지연을 지목했다. 소비 이전이 기존 납품업체의 매출·대금 회복으로 연결되지는 않았다.' (문체 예시, 실제 원고에는 자료가 있을 때만.)
-- 숫자만 다시 나열한 '배경' 문단은 삭제하거나 실질적인 연결 과정으로 다시 쓴다. 전망에서 앞의 결론을 그대로 반복하지 말고 미래를 바꿀 변수(확정된 조업 제한, 출하량, 재고, 매출·정산 경과 등)와 영향을 받는 시장 주체를 명시한다. 예측 근거가 없으면 전망을 생략한다.
-- 본문은 기사 제목과 lead의 핵심 수치가 시장 변화/배경/영향 중 자연스러운 위치에서 다시 근거로 쓰일 수 있으나, 동일한 수치 세트를 문단마다 복제하지 않는다.
-- 통계의 전년 대비만 늘어놓지 말고 최근 1~3개월 변화와 기준연도 또는 장기 평균을 구분해 연결한다. 2025년 실적만 있다면 이를 근거로 2026년 현재 가격 흐름을 단정하지 말고 최신 발표를 우선한다.
-- 가격 기사면 가격 변화의 기간과 폭, 공급·수요 자료와의 관계를 설명한다. 수출 기사면 물량·금액·단가 및 주요 거래국 변화 중 실제 확보한 지표를 비교한다. 수급 기사면 국내 생산·해외 조달·규제·소비가 맞물리는지 조사한 결과를 넣는다.
-- **검증과 발행문을 분리한다.** 서로 다른 상품형태·규격·조업 범위가 섞이지 않았는지는 내부적으로 엄격히 확인하되, 올바른 수치와 비교를 사용한 본문 끝에 '단순 합산이 어렵다', '실제 판매가격과 같지 않다', '통계상 범위가 다르다' 같은 통계 사용법을 덧붙이지 마라. 기사 독자에게 필요한 것은 해당 산업의 변화와 실제 결과다.
-- 나쁜 결말: '다만 수출통계는 여러 상품 형태를 묶은 평균이므로 특정 규격의 실제 판매가격과 같지는 않다.' 좋은 결말: '수출물량이 87.8% 증가한 반면 수출액은 48.7% 늘어 평균 수출단가는 약 20.8% 낮아졌다. 지난해 수출액 성장은 단가 상승보다 물량 확대에 의존했다.' 숫자는 입력에 있는 근거/정당한 계산이 있을 때만 사용한다.
-- 나쁜 결말: '두 생산 통계는 조업 해역과 포함 품목 범위도 달라 단순 합산해서 동일 원료의 공급량으로 쓰기 어렵다.' 좋은 결말: '연근해 오징어 어획은 1만7,438톤 늘었지만 5년 평균보다 7,272톤 적었다. 원양 오징어류는 전년보다 17.4% 감소해 생산 회복이 연근해 부문에 집중됐다.' 이 사실만으로 수출 증가가 연근해 어획에서 비롯됐다고 단정하지 않는다.
-- 결론의 우선순위: (1) 실제 물량·가격·매출·대금·수출금액 변화 (2) 특정 국가·유통채널·생산 부문에 집중된 변화 (3) 실제 기업·생산자·거래처에 미치는 입증 가능한 영향 (4) 근거가 있는 다음 분기·다음 조업기의 변수. 이 목록을 채우기 위해 무관한 통계를 연결하거나 금액·이익을 추정하지 마라.
-- 한 단락 끝의 '주의해야 한다/단정하기 어렵다/비교할 수 없다'가 핵심 결론으로 기능하면 대체하거나 삭제하라. 단, 이 정보가 빠지면 **내용 자체가 허위로 읽히는 경우**에는 사실을 정확하게 다시 표현해야 한다. 수치의 단위·분모·기간·상품범위를 임의로 통합하지 않는다.
-- mechanism은 같은 이유를 두 번 반복하지 않는다. 서로 다른 근거와 실제 작동 과정을 쓸 수 있을 때만 문단을 나누고, 수치 없는 구조 설명도 구체적 거래/생산 사실을 추가한다면 허용한다. 억지로 숫자·날짜를 끼우지 않는다.
-- 심층 분석을 완성할 근거가 모자라면 분량을 불리지 말고 해당 근거를 정확히 설명할 수 있는 짧은 기사 유형으로 전환한다. 주장 자체를 입증하지 못하면 제외한다. 검증을 마치지 못했다는 변명 문장을 본문에 넣지 않는다. 내용 없이 '관측 사실과 해석 구분', '추가 분석 필요' 같은 메타 안내를 반복하지 않는다.
+- 읽는 사람이 이미 아는 일반 상식·면책성 설명을 문단마다 반복하지 않는다. 반복되는 사실은 한 번만 쓴다. 불확실성은 내용상 중요한 지점에만 한 번 짚는다.
 - 제목은 실제 결론이 들어가는 경제지 스타일로. '인사이트'라는 단어 남발 금지. 숫자 기반 비교는 근거가 있을 때만.
+
+
+[편집 데스크의 최종 판단]
+- “연근해 어획 증가와 원양 생산 감소는 서로 다르다”, “환율에 따라 통화별 가격이 다르다”, “한 지표로는 판단할 수 없다”는 그 자체로 독자가 얻는 결론이 아니다. 그 설명밖에 나오지 않으면 소재를 폐기한다.
+- 수치를 확보한 사건은 **누가·언제·얼마나** 변했는지를 먼저 적는다. ‘크게 늘었다’ ‘빠르게 줄었다’만 반복해서 변화 규모를 숨기지 않는다. 수치가 없으면 꾸며 넣지 않는다.
+- 구조적 결론은 실제 공급·판매·정산·수출입·정책 집행의 **어느 주체에게 어떤 결과가 생겼는지** 말한다. A도 맞고 B도 맞다는 병렬 설명은 결론이 아니다.
+- 검증·비교·읽는 법은 작성자의 작업 과정이다. 최종 독자에게 ‘이 통계는 이렇게 보면 안 된다’고 가르치지 않는다.
+- 노르웨이 연어 가격은 USD/kg 환산 공식 관측이 근거에 있을 때만 달러 수치를 사용하고, 원화나 크로네 원자료를 본문에서 병렬 해설하지 않는다. USD 가격이 확보되지 않으면 가격 분석을 지어내지 않고 거래량 등 다른 확인된 사실만 싣는다.
+- 모든 전망에 국내 유통과 가공업체를 덧붙이지 않는다. 실제 사건의 직접적인 시장 결과가 글을 결정한다.
 
 [필드별 역할 — 글을 잘게 쪼개기 위한 구색 채우기 금지]
 - headline, thesis: 첫 두 문장 안에 핵심 변화와 잠정 판단. 제목이 리포트 내용을 과장하지 않아야 함.
 - lead, market_change: 독자의 배경 이해와 시간·비교대상 설명. 기사의 주요 배경은 짧게.
-- facts: 확인된 원출처 사실마다 evidence ID를 붙임. 독립 출처 두 곳 미만인 원고는 심층 분석이라고 주장하지 말 것. 서로 다른 통계의 기간을 숨기지 말 것.
-- mechanism: 실제 근거가 있는 시장 영향 설명. 심층 분석은 서로 다른 내용 2개 이상이 필요하지만, 단일 공식 발표의 산업 이슈·데이터 브리핑은 0~1개여도 된다. 불필요한 문단을 만들지 않는다.
-- structural_insight: 앞 문단을 반복하지 않는 추가 산업 판단. 독립적인 추가 판단을 근거로 쓸 수 없다면 빈 문자열("") 허용. 글자 수와 필드 채우기를 위해 내용을 발명하지 않는다.
-- what_changes: 내부 검증·후속 수집용 메타데이터다. 본문에는 노출되지 않으므로 짧게 적는다.
+- facts: 서로 다른 공개 근거 2개 이상; fact마다 해당 evidence ID를 붙임. 서로 다른 통계의 기간을 숨기지 말 것.
+- mechanism: 실제 연결되는 사건·변수의 작용을 설명하는 문단. 짧더라도 충분하면 1개로 끝낼 것. 불필요한 문단을 늘리지 말 것.
+- structural_insight: 앞 문단 요약이 아닌 두 자료의 결합에서 도출되는 구체적인 산업 판단.
+- what_changes: 시장에 실제로 나타난 변화 또는 근거가 있는 향후 변화. 없으면 빈 문자열로 둘 것. '무엇을 확인해야 하는가' 식의 방법론적 제언은 쓰지 않는다.
 - one_sentence: 화면 내부 처리용 결론 요약. 다른 필드에 똑같은 문장을 복붙하지 말 것.
-- limitations: 공개 원자료의 핵심 제한만 내부 메타데이터에 짧게 기록. 본문 분량을 늘리려고 확인/검증 필요성을 독자에게 말하지 말 것. 기사 원문을 확인하지 못했으면 전문을 읽은 것처럼 쓰지 말 것.
+- limitations: 실제로 결론을 바꿀 만한 중요한 근거상의 제약만 짧게. 일반적인 통계 사용 주의사항은 비워 둔다. 기사 원문을 확인하지 못했으면 전문을 읽은 것처럼 쓰지 말 것.
 - output depth '핵심'은 충분한 자료가 있을 때만. 분량보다 서로 다른 근거의 연결이 우선이다.
-- 공개 출처와 공식 통계만 사용. 내부 회사의 비공개 거래조건·매출·마진·전략은 절대 쓰지 않는다. 날짜는 출처의 조사일·집계기간과 정확히 일치시킨다. 절대가격 두 개가 모두 출처에서 확인되거나 출처가 차액을 명시한 경우에만 '60원 상승' 같은 가격 차이를 작성한다. 확인되지 않은 단가 차액을 추정하거나 지어내지 않는다.
+- 공개 출처와 공식 통계만 사용. 내부 회사의 비공개 거래조건·매출·마진·전략은 절대 쓰지 않는다.
+- 필드 schema를 채우려고 문단을 늘리지 말 것. 원인과 결과가 구체적으로 확인되지 않은 필드는 빈 문자열로 둔다. 발행 문장은 자료 조사 과정이나 한계 설명이 아니라 확인된 사실과 결론만 담는다.
+- 앞선 단락을 다시 요약하는 '같은 지표만으로 판단할 수 없다', '추가로 확인할 필요가 있다', '이는 ~ 시사한다' 같은 문장은 금지. 생략해도 논지에 지장이 없으면 삭제.
 - 필드 schema만 채우려는 장황함, 재진술, 형식적 낙관/비관 시나리오 금지. 반드시 지정 JSON 스키마로 응답한다.
+
+[산업 기사로서 읽을 가치]
+- 구매·영업·유통 현장에 실제로 영향을 미치는 변화라면 그 영향까지 설명한다. 다만 모든 사건을 구매·영업의 행동지침으로 끝내지 않는다.
+- 독자의 판단을 바꿀 만한 새로운 사실 또는 예측을 우선한다. 단순 통계 증감, 환율 상식, 어종 분류, 형식적 방법론 안내는 시장 결론이 아니다.
+- 해외 시세는 확인 가능한 USD/kg와 기준기간·변화폭을 우선 제시한다. 검증되지 않은 USD 환산값을 만들어내거나 환율 환산의 일반론을 본문에 붙이지 않는다.
+- 다른 기사·공식 발표·업종 실적에서 연결 근거가 있다면 실제 작용 경로와 파급효과를 구체적으로 밝히고 가장 개연성 높은 전망을 선택한다.
+- 한국 산업·경제 전문지에서 자연스럽게 읽히는 제목과 문장을 사용한다. 지표는 주장을 뒷받침하는 증거이지 그 자체가 통찰이 아니다.
+- 구체적인 사실이 뒷받침되지 않는 단어('경쟁점', '소비 이전', '구조적 의미', '관측 사실을 종합하면')로 글을 포장하지 않는다.
 '''
 
 DATA_PROMPT='''너는 한국 수산업 전문지의 데이터 담당 기자다. 공식 자료와 관련 기사에서 **한 품목을 실제로 설명하는 다른 관측**이 연결되는 경우에만 독립된 품목별 분석을 작성한다.
 - 환율·금리 단독 글은 작성하지 않는다. 공식 관측치 하나와 무관한 기사 제목을 조합해 길게 늘리지 않는다. 그런 자료는 이미 화면의 수치 카드로 제공된다.
 - 한 품목에서 수입 물량/평균단가, 산지가/출하량, 도매/소매, 수출/생산처럼 서로 다른 단계를 **관측된 사실로** 비교한다. 규격·기간이 다르면 차이를 분명히 설명한다.
-- 관측치가 뒷받침할 때만 가장 유력한 향후 방향을 적고, 그렇지 않으면 outlook.direction='전망 제외'로 둔다. 전망 제외일 때 나머지 outlook 필드는 빈 문자열이어도 된다. 가격 하락이 이어지면 더 하락한다 같은 빈말은 금지.
+- 한 가지 시장 판단과 하나의 가장 유력한 향후 방향을 쓴다. 각 outlook 필드에 방향·예상 시기·실제 근거·판단이 바뀔 조건을 적는다. 가격 하락이 이어지면 더 하락한다 같은 빈말은 금지.
 - 근거 없이 확률·가격 범위·다음 달 숫자를 만들지 말고, 별도의 검증된 forecast_results가 제공되지 않으면 숫자 예측은 금지한다.
 - 한국 경제지 기사처럼 짧고 자연스럽게 작성한다. '양적 측면', '조건부 경로', '관측이 강화된다', '확인할 필요가 있다', '시사점' 등의 어색한 표현은 사용하지 않는다.
-- 더 확인해야 한다는 안내나 자료의 결핍을 본문 분량으로 쓰지 않는다. 실제 확인된 비교 결과만 풀어 쓴다. 근거 없는 미래 전망은 쓰지 않는다.
-- 시장 일반론·분석 방법론을 데이터 해설 대신 쓰지 않는다. 'A와 B는 다른 질문이다', '따로 살펴봐야 한다', '단정할 수 없다', '이렇게 해석하면 안 된다' 같은 문장은 삭제하고 실제 증감률·기간·수출액·가격·업체 영향을 구체적으로 설명한다.
-- 핵심 지표와 직접 관련 있는 절대 규모·변동률·비교 기간은 제공된 근거에서 확인되면 적극 활용한다. 숫자를 두 개 이상 채우려는 목적의 무관한 통계 연결은 금지한다.
-- 본문의 통계 해설은 측정된 결과와 그로부터 직접 확인되는 산업적 변화에 집중한다. '합산하기 어렵다', '단가가 개별 판매가격은 아니다', '해석에 유의해야 한다' 같은 별도의 주의사항을 결론처럼 쓰지 않는다. 핵심 제한은 limits 필드에 짧게 기록한다. 단위·분류·기간이 다르면 계산을 합치지 않고, 표기 자체를 정확하게 유지한다.
-- conclusion은 가장 중요한 측정 결과를 제시하고, structural_insight는 그 결과로 실제 달라진 물량·단가·공급·판매의 관계를 설명하되 결론을 복제하지 않는다. 둘을 나눌 실질적 정보가 없으면 짧게 작성한다.
-- structural_insight와 conclusion은 해당 수치가 보여주는 물량/단가/공급/판매의 변화를 직접 진술한다. 근거가 부족하면 빈 결론을 길게 꾸미지 말고 검증된 사실만 짧게 적는다.
-- 사내보고서처럼 상품형태·취급규격을 줄줄이 나열하거나 근거 없는 국내 수입·가공 수익성 연결을 만들지 않는다. 달러 환산 근거가 있는 경우 USD/kg를 먼저 사용한다.
 - 직접 인용한 공식 데이터 ID와 공개 기사 ID만 활용하고, 비교 가능한 수치를 보존한다. 장황한 면책 문구나 소제목을 채우려는 반복 문장을 쓰지 않는다.
 - 숫자 하나뿐이라면 reports=[]로 둔다. 이는 실패가 아니라 자료가 충분할 때만 심층 분석을 하려는 결정이다.
-- evidence_depth_profiles를 참고해 서로 다른 측정 축(가격·생산·수요·수입 등)에서 실제 근거가 연결된 경우만 데이터를 분석한다. 두 통계가 같은 공식 발표를 재인용하면 독립 근거로 세지 않는다.
+- 공식 숫자의 증감률만 가지고 원고를 늘리지 않는다. 가격·수급·거래·규제의 실제 결과 또는 독립 보도와의 인과 연결이 없으면 reports=[]로 둔다.
+- 공식 원자료에 수량과 증가율이 있으면 정확한 기준·값·전년비를 먼저 적는다. 단순히 '증가했다'로 대체하지 않는다.
+- 결론을 '지표 해석 주의', '환율 때문에 방향이 다르다'로 마무리하지 않는다. 어떤 상품·판매망·수급에 어떤 결과가 나왔는지 설명한다.
 ''' 
 
 
@@ -239,207 +227,63 @@ def _call(prompt, context, schema, name, repair_note=''):
     r=requests.post(API,json=req,timeout=(12,240),headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'})
     r.raise_for_status()
     result=json.loads(_response_text(r.json()))
-    key='topics' if name=='seafood_story_outline_v1' else 'reports'
+    key={'seafood_story_outline_v1':'topics','seafood_news_digest_v1':'briefs'}.get(name,'reports')
     if not isinstance(result,dict) or not isinstance(result.get(key),list):
         raise ValueError('output schema mismatch')
     return result
 
 
-def choose_research_candidates(articles, focus_topics=None, maximum=20):
-    """Keep multiple important events per category, not just one headline.
-
-    Sources are leads. Reprinting one release does not constitute independent
-    evidence; that is verified later against originating publisher/agency.
-    """
-    from seafood_editorial import evaluate_article
-    pool=balanced_article_pool(articles,maximum=max(36,maximum*3))
-    by_id={a['id']:a for a in articles if a.get('id')}
-    chosen=[];used=set();counts={}
-    def add(item):
-        if not item or item['id'] in used or len(chosen)>=maximum:return
-        cat=item.get('category','')
-        if counts.get(cat,0)>=4:return
-        chosen.append(item);used.add(item['id'])
-        counts[cat]=counts.get(cat,0)+1
-    # A selected event needs more than a single representative headline.
-    if focus_topics:
-        for topic in focus_topics[:5]:
-            for aid in topic.get('article_ids',[])[:4]:add(by_id.get(aid))
-    ranked=sorted(pool,key=lambda a:(evaluate_article(dict(a)),a.get('score',0),a.get('timestamp',0)),reverse=True)
-    # Broad market pass: cover distinct kinds of changes without forcing them
-    # into output articles or making news count itself a signal of importance.
-    for item in ranked:
-        if counts.get(item.get('category',''),0)<2:add(item)
-    for item in ranked:add(item)
-    return chosen[:maximum]
-
-
-_RESEARCH_QUERIES={
-    '원물 수급/시세':['수산물 가격 생산량 통계','수산업관측센터 어종별 가격','관세청 수산물 수입'],
-    '코스트코':['코스트코 한국 점포 식품 공시','회원제 창고형 마트 식품 매출'],
-    '대형마트/SSM':['대형마트 월간 매출 산업통상부','대형마트 납품 거래 실태조사'],
-    '매장 운영':['대형마트 점포 폐점 출점 공시','수산 매장 영업 규제'],
-    '온라인':['온라인쇼핑 농축수산물 거래액 통계','신선식품 온라인 거래 동향'],
-    'B2B/급식':['학교 급식 식자재 입찰','단체급식 수산물 조달'],
-    '식품안전/소비심리':['수산물 검역 통계 공식','수산물 원산지 단속 발표'],
-    '시즌/트렌드':['수산물 소비자 구매 통계','수산물 제철 가격 추이'],
-    '비용/거시':['수산물 수입단가 환율','냉동 물류 운임 수산물'],
-    '해외':['해양수산부 수산물 수출 통계','Norwegian seafood exports salmon statistics','Japan seafood import tariff'],
-}
-
-
-def event_search_phrase(title):
-    """Generate a short event-level lead, never broad Boolean keyword soup."""
-    words=re.findall(r'[A-Za-z가-힣][A-Za-z가-힣0-9·-]*',str(title))
-    ignore={'단독','속보','종합','뉴스','보도자료','발표','기자','현장','정부는',
-            '올해','지난해','지난달','속보입니다','어떻게','왜','전망','이슈'}
-    words=[w for w in words if len(w)>1 and w.lower() not in ignore]
-    # RSS headlines are often full sentences. Searching the first five tokens
-    # verbatim reproduces news prose and can be too restrictive.
-    return ' '.join(words[:3]).strip()
-
-
-def _short_search(query, max_words=5):
-    """Short noun-like search intent; never submit whole article sentences."""
-    raw=re.sub(r'[“”"「」\[\]()]',' ',str(query or ''))
-    raw=re.split(r'[.!?…]|(?:\s+[–—]\s+)',raw,1)[0]
-    skip={'전망입니다','가능성이','확인해야','필요하다','나타났다',
-          '분석한다','공식적으로','살펴본다','비교하라'}
-    return ' '.join([w for w in raw.split() if w not in skip][:max_words]).strip()
-
-
-def _topic_search_phrases(theme):
-    """Explore either half of a compound issue before attempting to connect it."""
-    txt=str(theme or '').strip()
-    if not txt:return []
-    bits=[b.strip() for b in re.split(r'[·/]',txt) if b.strip()]
-    if len(bits)>=2:
-        # For 'Japan/US exports' search individual destinations as well.
-        shared=next((w for w in ('수출','수입','어획','가격','유통','판매') if w in txt),'수산물')
-        result=[_short_search(f'{b} {shared} 통계',4) for b in bits[:3]]
-    else:
-        result=[_short_search(txt+' 통계',4)]
-    return list(dict.fromkeys(q for q in result if q))
-
-
-def build_research_queries(choices, features, focus_topics=None, depth_profiles=None):
-    """Separate broad discovery from *event-specific* follow-up searches."""
-    categories=list(dict.fromkeys(x.get('category') for x in choices if x.get('category')))
-    year=datetime.now().year
-    questions=[]
-    if focus_topics:
-        # Numeric-gap queries outrank generic category searches.
-        for profile in (depth_profiles or [])[:3]:
-            questions.extend(_short_search(q,5) for q in profile.get('gap_queries',[])[:3])
-        selected_ids={i for t in focus_topics[:4] for i in t.get('article_ids',[])[:3]}
-        # First search the actual news events, not merely their broad category.
-        for item in choices:
-            if item.get('id') in selected_ids:
-                phrase=event_search_phrase(item.get('title'))
-                if phrase:questions.append(phrase)
-                if len(questions)>=8:break
-        for topic in focus_topics[:4]:
-            theme=topic.get('theme','')
-            questions.extend(_topic_search_phrases(theme))
-            cat=topic.get('category','')
-            if cat in _RESEARCH_QUERIES:questions.extend(_RESEARCH_QUERIES[cat][:1])
-    else:
-        # Incident discovery should also survive a full RSS outage.
-        for item in choices[:6]:
-            phrase=event_search_phrase(item.get('title'))
-            if phrase:questions.append(phrase)
-        categories=list(dict.fromkeys([
-            '원물 수급/시세','해외','대형마트/SSM','식품안전/소비심리']+categories))
-        for cat in categories[:9]:questions.extend(_RESEARCH_QUERIES.get(cat,[])[:2])
-    # Additional searches follow the newly ranked events. Never add mandatory
-    # salmon/squid/retail queries because they happened to be demo subjects.
-    for f in features[:4]:
-        name=str(f.get('name','')).strip()
-        if name:questions.append(_short_search(name+' 통계',5))
-    # 25 unrelated intents in ONE web_search request is not 25 executed
-    # searches. Prefer concise, focused search plans that the model can act on.
-    return list(dict.fromkeys(_short_search(q,5) for q in questions if q))[:15 if focus_topics else 16]
-
-
-def infer_research_category(title, excerpt):
-    """Classify the cited passage itself, not the first article in the query."""
-    text=(str(title)+' '+str(excerpt)[:800]).lower()
-    rules=[
-        ('코스트코',('코스트코','costco','커클랜드')),
-        ('대형마트/SSM',('홈플러스','대형마트','롯데마트','이마트','트레이더스','ssm')),
-        ('온라인',('수산물 온라인','신선식품 온라인','온라인 신선식품','쿠팡 신선','컬리 수산')),
-        ('B2B/급식',('학교급식','군급식','단체급식','급식 수산물','식자재 납품')),
-        ('식품안전/소비심리',('수산물 검역','수산물 검사','수산물 안전','수산물 원산지')),
-        ('해외',('수산물 수출','수산물 수입','수출 연어','salmon export','seafood export','대미 관세')),
-        ('원물 수급/시세',('연어','salmon','광어','넙치','우럭','오징어','고등어','어획량','어업생산','수산업','수산물 가격','수산물 생산','양식 어류','꽃게','새우','tuna','shrimp')),
-    ]
-    for cat,terms in rules:
-        if any(t in text for t in terms):return cat
-    return None
-
-
 def research_public_sources(articles, features, now, focus_topics=None):
-    """Web-grounded discovery / targeted fact research, two separate passes.
+    """One web-grounded research pass to enrich short RSS snippets.
 
-    Only an attributed, cited excerpt may become evidence. Links returned by
-    the search tool without a cited passage are not converted to invented facts.
+    Citations are exposed to readers as external source links. This method
+    cannot guarantee page-level verification, so downstream numeric checking
+    still uses the returned research memo as attributed evidence, not as a
+    substitute for independent primary-statistics verification.
     """
-    phase='focused' if focus_topics else 'discovery'
     if not os.getenv('OPENAI_API_KEY','').strip() or os.getenv('SEAFOOD_WEB_RESEARCH','1')=='0':
-        return [],f'{phase}: 웹 검색 미사용'
-    choices=choose_research_candidates(articles,focus_topics,maximum=20)
-    depth_profiles=evidence_profiles(focus_topics or [],articles,features,maximum=4)
-    if not choices and not features and not focus_topics:
-        # Continue searching official releases even on a complete RSS outage.
-        print('SEAFOOD RESEARCH: RSS empty; primary-source discovery fallback',flush=True)
-    search_plan=build_research_queries(choices,features,focus_topics,depth_profiles)
-    focus_rule=(
-        '선정된 사건이 실제로 왜 발생했는지 확인하는 두 번째 조사다. 주제별로 같은 보도를 반복하지 말고 '
-        '최초 공식 발표와 별개인 가격·출하·수요·수출입 자료를 찾아라. 첫 조사에서 빠진 자료를 우선 찾고, '
-        '근거가 없는 인과관계는 만들지 마라. 부족한 수치(공급/수요/가격/수출입)가 무엇인지 우선 판단하고 해당 자료부터 조사하라.'
-        if focus_topics else
-        '첫 조사에서는 특정 업종을 미리 정하지 말고 최근 주요 사건을 넓게 찾아라. '
-        '수산물 생산·가격·수출입·안전·유통을 고르게 조사하되 이슈가 중요한지는 실제 수치와 시장 영향으로 판단하라.'
-    )
+        return [],'검색 미사용'
+    pool=balanced_article_pool(articles,maximum=25)
+    choices=[];seen=set()
+    for item in sorted(pool,key=lambda a:(a.get('score',0),a.get('timestamp',0)),reverse=True):
+        if item['category'] not in seen:
+            choices.append(item);seen.add(item['category'])
+        if len(choices)>=8:break
+    # Topic scoring is based on market changes, not a quota of one per category.
+    if focus_topics and os.getenv('SEAFOOD_PRESELECT_TOPIC','0')=='1':
+        chosen_ids=[aid for topic in focus_topics[:4] for aid in topic.get('article_ids',[])[:2]]
+        source_map={a['id']:a for a in pool}
+        focused=[source_map[i] for i in chosen_ids if i in source_map]
+        if focused:choices=list(dict((a['id'],a) for a in focused).values())[:8]
+    if not choices and not features:return [],'공개 자료 없음'
     prompt=(
-      '너는 공개 자료를 조사하는 한국 수산시장 산업 리서처다. 반드시 웹 검색을 사용하라. '
-      +focus_rule+
-      ' 제공한 검색문은 각각 별개의 검색 의도이며, 하나의 긴 검색문으로 합치지 마라. '
-      '최근 30~45일 발표를 우선하되 원인과 계절성을 확인할 과거 1~5년 비교통계는 별도로 찾아라. '
-      '시장에 영향을 미친 실제 사건, 그 규모, 관련 공식통계, 발표일과 측정기간을 구분하라. '
-      'KMI, 수협, 해양수산부, 관세청, 통계청, 식약처, 기업 공시, 해외 정부 통계와 독립 취재를 우선한다. '
-      '보도자료를 여러 언론이 복제했다면 한 개의 원출처로 취급하라. '
-      '각 핵심 사실을 검색 결과의 출처 링크와 함께 적고 최소한 실제 확인한 내용을 수치·기간·단위와 연결하라. '
-      '확인하지 못한 수치나 회사 내부 실적을 지어내지 말라. 취재가 미완성인 전망 문장을 쓰지 말라. '
-      '결과는 한국어의 짧은 근거 문단으로 작성하고 문단별 URL 인용을 포함하라. '      '수치를 찾았다면 실제 숫자·단위·발표일·집계기간·비교기간·원출처를 한 문단에 명시하라. '      '서로 다른 통계의 어종/형태/기간을 동일한 값처럼 합치지 말라. '      '외화 가격을 환산한 동일 관측치는 하나의 가격 자료로 취급하고 환율 설명을 기사 본론으로 늘리지 마라.'
+      '너는 수산물·식품유통 산업의 자료 조사 담당자다. 반드시 웹 검색을 통해 아래 기사 후보 가운데 서로 다른 사건이 엮일 수 있는 3~5개 후보에 대해 '
+      '최근 45일 이슈를 출발점으로 과거 3~5년의 비교 통계도 찾아 독립적인 원자료(국가통계, KMI, 수협, 관세청, 통계청, 해외 정부, 기업 실적공시, 다른 언론의 독자 취재)를 찾아라. '
+      '연어에 편중하지 말고 한국 수산시장과 유통업계도 조사하라. 주제별 공식 통계의 날짜·대상·단위·변화율을 명확히 구분하라. '
+      '동일 보도자료 재인용은 독립 근거가 아니라고 밝혀라. 미확인 수치는 제외하라. RSS 뉴스 후보가 빈약하거나 유통·거시 기사만 있다면 수산물 공식자료를 직접 검색하고 시장 전체의 중요한 변화를 찾아라. '
+      '각 주제의 최초 사건 보도, 생산·수입·가격과 같은 서로 다른 통계, 수요·유통 변화를 구분해서 조사하라. 숫자는 기준기간·통화·어종·규격별로 명확히 구분하며, 수산물·대형유통 분야를 우선해 최소 8~12개의 확인 가능한 근거 문장을 작성하고, 각 문장에 검색으로 확인한 실제 출처 링크를 인용하라. '
+      '추상적 제언·기업 원가/이익률 추정·가공한 숫자 금지. 반드시 실제 검색 결과를 이용하라. '
+      '글은 한국어로 쓰되 광고/검색 요약이 아닌 사실관계를 개조식으로 정리하라.'
     )
-    context={'today_kst':now.date().isoformat(),'research_phase':phase,
-             'separate_search_intents':search_plan,
+    context={'today_kst':now.date().isoformat(),
              'focus_topics':(focus_topics or [])[:4],
-             'measurement_gaps_and_existing_evidence':depth_profiles,
-             'news_candidates':[{'id':x['id'],'title':x['title'],'category':x['category'],
-                                 'source':x.get('source'),'url':x.get('url'),
-                                 'published':x.get('published')} for x in choices],
-             'official_observations':[{'name':f.get('name'),'period':f.get('period_end'),
-                                       'observed':f.get('observed'),
-                                       'url':f['data_links'][0]['url'] if f.get('data_links') else ''}
-                                      for f in features if not str(f.get('id','')).startswith('fx_')][:12]}
-    print(f'SEAFOOD RESEARCH {phase}: {len(choices)} event leads, '
-          f'{len(search_plan)} independent search intents',flush=True)
+             'news_candidates':[{'title':x['title'],'category':x['category'],'source':x['source'],'url':x['url'],'published':x['published']} for x in choices],
+             'official_observations':[{'name':f['name'],'period':f['period_end'],'observed':f['observed'],'url':f['data_links'][0]['url'] if f.get('data_links') else ''} for f in features if not f.get('id','').startswith('fx_')][:11],
+             'research_targets_when_news_feed_is_thin':[
+               '국내외 수산업·식품유통 전반에서 최근 발생한 공급 중단·규제·기업 구조조정·유통채널 변화',
+               '해당 사건과 직접 연결되는 생산량·가격·수출입·매출 등 독립 근거',
+               '사건과 직접 관련 없는 특정 어종을 검색 목표로 강제하지 말 것' ]}
     req={'model':os.getenv('OPENAI_RESEARCH_MODEL',os.getenv('OPENAI_MODEL',MODEL)),
          'reasoning':{'effort':'low'},
          'tools':[{'type':'web_search','search_context_size':'high'}],
          'tool_choice':'required','include':['web_search_call.action.sources'],
-         'input':[{'role':'system','content':prompt},
-                  {'role':'user','content':json.dumps(context,ensure_ascii=False)}],
+         'input':[{'role':'system','content':prompt},{'role':'user','content':json.dumps(context,ensure_ascii=False)}],
          'max_output_tokens':8500,'store':False}
     try:
-        resp=requests.post(API,json=req,timeout=(12,240),headers={
-            'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],
-            'Content-Type':'application/json'})
+        resp=requests.post(API,json=req,timeout=(12,240),headers={'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],'Content-Type':'application/json'})
         resp.raise_for_status()
         body=resp.json()
-        collected=[];urls=set();citation_count=0
+        collected=[];urls=set()
         for item in body.get('output',[]):
             if item.get('type')!='message':continue
             for content in item.get('content',[]):
@@ -452,75 +296,56 @@ def research_public_sources(articles, features, now, focus_topics=None):
                     parsed=urlparse(url)
                     if parsed.scheme not in ('http','https') or not parsed.netloc or url in urls:continue
                     pos=anno.get('start_index',0)
-                    if not isinstance(pos,int) or pos<0 or pos>len(full):continue
+                    # The cited search sentence, not a fabricated full-article quote.
                     start=max(0,full.rfind('\n',0,pos)+1)
                     end=full.find('\n',pos)
                     excerpt=full[start:end if end!=-1 else len(full)].strip()[:850]
                     if len(excerpt)<35:continue
-                    title=anno.get('title') or '검색으로 확인한 공개 근거'
-                    # Do not attach an irrelevant citation to the first news
-                    # topic simply because the search generated that citation.
-                    category=infer_research_category(title,excerpt)
-                    if not category:
-                        continue
-                    urls.add(url);citation_count+=1
+                    urls.add(url)
                     collected.append({'id':'web-'+__import__('hashlib').sha1(url.encode()).hexdigest()[:12],
                         'url':url,'source':parsed.netloc.removeprefix('www.'),
-                        'title':title,'summary':excerpt,
-                        'summary_type':'웹 검색 인용 문단 · 원문 미열람',
+                        'title':anno.get('title') or '웹 검색 출처',
+                        'summary':excerpt,'summary_type':'검색 결과의 출처 표기 · 원문 확인 권장',
                         'published':'발행일 별도 확인','timestamp':0,
-                        'category':category,'channels':[],'tags':[],'score':0,
-                        'official':False,'research_phase':phase,
-                        'impact':'공개 근거 문단','followup':'해당 원문 및 통계 기준기간'} )
-        print(f'SEAFOOD RESEARCH {phase}: citation_passages={citation_count}, '
-              f'usable={min(24,len(collected))}',flush=True)
-        return collected[:24],f'{phase} 근거 출처 {len(collected[:24])}건'
-    except requests.HTTPError as exc:
-        status=exc.response.status_code if exc.response is not None else 'unknown'
-        code='unknown'
-        if exc.response is not None:
-            try:code=str(exc.response.json().get('error',{}).get('code') or 'unknown')[:40]
-            except (ValueError,TypeError,AttributeError):pass
-        return [],f'{phase} 웹 검색 HTTP {status} (code={code})'
+                        'category':next((a['category'] for a in choices if any(x in excerpt for x in (a['title'][:12],a['category']))),choices[0]['category'] if choices else CATEGORIES[0]),
+                        'channels':[],'tags':[],'score':0,'official':False,
+                        'impact':'외부 원문 근거','followup':'해당 원문·통계 기준일 확인'})
+        return collected[:20],('보강 출처 '+str(len(collected[:20]))+'건')
     except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-        return [],f'{phase} 웹 검색 실패: {type(exc).__name__}'
+        return [],'웹 근거 검색 실패: '+type(exc).__name__
 
 
 def _numeric_tokens(text):
-    """Backward-compatible numeric values with Korean quantity normalization."""
-    return [format(n['value'].normalize(), 'f') for n in numeric_observations(text)]
+    # Compare numeric VALUE, not formatting: '37' = '37.0', '1,000' = '1000'.
+    # Still ignore isolated one-digit labels and retain percentage/price changes.
+    from decimal import Decimal, InvalidOperation
+    # Accept Korean large-number spelling: 15만9,810톤 == 159810톤.
+    # The original numeric-regex incorrectly read it as 15 and 810,
+    # rejecting valid Korean news prose and encouraging unnatural digits.
+    text=re.sub(r'(\d+)\s*만\s*(\d{1,3}(?:,\d{3})?|\d{1,4})(?!\d)',
+                lambda m:str(int(m.group(1))*10000+int(m.group(2).replace(',',''))),str(text))
+    values=[]
+    for token in re.findall(r'(?<![\w])\d[\d,]*(?:\.\d+)?',text):
+        raw=token.replace(',','')
+        if len(raw)<2:continue
+        try:values.append(format(Decimal(raw).normalize(),'f'))
+        except InvalidOperation:continue
+    return values
 
 
 def _supported(text, evidence):
-    """Accept compatible measured values within bounded reporting error.
-
-    Never approximate years, weeks, months, survey counts, or distinct units.
-    Exact source-local citation checks are performed separately from full prose.
-    """
-    return tolerant_supported(text,evidence)
-
-
-def _evidence_text(records):
-    # Keep each field on its own line: metric labels in a title must not become
-    # the nearest measurement label in an otherwise unrelated snippet.
-    keys=('title','name','snippet','summary','observed','facts','period_start','period_end',
-          'published','related_observations','measurements')
-    pieces=[]
-    for row in records:
-        for key in keys:
-            if key not in row:continue
-            value=row[key]
-            rendered=value if isinstance(value,str) else json.dumps(value,ensure_ascii=False)
-            # The published date is a press timestamp, not the period of a
-            # measured price/volume or the effective date of a regulation.
-            pieces.append('보도일 '+rendered if key=='published' else rendered)
-    return '\n'.join(pieces)
+    support=set(_numeric_tokens(evidence))
+    for n in _numeric_tokens(text):
+        if n not in support:
+            # 100% / 10-minute routine and other unsupported claims are blocked.
+            return False
+    return True
 
 
 def _all_evidence(context):
-    text=_evidence_text(context.get('articles',[])+context.get('official_series',[]))
-    # One explicitly reproducible derived quantity: unit-value percentage change
-    # = (1+export-value growth)/(1+export-volume growth)-1. Use source-local rates.
+    text=json.dumps(context.get('articles',[])+context.get('official_series',[]),ensure_ascii=False)
+    # A limited, auditable derived value: unit export value is revenue / volume.
+    # It can only be computed when BOTH growth rates are explicitly in the SAME cited source.
     values=[]
     for a in context.get('articles',[]):
         source=a.get('snippet','')
@@ -533,15 +358,6 @@ def _all_evidence(context):
                 change=((1+revenue/100)/(1+volume/100)-1)*100
                 values.append(f'검산 공식 수출액 지수 {(1+revenue/100):.2f}, 물량 지수 {(1+volume/100):.2f}, 평균단가 변화율 {change:.1f}%')
     return text+' '.join(values)
-
-
-def _numeric_feedback(issues,limit=4):
-    result=[]
-    for issue in issues[:limit]:
-        nearest=issue.get('nearest_source')
-        part=f"{issue['claim']}"+(f" (인용 근거의 유사 숫자: {nearest})" if nearest else ' (근거 수치 없음)')
-        if part not in result:result.append(part)
-    return '; '.join(result)[:390]
 
 
 def balanced_article_pool(articles, maximum=36):
@@ -577,24 +393,19 @@ def balanced_article_pool(articles, maximum=36):
 
 
 def _main_context(articles,features,now,issues,focus_topics=None):
-    pool=balanced_article_pool(articles,maximum=60)
+    pool=balanced_article_pool(articles,maximum=78)
     included={a['id'] for a in pool}
     # Verified-search citations must be visible even when their scores are lower than news RSS.
-    pool += [a for a in articles if a.get('id','').startswith('web-') and a['id'] not in included][:14]
+    pool += [a for a in articles if a.get('id','').startswith('web-') and a['id'] not in included][:22]
     rows=[{'id':a['id'],'source':a['source'],'title':a['title'],'published':a['published'],
            'category':a['category'],'snippet':a.get('summary','')[:850],
            'official':bool(a.get('official')),'url':a.get('url',''),
            'channels':a.get('channels',[]),'impact':'관측 보도'} for a in pool]
-    prioritized_features=sorted(features,key=lambda f:(f.get('role') not in ('context','historical_context'),
-                              f.get('significance',0)),reverse=True)
     series=[{'id':f['id'],'name':f['name'],'period_start':f['period_start'],'period_end':f['period_end'],
              'observed':f['observed'],'facts':f['facts'],'data_links':f.get('data_links',[]),
-             'limits':f['limitations'],'related_observations':f.get('related_observations',[]),
-             'data_freshness':f.get('data_freshness','unknown'),
-             'historical_context':f.get('role')=='historical_context'} for f in prioritized_features[:20]]
-    depth=evidence_profiles((focus_topics or []),pool,prioritized_features,maximum=5)
-    return {'now_kst':now.isoformat(),'articles':rows,'official_series':series,'evidence_depth_profiles':depth,
-            'topic_candidates':(focus_topics or [{'theme':i['theme'],'article_ids':i['article_ids']} for i in issues[:5]])[:5],
+             'limits':f['limitations'],'related_observations':f.get('related_observations',[])} for f in features[:17]]
+    return {'now_kst':now.isoformat(),'articles':rows,'official_series':series,
+            'topic_candidates':(focus_topics or [{'theme':i['theme'],'article_ids':i['article_ids']} for i in issues[:6]])[:7],
             'source_limit':'공개 RSS 소개문과 공식 시계열만 사용, 기사 전문·비공개 거래정보는 이용하지 않음'}
 
 
@@ -639,11 +450,10 @@ def make_editorial_outline(ctx, previous_headlines=None):
     eligible={x['id']:x for x in ctx['articles']+ctx['official_series']}
     payload={
         'today_kst':ctx['now_kst'],
-        'public_articles':ctx['articles'][:45],
+        'public_articles':ctx['articles'][:65],
         'official_statistics':ctx['official_series'][:15],
         'topic_candidates':ctx.get('topic_candidates',[])[:5],
         'market_story_clusters':ctx.get('story_candidates',[])[:6],
-        'evidence_depth_profiles':ctx.get('evidence_depth_profiles',[])[:5],
         'previously_published_titles':(previous_headlines or [])[:6],
         'never_use_internal_business_documents':True,
     }
@@ -653,7 +463,7 @@ def make_editorial_outline(ctx, previous_headlines=None):
         print('SEAFOOD editorial outline skipped:',type(exc).__name__)
         return []
     plans=[];used_subjects=set()
-    for entry in result.get('topics',[])[:4]:
+    for entry in result.get('topics',[])[:7]:
         try:
             ids=list(dict.fromkeys(x for x in entry['evidence_ids'] if x in eligible))
             # Independent public evidence, or official series with two distinct data sources.
@@ -662,11 +472,9 @@ def make_editorial_outline(ctx, previous_headlines=None):
             if len(ids)<2 or len(origins)<2 or any(len(entry.get(k,'').strip())<18 for k in fields):
                 continue
             if entry['subject'] in used_subjects:continue
-            # The old exact cluster-ID intersection silently eliminated valid
-            # independent sources when keyword clustering missed the event.
-            # Keep the actual relevance test without making the heuristic a gate.
-            from seafood_story_selection import shared_market_anchor
-            if not shared_market_anchor([eligible[i] for i in ids]):
+            # Planning must follow a meaningful cross-event cluster after research.
+            clusters=ctx.get('story_candidates',[])
+            if clusters and not any(len(set(ids)&set(b['evidence_ids']))>=2 for b in clusters):
                 continue
             # Only select a plan whose claims are grounded in the supplied public materials.
             if not _supported(' '.join(entry[k] for k in fields),json.dumps([eligible[i] for i in ids],ensure_ascii=False)):
@@ -676,7 +484,7 @@ def make_editorial_outline(ctx, previous_headlines=None):
                           'tentative_outlook':entry.get('tentative_outlook',''),
                           'outlook_horizon':entry.get('outlook_horizon','')})
             used_subjects.add(entry['subject'])
-            if len(plans)>=3:break
+            if len(plans)>=4:break
         except (KeyError,TypeError,AttributeError):continue
     return plans
 
@@ -694,7 +502,7 @@ def _duplicate_passages(report):
     return False
 
 
-def _validate_main(payload,ctx,diagnostics=None):
+def _validate_main(payload,ctx):
     allowed_a={a['id'] for a in ctx['articles']}
     allowed_f={f['id'] for f in ctx['official_series']}
     allowed=allowed_a|allowed_f
@@ -704,42 +512,27 @@ def _validate_main(payload,ctx,diagnostics=None):
     for r in payload.get('reports',[])[:5]:
         try:
             fields=('headline','thesis','lead','market_change','structural_insight','what_changes','one_sentence','limitations','followup')
-            # Presence and grounding matter; an arbitrary character quota does
-            # not measure analytical quality.  It previously rejected valid
-            # concise sentences before their citations were even checked.
-            required_prose=('headline','thesis','lead','market_change','one_sentence')
-            # structural_insight is an optional additional inference. The
-            # prompt explicitly forbids manufacturing a new inference just to
-            # fill a field, so an empty string is never a rejection on its own.
-            # Optional display/metadata slots also need not force retries.
-            optional_fields=('structural_insight','what_changes','limitations','followup')
-            r=dict(r)
-            for optional in optional_fields:
-                if r.get(optional) is None:
-                    r[optional]=''
-            malformed=[k for k in fields if not isinstance(r.get(k),str)]
-            missing=[k for k in required_prose if isinstance(r.get(k),str) and not r[k].strip()]
-            if malformed or missing:
-                reasons.append('필수 원고 항목 누락: '+','.join(malformed+missing));continue
+            mandatory={'headline':10,'thesis':25,'lead':18,'market_change':24,'structural_insight':24,'one_sentence':14}
+            if any(not isinstance(r.get(k),str) or len(r[k].strip())<minimum
+                   for k,minimum in mandatory.items()):
+                reasons.append('핵심 사실·결론 부족');continue
+            if any(not isinstance(r.get(k),str) for k in fields):
+                reasons.append('원고 필드 누락');continue
             if r['kind'] not in CATEGORIES or r['headline'] in seen:
                 reasons.append('분류 또는 제목 중복');continue
-            if not isinstance(r.get('mechanism'),list) or any(
-                    not isinstance(x,str) or not x.strip() for x in r['mechanism']):
-                reasons.append('시장 영향 설명 형식 오류: mechanism');continue
-            # A factual one-source brief may have no separate causal paragraph;
-            # evidence_class determines its report type below. Only full deep
-            # analysis is required to have two substantive mechanisms.
+            if (not isinstance(r.get('mechanism'),list)
+                or not (1<=len(r['mechanism'])<=5)
+                or any(not isinstance(x,str) or len(x.strip())<22 for x in r['mechanism'])):
+                reasons.append('사건 연결 설명 부족');continue
             outlook=r.get('outlook')
             if outlook is not None:
                 if not isinstance(outlook,dict) or outlook.get('direction') not in (
                         '상승','하락','횡보','확대','축소','제한적 회복','혼조','전망 제외'):
                     reasons.append('전망의 우세 방향 누락');continue
-                # A factual regulation/data brief may explicitly exclude a
-                # speculative outlook. Deep analysis still needs a reasoned view.
-                required_outlook=('horizon','judgment','basis') if outlook['direction']!='전망 제외' else ()
-                absent=[k for k in required_outlook if not isinstance(outlook.get(k),str) or not outlook[k].strip()]
-                if absent:
-                    reasons.append('전망 항목 누락: '+','.join(absent));continue
+                if outlook.get('direction')!='전망 제외' and any(
+                        len(str(outlook.get(k,'')).strip())<minimum for k,minimum in (
+                        ('horizon',2),('judgment',20),('basis',20))):
+                    reasons.append('근거가 있는 잠정 전망 누락');continue
                 if outlook.get('numeric_estimate') and not ctx.get('forecast_results'):
                     reasons.append('검증하지 않은 예측 가격·물량 수치');continue
                 if outlook.get('numeric_estimate'):
@@ -748,58 +541,28 @@ def _validate_main(payload,ctx,diagnostics=None):
                         reasons.append('공식 시계열 예측 결과와 일치하지 않는 값');continue
                 if not set(outlook.get('evidence_ids',[])).issubset(allowed):
                     reasons.append('전망에 존재하지 않는 출처');continue
-            elif not all(isinstance(r.get(s),dict) and isinstance(r[s].get(k),str) and r[s][k].strip()
-                         for s in ('scenario_up','scenario_down') for k in ('condition','interpretation')):
+            elif not all(len(r[s][k].strip())>=18 for s in ('scenario_up','scenario_down') for k in ('condition','interpretation')):
                 # Historical demonstration cards still use the earlier schema.
                 reasons.append('조건부 시나리오 부족');continue
             facts=[]
             for fact in r['facts']:
                 refs=list(dict.fromkeys(str(x) for x in fact.get('refs',[]) if x in allowed))
-                source_text=_evidence_text([evidence_by_id[i] for i in refs])
-                # A short cited fact can be decisive (e.g. a quota or price).
-                # Validate its content rather than discarding it at 29 chars.
-                fact_text=fact.get('text','')
-                if isinstance(fact_text,str) and fact_text.strip() and refs and _supported(fact_text,source_text):
-                    facts.append({'text':fact_text,'refs':refs})
-                elif diagnostics is not None and isinstance(fact_text,str) and fact_text.strip() and refs:
-                    missing=missing_numeric_claims(fact['text'],source_text)
-                    if missing:
-                        diagnostics.append({'part':'인용 사실','source_ids':refs,
-                                            'claim':fact['text'][:130],
-                                            'mismatches':missing[:5]})
-            if not facts:
-                reasons.append('검증 가능한 출처 연결 사실 없음');continue
-            cited={ref for fact in facts for ref in fact['refs']}
-            # Historical official tables remain valid background evidence,
-            # but cannot alone substantiate a newly published market change.
-            if cited and all(evidence_by_id[sid].get('historical_context') for sid in cited):
-                reasons.append('현재 시장 근거 없이 과거 통계만 인용');continue
-            report_type,audit=evidence_class(r,facts,evidence_by_id)
-            if not report_type:
-                reasons.append('심층·산업 이슈·데이터 브리핑 중 어느 유형에도 근거 미달');continue
-            if report_type=='심층 시장 분석' and len(r['mechanism'])<2:
-                reasons.append('심층 분석의 상이한 원인·시장 영향 설명 부족');continue
-            # A one-source original release is acceptable as a cited policy
-            # update / data brief, never promoted to multi-source analysis.
-            if report_type!='심층 시장 분석' and len(cited)<2 and not any(
-                    evidence_by_id[i].get('data_links') or evidence_by_id[i].get('url') for i in cited):
-                reasons.append('원출처 URL 확인 불가');continue
+                source_text=json.dumps([evidence_by_id[i] for i in refs],ensure_ascii=False)
+                if len(fact.get('text',''))>=30 and refs and _supported(fact['text'],source_text):
+                    facts.append({'text':fact['text'],'refs':refs})
+            if len(facts)<2:
+                reasons.append('검증 가능한 원문 근거 2개 미만/숫자 미일치');continue
+            cited={r for fact in facts for r in fact['refs']}
+            independent={_public_source_family(evidence_by_id[i]) for i in cited}
+            if len(independent)<2:
+                reasons.append('서로 다른 출처 근거 부족');continue
             # Checked numbers in all analytical paragraphs; numeric tokens must be public evidence.
             forward=(list(outlook.get(k,'') for k in ('judgment','basis','revision_trigger')) if outlook is not None else
                      [r['scenario_up']['condition'],r['scenario_down']['condition'],
                       r['scenario_up']['interpretation'],r['scenario_down']['interpretation']])
-            # Technical limitations/follow-up metadata is not a market claim;
-            # a historical context month there must not invalidate verified
-            # facts elsewhere. Visible article claims are still checked.
-            claim_fields=tuple(x for x in fields if x not in ('limitations','followup','what_changes'))
-            prose=' '.join([r[k] for k in claim_fields]+r['mechanism']+forward)
+            prose=' '.join([r[k] for k in fields]+r['mechanism']+forward)
             if not _supported(prose,evidence):
-                missing=missing_numeric_claims(prose,evidence)
-                reasons.append('근거에 없는 숫자 사용')
-                if diagnostics is not None and missing:
-                    diagnostics.append({'part':'분석 본문','source_ids':[],
-                                        'claim':'본문 전체', 'mismatches':missing[:7]})
-                continue
+                reasons.append('근거에 없는 숫자 사용');continue
             if _duplicate_passages(r):
                 reasons.append('같은 문단의 내용 반복');continue
             if outlook is not None:
@@ -807,20 +570,9 @@ def _validate_main(payload,ctx,diagnostics=None):
                         '전망이 강화된다','지속되면 지속','핵심 인사이트')
                 if any(token in prose for token in banned):
                     reasons.append('기사답지 않은 추상·순환 표현');continue
-                from seafood_story_selection import shared_market_anchor
-                if report_type=='심층 시장 분석' and not shared_market_anchor(
-                        [evidence_by_id[i] for i in cited]):
-                    # New material is not rejected merely because the commodity
-                    # is missing from a prewritten list. Require the selected
-                    # evidence to share a sufficiently specific lead term.
-                    label=str(ctx.get('target_market') or '')
-                    terms=[x.lower() for x in re.findall(r'[a-zA-Z가-힣]{2,}',label)
-                           if x not in ('시장','해외','국내','수출입','동향','변화','주요','수급','전망')]
-                    rows=[str(evidence_by_id[i].get('title') or evidence_by_id[i].get('name') or '')+' '+
-                          str(evidence_by_id[i].get('snippet') or evidence_by_id[i].get('observed') or '')
-                          for i in cited]
-                    if not terms or not all(any(t in text.lower() for t in terms) for text in rows):
-                        reasons.append('인용 자료가 동일 품목·시장에 관한 근거가 아님');continue
+                clusters=ctx.get('story_candidates',[])
+                if clusters and not any(len(cited & set(cluster['evidence_ids']))>=2 for cluster in clusters):
+                    reasons.append('서로 연결된 사건·통계가 아닌 느슨한 근거 묶음');continue
             # A stitched general online-market/foodservice article is not a
             # cross-market seafood insight. The cited evidence must share a
             # measured product/channel or an explicitly linked mechanism.
@@ -834,10 +586,26 @@ def _validate_main(payload,ctx,diagnostics=None):
                     reasons.append('온라인 유통과 비온라인 식자재 취급고를 동일시장으로 연결함');continue
             weak_phrases=('판단할 수 없다','확인되지 않았다','입증하지 않는다','확인할 수 없다','제공되지 않았다','판단하기 어렵다','단정할 수 없다')
             if sum(prose.count(p) for p in weak_phrases)>=4:
-                reasons.append('긍정적인 분석보다 불확실성·면책 설명이 지나치게 많음');continue
-            catalog_list=('필렛·슬라이스·초밥용 네타·소포장 회','필렛, 슬라이스, 초밥용 네타')
-            if any(x in prose for x in catalog_list):
-                reasons.append('시장 분석과 무관한 사내 보고서식 품목·규격 나열');continue
+                reasons.append('분석 대신 주의사항·면책 설명이 반복됨');continue
+            from seafood_editorial_quality import editorial_filler_flags
+            public_analysis=' '.join([r['thesis'],r['market_change'],r['structural_insight']]+r['mechanism'])
+            if len(editorial_filler_flags(public_analysis))>=3:
+                reasons.append('방법론적 문장이 실제 분석을 대신함');continue
+            from seafood_editorial_quality import no_reader_value_flags, important_numeric_evidence, quantified_change, strong_editorial_claim
+            if not strong_editorial_claim(r['headline'],r['structural_insight']):
+                reasons.append('실제 결과 없는 상식·방법론적 결론');continue
+            if sum(len(no_reader_value_flags(x)) for x in [r['thesis'],r['market_change']]+r['mechanism'])>=2:
+                reasons.append('당연한 설명 또는 해석 유보가 본문을 차지함');continue
+            if important_numeric_evidence([evidence_by_id[i] for i in cited]) and not quantified_change(r['market_change']+' '+r['lead']):
+                reasons.append('근거에 있는 변화 수치를 본문에서 생략함');continue
+            from seafood_editorial_quality import empty_business_buzzword_flags
+            # Business decisions are welcome when genuinely supported, never compulsory.
+            # A policy, supply or price event can warrant research without a canned
+            # 'what sales/procurement should do' paragraph.
+            if empty_business_buzzword_flags(' '.join([r['thesis'],r['structural_insight'],r.get('what_changes','')])):
+                reasons.append('부자연스러운 설명 또는 기계적인 결론');continue
+            if '크로네' in public_analysis or 'NOK/kg' in public_analysis or 'NOK ' in public_analysis:
+                reasons.append('본문에 환산되지 않은 노르웨이 통화 가격 사용');continue
             if not set(r['article_ids']).issubset(allowed_a) or not set(r['feature_ids']).issubset(allowed_f):
                 reasons.append('존재하지 않는 출처 ID');continue
             # Normalize labels; metadata differences must never reject a sound report.
@@ -849,11 +617,8 @@ def _validate_main(payload,ctx,diagnostics=None):
                 ch=aliases.get(ch,ch)
                 if ch in ('코스트코','마트','매장','온라인','B2B','수출') and ch not in clean_channels:
                     clean_channels.append(ch)
-            r=dict(r);r['channels']=clean_channels;r['facts']=facts[:5];r['policy_ids']=[]
-            r['report_type']=report_type;r['status']='공개 자료 기반 '+report_type
-            r['depth']='핵심' if report_type=='심층 시장 분석' else '보조'
+            r=dict(r);r['channels']=clean_channels;r['facts']=facts[:5];r['policy_ids']=[];r['status']='공개 자료 기반 AI 분석 · 관측 사실과 해석 구분'
             r['character_count']=len(prose);r['length_tier']='충실' if len(prose)>=900 else '간결'
-            r['evidence_depth']=audit
             good.append(r);seen.add(r['headline'])
             if len(good)>=3:break
         except (KeyError,TypeError,AttributeError,ValueError):
@@ -869,8 +634,6 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         return [],'리서치 보류: 공개 뉴스와 공식 시계열 근거를 충분히 확보하지 못했습니다.'
     from seafood_story_selection import build_story_clusters
     ctx['story_candidates']=build_story_clusters(ctx['articles'],ctx['official_series'],previous_headlines)
-    ctx['depth_validation']=True
-    print('SEAFOOD DEPTH - topic evidence:',[(x['anchor'],x['numeric_records'],x['dimensions_present'],x['dimensions_missing'][:2]) for x in ctx['evidence_depth_profiles'][:4]],flush=True)
     ctx['previous_headlines']=(previous_headlines or [])[:6]
     # Optional: a *continuous, verified, same-specification monthly series*
     # can yield an audited numeric forecast. The current SSB weekly snapshot,
@@ -886,188 +649,90 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
             result['feature_id']=feature['id']
             result['reference']=feature.get('data_links',[])
             ctx['forecast_results'].append(result)
-    ctx['editorial_outline']=make_editorial_outline(ctx,previous_headlines) if os.getenv('SEAFOOD_EDITORIAL_PLAN','1')!='0' else []
+    ctx['editorial_outline']=make_editorial_outline(ctx,previous_headlines)
     print('SEAFOOD evidence clusters:',[(x['subject'],x['score']) for x in ctx['story_candidates'][:4]],flush=True)
-    # An independently measured, same-market dossier is a valid draft lead
-    # even when the heuristic keyword cluster/outline happens to be empty.
-    from seafood_topic_tracks import coverage_tracks
-    if not ctx['story_candidates'] and not ctx['editorial_outline'] and not any(
-        t['ready'] for t in coverage_tracks(articles,features,focus_topics or ())):
-        return [],'연관된 사건·독립 자료를 갖춘 분석 후보가 부족합니다.'
-    from seafood_topic_tracks import coverage_tracks, track_for_report, records_for_track
-    lanes=coverage_tracks(articles,features,focus_topics or ())
-    # No fixed market slots. Rank the day's measured issues independently.
-    candidates=[lane for lane in lanes if lane['ready']]
-    # v5.18: aim for TWO independently verified new topics, not three drafts.
-    # Keep more ranked candidates as fallback; researching leads is not a
-    # commitment to publish them. All paid composing and repair calls share
-    # the existing capped budget.
-    target=max(1,min(3,int(os.getenv('SEAFOOD_REPORT_TARGET','2'))))
-    budget=max(1,min(8,int(os.getenv('SEAFOOD_DRAFT_CALL_LIMIT','6'))))
-    candidates=candidates[:6]
-    assignments=[]
-    for lane in candidates:
-        anchor=lane['anchor']
-        local_articles,local_features=records_for_track(anchor,articles,features,
-            {'theme':lane['label'],'article_ids':lane['headline_ids'],
-             'feature_ids':lane['feature_ids']})
-        local_ctx=_main_context(local_articles,local_features,now,issues,focus_topics)
-        local_ctx['articles']=[row for row in local_ctx['articles'] if row['id'] in
-                               {a['id'] for a in local_articles}]
-        local_ctx['official_series']=[row for row in local_ctx['official_series'] if row['id'] in
-                                      {f['id'] for f in local_features}]
-        local_ctx.update({'depth_validation':True,'forecast_results':ctx['forecast_results'],
-            'story_candidates':[x for x in ctx['story_candidates'] if
-                 anchor in (str(x.get('subject',''))+str(x.get('theme',''))).lower()][:3],
-            'editorial_outline':[x for x in ctx['editorial_outline'] if
-                 anchor in str(x.get('subject','')).lower()][:2],
-            'target_market':lane['label'],
-            'target_evidence_coverage':{'numeric_records':lane['numeric_records'],
-                'sources':lane['sources'],'dimensions':lane['dimensions']}})
-        numeric_ids={x.get('id') for x in lane.get('observations',[]) if x.get('quantities')}
-        local_ctx['draft_source_brief']=[{'id':row.get('id'),
-            'source':row.get('source'),'title':row.get('title') or row.get('name'),
-            'period':row.get('published') or row.get('period_end'),
-            'observed':str(row.get('snippet') or row.get('observed') or '')[:420]}
-            for row in (local_ctx['articles']+local_ctx['official_series'])
-            if row.get('id') in numeric_ids][:10]
-        assignments.append((lane,local_ctx))
-    if not assignments:
-        # Fallback for an independently supported market whose heuristic
-        # track cannot be categorized into one of the predefined anchors.
-        assignments=[({'anchor':None,'label':'전체 우선순위 시장',
-                       'numeric_records':0,'sources':0},ctx)]
-    print('SEAFOOD DRAFT VALIDATOR: v5.24 structural_insight=optional numeric_guard=on',flush=True)
-    print(f'SEAFOOD DRAFT TARGET: {target} validated topics; '
-          f'candidate_backups={len(assignments)}; paid_call_limit={budget}',flush=True)
-    calls=0;good=[];outcomes=[];published=set();seen_titles=set()
-
-    def attempt(lane,local_ctx,guidance,number,repair=False):
-        nonlocal calls
-        anchor=lane['anchor']
-        calls+=1  # Count attempted requests even if HTTP or JSON fails.
+    if not ctx['story_candidates'] and len(ctx['articles'])<4:
+        return [],'서로 다른 기사와 분석 근거가 부족합니다.'
+    # Clusters suggest what to study, but they are not a hard whitelist.
+    # Two unrelated major events can coexist inside one broad subject, or
+    # a verified event may be missed by the narrow keyword taxonomy.
+    if not ctx['story_candidates']:
+        print('SEAFOOD research: investigating unclustered recent news; the evidence validator still applies',flush=True)
+    note='';last_reason='근거 부족'
+    accepted=[]
+    # Important: previously one accepted result stopped the entire analysis.
+    # Continue drafting a *different documented event* to target two full
+    # research articles, rather than padding the first article with statistics.
+    for attempt in range(4):
         try:
-            response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,
-                           'seafood_deep_research_v1',guidance)
-            issues=[]
-            accepted,reasons=_validate_main(response,local_ctx,issues)
-            accepted=[r for r in accepted if not anchor or
-                      anchor.startswith('topic:') or track_for_report(r)==anchor]
-            accepted=[r for r in accepted if
-                      re.sub(r'\s+','',r.get('headline','')).lower() not in seen_titles]
-            if issues:
-                # Show a short *public claim* excerpt, not a secret/API URL.
-                # Without it '11월', '4일' gives no indication of which
-                # sentence caused the mismatch.
-                def excerpt(issue):
-                    raw=str(issue.get('claim',''))
-                    raw=re.sub(r'https?://\S+','[URL]',raw)
-                    raw=re.sub(r'(?i)(api[_-]?key|service[_-]?key)\s*[:=]\s*[^\s&,]+',
-                               r'\1=[REDACTED]',raw)
-                    return raw[:85]
-                brief=' | '.join(
-                    f"{x['part']} {x.get('source_ids',[])} "
-                    f"claim={excerpt(x)!r}: {_numeric_feedback(x['mismatches'])}"
-                    for x in issues[:3])[:690]
-                print(f'SEAFOOD NUMERIC {"REPAIR" if repair else "AUDIT"} {anchor}: {brief}',flush=True)
-            if not response.get('reports'):
-                print(f'SEAFOOD DRAFT EMPTY {anchor}: model_returned_empty_array; '
-                      f'input_articles={len(local_ctx["articles"])} '
-                      f'official={len(local_ctx["official_series"])} '
-                      f'measured={lane.get("numeric_records",0)} '
-                      f'original_sources={lane.get("sources",0)}',flush=True)
+            # Rebuild the evidence pool after the first accepted article.
+            # A reminder in a prompt is not enough: if the first article's
+            # evidence remains in the input, the model tends to repeat it.
+            work_ctx=ctx
             if accepted:
-                chosen=accepted[0]
-                chosen['market_anchor']=anchor
-                chosen['market_label']=lane['label']
-                return chosen,'',issues,response.get('reports',[])[:1]
-            reason=' / '.join(dict.fromkeys(reasons))[:180] or (
-                    '중복 제목 또는 다른 소재' if response.get('reports')
-                    else 'AI가 원고를 작성하지 않음 (reports=[])')
-            if issues:
-                reason+=' | 숫자 확인: '+' / '.join(
-                    _numeric_feedback(x['mismatches'],2) for x in issues[:3])[:270]
-            return None,reason,issues,response.get('reports',[])[:1]
-        except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-            return None,'API·JSON 오류 '+type(exc).__name__,[],[]
-
-    for index,(lane,local_ctx) in enumerate(assignments):
-        if len(good)>=target or calls>=budget:
-            break
-        anchor=lane['anchor']
-        if anchor in published:
-            continue
-        if not local_ctx['articles'] and not local_ctx['official_series']:
-            outcomes.append(f'{anchor}: 관련 원출처 부족')
-            continue
-        guidance=(f"오늘 선정된 '{lane['label']}'의 시장 변화 한 가지를 분석한 기사 1편을 작성하라. "
-           '제공된 출처 ID와 관측치만 사용하고 다른 시장 이야기로 대체하지 마라. '
-           '심층 분석에 필요한 다원 근거가 부족하다면 검증된 공식 발표의 주요 산업 이슈 또는 데이터 브리핑으로 작성하라. '
-           '없는 가격·소비지표를 만들어 넣지 말고, 일부 분석 축이 비었다고 관련 사실을 버리지 말라. '
-           '숫자가 있으면 관련 사건에 직접 연결되는 절대 규모·증감률·비교 기간부터 선택하라. 숫자 몇 개를 채우려는 무관한 통계 연결은 금지한다. '
-           '본문의 변화·배경·영향이 각각 새 정보를 제공하도록 쓰고, 같은 수치 문장을 그대로 세 번 반복하지 마라. '
-           '충분한 근거가 실제로 없을 때만 reports=[]로 반환하라.')
-        report,reason,issues,previous=attempt(lane,local_ctx,guidance,index+1)
-        print(f'SEAFOOD DRAFT {index+1} {anchor or "general"}: '
-              f'proposed={len(previous)} accepted={int(report is not None)} '
-              f'reasons={[reason] if reason else []}',flush=True)
-        if report:
-            good.append(report)
-            published.add(anchor)
-            seen_titles.add(re.sub(r'\s+','',report.get('headline','')).lower())
-            outcomes.append(f'{anchor}: 통과 ({report.get("report_type", "분석")})')
-            continue
-
-        outcomes.append(f'{anchor}: 최초 집필 실패: {reason}')
-        # Repair the SAME story now, before paying to draft another candidate.
-        # Reserve enough first attempts for other candidates to reach the 2-
-        # report target if this repair fails. Never exceed the daily cap.
-        remaining_candidates=len(assignments)-index-1
-        reserve=min(target-len(good),remaining_candidates)
-        if budget-calls<=reserve:
-            outcomes.append(f'{anchor}: 재작성 건너뜀 (다음 후보 집필 예산 보존)')
-            continue
-        repair_ctx=dict(local_ctx)
-        repair_ctx['repair_previous_draft']={'reports':previous,'numeric_issues':issues[:4]}
-        note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 결과: {reason}. "
-              'structural_insight는 유효한 추가 산업 판단이 없다면 빈 문자열이어도 된다. '
-              '대신 확인된 market_change, facts, mechanism을 실제 사건과 근거로 충실하게 작성하라. '
-              '출처 조사일은 날짜를 그대로 옮겨 쓰고, 근거에 없는 날짜·금액·가격 차액(예: 60원)은 삭제하라. '
-              '두 가격이 모두 입증되지 않으면 차액을 계산하거나 추정하지 말고 검증된 원가격만 사용하라. '
-              '처음에 reports=[]였다면 원고 미작성이다. '
-              'draft_source_brief의 수치와 출처 ID를 우선 사용해 검증 가능한 기사 한 편을 완성하라. '
-              '중요한 공식 정책 사건이나 유의미한 공식 통계는 원출처 한 곳으로도 짧은 보고서가 가능하다. '
-              '같은 지표·기간·단위에서 소폭 반올림 차이는 검수기가 허용한다. '
-              '근거에서 확인할 수 없는 숫자는 삭제하고 서로 다른 집계 대상은 혼동하지 마라. '
-              '검증할 근거가 정말 없으면 reports=[]를 반환하라. '
-              '원출처 수치: '+json.dumps(evidence_number_inventory(
-                  repair_ctx.get('articles',[])[:8]+repair_ctx.get('official_series',[])[:5],
-                  limit_per_source=9),ensure_ascii=False)[:1700])
-        fixed,repair_reason,_,_=attempt(lane,repair_ctx,note,index+1,repair=True)
-        print(f'SEAFOOD REPAIR {index+1} {anchor or "general"}: '
-              f'accepted={int(fixed is not None)} '
-              f'reason={repair_reason[:200]}',flush=True)
-        if fixed:
-            good.append(fixed)
-            published.add(anchor)
-            seen_titles.add(re.sub(r'\s+','',fixed.get('headline','')).lower())
-            outcomes.append(f'{anchor}: 즉시 재작성 통과')
-        else:
-            outcomes.append(f'{anchor}: 즉시 재작성 탈락: {repair_reason[:150]}')
-    # No extra AI rewriting once two validated topics are secured. This avoids
-    # spending remaining capacity on optional polish rather than the user's
-    # minimum viable daily report. Deterministic prose cleanup still runs.
-    # Editorial fallback changes NO figures or factual claims: it only omits
-    # two extremely specific detached methodology footnotes. Substantive
-    # source restrictions remain recorded separately in limitations.
-    good=[drop_detached_caveats(r) for r in good]
-    print('SEAFOOD DRAFT - calls:',calls,'/',budget,'target:',target,
-          'achieved:',len(good),'per-track:',outcomes,flush=True)
-    if good:
-        kinds={k:sum(r.get('report_type')==k for r in good) for k in ('심층 시장 분석','주요 산업 이슈','데이터 브리핑')}
-        print('SEAFOOD EDITORIAL - published types:',kinds,flush=True)
-        return good[:target],f'새 시장 분석 {len(good)}편 · 공개 근거 검증 완료'
-    return [],'새 시장 분석 0편 · '+('; '.join(outcomes)[:230] or '자료와 수치 부족')
+                excluded_articles={x for r in accepted for x in r.get('article_ids',[])}
+                excluded_series={x for r in accepted for x in r.get('feature_ids',[])}
+                remaining=[row for row in ctx['articles'] if row['id'] not in excluded_articles]
+                remaining_series=[row for row in ctx['official_series'] if row['id'] not in excluded_series]
+                # Do not discard a usable data-backed subject simply because
+                # it has only one RSS source and two independent official series.
+                if len(remaining)+len(remaining_series)>=2:
+                    work_ctx=dict(ctx)
+                    work_ctx['articles']=remaining
+                    work_ctx['official_series']=remaining_series
+                    from seafood_story_selection import build_story_clusters
+                    work_ctx['story_candidates']=build_story_clusters(remaining,remaining_series,[])
+                    remaining_ids={row['id'] for row in remaining+remaining_series}
+                    work_ctx['editorial_outline']=[p for p in ctx.get('editorial_outline',[])
+                       if len(set(p.get('evidence_ids',[]))&remaining_ids)>=2]
+                    work_ctx['topic_candidates']=[t for t in ctx.get('topic_candidates',[])
+                       if not t.get('article_ids') or len(set(t['article_ids'])&remaining_ids)>=2]
+                    work_ctx['previous_headlines']=list(ctx.get('previous_headlines',[]))+[r['headline'] for r in accepted]
+                    print('SEAFOOD second-report evidence: %d remaining articles, %d series' %
+                          (len(remaining),len(remaining_series)),flush=True)
+            output=_call(MAIN_PROMPT,work_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
+            good,reasons=_validate_main(output,work_ctx)
+            cited_already={x for r in accepted for x in r.get('article_ids',[])}
+            kept=[]
+            for report in good:
+                new_ids=set(report.get('article_ids',[]))-cited_already
+                # Allow a different report about the same product/category,
+                # but never publish one source event twice under new headings.
+                if not new_ids or any(report['headline']==r['headline'] for r in accepted+kept):
+                    continue
+                if accepted and any(len(set(report.get('article_ids',[])) & set(r.get('article_ids',[]))) >=
+                                    len(set(report.get('article_ids',[]))) for r in accepted+kept):
+                    continue
+                kept.append(report)
+                cited_already.update(report.get('article_ids',[]))
+            accepted.extend(kept)
+            if len(accepted)>=2:
+                return accepted[:3],f'AI 리서치 {len(accepted[:3])}편 · 서로 다른 공개 뉴스와 수치 검증 통과'
+            last_reason=' / '.join(dict.fromkeys(reasons))[:200] or '두 번째 독립 소재·근거 부족'
+            remaining_articles={a['id'] for a in ctx['articles']}-cited_already
+            remaining_series={f['id'] for f in ctx['official_series']}-{x for r in accepted for x in r.get('feature_ids',[])}
+            if len(remaining_articles)+len(remaining_series)<2:
+                break
+            already_titles=[x['headline'] for x in accepted]
+            already_ids=[id for r in accepted for id in r.get('article_ids',[])]
+            note=('현재 승인된 원고는 '+json.dumps(already_titles,ensure_ascii=False)+
+                  '. 이미 사용한 기사 ID '+json.dumps(already_ids,ensure_ascii=False)+
+                  '를 핵심 근거로 되풀이하지 마라. *다른 실제 사건*을 중심으로 '
+                  '가능하면 남은 주제 1~2편을 작성하라. 원문의 수치, 날짜, 대상, '
+                  '시장의 영향과 전망을 독립 출처로 입증하라. 사실이 부족하면 reports=[]. '
+                  '검수 사유: '+last_reason)
+        except requests.HTTPError as e:
+            return accepted,('AI 요청 실패 HTTP '+str(e.response.status_code if e.response is not None else 'unknown')+
+                              ' · 이전에 검증한 분석 '+str(len(accepted))+'편 보존')
+        except requests.RequestException as e:
+            return accepted,f'AI 요청 실패: {type(e).__name__} · 이전에 검증한 분석 {len(accepted)}편 보존'
+        except (ValueError,KeyError,TypeError) as e:
+            last_reason=type(e).__name__
+            note='JSON 출력 구조를 바로잡고 이전 자료에 없는 숫자를 추가하지 말 것. '+note[:400]
+    if accepted:
+        return accepted, f'근거를 확보한 심층 분석 {len(accepted)}편 · 추가 소재 근거 미달 ({last_reason[:80]})'
+    print('SEAFOOD analysis validation: '+last_reason)
+    return [],'새로운 종합 분석을 작성하지 못했습니다. '+last_reason[:80]
 
 
 def _data_context(features,articles,main_reports,now):
@@ -1077,7 +742,7 @@ def _data_context(features,articles,main_reports,now):
     # A genuine commodity dataset must have a relevant second source/observation.
     eligible=[]
     for f in features:
-        if f.get('role') in ('context','historical_context') or f.get('id','').startswith('fx_'):
+        if f.get('role')=='context' or f.get('id','').startswith('fx_'):
             continue
         linked=[a for a in articles if a.get('id') in set(f.get('article_ids',[]))]
         nontrivial=[a for a in linked if len(a.get('summary',''))>=55 and
@@ -1086,9 +751,7 @@ def _data_context(features,articles,main_reports,now):
         if f.get('related_observations') or independent:
             eligible.append(f)
     eligible=sorted(eligible,key=lambda f:f.get('significance',0),reverse=True)
-    return {'now_kst':now.isoformat(),'evidence_depth_profiles':evidence_profiles(
-             [{'theme':f.get('name','')} for f in eligible],articles,features,maximum=5),
-            'features':[{'id':f['id'],'name':f['name'],'title':f['title'],
+    return {'now_kst':now.isoformat(),'features':[{'id':f['id'],'name':f['name'],'title':f['title'],
                   'period_start':f['period_start'],'period_end':f['period_end'],
                   'observed':f['observed'],'facts':f['facts'], 'limitations':f['limitations'], 'related_observations':f.get('related_observations',[]),
                   'article_ids':f.get('article_ids',[])} for f in eligible[:10]],
@@ -1106,10 +769,11 @@ def _validate_data(payload,context):
             if fid not in f_map or fid in used:
                 reasons.append('01번과 중복 또는 유효하지 않은 지표');continue
             fields=('headline','conclusion','market_observation','structural_insight','alternative','limits')
-            # Do not force a generic paragraph or invented caveat just to hit
-            # arbitrary length. A short factually dense data brief is valid.
-            lengths={'headline':12,'conclusion':25,'market_observation':25,'structural_insight':20,
-                     'alternative':0,'limits':0}
+            from seafood_editorial_quality import strong_editorial_claim
+            if not strong_editorial_claim(r.get('headline',''),r.get('structural_insight','')):
+                reasons.append('상식적 주의사항을 시장 결론으로 제출');continue
+            lengths={'headline':12,'conclusion':42,'market_observation':40,'structural_insight':50,
+                     'alternative':25,'limits':20}
             if any(not isinstance(r.get(k),str) or len(r[k].strip())<lengths[k] for k in fields):
                 reasons.append('완결된 설명 부족');continue
             outlook=r.get('outlook')
@@ -1117,7 +781,7 @@ def _validate_data(payload,context):
                 if not isinstance(outlook,dict) or outlook.get('direction') not in (
                         '상승','하락','횡보','확대','축소','제한적 회복','혼조','전망 제외'):
                     reasons.append('전망 판단이 불분명함');continue
-                if outlook['direction']!='전망 제외' and any(len(str(outlook.get(k,'')))<n for k,n in (
+                if any(len(str(outlook.get(k,'')))<n for k,n in (
                     ('horizon',3),('judgment',30),('basis',35),('revision_trigger',15))):
                     reasons.append('방향·근거·예상 시점 부족');continue
             else:
@@ -1125,9 +789,8 @@ def _validate_data(payload,context):
                 if any(len(str(r.get(k,'')))<25 for k in old_fields):
                     reasons.append('기존 전망 항목 누락');continue
                 fields+=old_fields
-            if not isinstance(r['transmission'],list) or any(
-                not isinstance(x,str) or (x.strip() and len(x.strip())<15) for x in r['transmission']):
-                reasons.append('자료에 근거한 영향 설명 부족');continue
+            if not isinstance(r['transmission'],list) or len(r['transmission'])<2 or any(len(x.strip())<40 for x in r['transmission']):
+                reasons.append('전파 경로 두 문단 미충족');continue
             # Evidence can come from the official series AND a separately cited
             # related public article; previously all article numbers were rejected.
             relevant_articles=[a for a in context['articles'] if a['id'] in r['article_ids']]
@@ -1173,3 +836,114 @@ def analyze_data(features,articles,main_reports,now):
         except (ValueError,KeyError,TypeError) as e:
             last=type(e).__name__;note='JSON 형식 오류 수정. 유효한 지표만 선택.'
     return [],'데이터 해설 보류: '+last
+
+
+# v5.27: news-led briefs are separate from the deep statistical research lane.
+NEWS_BRIEF_SCHEMA=obj({'briefs':{'type':'array','items':obj({
+    'issue_id':{'type':'string'},
+    'headline':{'type':'string'},
+    'observed_change':{'type':'string'},
+    'interpretation':{'type':'string'},
+    'conclusion':{'type':'string'},
+    'next_check':{'type':'string'},
+    'evidence_ids':{'type':'array','items':{'type':'string'}},
+    'confidence':{'type':'string','enum':['보도 기반 해석','복수 근거로 교차 확인']},
+})}})
+
+NEWS_BRIEF_PROMPT='''너는 한국 경제신문의 식품·수산업 담당 기자다. 독자는 산업 현장에서 일하는 한국인이다.
+뉴스를 열심히 조사했다는 설명이 아니라, 중요한 사건에 대한 **완성된 판단**을 제공하라.
+
+[먼저 이슈를 고른다]
+- 모든 뉴스를 의무적으로 분석하지 않는다. 중요도는 변화율 숫자의 크기가 아니라 시장에 미친 실제 영향, 영향을 받는 업체·소비자 범위, 공급·판매·규제의 실질적 변화를 기준으로 정한다.
+- 지역의 어획 통계 한 건이 전국 산업을 뒤흔드는 사건보다 중요하다는 근거가 없다면 후자를 우선한다.
+- 작은 통계 발표나 낱개 수출단가는 기사 아카이브에 남기고, 독립적인 추가 근거가 없으면 심층 분석으로 부풀리지 않는다.
+- 하나의 사건을 다룬 기사끼리만 연결한다. 단순히 같은 품종이나 유통 분야라고 연결하지 않는다.
+- 출처에 기사 제목과 RSS 요약만 있다면 그 범위에서 판단한다. 전문을 읽었다고 가장하지 않는다.
+
+[기사 문장]
+- headline: 단순 발표 제목을 복사하지 말고 **어떤 일이 일어났고 어떤 변화가 생겼는지** 자연스러운 한국어 제목으로 적는다. 내용이 확인된 범위를 벗어나면 안 된다.
+- observed_change: 누가, 언제, 무엇을 바꿨는지. 숫자나 조건은 원문에 있는 것만 쓴다.
+- interpretation: 그 결과 실제 거래·공급·소비·유통의 어느 부분이 바뀌는지를 설명한다. 인과가 증명되지 않은 경우 새로운 원인을 지어내지 않는다.
+- conclusion: 핵심 판단을 **하나의 분명한 문장**으로 적는다. 독자가 이것만 읽어도 시장의 변화를 이해해야 한다.
+- next_check: 실질적인 후속 사건이 확정된 경우에만 쓰고, 없으면 빈 문자열로 둔다.
+- 한 문단에 새로운 사실이나 판단이 없으면 문단을 없앤다. 같은 말을 바꿔 두 번 설명하지 않는다.
+- 한국어 모국어 화자가 읽는 경제 기사처럼 쓴다. '-에 대한','-의 측면에서','-이 작용할 전망','수요가 뒷받침되며 물량을 흡수' 등의 번역투를 피한다.
+- 부실한 해석의 예: '어획량 회복과 수출량 증가는 오징어 가격 상승을 뜻하지 않는다', '원양 생산과 연근해 생산은 다르다', '환율 때문에 통화별 가격 흐름은 다르다'. 누구에게 어떤 일이 발생했는지 말하지 못하는 기사는 요약만 남긴다.
+- 자료에 물량, 금액, 증감률이 있으면 단위와 기준기간을 붙여 구체적으로 적고 '늘었다/줄었다'만 반복하지 않는다.
+- 숫자 없이도 중요한 시행·규제·공급 차질은 사건 자체의 직접적인 결과를 적는다.
+- 금지: '확인해야 한다', '살펴볼 필요가 있다', '단정하기 어렵다', '지표만으로 판단하면 안 된다', '시사한다', '핵심 변수가 된다', '구조적 통찰', '추가 자료 확인', '전망이 강화된다'. 자료 조사 방식과 면책성 문장을 본문에 쓰지 않는다.
+- 제품 형태(필렛, 슬라이스, 초밥용 네타 등), 업체 영업전략, 국내 가공업체 영향은 이번 사건의 원인·결과와 직접 연결되는 경우에만 쓴다.
+- 불확실성을 억지로 없애서는 안 된다. 입증되지 않은 효과는 제외하고, 중요한 규제 시행 여부처럼 독자의 판단을 좌우하는 불확실성만 구체적으로 밝힌다.
+
+[검증]
+- 허위 숫자·인용·출처·가격 전망을 만들지 않는다. 실제 주어진 자료가 설명하지 않는 결론은 쓰지 않는다.
+- evidence_ids는 실제 입력의 ID만 사용하고, 최소 한 개 기사 ID를 포함한다.
+- source_status가 보도 1건이면 confidence='보도 기반 해석'으로 둔다.
+- 분석 가치가 없거나 사실을 넘어 해석해야만 그럴듯해지는 사건은 briefs에서 제외한다.
+- 결과는 제공된 JSON 스키마 그대로 작성한다.
+
+[산업 기사로서 읽을 가치]
+- 구매·영업·유통 현장에 실제로 영향을 미치는 변화라면 그 영향까지 설명한다. 다만 모든 사건을 구매·영업의 행동지침으로 끝내지 않는다.
+- 독자의 판단을 바꿀 만한 새로운 사실 또는 예측을 우선한다. 단순 통계 증감, 환율 상식, 어종 분류, 형식적 방법론 안내는 시장 결론이 아니다.
+- 해외 시세는 확인 가능한 USD/kg와 기준기간·변화폭을 우선 제시한다. 검증되지 않은 USD 환산값을 만들어내거나 환율 환산의 일반론을 본문에 붙이지 않는다.
+- 다른 기사·공식 발표·업종 실적에서 연결 근거가 있다면 실제 작용 경로와 파급효과를 구체적으로 밝히고 가장 개연성 높은 전망을 선택한다.
+- 한국 산업·경제 전문지에서 자연스럽게 읽히는 제목과 문장을 사용한다. 지표는 주장을 뒷받침하는 증거이지 그 자체가 통찰이 아니다.
+- 구체적인 사실이 뒷받침되지 않는 단어('경쟁점', '소비 이전', '구조적 의미', '관측 사실을 종합하면')로 글을 포장하지 않는다.
+'''
+
+def analyze_news_digest(issues, articles, features, now):
+    """Optional evidence-checked interpretation. No API key => never fake a conclusion."""
+    if not issues or not os.getenv('OPENAI_API_KEY','').strip() or os.getenv('SEAFOOD_NEWS_BRIEF','1')=='0':
+        return {},'뉴스 이슈 원문 정리만 표시 · AI 해석 없음'
+    article_by_id={a['id']:a for a in articles if a.get('id')}
+    feature_by_id={f['id']:f for f in features if f.get('id')}
+    context=[];allowed_by_issue={}
+    for issue in issues[:6]:
+        article_ids=[x for x in issue.get('article_ids',[]) if x in article_by_id]
+        feature_ids=[x for x in issue.get('feature_ids',[]) if x in feature_by_id]
+        if not article_ids:continue
+        allowed_by_issue[issue['id']]=set(article_ids+feature_ids)
+        context.append({'issue_id':issue['id'],'headline':issue['headline'],
+            'subject':issue['subject'],'source_status':issue['status'],
+            'articles':[{'id':x,'title':article_by_id[x]['title'],
+                'summary':article_by_id[x].get('summary',''),
+                'source':article_by_id[x].get('source',''),
+                'published':article_by_id[x].get('published','')}
+                for x in article_ids],
+            'related_official_series':[{'id':x,'observed':feature_by_id[x].get('observed',''),
+                'period_end':feature_by_id[x].get('period_end',''),
+                'name':feature_by_id[x].get('name','')} for x in feature_ids]})
+    if not context:return {},'해석 가능한 최신 뉴스 없음'
+    try:
+        payload=_call(NEWS_BRIEF_PROMPT,{'date':now.date().isoformat(),'news_issues':context},
+                      NEWS_BRIEF_SCHEMA,'seafood_news_digest_v1')
+    except (requests.RequestException,ValueError,TypeError,KeyError) as exc:
+        return {},f'뉴스 해석 생성 미완료: {type(exc).__name__}'
+    accepted={}
+    for item in payload.get('briefs',[]):
+        iid=item.get('issue_id')
+        if iid not in allowed_by_issue or iid in accepted:continue
+        refs=item.get('evidence_ids')
+        if not isinstance(refs,list) or not refs or not set(refs).issubset(allowed_by_issue[iid]):continue
+        permitted_sources=[article_by_id.get(x) or feature_by_id.get(x) for x in refs]
+        if not any(x in article_by_id for x in refs):continue
+        evidence=json.dumps(permitted_sources,ensure_ascii=False)
+        required=('observed_change','interpretation','conclusion')
+        if any(not isinstance(item.get(k),str) or len(item[k].strip())<22 for k in required):continue
+        next_check=item.get('next_check','')
+        if not isinstance(next_check,str):next_check=''
+        if not _supported(' '.join(item[k] for k in required)+' '+next_check+' '+str(item.get('headline','')),evidence):continue
+        from seafood_editorial_quality import substantive_news_analysis
+        if not substantive_news_analysis(item):continue
+        from seafood_editorial_quality import important_numeric_evidence, quantified_change
+        if important_numeric_evidence(permitted_sources) and not quantified_change(item['observed_change']):continue
+        # Avoid a response that looks precise while being merely a set of disclaimers.
+        if all(any(w in item[k] for w in ('확인 필요','판단할 수 없','추가 자료','지켜봐야')) for k in ('interpretation','conclusion')):continue
+        claimed='복수 근거로 교차 확인' if item.get('confidence')=='복수 근거로 교차 확인' else '보도 기반 해석'
+        origins={_public_source_family(article_by_id[x]) for x in refs if x in article_by_id}
+        if len(origins)<2:claimed='보도 기반 해석'
+        accepted[iid]={k:item[k].strip() for k in required}
+        accepted[iid]['headline']=str(item.get('headline','')).strip() or next(x['headline'] for x in issues if x['id']==iid)
+        accepted[iid]['next_check']=next_check.strip()
+        accepted[iid].update(evidence_ids=refs,confidence=claimed)
+    return accepted,f'뉴스 이슈 해석 {len(accepted)}/{len(context)}편 검증 통과'
