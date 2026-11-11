@@ -1,6 +1,260 @@
 {
-  "updated_at": "2026-11-12T03:04+09:00",
+  "updated_at": "2026-11-12T03:42+09:00",
   "reports": [
+    {
+      "id": "report-41e4ec80a85ab08bd078",
+      "published_at": "2026-11-12T03:42+09:00",
+      "headline": "홈플러스 주거래 중소기업 72% 피해…경쟁마트 성장에도 납품망 회복 지연 전망",
+      "kind": "대형마트/SSM",
+      "report": {
+        "depth": "핵심",
+        "kind": "대형마트/SSM",
+        "time_frame": "2026년 3분기 실적 및 11월 4~11일 공개 보도",
+        "headline": "홈플러스 주거래 중소기업 72% 피해…경쟁마트 성장에도 납품망 회복 지연 전망",
+        "thesis": "이마트·롯데마트의 실적 개선과 달리 홈플러스 의존 납품업체의 판매·대금회수 여건은 단기간에 정상화되기 어려워 보인다. 점포 축소에 따른 업체 피해가 조사로 드러난 데 이어 11월에도 홈플러스의 임금 지급과 점포 관리 차질이 보도됐다.",
+        "lead": "11월 11일 보도된 이마트·롯데마트의 3분기 실적은 매출과 영업이익이 모두 증가했다. 보도는 홈플러스 영업 위축에 따른 반사이익과 추석 특수를 성장 요인으로 꼽았다. 그러나 홈플러스 주거래 업체에 대해서는 판매 창구 축소의 피해를 보여주는 별도 조사 결과가 나왔다.",
+        "facts": [
+          {
+            "text": "중소기업중앙회가 2026년 11월 4일 발표한 조사를 인용한 헤럴드경제 보도에 따르면, 홈플러스를 주거래 대형마트로 둔 중소기업 100개사 가운데 72개사(72.0%)가 매장 축소·폐점 등 운영 변화로 피해를 경험했다고 응답했다.",
+            "refs": [
+              "web-99225bd48571"
+            ]
+          },
+          {
+            "text": "11월 10일 머니투데이 보도에 따르면 홈플러스는 8월분 급여의 50%를 미지급한 상태였다. 앞서 영업을 종료한 일부 점포는 전기요금 체납으로 단전 예고를 받았다.",
+            "refs": [
+              "web-9b0af2158568"
+            ]
+          },
+          {
+            "text": "11월 11일 데일리한국 기사 소개문은 이마트·롯데마트의 2026년 3분기 매출과 영업이익이 증가했다고 전했다. 홈플러스 영업 위축에 따른 장보기 수요 흡수와 추석 특수가 함께 언급됐다.",
+            "refs": [
+              "2bd35227051dc066"
+            ]
+          }
+        ],
+        "market_change": "경쟁마트의 실적이 개선된 3분기를 지나 11월에도 홈플러스 거래망에서는 업체 피해와 지급 차질이 드러났다. 오프라인 장보기 수요를 흡수하는 유통사와 기존 판매 창구를 잃는 납품업체 사이에 회복 속도의 차이가 나타나고 있다.",
+        "mechanism": [
+          "홈플러스의 점포 축소·폐점은 주거래 업체가 상품을 판매할 접점을 줄인다. 반면 경쟁마트가 얻는 매출은 해당 유통사의 기존 상품 구성과 거래망을 통해 발생한다. 기존 홈플러스 납품업체가 경쟁사의 발주를 새로 확보하지 못한다면, 소비자의 구매처 이동만으로 줄어든 판매 물량이 복원되지는 않는다. 여기에 임금 미지급까지 이어진 상황은 홈플러스 자체의 지급 여력과 운영 정상화에 부담으로 작용한다."
+        ],
+        "structural_insight": "홈플러스 의존 업체에는 대형마트 수요 회복보다 거래선 전환이 더 시급한 과제가 됐다. 경쟁마트의 성장 국면에서도 기존 납품업체가 회복하려면 새로운 납품 계약을 확보하거나 홈플러스의 판매망이 정상화돼야 한다. 현재 공개된 근거에서는 어느 쪽도 업체 피해를 빠르게 해소할 만큼 진전됐다고 보기 어렵다.",
+        "what_changes": "",
+        "one_sentence": "대형마트의 장보기 수요가 경쟁사로 이동하는 동안 홈플러스 의존 납품업체에는 판매 공백과 회수 위험이 남을 가능성이 높다.",
+        "limitations": "기사 전문이 아닌 공개 소개문에 근거했다. 피해 조사는 수산물 업체를 별도로 구분하지 않았으며, 경쟁사로의 신규 납품 규모도 제시되지 않았다.",
+        "article_ids": [
+          "web-99225bd48571",
+          "web-9b0af2158568",
+          "2bd35227051dc066"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "마트"
+        ],
+        "impact": "",
+        "followup": "",
+        "outlook": {
+          "direction": "제한적 회복",
+          "horizon": "2026년 4분기 말까지",
+          "judgment": "홈플러스를 주거래처로 둔 납품업체의 판매·대금회수 여건은 연말까지 회복이 제한될 가능성이 높다.",
+          "basis": "주거래 중소기업 조사에서 점포 운영 변화에 따른 피해가 폭넓게 나타났고, 조사 발표 이후에도 급여 미지급과 영업 종료 점포의 관리 차질이 보도됐다. 경쟁마트의 실적 개선이 기존 홈플러스 납품업체의 수주 회복으로 이어졌다는 근거는 제시되지 않았다.",
+          "revision_trigger": "동일 조사대상을 추적한 후속 조사에서 점포 운영 변화에 따른 피해 응답률이 뚜렷하게 낮아지는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "web-99225bd48571",
+            "web-9b0af2158568",
+            "2bd35227051dc066"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 1233,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-12T03:42+09:00"
+      },
+      "sources": [
+        {
+          "id": "web-99225bd48571",
+          "url": "https://biz.heraldcorp.com/article/10925041?sec=029&utm_source=openai",
+          "source": "biz.heraldcorp.com",
+          "title": "“홈플러스 납품업체 10곳 중 7곳 피해”…매출 감소 63%, 정산 지연까지 - 헤럴드경제",
+          "summary": "10. **[독립 조사·납품업체 영향]** 중소기업중앙회가 **2026년 11월 4일 발표한 조사**를 인용한 보도에서는 홈플러스를 주거래 대형마트로 둔 **중소기업 100개사 중 72개사, 72.0%**가 매장 축소·폐점 등 운영 변화로 피해를 경험했다고 응답했다. 이 수치는 **전체 홈플러스 협력업체의 피해율이나 수산물 업체만의 피해율이 아니다.** ([biz.heraldcorp.com](https://biz.heraldcorp.com/article/10925041?sec=029&utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 15
+        },
+        {
+          "id": "web-9b0af2158568",
+          "url": "https://www.mt.co.kr/amp/living/2026/11/10/2026111015193553176?utm_source=openai",
+          "source": "mt.co.kr",
+          "title": "월급 밀리고, 전기 끊긴다...\"정부 나서달라\" 홈플러스 노조 요청 - 머니투데이",
+          "summary": "9. **[최근 사건 보도·공급망]** 머니투데이의 **2026년 11월 10일 보도**에 따르면 홈플러스는 **8월분 급여의 50%를 미지급**한 상태였고, 앞서 영업을 종료한 일부 점포는 전기요금 체납으로 단전 예고를 받았다. 이는 **임금·점포 운영 차질에 관한 보도**이지, 수산물 납품 중단량을 집계한 자료는 아니다. ([mt.co.kr](https://www.mt.co.kr/amp/living/2026/11/10/2026111015193553176?utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 7
+        },
+        {
+          "id": "2bd35227051dc066",
+          "title": "홈플러스 위기에 반사이익…이마트·롯데마트 3분기 실적 '쑥'",
+          "url": "https://www.msn.com/ko-kr/news/other/홈플러스-위기에-반사이익-이마트-롯데마트-3분기-실적-쑥/ar-AA2hbQzU",
+          "source": "Bing 뉴스 검색·대형마트/SSM·홈플러스 이마트 유통",
+          "published": "2026-11-11T16:11+09:00",
+          "timestamp": 1794381060,
+          "category": "대형마트/SSM",
+          "tags": [
+            "대형마트/SSM"
+          ],
+          "score": 22.6,
+          "summary": "롯데마트(왼쪽부터), 홈플러스, 이마트 전경. 사진=연합뉴스[데일리한국 김보라 기자] 이마트와 롯데마트가 오프라인 장보기 수요를 흡수하며 3분기 실적을 끌어올렸다. 홈플러스의 영업 위축에 따른 반사이익과 추석 특수까지 더해지면서 양사 모두 매출과 영업이익이 큰 폭으로 증가했다.11일 금융감독원 전자공시시스템에 따르면 이마트는 올해 3분기 별도 기준 총매출 ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+          "official": false,
+          "channels": [
+            "마트"
+          ],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "점포 수·동일점 매출·PB 상품 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-9d04eaec2e25e4cab957",
+      "published_at": "2026-11-12T03:42+09:00",
+      "headline": "식약처 수산물 720건 검사·경기도 음식점 24곳 적발…겨울 판매현장 관리 강화",
+      "kind": "식품안전/소비심리",
+      "report": {
+        "depth": "보조",
+        "kind": "식품안전/소비심리",
+        "time_frame": "2026년 11월 10~11일 보도 기준",
+        "headline": "식약처 수산물 720건 검사·경기도 음식점 24곳 적발…겨울 판매현장 관리 강화",
+        "thesis": "겨울 수산물 안전관리가 제품 수거 검사와 음식점 단속에서 동시에 진행되고 있다. 제철 수산물을 취급하는 음식점에도 성수기 점검 대응 부담이 커질 전망이다.",
+        "lead": "간호사신문은 2026년 11월 10일 식약처가 겨울철 수산물 식중독 예방을 위해 굴·과메기 등 720건을 검사한다고 보도했다.",
+        "facts": [
+          {
+            "text": "간호사신문은 2026년 11월 10일 식약처가 겨울철 수산물 식중독 예방을 위해 굴·과메기 등 720건을 검사한다고 보도했다.",
+            "refs": [
+              "d007b7db2b77115f"
+            ]
+          },
+          {
+            "text": "세이프타임즈는 2026년 11월 11일 경기도가 제철 수산물을 판매하는 음식점 24곳을 적발했다고 보도했다.",
+            "refs": [
+              "106c0fe3449233b9"
+            ]
+          }
+        ],
+        "market_change": "간호사신문은 2026년 11월 10일 식약처가 겨울철 수산물 식중독 예방을 위해 굴·과메기 등 720건을 검사한다고 보도했다. 세이프타임즈는 2026년 11월 11일 경기도가 제철 수산물을 판매하는 음식점 24곳을 적발했다고 보도했다.",
+        "mechanism": [
+          "제품 검사와 음식점 단속이 겹치면 안전관리 대응은 납품 수산물의 적합성 관리에서 끝나지 않는다. 최종 판매 업소의 운영도 별도의 점검 대상이 되면서, 제철 메뉴를 판매하는 음식점이 관리 강화의 직접적인 영향을 받는다."
+        ],
+        "structural_insight": "굴·과메기 등 제철 수산물의 검사 집행과 음식점 현장 관리가 맞물리면서 취급 업소의 점검 대응 부담은 확대될 전망이다.",
+        "what_changes": "",
+        "one_sentence": "겨울 수산물 점검이 제품과 음식점 현장에 함께 걸리면서 최종 판매 업소의 대응 부담이 커지고 있다.",
+        "limitations": "제공된 공개 RSS 제목·소개문에는 경기도의 적발 사유와 후속 처분, 식약처의 세부 검사 일정이 제시돼 있지 않다.",
+        "article_ids": [
+          "d007b7db2b77115f",
+          "106c0fe3449233b9"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "매장"
+        ],
+        "impact": "",
+        "followup": "",
+        "outlook": {
+          "direction": "확대",
+          "horizon": "2026년 겨울철",
+          "judgment": "굴·과메기 등 제철 수산물의 검사 집행과 음식점 현장 관리가 맞물리면서 취급 업소의 점검 대응 부담은 확대될 전망이다.",
+          "basis": "식약처의 겨울철 수산물 720건 검사와 경기도의 판매 음식점 24곳 적발이 각각 보도돼, 제품과 최종 판매 현장 양쪽에서 안전관리 집행이 진행되고 있다.",
+          "revision_trigger": "식약처의 720건 검사 계획 집행 규모 축소.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "d007b7db2b77115f",
+            "106c0fe3449233b9"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 825,
+        "length_tier": "간결",
+        "archived_source": false,
+        "published_at": "2026-11-12T03:42+09:00"
+      },
+      "sources": [
+        {
+          "id": "d007b7db2b77115f",
+          "title": "겨울철 수산물 식중독 예방…식약처, 굴·과메기 등 720건 검사",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0xanFNMVc2SWJKR28tamVtU2RNZlF1eVUzVVJhQTJ5TUxVQWh2ckMwZlNtR0hIcWxpR2NiNWJfTmRMS2xTU0FWZ0htQTI3VFhuQndVeGpmNEpGU0Nyd21Bby02MFJod3pGcEFWTV9n?oc=5",
+          "source": "간호사신문",
+          "published": "2026-11-10T09:27+09:00",
+          "timestamp": 1794270443,
+          "category": "식품안전/소비심리",
+          "tags": [
+            "식품안전/소비심리",
+            "원물 수급/시세",
+            "시즌/트렌드"
+          ],
+          "score": 16.9,
+          "summary": "겨울철 수산물 식중독 예방…식약처, 굴·과메기 등 720건 검사 간호사신문",
+          "summary_type": "공개 RSS 소개문",
+          "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+          "official": false,
+          "channels": [],
+          "impact": "정책·식품안전 변화",
+          "followup": "공식 검사 결과·기준 시행일·소비조사",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 7
+        },
+        {
+          "id": "106c0fe3449233b9",
+          "title": "경기도, 제철 수산물 판매 음식점 24곳 적발",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Fanp4LWd6SV8teldJanhxNGdod1pNaDJPMjBPRFlYMWFGWFhSN3RVMDFkN1l4V0hzbnY4OFNUT2FPZGtBamoyb212UjYxY2dzLXRzUEQwODIxaTFxZDEtWkFDOFpCRTlvaVdNX3BUMHdlWjDSAXNBVV95cUxPRWp6eC1neklfLXpXSWp4cTRnaHdaTWgyTzIwT0RZWDFhRlhYUjd0VTAxZDdZeFdIc252ODhTVE9hT2RrQWpqMm9tdlI2MWNncy10c1BEMDgyMWkxcWQxLVpBQzhaQkU5b2lXTV9wVDB3ZVow?oc=5",
+          "source": "세이프타임즈",
+          "published": "2026-11-11T13:23+09:00",
+          "timestamp": 1794371003,
+          "category": "시즌/트렌드",
+          "tags": [
+            "시즌/트렌드"
+          ],
+          "score": 13.2,
+          "summary": "경기도, 제철 수산물 판매 음식점 24곳 적발 세이프타임즈",
+          "summary_type": "공개 RSS 소개문",
+          "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+          "official": false,
+          "channels": [],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 11
+        }
+      ],
+      "features": []
+    },
     {
       "id": "report-910fcfa52d698024af79",
       "published_at": "2026-11-11T18:41+09:00",
