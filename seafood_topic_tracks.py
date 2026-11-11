@@ -38,9 +38,13 @@ def records_for_track(anchor,articles,features,topic=None):
         summary=str(row.get('summary') or row.get('observed') or '').lower()
         if anchor in ANCHORS:
             return any(w.lower() in title or w.lower() in summary for w in words)
-        # Unknown themes need multiple distinctive terms, not just 'market'.
-        matching=sum(w in title or w in summary[:280] for w in words)
-        return matching>=min(2,len(words)) if words else False
+        # A combined lead such as "Japan/US exports" must not discard a
+        # Japan-only or US-only original report. Those are candidate evidence,
+        # not proof that the two countries share a causal mechanism.
+        matching=sum(w in title or w in summary[:500] for w in words)
+        theme=str(topic.get('theme') or anchor)
+        required=1 if len(words)<=2 or ('·' in theme or '/' in theme) else 2
+        return matching>=required if words else False
     return ([a for a in articles if relevant(a)],
             [f for f in features if relevant(f)])
 

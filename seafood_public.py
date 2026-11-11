@@ -78,6 +78,25 @@ def _body_rows(payload):
     total=body.get('totalCount',len(items))
     return items,int(total or 0)
 
+def _mof_xml_payload(content):
+    """Parse the officially documented XML alternative when JSON is unavailable."""
+    root=ET.fromstring(content)
+    error=root.find('.//cmmMsgHeader')
+    if error is not None:
+        code=error.findtext('returnReasonCode','unknown')
+        raise ValueError('MOF gateway response error '+code)
+    header_node=root.find('.//header')
+    header={child.tag:child.text for child in header_node} if header_node is not None else {}
+    body_node=root.find('.//body')
+    if body_node is None:
+        raise ValueError('MOF XML missing body')
+    count=body_node.findtext('totalCount','0')
+    items=[]
+    for item in body_node.findall('.//item'):
+        items.append({child.tag:child.text for child in item})
+    return {'response':{'header':header,'body':{'items':{'item':items},'totalCount':count}}}
+
+
 def _request_mof_month(month,key,session=None):
     client=session or requests
     rows=[];page=1
@@ -85,7 +104,13 @@ def _request_mof_month(month,key,session=None):
         resp=client.get(MOF_URL,params={'serviceKey':key,'numOfRows':1000,'pageNo':page,'type':'json','baseDt':month},
                         timeout=(8,25),headers=HEADERS)
         resp.raise_for_status()
-        payload=resp.json()
+        try:payload=resp.json()
+        except ValueError:
+            if resp.content.lstrip().startswith(b'<'):
+                payload=_mof_xml_payload(resp.content)
+            else:
+                ctype=resp.headers.get('Content-Type','unknown') if hasattr(resp,'headers') else 'unknown'
+                raise ValueError('MOF response not JSON/XML (type='+str(ctype)[:35]+')')
         items,total=_body_rows(payload)
         if page==1 and not items:
             wrapper=payload.get('response',payload) if isinstance(payload,dict) else {}
@@ -211,7 +236,9 @@ def fetch_mof_features(today):
             for m,f in futures.items():
                 try:fetched[m]=f.result()
                 except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-                    errors.append(f'MOF {m}: {type(exc).__name__}')
+                    # No auth keys or full requested URLs in diagnostics.
+                    diagnostic=str(exc)[:95] if isinstance(exc,ValueError) else type(exc).__name__
+                    errors.append(f'MOF {m}: {diagnostic}')
         if candidate in fetched and _shift_month(candidate,-12) in fetched:
             this=fetched.get(candidate,[]);prior=fetched.get(_shift_month(candidate,-12),[])
             valid_this=_normalize_trade(this);valid_prior=_normalize_trade(prior)
@@ -270,8 +297,11 @@ def _kamis_day(value, as_of):
     from datetime import datetime
     raw=str(value or '').strip()
     if not raw:return None
+    # KAMIS can append a weekday, e.g. '2026.11.04(수)', or a clock time.
+    raw=re.sub(r'\([^)]*\)','',raw)
     cleaned=(raw.replace('년','-').replace('월','-').replace('일','')
              .replace('/','-').replace('.','-').replace(' ','').strip('-'))
+    cleaned=re.sub(r'[^0-9:-].*$','',cleaned).strip('-')
     for pattern in ('%Y-%m-%d','%Y-%m-%d-%H:%M:%S','%y-%m-%d'):
         try:return datetime.strptime(cleaned,pattern).date()
         except ValueError:pass
@@ -415,7 +445,10 @@ def fetch_kamis_features(as_of=None):
                 if not any(_float(row.get(k)) for k in ('dpr3','dpr5','dpr6','_real_previous_price')):
                     reasons['no_comparator']+=1
             example_keys=list(found[channel][0])[:16] if found[channel] else []
-            print(f'SEAFOOD KAMIS {channel} rejected: {reasons}; response_fields={example_keys}',flush=True)
+            date_samples=list(dict.fromkeys(str(r.get('day1') or r.get('lastest_date') or '')[:25]
+                for r in found[channel] if r.get('day1') or r.get('lastest_date')))[:3]
+            print(f'SEAFOOD KAMIS {channel} rejected: {reasons}; '
+                  f'response_fields={example_keys}; date_formats={date_samples}',flush=True)
     print(f'SEAFOOD KAMIS: wholesale_raw={len(found["도매"])} '
           f'retail_raw={len(found["소매"])} published={len(results)}',flush=True)
     if not results and not errors:errors.append('KAMIS: 최근 45일 중 비교 가능한 도소매 조사 가격 없음')

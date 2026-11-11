@@ -257,7 +257,32 @@ def event_search_phrase(title):
     ignore={'단독','속보','종합','뉴스','보도자료','발표','기자','현장','정부는',
             '올해','지난해','지난달','속보입니다','어떻게','왜','전망','이슈'}
     words=[w for w in words if len(w)>1 and w.lower() not in ignore]
-    return ' '.join(words[:5]).strip()
+    # RSS headlines are often full sentences. Searching the first five tokens
+    # verbatim reproduces news prose and can be too restrictive.
+    return ' '.join(words[:3]).strip()
+
+
+def _short_search(query, max_words=5):
+    """Short noun-like search intent; never submit whole article sentences."""
+    raw=re.sub(r'[“”"「」\[\]()]',' ',str(query or ''))
+    raw=re.split(r'[.!?…]|(?:\s+[–—]\s+)',raw,1)[0]
+    skip={'전망입니다','가능성이','확인해야','필요하다','나타났다',
+          '분석한다','공식적으로','살펴본다','비교하라'}
+    return ' '.join([w for w in raw.split() if w not in skip][:max_words]).strip()
+
+
+def _topic_search_phrases(theme):
+    """Explore either half of a compound issue before attempting to connect it."""
+    txt=str(theme or '').strip()
+    if not txt:return []
+    bits=[b.strip() for b in re.split(r'[·/]',txt) if b.strip()]
+    if len(bits)>=2:
+        # For 'Japan/US exports' search individual destinations as well.
+        shared=next((w for w in ('수출','수입','어획','가격','유통','판매') if w in txt),'수산물')
+        result=[_short_search(f'{b} {shared} 통계',4) for b in bits[:3]]
+    else:
+        result=[_short_search(txt+' 통계',4)]
+    return list(dict.fromkeys(q for q in result if q))
 
 
 def build_research_queries(choices, features, focus_topics=None, depth_profiles=None):
@@ -268,7 +293,7 @@ def build_research_queries(choices, features, focus_topics=None, depth_profiles=
     if focus_topics:
         # Numeric-gap queries outrank generic category searches.
         for profile in (depth_profiles or [])[:3]:
-            questions.extend(profile.get('gap_queries',[])[:4])
+            questions.extend(_short_search(q,5) for q in profile.get('gap_queries',[])[:3])
         selected_ids={i for t in focus_topics[:4] for i in t.get('article_ids',[])[:3]}
         # First search the actual news events, not merely their broad category.
         for item in choices:
@@ -278,7 +303,7 @@ def build_research_queries(choices, features, focus_topics=None, depth_profiles=
                 if len(questions)>=8:break
         for topic in focus_topics[:4]:
             theme=topic.get('theme','')
-            questions.append(f'{theme} 공식 통계')
+            questions.extend(_topic_search_phrases(theme))
             cat=topic.get('category','')
             if cat in _RESEARCH_QUERIES:questions.extend(_RESEARCH_QUERIES[cat][:1])
     else:
@@ -293,8 +318,10 @@ def build_research_queries(choices, features, focus_topics=None, depth_profiles=
     # salmon/squid/retail queries because they happened to be demo subjects.
     for f in features[:4]:
         name=str(f.get('name','')).strip()
-        if name:questions.append(name+' 공식 통계 전년 비교')
-    return list(dict.fromkeys(questions))[:30 if focus_topics else 25]
+        if name:questions.append(_short_search(name+' 통계',5))
+    # 25 unrelated intents in ONE web_search request is not 25 executed
+    # searches. Prefer concise, focused search plans that the model can act on.
+    return list(dict.fromkeys(_short_search(q,5) for q in questions if q))[:15 if focus_topics else 16]
 
 
 def infer_research_category(title, excerpt):
@@ -817,10 +844,22 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         anchor=lane['anchor']
         if anchor and not local_ctx['articles'] and not local_ctx['official_series']:
             outcomes.append(f'{anchor}: 관련 원출처 부족');continue
-        guidance=(f"반드시 '{lane['label']}' 하나의 시장에 대한 심층 기사 1편을 작성하라. "
-           '이번 호출은 그 주제만 담당한다. 무관한 유통/어종 분석으로 대체하지 마라. '
-           '서로 독립적인 공개 출처 두 곳에서 확인한 가격·공급·수요 등 관측을 비교하라. '
-           '근거가 부족하면 reports=[]로 반환하고 다른 시장 기사로 대체하지 마라.')
+        # Ready lanes already have two independent measured records. Ask the
+        # model to complete the report from that actual evidence, not opt out
+        # merely because another desirable dimension (e.g. retail price) is
+        # missing. A real lack of comparable sources may still yield [].
+        numeric_sources=[x for x in lane.get('observations',[]) if x.get('quantities')]
+        local_ctx['draft_source_brief']=[{'id':row.get('id'),
+            'source':row.get('source'),'title':row.get('title') or row.get('name'),
+            'period':row.get('published') or row.get('period_end'),
+            'observed':str(row.get('snippet') or row.get('observed') or '')[:420]}
+            for row in (local_ctx['articles']+local_ctx['official_series'])
+            if (row.get('id') in {x.get('id') for x in numeric_sources})][:10]
+        guidance=(f"오늘 선정된 '{lane['label']}'의 시장 변화 한 가지를 분석한 기사 1편을 작성하라. "
+           '제공된 출처 ID와 관측치만 사용하고 다른 시장 이야기로 대체하지 마라. '
+           '최소 두 원출처의 서로 다른 수치·사실을 근거로 삼되, 없는 가격·소비지표를 만들어 넣지 말라. '
+           '일부 분석 축이 비었다고 기사 전체를 포기하지 말고, 확인된 근거로 설명 가능한 결론을 작성하라. '
+           '충분한 근거가 실제로 없을 때만 reports=[]로 반환하라.')
         try:
             response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',guidance)
             calls+=1
@@ -837,10 +876,16 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
                 brief=' | '.join(f"{x['part']} {x.get('source_ids',[])}: {_numeric_feedback(x['mismatches'])}"
                                   for x in issues[:3])[:590]
                 print(f'SEAFOOD NUMERIC AUDIT {anchor}: {brief}',flush=True)
+            if not response.get('reports'):
+                print(f'SEAFOOD DRAFT EMPTY {anchor}: model_returned_empty_array; '
+                      f'input_articles={len(local_ctx["articles"])} '
+                      f'official={len(local_ctx["official_series"])} '
+                      f'measured={lane.get("numeric_records",0)} '
+                      f'original_sources={lane.get("sources",0)}',flush=True)
             if accepted:
                 good.append(accepted[0]);outcomes.append(f'{anchor}: 통과')
             else:
-                reason=' / '.join(dict.fromkeys(reasons))[:180] or '원고 누락·주제 불일치'
+                reason=' / '.join(dict.fromkeys(reasons))[:180] or 'AI가 원고를 작성하지 않음 (reports=[])' 
                 if issues:
                     reason += ' | 숫자 확인: ' + ' / '.join(_numeric_feedback(x['mismatches'],2)
                                                           for x in issues[:3])[:270]
@@ -858,7 +903,10 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         anchor=lane['anchor']
         if anchor in published:continue
         if not anchor:continue
-        note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 실패: {reason}. "
+        note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 결과: {reason}. "
+              '처음에 reports=[]였다면 원고 검증에 실패한 것이 아니라 원고 미작성이다. '
+              '지금 전달한 draft_source_brief의 수치와 출처 ID를 우선 사용해 실제 근거가 가능한 범위의 기사 한 편을 완성하라. '
+              '실제 원출처 두 곳의 의미 있는 자료가 없을 때만 빈 배열을 내라. ' 
               '같은 지표·기간·단위에서 소폭 반올림 차이는 검수기가 허용한다. '
               '문제가 된 숫자는 아래 공개 출처의 수치와 직접 대조해 수정하라. '
               '출처에서 확인할 수 없는 숫자는 삭제하고, 서로 다른 집계 대상은 혼동하지 마라. '
