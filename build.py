@@ -694,13 +694,14 @@ def collect():
     connect_evidence(features,articles+search_sources)
     from seafood_research_depth import evidence_profiles
     depth_profiles=evidence_profiles(focus_for_research,articles+search_sources,features)
-    tracks=coverage_tracks(articles+search_sources,features)
+    tracks=coverage_tracks(articles+search_sources,features,focus_for_research)
     print('SEAFOOD TRACKS - coverage:',[(t['anchor'],t['numeric_records'],
         t['sources'],t['dimensions'],t['ready']) for t in tracks],flush=True)
     print('SEAFOOD DEPTH - measured coverage:',[(p['anchor'],p['numeric_records'],
         p['independent_sources'],p['dimensions_present']) for p in depth_profiles],flush=True)
     focus_topics=research_targets(articles+search_sources,features,
         select_market_topics(articles+search_sources,features,previous_headlines))
+    tracks=coverage_tracks(articles+search_sources,features,focus_topics)
     research_status=f'1차: {discovery_status} / 주제별 재조사: {focus_status}'
     print('SEAFOOD RESEARCH - sources:',len(discovered),'discovery +',len(targeted),
           'focused =>',len(search_sources),'unique citations',flush=True)
@@ -711,8 +712,7 @@ def collect():
           [t['anchor'] for t in tracks if t['ready']],flush=True)
     reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
     print(f'SEAFOOD report: {len(reports)} new deep reports; checking multi-source data analysis',flush=True)
-    # Independent report tracks: a fresh retail article must not erase a
-    # previously verified salmon or squid report.
+    # New reports can cover ANY evidenced market; archive by derived subject.
     from seafood_topic_tracks import track_for_report
     fresh_count=len(reports)
     current_anchors={track_for_report(r) for r in reports}

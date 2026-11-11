@@ -318,6 +318,22 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
 @media(max-width:760px){.page-shell{padding:0 12px}.research-workspace{display:block}.research-toc{position:static;max-height:none;overflow:visible;margin-bottom:11px;padding:10px 12px}.research-toc .toc-heading{padding-bottom:5px}.research-toc .toc-links{display:flex;gap:7px;overflow:auto;padding-bottom:5px}.research-toc .toc-links a{min-width:160px;border:1px solid #e0e8ec;border-radius:6px;padding:8px;flex-shrink:0}.research-toc .toc-help{display:none}.compact-article-grid{grid-template-columns:1fr}.market-headline-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.market-topic-card{min-width:240px;scroll-snap-align:start}.report-filters small{display:none}.deep-report,.deep-report.primary,.deep-report.case{padding:18px 15px 19px!important}.insight-section,.content-grid{padding:16px 12px}.compact-evidence{border:0}}
 @media(max-width:420px){.market-topic-card{min-width:220px}.brief-main h1{font-size:22px}.deep-cover h3{font-size:20px!important}}
 
+/* v5.10: finance-dashboard palette + compact card-style report tabs */
+.market-headline-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px;margin-top:9px}
+.market-topic-card{cursor:pointer;font:inherit;text-align:left;min-height:112px;padding:13px 15px;gap:6px;border-radius:8px;background:#fff;border:1px solid #d5e0e7;box-shadow:none}
+.market-topic-card.selected{background:#eaf3f9;border-color:#5c8eaf;box-shadow:inset 3px 0 #245c83}
+.market-topic-card.selected strong{color:#163b57}
+.market-topic-card:focus-visible{outline:2px solid #337aa8;outline-offset:2px}
+.market-topic-label{color:#176b82}.market-topic-card strong{font-size:13.5px;line-height:1.48}
+.research-toc .toc-links a.selected{color:#0a6a7d;font-weight:800;background:#eef6f9}
+.deep-report,.deep-report.primary,.deep-report.case{border:1px solid #d7e1e7!important;border-radius:10px!important;box-shadow:none!important;padding:19px 24px!important}
+.deep-report[hidden]{display:none!important}
+.compact-article-body p{line-height:1.86;font-size:13.25px;margin-bottom:11px}
+.compact-article-body h4{margin:16px 0 7px}
+.compact-evidence{background:#f5f8fa;border:1px solid #e5ecf0;padding:12px 14px}
+.report-filters{display:none}
+@media(max-width:760px){.market-headline-cards{display:flex;overflow-x:auto;gap:8px}.market-topic-card{min-width:215px;max-width:265px;min-height:115px}.deep-report,.deep-report.primary,.deep-report.case{padding:16px 14px!important}}
+
 </style>
 </head>
 <body>
@@ -332,11 +348,11 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   <aside id="researchToc" class="research-toc" aria-label="오늘의 목차">
     <div class="toc-heading">오늘의 목차</div>
     <div id="reportToc" class="toc-links"><a href="#deep-heading">01　심층 분석</a><a href="#insight-heading">02　시장 데이터</a></div>
-    <p class="toc-help">보고서는 모두 아래로 이어집니다. 제목을 눌러 이동할 수 있어요.</p>
+    <p class="toc-help">분석 제목을 누르면 해당 보고서가 열립니다.</p>
   </aside>
   <div class="research-main">
   <div id="marketHeadlineCards" class="market-headline-cards" aria-label="주요 시장 분석"></div>
-  <div id="reportFilters" class="report-filters" role="group" aria-label="보고서 분야 필터"><span>관심 분야</span><button type="button" data-report-filter="all" aria-pressed="true" class="active">전체</button><button type="button" data-report-filter="salmon" aria-pressed="false">연어</button><button type="button" data-report-filter="squid" aria-pressed="false">오징어</button><button type="button" data-report-filter="retail" aria-pressed="false">유통</button><small>게시된 보고서만 표시 · 과거 분석은 날짜 구분</small></div>
+
   <section class="demo-topics" id="demoTopics" hidden aria-label="다른 분야 구성 예시">
     <div class="demo-topics-head"><strong>다른 분야도 함께 다룹니다</strong><span>아래는 구성 예시이며, 실제 분석 결과가 아닙니다.</span></div>
     <div class="demo-topics-grid">
@@ -502,21 +518,17 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   // Research is always the primary content. Mechanical question cards stay collapsed below the data section.
   const issues=[];
   $('#deepCount').textContent=`${reports.length}편 · 신규 ${data.fresh_deep_count??0}편`;
-  const trackInfo=data.research_coverage?.tracked_topics||[];
-  const slots=[['salmon','연어','국제 생산·수출가격'],['squid','오징어','어획·수입·가격'],['retail','유통','마트·납품·소비']];
-  $('#marketHeadlineCards').innerHTML=slots.map(([key,label,summary])=>{
-    const pos=reports.findIndex(r=>reportMarket(r)===key);
-    const rep=pos>=0?reports[pos]:null;
-    const status=rep?(rep.archived_source?'지난 분석':'분석 전문'):'검증된 원고 없음';
-    const title=rep?rep.headline:label+' · 현재 분석 자료 확인 중';
-    return `<${rep?'a':'div'} class="market-topic-card ${rep?'ready':'pending'}" ${rep?`href="#research-story-${pos+1}"`:''}><span class="market-topic-label">${esc(label)} <em>${esc(status)}</em></span><strong>${esc(title)}</strong><small>${esc(summary)}</small></${rep?'a':'div'}>`;
-  }).join('');
+  // All cards represent actually published topics; no fixed sample species.
+  $('#marketHeadlineCards').innerHTML=reports.map((r,i)=>
+    `<button type="button" data-report-choice="${i}" aria-pressed="${i===0}" class="market-topic-card ready ${i===0?'selected':''}"><span class="market-topic-label">${String(i+1).padStart(2,'0')} · ${esc(r.market_label||r.kind||'시장 분석')} <em>${r.archived_source?'지난 분석':'새 분석'}</em></span><strong>${esc(r.headline)}</strong><small>${esc((r.one_sentence||r.thesis||'').slice(0,96))}</small></button>`).join('')||
+    '<div class="deep-notice">이번 실행에서 검증된 신규 심층 보고서가 없습니다. 아래의 공식 자료와 뉴스를 확인할 수 있습니다.</div>';
   $('#reportToc').innerHTML=reports.map((r,i)=>
-      `<a href="#research-story-${i+1}" data-toc-kind="${reportMarket(r)}"><b>${String(i+1).padStart(2,'0')}</b><span>${esc(r.headline)}</span></a>`).join('')+
+      `<a href="#research-story-${i+1}" data-report-choice="${i}"><b>${String(i+1).padStart(2,'0')}</b><span>${esc(r.headline)}</span></a>`).join('')+
       `<a href="#insight-heading"><b>${String(reports.length+1).padStart(2,'0')}</b><span>공식 데이터</span></a><a href="#allNews"><b>${String(reports.length+2).padStart(2,'0')}</b><span>전체 기사</span></a>`;
 
   $('#deepStatus').textContent=data.demo?'시연용 콘텐츠 · 실제 자동 생성 결과 아님':data.deep_status||'공개 근거를 바탕으로 작성한 분석';
-  $('#deepDeck').innerHTML=(renderReportTabs(reports)+reports.map((r,i)=>deepCard(r,i)).join(''))||'<div class="deep-notice">현재 공개자료를 분석 중입니다. 검증된 심층 원고가 없는 경우 기사와 공식 통계를 먼저 확인할 수 있습니다.</div>';
+  $('#deepDeck').innerHTML=reports.map((r,i)=>deepCard(r,i)).join('')||'<div class="deep-notice">현재 공개자료를 분석 중입니다. 검증된 심층 원고가 없는 경우 기사와 공식 통계를 먼저 확인할 수 있습니다.</div>';
+  selectReport(Math.min(activeReport,Math.max(0,reports.length-1)),false);
   const allIndicators=data.features||[];
   const insights=allIndicators.filter(f=>!String(f.id||'').startsWith('fx_') && f.role!=='context');
   const rates=allIndicators.filter(f=>String(f.id||'').startsWith('fx_') || f.role==='context');
@@ -562,25 +574,27 @@ header .brand{color:#153a51}header .header-label{color:#8193a2}header .top-meta{
   $('#listCount').textContent=`${filtered.length}개의 기사 · 최근 14일 이내 게시물`;
   $('#list').innerHTML=filtered.map(listCard).join('')||'<div class="empty">해당 조건에 맞는 기사가 없습니다.<br>검색 조건을 바꿔 보세요.</div>';
  }
- function filterReports(kind){
-   document.querySelectorAll('[data-report-filter]').forEach(b=>{
-      const on=b.dataset.reportFilter===kind;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
-   document.querySelectorAll('.deep-report[data-report-kind],.report-choice-item[data-report-kind]').forEach(el=>{
-      el.hidden=kind!=='all'&&el.dataset.reportKind!==kind;});
-   document.querySelectorAll('#reportToc [data-toc-kind]').forEach(el=>{
-      el.hidden=kind!=='all'&&el.dataset.tocKind!==kind;});
-   document.querySelectorAll('.market-topic-card').forEach(el=>{
-      const name=(el.querySelector('.market-topic-label')?.textContent||'');
-      el.hidden=kind!=='all'&&!name.includes({salmon:'연어',squid:'오징어',retail:'유통'}[kind]||'');
+ let activeReport=0;
+ function selectReport(index,scroll){
+   const all=[...document.querySelectorAll('.deep-report[data-report-index]')];
+   if(!all.length)return;
+   activeReport=Math.max(0,Math.min(index,all.length-1));
+   all.forEach((panel,i)=>{panel.hidden=i!==activeReport;});
+   document.querySelectorAll('#marketHeadlineCards [data-report-choice]').forEach((card,i)=>{
+     const on=i===activeReport;card.classList.toggle('selected',on);
+     card.setAttribute('aria-pressed',String(on));
    });
-   const visible=[...document.querySelectorAll('.deep-report[data-report-kind]')].filter(el=>!el.hidden).length;
-   const total=document.querySelectorAll('.deep-report[data-report-kind]').length;
-   const count=document.querySelector('#deepCount');
-   if(count)count.textContent=kind==='all'?`${total}편 · 신규 ${data.fresh_deep_count??0}편`:`표시 ${visible}편 / 전체 ${total}편`;
+   document.querySelectorAll('#reportToc [data-report-choice]').forEach(el=>{
+     const on=Number(el.dataset.reportChoice)===activeReport;
+     el.classList.toggle('selected',on);
+     if(on)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');
+   });
+   if(scroll){const panel=all[activeReport];panel.scrollIntoView({behavior:'smooth',block:'start'});}
  }
  document.addEventListener('click',e=>{
+  const choice=e.target.closest('[data-report-choice]');
+  if(choice){e.preventDefault();selectReport(Number(choice.dataset.reportChoice),true);return;}
   const btn=e.target.closest('button'); if(!btn)return;
-  if(btn.hasAttribute('data-report-filter')){filterReports(btn.dataset.reportFilter);return;}
   if(btn.dataset.cat){active=btn.dataset.cat;update();return;}
   const {action,id}=btn.dataset;
   if(action&&id){const target=action==='read'?read:saved;target.has(id)?target.delete(id):target.add(id);save(action,target);update();}

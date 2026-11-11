@@ -11,6 +11,9 @@ import re
 from datetime import datetime
 import requests
 from seafood_research_depth import evidence_profiles, published_report_evidence, LABELS
+from seafood_numeric_audit import (numeric_observations, missing_numeric_claims,
+                                   supported as tolerant_supported,
+                                   evidence_number_inventory)
 
 API='https://api.openai.com/v1/responses'
 MODEL='gpt-6.1-sol'
@@ -286,30 +289,12 @@ def build_research_queries(choices, features, focus_topics=None, depth_profiles=
         categories=list(dict.fromkeys([
             '원물 수급/시세','해외','대형마트/SSM','식품안전/소비심리']+categories))
         for cat in categories[:9]:questions.extend(_RESEARCH_QUERIES.get(cat,[])[:2])
-    # Ensure each commodity / channel gets searched in a focused pass even
-    # when broad headline ranking would otherwise exclude it from the top 4.
-    if focus_topics:
-        questions.extend([
-            '노르웨이 연어 수출 주간 가격 수출량 SSB 최근 12주',
-            'Norwegian Seafood Council salmon exports October 2026 Poland demand',
-            f'{year} 오징어 페루 어획 한도 한국 수입량 단가',
-            f'{year} 국내 연근해 오징어 생산량 해양수산부',
-            f'{year} 대형마트 월별 매출 산업통상부 홈플러스 납품 정산',
-        ])
-    else:
-        questions.extend(['노르웨이 연어 생산 수출 물량','페루 오징어 수입 어획 규제','홈플러스 납품 대형마트 매출'])
+    # Additional searches follow the newly ranked events. Never add mandatory
+    # salmon/squid/retail queries because they happened to be demo subjects.
     for f in features[:4]:
         name=str(f.get('name','')).strip()
         if name:questions.append(name+' 공식 통계 전년 비교')
-    # The focus search budget is bounded, but preserve each anchor instead
-    # of truncating them as the last appended (and therefore lost) searches.
-    unique=list(dict.fromkeys(questions))
-    priority=['노르웨이 연어 수출 주간 가격 수출량 SSB 최근 12주',
-              'Norwegian Seafood Council salmon exports October 2026 Poland demand',
-              f'{year} 오징어 페루 어획 한도 한국 수입량 단가',
-              f'{year} 국내 연근해 오징어 생산량 해양수산부',
-              f'{year} 대형마트 월별 매출 산업통상부 홈플러스 납품 정산'] if focus_topics else []
-    return list(dict.fromkeys(priority+unique))[:30 if focus_topics else 25]
+    return list(dict.fromkeys(questions))[:30 if focus_topics else 25]
 
 
 def infer_research_category(title, excerpt):
@@ -438,31 +423,37 @@ def research_public_sources(articles, features, now, focus_topics=None):
 
 
 def _numeric_tokens(text):
-    # Compare numeric VALUE, not formatting: '37' = '37.0', '1,000' = '1000'.
-    # Still ignore isolated one-digit labels and retain percentage/price changes.
-    from decimal import Decimal, InvalidOperation
-    values=[]
-    for token in re.findall(r'(?<![\w])\d[\d,]*(?:\.\d+)?',text):
-        raw=token.replace(',','')
-        if len(raw)<2:continue
-        try:values.append(format(Decimal(raw).normalize(),'f'))
-        except InvalidOperation:continue
-    return values
+    """Backward-compatible numeric values with Korean quantity normalization."""
+    return [format(n['value'].normalize(), 'f') for n in numeric_observations(text)]
 
 
 def _supported(text, evidence):
-    support=set(_numeric_tokens(evidence))
-    for n in _numeric_tokens(text):
-        if n not in support:
-            # 100% / 10-minute routine and other unsupported claims are blocked.
-            return False
-    return True
+    """Accept compatible measured values within bounded reporting error.
+
+    Never approximate years, weeks, months, survey counts, or distinct units.
+    Exact source-local citation checks are performed separately from full prose.
+    """
+    return tolerant_supported(text,evidence)
+
+
+def _evidence_text(records):
+    # Keep each field on its own line: metric labels in a title must not become
+    # the nearest measurement label in an otherwise unrelated snippet.
+    keys=('title','name','snippet','observed','facts','period_start','period_end',
+          'published','related_observations','measurements')
+    pieces=[]
+    for row in records:
+        for key in keys:
+            if key not in row:continue
+            value=row[key]
+            pieces.append(value if isinstance(value,str) else json.dumps(value,ensure_ascii=False))
+    return '\n'.join(pieces)
 
 
 def _all_evidence(context):
-    text=json.dumps(context.get('articles',[])+context.get('official_series',[]),ensure_ascii=False)
-    # A limited, auditable derived value: unit export value is revenue / volume.
-    # It can only be computed when BOTH growth rates are explicitly in the SAME cited source.
+    text=_evidence_text(context.get('articles',[])+context.get('official_series',[]))
+    # One explicitly reproducible derived quantity: unit-value percentage change
+    # = (1+export-value growth)/(1+export-volume growth)-1. Use source-local rates.
     values=[]
     for a in context.get('articles',[]):
         source=a.get('snippet','')
@@ -475,6 +466,15 @@ def _all_evidence(context):
                 change=((1+revenue/100)/(1+volume/100)-1)*100
                 values.append(f'검산 공식 수출액 지수 {(1+revenue/100):.2f}, 물량 지수 {(1+volume/100):.2f}, 평균단가 변화율 {change:.1f}%')
     return text+' '.join(values)
+
+
+def _numeric_feedback(issues,limit=4):
+    result=[]
+    for issue in issues[:limit]:
+        nearest=issue.get('nearest_source')
+        part=f"{issue['claim']}"+(f" (인용 근거의 유사 숫자: {nearest})" if nearest else ' (근거 수치 없음)')
+        if part not in result:result.append(part)
+    return '; '.join(result)[:390]
 
 
 def balanced_article_pool(articles, maximum=36):
@@ -624,7 +624,7 @@ def _duplicate_passages(report):
     return False
 
 
-def _validate_main(payload,ctx):
+def _validate_main(payload,ctx,diagnostics=None):
     allowed_a={a['id'] for a in ctx['articles']}
     allowed_f={f['id'] for f in ctx['official_series']}
     allowed=allowed_a|allowed_f
@@ -662,9 +662,15 @@ def _validate_main(payload,ctx):
             facts=[]
             for fact in r['facts']:
                 refs=list(dict.fromkeys(str(x) for x in fact.get('refs',[]) if x in allowed))
-                source_text=json.dumps([evidence_by_id[i] for i in refs],ensure_ascii=False)
+                source_text=_evidence_text([evidence_by_id[i] for i in refs])
                 if len(fact.get('text',''))>=30 and refs and _supported(fact['text'],source_text):
                     facts.append({'text':fact['text'],'refs':refs})
+                elif diagnostics is not None and len(fact.get('text',''))>=30 and refs:
+                    missing=missing_numeric_claims(fact['text'],source_text)
+                    if missing:
+                        diagnostics.append({'part':'인용 사실','source_ids':refs,
+                                            'claim':fact['text'][:130],
+                                            'mismatches':missing[:5]})
             if len(facts)<2:
                 reasons.append('검증 가능한 원문 근거 2개 미만/숫자 미일치');continue
             cited={r for fact in facts for r in fact['refs']}
@@ -685,7 +691,12 @@ def _validate_main(payload,ctx):
                       r['scenario_up']['interpretation'],r['scenario_down']['interpretation']])
             prose=' '.join([r[k] for k in fields]+r['mechanism']+forward)
             if not _supported(prose,evidence):
-                reasons.append('근거에 없는 숫자 사용');continue
+                missing=missing_numeric_claims(prose,evidence)
+                reasons.append('근거에 없는 숫자 사용')
+                if diagnostics is not None and missing:
+                    diagnostics.append({'part':'분석 본문','source_ids':[],
+                                        'claim':'본문 전체', 'mismatches':missing[:7]})
+                continue
             if _duplicate_passages(r):
                 reasons.append('같은 문단의 내용 반복');continue
             if outlook is not None:
@@ -768,17 +779,18 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         t['ready'] for t in coverage_tracks(articles,features)):
         return [],'연관된 사건·독립 자료를 갖춘 분석 후보가 부족합니다.'
     from seafood_topic_tracks import coverage_tracks, track_for_report, records_for_track
-    lanes=coverage_tracks(articles,features)
-    # Reserve independently sourced market reports for the established three
-    # tracks, while allowing other strong market issues when slots remain.
+    lanes=coverage_tracks(articles,features,focus_topics or ())
+    # No fixed market slots. Rank the day's measured issues independently.
     candidates=[lane for lane in lanes if lane['ready']]
     # 3 default paid draft calls; up to 2 repairs, never an unlimited loop.
     request_cap=max(1,min(7,int(os.getenv('SEAFOOD_DRAFT_CALL_LIMIT','5'))))
     calls=0;good=[];outcomes=[];failed=[]
-    for lane in candidates[:3]:
+    for lane in candidates[:6]:
         if calls>=request_cap:break
         anchor=lane['anchor']
-        local_articles,local_features=records_for_track(anchor,articles,features)
+        local_articles,local_features=records_for_track(anchor,articles,features,
+            {'theme':lane['label'],'article_ids':lane['headline_ids'],
+             'feature_ids':lane['feature_ids']})
         # Use the origin's exact IDs but exclude wholly unrelated headlines
         # from topic-specific composing. No fake observations added here.
         local_ctx=_main_context(local_articles,local_features,now,issues,focus_topics)
@@ -812,12 +824,26 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         try:
             response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',guidance)
             calls+=1
-            accepted,reasons=_validate_main(response,local_ctx)
-            accepted=[r for r in accepted if not anchor or track_for_report(r)==anchor]
+            issues=[]
+            accepted,reasons=_validate_main(response,local_ctx,issues)
+            # Citation membership in this source-filtered dossier is decisive;
+            # unknown market names are not forced into the old 3 categories.
+            accepted=[r for r in accepted if not anchor or
+                      (anchor.startswith('topic:') or track_for_report(r)==anchor)]
+            for r in accepted:
+                r['market_anchor']=anchor
+                r['market_label']=lane['label']
+            if issues:
+                brief=' | '.join(f"{x['part']} {x.get('source_ids',[])}: {_numeric_feedback(x['mismatches'])}"
+                                  for x in issues[:3])[:590]
+                print(f'SEAFOOD NUMERIC AUDIT {anchor}: {brief}',flush=True)
             if accepted:
                 good.append(accepted[0]);outcomes.append(f'{anchor}: 통과')
             else:
                 reason=' / '.join(dict.fromkeys(reasons))[:180] or '원고 누락·주제 불일치'
+                if issues:
+                    reason += ' | 숫자 확인: ' + ' / '.join(_numeric_feedback(x['mismatches'],2)
+                                                          for x in issues[:3])[:270]
                 failed[index]=(lane,local_ctx,reason)
                 outcomes.append(f'{anchor}: {reason}')
             print(f'SEAFOOD DRAFT {index+1} {anchor or "general"}: proposed={len(response.get("reports",[]))} accepted={len(accepted)} reasons={reasons[:3]}',flush=True)
@@ -833,13 +859,26 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
         if anchor in published:continue
         if not anchor:continue
         note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 실패: {reason}. "
-              '실제 문단과 확인된 숫자를 보강하고 빈약한 사실·다른 주제는 배제하라. '
-              '없는 근거는 만들지 말라. 충족 못하면 빈 배열을 반환하라.')
+              '같은 지표·기간·단위에서 소폭 반올림 차이는 검수기가 허용한다. '
+              '문제가 된 숫자는 아래 공개 출처의 수치와 직접 대조해 수정하라. '
+              '출처에서 확인할 수 없는 숫자는 삭제하고, 서로 다른 집계 대상은 혼동하지 마라. '
+              '충족 못하면 빈 배열을 반환하라. '
+              '검수 참고 원출처 숫자: '+
+              json.dumps(evidence_number_inventory(local_ctx.get('articles',[])[:8]+
+                           local_ctx.get('official_series',[])[:5],limit_per_source=9),ensure_ascii=False)[:1700])
         try:
             response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
             calls+=1
-            accepted,reasons=_validate_main(response,local_ctx)
-            accepted=[r for r in accepted if track_for_report(r)==anchor]
+            issues=[]
+            accepted,reasons=_validate_main(response,local_ctx,issues)
+            accepted=[r for r in accepted if anchor.startswith('topic:') or
+                      track_for_report(r)==anchor]
+            for r in accepted:
+                r['market_anchor']=anchor
+                r['market_label']=lane['label']
+            if issues:
+                print(f'SEAFOOD NUMERIC REPAIR {anchor}: '+
+                      ' | '.join(_numeric_feedback(x['mismatches'],2) for x in issues[:3])[:400],flush=True)
             if accepted:
                 good.append(accepted[0]);published.add(anchor)
                 outcomes.append(f'{anchor}: 재작성 통과')
