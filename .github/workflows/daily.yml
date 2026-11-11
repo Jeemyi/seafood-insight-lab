@@ -35,12 +35,14 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
           MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
+          MOF_STATS_API_KEY: ${{ secrets.MOF_STATS_API_KEY }}
+          MOF_STATS_TABLE_URLS: ${{ secrets.MOF_STATS_TABLE_URLS }}
           KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
           KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
         run: |
           python - <<'PYTHON'
           import os
-          for name in ('OPENAI_API_KEY','ECOS_API_KEY','MOF_API_KEY','KAMIS_API_KEY','KAMIS_API_ID'):
+          for name in ('OPENAI_API_KEY','ECOS_API_KEY','MOF_API_KEY','MOF_STATS_API_KEY','MOF_STATS_TABLE_URLS','KAMIS_API_KEY','KAMIS_API_ID'):
               print(f'{name}: {"configured" if os.getenv(name) else "not configured"}',flush=True)
           PYTHON
       - name: Collect articles, research, write and verify reports
@@ -52,8 +54,12 @@ jobs:
           OPENAI_REASONING_EFFORT: high
           SEAFOOD_EDITORIAL_PLAN: '1'
           SEAFOOD_WEB_RESEARCH: '1'
+          SEAFOOD_RESEARCH_ROUNDS: '2'
+          SEAFOOD_DRAFT_CALL_LIMIT: '5'
           ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
           MOF_API_KEY: ${{ secrets.MOF_API_KEY }}
+          MOF_STATS_API_KEY: ${{ secrets.MOF_STATS_API_KEY }}
+          MOF_STATS_TABLE_URLS: ${{ secrets.MOF_STATS_TABLE_URLS }}
           KAMIS_API_KEY: ${{ secrets.KAMIS_API_KEY }}
           KAMIS_API_ID: ${{ secrets.KAMIS_API_ID }}
         run: python -u build.py
