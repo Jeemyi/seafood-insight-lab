@@ -676,7 +676,9 @@ def collect():
           [(t['theme'],t['score']) for t in provisional_topics[:5]],flush=True)
     discovered,discovery_status=research_public_sources(articles,features,now,focus_topics=None)
     broad_pool=articles+discovered
-    focus_for_research=select_market_topics(broad_pool,features,previous_headlines,max_topics=7)
+    from seafood_topic_tracks import research_targets, coverage_tracks
+    focus_for_research=research_targets(broad_pool,features,
+        select_market_topics(broad_pool,features,previous_headlines,max_topics=7))
     print('SEAFOOD RESEARCH - focused targets:',
           [(t['theme'],len(t.get('article_ids',[])),len(t.get('feature_ids',[])))
            for t in focus_for_research[:4]],flush=True)
@@ -692,17 +694,47 @@ def collect():
     connect_evidence(features,articles+search_sources)
     from seafood_research_depth import evidence_profiles
     depth_profiles=evidence_profiles(focus_for_research,articles+search_sources,features)
+    tracks=coverage_tracks(articles+search_sources,features)
+    print('SEAFOOD TRACKS - coverage:',[(t['anchor'],t['numeric_records'],
+        t['sources'],t['dimensions'],t['ready']) for t in tracks],flush=True)
     print('SEAFOOD DEPTH - measured coverage:',[(p['anchor'],p['numeric_records'],
         p['independent_sources'],p['dimensions_present']) for p in depth_profiles],flush=True)
-    focus_topics=select_market_topics(articles+search_sources,features,previous_headlines)
+    focus_topics=research_targets(articles+search_sources,features,
+        select_market_topics(articles+search_sources,features,previous_headlines))
     research_status=f'1차: {discovery_status} / 주제별 재조사: {focus_status}'
     print('SEAFOOD RESEARCH - sources:',len(discovered),'discovery +',len(targeted),
           'focused =>',len(search_sources),'unique citations',flush=True)
     print('SEAFOOD research:',research_status,
           'final themes:',[(t['theme'],t['score']) for t in focus_topics[:4]],flush=True)
     print('SEAFOOD report: composing and checking evidence-led articles',flush=True)
+    print('SEAFOOD REPORT LANES - ready for draft:',
+          [t['anchor'] for t in tracks if t['ready']],flush=True)
     reports,deep_status=analyze(articles+search_sources,features,now,issues,focus_topics,previous_headlines=previous_headlines)
     print(f'SEAFOOD report: {len(reports)} new deep reports; checking multi-source data analysis',flush=True)
+    # Independent report tracks: a fresh retail article must not erase a
+    # previously verified salmon or squid report.
+    from seafood_topic_tracks import track_for_report
+    fresh_count=len(reports)
+    current_anchors={track_for_report(r) for r in reports}
+    for r in reports:
+        r['archived_source']=False
+        r['published_at']=now.isoformat(timespec='minutes')
+    if previous:
+        for archived in previous.get('reports',[]):
+            if len(reports)>=3:break
+            anchor=track_for_report(archived)
+            if not anchor or anchor in current_anchors:continue
+            # Keep source dates explicit; never call an old piece today's research.
+            older=dict(archived)
+            older['archived_source']=True
+            older['published_at']=older.get('published_at') or previous.get('date')
+            reports.append(older)
+            current_anchors.add(anchor)
+            for source in previous.get('articles',[])+previous.get('sources',[]):
+                if source.get('id') not in {s.get('id') for s in articles+search_sources}:
+                    search_sources.append(source)
+    if reports and fresh_count==0 and all(r.get('archived_source') for r in reports):
+        print('SEAFOOD publish: no fresh report; all displayed reports retain original date',flush=True)
     data_reports,data_status=analyze_data([f for f in features if not f.get("id","").startswith("fx_")],articles+search_sources,reports,now)
     # Single-source official observations stay concise source-linked cards.
     # No scripted 7-section pseudo-analysis when research lacks independent evidence.
@@ -712,7 +744,9 @@ def collect():
     if not reports:
         old=previous
         if old and old['reports']:
-            reports=old['reports']
+            reports=[dict(r,archived_source=True,
+                          published_at=r.get('published_at') or old['date'])
+                     for r in old['reports']]
             last_report_updated_at=old['date']
             archive=True
             # Keep linked cited sources even when today's feed no longer includes them.
@@ -732,8 +766,14 @@ def collect():
             # current verified data without a fabricated "fresh" analysis.
             deep_status='이번 실행에서 새 심층 분석을 검증하지 못했습니다.'
     print(f'SEAFOOD publish: {len(reports)} report(s), {len(data_reports)} data analyses, archive={archive}',flush=True)
-    fresh_count=0 if archive or factual_brief else len(reports)
-    content_state='archive' if archive else ('factual_brief' if factual_brief else ('fresh_research' if fresh_count else 'no_report'))
+    fresh_count=0 if archive or factual_brief else fresh_count
+    if reports and fresh_count==0 and all(r.get('archived_source') for r in reports):
+        archive=True
+        deep_status='지난 시장 분석 · 신규 심층 분석 0편'
+    mixed=bool(fresh_count and any(r.get('archived_source') for r in reports))
+    if mixed:deep_status=f'새 분석 {fresh_count}편 · 지난 분석 {len(reports)-fresh_count}편 (작성일 별도 표시)'
+    content_state=('mixed_research' if mixed else 'archive' if archive else
+        'factual_brief' if factual_brief else ('fresh_research' if fresh_count else 'no_report'))
     return {'generated_at':now.isoformat(timespec='minutes'),'articles':articles,'features':features,
             'issue_candidates':[],'focus_topics':focus_topics,'deep_reports':reports,'deep_status':deep_status,
             'research_sources':search_sources,'archived_features':old['features'] if archive and 'old' in locals() and old else [],
@@ -748,6 +788,11 @@ def collect():
                                  'focused_citations':len(targeted),
                                  'unique_citations':len(search_sources),
                                  'topic_candidates':len(focus_topics),
+                                 'tracked_topics':[{'anchor':t['anchor'],
+                                    'numeric_records':t['numeric_records'],
+                                    'independent_sources':t['sources'],
+                                    'dimensions':t['dimensions'], 'ready':t['ready']}
+                                    for t in tracks],
                                  'topic_measurement_depth':[{k:p[k] for k in ('anchor','numeric_records','independent_sources','dimensions_present','dimensions_missing')} for p in depth_profiles],
                                  'accepted_report_evidence':[{ 'headline':r.get('headline',''), **r.get('evidence_depth',{}) } for r in reports if r.get('evidence_depth') and not archive],
                                  'feed_parsed':sum(row['raw'] for _,row in feed_stats),

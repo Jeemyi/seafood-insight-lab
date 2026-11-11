@@ -17,6 +17,19 @@ def audit(path=Path('site/data.json')):
     print('SEAFOOD AUDIT - content state:',data.get('content_state','legacy'))
     print('SEAFOOD AUDIT - primary feeds:',data.get('sources_ok'), '/', data.get('sources_total'))
     print('SEAFOOD AUDIT - research coverage:',data.get('research_coverage',{}))
+    anchors={t.get('anchor'):t for t in data.get('research_coverage',{}).get('tracked_topics',[])}
+    from seafood_topic_tracks import track_for_report
+    for anchor in ('연어','오징어','대형마트'):
+        entries=[r for r in reports if track_for_report(r)==anchor]
+        report_state=('demo' if data.get('demo') and entries else 'fresh' if any(not x.get('archived_source') for x in entries) and data.get('fresh_deep_count',0)
+                      else 'archive' if entries else 'not_published')
+        t=anchors.get(anchor,{})
+        print(f'SEAFOOD AUDIT - topic {anchor}: {report_state}; '
+              f'numeric={t.get("numeric_records",0)} sources={t.get("independent_sources",0)} '
+              f'axes={t.get("dimensions",[])}')
+    if not data.get('demo') and data.get('fresh_deep_count',0)<2:
+        print('::warning::Fewer than 2 new in-depth reports. Check SEAFOOD DRAFT per-track reasons; an archived article is not new research.')
+
     depth=data.get('research_coverage',{}).get('topic_measurement_depth',[])
     for topic in depth[:4]:
         print('SEAFOOD AUDIT - quantitative evidence:',topic.get('anchor'),

@@ -260,6 +260,7 @@ def event_search_phrase(title):
 def build_research_queries(choices, features, focus_topics=None, depth_profiles=None):
     """Separate broad discovery from *event-specific* follow-up searches."""
     categories=list(dict.fromkeys(x.get('category') for x in choices if x.get('category')))
+    year=datetime.now().year
     questions=[]
     if focus_topics:
         # Numeric-gap queries outrank generic category searches.
@@ -285,10 +286,30 @@ def build_research_queries(choices, features, focus_topics=None, depth_profiles=
         categories=list(dict.fromkeys([
             '원물 수급/시세','해외','대형마트/SSM','식품안전/소비심리']+categories))
         for cat in categories[:9]:questions.extend(_RESEARCH_QUERIES.get(cat,[])[:2])
+    # Ensure each commodity / channel gets searched in a focused pass even
+    # when broad headline ranking would otherwise exclude it from the top 4.
+    if focus_topics:
+        questions.extend([
+            '노르웨이 연어 수출 주간 가격 수출량 SSB 최근 12주',
+            'Norwegian Seafood Council salmon exports October 2026 Poland demand',
+            f'{year} 오징어 페루 어획 한도 한국 수입량 단가',
+            f'{year} 국내 연근해 오징어 생산량 해양수산부',
+            f'{year} 대형마트 월별 매출 산업통상부 홈플러스 납품 정산',
+        ])
+    else:
+        questions.extend(['노르웨이 연어 생산 수출 물량','페루 오징어 수입 어획 규제','홈플러스 납품 대형마트 매출'])
     for f in features[:4]:
         name=str(f.get('name','')).strip()
         if name:questions.append(name+' 공식 통계 전년 비교')
-    return list(dict.fromkeys(questions))[:28 if focus_topics else 22]
+    # The focus search budget is bounded, but preserve each anchor instead
+    # of truncating them as the last appended (and therefore lost) searches.
+    unique=list(dict.fromkeys(questions))
+    priority=['노르웨이 연어 수출 주간 가격 수출량 SSB 최근 12주',
+              'Norwegian Seafood Council salmon exports October 2026 Poland demand',
+              f'{year} 오징어 페루 어획 한도 한국 수입량 단가',
+              f'{year} 국내 연근해 오징어 생산량 해양수산부',
+              f'{year} 대형마트 월별 매출 산업통상부 홈플러스 납품 정산'] if focus_topics else []
+    return list(dict.fromkeys(priority+unique))[:30 if focus_topics else 25]
 
 
 def infer_research_category(title, excerpt):
@@ -738,34 +759,96 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
             result['feature_id']=feature['id']
             result['reference']=feature.get('data_links',[])
             ctx['forecast_results'].append(result)
-    ctx['editorial_outline']=make_editorial_outline(ctx,previous_headlines)
+    ctx['editorial_outline']=make_editorial_outline(ctx,previous_headlines) if os.getenv('SEAFOOD_EDITORIAL_PLAN','1')!='0' else []
     print('SEAFOOD evidence clusters:',[(x['subject'],x['score']) for x in ctx['story_candidates'][:4]],flush=True)
-    if not ctx['story_candidates'] and not ctx['editorial_outline']:
+    # An independently measured, same-market dossier is a valid draft lead
+    # even when the heuristic keyword cluster/outline happens to be empty.
+    from seafood_topic_tracks import coverage_tracks
+    if not ctx['story_candidates'] and not ctx['editorial_outline'] and not any(
+        t['ready'] for t in coverage_tracks(articles,features)):
         return [],'연관된 사건·독립 자료를 갖춘 분석 후보가 부족합니다.'
-    note='';last_reason='근거 부족'
-    for attempt in range(3):
-        # Revisit another evidence-supported topic if the previous candidate fails QC.
-        focus=(ctx['story_candidates'] or ctx['editorial_outline'])
-        if attempt and len(focus)>attempt:
-            ctx['retry_focus']=focus[attempt]
-            note+=' 특히 앞선 후보와 다른 '+str(focus[attempt].get('subject','주제'))+'의 독립 근거를 확인하라.'
+    from seafood_topic_tracks import coverage_tracks, track_for_report, records_for_track
+    lanes=coverage_tracks(articles,features)
+    # Reserve independently sourced market reports for the established three
+    # tracks, while allowing other strong market issues when slots remain.
+    candidates=[lane for lane in lanes if lane['ready']]
+    # 3 default paid draft calls; up to 2 repairs, never an unlimited loop.
+    request_cap=max(1,min(7,int(os.getenv('SEAFOOD_DRAFT_CALL_LIMIT','5'))))
+    calls=0;good=[];outcomes=[];failed=[]
+    for lane in candidates[:3]:
+        if calls>=request_cap:break
+        anchor=lane['anchor']
+        local_articles,local_features=records_for_track(anchor,articles,features)
+        # Use the origin's exact IDs but exclude wholly unrelated headlines
+        # from topic-specific composing. No fake observations added here.
+        local_ctx=_main_context(local_articles,local_features,now,issues,focus_topics)
+        local_ctx['articles']=[row for row in local_ctx['articles'] if row['id'] in
+                               {a['id'] for a in local_articles}]
+        local_ctx['official_series']=[row for row in local_ctx['official_series'] if row['id'] in
+                                      {f['id'] for f in local_features}]
+        local_ctx.update({'depth_validation':True,'forecast_results':ctx['forecast_results'],
+            'story_candidates':[x for x in ctx['story_candidates'] if
+                 anchor in (str(x.get('subject',''))+str(x.get('theme',''))).lower()][:3],
+            'editorial_outline':[x for x in ctx['editorial_outline'] if
+                 anchor in str(x.get('subject','')).lower()][:2],
+            'target_market':lane['label'],
+            'target_evidence_coverage':{'numeric_records':lane['numeric_records'],
+                'sources':lane['sources'],'dimensions':lane['dimensions']}})
+        failed.append((lane,local_ctx,'근거 부족'))
+    # If no anchored market is ready, retain coverage of other verified topics.
+    if not failed:
+        failed=[({'anchor':None,'label':'전체 우선순위 시장'},ctx,'근거 부족')]
+    budget=request_cap
+    # Each supported market gets one independent draft request before retries.
+    for index,(lane,local_ctx,_) in enumerate(failed):
+        if calls>=budget:break
+        anchor=lane['anchor']
+        if anchor and not local_ctx['articles'] and not local_ctx['official_series']:
+            outcomes.append(f'{anchor}: 관련 원출처 부족');continue
+        guidance=(f"반드시 '{lane['label']}' 하나의 시장에 대한 심층 기사 1편을 작성하라. "
+           '이번 호출은 그 주제만 담당한다. 무관한 유통/어종 분석으로 대체하지 마라. '
+           '서로 독립적인 공개 출처 두 곳에서 확인한 가격·공급·수요 등 관측을 비교하라. '
+           '근거가 부족하면 reports=[]로 반환하고 다른 시장 기사로 대체하지 마라.')
         try:
-            output=_call(MAIN_PROMPT,ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
-            good,reasons=_validate_main(output,ctx)
-            print(f'SEAFOOD research draft attempt {attempt+1}: proposed={len(output.get("reports",[]))} valid={len(good)}',flush=True)
-            if good:return good,f'AI 리서치 {len(good)}편 · 공개 출처·수치 검증 통과'
-            last_reason=' / '.join(dict.fromkeys(reasons))[:220] or '주제와 근거 부족'
-            print(f'SEAFOOD research QC attempt {attempt+1}: '+last_reason,flush=True)
-            note='이전 원고 검수 의견: '+last_reason+'. market_story_clusters와 editorial_outline을 우선해 실제 두 사건의 연결을 설득력 있게 설명하고, 가장 유력한 하나의 전망을 제시하라. 검증된 숫자 이외의 예측 숫자를 쓰지 말 것. 서로 다른 근거를 확보할 수 없다면 reports=[]로 남겨라.'
-        except requests.HTTPError as e:
-            return [],f'AI 요청 실패 HTTP {e.response.status_code if e.response is not None else "unknown"} · API 프로젝트 권한 확인'
-        except requests.RequestException as e:
-            return [],f'AI 요청 실패: {type(e).__name__}'
-        except (ValueError,KeyError,TypeError) as e:
-            last_reason=type(e).__name__
-            note='JSON 출력 구조를 바로잡고 이전 자료에 없는 숫자를 추가하지 말 것.'
-    print('SEAFOOD analysis validation: '+last_reason)
-    return [],'새로운 종합 분석을 작성하지 못했습니다.'
+            response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',guidance)
+            calls+=1
+            accepted,reasons=_validate_main(response,local_ctx)
+            accepted=[r for r in accepted if not anchor or track_for_report(r)==anchor]
+            if accepted:
+                good.append(accepted[0]);outcomes.append(f'{anchor}: 통과')
+            else:
+                reason=' / '.join(dict.fromkeys(reasons))[:180] or '원고 누락·주제 불일치'
+                failed[index]=(lane,local_ctx,reason)
+                outcomes.append(f'{anchor}: {reason}')
+            print(f'SEAFOOD DRAFT {index+1} {anchor or "general"}: proposed={len(response.get("reports",[]))} accepted={len(accepted)} reasons={reasons[:3]}',flush=True)
+        except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
+            calls+=1
+            failed[index]=(lane,local_ctx,type(exc).__name__)
+            outcomes.append(f'{anchor}: API·JSON 오류 {type(exc).__name__}')
+    # One bounded repair for up to two eligible missing markets.
+    published={track_for_report(r) for r in good}
+    for lane,local_ctx,reason in failed:
+        if calls>=budget or len(good)>=3:break
+        anchor=lane['anchor']
+        if anchor in published:continue
+        if not anchor:continue
+        note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 실패: {reason}. "
+              '실제 문단과 확인된 숫자를 보강하고 빈약한 사실·다른 주제는 배제하라. '
+              '없는 근거는 만들지 말라. 충족 못하면 빈 배열을 반환하라.')
+        try:
+            response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
+            calls+=1
+            accepted,reasons=_validate_main(response,local_ctx)
+            accepted=[r for r in accepted if track_for_report(r)==anchor]
+            if accepted:
+                good.append(accepted[0]);published.add(anchor)
+                outcomes.append(f'{anchor}: 재작성 통과')
+            else:outcomes.append(f'{anchor}: 재작성 탈락 '+(' / '.join(reasons[:2]) or '원고 누락'))
+        except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
+            calls+=1;outcomes.append(f'{anchor}: 재작성 오류 {type(exc).__name__}')
+    print('SEAFOOD DRAFT - calls:',calls,'/',budget,'per-track:',outcomes,flush=True)
+    if good:return good[:3],f'새 심층 분석 {len(good)}편 · 주제별 공개 근거 검증'
+    return [],'새 심층 분석 0편 · '+('; '.join(outcomes)[:230] or '자료와 수치 부족')
 
 
 def _data_context(features,articles,main_reports,now):
