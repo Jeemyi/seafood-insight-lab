@@ -1,0 +1,449 @@
+{
+  "updated_at": "2026-11-12T03:04+09:00",
+  "reports": [
+    {
+      "id": "report-910fcfa52d698024af79",
+      "published_at": "2026-11-11T18:41+09:00",
+      "headline": "페루 대왕오징어 양륙 40.5% 증가…일부 선박은 쿼터 소진으로 조업 중단",
+      "kind": "원물 수급/시세",
+      "report": {
+        "depth": "보조",
+        "kind": "원물 수급/시세",
+        "time_frame": "2026년 1~8월 양륙 실적과 연말 조업 배정·탐색조업 허가",
+        "headline": "페루 대왕오징어 양륙 40.5% 증가…일부 선박은 쿼터 소진으로 조업 중단",
+        "thesis": "페루 대왕오징어 생산이 회복됐지만, 연간 배정량을 소진해 조업을 중단한 선박군도 나타났다. 연간 어획 한도 확대 이후에도 선박 규모와 잔여 배정량에 따라 상업조업 가능 범위가 달라졌다.",
+        "lead": "페루 생산부(PRODUCE) 경제연구국의 대왕오징어 자원 현황에 따르면 2026년 1~8월 양륙량은 63만5,600톤으로, 전년 같은 기간 45만2,500톤보다 40.5% 늘었다. 공급 증가가 이어진 가운데 정부는 연말 어획 물량을 별도로 배정하고, 한도를 소진한 선박군의 조업을 제한했다.",
+        "facts": [
+          {
+            "text": "PRODUCE의 2026년 8월 집계 자료는 대왕오징어 양륙량을 2026년 1~8월 63만5,600톤, 전년 같은 기간 45만2,500톤으로 제시했다. 전년 동기 대비 증가율은 40.5%다.",
+            "refs": [
+              "web-6853dd974a71"
+            ]
+          },
+          {
+            "text": "페루 관보의 2026년 8월 31일 발표에 따르면 장관결의 00304-2026-PRODUCE는 연간 허용어획량을 70만9,659톤으로 확대하고, 그중 8만2,321톤을 8월 30일~12월 31일 어획에 배정했다.",
+            "refs": [
+              "web-d08559632179"
+            ]
+          },
+          {
+            "text": "PRODUCE의 2026년 9월 24일 발표는 10㎥ 미만 선박에 10~12월분 9,879톤과 이전 기간 잔량 범위의 조업을 허용했다. 10~32.6㎥ 선박은 연간 배정량 소진으로 조업 중단 상태라고 명시했다.",
+            "refs": [
+              "web-d08559632179"
+            ]
+          },
+          {
+            "text": "페루 국영통신 ANDINA가 전한 결의 00382-2026-PRODUCE는 11월 1~30일 32.6㎥ 이하 선박이 참여하는 두 번째 대왕오징어 탐색조업을 허용했다. 목적은 엘니뇨 상황에서 생물·어업 지표를 평가하는 것이며, 보도에는 추가 상업어획 쿼터가 제시되지 않았다.",
+            "refs": [
+              "web-dd00385da1cb"
+            ]
+          }
+        ],
+        "market_change": "페루 정부는 연간 어획 한도를 확대하면서 연말까지 잡을 물량을 배정했지만, 이후 발표에서는 일부 선박군의 배정량 소진이 확인됐다. 누적 양륙량이 증가하는 동안에도 상업조업에 계속 참여할 수 있는 선박은 제한된 모습이다.",
+        "mechanism": [
+          "9월 24일 발표에서 10㎥ 미만 선박에는 연말 배정량과 이전 기간 잔량을 사용할 수 있도록 했지만, 10~32.6㎥ 선박은 연간 배정량을 모두 사용해 멈춰 있었다. 이어 허용된 11월 탐색조업은 자원 평가를 위한 조치로, 해당 발표에서 별도의 상업어획 물량이 추가 배정되지는 않았다."
+        ],
+        "structural_insight": "",
+        "what_changes": "누적 양륙 증가와 선박군별 쿼터 소진을 연결한 공식 산업 이슈로 범위를 한정했다.",
+        "one_sentence": "페루의 생산 회복 속에서도 일부 선박은 어획 한도를 모두 써 연말 상업조업에 제약을 받았다.",
+        "limitations": "제공된 공개자료 요약을 사용했으며 PDF·법령 전문은 직접 열람하지 않았다. 9월 24일 이후 상업조업 배정 변경, 연말 실제 양륙량과 한국향 수출량은 입력에 없다.",
+        "article_ids": [
+          "web-6853dd974a71",
+          "web-d08559632179",
+          "web-dd00385da1cb"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [],
+        "impact": "연간 한도 확대에도 배정량을 소진한 선박군은 조업을 중단했고, 소형 선박에는 잔여 배정량을 이용한 조업이 허용됐다.",
+        "followup": "탐색조업 결과를 반영한 추가 상업어획 배정 및 선박군별 조업 재개 발표.",
+        "outlook": {
+          "direction": "전망 제외",
+          "horizon": "2026년 연말 조업제도",
+          "judgment": "확정된 어획 배정과 탐색조업 허가를 다루는 정책 브리핑으로, 연말 실제 공급량과 가격의 방향은 제시하지 않는다.",
+          "basis": "선박군별 조업 제한과 탐색조업 일정은 공개됐지만, 이후 상업어획 배정 변경과 실제 양륙 실적은 제시되지 않았다.",
+          "revision_trigger": "탐색조업 결과를 반영한 추가 상업어획 쿼터 공표",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "web-d08559632179",
+            "web-dd00385da1cb"
+          ]
+        },
+        "report_type": "주요 산업 이슈",
+        "status": "공개 자료 기반 주요 산업 이슈",
+        "character_count": 797,
+        "length_tier": "간결",
+        "evidence_depth": {
+          "numeric_evidence_records": 2,
+          "distinct_numeric_facts": 2,
+          "distinct_sources": 2,
+          "dimensions": [
+            "supply"
+          ],
+          "details": [
+            {
+              "source": "producempresarial.pe",
+              "id": "web-6853dd974a71",
+              "facets": [
+                "supply"
+              ],
+              "numbers": [
+                "600톤",
+                "500톤",
+                "40.5%"
+              ]
+            },
+            {
+              "source": "elperuano.pe",
+              "id": "web-d08559632179",
+              "facets": [
+                "supply"
+              ],
+              "numbers": [
+                "659톤",
+                "321톤"
+              ]
+            }
+          ]
+        },
+        "market_anchor": "오징어",
+        "market_label": "오징어·대체 수입시장",
+        "archived_source": false,
+        "published_at": "2026-11-11T18:41+09:00"
+      },
+      "sources": [
+        {
+          "id": "web-6853dd974a71",
+          "url": "https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf?utm_source=openai",
+          "source": "producempresarial.pe",
+          "title": "Presentación de PowerPoint",
+          "summary": "**페루의 공급 회복은 실제 양륙통계로 뒷받침된다.** 페루 생산부(PRODUCE) 경제연구국의 「대왕오징어 자원 현황」 2026년 8월 집계 자료는 **2026년 1~8월 양륙량 63만5,600톤**, 전년 같은 기간 **45만2,500톤 대비 40.5% 증가**를 제시한다. 과거 연간 양륙량은 **2023년 62만1,900톤→2024년 18만8,300톤→2025년 71만2,500톤**이다. 따라서 남미 공급 회복이라는 설명은 지지되지만, 연간 실적과 8개월 실적을 같은 기간처럼 비교해서는 안 된다. 자료 파일명에는 **2026년 10월 9일**이 표시돼 있으나 정확한 게시일은 별도 확인하지 못했다. [원출처 PDF](https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf). ([producempresarial.pe](https://www.producempresarial.pe/wp-content/uploads/2026/09/6._Ficha_Recurso_Pota_AGO_2026_09.10.26.pdf?utm_source=openai))",
+          "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "원물 수급/시세",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "research_phase": "focused",
+          "impact": "공개 근거 문단",
+          "followup": "해당 원문 및 통계 기준기간",
+          "editorial_score": 7
+        },
+        {
+          "id": "web-d08559632179",
+          "url": "https://elperuano.pe/noticia/303680-gobierno-reactiva-pesca-de-la-pota?utm_source=openai",
+          "source": "elperuano.pe",
+          "title": "Gobierno reactiva pesca de la pota | Noticias | Diario Oficial El Peruano",
+          "summary": "**쿼터 확대 이후에도 일부 선박은 한도를 소진해 조업이 제한됐다.** 페루 관보의 **2026년 8월 31일 발표**에 따르면 장관결의 **00304-2026-PRODUCE**는 연간 허용어획량을 **70만9,659톤**으로 확대하고, 그중 **8만2,321톤**을 **8월 30일~12월 31일** 어획에 배정했다. 이어 PRODUCE의 **9월 24일 발표**는 **10㎥ 미만 선박**에 10~12월분 **9,879톤과 이전 기간 잔량** 범위의 조업을 허용하면서, **10~32.6㎥ 선박은 연간 배정량 소진으로 조업 중단 상태**라고 명시했다. 이는 ‘페루 전체가 자유롭게 증산 중’이라는 해석을 제한한다. [관보](https://elperuano.pe/noticia/303680-gobierno-reactiva-pesca-de-la-pota), [PRODUCE 발표 재게시](https://www.publicnow.com/view/19476AED5FED328F7EA41E0DE5C9883415F5EA30). ([elperuano.pe](https://elperuano.pe/noticia/303680-gobierno-reactiva-pesca-de-la-pota?utm_source=openai))",
+          "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "원물 수급/시세",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "research_phase": "focused",
+          "impact": "공개 근거 문단",
+          "followup": "해당 원문 및 통계 기준기간",
+          "editorial_score": 7
+        },
+        {
+          "id": "web-dd00385da1cb",
+          "url": "https://andina.pe/agencia/noticia-ministerio-de-produccion-autoriza-al-imarpe-segunda-pesca-exploratoria-pota-1097603.aspx?utm_source=openai",
+          "source": "andina.pe",
+          "title": "Ministerio de la Producción autoriza al Imarpe la segunda pesca exploratoria de pota | Agencia Andina",
+          "summary": "**11월 시험조업 허가는 일반 상업조업 확대와 구분해야 한다.** 페루 국영통신 ANDINA의 **2026년 10월 28일 보도**에 따르면 결의 **00382-2026-PRODUCE**는 **11월 1~30일**, **32.6㎥ 이하 선박**이 참여하는 두 번째 대왕오징어 탐색조업을 허용했다. 목적은 엘니뇨 상황에서 생물·어업 지표를 평가하는 것이며, 이 보도에는 추가 상업어획 쿼터나 한국향 출하량이 제시되지 않았다. [출처](https://andina.pe/agencia/noticia-ministerio-de-produccion-autoriza-al-imarpe-segunda-pesca-exploratoria-pota-1097603.aspx). ([andina.pe](https://andina.pe/agencia/noticia-ministerio-de-produccion-autoriza-al-imarpe-segunda-pesca-exploratoria-pota-1097603.aspx?utm_source=openai))",
+          "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "원물 수급/시세",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "research_phase": "focused",
+          "impact": "공개 근거 문단",
+          "followup": "해당 원문 및 통계 기준기간",
+          "editorial_score": 7
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-629251fdd6776abca4af",
+      "published_at": "2026-11-11T17:55+09:00",
+      "headline": "냉장 수꽃게값 전년 대비 +43.4%…냉동 꽃게는 -27.3%",
+      "kind": "원물 수급/시세",
+      "report": {
+        "depth": "보조",
+        "kind": "원물 수급/시세",
+        "time_frame": "2026년 11월 4일 소매가격 기준. 10월 28일·전년 조사값 비교 및 10월 12~17일 노량진시장 보도 참고",
+        "headline": "냉장 수꽃게값 전년 대비 +43.4%…냉동 꽃게는 -27.3%",
+        "thesis": "냉장 수꽃게 소매가격이 최근 일주일 동안 하락했지만 전년보다 높은 수준을 유지했다. 냉동 꽃게는 전년보다 저렴해 꽃게 구매가격 부담이 상품 형태별로 엇갈렸다.",
+        "lead": "한국농수산식품유통공사(aT) KAMIS의 2026년 11월 4일 조사에서 냉장 수꽃게 소매가격은 1kg당 20,808원, 냉동 꽃게는 15,915원이었다. 전주 대비 변동률은 각각 -3.8%, +1.4%로 최근 가격 움직임도 반대였다.",
+        "facts": [
+          {
+            "text": "KAMIS의 2026년 11월 4일 냉장 수꽃게 소매가격은 20,808원/1kg이었다. 10월 28일 조사값은 21,638원/1kg, 전년 조사값은 14,512원/1kg이다. 전주 대비 변동률은 -3.8%, 전년 조사 대비 변동률은 +43.4%였다.",
+            "refs": [
+              "kamis_소매_꽃게_수꽃게(냉장)(1kg)_-"
+            ]
+          },
+          {
+            "text": "KAMIS의 2026년 11월 4일 냉동 꽃게 소매가격은 15,915원/1kg이었다. 10월 28일 조사값은 15,693원/1kg, 전년 조사값은 21,904원/1kg이다. 전주 대비 변동률은 +1.4%, 전년 조사 대비 변동률은 -27.3%였다.",
+            "refs": [
+              "kamis_소매_꽃게_냉동(1kg)_-"
+            ]
+          },
+          {
+            "text": "중도일보는 2026년 10월 27일 수협노량진수산의 주간 동향을 인용해, 10월 12~17일 노량진시장 수꽃게 평균 경락가격이 20,400원/kg이었다고 보도했다. 해당 경락가격의 전년 같은 기간 대비 변동률은 +92.45%, 전주 대비 변동률은 +27.5%였다.",
+            "refs": [
+              "web-3c0d414e004e"
+            ]
+          }
+        ],
+        "market_change": "전년 KAMIS 조사에서는 냉동 꽃게 가격이 냉장 수꽃게보다 높았지만, 11월 4일 조사에서는 냉장 수꽃게가 더 비쌌다. 냉장 수꽃게 구매자의 가격 부담은 전년보다 커진 반면, 냉동 꽃게 구매자의 부담은 낮아졌다.",
+        "mechanism": [],
+        "structural_insight": "",
+        "what_changes": "꽃게 가격을 냉장 수꽃게와 냉동으로 나눠 정리한 데이터 브리핑. 출처에 없는 가격 차액과 수급 원인 추정은 제외.",
+        "one_sentence": "꽃게 소매시장은 냉장 수꽃게의 전년 대비 고가와 냉동 꽃게의 저가가 공존했다.",
+        "limitations": "소매가격은 단일 공식 출처인 KAMIS 조사값이다. 노량진 경락가격은 제공된 공개 보도 요약의 2차 인용이며 수협 원문은 확보되지 않았다. 최신 소매 관측일은 11월 4일이고, 꽃게 생산·재고·판매량 자료는 없다.",
+        "article_ids": [
+          "web-3c0d414e004e"
+        ],
+        "feature_ids": [
+          "kamis_소매_꽃게_수꽃게(냉장)(1kg)_-",
+          "kamis_소매_꽃게_냉동(1kg)_-"
+        ],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [],
+        "impact": "냉장 수꽃게와 냉동 꽃게에서 전년 대비 구매가격 부담이 서로 반대로 움직였다.",
+        "followup": "동일 KAMIS 조사품목의 후속 가격과 동기간 꽃게 출하·재고 자료 수집.",
+        "outlook": {
+          "direction": "전망 제외",
+          "horizon": "",
+          "judgment": "",
+          "basis": "공식 소매가격의 변화를 정리한 데이터 브리핑이다. 향후 가격 방향을 뒷받침할 생산·재고·판매 지표는 제공되지 않았다.",
+          "revision_trigger": "",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "kamis_소매_꽃게_수꽃게(냉장)(1kg)_-",
+            "kamis_소매_꽃게_냉동(1kg)_-"
+          ]
+        },
+        "report_type": "주요 산업 이슈",
+        "status": "공개 자료 기반 주요 산업 이슈",
+        "character_count": 488,
+        "length_tier": "간결",
+        "evidence_depth": {
+          "numeric_evidence_records": 3,
+          "distinct_numeric_facts": 3,
+          "distinct_sources": 2,
+          "dimensions": [
+            "price"
+          ],
+          "details": [
+            {
+              "source": "kamis.or.kr",
+              "id": "kamis_소매_꽃게_수꽃게(냉장)(1kg)_-",
+              "facets": [
+                "price"
+              ],
+              "numbers": [
+                "1kg",
+                "1kg",
+                "1kg",
+                "3.8%",
+                "43.4%"
+              ]
+            },
+            {
+              "source": "kamis.or.kr",
+              "id": "kamis_소매_꽃게_냉동(1kg)_-",
+              "facets": [
+                "price"
+              ],
+              "numbers": [
+                "1kg",
+                "1kg",
+                "1kg",
+                "1.4%",
+                "27.3%"
+              ]
+            },
+            {
+              "source": "m.joongdo.co.kr",
+              "id": "web-3c0d414e004e",
+              "facets": [
+                "price"
+              ],
+              "numbers": [
+                "20,400원/kg",
+                "92.45%",
+                "27.5%"
+              ]
+            }
+          ]
+        },
+        "market_anchor": "topic:해양수산공급변동",
+        "market_label": "해양수산 공급변동",
+        "archived_source": true,
+        "published_at": "2026-11-11T17:55+09:00"
+      },
+      "sources": [
+        {
+          "id": "web-3c0d414e004e",
+          "url": "https://m.joongdo.co.kr/view.php?key=20261027010007869",
+          "source": "m.joongdo.co.kr",
+          "title": "중도일보 - 가을 제철 수산물 가격 들썩… 꽃게·전어 두 배 급등",
+          "summary": "**‘가을 수산물 전반 급등’보다 ‘특정 시장 수꽃게 경락가격 급등’이 확인 가능한 표현이다.** 중도일보의 **2026년 10월 27일 보도**는 수협노량진수산의 주간 동향을 인용해, **10월 12~17일 수꽃게 평균 경락가격이 20,400원/kg으로 전년 같은 기간 대비 92.45%, 전주 대비 27.5% 상승**했다고 전했다. 수협 원문은 이번 조사에서 확보하지 못했으므로 **2차 인용 단계**다. 제공된 11월 4일 냉장 수꽃게 소매가격이나 냉동 꽃게 가격과 합쳐 ‘꽃게 가격 두 배’로 일반화할 수 없다. 원출처로 지목된 자료: 수협노량진수산 주간 수산물 동향. ([m.joongdo.co.kr](https://m.joongdo.co.kr/view.php?key=20261027010007869))",
+          "summary_type": "웹 검색 인용 문단 · 원문 미열람",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "원물 수급/시세",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "research_phase": "discovery",
+          "impact": "공개 근거 문단",
+          "followup": "해당 원문 및 통계 기준기간",
+          "editorial_score": 15
+        }
+      ],
+      "features": [
+        {
+          "id": "kamis_소매_꽃게_수꽃게(냉장)(1kg)_-",
+          "name": "꽃게 수꽃게(냉장)(1kg) - 소매가격",
+          "title": "꽃게 수꽃게(냉장)(1kg) - 소매가격 전년 대비 +43.4%",
+          "subtitle": "KAMIS 소매 조사 · 2026-11-04",
+          "period_start": "1년전",
+          "period_end": "2026-11-04",
+          "facts": [
+            {
+              "label": "소매 조사 가격",
+              "value": "20,808원/1kg",
+              "detail": "2026-11-04"
+            },
+            {
+              "label": "1주 전 대비",
+              "value": "-3.8%",
+              "detail": "1주일전 (10/28)"
+            },
+            {
+              "label": "전년 조사 대비",
+              "value": "+43.4%",
+              "detail": "1년전"
+            }
+          ],
+          "observed": "2026-11-04 소매 꽃게 수꽃게(냉장)(1kg) - 20,808원/1kg · 1주 전 21,638원/1kg, -3.8% · 전년 조사 14,512원/1kg, +43.4%",
+          "data_links": [
+            {
+              "url": "https://www.kamis.or.kr/customer/reference/openapi_list.do?action=detail&boardno=1",
+              "label": "aT KAMIS 수산물 도소매 가격 공식 API"
+            }
+          ],
+          "article_ids": [
+            "c2850b59d1514557",
+            "911caaebb4256385",
+            "web-07de60c57a50"
+          ],
+          "category": "원물 수급/시세",
+          "channels": [],
+          "impact": "소매 관측가격 변화",
+          "source_type": "공식 공개 API",
+          "series_type": "kamis",
+          "limitations": "KAMIS 조사품목 꽃게, 품종 수꽃게(냉장)(1kg), 등급 -, 단위 1kg, 소매 조사값. 조사 지역·표본 변경, 행사 및 거래 규격에 따라 차이 발생. 산지가/수입통관가격과 단위 및 대상이 다르므로 직접 비교 불가.",
+          "measurements": {
+            "item": "꽃게",
+            "kind": "수꽃게(냉장)(1kg)",
+            "rank": "-",
+            "unit": "1kg",
+            "channel": "소매",
+            "current_price": 20808.0,
+            "week_price": 21638.0,
+            "month_price": null,
+            "year_price": 14512.0,
+            "week_pct": -3.8358443479064586,
+            "month_pct": null,
+            "yoy_pct": 43.38478500551268,
+            "previous_pct": null,
+            "date": "2026-11-04"
+          },
+          "significance": 47,
+          "related_observations": []
+        },
+        {
+          "id": "kamis_소매_꽃게_냉동(1kg)_-",
+          "name": "꽃게 냉동(1kg) - 소매가격",
+          "title": "꽃게 냉동(1kg) - 소매가격 전년 대비 -27.3%",
+          "subtitle": "KAMIS 소매 조사 · 2026-11-04",
+          "period_start": "1년전",
+          "period_end": "2026-11-04",
+          "facts": [
+            {
+              "label": "소매 조사 가격",
+              "value": "15,915원/1kg",
+              "detail": "2026-11-04"
+            },
+            {
+              "label": "1주 전 대비",
+              "value": "+1.4%",
+              "detail": "1주일전 (10/28)"
+            },
+            {
+              "label": "전년 조사 대비",
+              "value": "-27.3%",
+              "detail": "1년전"
+            }
+          ],
+          "observed": "2026-11-04 소매 꽃게 냉동(1kg) - 15,915원/1kg · 1주 전 15,693원/1kg, +1.4% · 전년 조사 21,904원/1kg, -27.3%",
+          "data_links": [
+            {
+              "url": "https://www.kamis.or.kr/customer/reference/openapi_list.do?action=detail&boardno=1",
+              "label": "aT KAMIS 수산물 도소매 가격 공식 API"
+            }
+          ],
+          "article_ids": [
+            "c2850b59d1514557",
+            "911caaebb4256385",
+            "web-07de60c57a50"
+          ],
+          "category": "원물 수급/시세",
+          "channels": [],
+          "impact": "소매 관측가격 변화",
+          "source_type": "공식 공개 API",
+          "series_type": "kamis",
+          "limitations": "KAMIS 조사품목 꽃게, 품종 냉동(1kg), 등급 -, 단위 1kg, 소매 조사값. 조사 지역·표본 변경, 행사 및 거래 규격에 따라 차이 발생. 산지가/수입통관가격과 단위 및 대상이 다르므로 직접 비교 불가.",
+          "measurements": {
+            "item": "꽃게",
+            "kind": "냉동(1kg)",
+            "rank": "-",
+            "unit": "1kg",
+            "channel": "소매",
+            "current_price": 15915.0,
+            "week_price": 15693.0,
+            "month_price": null,
+            "year_price": 21904.0,
+            "week_pct": 1.4146434716115541,
+            "month_pct": null,
+            "yoy_pct": -27.342037983929877,
+            "previous_pct": null,
+            "date": "2026-11-04"
+          },
+          "significance": 34.34203798392988,
+          "related_observations": []
+        }
+      ]
+    }
+  ],
+  "retention_days": 730
+}
