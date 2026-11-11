@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T09:57+09:00",
+  "generated_at": "2026-11-11T11:11+09:00",
   "articles": [
     {
       "id": "bfdb759f53660292",
@@ -73,18 +73,18 @@
       "editorial_score": 21
     },
     {
-      "id": "5e30b55cfb322e10",
-      "title": "\"이번엔 속초 떡 맛집\" 이마트24, 육구방앗간 '찹쌀모찌' 한정판매",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863123",
+      "id": "dc9de6c23d6fbd79",
+      "title": "회생 안간힘 홈플러스, 상품 재입고…생필품·먹거리 할인전",
+      "url": "https://www.newsis.com/view/NISX20261111_0003863182",
       "source": "뉴시스·산업",
-      "published": "2026-11-11T08:54+09:00",
-      "timestamp": 1794354860,
+      "published": "2026-11-11T10:03+09:00",
+      "timestamp": 1794358999,
       "category": "대형마트/SSM",
       "tags": [
         "대형마트/SSM"
       ],
       "score": 13.2,
-      "summary": "[서울=뉴시스]오제일 기자 = 이마트24가 속초 유명 떡집 '육구방앗간' 대표 상품을 편의점 업계 최초로 한정 판매한다고 11일 밝혔다. '떡 팝업 행사 시즌2'다. 이마트24는 육구방앗간 대표 상품인 '찹쌀모찌(9EA)'를 13일 오전 11시부터 플래그십 스토어 '트렌드랩 성수점'에서 선보인다. 육구방앗간은 밀가루 없이 찹쌀만을 쪄내는 전통 방식을 고수하고 있으며, 참쌀모찌는 MZ세대에게 인기가 많은 제품이다. 지난 9월 진행한 떡 팝업 행사 시즌1의 인기에 힘입어 진행되는 후속 팝업이다. 당시 '영도다리떡방', '익산농협떡방앗간'의 인기 상품이 판매됐는데, 당일 오전 동이 났다. ",
+      "summary": "[서울=뉴시스]권민지 기자 = 홈플러스가 장바구니 물가 부담을 낮추기 위해 삼겹살과 제철 과일, 간편식 등 인기 먹거리와 생필품을 할인 판매한다. 홈플러스는 12일부터 18일까지 신선식품과 생필품 할인전을 진행한다고 11일 밝혔다. 이번 행사를 위해 인기 상품 4500여종의 재입고를 완료했다. 행사 기간 캐나다산 '보리 먹고 자란 돼지' 삼겹살·목심은 멤버특가 40% 할인한 100g당 1380원에 판매한다. 미국산 프라임 척아이롤은 30% 할인한 100g당 3430원에 선보인다. 무항생제 닭다리살·오리 슬라이스 구이(400g)는 50% 할인한 7990원에 판매한다. 제철 과일도 할인한",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
@@ -93,7 +93,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "editorial_score": 2
+      "editorial_score": 4
     },
     {
       "id": "d4d522f532a356e3",
@@ -119,6 +119,30 @@
       "editorial_score": 16
     },
     {
+      "id": "a114f581835f5d94",
+      "title": "일본엔 진미채·호주엔 깍두기…코스트코 뚫고 K푸드 알리는 아워홈",
+      "url": "https://www.hankyung.com/article/202611119329g",
+      "source": "한국경제·경제",
+      "published": "2026-11-11T09:32+09:00",
+      "timestamp": 1794357125,
+      "category": "코스트코",
+      "tags": [
+        "코스트코"
+      ],
+      "score": 13.5,
+      "summary": "",
+      "summary_type": "",
+      "question": "신규 출점·PB·소싱 정책 변화가 경쟁사와 전체 유통시장 구조를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "코스트코",
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
+      "editorial_score": 7
+    },
+    {
       "id": "595f9c1871ad046b",
       "title": "트럼프의 행동대장, 공화당 하원 리더로 선출…'탄핵방어 모드' [워싱턴나우+]",
       "url": "https://www.hankyung.com/article/202611118840i",
@@ -139,27 +163,27 @@
       "followup": "산지가·위판량·어종별 규격·수출입 물량"
     },
     {
-      "id": "ffd06a42b337a501",
-      "title": "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40eW9wNnlEUU5xUFk5bGVzUktVWEZuWnk5eUllNGdneTI3a0d2dFpWdjRad0drZ3N2TmREUFdQRm80b2FRV1ZBcERfT2pqNWFpQjVJRkNfVDYzREJPaWpmWUl2anp1akx3ZWM2QzFB0gFuQVVfeXFMTjR5b3A2eURRTnFQWTlsZXNSS1VYRm5aeTl5SWU0Z2d5MjdrR3Z0WlZ2NFp3R2tnc3ZOZERQV1BGbzRvYVFXVkFwRF9Pamo1YWlCNUlGQ19UNjNEQk9pamZZSXZqenVqTHdlYzZDMUE?oc=5",
-      "source": "뉴스드림",
-      "published": "2026-11-05T08:27+09:00",
-      "timestamp": 1793834873,
+      "id": "5e30b55cfb322e10",
+      "title": "\"이번엔 속초 떡 맛집\" 이마트24, 육구방앗간 '찹쌀모찌' 한정판매",
+      "url": "https://www.newsis.com/view/NISX20261111_0003863123",
+      "source": "뉴시스·산업",
+      "published": "2026-11-11T08:54+09:00",
+      "timestamp": 1794354860,
       "category": "대형마트/SSM",
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 12.7,
-      "summary": "",
-      "summary_type": "",
+      "score": 13.2,
+      "summary": "[서울=뉴시스]오제일 기자 = 이마트24가 속초 유명 떡집 '육구방앗간' 대표 상품을 편의점 업계 최초로 한정 판매한다고 11일 밝혔다. '떡 팝업 행사 시즌2'다. 이마트24는 육구방앗간 대표 상품인 '찹쌀모찌(9EA)'를 13일 오전 11시부터 플래그십 스토어 '트렌드랩 성수점'에서 선보인다. 육구방앗간은 밀가루 없이 찹쌀만을 쪄내는 전통 방식을 고수하고 있으며, 참쌀모찌는 MZ세대에게 인기가 많은 제품이다. 지난 9월 진행한 떡 팝업 행사 시즌1의 인기에 힘입어 진행되는 후속 팝업이다. 당시 '영도다리떡방', '익산농협떡방앗간'의 인기 상품이 판매됐는데, 당일 오전 동이 났다. ",
+      "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
       "channels": [
         "마트"
       ],
-      "impact": "가격 변화 보도 · 비교 확인",
+      "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "editorial_score": 11
+      "editorial_score": 2
     },
     {
       "id": "dc661d3199730f6d",
@@ -183,6 +207,29 @@
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
       "editorial_score": 17
+    },
+    {
+      "id": "ffd06a42b337a501",
+      "title": "롯데마트, 햇굴 최대 35% 인하… 수산물 물가 안정 총력",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40eW9wNnlEUU5xUFk5bGVzUktVWEZuWnk5eUllNGdneTI3a0d2dFpWdjRad0drZ3N2TmREUFdQRm80b2FRV1ZBcERfT2pqNWFpQjVJRkNfVDYzREJPaWpmWUl2anp1akx3ZWM2QzFB0gFuQVVfeXFMTjR5b3A2eURRTnFQWTlsZXNSS1VYRm5aeTl5SWU0Z2d5MjdrR3Z0WlZ2NFp3R2tnc3ZOZERQV1BGbzRvYVFXVkFwRF9Pamo1YWlCNUlGQ19UNjNEQk9pamZZSXZqenVqTHdlYzZDMUE?oc=5",
+      "source": "뉴스드림",
+      "published": "2026-11-05T08:27+09:00",
+      "timestamp": 1793834873,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "",
+      "summary_type": "",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "가격 변화 보도 · 비교 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "editorial_score": 11
     },
     {
       "id": "c76ff23a19e3a5a7",
@@ -258,11 +305,16 @@
     {
       "id": "salmon_price_volume",
       "name": "노르웨이 연어 가격·수출물량",
-      "title": "노르웨이 연어 수출가 -6.9% · 물량 +14.3%",
+      "title": "노르웨이 연어 달러 환산 수출가 +0.5% · 수출량 +14.3%",
       "subtitle": "노르웨이 통계청 SSB 신선·냉장 연어",
       "period_start": "2025년 44주",
       "period_end": "2026년 44주",
       "facts": [
+        {
+          "label": "달러 환산 수출가격",
+          "value": "$8.07/kg",
+          "detail": "2026년 44주 · 전년 동주 +0.5%"
+        },
         {
           "label": "수출가격",
           "value": "74.98 NOK/kg",
@@ -284,26 +336,35 @@
           "detail": "2025년 44주"
         }
       ],
-      "observed": "노르웨이 통계청 SSB 2026년 44주: 신선·냉장 연어 수출가격 74.98 NOK/kg (전년 2025년 44주 대비 -6.9%), 수출물량 28,444톤 (전년 동주 대비 +14.3%). 동일 주차·동일 제품 분류 비교.",
+      "observed": "노르웨이 통계청 SSB 2026년 44주: 신선·냉장 연어 수출가격 74.98 NOK/kg (전년 2025년 44주 대비 -6.9%), 수출물량 28,444톤 (전년 동주 대비 +14.3%). 동일 주차·동일 제품 분류 비교. · Norges Bank 주간 평균환율로 환산한 가격 $8.07/kg(전년 동주 $8.03/kg, +0.5%). 주간 공식 수출가격 NOK/kg을 환산한 참고가격이며 실제 달러 계약가격은 아님.",
       "data_links": [
         {
           "url": "https://www.ssb.no/en/statbank/table/03024/",
           "label": "노르웨이 통계청 신선·냉장 연어 주간 수출 가격·물량"
+        },
+        {
+          "url": "https://www.norges-bank.no/en/topics/Statistics/exchange_rates/",
+          "label": "Norges Bank USD/NOK 공식 일별 환율"
         }
       ],
       "article_ids": [],
       "category": "원물 수급/시세",
       "channels": [],
-      "impact": "가격 -6.9% · 물량 +14.3%",
+      "impact": "달러 환산가격 +0.5% · 물량 +14.3%",
       "source_type": "공식 공개 API",
       "series_type": "salmon_joint",
-      "limitations": "SSB 신선·냉장 연어 수출가격은 NOK/kg, 물량은 수출 톤수다. 한국 수입 원가·원화 환산가격과 다르며 월간 수출 통계와 같은 자료로 합산할 수 없다.",
+      "limitations": "달러 환산가격은 해당 주 USD/NOK 일별 평균환율을 이용한 참고값. 공식 NOK/kg 수출가격, 실제 달러 계약가격, 한국의 수입 통관단가는 서로 다름.",
       "measurements": {
         "species": "연어",
         "price_nok_kg": 74.98,
         "tonnes": 28444.0,
         "yoy_price_pct": -6.914959652389808,
-        "yoy_qty_pct": 14.347738693467328
+        "yoy_qty_pct": 14.347738693467328,
+        "price_usd_kg": 8.0678,
+        "prior_price_usd_kg": 8.0262,
+        "usd_yoy_pct": 0.52,
+        "usd_nok_week_avg": 9.29372,
+        "usd_nok_prev_year_week_avg": 10.03588
       },
       "significance": 26.10735252925082,
       "related_observations": []
@@ -356,6 +417,7 @@
       "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
       "source_type": "공식 공개 API",
       "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다.",
+      "role": "context",
       "related_observations": []
     },
     {
@@ -404,6 +466,7 @@
       "impact": "환율 변화는 결제통화·계약시점에 따라 반영 시차 발생",
       "source_type": "공식 공개 API",
       "limitations": "매매기준율은 납품계약의 적용환율·실제 결제환율과 다를 수 있습니다.",
+      "role": "context",
       "related_observations": []
     }
   ],
@@ -418,12 +481,13 @@
         "bfdb759f53660292",
         "web-bfdb759f5366",
         "7b20906b83138dae",
-        "web-c3b4dfbf1efa"
+        "web-48eb0ad57a1d",
+        "web-91894353629a"
       ],
       "feature_ids": [
         "salmon_price_volume"
       ],
-      "source_count": 5,
+      "source_count": 6,
       "research_question": "국가별 수출액과 물량을 분해하면 판매량 성장과 단가 변화가 어떻게 다른가?",
       "news_titles": [
         "美中, 무역 휴전 2개월 연장…관세·희토류 수출통제 유예",
@@ -433,16 +497,37 @@
       ]
     },
     {
+      "theme": "광어·우럭 양식 수급",
+      "category": "원물 수급/시세",
+      "score": 51.0,
+      "article_ids": [
+        "a99c2c913a2e7669",
+        "web-41a10b0db891",
+        "web-bf95b6cffcb8",
+        "web-2e5546a68ff2",
+        "web-91894353629a"
+      ],
+      "feature_ids": [],
+      "source_count": 5,
+      "research_question": "출하·양성물량·산지가를 함께 보면 앞으로 공급은 늘어나는가, 줄어드는가?",
+      "news_titles": [
+        "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
+        "국립수산과학원",
+        "수산관측",
+        "한국광어양식연합회, 부산수산엑스포서 국산 광어 우수성 알려"
+      ]
+    },
+    {
       "theme": "대형마트·창고형 유통 변화",
       "category": "대형마트/SSM",
-      "score": 53.0,
+      "score": 44.0,
       "article_ids": [
         "a99c2c913a2e7669",
         "bfdb759f53660292",
         "ffd06a42b337a501",
         "web-bfdb759f5366",
-        "web-4f8a2aae8507",
-        "web-d680924b384c"
+        "web-9362591c87b8",
+        "5e30b55cfb322e10"
       ],
       "feature_ids": [],
       "source_count": 4,
@@ -455,35 +540,23 @@
       ]
     },
     {
-      "theme": "광어·우럭 양식 수급",
+      "theme": "연어·해외 원료시장",
       "category": "원물 수급/시세",
-      "score": 45.0,
+      "score": 41.7,
       "article_ids": [
-        "a99c2c913a2e7669",
-        "web-bf95b6cffcb8"
+        "web-48eb0ad57a1d",
+        "web-91894353629a",
+        "web-9772fc0387ab"
       ],
-      "feature_ids": [],
-      "source_count": 2,
-      "research_question": "출하·양성물량·산지가를 함께 보면 앞으로 공급은 늘어나는가, 줄어드는가?",
-      "news_titles": [
-        "\"올해 스마트폰 OLED 출하량 전년比 3% 감소 전망…폴더블은 23%↑\"",
-        "수산관측"
-      ]
-    },
-    {
-      "theme": "식품안전·규제",
-      "category": "식품안전/소비심리",
-      "score": 40.0,
-      "article_ids": [
-        "7b20906b83138dae",
-        "web-2f0614dcd3b6"
+      "feature_ids": [
+        "salmon_price_volume"
       ],
-      "feature_ids": [],
       "source_count": 2,
-      "research_question": "실제 검사 통계, 규제 발효일, 품목 범위가 유통 제한과 일치하는가?",
+      "research_question": "수출액 성장에 물량과 단가가 각각 얼마나 기여했으며 한국 수입 통계와 같은가?",
       "news_titles": [
-        "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장",
-        "PRODUCE autoriza continuidad de actividad extractiva de pota durante El Niño 2026–2027, bajo una estrategia adaptativa de pesca exploratoria - Noticias - Ministerio de la Producción - Plataforma del Estado Peruano"
+        "Norwegian seafood exports remained stable in October",
+        "Record exports of Norwegian seafood in 2023 due to price growth and weak krone",
+        "Statistikkbanken – SSB"
       ]
     },
     {
@@ -493,7 +566,7 @@
       "article_ids": [
         "dc661d3199730f6d",
         "7b20906b83138dae",
-        "web-34b78ded1e73"
+        "web-96bf5d3c9bdf"
       ],
       "feature_ids": [],
       "source_count": 3,
@@ -501,89 +574,89 @@
       "news_titles": [
         "컬리, 3분기 매출 7779억 '역대 최대'…전년比 34.4%↑",
         "美공화, 차기 하원 원내대표 선출…'韓 쿠팡 규제 비판' 조던 도전장",
-        "추석연휴 '특수'…9월 주요 유통업체 매출 9.5%↑ | 연합뉴스"
+        "보도자료 김장 재료부터 수산물까지 최대 50% 할인, 김장철 소비자 장바구니 부담 줄인다 해양수산부"
       ]
     }
   ],
   "deep_reports": [
     {
-      "depth": "보조",
-      "kind": "코스트코",
-      "time_frame": "2026년 11월 1~11일, 수출 실적은 2026년 1~10월 비교",
-      "headline": "진미채, 일본 코스트코 37곳 정규판매…수출 확대엔 엔저 부담",
-      "thesis": "아워홈 진미채 볶음이 일본 코스트코 37개 점포에 정규 입점하면서 국내 수산가공식품의 일본 판매 경로가 넓어졌다. 연말까지 정규매대 공급이 이어질 가능성이 크지만, 엔화 약세가 겹쳐 입점 확대를 원화 매출 증가로 곧바로 연결하기는 어렵다.",
-      "lead": "이번 입점은 단기 판촉이 아닌 정규판매라는 점에서 의미가 있다. 다만 회사가 함께 발표한 올해 수출 증가율은 입점 이전 실적이며, 일본 판매의 성과는 별도로 평가해야 한다.",
+      "depth": "핵심",
+      "kind": "대형마트/SSM",
+      "time_frame": "2026년 9월 유통통계·11월 수산물 판촉, 11월 29일까지 전망",
+      "headline": "수산물 200억원 할인 지원…11월 가격 경쟁, 행사 상품에 집중",
+      "thesis": "마트 구매건수가 매출보다 더디게 늘어난 가운데 정부 할인 지원과 햇굴 가격 인하가 11월 수산물 판촉에 힘을 싣고 있다. 이달 말까지는 원물 시세의 동반 하락보다 행사 대상 상품을 중심으로 한 가격 경쟁이 두드러질 가능성이 크다.",
+      "lead": "9월 대형마트 매출은 전년 동월보다 4.0% 늘었지만 구매건수 증가율은 0.5%에 그쳤다. 결제 횟수가 크게 늘지 않은 상황에서 11월 수산물 판매에는 정부 지원을 활용해 소비자의 지출을 낮출 수 있는 판촉 기회가 생겼다.",
       "facts": [
         {
-          "text": "[기업 발표를 전한 보도] 2026년 11월 11일 뉴시스 보도에 따르면 아워홈은 11월 1일부터 일본 코스트코 37개 점포에서 진미채 볶음의 정규판매를 시작했다.",
+          "text": "[공식 통계] 산업통상부의 2026년 9월 주요 유통업체 매출동향에 따르면 대형마트 전체 매출은 전년 동월 대비 4.0%, 식품 매출은 4.3%, 구매건수는 0.5% 증가했다.",
           "refs": [
-            "bfdb759f53660292"
+            "web-9362591c87b8"
           ]
         },
         {
-          "text": "[같은 발표의 실적 범위] 보도에 제시된 2026년 1~10월 해외 수출 매출 증가율 약 13%는 아워홈 전체 해외 수출에 관한 수치다. 진미채 단독 실적이나 수출물량 증가율이 아니며, 일본 코스트코 정규판매 개시보다 앞선 기간이다.",
+          "text": "[정부 발표] 해양수산부는 10월 27일 발표에서 10월 28일~11월 29일 ‘코리아 수산 페스타’를 진행한다고 밝혔다. 오프라인 24개사와 온라인 32개사가 참여하며, 정부 예산 200억원으로 구매액의 20%를 1인당 1만원 한도에서 지원한다. 업체 자체 할인을 합친 최대 할인율은 50%이며 모든 상품에 일률적으로 적용되는 비율은 아니다.",
           "refs": [
-            "web-bfdb759f5366"
+            "web-96bf5d3c9bdf"
           ]
         },
         {
-          "text": "[공식 통계] 제공된 한국은행 ECOS 시계열에서 2026년 11월 11일 엔화 환율은 100엔당 846.44원으로 전년 같은 시점보다 10.26% 낮았다. 전주보다는 0.15% 올라, 단기 움직임과 전년 대비 수준은 구분된다.",
+          "text": "[언론 보도] 11월 5일 뉴스드림은 롯데마트의 햇굴 가격 최대 35% 인하를 보도했다.",
           "refs": [
-            "fx_jpy"
+            "ffd06a42b337a501"
           ]
         }
       ],
-      "market_change": "새로 확보한 것은 일본 창고형매장의 정규 판매망이다. 아직 공개되지 않은 것은 이 매대에서 발생한 진미채 판매량과 재주문 규모다. 입점 전의 회사 전체 수출 성장률로 신규 수산가공품의 판매 성과를 설명할 수는 없다.",
+      "market_change": "9월 통계에서 매출 증가에 비해 결제 건수 증가는 작았다. 이후 11월에는 정부의 수산물 구매 지원과 유통업체의 품목별 가격 인하가 나란히 등장했다. 매출 증가율만으로 소비 회복을 평가하기보다, 할인 행사가 실제 구매를 얼마나 늘리는지가 중요해진 상황이다.",
       "mechanism": [
-        "정규 입점은 한 차례 행사에 그치는 판매보다 반복 납품으로 이어질 여지가 크다. 그러나 최초 진열을 위한 공급과 소비자 구매 이후의 보충 주문은 다르다. 37개 점포라는 숫자는 판매 접점의 확대를 보여주지만, 지속적인 수요를 판단하려면 이후 발주가 이어져야 한다.",
-        "환율은 현지 가격 경쟁력에 부담을 줄 수 있다. 원화 견적이 같다면 100엔으로 살 수 있는 원화 금액이 줄어든 만큼 일본 구매자의 엔화 조달 부담이 커진다. 반대로 엔화 판매가격을 유지하는 거래라면 원화 환산 수취액이 줄어드는 압력이 생긴다. 이는 계약 통화에 따른 설명이며, 실제 납품가격이나 수익성 변화를 뜻하지 않는다."
+        "정부 지원은 어획·양식 단계가 아니라 구매 단계에 투입된다. 참여 판매처는 원물 매입가격이 같은 폭으로 내려가지 않아도 소비자가 내는 금액을 낮출 수 있다. 따라서 이번 행사에서 나타나는 소매가격 인하는 공급 증가에 따른 원물 가격 하락과 구분된다.",
+        "롯데마트의 햇굴 가격 인하는 개별 수산물을 앞세운 가격 경쟁의 사례다. 여기에 마트와 온라인을 함께 포괄하는 정부 지원이 이어지면서 판촉 경쟁은 행사 적용 상품에 집중될 여지가 커졌다. 다만 햇굴 인하율과 정부 지원율의 중복 적용 여부는 제시되지 않았으므로 두 비율을 합산할 수는 없다."
       ],
-      "structural_insight": "이번 진입의 성과는 점포 수보다 재주문을 유지할 수 있는 가격에서 갈릴 가능성이 크다. 판매망을 확보했더라도 현지 가격을 높이면 소비자 구매에 부담이 되고, 가격을 유지하면 환율 부담을 거래 당사자 사이에서 조정해야 한다. 따라서 유통망 확대와 원화 매출 성장은 서로 다른 속도로 진행될 수 있다.",
-      "what_changes": "진미채 단독 일본 수출물량과 코스트코 정규매대의 재주문 여부가 다음 판단 기준이다.",
-      "one_sentence": "일본 판매 접점은 늘었지만, 수출 성과를 가르는 단계는 초도 입점에서 반복 주문으로 넘어갔다.",
-      "limitations": "기사 전문이 아닌 제공된 공개 소개문과 공식 시계열을 사용했다. 계약 통화·납품단가·판매량은 공개되지 않아 환율의 실제 손익 효과나 매출 증가 폭은 산정하지 않았다.",
+      "structural_insight": "11월 수산물 판매에서는 저렴한 원물 확보뿐 아니라 정부 지원의 적용 여부도 가격 경쟁력의 한 변수가 된다. 같은 품목이라도 행사 대상인지에 따라 실구매가격이 달라질 수 있어, 일부 할인 상품의 가격 하락이 수산물 전체의 시세 하락으로 번지지는 않을 수 있다.",
+      "what_changes": "원물 가격과 보조금 적용 후 소매가격을 분리하고, 행사 상품의 구매건수 변화를 우선 비교한다.",
+      "one_sentence": "11월 수산물 시장은 공급발 가격 인하보다 구매 지원을 활용한 판촉 경쟁이 앞설 가능성이 크다.",
+      "limitations": "9월 구매건수는 대형마트 전체 지표다. 햇굴 보도는 제목만 제공돼 규격·기준가격·행사 조건은 사용하지 않았으며, 정부 지원과의 중복 적용도 가정하지 않았다.",
       "article_ids": [
-        "bfdb759f53660292",
-        "web-bfdb759f5366"
+        "web-9362591c87b8",
+        "web-96bf5d3c9bdf",
+        "ffd06a42b337a501"
       ],
-      "feature_ids": [
-        "fx_jpy"
-      ],
+      "feature_ids": [],
       "policy_ids": [],
       "confidence": "중간",
       "channels": [
-        "코스트코",
-        "수출"
+        "마트",
+        "온라인"
       ],
-      "impact": "수산가공품의 일본 정규 소매 경로가 추가됐다. 다만 이번 입점을 국내 오징어 원물 수요 전반의 증가로 확대 해석할 근거는 없다.",
-      "followup": "회사나 유통사가 공개하는 진미채 재주문·판매 지속 자료를 우선 추적하고, 전체 식품 수출 실적과 분리해 평가한다.",
+      "impact": "행사 대상 수산물의 실구매가격 인하와 판매처 간 판촉 경쟁에 영향을 준다.",
+      "followup": "행사 대상 품목별 동일 규격 가격과 할인 적용 구매건수, 지원예산 집행률을 후속 비교한다.",
       "outlook": {
         "direction": "확대",
-        "horizon": "2026년 11~12월 초기 판매 기간",
-        "judgment": "아워홈 진미채는 연말까지 일본 코스트코 정규매대 공급을 이어가며 11월 이전보다 넓어진 일본 유통 기반을 유지할 가능성이 크다. 전망 범위는 해당 제품의 판매 경로이며, 수출액이나 판매량의 증가까지 포함하지 않는다.",
-        "basis": "11월 1일부터 37개 점포에서 정규판매를 시작했다는 발표가 근거다. 다만 엔화의 전년 대비 원화 환산가치 하락은 현지 가격 설정에 부담이어서 판매망 확대만으로 매출 성장 폭을 판단하기 어렵다.",
-        "revision_trigger": "일본 코스트코의 해당 제품 정규판매 중단 또는 취급 점포 축소가 공개되는 경우.",
+        "horizon": "2026년 11월 11~29일",
+        "judgment": "남은 11월에는 정부 지원을 활용하는 행사 상품을 중심으로 마트·온라인의 수산물 판촉 경쟁이 확대될 가능성이 크다.",
+        "basis": "11월 29일까지 예정된 구매 지원이 오프라인 24개사와 온라인 32개사에 걸쳐 진행되고, 개별 유통업체의 햇굴 가격 인하도 등장했다. 9월 대형마트 구매건수 증가율은 매출 증가율에 못 미쳤다.",
+        "revision_trigger": "참여 판매처에 배정된 지원예산이 행사 종료일 전에 소진되는 경우다.",
         "numeric_estimate": "",
         "forecast_method": "",
         "backtest": "",
         "evidence_ids": [
-          "bfdb759f53660292",
-          "fx_jpy"
+          "web-96bf5d3c9bdf",
+          "ffd06a42b337a501",
+          "web-9362591c87b8"
         ]
       },
       "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
-      "character_count": 1416,
+      "character_count": 1339,
       "length_tier": "충실"
     }
   ],
   "deep_status": "AI 리서치 1편 · 공개 출처·수치 검증 통과",
   "research_sources": [
     {
-      "id": "web-bfdb759f5366",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863181",
+      "id": "web-dc9de6c23d6f",
+      "url": "https://www.newsis.com/view/NISX20261111_0003863182",
       "source": "newsis.com",
-      "title": "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑ :: 공감언론 뉴시스 ::",
-      "summary": "1. **[최근 사건·기업 발표]** 뉴시스의 **2026년 11월 11일 보도**에 따르면 아워홈은 **11월 1일부터 일본 코스트코 37개 점포**에서 ‘진미채 볶음’과 ‘진한 뼈없는 갈비탕’을 정규 판매하기 시작했다. **2026년 1~10월 해외 수출 매출의 전년 동기 대비 약 13% 증가**는 회사 전체 해외 수출 매출에 관한 회사 설명이며, 진미채 단독 실적이나 수출물량 증가율이 아니다. ([newsis.com](https://www.newsis.com/view/NISX20261111_0003863181))",
+      "title": "회생 안간힘 홈플러스, 상품 재입고…생필품·먹거리 할인전 :: 공감언론 뉴시스 ::",
+      "summary": "1. **[최근 사건·기업 발표]** 뉴시스의 **11월 11일 보도**에 따르면 홈플러스는 **11월 12~18일** 신선식품·생필품 할인전을 진행하며, 이를 위해 인기 상품 **4,500여 종을 재입고했다고 발표**했다. 이는 회사가 밝힌 행사 준비 상황이지, 납품 정상화율이나 실제 판매 회복을 확인한 통계는 아니다. ([newsis.com](https://www.newsis.com/view/NISX20261111_0003863182))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -594,32 +667,14 @@
       "official": false,
       "impact": "외부 원문 근거",
       "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 11
+      "editorial_score": 2
     },
     {
-      "id": "web-c5afb87d0759",
-      "url": "https://v.daum.net/v/20260927081651895",
-      "source": "v.daum.net",
-      "title": "\"이모, 언제부터 오징어채 밑반찬으로 나와요?\"…슬금슬금 식당서 사라졌는데 '반전'",
-      "summary": "2. **[수요·유통 독자 취재·기간 밖 참고]** 아시아경제의 **2026년 9월 27일 현장 취재**에서는 서울 강북구 반찬가게가 원재료 가격 상승 후 진미채를 묶음 반찬에서 제외하고 **한 통 5,000원**에 별도 판매했으며, 최근 가격이 내려가면서 담는 양을 늘렸다고 보도했다. 이는 **개별 점포 사례이지 전국 판매통계가 아니며**, 최근 45일 범위보다 하루 앞선 참고자료다. ([v.daum.net](https://v.daum.net/v/20260927081651895))",
-      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
-      "published": "발행일 별도 확인",
-      "timestamp": 0,
-      "category": "코스트코",
-      "channels": [],
-      "tags": [],
-      "score": 0,
-      "official": false,
-      "impact": "외부 원문 근거",
-      "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 7
-    },
-    {
-      "id": "web-c3b4dfbf1efa",
-      "url": "https://fta.kmi.re.kr/sub01/view.php?attribute=&bid=itmSuply&btype=&idx=888&page=0&sv=&sw=&view=&utm_source=openai",
-      "source": "fta.kmi.re.kr",
-      "title": "품목별 수급동향 | FTA 체결국 주요 수입 품목 정보 | FTA 소식 | FTA 이행에 따른 어업인등 지원센터",
-      "summary": "3. **[과거 비교·수입·수요]** KMI가 **2025년 4월 23일 등록한 「주요 품목별 수급현황―오징어」**의 2021~2024년 표에서 오징어 수입은 **2021년 370,783톤, 2022년 378,178톤, 2023년 420,904톤, 2024년 364,859톤**이며, 2024년 국내소비는 **420,449톤**이다. 수출입은 건조·염장 등 가공품을 원물로 환산한 물량이고, 국내소비는 **생산＋수입－수출**로 산출한 값이므로 냉동 오징어 실중량이나 실제 소매 판매량과 구분해야 한다. ([fta.kmi.re.kr](https://fta.kmi.re.kr/sub01/view.php?attribute=&bid=itmSuply&btype=&idx=888&page=0&sv=&sw=&view=&utm_source=openai))",
+      "id": "web-9362591c87b8",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view",
+      "source": "motir.go.kr",
+      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "summary": "2. **[독립 공식통계·매출과 구매건수]** 산업통상부의 **2026년 9월 주요 유통업체 매출동향**에서 대형마트 매출은 전년 동월 대비 **4.0%**, 식품 매출은 **4.3%**, 구매건수는 **0.5%** 증가했다. SSM은 전체 매출 **5.0%**, 농수축산물 매출 **10.0%** 증가로 집계됐지만, 농수축산물 증가율을 수산물 단독 실적으로 해석할 수는 없다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -633,29 +688,29 @@
       "editorial_score": 7
     },
     {
-      "id": "web-2f0614dcd3b6",
-      "url": "https://ccn.web.tr/web-api/iframe-proxy?url=http%3A%2F%2Fwww.gob.pe%2Finstitucion%2Fproduce%2Fnoticias%2F1452507-produce-autoriza-continuidad-de-actividad-extractiva-de-pota-durante-el-nino-2026-2027-bajo-una-estrategia-adaptativa-de-pesca-exploratoria&utm_source=openai",
-      "source": "ccn.web.tr",
-      "title": "PRODUCE autoriza continuidad de actividad extractiva de pota durante El Niño 2026–2027, bajo una estrategia adaptativa de pesca exploratoria - Noticias - Ministerio de la Producción - Plataforma del Estado Peruano",
-      "summary": "5. **[최근 사건·규제]** 페루 PRODUCE의 **2026년 10월 3일 발표문 재현본**은 결의 **00348-2026-PRODUCE**에 따라 대왕오징어 *Dosidicus gigas*의 첫 탐사조업을 공표 다음 날부터 **10월 31일까지** 허용했다고 명시한다. 이는 자원 상태를 평가하기 위한 조치이며, 생산량 회복 실적이나 무제한 조업 허용을 뜻하지 않는다. **정부 원문 URL은 직접 열리지 않아 발표문 재현본으로 확인한 제한이 있다.** ([ccn.web.tr](https://ccn.web.tr/web-api/iframe-proxy?url=http%3A%2F%2Fwww.gob.pe%2Finstitucion%2Fproduce%2Fnoticias%2F1452507-produce-autoriza-continuidad-de-actividad-extractiva-de-pota-durante-el-nino-2026-2027-bajo-una-estrategia-adaptativa-de-pesca-exploratoria&utm_source=openai))",
+      "id": "web-96bf5d3c9bdf",
+      "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=69114&menuSeq=971",
+      "source": "mof.go.kr",
+      "title": "보도자료 김장 재료부터 수산물까지 최대 50% 할인, 김장철 소비자 장바구니 부담 줄인다 해양수산부",
+      "summary": "4. **[최근 사건·정부 원발표]** 해양수산부는 **10월 27일 발표**에서 **10월 28일~11월 29일** ‘코리아 수산 페스타’를 실시한다고 밝혔다. 오프라인 **24개사**, 온라인 **32개사**가 참여하고 정부 예산 **200억 원**으로 구매액의 **20%를 1인당 1만 원 한도**에서 지원하며, 업체 자체 할인을 합친 **최대 할인율은 50%**다. 이는 모든 상품에 일률적으로 적용되는 할인율이 아니다. ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=69114&menuSeq=971))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "코스트코",
+      "category": "온라인",
       "channels": [],
       "tags": [],
       "score": 0,
       "official": false,
       "impact": "외부 원문 근거",
       "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 7
+      "editorial_score": 6
     },
     {
-      "id": "web-e5bf8fa32cd2",
-      "url": "https://ogeiee.produce.gob.pe/index.php/en/shortcode/oee-documentos-publicaciones/boletines-pesca/item/download/2000_92865e9ff18267c6e68186b3621ec9a9?utm_source=openai",
-      "source": "ogeiee.produce.gob.pe",
-      "title": "inist\n     Diciembre 2023\nOficina de Estudios Econ",
-      "summary": "6. **[과거 비교·해외 생산]** 페루 PRODUCE의 **2023년 12월 수산업 보고서**에서 대왕오징어 양륙량은 **2021년 517.7천 톤, 2022년 457.4천 톤, 2023년 621,852톤**이며, **2023년은 전년 대비 36.0% 증가**했다. 보고서는 조정 가능한 수치임을 표시하고 있다. 이는 페루 양륙량으로 한국 수입량이나 국내 살오징어 생산량과 합쳐 해석하면 안 된다. ([ogeiee.produce.gob.pe](https://ogeiee.produce.gob.pe/index.php/en/shortcode/oee-documentos-publicaciones/boletines-pesca/item/download/2000_92865e9ff18267c6e68186b3621ec9a9?utm_source=openai))",
+      "id": "web-48eb0ad57a1d",
+      "url": "https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/",
+      "source": "en.seafood.no",
+      "title": "Norwegian seafood exports remained stable in October",
+      "summary": "5. **[최근 공급·가격·해외 원자료]** 노르웨이수산물위원회(NSC)의 **11월 4일 발표**에 따르면 **2026년 10월 고등어 수출**은 **13,787톤·7억5,800만 NOK**로, 전년 동월보다 물량 **50%**, 금액 **45%** 감소했다. **냉동 통고등어 수출가격은 54 NOK/kg**으로 월간 최고치를 기록했으며, 주요 수출시장은 한국·일본·베트남이었다. 이 가격은 한국 도착가격이나 국내 소매가격이 아니다. ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -669,11 +724,11 @@
       "editorial_score": 7
     },
     {
-      "id": "web-b8a8896e0937",
-      "url": "https://www.mof.go.kr/upload/whitebook/59585/book.pdf?utm_source=openai",
-      "source": "mof.go.kr",
-      "title": "II 2023년 수산물 생산 및 유통산업 실태조사",
-      "summary": "**자료 간 주의점:** KMI의 2025년 수급자료와 해수부의 앞선 실태조사에는 과거 생산량 차이가 있다. 해수부 자료는 **2022년 잠정치**를 명시하므로 두 자료를 섞어 변화율을 계산하지 않았다. ([mof.go.kr](https://www.mof.go.kr/upload/whitebook/59585/book.pdf?utm_source=openai))",
+      "id": "web-91894353629a",
+      "url": "https://en.seafood.no/news-and-media/news-archive/record-exports-of-norwegian-seafood-in-2023-due-to-price-growth-and-weak-krone/?utm_source=openai",
+      "source": "en.seafood.no",
+      "title": "Record exports of Norwegian seafood in 2023 due to price growth and weak krone",
+      "summary": "6. **[3년 전 비교·연간 수출]** NSC의 **2023년 연간자료**에서 노르웨이 고등어 수출은 **307,800톤·67억 NOK**로, 전년보다 물량은 **10% 감소**, 금액은 **7% 증가**했다. 당시에도 한국은 일본·중국과 함께 주요 시장이었으며, 이 연간 수치를 2026년 10월 한 달 실적과 직접 비교해 감소율을 산출하지 않았다. ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/record-exports-of-norwegian-seafood-in-2023-due-to-price-growth-and-weak-krone/?utm_source=openai))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -687,11 +742,11 @@
       "editorial_score": 7
     },
     {
-      "id": "web-d680924b384c",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=5",
-      "source": "motir.go.kr",
-      "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "9. **[최근 통계·대형마트]** 산업통상부가 **2026년 10월 28일 발표한 9월 매출동향**에서 대형마트 **식품 매출은 전년 동월 대비 4.3% 증가**, 구매건수는 **0.5% 증가**했다. 조사대상 대형마트의 명목 매출·구매건수 지표이며, 수산물 판매량이나 창고형매장 단독 실적은 아니다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=5))",
+      "id": "web-2e5546a68ff2",
+      "url": "https://web3.newspim.com/news/view/20261110000223?utm_source=openai",
+      "source": "web3.newspim.com",
+      "title": "한국광어양식연합회, 부산수산엑스포서 국산 광어 우수성 알려",
+      "summary": "7. **[최근 사건·생산자단체 발표]** 뉴스핌의 **11월 10일 보도**에 따르면 한국광어양식연합회는 **11월 4~6일 부산국제수산엑스포**에서 국산 양식 광어 홍보·소비촉진 활동을 진행했다고 밝혔다. 행사 개최는 확인되지만, 해당 보도만으로 소비량이나 판매량 증가가 입증되는 것은 아니다. ([web3.newspim.com](https://web3.newspim.com/news/view/20261110000223?utm_source=openai))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -705,11 +760,11 @@
       "editorial_score": 7
     },
     {
-      "id": "web-4f8a2aae8507",
-      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172335/view?mno=&pageIndex=5",
-      "source": "motir.go.kr",
-      "title": "자동차·가전부터 한우·수산물까지...최대 50% 할인 정부, 「제2회 코리아 그랜드 페스티벌」 시작(10.29~11.15) < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
-      "summary": "11. **[최근 사건·유통행사]** 산업통상부의 **2026년 10월 27일 발표**는 **10월 29일~11월 15일** 코리아 그랜드 페스티벌에서 대형마트·SSM이 제철 수산물 등 농축수산물과 가공식품 등에 **최대 50% 할인 또는 1＋1 행사**를 진행할 예정이라고 밝혔다. 이는 행사 계획과 최대 혜택이며, 수산물 전체의 실제 평균 할인율이나 판매 증가 실적이 아니다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172335/view?mno=&pageIndex=5))",
+      "id": "web-41a10b0db891",
+      "url": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_D_DATE_BEGIN=2024-11-11&NEWS_D_DATE_END=2025-11-11&NEWS_D_SUBJECT=&NEWS_SEQ=4629&PARENT_NEWS_HG_CODE=&selectPage=9",
+      "source": "nifs.go.kr",
+      "title": "국립수산과학원",
+      "summary": "8. **[공식 생산통계·광어]** 국립수산과학원에 게시된 해양수산부의 **2024년 어업생산 분석**에서 양식 넙치 생산량은 **2023년 40,089톤→2024년 40,125톤**, 전년 대비 **0.1% 증가**였다. 자료에 제시된 **최근 5년 평균 42,973톤보다는 6.6% 적었다**. 연간 생산량으로, 특정 규격의 최근 출하량·산지가·양성물량과는 다른 지표다. ([nifs.go.kr](https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_D_DATE_BEGIN=2024-11-11&NEWS_D_DATE_END=2025-11-11&NEWS_D_SUBJECT=&NEWS_SEQ=4629&PARENT_NEWS_HG_CODE=&selectPage=9))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -720,18 +775,18 @@
       "official": false,
       "impact": "외부 원문 근거",
       "followup": "해당 원문·통계 기준일 확인",
-      "editorial_score": 6
+      "editorial_score": 7
     },
     {
-      "id": "web-34b78ded1e73",
-      "url": "https://www.yna.co.kr/view/AKR20231030047500003?utm_source=openai",
-      "source": "yna.co.kr",
-      "title": "추석연휴 '특수'…9월 주요 유통업체 매출 9.5%↑ | 연합뉴스",
-      "summary": "12. **[3년 전 비교·온라인 식품]** 산업부 통계를 인용한 **2023년 10월 30일 연합뉴스 보도**에서 **2023년 9월 온라인 식품 매출은 전년 동월 대비 32.0% 증가**했다. 2026년 9월의 6.7%와 비교할 수 있는 것은 각각의 전년 동월 대비 성장률이며, 이를 2023~2026년 누적 성장률로 바꾸어 제시하지 않았다. **2023년 정부 원문은 이번 검색에서 확보하지 못했으므로 원자료 확보 완료로 분류하지 않는다.** ([yna.co.kr](https://www.yna.co.kr/view/AKR20231030047500003?utm_source=openai))",
+      "id": "web-bfdb759f5366",
+      "url": "https://www.newsis.com/view/NISX20261111_0003863181",
+      "source": "newsis.com",
+      "title": "아워홈, 일본·호주·뉴질랜드 코스트코 입점…올해 해외수출 13%↑ :: 공감언론 뉴시스 ::",
+      "summary": "10. **[최근 사건·기업 발표]** 뉴시스의 **11월 11일 보도**에 따르면 아워홈은 **11월 1일부터 일본 코스트코 37개 점포**에서 진미채 볶음과 갈비탕의 정규 판매를 시작했다고 밝혔다. 회사가 제시한 **2026년 1~10월 해외 수출 매출 약 13% 증가**는 전체 해외 수출 매출에 관한 것으로, 진미채·수산식품만의 증가율이나 수출물량 증가율이 아니다. ([newsis.com](https://www.newsis.com/view/NISX20261111_0003863181))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
-      "category": "온라인",
+      "category": "코스트코",
       "channels": [],
       "tags": [],
       "score": 0,
@@ -741,11 +796,29 @@
       "editorial_score": 11
     },
     {
+      "id": "web-e058520f72c6",
+      "url": "https://fta.kmi.re.kr/data/pubMatrl/1c89fef0371753419744.pdf",
+      "source": "fta.kmi.re.kr",
+      "title": "18 FTA 수산물 수입 동향",
+      "summary": "12. **[KMI 수입통계·물량과 금액 분리]** KMI의 FTA 수산물 수입동향에서 **2025년 1~3월 오징어 수입량은 26.3천 톤으로 전년 동기 대비 12.7% 증가**, 수입액은 **1억1,150만 미국 달러로 4.6% 감소**했다. 전체 수입량 중 **냉동품 비중은 75.9%**, 조미·자숙품은 **22.9%**여서, 전체 오징어 수입통계를 냉동 원물만의 통계로 인용해서는 안 된다. ([fta.kmi.re.kr](https://fta.kmi.re.kr/data/pubMatrl/1c89fef0371753419744.pdf))",
+      "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+      "published": "발행일 별도 확인",
+      "timestamp": 0,
+      "category": "코스트코",
+      "channels": [],
+      "tags": [],
+      "score": 0,
+      "official": false,
+      "impact": "외부 원문 근거",
+      "followup": "해당 원문·통계 기준일 확인",
+      "editorial_score": 7
+    },
+    {
       "id": "web-bf95b6cffcb8",
       "url": "https://www.kmi.re.kr/library/10110/contents/6068142?utm_source=openai",
       "source": "kmi.re.kr",
       "title": "수산관측",
-      "summary": "- **광어·우럭:** KMI 도서관에서 확인한 목록은 2026년 9월 발행호까지였고, 최근 45일에 해당하는 출하량·산지가·양성물량 원표를 확보하지 못해 수치를 싣지 않았다. ([kmi.re.kr](https://www.kmi.re.kr/library/10110/contents/6068142?utm_source=openai))",
+      "summary": "- KMI 도서관에서 **2026년 9월 광어·우럭 관측자료의 발간 기록**은 확인했으나, 최근 관측 원문의 출하량·규격별 산지가·양성물량은 확보하지 못해 숫자를 싣지 않았다. 따라서 이번 결과는 해당 품목의 최근 45일 수급을 완결한 조사는 아니다. ([kmi.re.kr](https://www.kmi.re.kr/library/10110/contents/6068142?utm_source=openai))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -763,7 +836,7 @@
       "url": "https://www.ssb.no/en/statbank/table/03024/",
       "source": "ssb.no",
       "title": "Statistikkbanken – SSB",
-      "summary": "- **노르웨이 연어:** 제공된 SSB 표는 열었으나 선택된 주차의 값이 표시되지 않았다. 따라서 사용자 제공 **2026년 44주 가격·물량과 변화율을 독립 검증된 수치로 재인용하지 않았다.** ([ssb.no](https://www.ssb.no/en/statbank/table/03024/))",
+      "summary": "- 제공된 **SSB 2026년 44주 연어 가격·물량 및 달러 환산치**는 해당 표에서 관측값을 독립적으로 재확인하지 못해 제외했다. ([ssb.no](https://www.ssb.no/en/statbank/table/03024/))",
       "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
       "published": "발행일 별도 확인",
       "timestamp": 0,
@@ -780,33 +853,37 @@
   "archived_features": [],
   "report_archived": false,
   "report_factual_brief": false,
-  "last_report_updated_at": "2026-11-11T09:57+09:00",
+  "fresh_deep_count": 1,
+  "content_state": "fresh_research",
+  "last_report_updated_at": "2026-11-11T11:11+09:00",
   "data_reports": [],
   "data_ai_status": "다른 자료와 비교할 수 있는 품목별 관측이 아직 없습니다.",
   "analysis_status": "실제 공식 관측 3종 · SSB/ECOS 및 연결된 국내 공공통계 기준",
   "sources_ok": 10,
   "sources_total": 26,
   "errors": [
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·대형마트/SSM: ValueError",
-    "Google 뉴스 검색·원물 수급/시세: ValueError",
-    "Google 뉴스 검색·대형마트/SSM: ValueError",
     "Google 뉴스 검색·코스트코: ValueError",
-    "Google 뉴스 검색·식품안전/소비심리: ValueError",
-    "Google 뉴스 검색·온라인: ValueError",
+    "Google 뉴스 검색·대형마트/SSM: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
+    "Google 뉴스 검색·대형마트/SSM: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
+    "Google 뉴스 검색·원물 수급/시세: ValueError",
     "Google 뉴스 검색·B2B/급식: ValueError",
     "Google 뉴스 검색·시즌/트렌드: ValueError",
+    "Google 뉴스 검색·온라인: ValueError",
+    "Google 뉴스 검색·식품안전/소비심리: ValueError",
     "Google 뉴스 검색·시즌/트렌드: ValueError",
-    "Google 뉴스 검색·매장 운영: ValueError",
     "Google 뉴스 검색·비용/거시: ValueError",
+    "Google 뉴스 검색·매장 운영: ValueError",
     "Google 뉴스 검색·해외: ValueError",
     "Google 뉴스 검색·해외: ValueError"
   ],
+  "research_status": "보강 출처 11건",
   "metric_errors": [
     "ECOS NOK: 항목 코드 미확인",
-    "수산물 수출입: 비교 가능한 전년 동월 자료 없음"
+    "수산물 수출입: 비교 가능한 전년 동월 자료 없음",
+    "KAMIS: API 응답은 있었지만 게시 가능한 날짜·품목·비교 가격 없음"
   ],
   "demo": false,
   "policy_sources": [],
