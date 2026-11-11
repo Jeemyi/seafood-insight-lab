@@ -455,11 +455,16 @@ def fetch_kamis_features(as_of=None):
     return results,errors
 
 def make_public_features(now):
-    with ThreadPoolExecutor(max_workers=2) as pool:
+    """Independent sources; one failed API does not suppress the other datasets."""
+    from seafood_mof_statistics import fetch_statistics_features
+    with ThreadPoolExecutor(max_workers=3) as pool:
         task_mof=pool.submit(fetch_mof_features,now.date())
         task_kamis=pool.submit(fetch_kamis_features,now.date())
+        task_stats=pool.submit(fetch_statistics_features)
         try:trade,trade_errors=task_mof.result()
         except Exception as exc:trade,trade_errors=[],['MOF: '+type(exc).__name__]
         try:prices,price_errors=task_kamis.result()
         except Exception as exc:prices,price_errors=[],['KAMIS: '+type(exc).__name__]
-    return trade+prices,trade_errors+price_errors
+        try:statistics,stats_errors=task_stats.result()
+        except Exception as exc:statistics,stats_errors=[],['MOF statistics: '+type(exc).__name__]
+    return trade+prices+statistics,trade_errors+price_errors+stats_errors

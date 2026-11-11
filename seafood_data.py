@@ -349,5 +349,5 @@ def make_features(now):
     # Keep some FX/salmon context, but prioritize species-specific production/trade
     # and surveyed consumer prices over three generic macro cards.
     features.sort(key=lambda x:(x.get('significance',0),
-                 4 if x.get('series_type') in ('trade','kamis') else 0),reverse=True)
+                 4 if x.get('series_type') in ('trade','kamis','mof_stats') else 0),reverse=True)
     return features,errors
