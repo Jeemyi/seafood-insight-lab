@@ -127,7 +127,7 @@ _DATA_ITEM['required'].append('outlook')
 MAIN_PROMPT='''너는 한국 경제지·산업 전문지의 수산시장 담당 기자이자 데이터 분석가다. 금융시장 리포트에 준하는 논리·가독성을 갖추되, 보고서는 산업 전문지 기사처럼 자연스러운 한국어로 쓴다.
 
 [기사의 목적]
-한 기사나 한 지표를 길게 풀어쓰는 것이 아니라, 서로 다른 자료와 사건을 연결해서 새로운 시장 판단을 제시한다. 주제는 최대 3개까지, 근거가 충분한 만큼만 작성한다. 편수를 채우기 위한 원고는 만들지 않는다. 핵심은 '누가 무엇을 발표했다'보다 '복수의 사건이 같은 시장에 어떻게 작용하고 앞으로 어떤 결과가 유력한가'다.
+한 기사나 한 지표를 길게 풀어쓰는 것이 아니라, 서로 다른 자료와 사건을 연결해서 새로운 시장 판단을 제시한다. 한 번의 요청에서는 지정된 중요 시장 주제 한 편만 작성한다. 하루 기사 편수 목표는 프로그램이 별도로 관리한다. 편수를 채우기 위한 원고는 만들지 않는다. 핵심은 '누가 무엇을 발표했다'보다 '복수의 사건이 같은 시장에 어떻게 작용하고 앞으로 어떤 결과가 유력한가'다.
 
 [기사 유형에 맞는 구성 — 단일 경직 조건 금지]
 - 먼저 시장 전체에서 중요 사건을 선정한다. 품목·국가별 기사 할당은 없다.
@@ -701,13 +701,19 @@ def _validate_main(payload,ctx,diagnostics=None):
     for r in payload.get('reports',[])[:5]:
         try:
             fields=('headline','thesis','lead','market_change','structural_insight','what_changes','one_sentence','limitations','followup')
-            if any(not isinstance(r[k],str) or len(r[k].strip()) < {'headline':12,'thesis':35,'lead':24,'market_change':20,'structural_insight':24,'what_changes':0,'one_sentence':12,'limitations':0,'followup':0}[k] for k in fields):
-                reasons.append('결론·근거·논리 설명 부족');continue
+            # Presence and grounding matter; an arbitrary character quota does
+            # not measure analytical quality.  It previously rejected valid
+            # concise sentences before their citations were even checked.
+            required_prose=('headline','thesis','lead','market_change','structural_insight','one_sentence')
+            malformed=[k for k in fields if not isinstance(r.get(k),str)]
+            missing=[k for k in required_prose if isinstance(r.get(k),str) and not r[k].strip()]
+            if malformed or missing:
+                reasons.append('필수 원고 항목 누락: '+','.join(malformed+missing));continue
             if r['kind'] not in CATEGORIES or r['headline'] in seen:
                 reasons.append('분류 또는 제목 중복');continue
-            if not isinstance(r['mechanism'],list) or not r['mechanism'] or any(
-                    not isinstance(x,str) or len(x.strip())<24 for x in r['mechanism']):
-                reasons.append('사건의 시장 영향 설명 부족');continue
+            if not isinstance(r.get('mechanism'),list) or not r['mechanism'] or any(
+                    not isinstance(x,str) or not x.strip() for x in r['mechanism']):
+                reasons.append('시장 영향 설명 누락: mechanism');continue
             outlook=r.get('outlook')
             if outlook is not None:
                 if not isinstance(outlook,dict) or outlook.get('direction') not in (
@@ -715,9 +721,10 @@ def _validate_main(payload,ctx,diagnostics=None):
                     reasons.append('전망의 우세 방향 누락');continue
                 # A factual regulation/data brief may explicitly exclude a
                 # speculative outlook. Deep analysis still needs a reasoned view.
-                minimums=(('horizon',3),('judgment',20),('basis',22)) if outlook['direction']!='전망 제외' else ()
-                if any(len(str(outlook.get(k,'')).strip())<minimum for k,minimum in minimums):
-                    reasons.append('전망의 시점·근거 부족');continue
+                required_outlook=('horizon','judgment','basis') if outlook['direction']!='전망 제외' else ()
+                absent=[k for k in required_outlook if not isinstance(outlook.get(k),str) or not outlook[k].strip()]
+                if absent:
+                    reasons.append('전망 항목 누락: '+','.join(absent));continue
                 if outlook.get('numeric_estimate') and not ctx.get('forecast_results'):
                     reasons.append('검증하지 않은 예측 가격·물량 수치');continue
                 if outlook.get('numeric_estimate'):
@@ -726,16 +733,20 @@ def _validate_main(payload,ctx,diagnostics=None):
                         reasons.append('공식 시계열 예측 결과와 일치하지 않는 값');continue
                 if not set(outlook.get('evidence_ids',[])).issubset(allowed):
                     reasons.append('전망에 존재하지 않는 출처');continue
-            elif not all(len(r[s][k].strip())>=18 for s in ('scenario_up','scenario_down') for k in ('condition','interpretation')):
+            elif not all(isinstance(r.get(s),dict) and isinstance(r[s].get(k),str) and r[s][k].strip()
+                         for s in ('scenario_up','scenario_down') for k in ('condition','interpretation')):
                 # Historical demonstration cards still use the earlier schema.
                 reasons.append('조건부 시나리오 부족');continue
             facts=[]
             for fact in r['facts']:
                 refs=list(dict.fromkeys(str(x) for x in fact.get('refs',[]) if x in allowed))
                 source_text=_evidence_text([evidence_by_id[i] for i in refs])
-                if len(fact.get('text',''))>=30 and refs and _supported(fact['text'],source_text):
-                    facts.append({'text':fact['text'],'refs':refs})
-                elif diagnostics is not None and len(fact.get('text',''))>=30 and refs:
+                # A short cited fact can be decisive (e.g. a quota or price).
+                # Validate its content rather than discarding it at 29 chars.
+                fact_text=fact.get('text','')
+                if isinstance(fact_text,str) and fact_text.strip() and refs and _supported(fact_text,source_text):
+                    facts.append({'text':fact_text,'refs':refs})
+                elif diagnostics is not None and isinstance(fact_text,str) and fact_text.strip() and refs:
                     missing=missing_numeric_claims(fact['text'],source_text)
                     if missing:
                         diagnostics.append({'part':'인용 사실','source_ids':refs,
@@ -868,17 +879,19 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
     lanes=coverage_tracks(articles,features,focus_topics or ())
     # No fixed market slots. Rank the day's measured issues independently.
     candidates=[lane for lane in lanes if lane['ready']]
-    # 3 default paid draft calls; up to 2 repairs, never an unlimited loop.
-    request_cap=max(1,min(8,int(os.getenv('SEAFOOD_DRAFT_CALL_LIMIT','6'))))
-    calls=0;good=[];outcomes=[];failed=[];draft_history={}
-    for lane in candidates[:6]:
-        if calls>=request_cap:break
+    # v5.18: aim for TWO independently verified new topics, not three drafts.
+    # Keep more ranked candidates as fallback; researching leads is not a
+    # commitment to publish them. All paid composing and repair calls share
+    # the existing capped budget.
+    target=max(1,min(3,int(os.getenv('SEAFOOD_REPORT_TARGET','2'))))
+    budget=max(1,min(8,int(os.getenv('SEAFOOD_DRAFT_CALL_LIMIT','6'))))
+    candidates=candidates[:6]
+    assignments=[]
+    for lane in candidates:
         anchor=lane['anchor']
         local_articles,local_features=records_for_track(anchor,articles,features,
             {'theme':lane['label'],'article_ids':lane['headline_ids'],
              'feature_ids':lane['feature_ids']})
-        # Use the origin's exact IDs but exclude wholly unrelated headlines
-        # from topic-specific composing. No fake observations added here.
         local_ctx=_main_context(local_articles,local_features,now,issues,focus_topics)
         local_ctx['articles']=[row for row in local_ctx['articles'] if row['id'] in
                                {a['id'] for a in local_articles}]
@@ -892,51 +905,40 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
             'target_market':lane['label'],
             'target_evidence_coverage':{'numeric_records':lane['numeric_records'],
                 'sources':lane['sources'],'dimensions':lane['dimensions']}})
-        failed.append((lane,local_ctx,'근거 부족'))
-    # If no anchored market is ready, retain coverage of other verified topics.
-    if not failed:
-        failed=[({'anchor':None,'label':'전체 우선순위 시장'},ctx,'근거 부족')]
-    budget=request_cap
-    # Each supported market gets one independent draft request before retries.
-    for index,(lane,local_ctx,_) in enumerate(failed):
-        if calls>=budget:break
-        anchor=lane['anchor']
-        if anchor and not local_ctx['articles'] and not local_ctx['official_series']:
-            outcomes.append(f'{anchor}: 관련 원출처 부족');continue
-        # Ready lanes already have two independent measured records. Ask the
-        # model to complete the report from that actual evidence, not opt out
-        # merely because another desirable dimension (e.g. retail price) is
-        # missing. A real lack of comparable sources may still yield [].
-        numeric_sources=[x for x in lane.get('observations',[]) if x.get('quantities')]
+        numeric_ids={x.get('id') for x in lane.get('observations',[]) if x.get('quantities')}
         local_ctx['draft_source_brief']=[{'id':row.get('id'),
             'source':row.get('source'),'title':row.get('title') or row.get('name'),
             'period':row.get('published') or row.get('period_end'),
             'observed':str(row.get('snippet') or row.get('observed') or '')[:420]}
             for row in (local_ctx['articles']+local_ctx['official_series'])
-            if (row.get('id') in {x.get('id') for x in numeric_sources})][:10]
-        guidance=(f"오늘 선정된 '{lane['label']}'의 시장 변화 한 가지를 분석한 기사 1편을 작성하라. "
-           '제공된 출처 ID와 관측치만 사용하고 다른 시장 이야기로 대체하지 마라. '
-           '심층 분석에 필요한 다원 근거가 부족하다면 검증된 공식 발표의 주요 산업 이슈 또는 데이터 브리핑으로 작성하라. '
-           '없는 가격·소비지표를 만들어 넣지 말고, 일부 분석 축이 비었다고 관련 사실을 버리지 말라. '
-           '숫자가 있으면 관련 사건에 직접 연결되는 절대 규모·증감률·비교 기간부터 선택하라. 숫자 몇 개를 채우려는 무관한 통계 연결은 금지한다. '
-           '본문의 변화·배경·영향이 각각 새 정보를 제공하도록 쓰고, 같은 수치 문장을 그대로 세 번 반복하지 마라. '
-           '충분한 근거가 실제로 없을 때만 reports=[]로 반환하라.')
+            if row.get('id') in numeric_ids][:10]
+        assignments.append((lane,local_ctx))
+    if not assignments:
+        # Fallback for an independently supported market whose heuristic
+        # track cannot be categorized into one of the predefined anchors.
+        assignments=[({'anchor':None,'label':'전체 우선순위 시장',
+                       'numeric_records':0,'sources':0},ctx)]
+    print(f'SEAFOOD DRAFT TARGET: {target} validated topics; '
+          f'candidate_backups={len(assignments)}; paid_call_limit={budget}',flush=True)
+    calls=0;good=[];outcomes=[];published=set();seen_titles=set()
+
+    def attempt(lane,local_ctx,guidance,number,repair=False):
+        nonlocal calls
+        anchor=lane['anchor']
+        calls+=1  # Count attempted requests even if HTTP or JSON fails.
         try:
-            response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',guidance)
-            calls+=1
+            response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,
+                           'seafood_deep_research_v1',guidance)
             issues=[]
             accepted,reasons=_validate_main(response,local_ctx,issues)
-            # Citation membership in this source-filtered dossier is decisive;
-            # unknown market names are not forced into the old 3 categories.
             accepted=[r for r in accepted if not anchor or
-                      (anchor.startswith('topic:') or track_for_report(r)==anchor)]
-            for r in accepted:
-                r['market_anchor']=anchor
-                r['market_label']=lane['label']
+                      anchor.startswith('topic:') or track_for_report(r)==anchor]
+            accepted=[r for r in accepted if
+                      re.sub(r'\s+','',r.get('headline','')).lower() not in seen_titles]
             if issues:
                 brief=' | '.join(f"{x['part']} {x.get('source_ids',[])}: {_numeric_feedback(x['mismatches'])}"
-                                  for x in issues[:3])[:590]
-                print(f'SEAFOOD NUMERIC AUDIT {anchor}: {brief}',flush=True)
+                                 for x in issues[:3])[:590]
+                print(f'SEAFOOD NUMERIC {"REPAIR" if repair else "AUDIT"} {anchor}: {brief}',flush=True)
             if not response.get('reports'):
                 print(f'SEAFOOD DRAFT EMPTY {anchor}: model_returned_empty_array; '
                       f'input_articles={len(local_ctx["articles"])} '
@@ -944,106 +946,92 @@ def analyze(articles,features,now,issues,focus_topics=None,previous_headlines=No
                       f'measured={lane.get("numeric_records",0)} '
                       f'original_sources={lane.get("sources",0)}',flush=True)
             if accepted:
-                good.append(accepted[0]);outcomes.append(f'{anchor}: 통과 ({accepted[0].get("report_type", "분석")})')
-            else:
-                draft_history[anchor]={'reports':response.get('reports',[])[:1],
-                                       'numeric_issues':issues[:4]}
-                reason=' / '.join(dict.fromkeys(reasons))[:180] or 'AI가 원고를 작성하지 않음 (reports=[])' 
-                if issues:
-                    reason += ' | 숫자 확인: ' + ' / '.join(_numeric_feedback(x['mismatches'],2)
-                                                          for x in issues[:3])[:270]
-                failed[index]=(lane,local_ctx,reason)
-                outcomes.append(f'{anchor}: {reason}')
-            print(f'SEAFOOD DRAFT {index+1} {anchor or "general"}: proposed={len(response.get("reports",[]))} accepted={len(accepted)} reasons={reasons[:3]}',flush=True)
-        except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-            calls+=1
-            failed[index]=(lane,local_ctx,type(exc).__name__)
-            outcomes.append(f'{anchor}: API·JSON 오류 {type(exc).__name__}')
-    # One bounded repair for up to two eligible missing markets.
-    published={track_for_report(r) for r in good}
-    for lane,local_ctx,reason in failed:
-        if calls>=budget or len(good)>=3:break
-        anchor=lane['anchor']
-        if anchor in published:continue
-        if not anchor:continue
-        local_ctx['repair_previous_draft']=draft_history.get(anchor,{'reports':[]})
-        note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 결과: {reason}. "
-              '처음에 reports=[]였다면 원고 검증에 실패한 것이 아니라 원고 미작성이다. '
-              '지금 전달한 draft_source_brief의 수치와 출처 ID를 우선 사용해 실제 근거가 가능한 범위의 기사 한 편을 완성하라. '
-              '중요한 공식 정책 사건이나 유의미한 공식 통계는 원출처 한 곳으로도 짧은 보고서가 가능하다. ' 
-              '같은 지표·기간·단위에서 소폭 반올림 차이는 검수기가 허용한다. '
-              '문제가 된 숫자는 아래 공개 출처의 수치와 직접 대조해 수정하라. '
-              '출처에서 확인할 수 없는 숫자는 삭제하고, 서로 다른 집계 대상은 혼동하지 마라. '
-              '가능한 근거로 정확한 범위의 기사만 작성하고, 확인 가능한 근거가 아예 없으면 빈 배열을 반환하라. '
-              '검수 참고 원출처 숫자: '+
-              json.dumps(evidence_number_inventory(local_ctx.get('articles',[])[:8]+
-                           local_ctx.get('official_series',[])[:5],limit_per_source=9),ensure_ascii=False)[:1700])
-        try:
-            response=_call(MAIN_PROMPT,local_ctx,MAIN_SCHEMA,'seafood_deep_research_v1',note)
-            calls+=1
-            issues=[]
-            accepted,reasons=_validate_main(response,local_ctx,issues)
-            accepted=[r for r in accepted if anchor.startswith('topic:') or
-                      track_for_report(r)==anchor]
-            for r in accepted:
-                r['market_anchor']=anchor
-                r['market_label']=lane['label']
+                chosen=accepted[0]
+                chosen['market_anchor']=anchor
+                chosen['market_label']=lane['label']
+                return chosen,'',issues,response.get('reports',[])[:1]
+            reason=' / '.join(dict.fromkeys(reasons))[:180] or (
+                    '중복 제목 또는 다른 소재' if response.get('reports')
+                    else 'AI가 원고를 작성하지 않음 (reports=[])')
             if issues:
-                print(f'SEAFOOD NUMERIC REPAIR {anchor}: '+
-                      ' | '.join(_numeric_feedback(x['mismatches'],2) for x in issues[:3])[:400],flush=True)
-            if accepted:
-                good.append(accepted[0]);published.add(anchor)
-                outcomes.append(f'{anchor}: 재작성 통과')
-            else:outcomes.append(f'{anchor}: 재작성 탈락 '+(' / '.join(reasons[:2]) or '원고 누락'))
+                reason+=' | 숫자 확인: '+' / '.join(
+                    _numeric_feedback(x['mismatches'],2) for x in issues[:3])[:270]
+            return None,reason,issues,response.get('reports',[])[:1]
         except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
-            calls+=1;outcomes.append(f'{anchor}: 재작성 오류 {type(exc).__name__}')
-    # Optional quality rewrite only AFTER every missing candidate has had its
-    # factual repair opportunity. Always keep the already validated article if
-    # the revised one introduces unsupported claims or fails validation.
-    # No additional calls over the existing SEAFOOD_DRAFT_CALL_LIMIT.
-    for pos,existing in enumerate(good):
-        notes=review_prose(existing)
-        if not notes:
+            return None,'API·JSON 오류 '+type(exc).__name__,[],[]
+
+    for index,(lane,local_ctx) in enumerate(assignments):
+        if len(good)>=target or calls>=budget:
+            break
+        anchor=lane['anchor']
+        if anchor in published:
             continue
-        print(f'SEAFOOD PROSE REVIEW {existing.get("market_label", "")}: '+
-              ' / '.join(notes[:3]),flush=True)
-        if (len(notes)<2 and not any('통계 해석 주의' in n for n in notes)) or calls>=budget:
+        if not local_ctx['articles'] and not local_ctx['official_series']:
+            outcomes.append(f'{anchor}: 관련 원출처 부족')
             continue
-        anchor=existing.get('market_anchor')
-        match=next(((lane,lc) for lane,lc,_ in failed
-                    if lane.get('anchor')==anchor),None)
-        if not match:
+        guidance=(f"오늘 선정된 '{lane['label']}'의 시장 변화 한 가지를 분석한 기사 1편을 작성하라. "
+           '제공된 출처 ID와 관측치만 사용하고 다른 시장 이야기로 대체하지 마라. '
+           '심층 분석에 필요한 다원 근거가 부족하다면 검증된 공식 발표의 주요 산업 이슈 또는 데이터 브리핑으로 작성하라. '
+           '없는 가격·소비지표를 만들어 넣지 말고, 일부 분석 축이 비었다고 관련 사실을 버리지 말라. '
+           '숫자가 있으면 관련 사건에 직접 연결되는 절대 규모·증감률·비교 기간부터 선택하라. 숫자 몇 개를 채우려는 무관한 통계 연결은 금지한다. '
+           '본문의 변화·배경·영향이 각각 새 정보를 제공하도록 쓰고, 같은 수치 문장을 그대로 세 번 반복하지 마라. '
+           '충분한 근거가 실제로 없을 때만 reports=[]로 반환하라.')
+        report,reason,issues,previous=attempt(lane,local_ctx,guidance,index+1)
+        print(f'SEAFOOD DRAFT {index+1} {anchor or "general"}: '
+              f'proposed={len(previous)} accepted={int(report is not None)} '
+              f'reasons={[reason] if reason else []}',flush=True)
+        if report:
+            good.append(report)
+            published.add(anchor)
+            seen_titles.add(re.sub(r'\s+','',report.get('headline','')).lower())
+            outcomes.append(f'{anchor}: 통과 ({report.get("report_type", "분석")})')
             continue
-        lane,local_ctx=match
-        revised_ctx=dict(local_ctx)
-        revised_ctx['editorial_previous_draft']={'reports':[existing]}
-        try:
-            rewritten=_call(MAIN_PROMPT,revised_ctx,MAIN_SCHEMA,
-                'seafood_deep_research_v1',repair_guidance(notes))
-            calls+=1
-            verified,reason=_validate_main(rewritten,local_ctx)
-            verified=[r for r in verified if not anchor or anchor.startswith('topic:')
-                      or track_for_report(r)==anchor]
-            if verified and len(review_prose(verified[0]))<len(notes):
-                replacement=verified[0]
-                replacement['market_anchor']=anchor
-                replacement['market_label']=lane.get('label')
-                good[pos]=replacement
-                outcomes.append(f'{anchor}: 문장 보완 후 근거 재검증 통과')
-            else:
-                outcomes.append(f'{anchor}: 원고 품질 재작성 보류 · 최초 검증본 유지')
-        except (requests.RequestException,ValueError,KeyError,TypeError):
-            calls+=1
-            outcomes.append(f'{anchor}: 문장 보완 실패 · 최초 검증본 유지')
+
+        outcomes.append(f'{anchor}: 최초 집필 실패: {reason}')
+        # Repair the SAME story now, before paying to draft another candidate.
+        # Reserve enough first attempts for other candidates to reach the 2-
+        # report target if this repair fails. Never exceed the daily cap.
+        remaining_candidates=len(assignments)-index-1
+        reserve=min(target-len(good),remaining_candidates)
+        if budget-calls<=reserve:
+            outcomes.append(f'{anchor}: 재작성 건너뜀 (다음 후보 집필 예산 보존)')
+            continue
+        repair_ctx=dict(local_ctx)
+        repair_ctx['repair_previous_draft']={'reports':previous,'numeric_issues':issues[:4]}
+        note=(f"'{lane['label']}' 보완 원고만 작성하라. 이전 검수 결과: {reason}. "
+              '처음에 reports=[]였다면 원고 미작성이다. '
+              'draft_source_brief의 수치와 출처 ID를 우선 사용해 검증 가능한 기사 한 편을 완성하라. '
+              '중요한 공식 정책 사건이나 유의미한 공식 통계는 원출처 한 곳으로도 짧은 보고서가 가능하다. '
+              '같은 지표·기간·단위에서 소폭 반올림 차이는 검수기가 허용한다. '
+              '근거에서 확인할 수 없는 숫자는 삭제하고 서로 다른 집계 대상은 혼동하지 마라. '
+              '검증할 근거가 정말 없으면 reports=[]를 반환하라. '
+              '원출처 수치: '+json.dumps(evidence_number_inventory(
+                  repair_ctx.get('articles',[])[:8]+repair_ctx.get('official_series',[])[:5],
+                  limit_per_source=9),ensure_ascii=False)[:1700])
+        fixed,repair_reason,_,_=attempt(lane,repair_ctx,note,index+1,repair=True)
+        print(f'SEAFOOD REPAIR {index+1} {anchor or "general"}: '
+              f'accepted={int(fixed is not None)} '
+              f'reason={repair_reason[:200]}',flush=True)
+        if fixed:
+            good.append(fixed)
+            published.add(anchor)
+            seen_titles.add(re.sub(r'\s+','',fixed.get('headline','')).lower())
+            outcomes.append(f'{anchor}: 즉시 재작성 통과')
+        else:
+            outcomes.append(f'{anchor}: 즉시 재작성 탈락: {repair_reason[:150]}')
+    # No extra AI rewriting once two validated topics are secured. This avoids
+    # spending remaining capacity on optional polish rather than the user's
+    # minimum viable daily report. Deterministic prose cleanup still runs.
     # Editorial fallback changes NO figures or factual claims: it only omits
     # two extremely specific detached methodology footnotes. Substantive
     # source restrictions remain recorded separately in limitations.
     good=[drop_detached_caveats(r) for r in good]
-    print('SEAFOOD DRAFT - calls:',calls,'/',budget,'per-track:',outcomes,flush=True)
+    print('SEAFOOD DRAFT - calls:',calls,'/',budget,'target:',target,
+          'achieved:',len(good),'per-track:',outcomes,flush=True)
     if good:
         kinds={k:sum(r.get('report_type')==k for r in good) for k in ('심층 시장 분석','주요 산업 이슈','데이터 브리핑')}
         print('SEAFOOD EDITORIAL - published types:',kinds,flush=True)
-        return good[:3],f'새 시장 분석 {len(good)}편 · 공개 근거 검증 완료'
+        return good[:target],f'새 시장 분석 {len(good)}편 · 공개 근거 검증 완료'
     return [],'새 시장 분석 0편 · '+('; '.join(outcomes)[:230] or '자료와 수치 부족')
 
 

@@ -721,7 +721,7 @@ def collect():
         r['published_at']=now.isoformat(timespec='minutes')
     if previous:
         for archived in previous.get('reports',[]):
-            if len(reports)>=3:break
+            if len(reports)>=2:break
             anchor=track_for_report(archived)
             if not anchor or anchor in current_anchors:continue
             # Keep source dates explicit; never call an old piece today's research.
@@ -746,7 +746,7 @@ def collect():
         if old and old['reports']:
             reports=[dict(r,archived_source=True,
                           published_at=r.get('published_at') or old['date'])
-                     for r in old['reports']]
+                     for r in old['reports'][:2]]
             last_report_updated_at=old['date']
             archive=True
             # Keep linked cited sources even when today's feed no longer includes them.
