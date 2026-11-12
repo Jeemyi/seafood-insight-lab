@@ -1,7 +1,909 @@
 {
-  "updated_at": "2026-11-12T11:04+09:00",
+  "updated_at": "2026-11-12T17:33+09:00",
   "retention_days": 30,
   "articles": [
+    {
+      "id": "b2ed3f2a3196fd56",
+      "title": "'어린왕자'·'님의 침묵'…이마트24, 책갈피 넣은 빵 출시",
+      "url": "https://www.yna.co.kr/view/AKR20261112152000030",
+      "source": "연합뉴스·전체",
+      "published": "2026-11-12T17:01+09:00",
+      "timestamp": 1794470498,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 13.2,
+      "summary": "(서울=연합뉴스) 정수연 기자 = 이마트24는 명작 문학 초판본 책갈피를 동봉한 신상품 7종을 출시한다고 12일 밝혔다.",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "a898c30859d03e7f",
+      "title": "우즈베키스탄에 제주 감귤 첫 수출…검역 협상 타결 8개월만",
+      "url": "https://www.yna.co.kr/view/AKR20261112156000030",
+      "source": "연합뉴스·전체",
+      "published": "2026-11-12T17:00+09:00",
+      "timestamp": 1794470400,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 13.2,
+      "summary": "(서울=연합뉴스) 홍국기 기자 = 제주 감귤이 한국·우즈베키스탄의 수출 검역 협상 타결 8개월 만에 현지 시장에 처음으로 진출한다.",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 14
+    },
+    {
+      "id": "d00850c16741e5a5",
+      "title": "이랜드킴스클럽, ‘코리아 수산 페스타’ 참여···고등어·굴 등 국산 수산물 할인",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE00c3BTVXZLTzJVSjNyd3F0dFp2Wk9RTW95eFU2dUxDeHY0SWdFRmhGWFdtNEpRX0pfMGNxQkhxS1Z3aTgyZ293UVhUWGJ5MC1RV0ZNNTFGZmtIdjRCYWE1MDd5eE5fM3Jn?oc=5",
+      "source": "직썰",
+      "published": "2026-11-12T16:52+09:00",
+      "timestamp": 1794469939,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 9.5,
+      "summary": "이랜드킴스클럽, ‘코리아 수산 페스타’ 참여···고등어·굴 등 국산 수산물 할인 직썰",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 2
+    },
+    {
+      "id": "5fe33e04f8ebb1cb",
+      "title": "“마트로 ‘5조 클럽’ 인증”… 이마트 3분기 실적, 본업 ‘날개’ 자회사 ‘족쇄’",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB1dlJPT2NCR2xVWm10NFVJZW1lbHRrYXRFYzNSTjNldFNSV3YxOWViTG9XdjhfQjN0dDFWbzRRdHM5RmZjdmxGMV9BWUp1MV9BQ1BkMEdPSnY0cXVXZWhGMEF4cmNCd2l5UVFZYg?oc=5",
+      "source": "이코노미톡뉴스",
+      "published": "2026-11-12T16:26+09:00",
+      "timestamp": 1794468388,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 15.2,
+      "summary": "“마트로 ‘5조 클럽’ 인증”… 이마트 3분기 실적, 본업 ‘날개’ 자회사 ‘족쇄’ 이코노미톡뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "48a03cbd2a0c5a58",
+      "title": "쿠팡 이어 네이버까지 배송 공세…대형마트, 신선식품 차별화로 ‘맞불’",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE15WFQ1ZUpwcmJ4S1EyUEYydFdudDNmU29TYUF1bVMwZlNjSXF1ZDBhbkppQXFUazVKWXhsZVJnWEVNTHBkbDZxVEJzT2duQW8zeldRVw?oc=5",
+      "source": "이투데이",
+      "published": "2026-11-12T16:26+09:00",
+      "timestamp": 1794468360,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM",
+        "온라인"
+      ],
+      "score": 15.2,
+      "summary": "쿠팡 이어 네이버까지 배송 공세…대형마트, 신선식품 차별화로 ‘맞불’ 이투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "614ca34b58ca09a7",
+      "title": "대형마트·편의점 사이서 살아난 SSM…3사 3분기 나란히 호실적",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB0VEpIdTQyVHNuSy1yTFlFRmtzUFpYdnlNMVdnU3k5QW9nQ0l4Y3NSOE1BckRLQUZwSE1RRlN3VVdDekR0cVVJQ0RCVDUxQmVRU2tTdmhuNnVRVU9WejhidnJoREZNOEw1WkVB0gFvQVVfeXFMT3ZSd2RXSEdhWDh1NUJCTTNvQ1owR01pZU9LVktzN04tUnBHWHFZMGZGRlVUZnhpMVZkNGYzUlhRQzBFeThIbE9MeWZHM2J1bHU4bUVyejEzWjZaeWV1czJPMFJ4R3d2WnlxaEhzZlBJ?oc=5",
+      "source": "더퍼블릭",
+      "published": "2026-11-12T16:15+09:00",
+      "timestamp": 1794467702,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
+      "summary": "대형마트·편의점 사이서 살아난 SSM…3사 3분기 나란히 호실적 더퍼블릭",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "daab91bc15b6274b",
+      "title": "\"더 이상 급식기업 아니다\" 현대그린푸드, 외식·헬스케어 성장동력 확대",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBsZFhheURFOVpCcFNNS3lURkczdG9KcURXZDV6Wng3YkR0Q19lczNhb3ctUlZIX0ZxRzNScGRicnNfdlBXSTh4RWxRWm1HRVkxWDR4VXk4Tlc5ZnFWWUNfcXUxS1UybWU2VmRld25fNHczVEVpbWdhRdIBeEFVX3lxTFBsZFhheURFOVpCcFNNS3lURkczdG9KcURXZDV6Wng3YkR0Q19lczNhb3ctUlZIX0ZxRzNScGRicnNfdlBXSTh4RWxRWm1HRVkxWDR4VXk4Tlc5ZnFWWUNfcXUxS1UybWU2VmRld25fNHczVEVpbWdhRQ?oc=5",
+      "source": "뉴시스",
+      "published": "2026-11-12T15:34+09:00",
+      "timestamp": 1794465273,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 17.9,
+      "summary": "\"더 이상 급식기업 아니다\" 현대그린푸드, 외식·헬스케어 성장동력 확대 뉴시스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "68cfb8a232fc5dbf",
+      "title": "\"더 이상 급식기업 아니다\" 현대그린푸드, 외식·헬스케어 성장동력 확대",
+      "url": "https://www.newsis.com/view/NISX20261112_0003865423",
+      "source": "뉴시스·산업",
+      "published": "2026-11-12T15:34+09:00",
+      "timestamp": 1794465273,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 16.6,
+      "summary": "[서울=뉴시스]김상윤 기자 = 현대그린푸드가 단체급식과 식자재유통을 기반으로 외식과 케어푸드, 헬스케어 서비스까지 사업 영역을 넓히며 새로운 성장동력 확보에 속도를 내고 있다. 12일 업계에 따르면 현대그린푸드는 올해 3분기 연결 기준 매출액 6520억원, 영업이익 448억원을 기록했다. 전년 동기 대비 각각 5.7%, 0.7% 증가한 수치다. 별도 기준 매출액은 6343억원으로 5.1% 늘었으며 영업이익은 432억원으로 6.1% 증가했다. 매출총이익률도 20.0%로 전년 동기보다 0.4%포인트 상승하며 역대 최고 수준을 기록했다. 현대그린푸드는 단체급식과 식자재유통 등 기존 주력 사",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 9
+    },
+    {
+      "id": "220044a600a7743d",
+      "title": "\"더 이상 급식기업 아니다\" 현대그린푸드, 외식·헬스케어 성장동력 확대",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9KdDAwbV90MWF4NFpKdDZ2TjR4SjhmcHk0S2pva0U5Z2RxWFhPd2dqVE5QYnVCVFVTNHlZMGp4MGxVMGgxQURPWExtS2JabzVPaHR5dG5XZ29icFl4Nlo0emxB?oc=5",
+      "source": "뉴시스",
+      "published": "2026-11-12T15:34+09:00",
+      "timestamp": 1794465273,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 15.9,
+      "summary": "\"더 이상 급식기업 아니다\" 현대그린푸드, 외식·헬스케어 성장동력 확대 뉴시스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "326e1c7f82a25fd8",
+      "title": "의왕시, 김장철 앞두고 농·축·수산물 원산지표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9oU1hPS2hBSWVqZnhvU2NuRnF6ZkVteDFaTk5GYWVSNW1aRDBXQXd5cExOQ0R4MnB4VTBNNlltYm9ocWdiZ25BXzhMbTJwN2V2c2lMbDFn?oc=5",
+      "source": "뉴스1",
+      "published": "2026-11-12T15:33+09:00",
+      "timestamp": 1794465193,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "의왕시, 김장철 앞두고 농·축·수산물 원산지표시 집중 점검 뉴스1",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "3554654c43d76f15",
+      "title": "남재헌 해수부 차관, 수산기업 만나 원양 조업·수출 확대 논의",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8tWVVWLXJlYmNzdVBLY2N6bERnQ1hmTjFSMWVHT05pcnZrTmhVTUFxNXp4NnJaM29PT0VGQl93di14YTRBY3YxazFWaDBDNzZFa1Y2X29Ia1JBQURvdFFJU0hwQnVfcFRPQnN5WlV6d3VCMWxHeUUyYtIBeEFVX3lxTE8tWVVWLXJlYmNzdVBLY2N6bERnQ1hmTjFSMWVHT05pcnZrTmhVTUFxNXp4NnJaM29PT0VGQl93di14YTRBY3YxazFWaDBDNzZFa1Y2X29Ia1JBQURvdFFJU0hwQnVfcFRPQnN5WlV6d3VCMWxHeUUyYg?oc=5",
+      "source": "뉴시스",
+      "published": "2026-11-12T15:18+09:00",
+      "timestamp": 1794464322,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 9.5,
+      "summary": "남재헌 해수부 차관, 수산기업 만나 원양 조업·수출 확대 논의 뉴시스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "c4b6abd49008ae2b",
+      "title": "의왕시, 김장철 맞아 27일까지 '농·축·수산물 원산지표시' 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8yNktjeGpmb2I1eDQ4MG16U1FrekZzQlFmd2pzVnNnbjhFYTJLS1JvRUNMdTc4cXZCQURwaGppTHE1aG8yOG1YZVR1YWcwNXVreEFEMkJzSWpsU0dp?oc=5",
+      "source": "뉴스핌",
+      "published": "2026-11-12T15:17+09:00",
+      "timestamp": 1794464220,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "의왕시, 김장철 맞아 27일까지 '농·축·수산물 원산지표시' 집중 점검 뉴스핌",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "ced557cc82974f60",
+      "title": "정용진의 한 방 '트레이더스', 16년 만에 매출 6.8배 키우며 이마트 성장 엔진으로",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE51QkdVWXdoNHdhaGpyRUttVWNmRTg3WmNDVlF3QzVsMmlPU1g4ZVZqQ2prRF9ZcHBqLXVMV1hEQWpUTjhQdWt6N1BBTzAwNUl5WGpjcWhn?oc=5",
+      "source": "위키트리",
+      "published": "2026-11-12T15:11+09:00",
+      "timestamp": 1794463860,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
+      "summary": "정용진의 한 방 '트레이더스', 16년 만에 매출 6.8배 키우며 이마트 성장 엔진으로 위키트리",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "c719978ad1eb90bc",
+      "title": "부산국제수산엑스포, 수출상담 1159억…계약 추진 204억",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE56Z3VNem01djU1ZkhJSEJvX2pyMWdYaUhmbl9LSTR3MnhTbWZkbkV3WUhTZWlHM0M4WWk3VGFTZkJhb2pVVlZ3dHM3RHM?oc=5",
+      "source": "아이뉴스24",
+      "published": "2026-11-12T15:03+09:00",
+      "timestamp": 1794463400,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "부산국제수산엑스포, 수출상담 1159억…계약 추진 204억 아이뉴스24",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "c5477f15a5a0d63c",
+      "title": "이마트, 할인점은 날고 스타벅스는 주춤...엇갈린 3분기 성적표",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB6cUIxSUhILUwtdXUyRjlmOE5EeWoxaUZ2Rm41aE5VYl9mLVRTclg0X0JFaWtTbG1jdmpXekZRSmxqR2ZvcmhBa0ZIbzRuOFV0T0g0dnZJalhXY2pVaHpJWENfbmxnSlhGWFRIR0Y2dFE?oc=5",
+      "source": "오피니언뉴스",
+      "published": "2026-11-12T14:55+09:00",
+      "timestamp": 1794462904,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 15.2,
+      "summary": "이마트, 할인점은 날고 스타벅스는 주춤...엇갈린 3분기 성적표 오피니언뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 2
+    },
+    {
+      "id": "1d8e3b6d6508d08d",
+      "title": "한·일 ‘참치 신경전’…태평양 어획 한도 추가 배분 놓고 이견",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNZUxGeDllWnV3Y3U2akJCQlphVmVrVnFjZHdMZXhRa2hIYUhXMndvTkR1X1FYMl9nSGhBVVQ5aE1NWFBCeGxDY1lmQ0w5TGRWQjc0NEQ4V2dkcGpNZG1Sb1VodHEtQ1FjQ2dYcllILXVpaDVUOFZFcnJJOTNiQWcxUmdR?oc=5",
+      "source": "한겨레",
+      "published": "2026-11-12T14:49+09:00",
+      "timestamp": 1794462540,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 16.2,
+      "summary": "한·일 ‘참치 신경전’…태평양 어획 한도 추가 배분 놓고 이견 한겨레",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "1e2c971f7227de31",
+      "title": "울산 동구, 방어진활어센터 화재 피해 시설 철거 완료",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4yYU9rSEZxM3pxTXlXVFVTUkFZUE4wMk1fVnk0bTNWdjBjcm1VUjNrN2FiREhPdDNFSjlwNDRvbFloWmhkcXZjM185TDc0VFNvLUZEcnBhVUNUZUHSAWBBVV95cUxQbEN0VjNFcjMydVlLNWRqdkZWN0locVdVX0huczVyWXpXaWpGaElOSnhLTUVGTGtuMVltR3RaRnFoeUlUNHYzQzVVUzJ6WjNSUmxoMzVtUmZseGFJTVZKRUQ?oc=5",
+      "source": "연합뉴스",
+      "published": "2026-11-12T14:40+09:00",
+      "timestamp": 1794462031,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 14.2,
+      "summary": "울산 동구, 방어진활어센터 화재 피해 시설 철거 완료 연합뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "de206d75df6edae8",
+      "title": "이마트, 3분기 매출 첫 5조 돌파…할인점·트레이더스 나란히 성장",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9sQ21aZ2VFWHMzN1M5d0F3OGdZQVUyVzZRRTlfWUx4aXNHbDdqSlphYWszd0xmX2RrWU1oRzBUMzlRbVdieTR4SXY0VXNIdGZpSXVmenV5QTI?oc=5",
+      "source": "스포츠서울",
+      "published": "2026-11-12T14:39+09:00",
+      "timestamp": 1794461945,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
+      "summary": "이마트, 3분기 매출 첫 5조 돌파…할인점·트레이더스 나란히 성장 스포츠서울",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 2
+    },
+    {
+      "id": "992d7b2229d4b0a0",
+      "title": "[현장]아침엔 치약, 밤엔 마스크팩…뷰티컬리, 하루 루틴이 쇼핑으로",
+      "url": "https://www.newsis.com/view/NISX20261112_0003865401",
+      "source": "뉴시스·산업",
+      "published": "2026-11-12T14:25+09:00",
+      "timestamp": 1794461131,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 12.2,
+      "summary": "[서울=뉴시스]권민지 기자 = 바닥에 적힌 '아침, 낮, 저녁, 밤' 문구를 따라 무지갯빛 천막을 지나자 입구가 좌우로 갈렸다. 한쪽은 '모닝'과 '데이', 다른 쪽은 '이브닝'과 '나이트'로 이어졌다. 아침에 이를 닦고 세안하는 일부터 낮에 자외선 차단제를 바르고, 저녁에 머리를 감고, 밤에 팩을 붙이기까지. 하루 동안 욕실과 화장대를 오가는 일상이 전시장에 펼쳐졌다. 12일 서울 동대문디자인플라자(DDP) 아트홀. '컬리뷰티페스타 2026' 개막을 앞두고 오전 10시가 되기 전부터 관람객이 줄을 섰다. 아트홀 안쪽에서 시작한 줄은 건물 밖까지 이어졌다. 올해로 3회째를 맞은 컬리뷰",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 9
+    },
+    {
+      "id": "8000f867fc3f3d49",
+      "title": "의왕시 김장철 앞두고 농·축·수산물 원산지표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE55NXZZV2pCeUZCVlhMVHFFa25pdWtpb3NEa3g5eV91ZGpkdE5zT1hGd3JEUk1qUGpHNWhSWnYwSTdPMWZVRUFiQjNNVDNnWDlvWktUX2xhNGw3ZmdDUmVqSUl2LW9hMnFMN0EyeG5ucTFhSEVO0gF0QVVfeXFMTnk1dllXakJ5RkJWWExUcUVrbml1a2lvc0RreDl5X3VkamR0TnNPWEZ3ckRSTWpQakc1aFJadjBJN08xZlVFQWJCM01UM2dYOW9aS1RfbGE0bDdmZ0NSZWpJSXYtb2EycUw3QTJ4bm5xMWFIRU4?oc=5",
+      "source": "뉴스클레임",
+      "published": "2026-11-12T14:22+09:00",
+      "timestamp": 1794460933,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "의왕시 김장철 앞두고 농·축·수산물 원산지표시 집중 점검 뉴스클레임",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "7529f2e83990bf8f",
+      "title": "부산국제수산엑스포 성황…1062억 수출·판매 계약 - 머니투데이",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5GTlZkQW9tamtuQ2xxSGZMc0NrUXFCM3JNZWgxckFpU3V2OHZOalIxVUVjb1QwY0VSZDl2QnllLU83MDJHVGRGYk9pa2l0M2FPbElGRzI5LU92bW9xTGpISTZtWW1uOHFORXh3QW0wd9IBb0FVX3lxTE5GTlZkQW9tamtuQ2xxSGZMc0NrUXFCM3JNZWgxckFpU3V2OHZOalIxVUVjb1QwY0VSZDl2QnllLU83MDJHVGRGYk9pa2l0M2FPbElGRzI5LU92bW9xTGpISTZtWW1uOHFORXh3QW0wdw?oc=5",
+      "source": "머니투데이",
+      "published": "2026-11-12T14:16+09:00",
+      "timestamp": 1794460590,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "부산국제수산엑스포 성황…1062억 수출·판매 계약 - 머니투데이 머니투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "26d6ffdcdbf91191",
+      "title": "화성특례시, 김장철 맞아 농·수산물 원산지 표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0tOWJrTUZ6b1dzSGFkTGlJY3dVenZ5a0hoY1VhZ1l1bWxvczcwUVUtMDhyN2paUEtTTjJDZXBocjAxa2RQX3NZWWJwTHlYQk9yMndrU2t5dXVTVlhIZnlNWXBSWVhGTWswN1lGa9IBbEFVX3lxTE0tOWJrTUZ6b1dzSGFkTGlJY3dVenZ5a0hoY1VhZ1l1bWxvczcwUVUtMDhyN2paUEtTTjJDZXBocjAxa2RQX3NZWWJwTHlYQk9yMndrU2t5dXVTVlhIZnlNWXBSWVhGTWswN1lGaw?oc=5",
+      "source": "시사팩트",
+      "published": "2026-11-12T14:15+09:00",
+      "timestamp": 1794460527,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 15.2,
+      "summary": "화성특례시, 김장철 맞아 농·수산물 원산지 표시 집중 점검 시사팩트",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "090b3467e9f38027",
+      "title": "홈플러스 \"전단채 지급보증 한 적 없어\"…증권사 판매 설명 반박",
+      "url": "https://www.newsis.com/view/NISX20261112_0003865466",
+      "source": "뉴시스·산업",
+      "published": "2026-11-12T14:02+09:00",
+      "timestamp": 1794459749,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 13.2,
+      "summary": "[서울=뉴시스]권민지 기자 = 홈플러스가 일부 증권사의 전자단기사채(전단채) 판매 자료에 자사가 신용보강을 제공한 것처럼 기재됐다는 보도에 12일 \"어떠한 신용보강도 제공한 사실이 없다\"고 반박했다. 홈플러스가 이날 낸 입장문에 따르면 해당 전단채는 신영증권이 설립한 특수목적회사(SPC)가 발행했다. 신영증권이 발행을 주관하고 인수했으며, 다른 증권사들이 이를 인수해 투자자에게 판매했다. 홈플러스는 발행과 판매 과정에 관여하지 않았다는 입장이다. 홈플러스는 전단채의 기초가 된 구매전용카드대금채권의 원채무자로서 결제일에 카드대금을 납부할 의무만 부담한다고 설명했다. 전단채 상환을 위해 ",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 9
+    },
+    {
+      "id": "c1597d23eb492e0f",
+      "title": "이랜드킴스클럽, 해양수산부와 국산 수산물 소비 촉진 행사",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9QTlktc0NFZXEzY3RtYWZ6TW5yYl9ublUtendDMkJ5U0RTNHUzanFieHg2S09IeEZjTWMyQTV1M0M5el94Q01qb2ZaSWE1bUJSOXZVTHduMzdzNVB1VlFNa1ZLdnNmNjdTMV93OXJXc2pyWUp2RllILUpR?oc=5",
+      "source": "로이슈",
+      "published": "2026-11-12T13:47+09:00",
+      "timestamp": 1794458873,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 9.5,
+      "summary": "이랜드킴스클럽, 해양수산부와 국산 수산물 소비 촉진 행사 로이슈",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 2
+    },
+    {
+      "id": "b44db05ab5086906",
+      "title": "수협중앙회, 해외 바이어 초청 팸투어·무역상담회 성료",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YTDl2Ym1pTlp0UGlpRWNOY0VOdU13NENlcU5LejF3RmFMTElVZWNSVUpMNHFxSGdiQTdSeTZ3ay1jdlZmeWpRUXFIZUVySG02LTM0Ri1zMVphbWZwU3pTTWxETDczdkt6ZFA2TzFYYw?oc=5",
+      "source": "어업in수산",
+      "published": "2026-11-12T13:33+09:00",
+      "timestamp": 1794458026,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 9.5,
+      "summary": "수협중앙회, 해외 바이어 초청 팸투어·무역상담회 성료 어업in수산",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "2512e67be37033d2",
+      "title": "의왕시, 김장철 대비 농·축·수산물 원산지표시 지도·점검 실시",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBYd2JoZmtHc2IxVnVJWDgwM3lzWHRYOExWNUtGZWowLXhXUXNzdEQ4dWtmM1BQZEVyVWRhbDQxY1k3cTNqR3l5MnRMT21COHdiYjB3NWVUT2xIZW1VT3NqbGRJZUNLRllRenNtZS0xVEc?oc=5",
+      "source": "산경일보",
+      "published": "2026-11-12T13:32+09:00",
+      "timestamp": 1794457945,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "의왕시, 김장철 대비 농·축·수산물 원산지표시 지도·점검 실시 산경일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "7e5494516f90e16f",
+      "title": "파주시 ‘농축수산물 원신지 표시’ 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1hRHI4dkItb1VhQ05oUXNOc2JhRGhyQXBrbE1UQm54MjhtSXZKMHpQbXZfOUhQakc1RWhzOUtGMGcwS1Zmd2l1eDluU2JNLXZieS1mMV9jRjhEYlVobzZLcVJWLTg5MEtM?oc=5",
+      "source": "일간경기",
+      "published": "2026-11-12T13:15+09:00",
+      "timestamp": 1794456919,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 11.5,
+      "summary": "파주시 ‘농축수산물 원신지 표시’ 집중 점검 일간경기",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "1eefc1aa76c29f27",
+      "title": "부산국제수산엑스포, 32개국 535개사 참여…수출상담 1억 달러 성과",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5aOGZhX1RWbkg0cmFfdFBmci1rckdrejRaWEMxRHg4anl4bTB1bzBUd1ZDVm9WSDhLaFNsS1lLMUQ3UG5Tb21MVFZKRlBRbVBMREUzdmFMd1Q5eVFYYm00NHlCdVRHSzJOUlIzVS1uQQ?oc=5",
+      "source": "웰페어뉴스",
+      "published": "2026-11-12T13:07+09:00",
+      "timestamp": 1794456440,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "부산국제수산엑스포, 32개국 535개사 참여…수출상담 1억 달러 성과 웰페어뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "d2c24c73e62b5f2c",
+      "title": "화성특례시, 김장철 농·수산물 원산지 표시 이행 여부 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBJUGpfTFM0MVIxLXhzUXRSRjYwYlIzV0doU3E0MTlaVlEtVWZ4MmtHenNGMmJZczMwWVhuRW9pZjl4TzJxYkdqVUZMR09hdE1EN21wV09UWEEtTFU5MFVRcVNHSlI?oc=5",
+      "source": "매일일보",
+      "published": "2026-11-12T12:55+09:00",
+      "timestamp": 1794455711,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 13.2,
+      "summary": "화성특례시, 김장철 농·수산물 원산지 표시 이행 여부 집중 점검 매일일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "64d298030a4920db",
+      "title": "전북 수산기술연구소, 첨단 수산연구 역량으로 'K-해양수산' 미래 주도권 쥔다",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1tdEkxQlhoU3BzbEVIOEF2VHc0S0xsQ0hLSWl2T2dlTHNBOFMxYWEzZmUtNFB5N1JjeGtrdzFOQnZNT21tc2cybDJzNmRjN1JLeVkwdjZrelI4VEwzeWlQUjBlVWhSUQ?oc=5",
+      "source": "전북투데이",
+      "published": "2026-11-12T12:30+09:00",
+      "timestamp": 1794454200,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 12.5,
+      "summary": "전북 수산기술연구소, 첨단 수산연구 역량으로 'K-해양수산' 미래 주도권 쥔다 전북투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "bdd71a855de3c6cd",
+      "title": "[행정감사] 최병근 경북도의원 “경북 우수 수산물 브랜드 ‘바다주이소’ 예산 85% 미집행…홍보·판로 확대 시급”",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5XMTBLeGhKX0MxUm9WUU4wNzFTVGtVdU1ZcExzeVlxRnVleWtoWTh6VVdMY3NrRlBjQU9uNDJmRy13dUt2YkI1UHdCU3k2UkQ2eE95Mks4SDRNaWEzMDJDTEdmVTd6eGZmeWNv?oc=5",
+      "source": "웹플러스뉴스",
+      "published": "2026-11-12T12:10+09:00",
+      "timestamp": 1794453016,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 10.5,
+      "summary": "[행정감사] 최병근 경북도의원 “경북 우수 수산물 브랜드 ‘바다주이소’ 예산 85% 미집행…홍보·판로 확대 시급” 웹플러스뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 5
+    },
+    {
+      "id": "68b1a4417d146625",
+      "title": "수출 시장의 식품 안전 및 동식물 검역(SPS)에 대한 새로운 규정.",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNDRPQzhGclU4dzdqM2tmRmZnbjJRb2ZiMmpVODVvUjdCTkVHeFh5UklGWUw1b1ZzSHZCVS1VSUdLOS1PcW5oRUdqd19TV2NQQW5EVTl2UjNMX1Z5WFpTSHp2UTR3OTBxeWtOb3Z1eEtFVWxyNFEzM0ljRzdhcGZWUko2RENUbm9nXzkxUTNEcTAzVjZLdm9PZUFZTlhQWWxiWnZXOTBpdUg5bVhwWGM1WnY2OTZpVVpLWWNz?oc=5",
+      "source": "Vietnam.vn",
+      "published": "2026-11-12T12:03+09:00",
+      "timestamp": 1794452626,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리"
+      ],
+      "score": 15.2,
+      "summary": "수출 시장의 식품 안전 및 동식물 검역(SPS)에 대한 새로운 규정. Vietnam.vn",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 14
+    },
+    {
+      "id": "a2989512d0bf7f2b",
+      "title": "홈플러스 피해자들 \"김병주 MBK 회장 즉각 기소해야\"",
+      "url": "https://www.newsis.com/view/NISX20261112_0003865342",
+      "source": "뉴시스·산업",
+      "published": "2026-11-12T11:59+09:00",
+      "timestamp": 1794452353,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 13.2,
+      "summary": "[서울=뉴시스]고선영 기자 = 홈플러스 전단채 사태와 관련해 피해자비상대책위원회와 마트산업노동조합 등 시민단체가 김병주 MBK파트너스 회장 기소를 촉구했다. 홈플러스 물품구매전단채 피해자비상대책위원회와 마트산업노동조합 홈플러스지부, 금융정의연대 등 6개 단체는 12일 서울 서초구 공소청 본청 앞에서 '4000억 금융참사 김병주 MBK 회장 기소 촉구 공동 기자회견'을 열고 이같이 주장했다. 현장에는 단체 관계자 등 약 15명이 참석했다. 이들은 '김병주 즉각 기소' 문구가 적힌 팻말을 들고 \"혐의 있는 피해자를 모두 법정에 세워라\"라는 구호를 외쳤다. 이들은 MBK가 홈플러스의 신용등",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 9
+    },
+    {
+      "id": "65fef4b6122f32f3",
+      "title": "어촌어항공단, 바이오플락 양식 중급교육…새우 사육 전 과정 실습",
+      "url": "https://www.newsis.com/view/NISX20261112_0003865217",
+      "source": "뉴시스·산업",
+      "published": "2026-11-12T11:58+09:00",
+      "timestamp": 1794452308,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.9,
+      "summary": "[서울=뉴시스] 박성환 기자 = 흰다리새우를 직접 키우고 출하하는 과정까지 경험하며 친환경 양식기술을 익히는 교육이 진행된다. 한국어촌어항공단이 예비 양식 창업자의 실무 역량을 높이기 위한 바이오플락 중급교육을 시작했다고 12일 밝혔다. 어촌어항공단은 교육생 13명을 대상으로 충남 태안군 국립수산과학원 서해수산연구소 태안양식연구센터에서 내달 4일까지 4주간 합숙교육을 진행한다. 교육생들은 바이오플락 기술과 수질 관리, 질병 예방, 사료 관리 등을 배우고 흰다리새우 입식부터 사육·성장 측정·시설 관리·출하까지 전 과정을 실습한다. 바이오플락은 양식수에 미생물을 활용해 수질을 관리하고, ",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 9
+    },
+    {
+      "id": "2f79c8d93d260fbf",
+      "title": "의왕시, 김장철 앞두고 농·축·수산물 원산지표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1vM3F5U1JoVTRvQ1p1empFUHVzLXBGNExrRGdvajJTQWpnMnZLTWRFdXhfYk9FV29ibmxxS1ZNM2hSR1VmclNReHpDR0hIYTJYSXMxRDZDS0oyTnNXbnEwWkhYeGdFVEQ1X2hz?oc=5",
+      "source": "프레시안",
+      "published": "2026-11-12T11:51+09:00",
+      "timestamp": 1794451909,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 11.2,
+      "summary": "의왕시, 김장철 앞두고 농·축·수산물 원산지표시 집중 점검 프레시안",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "e3d2273b4f27928e",
+      "title": "11월 수산물 추천, 꽃게는 암꽃게가 수율 더 좋다",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5yOC1BbE5uQnVyOFd6TDN5TUh2RXpZQUg2VTZ6aTU0TEV3SlFDd0VkNmc4cEZNU2ZuTFRMcW5INFUyTmh3enh2MlpTNnN0cEw1Nnd6RXp1UkhkN1h1bk1yTnI2dEtwSFFuUno0U09B?oc=5",
+      "source": "www.famtimes.co.kr",
+      "published": "2026-11-12T11:40+09:00",
+      "timestamp": 1794451237,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 16.2,
+      "summary": "11월 수산물 추천, 꽃게는 암꽃게가 수율 더 좋다 www.famtimes.co.kr",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "a3ab8552dd4516f5",
+      "title": "통영 강구안서 수산물 소비촉진 캠페인 성황",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1nV185eXdPeFJ5YXR1THpTbkZJQ3g0bk1IUmRwcXN5dXZHSTZkTjFSdW1IUkpYN2ZUcU1wdHFQRVhDNjJWb1VsaEN2OVpnWENoUC1QOWNjSnJ1MmFEVWQ0M1l1ZjJ0ZlBobWR5N2RZZw?oc=5",
+      "source": "한려투데이",
+      "published": "2026-11-12T11:21+09:00",
+      "timestamp": 1794450109,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 9.5,
+      "summary": "통영 강구안서 수산물 소비촉진 캠페인 성황 한려투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "39c9a6b53f36fcca",
+      "title": "이마트, 본업 호조에도 계열사 적자 타격…목표가 7만원↓-하나",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzUDJvVVFXNmlQNDdrc2JRQ2R4bjVON0U4dmxKSWdWZUhMOHctMjh1RndFbF9rMjNWU3R0YnByZVJyWURDSDYxbDlsVmZqcTVOVGEwZHBLWW5td09WNzhRcjlJUS1zekRka3Y2U0V6cTY1eFFx?oc=5",
+      "source": "인포스탁데일리",
+      "published": "2026-11-12T11:01+09:00",
+      "timestamp": 1794448893,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 15.2,
+      "summary": "이마트, 본업 호조에도 계열사 적자 타격…목표가 7만원↓-하나 인포스탁데일리",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "0c5b0a419d789b89",
+      "title": "이랜드킴스클럽, 해양수산부와 손잡고 ‘대한민국 수산대전’ 개최",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBCWnVfZV9MUGMyQkZDcHBWU2ZtTG1ueVZjU1dvYnIySkxkS09aamhSRUh6VHdXUEIyZS1xUmtPWW9fUUg5U1BJeUNCVzBQZTdCNzJfZXZpLVliSzVUa3VWV0ZPQUxiWXlFaFh3?oc=5",
+      "source": "CNB뉴스",
+      "published": "2026-11-12T10:56+09:00",
+      "timestamp": 1794448592,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 12.2,
+      "summary": "이랜드킴스클럽, 해양수산부와 손잡고 ‘대한민국 수산대전’ 개최 CNB뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
     {
       "id": "efe3af966d654e45",
       "title": "쿠팡 로켓배송에 맞불…네이버, 子회사 세워 물류 직접 뛰어든다",
@@ -23,7 +925,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 9
     },
     {
@@ -49,6 +951,28 @@
       "editorial_score": 2
     },
     {
+      "id": "dd735b585e31c653",
+      "title": "이랜드킴스클럽, 해수부와 수산물 할인 행사…김장철 장바구니 부담 낮춘다",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8yZVRsWExUMGZBemh0cl9xNEY0dl93ZGxnU3hsX2lIX0ZjMmthVkhWbF9SWnVPLTdWYno5YUZRVVVFMEprUVJBN2J0a1BHelZMTlNtRVJkVUNlX1lEdnFCS3d3TXNoVi1PZ0RqcFFaTQ?oc=5",
+      "source": "스마트경제",
+      "published": "2026-11-12T10:50+09:00",
+      "timestamp": 1794448200,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 13.2,
+      "summary": "이랜드킴스클럽, 해수부와 수산물 할인 행사…김장철 장바구니 부담 낮춘다 스마트경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": -3
+    },
+    {
       "id": "3e91b4cacfe9f6ea",
       "title": "울산 방어진활어센터 복구 박차…피해 시설 철거 완료",
       "url": "https://www.newsis.com/view/NISX20261112_0003865203",
@@ -67,8 +991,32 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 9
+    },
+    {
+      "id": "7b23c6a4ee12c0b8",
+      "title": "CJ프레시웨이, 실온 소스 제품군 확대…외식·급식 현장 맞춤형 양념장 강화",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8yeVZOS3oybVVkVTFtUmxnZlVCVW5ZQ0FxT19qUkkwb0xVR1M0YXF4SlVpMUsxel9fZVZRTVZ6WDdNNi1lbkRVemxmVDZjUm9PbW50U0g3N1AwZUhkN1dDNHJQalk4RHAzM04zcWR3Yw?oc=5",
+      "source": "이코노미사이언스",
+      "published": "2026-11-12T10:38+09:00",
+      "timestamp": 1794447533,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 14.2,
+      "summary": "CJ프레시웨이, 실온 소스 제품군 확대…외식·급식 현장 맞춤형 양념장 강화 이코노미사이언스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
     },
     {
       "id": "c97e0a13dde83ce7",
@@ -113,7 +1061,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 9
     },
     {
@@ -130,6 +1078,29 @@
       ],
       "score": 15.2,
       "summary": "파주시, 김장철 대비 농축수산물 원산지 표시 점검 실시 파주시대",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이전 수집 보존",
+      "editorial_score": 7
+    },
+    {
+      "id": "34526d3ad24acfa6",
+      "title": "화성시, 김장철 맞아 농·수산물 원산지 표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1vbGJ3aGVGYkRseE1BamZfOWRGSVpJZzV5eWVnTWJCVHhZOGEyeFo5SnJuWDItckxxSElLNkdYTUtpSEdEaGpWUFlLX01vTWNxZkVldS1sNlY5MmtEUk1yT2Fn?oc=5",
+      "source": "경기뉴스광장",
+      "published": "2026-11-12T10:12+09:00",
+      "timestamp": 1794445966,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 15.2,
+      "summary": "화성시, 김장철 맞아 농·수산물 원산지 표시 집중 점검 경기뉴스광장",
       "summary_type": "공개 RSS 소개문",
       "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
       "official": false,
@@ -174,7 +1145,7 @@
       "tags": [
         "시즌/트렌드"
       ],
-      "score": 13.2,
+      "score": 11.2,
       "summary": "이랜드킴스클럽, 전국 40여 개 점포서 김장철 수산물 할인 부산일보",
       "summary_type": "공개 RSS 소개문",
       "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
@@ -184,6 +1155,53 @@
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
       "collection_status": "이번 실행 재수집",
       "editorial_score": 2
+    },
+    {
+      "id": "db7dc8ec7e653d07",
+      "title": "파주시, 김장철 농축수산물 원산지 표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1wNHUwQnJFUXhsaXlEM3ZSU3FadkhJalNXMWtLQkhncDdlWVJZSkk2cy04el9YOFlpWjBQQk93bk9rNV9EdkFocGN1VjJZdTljdmNvSWJ3RmJpTzQwY2ZhSmU1LTBiX3M?oc=5",
+      "source": "파주에서신문",
+      "published": "2026-11-12T10:00+09:00",
+      "timestamp": 1794445205,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 15.2,
+      "summary": "파주시, 김장철 농축수산물 원산지 표시 집중 점검 파주에서신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "e50c152b1a770624",
+      "title": "이마트, 3분기 총매출 5조원 첫 돌파…트레이더스도 분기 최대",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9qYnQ2cl9PMzVJOWpJVHl4aVFVSXB2cmQ0RTJDMVlVdm5IdGF1LVlZMlFvMFBzMWtXM1hiNVBrUUZBM1dsUHBlUEo1b1R6SWcyeGxaWHFjMm0tY0JxZzVsdklJXzBSR25HV1RV0gFrQVVfeXFMT2pidDZyX08zNUk5aklUeXhpUVVJcHZyZDRFMkMxWVV2bkh0YXUtWVkyUW8wUHMxa1czWGI1UGtRRkEzV2xQcGVQSjVvVHpJZzJ4bFpYcWMybS1jQnFnNWx2SUlfMFJHbkdXVFU?oc=5",
+      "source": "논객닷컴",
+      "published": "2026-11-12T09:57+09:00",
+      "timestamp": 1794445041,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
+      "summary": "이마트, 3분기 총매출 5조원 첫 돌파…트레이더스도 분기 최대 논객닷컴",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
     },
     {
       "id": "e88a194145b6a465",
@@ -206,7 +1224,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -229,7 +1247,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -394,7 +1412,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -444,6 +1462,29 @@
       "editorial_score": 7
     },
     {
+      "id": "54a7c2768b913451",
+      "title": "화성특례시, 김장철 맞아 농·수산물 원산지 표시 집중 점검",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE93cGlPWVRic1dVc184YXU0QkoxbHJwbzhEZFBSNTVrR2FTX3pPTnA5S0ZEbll1enRpWGRQRVRuVkh6VFJnQTFxVDJFWmE4Nk1TX2NGTm5YWXhMb0o1d1HSAV5BVV95cUxPd3BpT1lUYnNXVXNfOGF1NEJKMWxycG84RGRQUjU1a0dhU196T05wOUtGRG5ZdXp0aVhkUEVUblZIelRSZ0ExcVQyRVphODZNU19jRk5uWFl4TG9KNXdR?oc=5",
+      "source": "세계로컬타임즈",
+      "published": "2026-11-12T08:00+09:00",
+      "timestamp": 1794438013,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 15.2,
+      "summary": "화성특례시, 김장철 맞아 농·수산물 원산지 표시 집중 점검 세계로컬타임즈",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "a548c76e0efd43c6",
       "title": "'美의회 새 한국계' 댄 고 \"트럼프 시기 한미동맹 우려…관세는 수치\"",
       "url": "https://www.newsis.com/view/NISX20261112_0003864655",
@@ -462,7 +1503,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 18
     },
     {
@@ -533,7 +1574,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 9
     },
     {
@@ -558,7 +1599,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 13
     },
     {
@@ -610,6 +1651,27 @@
       "editorial_score": 7
     },
     {
+      "id": "7afa3537254f8b9d",
+      "title": "China's mariculture output rises 5.16% to 16.53 million tonnes in eight months as farmed seafood prices soften",
+      "url": "https://www.efeedlink.com/articles/chinas-mariculture-output-rises-5-16-to-16-53-million-tonnes-in-eight-months-as-farmed-seafood-prices-soften",
+      "source": "Bing 뉴스 검색·원물 수급/시세·aquaculture seafood prices",
+      "published": "2026-11-12T03:53+09:00",
+      "timestamp": 1794423180,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 16.2,
+      "summary": "Marine capture grew only 0.29% in January-August 2026, with officials and analysts saying new seafood supply now comes mainly from aquaculture.",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "5543311773612c61",
       "title": "냉동 육류·수산물 시장 2035년 전망: 간편성과 고급화가 성장 견인 - 뉴스 및 통계",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPazR6NmYzcEZUbWlMRkU4bUgtWllWVU9wMG12Nkxld2lBeG5mVVpaM1JVWTJTY2JxVUNMMjc1VU1Wa2hhcFdJUnNzYUd4QURHRDNIVk1JSzM4c0ZWOUM2d3laLURBM2NlcnBPa18zdERWLS1XeVJCMUlmVVFHblN4TWhSTlhQV0M2TFJEVnlYM0NhY29JcFhkamkzeHBtLU1PcXFqRjI4VVlsNEQ0N00xT0xUM1dEY1VZb1VSUnJMVHpyUQ?oc=5",
@@ -630,6 +1692,32 @@
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
       "collection_status": "이번 실행 재수집",
       "editorial_score": 7
+    },
+    {
+      "id": "0796b9abf988f0a5",
+      "title": "쿠팡 이어 네이버까지 배송 공세…대형마트, 신선식품 차별화로 ‘맞불’",
+      "url": "https://www.etoday.co.kr/news/view/2647446",
+      "source": "Bing 뉴스 검색·온라인·온라인 신선식품",
+      "published": "2026-11-12T03:26+09:00",
+      "timestamp": 1794421560,
+      "category": "온라인",
+      "tags": [
+        "온라인",
+        "대형마트/SSM"
+      ],
+      "score": 14.9,
+      "summary": "네이버가 1조원에 달하는 물류 투자 계획을 발표하면서 온라인 장보기 시장의 배송 경쟁이 한층 치열해질 전망이다. 쿠팡이 로켓배송과 로켓프레시를 앞세워 시장 영향력을 키운 가운데 네이버까지 물류 인프라 확충에 나서면서 기존 대형마트의 입지가 좁아질 수 있다는 우려가 나온다. 이에 이마트와 롯데마트는 오프라인 점포와 신선식품 경쟁력을 무기로 배송 서비스 ...",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 9
     },
     {
       "id": "762b70ab4d376da1",
@@ -843,6 +1931,30 @@
       "editorial_score": 11
     },
     {
+      "id": "d5a6c6eca62e317a",
+      "title": "이마트, 분기 매출 5조 첫 돌파…계열사 스타벅스는 적자 계속",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBobWRSdzFETW02eDNQODlEejRsbHZDcER4OFdRYVVOTk16VDN4UmlMZ2pUbUY1YXBSckpKQl9BMkdPNUx0LXByVFM0M1FGOUdTZ0hhcWVnSGZGQdIBX0FVX3lxTE9NVU1FREZoQTdTbXJ0alNmS2FWOFNFLXFMbVVCVFB4eXdkU09Dc0xLNURDUmJkM2h5SnYyWVBhOGxuXzlGNVFuMzVoS2tJaklDMEFleVhXb0dYTHFIb1Uw?oc=5",
+      "source": "경향신문",
+      "published": "2026-11-11T20:40+09:00",
+      "timestamp": 1794397200,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 15.2,
+      "summary": "이마트, 분기 매출 5조 첫 돌파…계열사 스타벅스는 적자 계속 경향신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "904dc47c443cd2cf",
       "title": "[단독] “한국 배은망덕” 쿠팡보복 요구 美상원의원…선거사령탑 됐다",
       "url": "https://www.mk.co.kr/news/business/12205220",
@@ -863,7 +1975,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 9
     },
     {
@@ -1053,7 +2165,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -1120,7 +2232,7 @@
       "channels": [],
       "impact": "정책·식품안전 변화",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 9
     },
     {
@@ -1196,9 +2308,9 @@
       "editorial_score": 7
     },
     {
-      "id": "7d4baf60efc038a9",
+      "id": "5a661e73217c5c02",
       "title": "할인점·트레이더스 ‘쌍끌이’···이마트, 분기 총매출 5조 벽 넘었다",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE42c3VrZ1h6bm1OWkJ4TG1XR0gxZXNxNFc5U1p2S0RCYjc3UmxkdUdrQU5hMnRleHZhbFRVZGlCLXEwR3h3Sy1sS2N2Si15d1I4czg1bVNvU0xzclVVT09wV1k4bG80eWFrczg1MmtZZ0lMUdIBdEFVX3lxTE85RG5YNjVpZHdLOGFxN2xUWDgtNHhMeXpheEtCaU1sdUhvYkhzLWJZM3N2Uk5wZTU1eHk0WnlBQ0dBLTJSdk84X3QxM1gzanFvci05V0t2TjVySjV5MkQ2cVI4Z0FxZFFJUEFEdGZzUHdXb1hP?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBtVFdsUmZrY29NYjBJNWk3TGx3ZkUwcXpUaWd4UnZPMzI5bUhGaDFab2JJUFNjSXFPbjJMVGNlU204ZDhXU3ZSTjNvd2YxVmY1TFlPUXg3M2FEY0RKczVoNGdyend0b1FnZmtQbUxoYnjSAXRBVV95cUxPOURuWDY1aWR3SzhhcTdsVFg4LTR4THl6YXhLQmlNbHVIb2JIcy1iWTNzdlJOcGU1NXh5NFp5QUNHQS0yUnZPOF90MTNYM2pxb3ItOVdLdk41cko1eTJENnFSOGdBcWRRSVBBRHRmc1B3V29YTw?oc=5",
       "source": "이뉴스투데이",
       "published": "2026-11-11T17:35+09:00",
       "timestamp": 1794386100,
@@ -1220,9 +2332,9 @@
       "editorial_score": 2
     },
     {
-      "id": "5a661e73217c5c02",
+      "id": "7d4baf60efc038a9",
       "title": "할인점·트레이더스 ‘쌍끌이’···이마트, 분기 총매출 5조 벽 넘었다",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBtVFdsUmZrY29NYjBJNWk3TGx3ZkUwcXpUaWd4UnZPMzI5bUhGaDFab2JJUFNjSXFPbjJMVGNlU204ZDhXU3ZSTjNvd2YxVmY1TFlPUXg3M2FEY0RKczVoNGdyend0b1FnZmtQbUxoYnjSAXRBVV95cUxPOURuWDY1aWR3SzhhcTdsVFg4LTR4THl6YXhLQmlNbHVIb2JIcy1iWTNzdlJOcGU1NXh5NFp5QUNHQS0yUnZPOF90MTNYM2pxb3ItOVdLdk41cko1eTJENnFSOGdBcWRRSVBBRHRmc1B3V29YTw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE42c3VrZ1h6bm1OWkJ4TG1XR0gxZXNxNFc5U1p2S0RCYjc3UmxkdUdrQU5hMnRleHZhbFRVZGlCLXEwR3h3Sy1sS2N2Si15d1I4czg1bVNvU0xzclVVT09wV1k4bG80eWFrczg1MmtZZ0lMUdIBdEFVX3lxTE85RG5YNjVpZHdLOGFxN2xUWDgtNHhMeXpheEtCaU1sdUhvYkhzLWJZM3N2Uk5wZTU1eHk0WnlBQ0dBLTJSdk84X3QxM1gzanFvci05V0t2TjVySjV5MkQ2cVI4Z0FxZFFJUEFEdGZzUHdXb1hP?oc=5",
       "source": "이뉴스투데이",
       "published": "2026-11-11T17:35+09:00",
       "timestamp": 1794386100,
@@ -1240,8 +2352,8 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "editorial_score": 2,
-      "collection_status": "이전 수집 보존"
+      "collection_status": "이전 수집 보존",
+      "editorial_score": 2
     },
     {
       "id": "01c58aa6aceee17e",
@@ -1529,7 +2641,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -1601,9 +2713,9 @@
       "editorial_score": 7
     },
     {
-      "id": "614d0b28cf44b8f1",
+      "id": "8cce4a6428c84804",
       "title": "이마트·롯데마트, 3분기 실적 '껑충'..\"홈플러스 경영난 틈타\"",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9OX1hIQmYzVDlKcXhTVW5RS09SLTFCemxrWG5GZzRITGN2QWJvaHMxS0ttdnlwM3RMZXQwWldTMzFPWW1vTUliYTV5WVVxWjhqanNCYVhwT3BJMnJy?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfWFRBcXB2MDhmSkQzZGpaa0hCSlhSSnVrenJrdF9RbTdXNmE2SFlDUnNZTXNjZUg5NTFNYk5rYmphbjlGWWJUV0NYdzRCTlVFSXVNOW8xWEZVZGxvV2JoelRjYzduUVBnOVE?oc=5",
       "source": "티제이비",
       "published": "2026-11-11T16:18+09:00",
       "timestamp": 1794381499,
@@ -1625,9 +2737,9 @@
       "editorial_score": 7
     },
     {
-      "id": "8cce4a6428c84804",
+      "id": "614d0b28cf44b8f1",
       "title": "이마트·롯데마트, 3분기 실적 '껑충'..\"홈플러스 경영난 틈타\"",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfWFRBcXB2MDhmSkQzZGpaa0hCSlhSSnVrenJrdF9RbTdXNmE2SFlDUnNZTXNjZUg5NTFNYk5rYmphbjlGWWJUV0NYdzRCTlVFSXVNOW8xWEZVZGxvV2JoelRjYzduUVBnOVE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9OX1hIQmYzVDlKcXhTVW5RS09SLTFCemxrWG5GZzRITGN2QWJvaHMxS0ttdnlwM3RMZXQwWldTMzFPWW1vTUliYTV5WVVxWjhqanNCYVhwT3BJMnJy?oc=5",
       "source": "티제이비",
       "published": "2026-11-11T16:18+09:00",
       "timestamp": 1794381499,
@@ -1721,9 +2833,9 @@
       "editorial_score": 7
     },
     {
-      "id": "f509c5b8a0472f93",
+      "id": "e5b153025b781c4c",
       "title": "홈플러스 빈자리 채운 이마트·롯데마트…3분기 실적 '껑충'",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QMm1zX3ROR2o5Zll6X1ozR2lEalZORllacGpKbWNGY2lxbG9EYmhTeXllbFcwNVRBVERVQlV5MklfY1JuaVI0WG5UWGQtSGVaQVhmT2RQR2t6dHdiMWVsUdIBYEFVX3lxTE1QMm1zX3ROR2o5Zll6X1ozR2lEalZORllacGpKbWNGY2lxbG9EYmhTeXllbFcwNVRBVERVQlV5MklfY1JuaVI0WG5UWGQtSGVaQVhmT2RQR2t6dHdiMWVsUQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5KQ3RVOU9XRUJKTjl3SWJUX1pDZXBvNjV1RFJXeTJiZnNNMV9LbUU5RW10eHBnSm10aEtKeFZvZXpHU1kzY0xzY2RaUW44S2ktVEk3dXgxbHlocG_SAWBBVV95cUxNUDJtc190TkdqOWZZel9aM0dpRGpWTkZZWnBqSm1jRmNpcWxvRGJoU3l5ZWxXMDVUQVREVUJVeTJJX2NSbmlSNFhuVFhkLUhlWkFYZk9kUEdrenR3YjFlbFE?oc=5",
       "source": "연합뉴스",
       "published": "2026-11-11T15:34+09:00",
       "timestamp": 1794378898,
@@ -1745,9 +2857,9 @@
       "editorial_score": 7
     },
     {
-      "id": "e5b153025b781c4c",
+      "id": "f509c5b8a0472f93",
       "title": "홈플러스 빈자리 채운 이마트·롯데마트…3분기 실적 '껑충'",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5KQ3RVOU9XRUJKTjl3SWJUX1pDZXBvNjV1RFJXeTJiZnNNMV9LbUU5RW10eHBnSm10aEtKeFZvZXpHU1kzY0xzY2RaUW44S2ktVEk3dXgxbHlocG_SAWBBVV95cUxNUDJtc190TkdqOWZZel9aM0dpRGpWTkZZWnBqSm1jRmNpcWxvRGJoU3l5ZWxXMDVUQVREVUJVeTJJX2NSbmlSNFhuVFhkLUhlWkFYZk9kUEdrenR3YjFlbFE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QMm1zX3ROR2o5Zll6X1ozR2lEalZORllacGpKbWNGY2lxbG9EYmhTeXllbFcwNVRBVERVQlV5MklfY1JuaVI0WG5UWGQtSGVaQVhmT2RQR2t6dHdiMWVsUdIBYEFVX3lxTE1QMm1zX3ROR2o5Zll6X1ozR2lEalZORllacGpKbWNGY2lxbG9EYmhTeXllbFcwNVRBVERVQlV5MklfY1JuaVI0WG5UWGQtSGVaQVhmT2RQR2t6dHdiMWVsUQ?oc=5",
       "source": "연합뉴스",
       "published": "2026-11-11T15:34+09:00",
       "timestamp": 1794378898,
@@ -1910,7 +3022,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이전 수집 보존",
+      "collection_status": "이번 실행 재수집",
       "editorial_score": 7
     },
     {
@@ -1996,6 +3108,30 @@
       ],
       "score": 15.2,
       "summary": "정용진의 혁신 '승부수' 통했다…이마트 분기 매출 첫 5조 돌파 이데일리",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
+      "id": "9cd7b7b1512e2afd",
+      "title": "신세계 정용진의 한 방 ‘트레이더스’, 이마트 핵심 성장축으로 우뚝",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1FLXd0RWV2WTZuNEFHdFlFb3JiNEVjeHdDZmVGQkVmMTNmMkkxZWVLclh4UzlDVzd0Zy1nbi1udWpubm02d1gzZWZiZ2h2LW1OX2s0alNSSElHX2tLWTlVYXdpSTg?oc=5",
+      "source": "Queen 이코노미퀸",
+      "published": "2026-11-11T14:53+09:00",
+      "timestamp": 1794376380,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
+      "summary": "신세계 정용진의 한 방 ‘트레이더스’, 이마트 핵심 성장축으로 우뚝 Queen 이코노미퀸",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
@@ -2098,7 +3234,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "0e0b1b0183f9653a",
@@ -2410,7 +3546,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이전 수집 보존",
+      "collection_status": "이번 실행 재수집",
       "editorial_score": 11
     },
     {
@@ -2462,9 +3598,9 @@
       "editorial_score": 7
     },
     {
-      "id": "9ac48d4f243f44e7",
+      "id": "7848571170d56431",
       "title": "“트레이더스·에브리데이가 효자네”…이마트 3Q 영업익 46.3%↑",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB4dGZocHJIUDkwcEkyN0dRY1VZOGlWTGZreTMyQ0ZIU3JtUFdjQTF1VGFJVENQTEFMeVdrV1owcHlmN0FWczFlYWJHUDdfZnpWVHZFbQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9jbXowNVFxOW1LV09CbE1xbXVudEZha1Bwcl9BcVJrNEtBNThfZHh3eldPVENvdVY5djZfTFV1TGx0N0JmR1E?oc=5",
       "source": "매일경제",
       "published": "2026-11-11T14:16+09:00",
       "timestamp": 1794374188,
@@ -2486,9 +3622,9 @@
       "editorial_score": 11
     },
     {
-      "id": "7848571170d56431",
+      "id": "9ac48d4f243f44e7",
       "title": "“트레이더스·에브리데이가 효자네”…이마트 3Q 영업익 46.3%↑",
-      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9jbXowNVFxOW1LV09CbE1xbXVudEZha1Bwcl9BcVJrNEtBNThfZHh3eldPVENvdVY5djZfTFV1TGx0N0JmR1E?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB4dGZocHJIUDkwcEkyN0dRY1VZOGlWTGZreTMyQ0ZIU3JtUFdjQTF1VGFJVENQTEFMeVdrV1owcHlmN0FWczFlYWJHUDdfZnpWVHZFbQ?oc=5",
       "source": "매일경제",
       "published": "2026-11-11T14:16+09:00",
       "timestamp": 1794374188,
@@ -2497,8 +3633,8 @@
         "대형마트/SSM"
       ],
       "score": 22.6,
-      "summary": "",
-      "summary_type": "",
+      "summary": "“트레이더스·에브리데이가 효자네”…이마트 3Q 영업익 46.3%↑ 매일경제",
+      "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
       "channels": [
@@ -2506,8 +3642,8 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "editorial_score": 11,
-      "collection_status": "이전 수집 보존"
+      "collection_status": "이전 수집 보존",
+      "editorial_score": 11
     },
     {
       "id": "0f21bd6eb36d3d9c",
@@ -2745,6 +3881,30 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "5ce82f3e647df675",
+      "title": "‘고래잇’ 대박에 트레이더스까지 날았다…이마트, 분기 매출 첫 5兆",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFA2SW9pSXQyUzFDSG9WSUtja0tGSmV5TzQ5TlVTcDBMY2ZqVVpuZVlGcFphZ0RieFZ0dW5fWE9RazAtb1pQN2xIN0djSjZGNF9fN2J4NEVNOA?oc=5",
+      "source": "헤럴드경제",
+      "published": "2026-11-11T13:45+09:00",
+      "timestamp": 1794372352,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 18.9,
+      "summary": "‘고래잇’ 대박에 트레이더스까지 날았다…이마트, 분기 매출 첫 5兆 헤럴드경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "7e8907e77555c0f5",
       "title": "‘고래잇’ 대박에 트레이더스까지 날았다…이마트, 분기 매출 첫 5兆",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBUSERFUk4yUXV3NWYxOXVuVHJ3VW5fcmxDWDdQbFo2RDJXNXZMX21WcGpfWVNkVmxtaVVxMGRkci1vYmNMUmJOYy1ldTlDQ1pZQjkyb0ln?oc=5",
@@ -2765,7 +3925,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -3354,7 +4514,7 @@
       "channels": [],
       "impact": "정책·식품안전 변화",
       "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -3727,7 +4887,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 11
     },
     {
@@ -3875,7 +5035,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -3897,7 +5057,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "f44c94ce0a9d2c2f",
@@ -3920,7 +5080,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -4204,6 +5364,28 @@
       "editorial_score": 11
     },
     {
+      "id": "def08529668a55f4",
+      "title": "새우업계 “CPTPP 대응, 생산비 부담 완화부터”",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE85ZUE3Y0lCcHp3UV9wbmJwVGhxdXkyNlQ3Z3dJYzh5d2NLRUJMaktYU0NZcU5NVTlhY1RxUGgtWWhjcXRwVkl5SHc2dnZLY2tPNEFubHFrTzNrMGYxX0tZSW5iSE5MenFnZGNwdg?oc=5",
+      "source": "한국농어민신문",
+      "published": "2026-11-10T18:23+09:00",
+      "timestamp": 1794302601,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 16.2,
+      "summary": "새우업계 “CPTPP 대응, 생산비 부담 완화부터” 한국농어민신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "256500872c7b9b21",
       "title": "동원산업 3분기 영업이익 1497억 1.1% 증가, 식자재·포장재·물류부문 성장",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9CU3BiZmJHSjhfNjY3Mmk5UF8xRWpyRXFUVFlqakNMQUdiTVJRMEplczh5WFN5Z3J4ZGxRRk12VGk1RGN0VklCbFZhM21SSVp2LXc4aDJZdGVVM2RoNXloWmU4dG5BY25IaWdsUlRFZTlIZkk?oc=5",
@@ -4360,7 +5542,7 @@
         "B2B/급식",
         "비용/거시"
       ],
-      "score": 14.2,
+      "score": 11.7,
       "summary": "동원그룹, 3분기 누적 영업익 4473억 원...식자재·포장재·물류 성장에 '10%' 증가 소비자가 만드는 신문",
       "summary_type": "공개 RSS 소개문",
       "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
@@ -4384,7 +5566,7 @@
       "tags": [
         "식품안전/소비심리"
       ],
-      "score": 13.2,
+      "score": 10.7,
       "summary": "식약처, 겨울철 다소비 수산물 720건 집중 검사 뉴스핌",
       "summary_type": "공개 RSS 소개문",
       "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
@@ -4406,7 +5588,7 @@
       "tags": [
         "B2B/급식"
       ],
-      "score": 14.2,
+      "score": 11.7,
       "summary": "동원산업, 3분기 영업익 1.1% 증가…식자재·물류 성장 이데일리",
       "summary_type": "공개 RSS 소개문",
       "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
@@ -4430,7 +5612,7 @@
       "tags": [
         "원물 수급/시세"
       ],
-      "score": 12.5,
+      "score": 10,
       "summary": "경북도의회 농수산위, 수산자원연구원·어업기술원 행정사무감사 실시 BBS불교방송",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -4453,7 +5635,7 @@
         "B2B/급식",
         "비용/거시"
       ],
-      "score": 14.2,
+      "score": 11.7,
       "summary": "동원그룹, 3분기 매출·영업익 소폭 성장…\"식자재·포장재 뒷받침\"(상보) 뉴스1",
       "summary_type": "공개 RSS 소개문",
       "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
@@ -4477,7 +5659,7 @@
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 15.2,
+      "score": 12.7,
       "summary": "홈플러스, 회생계획 인가 두 달 만에 다시 벼랑 끝…매각·영업 정상화 ‘안갯속’ 푸드투데이",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -4501,7 +5683,7 @@
       "tags": [
         "원물 수급/시세"
       ],
-      "score": 12.5,
+      "score": 10,
       "summary": "경북도의회 농수산위, 수산자원 방류·청년 어업인 육성 집중 추궁 매일일보",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -4523,7 +5705,7 @@
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 15.2,
+      "score": 12.7,
       "summary": "홈플러스, 임금 밀리고 매대 비었다…전면 휴업 우려 스페셜경제",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -4571,7 +5753,7 @@
       "tags": [
         "온라인"
       ],
-      "score": 14.2,
+      "score": 11.7,
       "summary": "‘학부모 참관룩’ 매출 목표 8배…컬리, 식품 넘어 패션사업 키운다 이데일리",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
@@ -4595,7 +5777,7 @@
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 15.2,
+      "score": 12.7,
       "summary": "현금 바닥난 홈플러스…협력업체 보증금 깎아 ‘위험한 정산’ 뉴스경남",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -4619,7 +5801,7 @@
       "tags": [
         "온라인"
       ],
-      "score": 14.2,
+      "score": 11.7,
       "summary": "‘신선식품’ 배송에 냉장·냉동 설비 없는 일반 탑차·승용차 투입…컬리 풀콜드체인 ‘구멍’ 뉴스퀘스트",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
@@ -4657,29 +5839,6 @@
       "editorial_score": 11
     },
     {
-      "id": "40f824a9920d1e4e",
-      "title": "겨울철 다소비 수산물 안전 살핀다",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE90ZkN5VXktaVU5ZmJGSEdHbjAwOXkyLWhtOEdSUXl0TTBaOVlCQU1nMUZ2RDJNMGFRRW41Qjl5YnZCZWNhaWdNYTM2RFFVcW5Md2tiZ3FiUzREdmZ2aUtDdW15cjNQUlU4REE?oc=5",
-      "source": "대한급식신문",
-      "published": "2026-11-10T15:09+09:00",
-      "timestamp": 1794290940,
-      "category": "식품안전/소비심리",
-      "tags": [
-        "식품안전/소비심리",
-        "B2B/급식"
-      ],
-      "score": 13.2,
-      "summary": "겨울철 다소비 수산물 안전 살핀다 대한급식신문",
-      "summary_type": "공개 RSS 소개문",
-      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
-    },
-    {
       "id": "29027e012557aa97",
       "title": "겨울철 다소비 수산물 안전 살핀다",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1LSV9HZzNNZVp0ck11SnZyRU9wMHJrZVJyaDh0TzBmMDhoUVRVbjVXT2xocEpqTDJPblc2NHhJZnV3Z3c2SF96Si1ZLUpPOTRlX3RoZVFOMnF2Y1dtYmJ3aUtmVGRkV0di?oc=5",
@@ -4703,6 +5862,29 @@
       "collection_status": "이전 수집 보존"
     },
     {
+      "id": "40f824a9920d1e4e",
+      "title": "겨울철 다소비 수산물 안전 살핀다",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE90ZkN5VXktaVU5ZmJGSEdHbjAwOXkyLWhtOEdSUXl0TTBaOVlCQU1nMUZ2RDJNMGFRRW41Qjl5YnZCZWNhaWdNYTM2RFFVcW5Md2tiZ3FiUzREdmZ2aUtDdW15cjNQUlU4REE?oc=5",
+      "source": "대한급식신문",
+      "published": "2026-11-10T15:09+09:00",
+      "timestamp": 1794290940,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "B2B/급식"
+      ],
+      "score": 10.7,
+      "summary": "겨울철 다소비 수산물 안전 살핀다 대한급식신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "2a76ba1c4f88f3f5",
       "title": "컬리, 3분기 영업익 100억원…전년比 63.5%↑",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBuT1BfV1VQRkxNWEVReWZocGNsdjZ3RUxMTl9NNnlrOGFhRHIwZElkcEYwbGdoZnItYS1UZ3d5aGNlelNKYmJmdmYzLURpVmVnWEdOQWFB?oc=5",
@@ -4713,7 +5895,7 @@
       "tags": [
         "온라인"
       ],
-      "score": 14.2,
+      "score": 11.7,
       "summary": "컬리, 3분기 영업익 100억원…전년比 63.5%↑ 지디넷코리아",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
@@ -4737,7 +5919,7 @@
       "tags": [
         "원물 수급/시세"
       ],
-      "score": 12.5,
+      "score": 10,
       "summary": "경북도의회 농수산위원회 행정사무감사 돌입 경북매일",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -4759,7 +5941,7 @@
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 15.2,
+      "score": 12.7,
       "summary": "벼랑 끝 홈플러스, 납품대금 보증금 돌려막기…생존 해법 '안갯속' 뉴시스",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -4783,7 +5965,7 @@
       "tags": [
         "대형마트/SSM"
       ],
-      "score": 13.2,
+      "score": 10.7,
       "summary": "벼랑 끝 홈플러스, 납품대금 보증금 돌려막기…생존 해법 '안갯속' 뉴시스",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -4831,7 +6013,7 @@
       "tags": [
         "원물 수급/시세"
       ],
-      "score": 12.5,
+      "score": 10,
       "summary": "바다 향 품은 붉은 보석… ‘멍게’가 식탁에 오르기까지 어업in수산",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -4854,7 +6036,7 @@
         "원물 수급/시세",
         "해외"
       ],
-      "score": 18.2,
+      "score": 15.7,
       "summary": "베트남-중국 자유무역협정(VKFTA)에 따라 베트남산 새우에 대한 관세 쿼터를 폐지하자는 제안. Vietnam.vn",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -4876,7 +6058,7 @@
       "tags": [
         "B2B/급식"
       ],
-      "score": 16.2,
+      "score": 13.7,
       "summary": "[충남/예산군] 급식 한 끼가 바꾼 '지역 먹거리' 흐름…'지역산 공급률' 4개월째 충남 선두 한국지방정부신문",
       "summary_type": "공개 RSS 소개문",
       "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
@@ -4886,8 +6068,8 @@
       ],
       "impact": "수급·물량 변화 보도",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "editorial_score": 11,
-      "collection_status": "이전 수집 보존"
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 11
     },
     {
       "id": "949bb2e298629fa1",
@@ -4902,7 +6084,7 @@
         "원물 수급/시세",
         "식품안전/소비심리"
       ],
-      "score": 13.2,
+      "score": 10.7,
       "summary": "식약처, 겨울철 수산물 720건 집중 검사…굴·과메기 등 대상 신아일보",
       "summary_type": "공개 RSS 소개문",
       "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
@@ -4924,7 +6106,7 @@
       "tags": [
         "원물 수급/시세"
       ],
-      "score": 19.9,
+      "score": 17.4,
       "summary": "[기후의 역습(247)] 동해에 오징어가 없다?!⋯2040년대 한국 연근해 '어획 0' 경고 포커스온경제",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -4947,7 +6129,7 @@
         "해외",
         "원물 수급/시세"
       ],
-      "score": 15.2,
+      "score": 12.7,
       "summary": "VASEP는 한국에서 베트남산 새우에 대한 관세 쿼터 철폐를 제안했습니다. Vietnam.vn",
       "summary_type": "공개 RSS 소개문",
       "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
@@ -4969,7 +6151,7 @@
       "tags": [
         "식품안전/소비심리"
       ],
-      "score": 16.9,
+      "score": 14.4,
       "summary": "식약처, 겨울철 수산물 안전관리 강화 한국식품의약신문",
       "summary_type": "공개 RSS 소개문",
       "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
@@ -4991,7 +6173,7 @@
       "tags": [
         "해외"
       ],
-      "score": 15.2,
+      "score": 12.7,
       "summary": "\"미 중간선거 결과, 관세 기조 유지…해양수산 영향 제한\" 뉴시스",
       "summary_type": "공개 RSS 소개문",
       "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
@@ -5037,7 +6219,7 @@
       "tags": [
         "시즌/트렌드"
       ],
-      "score": 9.5,
+      "score": 7,
       "summary": "‘겨울철 다소비 수산물’ 집중 검사 시사코리아",
       "summary_type": "공개 RSS 소개문",
       "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
@@ -5060,7 +6242,7 @@
         "원물 수급/시세",
         "시즌/트렌드"
       ],
-      "score": 19.9,
+      "score": 17.4,
       "summary": "한국광어양식연합회, 2026부산국제수산엑스포 참가…광어 소비 확대 모색 시선뉴스",
       "summary_type": "공개 RSS 소개문",
       "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
@@ -5068,7 +6250,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이전 수집 보존",
+      "collection_status": "이번 실행 재수집",
       "editorial_score": 7
     },
     {
@@ -5096,6 +6278,30 @@
       "editorial_score": 7
     },
     {
+      "id": "3ba5712646dc42ce",
+      "title": "KMI,미국 중간선거 후 \"국내해양수산업\" 방향제시",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZdEhERlV3cHBPOVltYWZvVXhoRDZjVXp4cEtCRTNRMVNIVjJWbEw4R3NTTktOb3I2MXZSTHlDbmhXWlhTMnhFNF9UR3k0VU1RNGdIU3U1VTJ0NWE3V0F1TUNKLThmbjlBMkxCVw?oc=5",
+      "source": "한스경제",
+      "published": "2026-11-10T10:50+09:00",
+      "timestamp": 1794275454,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 7,
+      "summary": "KMI,미국 중간선거 후 \"국내해양수산업\" 방향제시 한스경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "1c32dfd2520379b6",
       "title": "KMI,미국 중간선거 후 \"국내해양수산업\" 방향제시",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAxZU52MkhtQmJYU0VKN1JEOGgwcmlCWUoyZERxSFNCQzFGRWdlYlhLS2s4bWJ3Y0EtZ1NpTUhTWURtMnBQZ08xM0NRaVM5OVNxUkVfcDdDZk9BMFd2S25PeEdxUFp6SkZSaVBj?oc=5",
@@ -5116,7 +6322,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -5324,7 +6530,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -5394,6 +6600,31 @@
       "editorial_score": 7
     },
     {
+      "id": "dc73e455008baabf",
+      "title": "CJ프레시웨이, 왓더버거 전국 250개 매장에 식자재 공급",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE40M0UwbG5KTEd4ZkJ0cXUxQV9qT3EtbjZ6MlN3Rkl6Xy1kVFl3ZGFHdFhKa0MtOHpOSnE3eXl6NUNCUlFMN0FmUTJ2S0VWWDZFNkVlZy1ncm1pWEM4YmVlRTU4NmFPSlRzbGppXw?oc=5",
+      "source": "식품저널 foodnews",
+      "published": "2026-11-10T08:09+09:00",
+      "timestamp": 1794265799,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 13.7,
+      "summary": "CJ프레시웨이, 왓더버거 전국 250개 매장에 식자재 공급 식품저널 foodnews",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "매장",
+        "B2B"
+      ],
+      "impact": "수급·물량 변화 보도",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 11
+    },
+    {
       "id": "892ac1fcf14e4dfd",
       "title": "CJ프레시웨이, 왓더버거 전국 250개 매장에 식자재 공급",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE83SzNiNndCYzkxV0tLdmtGQUpyYTB2YkhpWG85eGhCaGdpNHFnc2o1azVBUjBUa2JxenhFMEdGdHFqZmRuTUd3anJpb2s0WVpmZ3JaQVRqbk9xODJtcndXeGlWOHFwQVUxeTJhdVpn?oc=5",
@@ -5415,7 +6646,7 @@
       ],
       "impact": "수급·물량 변화 보도",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 11
     },
     {
@@ -5449,18 +6680,18 @@
       "source": "아시아경제",
       "published": "2026-11-10T07:35+09:00",
       "timestamp": 1794263700,
-      "category": "해외",
+      "category": "원물 수급/시세",
       "tags": [
-        "해외"
+        "원물 수급/시세"
       ],
-      "score": 7,
+      "score": 10,
       "summary": "KMI, 미 중간선거 후 해양수산 영향 제한적… “불확실성은 지속” 아시아경제",
       "summary_type": "공개 RSS 소개문",
-      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
       "official": false,
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
       "collection_status": "이번 실행 재수집",
       "editorial_score": 7
     },
@@ -5603,6 +6834,29 @@
       "editorial_score": 16
     },
     {
+      "id": "a0f5db190e443c3f",
+      "title": "식약처, 김장철 수입식품 안전관리 강화:경찰연합신문",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4SkVlZjByeTEybGpfOUVGR3pna01GTU9LRFlzTzZfczU5RmVYc2Z4Wnlwdk1XRmlfbVR6ZHkzc2F1ZWE1b1BlRndoSmdsRTF60gFsQVVfeXFMUGVaeVAtQTNObENMMDQxS2lDaEVYX29qMVlXS1ZWaWtvWUt4Q0FfRnFNeHNnc3REVloxNE5hOVQySDgtNEtRU0gtVUM3MUVWLW1DNDd4UVZtaEVzVlhGMEVYTUF6cGh6bG9ZSmRr?oc=5",
+      "source": "경찰연합신문",
+      "published": "2026-11-09T19:55+09:00",
+      "timestamp": 1794221700,
+      "category": "식품안전/소비심리",
+      "tags": [
+        "식품안전/소비심리",
+        "시즌/트렌드"
+      ],
+      "score": 10.7,
+      "summary": "식약처, 김장철 수입식품 안전관리 강화:경찰연합신문 경찰연합신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공식 검사 결과·기준 시행일·소비조사",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "f11ec7364b52235c",
       "title": "식약처, 김장철 수입식품 안전관리 강화",
       "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9ZTmYwVFNkSXNXMlRuWXkwWmF3a3Fta3hVNEZvU3hheUFVLUlaR0tRTnpoMjVHNjRNcC1mSlFCQ01wbVhiN0F3WHpxalg?oc=5",
@@ -5622,7 +6876,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -5905,7 +7159,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -6049,7 +7303,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -6073,7 +7327,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "출점·폐점 일정·영업 규정·인건비 변화",
-      "collection_status": "이전 수집 보존",
+      "collection_status": "이번 실행 재수집",
       "editorial_score": 7
     },
     {
@@ -6120,7 +7374,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 11
     },
     {
@@ -6310,7 +7564,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -6382,6 +7636,30 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이전 수집 보존",
+      "editorial_score": 7
+    },
+    {
+      "id": "76626e9c31ac3363",
+      "title": "제주 감귤·수산물·화장품 동남아 진출 확대…싱가포르서 25억 수출상담…축산물 협약 2건.수출상담 18건",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE45MmVlVy1GcHZuMUNQNDZXcXNJMkFRR0NwalNRVl85U2lRSmpqMy1FbDJyZGFlcnkzVDRvVjVGRDJ4S29zbHNuLUdib01wb1cwd2x2RTdweHJHTXVCSEpkbmFGbUdRVTBid1Jj0gFuQVVfeXFMUEpZUlh4RXE2eHU1d1pCRE9vbkFrb0lLSFNrRGk2c25ob2FsMGd1alZ6VW9DZWdIejZmdE0zS040ZjlEMVcwOVZVeGVyaTF6S1M0TDFCcjlVanhjalRwZG9SOE8wTWRmZzBkeVVZb1E?oc=5",
+      "source": "제주뉴스",
+      "published": "2026-11-09T10:52+09:00",
+      "timestamp": 1794189145,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 8,
+      "summary": "제주 감귤·수산물·화장품 동남아 진출 확대…싱가포르서 25억 수출상담…축산물 협약 2건.수출상담 18건 제주뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
       "collection_status": "이번 실행 재수집",
       "editorial_score": 7
     },
@@ -6404,7 +7682,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -6588,7 +7866,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -6778,30 +8056,6 @@
       "editorial_score": 7
     },
     {
-      "id": "235e4121d4c8af4a",
-      "title": "[SIAL PARIS] 삼성웰스토리, 글로벌 확장 잰걸음…급식·식품 유통으로 영토 확대 : 네이버 블로그",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOTlpSUU4aHpGM1BMZXAzcHFHazRNUUNWRUN5STFTUWF5ajZ1RnhtVkVFY09hWlNDM3Awc2FyaXpOR2FoS1lvaW9pLTVBdXJKZXZkblotT2t0MUpCSFlfWVlnbGRqaFNxUDJha0ZpMmVPaXRZLTBjdFRJN3JFVVlFMDZkcng3V1hqT1lzd3JjQQ?oc=5",
-      "source": "Naver Blog",
-      "published": "2026-11-09T00:36+09:00",
-      "timestamp": 1794152171,
-      "category": "B2B/급식",
-      "tags": [
-        "B2B/급식"
-      ],
-      "score": 11.7,
-      "summary": "[SIAL PARIS] 삼성웰스토리, 글로벌 확장 잰걸음…급식·식품 유통으로 영토 확대 : 네이버 블로그 Naver Blog",
-      "summary_type": "공개 RSS 소개문",
-      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
-      "official": false,
-      "channels": [
-        "B2B"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
-    },
-    {
       "id": "bb54bbee6f1ef772",
       "title": "제주 글로비트, 인니 스마트양식 인재 양성 추진",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5tTExhb3FLTktyUS1QN3ZDcmUtYmNuUEthaHBGYkZTUFJiOEhXTHQyWTQ2ZU5LR3otYkppMHh2X1BYczdTbGQtMy1pMnZKTHJCQl9BWEJ3N29SZ1d1RnVUVVY1Xy11Z2c5?oc=5",
@@ -6868,6 +8122,30 @@
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
       "collection_status": "이번 실행 재수집",
       "editorial_score": 2
+    },
+    {
+      "id": "235e4121d4c8af4a",
+      "title": "[SIAL PARIS] 삼성웰스토리, 글로벌 확장 잰걸음…급식·식품 유통으로 영토 확대 : 네이버 블로그",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOTlpSUU4aHpGM1BMZXAzcHFHazRNUUNWRUN5STFTUWF5ajZ1RnhtVkVFY09hWlNDM3Awc2FyaXpOR2FoS1lvaW9pLTVBdXJKZXZkblotT2t0MUpCSFlfWVlnbGRqaFNxUDJha0ZpMmVPaXRZLTBjdFRJN3JFVVlFMDZkcng3V1hqT1lzd3JjQQ?oc=5",
+      "source": "Naver Blog",
+      "published": "2026-11-08T18:40+09:00",
+      "timestamp": 1794130811,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 11.7,
+      "summary": "[SIAL PARIS] 삼성웰스토리, 글로벌 확장 잰걸음…급식·식품 유통으로 영토 확대 : 네이버 블로그 Naver Blog",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
     },
     {
       "id": "fcc00a7061b23b25",
@@ -6939,7 +8217,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -7080,7 +8358,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -7297,27 +8575,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "09a578d57acdc8d1",
-      "title": "기아 PV5로 농촌에 신선식품 배송…\"의성 이어 순창까지 확대\"",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1FNTRJR2ZBZ1k1TlI3NzE4S3dxYjN0a2tZNHV4U1U0SjdRaEcwVDVHUDVaUUxGa0RSRGE4WUNRWXF6VWlTaFk0allSbmd4TXZpaFB0S0RnRk9sZw?oc=5",
-      "source": "파이낸셜뉴스",
-      "published": "2026-11-08T12:00+09:00",
-      "timestamp": 1794106800,
-      "category": "온라인",
-      "tags": [
-        "온라인"
-      ],
-      "score": 8,
-      "summary": "기아 PV5로 농촌에 신선식품 배송…\"의성 이어 순창까지 확대\" 파이낸셜뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "9a03173632abf55e",
       "title": "의성에서 순창까지…행안부, 장보기 어려운 농촌 ‘신선식품 배송’ 확대",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SNGFka2lvY2pwMGZMbVluYW9EZXV1V1FDRjlBLWhZMTM3N0xpTzg2ajhMTWlNUVdDSURSZGRrdEVDelNqelNUNmcwTGtTT3pMRXE1Zg?oc=5",
@@ -7381,6 +8638,48 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "09a578d57acdc8d1",
+      "title": "기아 PV5로 농촌에 신선식품 배송…\"의성 이어 순창까지 확대\"",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1FNTRJR2ZBZ1k1TlI3NzE4S3dxYjN0a2tZNHV4U1U0SjdRaEcwVDVHUDVaUUxGa0RSRGE4WUNRWXF6VWlTaFk0allSbmd4TXZpaFB0S0RnRk9sZw?oc=5",
+      "source": "파이낸셜뉴스",
+      "published": "2026-11-08T12:00+09:00",
+      "timestamp": 1794106800,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 8,
+      "summary": "기아 PV5로 농촌에 신선식품 배송…\"의성 이어 순창까지 확대\" 파이낸셜뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "0413edcbb1463868",
+      "title": "행안부, 순창 농촌마을에 신선식품 배송…의성 이어 두 번째",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQMEpsaVcyYUdlc3ExZ1JzdXM2VUVnQnNIckxzY0ZudGJqTEdsY2tCQ1A3Yzgyc2VxWTdTTC1tUmdfX3lOa0FSNm1mLVNtaHc1TE02aXpsYnFxbG13Q1FhQkhfYzlzeUViNDFqTGNENjZhTFJrZHpsUDhOUHJIdldMeWRB?oc=5",
+      "source": "스포탈코리아",
+      "published": "2026-11-08T12:00+09:00",
+      "timestamp": 1794106800,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 8,
+      "summary": "행안부, 순창 농촌마을에 신선식품 배송…의성 이어 두 번째 스포탈코리아",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "713ef6c566b7eaee",
       "title": "사회연대의 확장… 순창군 오지 주민에 우유와 야채 등 신선식품 배송한다",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBKUUNQRUItcXRfdHZVUldLNXI2dkh5dXUyWElaOGk0YVdhUElram90UVBQenhjYjJaUk04OUo0dTRId20zRWRYTDFrVERITHdYdUdDTUJSWGZpOUhaNUJ3Tmd3cUVwakNPYWfSAW5BVV95cUxOcW9vQjZ4S1BXX2VmRnhkQlo3bVotaGk4eTBKTndlblZnUjFlU2o0WlhEWWVZaVpDazFGU1Rrb0ExSUVKTFRNR1Q2MHFKMFJwbDkzdkhrajZEVVdZemJLNTVMTmVTYk11OG1Wd2ZaQQ?oc=5",
@@ -7399,7 +8698,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "bd41cc67309b5c1b",
@@ -7465,7 +8764,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -7652,7 +8951,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "7974dc2c025aa1d1",
@@ -7962,6 +9261,30 @@
       "editorial_score": 7
     },
     {
+      "id": "b11c2914a92600ac",
+      "title": "월급·납품대금 밀린 홈플러스, 험난한 ‘회생의 길’",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpWlZwMlUyQkZIOXljeHlhVDFoeEVjRDhTMjRLVWFCOWg0czM2OFVBNFpJUUNIWmY2Umdjb2hkY0F2YUstQ0xob2xXUTBHZkcyOWhYRjItcE1oZ3dZWWE3MQ?oc=5",
+      "source": "헤럴드경제 미주판",
+      "published": "2026-11-07T23:43+09:00",
+      "timestamp": 1794062580,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "월급·납품대금 밀린 홈플러스, 험난한 ‘회생의 길’ 헤럴드경제 미주판",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 7
+    },
+    {
       "id": "a837402f965d1cc8",
       "title": "[심층분석] 울진 죽변항 수산물축제 주말 북적…체험 열기 수산물 소비로 잇는다",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5qX244OTZpOFpZWmRUQldQODRzeUxESnFHdjNpTUZmdjVOYWw1M21WOFdyMUhod3VOcDUwcjdZeUI5QU9xSDU0d054dXB1N09ESmpHeTVLcXFOY21rNUhIdnU3Ml9HcDVwdW1kSA?oc=5",
@@ -7982,6 +9305,28 @@
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
       "collection_status": "이전 수집 보존",
       "editorial_score": 7
+    },
+    {
+      "id": "b0bb889b5d515597",
+      "title": "“오징어의 귀환”…남미 어획량 회복에 수입 폭증",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83VWx4d3pFM1NkcGdLQVhOTGlJTl9fcjlQNEhOdVdaeU81ei1tdzBVWG5RM2pLOEZvMnhYb2RWZVRTbE9BNlZDUkl0R2d0Y2NsSHZhZDI2Nl9kTmVRTmIxRURkc3pyN0pvSDNZ0gFmQVVfeXFMTi02VGVkWmhWaUFIWG0zMjJVc2V5LVUzdHZoTGptYS1walV2RHhsRGZLZWdoVWt5OUJzeDhQaUU2NlQwTmZGM3lkWDhDaHBubThzaUQ5WXlhcUN4ZFpxSVhuN29waFJB?oc=5",
+      "source": "동아일보",
+      "published": "2026-11-07T16:18+09:00",
+      "timestamp": 1794035889,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 17.4,
+      "summary": "“오징어의 귀환”…남미 어획량 회복에 수입 폭증 동아일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "수급·물량 변화 보도",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집",
+      "editorial_score": 12
     },
     {
       "id": "d12744f0b0488a14",
@@ -8252,7 +9597,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -8274,7 +9619,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -8605,7 +9950,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -8835,7 +10180,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 18
     },
     {
@@ -9357,8 +10702,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": -3
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "40c37f0608cee6b9",
@@ -9379,8 +10723,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "c2e827a8f0382bd1",
@@ -9403,8 +10746,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "842f3d8e9fb2169d",
@@ -9428,7 +10770,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -9452,7 +10794,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -9496,8 +10838,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "a3ddb2c6d1daee88",
@@ -9518,7 +10859,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -9543,8 +10884,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 11
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "dd599bb6e05156b9",
@@ -9567,8 +10907,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 11
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "1716affc26ce1492",
@@ -9592,8 +10931,7 @@
       ],
       "impact": "정책·식품안전 변화",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "217f052670186a87",
@@ -9617,7 +10955,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 11
     },
     {
@@ -9670,6 +11008,30 @@
       "editorial_score": 11
     },
     {
+      "id": "5ee8b9cf38707cca",
+      "title": "CJ프레시웨이 3분기 영업익 29% 감소…온라인 식자재 유통은 2배 성장",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE85c1dGQkcwZDRjNzEwcEpPdFpTVFdqNE5hbzlSNENmeEd6MXFPcWtLZ3V2cEFmLWMzdEdIOUU4VTc2bFIxd3c?oc=5",
+      "source": "매일경제",
+      "published": "2026-11-05T14:23+09:00",
+      "timestamp": 1793856206,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식"
+      ],
+      "score": 11.7,
+      "summary": "CJ프레시웨이 3분기 영업익 29% 감소…온라인 식자재 유통은 2배 성장 매일경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "온라인",
+        "B2B"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "6690d34899602da9",
       "title": "CJ프레시웨이 3분기 영업익 29% 감소…온라인 식자재 유통은 2배 성장",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XWTNMZnRSZ0djRUFuQjE4eEpsWU9xOHlUR1FocUgyejF4amR4aXhvajBpUWxDakg4UVI1X1M4WFV5bkFlc1dsVVRBZnZtTmcwT1R5NQ?oc=5",
@@ -9691,8 +11053,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 11
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "af77d44053bdde30",
@@ -9716,7 +11077,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -9738,8 +11099,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 11
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "b6810d6cb61ad2ab",
@@ -9763,8 +11123,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 11
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "9dcbbd7440c1ac0d",
@@ -9788,8 +11147,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 11
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "d31403a887694cd6",
@@ -9812,7 +11170,7 @@
       ],
       "impact": "정책·식품안전 변화",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 14
     },
     {
@@ -9886,20 +11244,19 @@
       "source": "연합뉴스",
       "published": "2026-11-05T11:42+09:00",
       "timestamp": 1793846565,
-      "category": "온라인",
+      "category": "매장 운영",
       "tags": [
-        "온라인"
+        "매장 운영"
       ],
-      "score": 8,
+      "score": 7,
       "summary": "해수부, 미·중·일 등 17개국서 '한국 수산식품 홍보 주간' 연합뉴스",
       "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
       "official": false,
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 1
+      "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "01f78a8570aef97b",
@@ -9920,7 +11277,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집",
+      "collection_status": "이전 수집 보존",
       "editorial_score": 7
     },
     {
@@ -9945,8 +11302,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 2
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "f35645a4858fda06",
@@ -9970,8 +11326,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집",
-      "editorial_score": 7
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "7e78c2a49c30ef53",
@@ -9992,7 +11347,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "9b0c8eb250806421",
@@ -10254,42 +11609,18 @@
       "source": "스페셜타임스",
       "published": "2026-11-05T09:53+09:00",
       "timestamp": 1793840008,
-      "category": "해외",
+      "category": "시즌/트렌드",
       "tags": [
-        "해외"
+        "시즌/트렌드"
       ],
       "score": 7,
       "summary": "노르웨이수산물위원회, 한국 시장 지속가능 성장 논의한 ‘2026 노르웨이 씨푸드 세미나’ 성료 스페셜타임스",
       "summary_type": "공개 RSS 소개문",
-      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
       "official": false,
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "2c77eec7f77ad1f7",
-      "title": "대전교육청, 학교급식 수산물 방사능 검사 97건 모두 적합",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5fdzZjYUN2YXItQTZ2WEs5VC1DbWJvTHdaTkhsZy15dWExd2phWXRaN0QtcjVaTTVVbTR3TDdFMndabmZ1b196MmhzWGI?oc=5",
-      "source": "아이뉴스24",
-      "published": "2026-11-05T09:35+09:00",
-      "timestamp": 1793838904,
-      "category": "B2B/급식",
-      "tags": [
-        "B2B/급식",
-        "식품안전/소비심리"
-      ],
-      "score": 15.4,
-      "summary": "대전교육청, 학교급식 수산물 방사능 검사 97건 모두 적합 아이뉴스24",
-      "summary_type": "공개 RSS 소개문",
-      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
-      "official": false,
-      "channels": [
-        "B2B"
-      ],
-      "impact": "정책·식품안전 변화",
-      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -10314,8 +11645,31 @@
       ],
       "impact": "정책·식품안전 변화",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이전 수집 보존",
-      "editorial_score": 7
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "2c77eec7f77ad1f7",
+      "title": "대전교육청, 학교급식 수산물 방사능 검사 97건 모두 적합",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5fdzZjYUN2YXItQTZ2WEs5VC1DbWJvTHdaTkhsZy15dWExd2phWXRaN0QtcjVaTTVVbTR3TDdFMndabmZ1b196MmhzWGI?oc=5",
+      "source": "아이뉴스24",
+      "published": "2026-11-05T09:35+09:00",
+      "timestamp": 1793838904,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식",
+        "식품안전/소비심리"
+      ],
+      "score": 15.4,
+      "summary": "대전교육청, 학교급식 수산물 방사능 검사 97건 모두 적합 아이뉴스24",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "307c0a063a123301",
@@ -10339,7 +11693,7 @@
       ],
       "impact": "정책·식품안전 변화",
       "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "aa62bec41f4c9d25",
@@ -10568,7 +11922,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "a3ae6c3ac955a94e",
@@ -10731,7 +12085,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "cd13283fd2c3e524",
@@ -10779,7 +12133,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "c4283ac53160ce3d",
@@ -11393,6 +12747,29 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "d104efe755811a96",
+      "title": "대형마트 세일에도 '반값' 날짜는 따로…11월 장보기, 조건 따져야",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8wVHN4Y1hWa05Cazc0V3E3dkRiU3FGMkZFdWdjcUZ0V0dtSzZEamFOcGJWU1E5c3FsOTJyUHNLRjZGYVNlVnJaYldSRk14WHFzUEloZ1ZLSk00RWFpdkdj?oc=5",
+      "source": "스마트투데이",
+      "published": "2026-11-03T17:00+09:00",
+      "timestamp": 1793692800,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "대형마트 세일에도 '반값' 날짜는 따로…11월 장보기, 조건 따져야 스마트투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "ac2feb1efabcfdf8",
       "title": "‘자금 사정 최악’ 홈플러스… 납품대금도 보증금으로 막았나",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNEIwVW9fMjdPajBPUjZCZ2hYV2dDNk56UFlOa3RsYkF0OFNsWnlQbnpKWk9tUkkweVlWS1AyQ2pLczh6YTBMTHk1aWs0YWdPdkctS3BVdWNvVTBZaTVheG1tMVNicFFRRHV5b01MUDhfaUpEa282MHNocG5JX01sZnFrVm5talo5RWfSAZ4BQVVfeXFMT1lyTFhpZE5CM1R2TXJ3VS1nWmdDenljVnVUcXhoVm5iaFN1bHJVOEZrRnRmRHNMeF9XM0twbDYyZFU4OWRNbzlaaGxTQVh6VFR0dWpWaXBmRHR4eVFmNGJyNW5hY1dueWFySWh0UF9jVmpLVHFzYmthR21xSklWa3Q2d21BTGRGaEJqcVBZTzV5QURja2Rldk1ubzlpVHc?oc=5",
@@ -11439,6 +12816,29 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "9eb7f1da013cc9a4",
+      "title": "홈플러스 납품대금 보증금 차감…카드 결제액 3분의 1 : 기업·산업",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1La05YbFRyZzFRM2FDeE9wMnpueXFyUkw2UXU2NG5CcGN1RHpUTnlNZkFFbFJDVi04dFk0dEV0R0VyQ1FnUzB3Q1plYw?oc=5",
+      "source": "재경일보",
+      "published": "2026-11-03T17:00+09:00",
+      "timestamp": 1793692800,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "홈플러스 납품대금 보증금 차감…카드 결제액 3분의 1 : 기업·산업 재경일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "61ddb2b3c60dc8d8",
       "title": "하림, 홈플러스 익스프레스에 또 '수혈'…영업 정상화 총력",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8wclJKZXFNWXRSWFBDTG12MHNFdGRCMUNEUG9CS2x1WVlIM3FZbS1PQ2pmUWRONmxqd0RxdDhTZGtNZDJGMXNFVFNjV19hNEJRUFJiSDR5cEZTNzJoMWJidHZEWGdqTlp0Tkh6QQ?oc=5",
@@ -11459,30 +12859,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "d104efe755811a96",
-      "title": "대형마트 세일에도 '반값' 날짜는 따로…11월 장보기, 조건 따져야",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8wVHN4Y1hWa05Cazc0V3E3dkRiU3FGMkZFdWdjcUZ0V0dtSzZEamFOcGJWU1E5c3FsOTJyUHNLRjZGYVNlVnJaYldSRk14WHFzUEloZ1ZLSk00RWFpdkdj?oc=5",
-      "source": "스마트투데이",
-      "published": "2026-11-03T17:00+09:00",
-      "timestamp": 1793692800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "대형마트 세일에도 '반값' 날짜는 따로…11월 장보기, 조건 따져야 스마트투데이",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "1d1f158f97e54167",
@@ -11760,7 +13137,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "1120697dc8eafd17",
@@ -11941,6 +13318,27 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "9278046fc2269de2",
+      "title": "어촌어항공단, 수산양식박람회서 AI 수산업·어촌 지원사업 소개",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5iS1Jid012ampVd2N3cVMtcE9iWGpUUTlTd0FTaTJ6eEZmelI3eUVFWC1rdi1hUXF0ejBPeE5fOVZpeHpWaTAwWERBZDJiY2w3M1F6YXdaQm5tZnp6SkRmdtIBeEFVX3lxTE1FYkNDNS1TUHlYR0doYUoxNUlZeDlHWWhLUDhnaFZmdURxN3R6RmdNbV9xR0owdDM4bUNUZGw4bWxyM1N0LUZ5RlNzeE1MSHREeDlibi1pckRPQ29PZWlBaVl1Q3lLTjhjNHZPOTMydG5hRWIwSFNMNA?oc=5",
+      "source": "뉴시스",
+      "published": "2026-11-02T17:00+09:00",
+      "timestamp": 1793606400,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 13.7,
+      "summary": "어촌어항공단, 수산양식박람회서 AI 수산업·어촌 지원사업 소개 뉴시스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "2de91b4d871d7116",
       "title": "어촌어항공단, 수산양식박람회서 AI 수산업·어촌 지원사업 소개",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5iS1Jid012ampVd2N3cVMtcE9iWGpUUTlTd0FTaTJ6eEZmelI3eUVFWC1rdi1hUXF0ejBPeE5fOVZpeHpWaTAwWERBZDJiY2w3M1F6YXdaQm5tZnp6SkRmdg?oc=5",
@@ -11959,7 +13357,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "303d3489b07a248d",
@@ -11997,6 +13395,29 @@
       ],
       "score": 11.7,
       "summary": "쿠팡, '와우 멤버스데이' 개최···37만개 상품 최대 70% 할인 뉴스프리존",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "9698ec13ac949d13",
+      "title": "쿠팡, 대규모 할인전 ‘와우 멤버스데이’ 개막…최대 70% 할인",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1kUlFPTjlYUjJFUmlqSHZrSFM3NEJfRGRMVWZ5M0NEdHZ3M2FNZlVVdTJLMkF1bHhVUDBnTUdQLUVnRXdZWjJrRmt5Qm5ZMmI1R1HSAVNBVV95cUxNTzJuV2xPdUhybjBJTTBLT3BRa1oxa05vemJnNEo5THhMVjYwNkxjNmtKTUNEODBQVjVOTzNYRE9lNjFEUko3dE9NVnp3Tng0Z0ZBdw?oc=5",
+      "source": "서울경제",
+      "published": "2026-11-02T17:00+09:00",
+      "timestamp": 1793606400,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "쿠팡, 대규모 할인전 ‘와우 멤버스데이’ 개막…최대 70% 할인 서울경제",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
       "official": false,
@@ -12211,29 +13632,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "9698ec13ac949d13",
-      "title": "쿠팡, 대규모 할인전 ‘와우 멤버스데이’ 개막…최대 70% 할인",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1kUlFPTjlYUjJFUmlqSHZrSFM3NEJfRGRMVWZ5M0NEdHZ3M2FNZlVVdTJLMkF1bHhVUDBnTUdQLUVnRXdZWjJrRmt5Qm5ZMmI1R1HSAVNBVV95cUxNTzJuV2xPdUhybjBJTTBLT3BRa1oxa05vemJnNEo5THhMVjYwNkxjNmtKTUNEODBQVjVOTzNYRE9lNjFEUko3dE9NVnp3Tng0Z0ZBdw?oc=5",
-      "source": "서울경제",
-      "published": "2026-11-02T10:52+09:00",
-      "timestamp": 1793584365,
-      "category": "온라인",
-      "tags": [
-        "온라인"
-      ],
-      "score": 11.7,
-      "summary": "쿠팡, 대규모 할인전 ‘와우 멤버스데이’ 개막…최대 70% 할인 서울경제",
-      "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "48f2dacf1b22f007",
       "title": "컬리, 2000여개 상품 할인 '블랙위크' 개최…990원 특가도",
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBORkhkTW9DdFF3dm5HNU1ob0QzSjVuZ01PeHZmVl9BRTFPbDdWb0k0SndHVGhUQnZTdDdIcFAxcVFwRFBVSVFhWE1EUHlXLWRjYkI0a0dJb2I?oc=5",
@@ -12323,7 +13721,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "a0ee99505241e92e",
@@ -12416,29 +13814,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "3f9963eb589f8ea6",
-      "title": "쿠팡, 즉시배송 시장 다시 도전장",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9RMURTT2NaZlFBbFlfaXJqLTFuZmZKU0ZLdGs0aFpxaHJjSkd5UXQ1Wm4tZzkzcW5ubFRoc00yWi1UN2xsX1Fsdk9Nb0FuU3dBU3FaWkwwQUdxSFJDcjczVThFMWU0bkl3eGNlbFJwOFRocWVw?oc=5",
-      "source": "부산일보",
-      "published": "2026-11-01T16:00+09:00",
-      "timestamp": 1793516400,
-      "category": "온라인",
-      "tags": [
-        "온라인"
-      ],
-      "score": 11.7,
-      "summary": "쿠팡, 즉시배송 시장 다시 도전장 부산일보",
-      "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "5767470551931b16",
       "title": "네이버·컬리, 서로의 빈틈 채운 협업...장보기 동맹 1년",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE84a081NTdtcUxITVNiMGpFMHQ1d3JPX1ZtUS03Mi1tbFN6RldtS2ZIVzZRSjJOcXVkX0k0c2NYeXQ5T3dOME13Y29lOGNFRlQtNGZySmpsZTZMbkhmTmJkMkpnN0lXMDZfMEww0gFvQVVfeXFMT0tXV0FxRmJfRllKdTBXTlV0RzFrZW8tUWZRcGVzbnYwb2gtS0hIQkE3NXVyaWpfcFJQczQ5Zjk4RWNmR1RRT3BiYWxHZmFtaFE2RTFCX01ySUFaUVYyOTJwaGlLMmtaMlNudXRIUnpv?oc=5",
@@ -12460,6 +13835,29 @@
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
       "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "3f9963eb589f8ea6",
+      "title": "쿠팡, 즉시배송 시장 다시 도전장",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9RMURTT2NaZlFBbFlfaXJqLTFuZmZKU0ZLdGs0aFpxaHJjSkd5UXQ1Wm4tZzkzcW5ubFRoc00yWi1UN2xsX1Fsdk9Nb0FuU3dBU3FaWkwwQUdxSFJDcjczVThFMWU0bkl3eGNlbFJwOFRocWVw?oc=5",
+      "source": "부산일보",
+      "published": "2026-11-01T16:00+09:00",
+      "timestamp": 1793516400,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "쿠팡, 즉시배송 시장 다시 도전장 부산일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "c779756955fc5750",
@@ -12863,31 +14261,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "8c944a19b5655594",
-      "title": "유통가, 11월 할인전…이마트 쓱데이·쿠팡 와멤데",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1qQ0RyX24wa2N5aktJQ0d1ZWJpSU1za1ZsRVhabTc2MUtRRjkzd3J2YUdRek5tdkdrQlowU2JTc0FmSjhBWEtZRzJLTFFzOEdUMllZRGxjMW5CWnFGRFEtbnNHa3NvMTFod2hV0gFvQVVfeXFMTURUM1VDUXRyTGt1VWVOUl9DeFlzUm56TDlHbVZuSHlEcWFEaWpVWUJQb05tS01JLS1DME1qZTNIWkQtdE0wZmFTUVJYVXJiSDJ4ZG1mUEtSMkg5OEhULTZnRkR1V0gwSUtJczQ3enY4?oc=5",
-      "source": "중앙뉴스",
-      "published": "2026-10-30T17:03+09:00",
-      "timestamp": 1793347400,
-      "category": "온라인",
-      "tags": [
-        "온라인",
-        "대형마트/SSM"
-      ],
-      "score": 11.7,
-      "summary": "유통가, 11월 할인전…이마트 쓱데이·쿠팡 와멤데 중앙뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [
-        "마트",
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "b68da63885e96b9c",
       "title": "이마트·트레이더스·에브리데이 '쓱데이' 10일간…한우 반값에 로봇청소기 49만9000원",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KSzUyWndfcU9la0FNRWM3b19yYlJZOFd3aFJsN0tlekZEbDVyWjFVSmNkNUx6bEhmSmxZdURrSENnNDJqbV94Sm83ZnNvVUJnSHV3MGNRX2JtdjBTVmdKRFlXY3JJNU4w?oc=5",
@@ -13063,29 +14436,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "bdc572525c1e5e3c",
-      "title": "희망퇴직 무산에, 단전에…홈플러스 “재개장 후 더 막막”",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1pQ2l1RW5GNzdCc1ZzUjZvNWE5aDhoN1psT1VwdlFjYjhPZlFhZS1EX0d2RzlVTkdES245dm03MERYNllTQ2VURDA4ckZocnF4WEtBckxn?oc=5",
-      "source": "중앙일보",
-      "published": "2026-10-30T16:00+09:00",
-      "timestamp": 1793343600,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "희망퇴직 무산에, 단전에…홈플러스 “재개장 후 더 막막” 중앙일보",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "4879822245c911c6",
       "title": "홈플러스, 회생 계획 인가도 받았는데...전기세 못 내 '단전' 위기? [자막뉴스]",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBXalU2MVNYaEQ3ZDhIY2U1cEdWRGtTNmprbERBZmY5MHVRZmNMN0c2R0xMRm1WSHZWZmpORFNkUmdMUUxFWXN0dkpSNG8yMmw0bDc2enNRVHhjNHdiR1E?oc=5",
@@ -13175,6 +14525,54 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "bdc572525c1e5e3c",
+      "title": "희망퇴직 무산에, 단전에…홈플러스 “재개장 후 더 막막”",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1pQ2l1RW5GNzdCc1ZzUjZvNWE5aDhoN1psT1VwdlFjYjhPZlFhZS1EX0d2RzlVTkdES245dm03MERYNllTQ2VURDA4ckZocnF4WEtBckxn?oc=5",
+      "source": "중앙일보",
+      "published": "2026-10-30T16:00+09:00",
+      "timestamp": 1793343600,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "희망퇴직 무산에, 단전에…홈플러스 “재개장 후 더 막막” 중앙일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이전 수집 보존"
+    },
+    {
+      "id": "8c944a19b5655594",
+      "title": "유통가, 11월 할인전…이마트 쓱데이·쿠팡 와멤데",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1qQ0RyX24wa2N5aktJQ0d1ZWJpSU1za1ZsRVhabTc2MUtRRjkzd3J2YUdRek5tdkdrQlowU2JTc0FmSjhBWEtZRzJLTFFzOEdUMllZRGxjMW5CWnFGRFEtbnNHa3NvMTFod2hV0gFvQVVfeXFMTURUM1VDUXRyTGt1VWVOUl9DeFlzUm56TDlHbVZuSHlEcWFEaWpVWUJQb05tS01JLS1DME1qZTNIWkQtdE0wZmFTUVJYVXJiSDJ4ZG1mUEtSMkg5OEhULTZnRkR1V0gwSUtJczQ3enY4?oc=5",
+      "source": "중앙뉴스",
+      "published": "2026-10-30T16:00+09:00",
+      "timestamp": 1793343600,
+      "category": "온라인",
+      "tags": [
+        "온라인",
+        "대형마트/SSM"
+      ],
+      "score": 11.7,
+      "summary": "유통가, 11월 할인전…이마트 쓱데이·쿠팡 와멤데 중앙뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -13393,7 +14791,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이전 수집 보존"
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "5b82ddf8e78cb979",
@@ -13416,6 +14814,29 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "7a89bb24562488d4",
+      "title": "국내 첫 수산식품수출단지, 목포에 문 연다",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBQVUZCbWNlU2R4SXJCRjFJaVhxUnJwWmJuQU1SUWJkS2UxSnJkRFRZSHhXb0tWTDlueEtqLVI1Rk8tallPRWY2N0VhdXNSZHFTSUw2VUFpTTBlcnJJcDIwX2Z5TVN5T0RzVnZmUmh2SdIBc0FVX3lxTE41eUlSbGpodXlTdi1UMmhRd1FqRm03dHF5eWpMQlhQbTNqZkE4MXpJZmpkNlZaS1RpaHFFOHRBalVSMnpyWnVOWWZHUnRLRTdsZDlXUXlEaFhWZ0VSOEtNZTJjZjZDR0J4aTlweVdFb1VycTg?oc=5",
+      "source": "K스피릿",
+      "published": "2026-10-30T10:59+09:00",
+      "timestamp": 1793325589,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 7,
+      "summary": "국내 첫 수산식품수출단지, 목포에 문 연다 K스피릿",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -13502,7 +14923,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "8fa202d8cec3456d",
@@ -13741,6 +15162,30 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "19ed8c590d3037f1",
+      "title": "[유통뉴스] 추석 특수에 9월 유통업체 매출 4.5% 증가…대형마트 두 달 연속 성장",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1JQVdxdVIxRHd3X0E3cmJRcE5ySlpNZVl1Y0ZwT2hiR2lneEVoQlRJR2FfU0dnQmhQWVhFWnBPTHpVVkNZZnhHRVp3T29mb0w1QmlLUTktcXhqNmdSb0JVZHVSNDdSdGJaVjJSalVneWlOQQ?oc=5",
+      "source": "아웃소싱타임스",
+      "published": "2026-10-29T16:00+09:00",
+      "timestamp": 1793257200,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM",
+        "시즌/트렌드"
+      ],
+      "score": 12.7,
+      "summary": "[유통뉴스] 추석 특수에 9월 유통업체 매출 4.5% 증가…대형마트 두 달 연속 성장 아웃소싱타임스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "dbd8a2f046b6d6d0",
       "title": "롯데마트, 하반기 할인행사 ‘메가통큰’ 시작…최대 60% 할인",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Ka0xsUFhCcGxIc0d6NEZ4RlBjS3htckxqLUtQclkySXlkYzRMR1g0RWNQVnZ6SWZlRXYzeXdJbkg5S0xZblZoRFJNaloyY3hMcE9kN25xMmFhYTg?oc=5",
@@ -13799,30 +15244,6 @@
       ],
       "score": 12.7,
       "summary": "대형마트 의류 매출 11% 증가…식품 넘어 비식품 돌파구 될까 뉴스핌",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "19ed8c590d3037f1",
-      "title": "[유통뉴스] 추석 특수에 9월 유통업체 매출 4.5% 증가…대형마트 두 달 연속 성장",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1JQVdxdVIxRHd3X0E3cmJRcE5ySlpNZVl1Y0ZwT2hiR2lneEVoQlRJR2FfU0dnQmhQWVhFWnBPTHpVVkNZZnhHRVp3T29mb0w1QmlLUTktcXhqNmdSb0JVZHVSNDdSdGJaVjJSalVneWlOQQ?oc=5",
-      "source": "아웃소싱타임스",
-      "published": "2026-10-29T16:00+09:00",
-      "timestamp": 1793257200,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM",
-        "시즌/트렌드"
-      ],
-      "score": 12.7,
-      "summary": "[유통뉴스] 추석 특수에 9월 유통업체 매출 4.5% 증가…대형마트 두 달 연속 성장 아웃소싱타임스",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
@@ -14094,29 +15515,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "67e77e45d0ab5b7e",
-      "title": "국내 첫 수산식품수출단지 목포에 준공…김 가공·수출 거점 조성",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5YWWhMX184RmdoNTVNcW1tQnBEZHBUdkZnOW50emVuMFQ1aUhKakcxWHN2WFhvN0FTVlJJRnZjeWZaMVdMbUV4S3FlZUpZdUw3NjdxTA?oc=5",
-      "source": "이투데이",
-      "published": "2026-10-29T16:00+09:00",
-      "timestamp": 1793257200,
-      "category": "해외",
-      "tags": [
-        "해외"
-      ],
-      "score": 7,
-      "summary": "국내 첫 수산식품수출단지 목포에 준공…김 가공·수출 거점 조성 이투데이",
-      "summary_type": "공개 RSS 소개문",
-      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
-      "official": false,
-      "channels": [
-        "수출"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "bc7f5fd27e1fad52",
       "title": "국내 첫 수산식품수출단지, 목포에 문 연다…세계 경쟁력 '↑쑥' 높인다 - 머니투데이",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1udVlhZDBCSHcwVVIxaE9uTWVhNnByTEIwUTVmbkJIN3BMVVQ5LTZCbG9YU2dkRHAtRlFhZXNGYUxRbndSb2NZVXB6N2VQWVBMbkRMYms1aWFXazBMcE1EUG9ZeEQtRlZjR3BJ0gFwQVVfeXFMUC16UmIycF9ldkJKS2dabGhGcW1vWDhaWkhUWEdYSnNPd1IwV2ZGcXNYWGliVG1JLXpwVWRxZWhlWXRuX3dreFJwYU1NLUJ2SUNtd054eFR1Ul9sVjBRUXhYZDBraThvZU1iUC1hS05CSA?oc=5",
@@ -14136,6 +15534,29 @@
         "수출"
       ],
       "impact": "유통시장 구조 변화",
+      "followup": "무역통계·원산지별 가격·규제 시행일",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "67e77e45d0ab5b7e",
+      "title": "국내 첫 수산식품수출단지 목포에 준공…김 가공·수출 거점 조성",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5YWWhMX184RmdoNTVNcW1tQnBEZHBUdkZnOW50emVuMFQ1aUhKakcxWHN2WFhvN0FTVlJJRnZjeWZaMVdMbUV4S3FlZUpZdUw3NjdxTA?oc=5",
+      "source": "이투데이",
+      "published": "2026-10-29T16:00+09:00",
+      "timestamp": 1793257200,
+      "category": "해외",
+      "tags": [
+        "해외"
+      ],
+      "score": 7,
+      "summary": "국내 첫 수산식품수출단지 목포에 준공…김 가공·수출 거점 조성 이투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "국가별 수출입 물량·규제 변화가 수산시장 경쟁에 어떤 차이를 만드는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
       "collection_status": "이번 실행 재수집"
     },
@@ -14271,7 +15692,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "d48679050e46363f",
@@ -14292,6 +15713,27 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "342578d9c0db70a8",
+      "title": "군산시, 수산식품기업 육성 결실… 실질적 판로 확대로 잇는다",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE91dmRpcUJPcXNvX0hxZVdyNTRmbmRHS3U4SXd5bUhQTmlBYk9HUWh3QzBrN0RXTTBpNF8xSDYxbFZmRlVENGRnVmk3SWlhaHRQZm5JbXNQZHdST2wzb0E?oc=5",
+      "source": "한국방송뉴스",
+      "published": "2026-10-29T13:45+09:00",
+      "timestamp": 1793249134,
+      "category": "매장 운영",
+      "tags": [
+        "매장 운영"
+      ],
+      "score": 7,
+      "summary": "군산시, 수산식품기업 육성 결실… 실질적 판로 확대로 잇는다 한국방송뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "출점·폐점 일정·영업 규정·인건비 변화",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -14890,6 +16332,29 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "4075d98e5eb137af",
+      "title": "“장바구니 물가 잡는다”...롯데마트, 하반기 ‘메가통큰’ 돌입",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLTFlNQ1pSODF2dXlRbkRaV3N2R0I5RGs3bnkzcU0xd2pBRVoxbXF6Wko5NzZubFF4dDhvZlZIdmVHVHdIQ2VZZ0NJb015Y0hRTk80OUY0ci1ibWpqMVZZaDBpWFNtLTBKYmZYU3NR0gFyQVVfeXFMUFp2TmI0MmxZQ2Q5WC0zb1gtNlM4d3F1SmxrejVFTFZvVlJzeGVVMXVGLWdLTjM1NjRWamhBV2o1WHZhbnQxaDNuSGFYX1JiUTBkZjFkblNpNWY2QTZILVQzQUFxYzJzUXdDMzl1OGVwZkZR?oc=5",
+      "source": "팝콘뉴스",
+      "published": "2026-10-28T16:00+09:00",
+      "timestamp": 1793170800,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "“장바구니 물가 잡는다”...롯데마트, 하반기 ‘메가통큰’ 돌입 팝콘뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "1e13b3b2a1bbba32",
       "title": "“장바구니 물가 잡는다”...롯데마트, 하반기 ‘메가통큰’ 돌입",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAtTkk4cDVJREl4dG80WDZpQXBvZjBkVDgzc2UzWGsxUzNvMDZfdzhtTWJuaXEzZ0F3cEJ0QjBGejZocklIdVNFLWlCcEo1NFpQZGNRenQ1M0NXa09mMndvU1p4N0IzU0U1VC1kYzMzQdIBckFVX3lxTFBadk5iNDJsWUNkOVgtM29YLTZTOHdxdUpsa3o1RUxWb1ZSc3hlVTF1Ri1nS04zNTY0VmpoQVdqNVh2YW50MWgzbkhhWF9SYlEwZGYxZG5TaTVmNkE2SC1UM0FBcWMyc1F3QzM5dThlcGZGUQ?oc=5",
@@ -14910,7 +16375,7 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "14231a63b739f60f",
@@ -15407,7 +16872,7 @@
       "channels": [],
       "impact": "수급·물량 변화 보도",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "23bec56d50b4d060",
@@ -15884,10 +17349,10 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "bad6ab912776ca17",
-      "title": "정부, 29일부터 '그랜드 페스티벌'…한우·수산물 최대 50% 할인",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBJR0pyaWxzc2I5cTlIeVZrVHFZQ2lfcVd0VWlnZEZCRXVxOHJvSUd2SEdHeWVJdUlXRC14ZnhZSXFjRFJydzBhUVU1ajQxdVpvN0E?oc=5",
-      "source": "매일경제 마켓",
+      "id": "6b4ea52d3cdb0bab",
+      "title": "자동차부터 한우·수산물까지 최대 50% 할인…29일 ‘코리아 그랜드 페스티벌’ 개막",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TX2V0RWdWMF83XzN6RGpONXhyZGFSSVRmQUNnSmlSZ0k4ZENwQndIVW4wRFNfQUJNcEZ6NndFekt5azlnTUJHMTFqWlpqNG5NdHY1anZOcEtHZw?oc=5",
+      "source": "브릿지경제",
       "published": "2026-10-27T16:00+09:00",
       "timestamp": 1793084400,
       "category": "온라인",
@@ -15895,7 +17360,7 @@
         "온라인"
       ],
       "score": 8,
-      "summary": "정부, 29일부터 '그랜드 페스티벌'…한우·수산물 최대 50% 할인 매일경제 마켓",
+      "summary": "자동차부터 한우·수산물까지 최대 50% 할인…29일 ‘코리아 그랜드 페스티벌’ 개막 브릿지경제",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
       "official": false,
@@ -15926,10 +17391,10 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "6b4ea52d3cdb0bab",
-      "title": "자동차부터 한우·수산물까지 최대 50% 할인…29일 ‘코리아 그랜드 페스티벌’ 개막",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TX2V0RWdWMF83XzN6RGpONXhyZGFSSVRmQUNnSmlSZ0k4ZENwQndIVW4wRFNfQUJNcEZ6NndFekt5azlnTUJHMTFqWlpqNG5NdHY1anZOcEtHZw?oc=5",
-      "source": "브릿지경제",
+      "id": "9f80666c5eaba249",
+      "title": "`코리아 그랜드 페스티벌` 29일 개막…車·가전·한우·수산물 최대 50% 할인",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE44dXRDby1uZ1phY0g2dkdjNlR5ODUyWlB1WGZuanBzRXBBWmtrZ3ZaNzJhTnZaTWRUWHgtYVVMc1p6dzh1dTYzclh4S0wzaWpiRGlQY2ZkaGlrR0w3VC1SbTRuamlfTzdRLS1IYkNKY2UzNm5U?oc=5",
+      "source": "부산일보",
       "published": "2026-10-27T16:00+09:00",
       "timestamp": 1793084400,
       "category": "온라인",
@@ -15937,7 +17402,7 @@
         "온라인"
       ],
       "score": 8,
-      "summary": "자동차부터 한우·수산물까지 최대 50% 할인…29일 ‘코리아 그랜드 페스티벌’ 개막 브릿지경제",
+      "summary": "`코리아 그랜드 페스티벌` 29일 개막…車·가전·한우·수산물 최대 50% 할인 부산일보",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
       "official": false,
@@ -15945,6 +17410,27 @@
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
       "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "bad6ab912776ca17",
+      "title": "정부, 29일부터 '그랜드 페스티벌'…한우·수산물 최대 50% 할인",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBJR0pyaWxzc2I5cTlIeVZrVHFZQ2lfcVd0VWlnZEZCRXVxOHJvSUd2SEdHeWVJdUlXRC14ZnhZSXFjRFJydzBhUVU1ajQxdVpvN0E?oc=5",
+      "source": "매일경제 마켓",
+      "published": "2026-10-27T16:00+09:00",
+      "timestamp": 1793084400,
+      "category": "온라인",
+      "tags": [
+        "온라인"
+      ],
+      "score": 8,
+      "summary": "정부, 29일부터 '그랜드 페스티벌'…한우·수산물 최대 50% 할인 매일경제 마켓",
+      "summary_type": "공개 RSS 소개문",
+      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "a88fcbe5ddf4a89a",
@@ -15959,27 +17445,6 @@
       ],
       "score": 8,
       "summary": "자동차·가전부터 한우·수산물까지...최대 50% 할인 정부, 「제2회 코리아 그랜드 페스티벌」 시작(10.29~11.15) 한국방송뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이전 수집 보존"
-    },
-    {
-      "id": "9f80666c5eaba249",
-      "title": "`코리아 그랜드 페스티벌` 29일 개막…車·가전·한우·수산물 최대 50% 할인",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE44dXRDby1uZ1phY0g2dkdjNlR5ODUyWlB1WGZuanBzRXBBWmtrZ3ZaNzJhTnZaTWRUWHgtYVVMc1p6dzh1dTYzclh4S0wzaWpiRGlQY2ZkaGlrR0w3VC1SbTRuamlfTzdRLS1IYkNKY2UzNm5U?oc=5",
-      "source": "부산일보",
-      "published": "2026-10-27T16:00+09:00",
-      "timestamp": 1793084400,
-      "category": "온라인",
-      "tags": [
-        "온라인"
-      ],
-      "score": 8,
-      "summary": "`코리아 그랜드 페스티벌` 29일 개막…車·가전·한우·수산물 최대 50% 할인 부산일보",
       "summary_type": "공개 RSS 소개문",
       "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
       "official": false,
@@ -16031,6 +17496,27 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "2f6326dbac96ae4c",
+      "title": "한우·수산물·의류 최대 50% 할인…'코리아 그랜드 페스티벌' 개막",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBabEpfUTZ5ZTVpMnhmSDRXYmRDWWZtRmUtRW9Rb05RTlczdFpKZENpZ04zM1hVRlAzdTVPeFhCb0xmN1J6c1A1UzgwTXQwZWNENF9ySHlwMVZ4aUdxSVdsakZHWGtnbDdpRENEbA?oc=5",
+      "source": "대한민국 정책브리핑",
+      "published": "2026-10-27T16:00+09:00",
+      "timestamp": 1793084400,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 7,
+      "summary": "한우·수산물·의류 최대 50% 할인…'코리아 그랜드 페스티벌' 개막 대한민국 정책브리핑",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "99e5e2f280a70287",
       "title": "한우·수산물 최대 반값에…29일 ‘제2회 코리아 그랜드 페스티벌’ 개막",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1DbDNKMk0zY2RDZDhqMHZUUFNUSXJiUGloYVB2VURsWjFuOHZUN0pxMkFuVTF2ai1mclNXdzZ6dENXaXZLWUJmQ1ZucmhVM2xBcVFDTnI5Tk5pVk0?oc=5",
@@ -16072,7 +17558,7 @@
       ],
       "impact": "유통시장 구조 변화",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "b94a104084428512",
@@ -16093,7 +17579,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "61287f1ac264424c",
@@ -16135,7 +17621,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "91936622b5af53d9",
@@ -16263,7 +17749,7 @@
       "channels": [],
       "impact": "가격 변화 보도 · 비교 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이전 수집 보존"
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "ecf8d331dc90c630",
@@ -16315,6 +17801,27 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "2b4bf51fb1d1536d",
+      "title": "[알립니다]2026 Sea Farm Show 수산양식 박람회",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA4ZWhhdTlSVVpYVkVoZXpDcENhM3VKTFVZS2xPZGRlRXc1WXF6M240VlhhZEpFNHRHV2R3UzB3QTRkYXV1WEFiMU5hMktxd3NJZXJiano3d0hWNkl6elRFRzlhSjdLV0pqUUVRaWNKamk3YmRjRXfSAWZBVV95cUxOeVVLeXN5UlZiTkRESFVUSDk5YVJDalBDSE1QQ3BLaGdtNEtoN3c1dC01d0RpZHdoYjRiTG5KMHdfMGluQ3VWUkVoQURaR1h1RzgzaXV3UWlSYzZ5WnlTZFVWUi1uNnc?oc=5",
+      "source": "동아일보",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 13.7,
+      "summary": "[알립니다]2026 Sea Farm Show 수산양식 박람회 동아일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "cc5d6c9a3f42b8cb",
       "title": "CJ 비비고 만두, 미국 코스트코 냉동식품 '톱4'…美 식탁 홀렸다",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE44Z0drOUhKM2p5NENnWmlXNS1HX1NnTEJQLS02dENFdXQ5bUNRb2s1Z2lMMkZ4VEFDMnRLOXhubjZpRWktdDhlRTZGVnlFbVJzbDFOd3hjTFM3TWtrTWc?oc=5",
@@ -16336,27 +17843,6 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "2b4bf51fb1d1536d",
-      "title": "[알립니다]2026 Sea Farm Show 수산양식 박람회",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA4ZWhhdTlSVVpYVkVoZXpDcENhM3VKTFVZS2xPZGRlRXc1WXF6M240VlhhZEpFNHRHV2R3UzB3QTRkYXV1WEFiMU5hMktxd3NJZXJiano3d0hWNkl6elRFRzlhSjdLV0pqUUVRaWNKamk3YmRjRXfSAWZBVV95cUxOeVVLeXN5UlZiTkRESFVUSDk5YVJDalBDSE1QQ3BLaGdtNEtoN3c1dC01d0RpZHdoYjRiTG5KMHdfMGluQ3VWUkVoQURaR1h1RzgzaXV3UWlSYzZ5WnlTZFVWUi1uNnc?oc=5",
-      "source": "동아일보",
-      "published": "2026-10-26T16:00+09:00",
-      "timestamp": 1792998000,
-      "category": "원물 수급/시세",
-      "tags": [
-        "원물 수급/시세"
-      ],
-      "score": 13.7,
-      "summary": "[알립니다]2026 Sea Farm Show 수산양식 박람회 동아일보",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -16558,6 +18044,90 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "d81847639bf96502",
+      "title": "수협, 제주 수산물 소비 촉진 앞장…국회서 최대 30% 할인 판매",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE05LTRhbHJTOVpGd29MOE1pTjQwSVB3Ymx6MFRGZDVacEhwbmcwRGZBUlNHWTlsYTEtR0RIUmNxZWxEbVJYVWpRVGNzdk5pcGRqa1JPOWlIUE0xbkZuT21PYWpNaG1zSVBHTU9RLXc2eG_SAXRBVV95cUxOemwySldtWEVnMktBVUxKLWF5cmpYd3NqOVQ3LWpScHpuQklpUWxLdW1DTFNYeEQxNUZpVUNjWWdVTzRkRnRvYWM5b1N0MFlLMW9jYWp6bzV4aHlEcWVibzREcVlUd2FGQU5aNldMMThkYl9DVg?oc=5",
+      "source": "산경투데이",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 7,
+      "summary": "수협, 제주 수산물 소비 촉진 앞장…국회서 최대 30% 할인 판매 산경투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "5a428a0d2d07784a",
+      "title": "노동진 수협중앙회장 \"우리 수산물 소비 더 늘려야\"",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBXRFNycTZWRThmQ2tZdWwtcmladkd0c0pVQ2hyQTdLTGdDSzNrR3Jrc0h2dkF6b3FuUmhWVVJiM0NHNGZHLWRpeTdlZVExSlh4MUt3MmlPeGRYSjd5NTJITU1HaFVRcDA?oc=5",
+      "source": "논객닷컴",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 7,
+      "summary": "노동진 수협중앙회장 \"우리 수산물 소비 더 늘려야\" 논객닷컴",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "4e0fd19187f63e3e",
+      "title": "수협, 제주 수산물 최대 30% 할인…국회서 소비 촉진 앞장",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBpeUUzYU1ydm0wX0dOV01YbWhsNXN4dXpCMFlfeUd3SVVnY0JFcURIcXNPX05hZ1VfNHotY0JFaVp5cC1sMjhTeHlITGpOazFWNnJuaV8yeHlQNEJYREpwNGRjNEVGQVBkMm92a1NUeEo?oc=5",
+      "source": "리드경제",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 7,
+      "summary": "수협, 제주 수산물 최대 30% 할인…국회서 소비 촉진 앞장 리드경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "447746e1089738c6",
+      "title": "이 대통령, CPTPP 연내 가입 신청 보류…“피할 수 없다” 농어업 보전이 최대 관문",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5HUXcxVG91UFFTS3dMei1rVF9SQXgxejhwVFAzcmN2Q2NtTmRjaUs3NUtURUU4bGFvUWFrYkhweTd2dzJsLWpZWmFfZWtpNlhMbEEtdDdKd1NaVDlEX0lwdlgxU2pnYWpjbFE?oc=5",
+      "source": "OBC 뉴스",
+      "published": "2026-10-26T16:00+09:00",
+      "timestamp": 1792998000,
+      "category": "비용/거시",
+      "tags": [
+        "비용/거시"
+      ],
+      "score": 7,
+      "summary": "이 대통령, CPTPP 연내 가입 신청 보류…“피할 수 없다” 농어업 보전이 최대 관문 OBC 뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "35edc8df60179a0a",
       "title": "완도 수산물, 일본 시장서 경쟁력 입증…수출 청신호",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1NbU5CZW5FNHpRVGlnTkpjSUlTc0NkN1Z3YnNaVU5VUlZDMUJDeEUzS2I4eTFaSmlkUHVUTXZCLVoxMWJQdE13eHJrNUJmY2NZY3N6SWFYN1BBTUdCMmpNdXhOZ2Z3aUdGdEE1dUxZU2RRZ9IBdkFVX3lxTE8xUG1FbVZEcElPbTVUZUpoN1FHRHQ2UEpnb2NBMV9OMlRCQTJJckdJYkdJaE9LcmJYUGdvSTlYUDA4RnNhWTRXUDI3cWJCRTJtd3FUVHRFSHBEaUpoQmJFamZDUG1ObGdVb2NBTDVkTC1DUlZCQWc?oc=5",
@@ -16696,48 +18266,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "447746e1089738c6",
-      "title": "이 대통령, CPTPP 연내 가입 신청 보류…“피할 수 없다” 농어업 보전이 최대 관문",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5HUXcxVG91UFFTS3dMei1rVF9SQXgxejhwVFAzcmN2Q2NtTmRjaUs3NUtURUU4bGFvUWFrYkhweTd2dzJsLWpZWmFfZWtpNlhMbEEtdDdKd1NaVDlEX0lwdlgxU2pnYWpjbFE?oc=5",
-      "source": "OBC 뉴스",
-      "published": "2026-10-26T16:00+09:00",
-      "timestamp": 1792998000,
-      "category": "비용/거시",
-      "tags": [
-        "비용/거시"
-      ],
-      "score": 7,
-      "summary": "이 대통령, CPTPP 연내 가입 신청 보류…“피할 수 없다” 농어업 보전이 최대 관문 OBC 뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "d81847639bf96502",
-      "title": "수협, 제주 수산물 소비 촉진 앞장…국회서 최대 30% 할인 판매",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE05LTRhbHJTOVpGd29MOE1pTjQwSVB3Ymx6MFRGZDVacEhwbmcwRGZBUlNHWTlsYTEtR0RIUmNxZWxEbVJYVWpRVGNzdk5pcGRqa1JPOWlIUE0xbkZuT21PYWpNaG1zSVBHTU9RLXc2eG_SAXRBVV95cUxOemwySldtWEVnMktBVUxKLWF5cmpYd3NqOVQ3LWpScHpuQklpUWxLdW1DTFNYeEQxNUZpVUNjWWdVTzRkRnRvYWM5b1N0MFlLMW9jYWp6bzV4aHlEcWVibzREcVlUd2FGQU5aNldMMThkYl9DVg?oc=5",
-      "source": "산경투데이",
-      "published": "2026-10-26T16:00+09:00",
-      "timestamp": 1792998000,
-      "category": "시즌/트렌드",
-      "tags": [
-        "시즌/트렌드"
-      ],
-      "score": 7,
-      "summary": "수협, 제주 수산물 소비 촉진 앞장…국회서 최대 30% 할인 판매 산경투데이",
-      "summary_type": "공개 RSS 소개문",
-      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "ac1b73cb5abb8483",
       "title": "수협, 제주 수산물 시민들 입맛 잡았다…노동진 회장 “수산물 소비촉진” 동참 요청",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCTDRhQWdvNzlDSkdFaFdqZGNHN09YaVgxWFN4TDU5ZF9XdGNoU0U2dllleVJzLXJfUTNENElmYTVzcGZBNWZBcE82QVppMlBfcjdzZWdWMUhjSjhYTmx5Qw?oc=5",
@@ -16756,49 +18284,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "5a428a0d2d07784a",
-      "title": "노동진 수협중앙회장 \"우리 수산물 소비 더 늘려야\"",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBXRFNycTZWRThmQ2tZdWwtcmladkd0c0pVQ2hyQTdLTGdDSzNrR3Jrc0h2dkF6b3FuUmhWVVJiM0NHNGZHLWRpeTdlZVExSlh4MUt3MmlPeGRYSjd5NTJITU1HaFVRcDA?oc=5",
-      "source": "논객닷컴",
-      "published": "2026-10-26T16:00+09:00",
-      "timestamp": 1792998000,
-      "category": "시즌/트렌드",
-      "tags": [
-        "시즌/트렌드"
-      ],
-      "score": 7,
-      "summary": "노동진 수협중앙회장 \"우리 수산물 소비 더 늘려야\" 논객닷컴",
-      "summary_type": "공개 RSS 소개문",
-      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "4e0fd19187f63e3e",
-      "title": "수협, 제주 수산물 최대 30% 할인…국회서 소비 촉진 앞장",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBpeUUzYU1ydm0wX0dOV01YbWhsNXN4dXpCMFlfeUd3SVVnY0JFcURIcXNPX05hZ1VfNHotY0JFaVp5cC1sMjhTeHlITGpOazFWNnJuaV8yeHlQNEJYREpwNGRjNEVGQVBkMm92a1NUeEo?oc=5",
-      "source": "리드경제",
-      "published": "2026-10-26T16:00+09:00",
-      "timestamp": 1792998000,
-      "category": "시즌/트렌드",
-      "tags": [
-        "시즌/트렌드"
-      ],
-      "score": 7,
-      "summary": "수협, 제주 수산물 최대 30% 할인…국회서 소비 촉진 앞장 리드경제",
-      "summary_type": "공개 RSS 소개문",
-      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "be1af4eaee88b69b",
@@ -17645,27 +19131,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "41946a9971363285",
-      "title": "해양레저관광에서 수산업 연구개발까지…주철현 의원, 해양수산 정책 개선 촉구",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB0VEJ5RUNDa3pIQTFGS2FZbGYxem5EWDZYTFM0OEN5SFlIaGcwSlhobXlKWnpaeTRpSC1hakxrdUNfempONkpNTnpuVjdZMjdZTWZCbVRsYUpFaV9y?oc=5",
-      "source": "해양레저신문",
-      "published": "2026-10-23T16:00+09:00",
-      "timestamp": 1792738800,
-      "category": "원물 수급/시세",
-      "tags": [
-        "원물 수급/시세"
-      ],
-      "score": 10,
-      "summary": "해양레저관광에서 수산업 연구개발까지…주철현 의원, 해양수산 정책 개선 촉구 해양레저신문",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "bea1b41327fdcfe0",
       "title": "2026년 3분기 가축동향조사 결과 보도자료 | 전체 | 농림어업 | 보도자료 | 새소식",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdmtsUlJkYVRQa1Y5QnNkb3dxd3BpeVRGai1MQ3otTXB1aWR3bFN4MXp6MHlTVGhObHlzT3JYZ3JONHpKdzc4UVlLLXBTVlJqTDdZNXA4OTA0Q3lVVDFVZmhOdmxlR2FFNF83NThuTHpZcWJkMVg0SFBIOWZfV2dYNjhBbWRyZTBpbE1UWEUxUHNwbUZhSEhNQ3pEeTN5S0o0OTctWXNnQnhueUVqdGwzSHVDVTQ4S1lfa2tkSGtjR3JkZW1PVjlBY3F4djVxTlNW?oc=5",
@@ -17705,6 +19170,90 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "41946a9971363285",
+      "title": "해양레저관광에서 수산업 연구개발까지…주철현 의원, 해양수산 정책 개선 촉구",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB0VEJ5RUNDa3pIQTFGS2FZbGYxem5EWDZYTFM0OEN5SFlIaGcwSlhobXlKWnpaeTRpSC1hakxrdUNfempONkpNTnpuVjdZMjdZTWZCbVRsYUpFaV9y?oc=5",
+      "source": "해양레저신문",
+      "published": "2026-10-23T16:00+09:00",
+      "timestamp": 1792738800,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 10,
+      "summary": "해양레저관광에서 수산업 연구개발까지…주철현 의원, 해양수산 정책 개선 촉구 해양레저신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "1658e9873fc00180",
+      "title": "섬박람회 열리는 여수에서 수산물 소비 촉진 행사 줄이어",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1LSVU3VzNUMnBVRTl6UXA1bXJfT1NSVWQzTEFuN0hlMnB2V2t1MXJrbGZmWVpxWUlRVDBwQTBzb3BqY2xvcU9YMjlNang3eVhGWDUtZnpEeDNJTjdNSm1ENjNKTUJkdzJSNUE?oc=5",
+      "source": "여수넷통뉴스",
+      "published": "2026-10-23T16:00+09:00",
+      "timestamp": 1792738800,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 7,
+      "summary": "섬박람회 열리는 여수에서 수산물 소비 촉진 행사 줄이어 여수넷통뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "288ad1994e8a93b4",
+      "title": "'덜 먹는 시대'…KMI \"국내 수산식품산업 새로운 기회\"",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtaWZpd3A1YnU0WDdYbV9nMWV6aVJSbkhhS2FvUFVubGt2dWstSXdqVzlsaFFheXdiN1pFSUJkMXZ4Sjl0Q3g2ZmRMWlF3bnlzeW92Tk03RldkdU3SAWBBVV95cUxOd1VWUl82azc5NkdUZU5WWUV0RGlEOWZnTmRiVXJGRFFja1JudmtodW5BTEJXRWtySHhfUEJfU0hBQWxMMkN6ZEI3YTFNSnZxM2JmcHpUYUtMcmZNQXk1M24?oc=5",
+      "source": "연합뉴스",
+      "published": "2026-10-23T16:00+09:00",
+      "timestamp": 1792738800,
+      "category": "시즌/트렌드",
+      "tags": [
+        "시즌/트렌드"
+      ],
+      "score": 7,
+      "summary": "'덜 먹는 시대'…KMI \"국내 수산식품산업 새로운 기회\" 연합뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "7686f5b0e0acded0",
+      "title": "＜북한내부＞중국, 제재 위반 자원 수입 움직임... 동광석, 수산물 등 11월부터 본격 재개 정보도 | 아시아프레스 북한보도",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1JVWJyMkZXN290UjBNWmx0SEZ3RmZsbm81UlRjeGVfcnpmcTAxTjFIU1hJalowYTEyRHN2cjhrVlFjS213eF9DYkU0cUVWd05jQ0Iwdkx1dU93YUY3aUctX29kN3lIdy03aTNaWVNpcm9FX19wTW12Yw?oc=5",
+      "source": "アジアプレス・インターナショナル",
+      "published": "2026-10-23T16:00+09:00",
+      "timestamp": 1792738800,
+      "category": "비용/거시",
+      "tags": [
+        "비용/거시"
+      ],
+      "score": 7,
+      "summary": "＜북한내부＞중국, 제재 위반 자원 수입 움직임... 동광석, 수산물 등 11월부터 본격 재개 정보도 | 아시아프레스 북한보도 アジアプレス・インターナショナル",
+      "summary_type": "공개 RSS 소개문",
+      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -17800,69 +19349,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "7686f5b0e0acded0",
-      "title": "＜북한내부＞중국, 제재 위반 자원 수입 움직임... 동광석, 수산물 등 11월부터 본격 재개 정보도 | 아시아프레스 북한보도",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1JVWJyMkZXN290UjBNWmx0SEZ3RmZsbm81UlRjeGVfcnpmcTAxTjFIU1hJalowYTEyRHN2cjhrVlFjS213eF9DYkU0cUVWd05jQ0Iwdkx1dU93YUY3aUctX29kN3lIdy03aTNaWVNpcm9FX19wTW12Yw?oc=5",
-      "source": "アジアプレス・インターナショナル",
-      "published": "2026-10-23T16:00+09:00",
-      "timestamp": 1792738800,
-      "category": "비용/거시",
-      "tags": [
-        "비용/거시"
-      ],
-      "score": 7,
-      "summary": "＜북한내부＞중국, 제재 위반 자원 수입 움직임... 동광석, 수산물 등 11월부터 본격 재개 정보도 | 아시아프레스 북한보도 アジアプレス・インターナショナル",
-      "summary_type": "공개 RSS 소개문",
-      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "1658e9873fc00180",
-      "title": "섬박람회 열리는 여수에서 수산물 소비 촉진 행사 줄이어",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1LSVU3VzNUMnBVRTl6UXA1bXJfT1NSVWQzTEFuN0hlMnB2V2t1MXJrbGZmWVpxWUlRVDBwQTBzb3BqY2xvcU9YMjlNang3eVhGWDUtZnpEeDNJTjdNSm1ENjNKTUJkdzJSNUE?oc=5",
-      "source": "여수넷통뉴스",
-      "published": "2026-10-23T16:00+09:00",
-      "timestamp": 1792738800,
-      "category": "시즌/트렌드",
-      "tags": [
-        "시즌/트렌드"
-      ],
-      "score": 7,
-      "summary": "섬박람회 열리는 여수에서 수산물 소비 촉진 행사 줄이어 여수넷통뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "288ad1994e8a93b4",
-      "title": "'덜 먹는 시대'…KMI \"국내 수산식품산업 새로운 기회\"",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtaWZpd3A1YnU0WDdYbV9nMWV6aVJSbkhhS2FvUFVubGt2dWstSXdqVzlsaFFheXdiN1pFSUJkMXZ4Sjl0Q3g2ZmRMWlF3bnlzeW92Tk03RldkdU3SAWBBVV95cUxOd1VWUl82azc5NkdUZU5WWUV0RGlEOWZnTmRiVXJGRFFja1JudmtodW5BTEJXRWtySHhfUEJfU0hBQWxMMkN6ZEI3YTFNSnZxM2JmcHpUYUtMcmZNQXk1M24?oc=5",
-      "source": "연합뉴스",
-      "published": "2026-10-23T16:00+09:00",
-      "timestamp": 1792738800,
-      "category": "시즌/트렌드",
-      "tags": [
-        "시즌/트렌드"
-      ],
-      "score": 7,
-      "summary": "'덜 먹는 시대'…KMI \"국내 수산식품산업 새로운 기회\" 연합뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "432902c8157a56a4",
       "title": "'적게 먹는 시대'…KMI \"수산식품도 소량·고영양으로 바꿔야\"",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE15bGRsN0VramhNWHVvaGhTa0Qybmw0MEFyT0E2d3ZyNnZzbW1jY0dsUnVYVVpaeGhsZ2k3UzFLWEo0U2NocmJBUXRKbjk2RHlJemxIdGQwUE5tUEI2MlFictIBeEFVX3lxTE5sdmRNRDl4R1lfWkozbkVEQnNfMV9waDJJRXBsNU9WMVRQWTNCZFVtRlJhMnVHNXd3OXc0bDRZU29RYlNGaTNHVGhtYmluQ0pBbXNnOWxENHMzRjM1WjNCZmhqclFGV2ZRTV9IbnVxVDJLcWlYSExpRQ?oc=5",
@@ -17925,7 +19411,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "fb38923eb3a06360",
@@ -18020,6 +19506,31 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "27fff2c67d743424",
+      "title": "생활용품도 ‘초저가’…이마트, 다이소·쿠팡에 도전장",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5NZTZDNHl3UUFKZ280R3VrWlFDOENMcC1xXzVSdnV6bmJPSUN2NUVidGlNdXJuZXhSQW1rb2JySG1SeTczUzZObWdWZVhNbTdFY3fSAVNBVV95cUxPWTU5M0xxcjAtanprNHVVV1FqcUNHcWdGb1RvYUc0eXZ3UHBEWG1TWGNpQ2JqWW5IaTNDckRMeWdHTWdSUWo0T3h0NlVDQ2YtaE50UQ?oc=5",
+      "source": "서울경제",
+      "published": "2026-10-22T16:00+09:00",
+      "timestamp": 1792652400,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM",
+        "온라인"
+      ],
+      "score": 12.7,
+      "summary": "생활용품도 ‘초저가’…이마트, 다이소·쿠팡에 도전장 서울경제",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트",
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "904b7dfef469ccf6",
       "title": "암운에 휩싸인 '한국판 트레이더 조'…홈플러스, 리더십·고용·영업 부진 \"삼중고\"",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1DNTZITVRtTkM2aEZiaXpsM1E2YzhPVFFFaHZEcUtiS0txQUlrZkFIdjdDQjR2MTEzalZ0WEwxRmU0ZnpKZ1hlZl8zZUFjNm5INWtUWmZ1VEV4aTBGN1kyT05WazJWaDg?oc=5",
@@ -18089,31 +19600,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "27fff2c67d743424",
-      "title": "생활용품도 ‘초저가’…이마트, 다이소·쿠팡에 도전장",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5NZTZDNHl3UUFKZ280R3VrWlFDOENMcC1xXzVSdnV6bmJPSUN2NUVidGlNdXJuZXhSQW1rb2JySG1SeTczUzZObWdWZVhNbTdFY3fSAVNBVV95cUxPWTU5M0xxcjAtanprNHVVV1FqcUNHcWdGb1RvYUc0eXZ3UHBEWG1TWGNpQ2JqWW5IaTNDckRMeWdHTWdSUWo0T3h0NlVDQ2YtaE50UQ?oc=5",
-      "source": "서울경제",
-      "published": "2026-10-22T16:00+09:00",
-      "timestamp": 1792652400,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM",
-        "온라인"
-      ],
-      "score": 12.7,
-      "summary": "생활용품도 ‘초저가’…이마트, 다이소·쿠팡에 도전장 서울경제",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트",
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이전 수집 보존"
-    },
-    {
       "id": "9fefbe18fd1bc3dd",
       "title": "고물가에 근거리 장보기 수요↑…SSM업계, 신선식품·배송 경쟁 후끈",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9Ha2RTd0ZxVDdZTVJ4cTRBR3ZZeVRGQkN3UHNKVUYxRjlyVjZfblBsNnlNb000Z0wxRkRFXzEtY1pYNUhTYnNEYks4anhaaTRWaVROM0lPbml6bzdURmhWWlU1bk1fdXdocmVvMFlzdnHSAXRBVV95cUxQTmhDZUl2d3dmMGxlWVlGbWdDNkc2QkpoeEpBRnZsUWZ4cmRkall5M1pyN21RbVoxeWFpZnY2QkExSHdPbTYyQ3ZTdlJqRTN6Sm1oUFRhZ3h1WFhWcmREMnFOdDRQVUF6d185N0d2cC1hZElMaA?oc=5",
@@ -18173,6 +19659,30 @@
       ],
       "score": 11.7,
       "summary": "[2026 국감] 수협 군납 수산물 위생 논란…5년 연속 이물질 검출 푸드투데이",
+      "summary_type": "공개 RSS 소개문",
+      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
+      "official": false,
+      "channels": [
+        "B2B"
+      ],
+      "impact": "정책·식품안전 변화",
+      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "2815e1bc51022d2a",
+      "title": "장병 밥상에 오르는 수협 군납 수산물, 5년 연속 이물 혼입 ‘위생 적신호’",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE45c21FRUdKa3dYekZSdFk3QVdQdWs5a0ZESE9XTDZfMFVZbWZjSHBBTmpVREtGWEM2aVJCenhUUFdHMkpxY1FqUGRzMkFpQXdKX3B5Sm9ndnA?oc=5",
+      "source": "경북신문",
+      "published": "2026-10-22T16:00+09:00",
+      "timestamp": 1792652400,
+      "category": "B2B/급식",
+      "tags": [
+        "B2B/급식",
+        "식품안전/소비심리"
+      ],
+      "score": 11.7,
+      "summary": "장병 밥상에 오르는 수협 군납 수산물, 5년 연속 이물 혼입 ‘위생 적신호’ 경북신문",
       "summary_type": "공개 RSS 소개문",
       "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
       "official": false,
@@ -18361,27 +19871,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "b351e143f1000441",
-      "title": "CPTPP 가입, 부산 수산업에는 어떤 영향이 있을까",
-      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1BeUxfbVZQY1FPSHBDeXR5VE9OZjE1UkdyUXloNzAybXR5NUU3aGxGLTdDTUJzaEg5aS1aaHV4NW95WDNDbFU2Ykd3?oc=5",
-      "source": "브런치",
-      "published": "2026-10-22T16:00+09:00",
-      "timestamp": 1792652400,
-      "category": "비용/거시",
-      "tags": [
-        "비용/거시"
-      ],
-      "score": 7,
-      "summary": "CPTPP 가입, 부산 수산업에는 어떤 영향이 있을까 브런치",
-      "summary_type": "공개 RSS 소개문",
-      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "7377c92fa103ab96",
       "title": "KMI, 수산식품도 소량·고영양으로…소비 변화 대응해야",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5PNUtZWUlsZllGek5ObEg4UkVEQ3oyNDdtUEJSdTllelRVWk8zelBPQ0xNZk16UGJnaVFIb3hHWVhXbmJQZ0lNc1BabTIwMVQxdDZyVnZTVTBzdVNZM1ZSX29KTWZ5X011STFV?oc=5",
@@ -18400,6 +19889,27 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "b351e143f1000441",
+      "title": "CPTPP 가입, 부산 수산업에는 어떤 영향이 있을까",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1BeUxfbVZQY1FPSHBDeXR5VE9OZjE1UkdyUXloNzAybXR5NUU3aGxGLTdDTUJzaEg5aS1aaHV4NW95WDNDbFU2Ykd3?oc=5",
+      "source": "브런치",
+      "published": "2026-10-22T16:00+09:00",
+      "timestamp": 1792652400,
+      "category": "비용/거시",
+      "tags": [
+        "비용/거시"
+      ],
+      "score": 7,
+      "summary": "CPTPP 가입, 부산 수산업에는 어떤 영향이 있을까 브런치",
+      "summary_type": "공개 RSS 소개문",
+      "question": "환율·운임·에너지 변화와 수입단가 변화의 시차는 얼마나 다른가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "원화 환산 수입단가·환율·운임·동일 기간 가격",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -18557,6 +20067,29 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "568dbfa245f507ce",
+      "title": "\"5천원 이하 초저가 생활용품\"…이마트, 균일가 '와우샵' 오픈",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5xUHhRaDRzNEllQ3hPSU5GSTd3bGFBT1lmNEs5ODctNW80ZkZSUHlxeDM0ZVRIUm44My1Id2lDODhPaFdsQi1obzdNUVhhUjJiZzJMQXFFVmYzcm9ILTg0ZjVJVGc3UGs?oc=5",
+      "source": "청년일보",
+      "published": "2026-10-21T16:00+09:00",
+      "timestamp": 1792566000,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "\"5천원 이하 초저가 생활용품\"…이마트, 균일가 '와우샵' 오픈 청년일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "a8bfc94bd6a5ddad",
       "title": "대형마트보다 얼마나 싸길래…'장 보러 무조건 여기만 가요' [권용훈의 트렌드워치]",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE54SWRSY1ZrcU1YY1J6U2dWcjJyRFhrb3VzSkpWSVpMTFAzQWZXdGk3djVLSVZwT3I5ZTQ5a1J0WGIyT3JKNWtCdDlnanZ3S1MzdlBLWkxGTkFDQQ?oc=5",
@@ -18598,29 +20131,6 @@
       "official": false,
       "channels": [
         "코스트코",
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "568dbfa245f507ce",
-      "title": "\"5천원 이하 초저가 생활용품\"…이마트, 균일가 '와우샵' 오픈",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5xUHhRaDRzNEllQ3hPSU5GSTd3bGFBT1lmNEs5ODctNW80ZkZSUHlxeDM0ZVRIUm44My1Id2lDODhPaFdsQi1obzdNUVhhUjJiZzJMQXFFVmYzcm9ILTg0ZjVJVGc3UGs?oc=5",
-      "source": "청년일보",
-      "published": "2026-10-21T16:00+09:00",
-      "timestamp": 1792566000,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "\"5천원 이하 초저가 생활용품\"…이마트, 균일가 '와우샵' 오픈 청년일보",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
         "마트"
       ],
       "impact": "시장 동향 · 후속 근거 확인",
@@ -18886,7 +20396,7 @@
         "대형마트/SSM",
         "코스트코"
       ],
-      "score": 14.4,
+      "score": 16.4,
       "summary": "홈플러스 빈자리 공략하는 코스트코…업계 1위 이마트 추격 KPI뉴스",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -19233,6 +20743,27 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "8ed5b64ff28ec162",
+      "title": "부산서 국내 기술로 키운 노르웨이 연어, 연말 식탁 오른다",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0wbndEY2YwSE1ic0pRdGhxM3J1OXZIX2dVVUNiS0JFSUFHSlY0T2pYY1JCLVVWdlhyMEowbzhESUgwSGJ3S0FuM0VDVXJrc2VWd2hwTDJpVFRqWWxvVTc3M1Vn?oc=5",
+      "source": "미주중앙일보",
+      "published": "2026-10-19T16:00+09:00",
+      "timestamp": 1792393200,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세"
+      ],
+      "score": 13.7,
+      "summary": "부산서 국내 기술로 키운 노르웨이 연어, 연말 식탁 오른다 미주중앙일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "16259cd8b4d0c287",
       "title": "어니스트리, ‘위건강엔 그린세라F’ 코스트코 입점",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE96THdMdHVhMV90VXBYQUVvdkRiWHIxMzdGWk5MbllaNERPdmRSZHhtYlhsNHNqWHViYUxiYWZQSVpQQzdmTVRBTWlNcDc3azlZNFlHVXpTTEtLUks4b2tzTXo0N0xRRzE1Qnc?oc=5",
@@ -19325,27 +20856,6 @@
       ],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "신규 출점·경쟁 상품 가격·시즌 행사 편성",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "8ed5b64ff28ec162",
-      "title": "부산서 국내 기술로 키운 노르웨이 연어, 연말 식탁 오른다",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0wbndEY2YwSE1ic0pRdGhxM3J1OXZIX2dVVUNiS0JFSUFHSlY0T2pYY1JCLVVWdlhyMEowbzhESUgwSGJ3S0FuM0VDVXJrc2VWd2hwTDJpVFRqWWxvVTc3M1Vn?oc=5",
-      "source": "미주중앙일보",
-      "published": "2026-10-19T16:00+09:00",
-      "timestamp": 1792393200,
-      "category": "원물 수급/시세",
-      "tags": [
-        "원물 수급/시세"
-      ],
-      "score": 13.7,
-      "summary": "부산서 국내 기술로 키운 노르웨이 연어, 연말 식탁 오른다 미주중앙일보",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
       "collection_status": "이번 실행 재수집"
     },
     {
@@ -19572,6 +21082,29 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "4ff3d24da1f4b6ba",
+      "title": "수협, '흑백요리사' 셰프들과 일본·대만서 국산 수산물 홍보",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5ZS3l5TnBwZWZ4TlV1dzZOTDdvb1VIbTBWZm9oVUwxaW44N0luMUdwNmtOOXNGTnVQeWVzLW92RzhlLVVPZU9kOUpCLTV6OTJkdG9BVGt2d1JOOW_SAWBBVV95cUxPVnRRLXZyY2dVZ053aG12UEdiSndZWHRUNk12VU5wZEdzai16X0xQTUhzalFNdklPY0dKQTNScmVjMWNqZzI0ZVZ2bW9Iemk3bHQ3bDhKSzdpVjhNUnNkeWg?oc=5",
+      "source": "연합뉴스",
+      "published": "2026-10-19T16:00+09:00",
+      "timestamp": 1792393200,
+      "category": "매장 운영",
+      "tags": [
+        "매장 운영"
+      ],
+      "score": 7,
+      "summary": "수협, '흑백요리사' 셰프들과 일본·대만서 국산 수산물 홍보 연합뉴스",
+      "summary_type": "공개 RSS 소개문",
+      "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+      "official": false,
+      "channels": [
+        "수출"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "e0ca7eec866ef6aa",
       "title": "수협, 정호영·이미영 셰프 앞세워 국산 수산물 해외 외식시장 공략",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE96empyVkdtVGhfcGZQTmg1RW9TajJDOUhrOXFwQk1zemZTM25nTGdycUM0VXd3UWlmSVhCODRFWnRoVldiaTZINWl0QTNfM2k5MVJVWNIBWEFVX3lxTE9DT1FydzVZZG5raWN3OTkycG5NY1N4QkNoZzZoWnJzdHpLeDJ6OUZpb3Mwa1FkbjVOcC1ldGlSa0RCQmUxUFZsN0xDRkRuR3B0ZHpJMXM3LTY?oc=5",
@@ -19674,7 +21207,7 @@
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
       "followup": "무역통계·원산지별 가격·규제 시행일",
-      "collection_status": "이번 실행 재수집"
+      "collection_status": "이전 수집 보존"
     },
     {
       "id": "33d11927520238c4",
@@ -20050,7 +21583,7 @@
         "대형마트/SSM",
         "코스트코"
       ],
-      "score": 21.8,
+      "score": 23.8,
       "summary": "대형마트 휴무일? 이마트·롯데마트·홈플러스·코스트코 ‘특가전 가볼까’ BNT뉴스",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
@@ -20147,7 +21680,7 @@
       "channels": [],
       "impact": "수급·물량 변화 보도",
       "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이전 수집 보존"
+      "collection_status": "이번 실행 재수집"
     },
     {
       "id": "7754e6714105f2f8",
@@ -20240,6 +21773,29 @@
       "collection_status": "이전 수집 보존"
     },
     {
+      "id": "e75adc35dbbcba63",
+      "title": "대형마트 “한우·삼겹살 등 40~50% 할인…제철 과일·채소도 절반값”",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoUjZvRjJBdV8xV0l6cmlxSC1XQ1dyVUlsSzNpZWdoREVpSFpFb3pScURmWWw2REtSU3VVMDk3ZEJmZWZSaXpRT0lCeWFTc3FxN0hoRFNqcE1jd9IBX0FVX3lxTE8tNWR1a0hMM20yNUJrWGdjM0lzZEpHUHdCbmxFWGVEUFRzYW9FWUVsMTM1VkQyanFSLUN4S2hLejF1Q25uUmJxYldtY1N3dWhiV0ZjcFhpbXJTUHRhZ0gw?oc=5",
+      "source": "경향신문",
+      "published": "2026-10-16T16:00+09:00",
+      "timestamp": 1792134000,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "대형마트 “한우·삼겹살 등 40~50% 할인…제철 과일·채소도 절반값” 경향신문",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "f7d62f1f3749d91e",
       "title": "재개장 두 달 만에 매출 70% 증발... 홈플러스 회생계획 '인가 후 폐지' 경고등",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9XQVBLY09uMFNncTFzWE9nQ3BYSTd5VElWUkxrTFp6ZmVmQWM5ZFJXNmlBNk9NTVR6WjFKUW1QODJCMjhJODE3US1VSDFQSFpiS1ppNTk3TVllWWFCN3ZCZTVXTTk?oc=5",
@@ -20275,29 +21831,6 @@
       ],
       "score": 12.7,
       "summary": "회생안 인가 13일 만에 ‘자금난’ 직면한 홈플러스, 첫 단추부터 ‘흔들’ 이뉴스투데이",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "e75adc35dbbcba63",
-      "title": "대형마트 “한우·삼겹살 등 40~50% 할인…제철 과일·채소도 절반값”",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoUjZvRjJBdV8xV0l6cmlxSC1XQ1dyVUlsSzNpZWdoREVpSFpFb3pScURmWWw2REtSU3VVMDk3ZEJmZWZSaXpRT0lCeWFTc3FxN0hoRFNqcE1jd9IBX0FVX3lxTE8tNWR1a0hMM20yNUJrWGdjM0lzZEpHUHdCbmxFWGVEUFRzYW9FWUVsMTM1VkQyanFSLUN4S2hLejF1Q25uUmJxYldtY1N3dWhiV0ZjcFhpbXJTUHRhZ0gw?oc=5",
-      "source": "경향신문",
-      "published": "2026-10-16T16:00+09:00",
-      "timestamp": 1792134000,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "대형마트 “한우·삼겹살 등 40~50% 할인…제철 과일·채소도 절반값” 경향신문",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
@@ -20530,29 +22063,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "ccb82277398c3ca4",
-      "title": "[이슈+] 다시 벼랑 끝 내몰린 홈플러스 출구는 '안갯속'",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBkbFVBNng3Rmh1OWwzQkZPZk9TU3llOGhPRDNhcFVRaEJndXpMSnI1MlNWc3MzYld0NllZa1ZrRHBuVlhIRm5jMGs0TUI2MGhHNVVvUDZIZm1iZThvWC0yS2ZDbVRJYjdjYkpRdg?oc=5",
-      "source": "ER 이코노믹리뷰",
-      "published": "2026-10-15T16:00+09:00",
-      "timestamp": 1792047600,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "[이슈+] 다시 벼랑 끝 내몰린 홈플러스 출구는 '안갯속' ER 이코노믹리뷰",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "1ed5fddc81ac1365",
       "title": "\"식품 소비 감소세\"…대형마트, 신선식품 중심 전략 '시험대'",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBxTndwNDcwT2QxX3I1WTRwYUdpdlZtVlpFaUY5bmgzTHJ5OFNKYVJaZUVQR3AtU2hUVDhMdFlFSEEtbHlZcUI4bmtSa3l6MlVmNzVfM21NcVZtTjJXcUFZYlYtNnpXSlk?oc=5",
@@ -20565,6 +22075,29 @@
       ],
       "score": 12.7,
       "summary": "\"식품 소비 감소세\"…대형마트, 신선식품 중심 전략 '시험대' 청년일보",
+      "summary_type": "공개 RSS 소개문",
+      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+      "official": false,
+      "channels": [
+        "마트"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "점포 수·동일점 매출·PB 상품 변화",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
+      "id": "ccb82277398c3ca4",
+      "title": "[이슈+] 다시 벼랑 끝 내몰린 홈플러스 출구는 '안갯속'",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBkbFVBNng3Rmh1OWwzQkZPZk9TU3llOGhPRDNhcFVRaEJndXpMSnI1MlNWc3MzYld0NllZa1ZrRHBuVlhIRm5jMGs0TUI2MGhHNVVvUDZIZm1iZThvWC0yS2ZDbVRJYjdjYkpRdg?oc=5",
+      "source": "ER 이코노믹리뷰",
+      "published": "2026-10-15T16:00+09:00",
+      "timestamp": 1792047600,
+      "category": "대형마트/SSM",
+      "tags": [
+        "대형마트/SSM"
+      ],
+      "score": 12.7,
+      "summary": "[이슈+] 다시 벼랑 끝 내몰린 홈플러스 출구는 '안갯속' ER 이코노믹리뷰",
       "summary_type": "공개 RSS 소개문",
       "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
       "official": false,
@@ -20982,6 +22515,30 @@
       "collection_status": "이번 실행 재수집"
     },
     {
+      "id": "91656a37d78c6f3c",
+      "title": "노르웨이수산물위원회, 쿠팡이츠와 손잡고 ‘노르웨이 연어 위크 배달편’ 개최",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE90NFpwUnI5SHVlbm15SXd2c1ZVTnp1YXc1ZzRmUEp4bEp3djlFN19ja19aX1pMcmJQSnd6dzM4NFE5YTZPa1Nnc3lWZEdWNHVEbnFUMTNqRE51UTJWdlNiRkxwaUJsVkdIcXpN?oc=5",
+      "source": "미디어데일",
+      "published": "2026-10-14T16:00+09:00",
+      "timestamp": 1791961200,
+      "category": "원물 수급/시세",
+      "tags": [
+        "원물 수급/시세",
+        "온라인"
+      ],
+      "score": 11.7,
+      "summary": "노르웨이수산물위원회, 쿠팡이츠와 손잡고 ‘노르웨이 연어 위크 배달편’ 개최 미디어데일",
+      "summary_type": "공개 RSS 소개문",
+      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "official": false,
+      "channels": [
+        "온라인"
+      ],
+      "impact": "시장 동향 · 후속 근거 확인",
+      "followup": "산지가·위판량·어종별 규격·수출입 물량",
+      "collection_status": "이번 실행 재수집"
+    },
+    {
       "id": "3c86445d225b6ec7",
       "title": "['강원형 K-연어' 동해안 미래 전략산업이 되다] 6. 세계시장 키운 35년 노르웨이 수산물위원회",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9MSFppdVJ4QjF1UjJCM2xyZFUwVHNMaTFFQXBvQjM0MXF5UDM1cW9iZ1o5eEZyaXpGTVdwVlNGSE5iOWdDOUJsVDJtOVpoN2lOd04tRkxCakUtYm0wTnhFRGFQZElFamc?oc=5",
@@ -21047,27 +22604,6 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "0468432969160acb",
-      "title": "“바다의 인삼” 해삼, 오독오독 씹히는 식감 속에 숨겨진 영양의 비밀",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0yVm1oUS04OURReVJfdVdkZzRSWmNoWUwxSjRnNTFGeTM0U1BzTlhOVjlROGxwc1VFNF9QYzJtZXNoQVZCRFRoQ1J6V3Z1emF5LVdqRkk1TFlZWUg0OFZKREFzVWxUNC1HenZfSXJHOA?oc=5",
-      "source": "어업in수산",
-      "published": "2026-10-14T16:00+09:00",
-      "timestamp": 1791961200,
-      "category": "시즌/트렌드",
-      "tags": [
-        "시즌/트렌드"
-      ],
-      "score": 7,
-      "summary": "“바다의 인삼” 해삼, 오독오독 씹히는 식감 속에 숨겨진 영양의 비밀 어업in수산",
-      "summary_type": "공개 RSS 소개문",
-      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
       "id": "a8dc974c3f6bae03",
       "title": "콜레스테롤 수치까지 낮춰준다… 10월에 꼭 먹어야 하는 '가을 제철 해산물'",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBERUZyOEttOXhoVnhBZXh1NVFpQVgzTTNaR2x3aFpSblFrVVhvWGZISjVMdmhObmhIc1RpanViVnd6b1FzRVhSazc1VDJBLUlKYV9sZ1JB?oc=5",
@@ -21089,343 +22625,24 @@
       "collection_status": "이번 실행 재수집"
     },
     {
-      "id": "3cff4f4aca92c67e",
-      "title": "홈플 폐점 반사이익에 본업 경쟁력 시너지… 이마트, 롯데마트 오랜만의 훈풍 기대",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8yQ0xVMHdVc2lMV05qM1lucDEyaXdoZUY2NGxDQTFqNF81alZjRjBCX1V1cjh3c3pWbWxYaG1WYUdRRzlFeW1VLW9FdTRKMkJSa3BRTGpaSThZMWthc2xocHE1WmlobWNPT2ZDVmFiTUduU0I5MUE?oc=5",
-      "source": "대한경제",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
+      "id": "0468432969160acb",
+      "title": "“바다의 인삼” 해삼, 오독오독 씹히는 식감 속에 숨겨진 영양의 비밀",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0yVm1oUS04OURReVJfdVdkZzRSWmNoWUwxSjRnNTFGeTM0U1BzTlhOVjlROGxwc1VFNF9QYzJtZXNoQVZCRFRoQ1J6V3Z1emF5LVdqRkk1TFlZWUg0OFZKREFzVWxUNC1HenZfSXJHOA?oc=5",
+      "source": "어업in수산",
+      "published": "2026-10-14T16:00+09:00",
+      "timestamp": 1791961200,
+      "category": "시즌/트렌드",
       "tags": [
-        "대형마트/SSM",
-        "매장 운영"
+        "시즌/트렌드"
       ],
-      "score": 18.4,
-      "summary": "홈플 폐점 반사이익에 본업 경쟁력 시너지… 이마트, 롯데마트 오랜만의 훈풍 기대 대한경제",
+      "score": 7,
+      "summary": "“바다의 인삼” 해삼, 오독오독 씹히는 식감 속에 숨겨진 영양의 비밀 어업in수산",
       "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "유통시장 구조 변화",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "aa1aaffc485958f9",
-      "title": "이마트, 9월까지 총매출 14조2614억원…트레이더스가 성장 견인",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE81NnlJNXZyY2tZdHdoVTU1LXgtelpYTzctaFNoZXV4V0txMV9CMzA0Sy1ubGRlSXlHVHRMRzdtbndHVEp2Q2xqU09PaU1BX1l4U0o2MG5FOGxWcHZqemtiMWJtcktIVTZkMzZlN3h3?oc=5",
-      "source": "이슈밸리",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 16.4,
-      "summary": "이마트, 9월까지 총매출 14조2614억원…트레이더스가 성장 견인 이슈밸리",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "05f9f4f9ace38ccf",
-      "title": "서삼석 의원, 군 급식 2조 시장 점령한 대기업, 9곳 중 8곳 농어촌상생기금 기부 0원",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5Tc1g1V0FiR3FuU3VKUjJXdmZUQm5mQVRuUkV6N2UzY0w4dy00YWh4YTE1TnNmTk5GRnpPOUdQcHNaRVNuTVAyMVJHVk9hWkhiMDJGN3lPbWItYnRrUWRqXzJpS1dBVld4aDNlTU8xeVVSdXPSAXdBVV95cUxPRllkNmdJUUpZSXZTMl9BZnRIQzZwSUdEZldOeW01YVVleEM5UDNEeVlQY09POTV3b0NtV2dQUTR4cmNkZkhBS2t4THdUN3gwaEtlQ09VTVpqUzU2TzUxbVR4cjNFa0RfMk9mM0VHaEZvaktINXJ3SQ?oc=5",
-      "source": "뉴스프리존",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "B2B/급식",
-      "tags": [
-        "B2B/급식"
-      ],
-      "score": 15.4,
-      "summary": "서삼석 의원, 군 급식 2조 시장 점령한 대기업, 9곳 중 8곳 농어촌상생기금 기부 0원 뉴스프리존",
-      "summary_type": "공개 RSS 소개문",
-      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
-      "official": false,
-      "channels": [
-        "B2B"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "351210218034d0d3",
-      "title": "홈플러스, 공익채권 변제 소송 직면…줄소송 땐 회생절차 부담",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQOFVWUVVXczFzX0RFX2E2eWdnNW45OW9MV1NZcTRHQmcxWUhuSjZGZjd5eFVDSHRXMlpSTEZoVFpfbklleWN4am9GdDJBSUR3dEtsUFdpSVFPeG1lcUFFQ0hzcFJ0bzZXLTQtc1ZKR09sWHFBUk5GYkRTMlBQd0Vzb3NiMA?oc=5",
-      "source": "인베스트조선",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "홈플러스, 공익채권 변제 소송 직면…줄소송 땐 회생절차 부담 인베스트조선",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "b4ec3b373808a9ef",
-      "title": "2000억으로 두 달 못 버틴 홈플러스...M&A가 '마지막 카드' - 머니투데이",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5XaUd2TzBFeXZWU0lTSEFId05MMXozdHFNT291TkhRcVBvVFNrbUV5NjRPMGw0bnNGMExsMk4wTlg0V0Y4MzBQUFFnWDREbEFCQ2NCQjhHUHRub2JvU3A1QTViR1ljUGJPNVHSAW9BVV95cUxOR25MVzFYR0Rrd3E2bzE5TkcyY3dNM19pTUtFcDh3bW1LWHc2WWYxTzhlS0piMElkZ3VMdFViYU1jYjV0OHU4bUI5LW5qU3dLbXdmaTJHUE54STFFa24zcXM4ZTBYUlNuTlpaXzdpUnM?oc=5",
-      "source": "머니투데이",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "2000억으로 두 달 못 버틴 홈플러스...M&A가 '마지막 카드' - 머니투데이 머니투데이",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "8795f7221dba9c15",
-      "title": "홈플러스 회생의 그늘...입점업체 피해 지원도 '막막'",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9XYzZWRFRCWnloRTcxYmc3RkxtVU5WUjUxTUNfN0NzcmotS2ZUTmdnSHN0NE41YnZWWjlvMl9LVVJ2UjUxbkhkNWl5TGEzU1BXN1ItWXFCdzNTVzg3Xzk2bEtnVjdocmZCblk1d1pZNlg?oc=5",
-      "source": "오피니언뉴스",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM",
-        "매장 운영"
-      ],
-      "score": 12.7,
-      "summary": "홈플러스 회생의 그늘...입점업체 피해 지원도 '막막' 오피니언뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "6552cd9666b629ac",
-      "title": "송옥주 의원 \"할인 한도 폐지로 객단가 높은 트레이더스 독식 자초\"",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBHS2tGRXNEbVJidkwyMVAxUThXd3Y1VUhsVGU5Q1VLQlpBNTNwNmplS19INmdiT2tuU2hvQkY0NzYtMUJvYkxNb2diM01kSzBlQmVIVGdoRmlrUnFsZXFCN1BCekRoU1Ji?oc=5",
-      "source": "수도권지역뉴스",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "송옥주 의원 \"할인 한도 폐지로 객단가 높은 트레이더스 독식 자초\" 수도권지역뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "29cd43af525ed4f3",
-      "title": "佛 전역 대형마트 냉장고 해킹…50도로 올라 식품 전량 폐기",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE50d3FaOXBPVmxfS19yQlU2VFZGV0o4czFIdjU5SG1hcmxsSWFDT0VaOFl2bnNfcHJpYlZJVU1lQlhWUXMya3hQUlo1TVVnaGtvcG9kYUF4T0hmQQ?oc=5",
-      "source": "한국경제",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "佛 전역 대형마트 냉장고 해킹…50도로 올라 식품 전량 폐기 한국경제",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "64906b91b94881ff",
-      "title": "냉장고가 80도까지 폭주…프랑스 대형마트 해킹 대란",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8xYXcyeDJVRmRMV0lmak9SeFNjVl9ZcDN1ZVkwbWxvMExtTmI5X1pMaXZoTTJoOG8taUpMMTFZRmtoTGVrY1JETGQ2MmZTVlVZWERlNXhn?oc=5",
-      "source": "중앙일보",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "대형마트/SSM",
-      "tags": [
-        "대형마트/SSM"
-      ],
-      "score": 12.7,
-      "summary": "냉장고가 80도까지 폭주…프랑스 대형마트 해킹 대란 중앙일보",
-      "summary_type": "공개 RSS 소개문",
-      "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
-      "official": false,
-      "channels": [
-        "마트"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "점포 수·동일점 매출·PB 상품 변화",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "d385ed40c8d94a40",
-      "title": "노르웨이수산물위원회, 쿠팡이츠와 손잡고 ‘노르웨이 연어 위크 배달편’ 개최",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5rV0dqOG10QTVOZi1uMV94UGRuNDNxS1BjS1QwWHVPSXBTU01oS2syNlNQWFI5UFhfNjVCaDluRks1WUVRbE55emlKblF6ZzkyaWZqXzcwaHdscUhGT2ZJ?oc=5",
-      "source": "뉴스와이어",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "원물 수급/시세",
-      "tags": [
-        "원물 수급/시세",
-        "온라인"
-      ],
-      "score": 11.7,
-      "summary": "노르웨이수산물위원회, 쿠팡이츠와 손잡고 ‘노르웨이 연어 위크 배달편’ 개최 뉴스와이어",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
-      "official": false,
-      "channels": [
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "c288aa1611fde448",
-      "title": "[경영의학] 컬리, 역대 최대 적자·상장 연기에서 2025년 흑자 전환… 사업 다각화가 처방",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1JMl9Yc3FIU0dSOVpUNjRnQTUwTlJuQmg3dHlyMDRsXzI1Sm5zQmxQX0RNMVU4aXEyWm5HT0RXYUdHcGhmOEdqaExHV09XMy14TjIzZDkyYkdiMDdGT0Y0NkFBWEZfTk1pcnRjLQ?oc=5",
-      "source": "CEO경제신문",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "온라인",
-      "tags": [
-        "온라인"
-      ],
-      "score": 11.7,
-      "summary": "[경영의학] 컬리, 역대 최대 적자·상장 연기에서 2025년 흑자 전환… 사업 다각화가 처방 CEO경제신문",
-      "summary_type": "공개 RSS 소개문",
-      "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
-      "official": false,
-      "channels": [
-        "온라인"
-      ],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "6211ed4cb8560728",
-      "title": "어민지원 수산발전기금, 25년간 기업 기부금 한 푼도 없어",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9FWU8tSEliYnZsZ0ZSTkh2SG5URzJpQTRHcDFTdXduQk5OTDQwSEp2allSWUVRNWFTaFcybGJfQlZYS2U0cFBTSmg5WVNfS0RWcHc?oc=5",
-      "source": "매일경제 마켓",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "원물 수급/시세",
-      "tags": [
-        "원물 수급/시세"
-      ],
-      "score": 10,
-      "summary": "어민지원 수산발전기금, 25년간 기업 기부금 한 푼도 없어 매일경제 마켓",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+      "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
       "official": false,
       "channels": [],
       "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "487e1bea66ef7d3f",
-      "title": "[최만순의 약이 되는 K-푸드] 갈치 한 마리, 여섯 가지 밥상",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1VREdzcmhPOUtUTHlIazFSaVpzVmdNTWdmTkJqbF9vc0hXRFBoaW5iRnVYR3pMMmhwZi14RmNIcUdxWXFFWjBmdjlhWkk3WUZSVV9JdmtOWGV1NUnSAWBBVV95cUxQNzFVT2VVQmRhWEdlNENvaVZRODk1VlpvZmdqVzY2MnBVeUpOOEdfWGhFT3hiS0ktWlBzdTl6WW14bDk3WDViQkIwYjhRUDdDbE1GRl9VMkE3dXk5cDlBZHY?oc=5",
-      "source": "연합뉴스",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "원물 수급/시세",
-      "tags": [
-        "원물 수급/시세"
-      ],
-      "score": 10,
-      "summary": "[최만순의 약이 되는 K-푸드] 갈치 한 마리, 여섯 가지 밥상 연합뉴스",
-      "summary_type": "공개 RSS 소개문",
-      "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "산지가·위판량·어종별 규격·수출입 물량",
-      "collection_status": "이번 실행 재수집"
-    },
-    {
-      "id": "18e37a552b8c09ba",
-      "title": "공안부, 불법 해산물 채취 선박 파견 조직 사건에 대한 형사 처리 단호",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOcHdIam1YNFZVd252b1haNndrM0xXamRFRWx0WmtzUGhINmVXTGdoLVhuMHl4M09lRGd4Yy15V3dnX3M2eGFJbnFTRWZWSmt4SjZPQjZDejAwU1pJOFUzZGNIaERIcjlNUURuWHBJa3FLbXFEYW5vcnRtSkJ4cC1nWHZ3TmpYWm85ay1oeDdRdXF2OHZKS0xZQXJNMUVlZnhNUWRlc09SaFQ0ZmhWX2FvYnFibUozY1RDckZXQkR4RzhGNUh1a083Tw?oc=5",
-      "source": "Laodong.vn",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "식품안전/소비심리",
-      "tags": [
-        "식품안전/소비심리"
-      ],
-      "score": 9,
-      "summary": "공안부, 불법 해산물 채취 선박 파견 조직 사건에 대한 형사 처리 단호 Laodong.vn",
-      "summary_type": "공개 RSS 소개문",
-      "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
-      "official": false,
-      "channels": [],
-      "impact": "정책·식품안전 변화",
-      "followup": "공식 검사 결과·기준 시행일·소비조사",
-      "collection_status": "이전 수집 보존"
-    },
-    {
-      "id": "58ab97b77ea290ca",
-      "title": "축·수산물 이력관리 ‘허점’",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GbktMZDFYWF9VNVBuWXoyS3dQaERma0RhNEJPQURiaHhlN2ZQU25lNHB6TVdTQkhnRlBjOUJKU3poX1BfaFdlcnpKNFhGRkdNal9feGluM1d6eG94OXJoQml5Nzl2NG1L?oc=5",
-      "source": "대한급식신문",
-      "published": "2026-10-13T16:00+09:00",
-      "timestamp": 1791874800,
-      "category": "B2B/급식",
-      "tags": [
-        "B2B/급식"
-      ],
-      "score": 8.7,
-      "summary": "축·수산물 이력관리 ‘허점’ 대한급식신문",
-      "summary_type": "공개 RSS 소개문",
-      "question": "급식·외식·편의점의 수산물 수요가 어떻게 달라지고 있는가",
-      "official": false,
-      "channels": [],
-      "impact": "시장 동향 · 후속 근거 확인",
-      "followup": "공개 조달 통계·급식 식자재 수요·상품 규격",
+      "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
       "collection_status": "이번 실행 재수집"
     }
   ]
