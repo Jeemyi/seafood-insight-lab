@@ -1,6 +1,259 @@
 {
-  "updated_at": "2026-11-12T17:33+09:00",
+  "updated_at": "2026-11-13T10:35+09:00",
   "reports": [
+    {
+      "id": "report-ed7e96fa231fbdf91e6d",
+      "published_at": "2026-11-13T10:35+09:00",
+      "headline": "네이버 1조원 물류 투자 계획…이마트·롯데마트, 신선식품 배송으로 맞대응",
+      "kind": "대형마트/SSM",
+      "report": {
+        "depth": "보조",
+        "kind": "대형마트/SSM",
+        "time_frame": "2026년 9월 매출 동향·11월 12일 물류 투자 보도",
+        "headline": "네이버 1조원 물류 투자 계획…이마트·롯데마트, 신선식품 배송으로 맞대응",
+        "thesis": "네이버가 1조원 규모의 물류 투자 계획을 내놓으면서 대형마트의 신선식품 경쟁이 배송 서비스로 넓어지고 있다. 이마트·롯데마트는 기존 점포와 신선식품 구색을 온라인 주문 확보에 활용하는 대응을 강화할 전망이다.",
+        "lead": "대형마트의 9월 식품 매출 증가에는 이른 추석에 따른 먹거리·차례음식 판매가 반영됐다. 명절 수요가 지나간 뒤 등장한 온라인 사업자의 물류 확충 계획은 대형마트에 지속적인 장보기 주문을 확보해야 하는 과제를 더했다.",
+        "facts": [
+          {
+            "text": "산업통상부의 2026년 9월 주요 유통업체 매출동향 요약에 따르면 대형마트 매출은 전년 동월 대비 4.0%, 식품 매출은 4.3% 증가했다. 대형마트 전체 구매건수 증가율은 0.5%였으며, 산업부는 전년보다 이른 추석을 먹거리 판매 증가의 배경으로 설명했다.",
+            "refs": [
+              "web-127f7c37ee2b",
+              "web-c0d050ac5051"
+            ]
+          },
+          {
+            "text": "이투데이의 2026년 11월 12일 공개 기사 소개문은 네이버가 약 1조원의 물류 투자 계획을 발표했다고 전했다. 같은 소개문은 이마트와 롯데마트가 오프라인 점포와 신선식품 경쟁력을 앞세워 배송 경쟁에 대응하고 있다고 설명했다.",
+            "refs": [
+              "0796b9abf988f0a5"
+            ]
+          }
+        ],
+        "market_change": "9월에는 명절 식품 판매가 대형마트 매출을 받쳤지만, 11월에는 온라인 물류망 확충이 장보기 시장의 새로운 경쟁 변수로 부상했다.",
+        "mechanism": [
+          "대형마트의 매출 증가에 비해 거래 건수 확대가 작았던 상황에서 온라인 배송 공세는 기존 장보기 주문을 놓고 경쟁하는 압력을 높인다. 이마트·롯데마트가 점포와 신선식품을 대응 수단으로 내세운 만큼, 상품 구색을 매장 방문뿐 아니라 배송 주문으로 연결하는 경쟁이 강해질 가능성이 높다."
+        ],
+        "structural_insight": "이마트·롯데마트에는 신선식품 판매 호조를 배송 고객 확보로 이어가는 일이 더 중요해졌다. 네이버의 물류 확충에 대응하려면 점포에서 갖춘 상품 경쟁력이 온라인 주문에서도 선택받도록 해야 하기 때문이다.",
+        "what_changes": "",
+        "one_sentence": "온라인 물류 투자 확대에 맞춰 대형마트의 신선식품 차별화도 배송 주문을 확보하는 방향으로 넓어질 전망이다.",
+        "limitations": "공개 기사 소개문에는 네이버의 투자 집행 일정과 신선식품 배송 배정액이 제시되지 않아, 실제 배송 능력의 확대 시점은 판단하기 어렵다.",
+        "article_ids": [
+          "0796b9abf988f0a5",
+          "web-127f7c37ee2b",
+          "web-c0d050ac5051"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "낮음",
+        "channels": [
+          "마트",
+          "온라인"
+        ],
+        "impact": "이마트·롯데마트의 신선식품 차별화 범위가 매장 판매에서 배송 서비스로 넓어지고 있다.",
+        "followup": "",
+        "outlook": {
+          "direction": "확대",
+          "horizon": "향후 3~6개월",
+          "judgment": "이마트·롯데마트가 점포의 신선식품 구색을 배송 서비스와 결합해 장보기 주문을 확보하려는 경쟁은 확대될 전망이다.",
+          "basis": "네이버의 대규모 물류 투자 계획과 대형마트 양사의 신선식품·점포 기반 대응이 함께 보도됐다. 9월 대형마트 구매건수 증가율이 0.5%에 머물러, 매출 회복 이후에도 주문 기반을 넓혀야 할 유인이 있다.",
+          "revision_trigger": "네이버가 발표한 물류 투자에서 신선식품·장보기 배송을 적용 대상에서 제외하는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "0796b9abf988f0a5",
+            "web-c0d050ac5051",
+            "web-127f7c37ee2b"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 982,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-13T10:35+09:00"
+      },
+      "sources": [
+        {
+          "id": "0796b9abf988f0a5",
+          "title": "쿠팡 이어 네이버까지 배송 공세…대형마트, 신선식품 차별화로 ‘맞불’",
+          "url": "https://www.etoday.co.kr/news/view/2647446",
+          "source": "Bing 뉴스 검색·온라인·온라인 신선식품",
+          "published": "2026-11-12T17:26+09:00",
+          "timestamp": 1794471960,
+          "category": "온라인",
+          "tags": [
+            "온라인",
+            "대형마트/SSM"
+          ],
+          "score": 14.9,
+          "summary": "네이버가 1조원에 달하는 물류 투자 계획을 발표하면서 온라인 장보기 시장의 배송 경쟁이 한층 치열해질 전망이다. 쿠팡이 로켓배송과 로켓프레시를 앞세워 시장 영향력을 키운 가운데 네이버까지 물류 인프라 확충에 나서면서 기존 대형마트의 입지가 좁아질 수 있다는 우려가 나온다. 이에 이마트와 롯데마트는 오프라인 점포와 신선식품 경쟁력을 무기로 배송 서비스 ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "온라인 신선식품 시장의 상품·배송·가격 경쟁은 어느 방향으로 이동하는가",
+          "official": false,
+          "channels": [
+            "마트",
+            "온라인"
+          ],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "온라인 식품 판매통계·수수료·경쟁 상품 가격",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        },
+        {
+          "id": "web-127f7c37ee2b",
+          "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1&utm_source=openai",
+          "source": "motir.go.kr",
+          "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+          "summary": "10. **[독립 공식통계·매출]** 산업통상부가 **2026년 10월 28일** 발표한 **2026년 9월 주요 유통업체 매출동향**은 조사대상 **오프라인 15개·온라인 11개 업체**의 전체 매출이 전년 동월 대비 **4.5% 증가**, 오프라인 **5.1% 증가**, 온라인 **4.0% 증가**, 대형마트 **4.0% 증가**였다고 밝혔다; 이는 전국 소매시장 전체나 수산물만의 매출 통계가 아니다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=1&utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "온라인",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 7
+        },
+        {
+          "id": "web-c0d050ac5051",
+          "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=4&utm_source=openai",
+          "source": "motir.go.kr",
+          "title": "'26년 9월 주요 유통업체 매출 동향 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+          "summary": "11. **[수요·구매지표]** 같은 공식자료에서 **2026년 9월 대형마트 식품 매출은 전년 동월 대비 4.3% 증가**, 구매건수는 **0.5% 증가**했으며, 산업부는 전년보다 이른 추석에 따른 먹거리·차례음식 판매를 배경으로 설명했다; 따라서 이 증가를 **수산물 판매량 증가 또는 배송 경쟁의 성과**로 분리해 단정할 수 없다. ([motir.go.kr](https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172342/view?mno=&pageIndex=4&utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 7
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-9849990e4de72f68c333",
+      "published_at": "2026-11-13T10:35+09:00",
+      "headline": "홈플러스 재개장에도 수산 매대 공백…연말 고객 회복 제한될 듯",
+      "kind": "매장 운영",
+      "report": {
+        "depth": "보조",
+        "kind": "매장 운영",
+        "time_frame": "2026년 3분기 실적 및 11월 10~11일 보도",
+        "headline": "홈플러스 재개장에도 수산 매대 공백…연말 고객 회복 제한될 듯",
+        "thesis": "홈플러스 재개장 점포에서 수산물 매대에 그릇을 진열한 사례가 보도됐다. 영업 재개가 신선식품 구색 복원으로 이어지지 않은 만큼, 해당 점포의 연말 장보기 고객 회복은 제한적일 가능성이 크다.",
+        "lead": "이마트·롯데마트는 홈플러스 경영난의 반사이익을 배경으로 3분기 본업 실적을 개선했다. 홈플러스가 문을 다시 여는 것만으로 이 흐름을 빠르게 되돌리기는 어려워 보인다.",
+        "facts": [
+          {
+            "text": "머니투데이는 2026년 11월 10일 홈플러스 재개장 점포 르포에서 수산물 매대에 그릇이 놓인 모습을 보도했다. 공개된 제목은 재개장 이후에도 상품 공백이 남은 상황을 전했다.",
+            "refs": [
+              "04e826ac30a07bb0"
+            ]
+          },
+          {
+            "text": "한국경제는 2026년 11월 11일 이마트·롯데마트가 홈플러스의 빈자리를 채우며 3분기 영업이익을 늘렸다고 보도했다. 제공된 RSS 소개문에는 회사별 이익액과 증가율이 제시되지 않았다.",
+            "refs": [
+              "d2dd7013543ae6ec"
+            ]
+          }
+        ],
+        "market_change": "머니투데이는 2026년 11월 10일 홈플러스 재개장 점포 르포에서 수산물 매대에 그릇이 놓인 모습을 보도했다. 공개된 제목은 재개장 이후에도 상품 공백이 남은 상황을 전했다. 한국경제는 2026년 11월 11일 이마트·롯데마트가 홈플러스의 빈자리를 채우며 3분기 영업이익을 늘렸다고 보도했다. 제공된 RSS 소개문에는 회사별 이익액과 증가율이 제시되지 않았다.",
+        "mechanism": [
+          "수산물을 살 수 없는 매대는 재개장 점포가 회복한 영업 공간을 실제 판매로 연결하지 못하게 한다. 생선과 다른 식재료를 함께 구매하려는 고객에게는 장보기를 한곳에서 마치기 어려운 이유가 된다. 경쟁 대형마트가 이미 홈플러스의 판매 공백을 메우며 실적을 개선한 상황에서는 이런 구색 부족이 고객을 되찾는 속도를 늦출 수 있다."
+        ],
+        "structural_insight": "이마트·롯데마트가 얻은 반사이익은 홈플러스의 재개장과 동시에 사라지기보다 상품 공급 복구까지 이어질 가능성이 크다. 수산 매대의 공백이 남은 점포에서는 영업 재개가 경쟁사에 주는 판매 압박도 제한된다.",
+        "what_changes": "",
+        "one_sentence": "수산물 구색을 되살리지 못한 재개장은 홈플러스의 고객 복귀 효과를 약화할 수 있다.",
+        "limitations": "기사 전문은 제공되지 않았으며, 수산 매대 공백의 지속 기간과 해당 점포의 매출 회복 수치는 공개된 소개문에서 파악되지 않는다.",
+        "article_ids": [
+          "04e826ac30a07bb0",
+          "d2dd7013543ae6ec"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "낮음",
+        "channels": [
+          "마트",
+          "매장"
+        ],
+        "impact": "",
+        "followup": "",
+        "outlook": {
+          "direction": "제한적 회복",
+          "horizon": "2026년 11~12월",
+          "judgment": "수산 매대 공백이 보도된 홈플러스 재개장 점포는 연말까지 장보기 고객을 되찾는 속도가 제한적일 가능성이 크다.",
+          "basis": "11월 재개장 점포의 상품 공백과 경쟁 대형마트의 3분기 실적 개선이 함께 보도돼, 영업 재개만으로 기존 구매처를 바꾼 고객을 빠르게 되돌리기는 어렵다고 판단했다.",
+          "revision_trigger": "해당 점포 수산 매대의 정상 진열·판매가 지속되고 있다는 후속 현장 보도.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "04e826ac30a07bb0",
+            "d2dd7013543ae6ec"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 1049,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-13T10:35+09:00"
+      },
+      "sources": [
+        {
+          "id": "04e826ac30a07bb0",
+          "title": "수산물 매대에 생뚱맞게 그릇이…\"1위 점포도 '텅텅'\" 재개장 홈플 위기[르포] - 머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8tRW5fTDJvb2hBc28wV0t4bnFodnVhM1ZXeG9KOEUzeXlYSl9seFItY3RmMHhscE5WZ2FoS3dmZlp0RFRhcV9XNnBmR1FqVWZSeU5VelZrTmtiNGNMUnA5WTdQUjlsT3VPOEJEZjBCbjJfTklwbHZJ0gF8QVVfeXFMUGNjLXFHelVrdTFqbWdXNG8xb3FUTi1lNGMyb29xMUpzX1ZuWWdZSHREbV9EQVY0cEF0Y0Ixc0c1VWo4Z0pBZ3U2N3hxYXZPaUUweHZlWlowSzIyWTdGbFI3aXU3c2o1ZURwdU5xVXZLanBEWi1nZ0pjUWljSQ?oc=5",
+          "source": "머니투데이",
+          "published": "2026-11-10T15:50+09:00",
+          "timestamp": 1794293411,
+          "category": "매장 운영",
+          "tags": [
+            "매장 운영"
+          ],
+          "score": 7,
+          "summary": "수산물 매대에 생뚱맞게 그릇이…\"1위 점포도 '텅텅'\" 재개장 홈플 위기[르포] - 머니투데이 머니투데이",
+          "summary_type": "공개 RSS 소개문",
+          "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+          "official": false,
+          "channels": [],
+          "impact": "유통시장 구조 변화",
+          "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 7
+        },
+        {
+          "id": "d2dd7013543ae6ec",
+          "title": "홈플러스 빈자리 채운 이마트·롯데마트…3분기 영업이익 '쑥'",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1Oc3BteFh2M3gzcTUxbVlGU0swMy1QZUtTLXJ2TVNnQkxfVkRtWldpN0lMcGZYUi1sRGItMmpDcG00dC1JeFlzdWVTVVBlWHhDNERzbUs4QWNyQQ?oc=5",
+          "source": "한국경제",
+          "published": "2026-11-11T16:21+09:00",
+          "timestamp": 1794381693,
+          "category": "대형마트/SSM",
+          "tags": [
+            "대형마트/SSM"
+          ],
+          "score": 22.6,
+          "summary": "홈플러스 빈자리 채운 이마트·롯데마트…3분기 영업이익 '쑥' 한국경제",
+          "summary_type": "공개 RSS 소개문",
+          "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+          "official": false,
+          "channels": [
+            "마트"
+          ],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "점포 수·동일점 매출·PB 상품 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 7
+        }
+      ],
+      "features": []
+    },
     {
       "id": "report-a564fa36ebc8ff64d4f0",
       "published_at": "2026-11-12T17:33+09:00",
