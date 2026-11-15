@@ -1,6 +1,254 @@
 {
-  "updated_at": "2026-11-14T10:08+09:00",
+  "updated_at": "2026-11-15T09:32+09:00",
   "reports": [
+    {
+      "id": "report-e8af52a076c3c53d8bd4",
+      "published_at": "2026-11-15T09:32+09:00",
+      "headline": "이마트 분기 매출 첫 5조…홈플러스 위축에 장보기 수요 재편",
+      "kind": "대형마트/SSM",
+      "report": {
+        "depth": "보조",
+        "kind": "대형마트/SSM",
+        "time_frame": "2026년 3분기 실적·9월 결제 동향, 11월 11일 보도 기준",
+        "headline": "이마트 분기 매출 첫 5조…홈플러스 위축에 장보기 수요 재편",
+        "thesis": "이마트가 개별 분기 매출 5조원을 처음 넘어선 가운데 홈플러스는 추석이 낀 9월에도 결제액이 전월보다 줄었다. 이마트·롯데마트의 실적 개선에는 명절 특수와 함께 경쟁사에서 유입된 장보기 수요가 작용했으며, 연말에도 두 회사로 수요가 집중될 가능성이 높다.",
+        "lead": "2026년 3분기 대형마트 실적은 업체별로 엇갈렸다. 이마트는 대형마트와 트레이더스가 함께 성장을 이끌었고, 홈플러스의 영업 위축은 경쟁사들의 매출 확대와 맞물렸다.",
+        "facts": [
+          {
+            "text": "머니투데이는 11월 11일 이마트가 대형마트와 트레이더스의 동반 성장으로 개별 기준 분기 매출 5조원을 처음 돌파했다고 보도했다.",
+            "refs": [
+              "1d15becdad08ae92"
+            ]
+          },
+          {
+            "text": "조선비즈의 11월 11일 보도에 따르면 홈플러스 결제액은 추석이 포함된 2026년 9월에도 8월보다 감소했다.",
+            "refs": [
+              "98531e7e64c5664c"
+            ]
+          },
+          {
+            "text": "같은 조선비즈 보도는 이마트와 롯데마트의 3분기 영업이익 개선을 전하면서 기업설명회에서 경쟁 완화가 언급됐다고 소개했다.",
+            "refs": [
+              "98531e7e64c5664c"
+            ]
+          }
+        ],
+        "market_change": "명절 장보기 수요가 발생한 시기에도 홈플러스 결제액이 줄었다는 점에서, 경쟁사의 호실적을 뒷받침한 수요 이동이 드러난다.",
+        "mechanism": [
+          "추석은 대형마트 매출을 끌어올리는 공통 요인이지만 홈플러스의 결제 흐름은 반대였다. 여기에 경쟁사의 기업설명회에서 경쟁 완화가 언급된 점을 연결하면, 이마트·롯데마트는 명절 수요뿐 아니라 홈플러스의 영업 위축에 따른 고객 유입과 경쟁 부담 감소의 혜택을 함께 받은 것으로 판단된다."
+        ],
+        "structural_insight": "홈플러스의 부진은 이마트·롯데마트에 판매 기회를 넘기는 동시에 기존 경쟁 구도도 느슨하게 만들고 있다. 이에 따라 대형마트 업계의 연말 수익 개선은 업체 전반에 고르게 퍼지기보다 두 회사에 집중될 가능성이 높다.",
+        "what_changes": "",
+        "one_sentence": "추석에도 이어진 홈플러스의 결제 부진이 경쟁사로의 장보기 수요 이동을 뒷받침한다.",
+        "limitations": "공개 소개문에는 홈플러스 결제액의 감소 규모와 조사 범위, 고객 이동이 경쟁사 실적에 기여한 금액이 제시되지 않았다.",
+        "article_ids": [
+          "1d15becdad08ae92",
+          "98531e7e64c5664c"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "마트"
+        ],
+        "impact": "이마트·롯데마트에는 매출 유입과 경쟁 완화가 실적을 함께 지지하는 구도가 형성됐다.",
+        "followup": "",
+        "outlook": {
+          "direction": "확대",
+          "horizon": "2026년 4분기",
+          "judgment": "연말에도 이마트·롯데마트로 장보기 수요가 유입되면서 대형마트 내 두 회사의 판매 비중이 높아질 가능성이 크다.",
+          "basis": "홈플러스는 추석이 포함된 9월에도 결제액이 전월보다 감소했고, 경쟁사들은 3분기 실적 개선과 함께 경쟁 완화를 언급했다. 명절 특수만으로 끝나는 변화보다는 업체 간 수요 이동이 이어질 가능성에 무게를 둔다.",
+          "revision_trigger": "홈플러스의 월간 결제액이 2개월 연속 전월 대비 증가세로 전환하는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "1d15becdad08ae92",
+            "98531e7e64c5664c"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 947,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-15T09:32+09:00"
+      },
+      "sources": [
+        {
+          "id": "1d15becdad08ae92",
+          "title": "대형마트·트레이더스 '쌍끌이'...이마트, 개별 분기 매출 첫 5조 돌파 - 머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA2RmxRRXJUdEMzZEwtMi1JYkJ6RUlBOU5SNVVCT1VmUlBFM1pQVXFQeWo1YWJvZ2VocS1Ob01wMk50WXl2UXNfVnBZWnF3YU5IdVhKV19mWlRQR3k1T0hyUjlINHJjRVlmbXJ6bWw4TdIBb0FVX3lxTFA2RmxRRXJUdEMzZEwtMi1JYkJ6RUlBOU5SNVVCT1VmUlBFM1pQVXFQeWo1YWJvZ2VocS1Ob01wMk50WXl2UXNfVnBZWnF3YU5IdVhKV19mWlRQR3k1T0hyUjlINHJjRVlmbXJ6bWw4TQ?oc=5",
+          "source": "머니투데이",
+          "published": "2026-11-11T14:35+09:00",
+          "timestamp": 1794375335,
+          "category": "대형마트/SSM",
+          "tags": [
+            "대형마트/SSM"
+          ],
+          "score": 22.6,
+          "summary": "대형마트·트레이더스 '쌍끌이'...이마트, 개별 분기 매출 첫 5조 돌파 - 머니투데이 머니투데이",
+          "summary_type": "공개 RSS 소개문",
+          "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+          "official": false,
+          "channels": [
+            "마트"
+          ],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "점포 수·동일점 매출·PB 상품 변화",
+          "collection_status": "이전 수집 보존",
+          "editorial_score": 7
+        },
+        {
+          "id": "98531e7e64c5664c",
+          "title": "홈플러스 반사이익까지… 이마트·롯데마트, 3분기 본업 '훨훨'",
+          "url": "https://biz.chosun.com/distribution/channel/2026/11/11/GMEATSSA2BCJDF545UQK5CGUMY/",
+          "source": "Bing 뉴스 검색·대형마트/SSM·홈플러스 이마트 유통",
+          "published": "2026-11-11T16:11+09:00",
+          "timestamp": 1794381060,
+          "category": "대형마트/SSM",
+          "tags": [
+            "대형마트/SSM"
+          ],
+          "score": 20.1,
+          "summary": "홈플러스 반사이익까지 이마트·롯데마트, 3분기 본업 훨훨 이마트 별도 영업익 46%↑ 분기 총매출 첫 5조 롯데마트 국내 영업익 8배 IR서 경쟁 완화 언급 홈플러스 결제액, 추석 낀 9월에도 8월보다 줄어 ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+          "official": false,
+          "channels": [
+            "마트"
+          ],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "점포 수·동일점 매출·PB 상품 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-2dee156d118c99177570",
+      "published_at": "2026-11-15T09:32+09:00",
+      "headline": "굴·과메기 등 720건 집중검사…온라인 겨울 할인전도 점검 범위",
+      "kind": "식품안전/소비심리",
+      "report": {
+        "depth": "보조",
+        "kind": "식품안전/소비심리",
+        "time_frame": "2026년 11월 9일~2027년 2월 26일",
+        "headline": "굴·과메기 등 720건 집중검사…온라인 겨울 할인전도 점검 범위",
+        "thesis": "식품의약품안전처가 겨울철 수산물 720건을 대상으로 집중 안전검사에 나선다. 11번가가 햇과메기를 앞세운 할인전을 진행하는 가운데, 온라인 판촉 상품도 이번 점검 범위에 포함된다.",
+        "lead": "점검은 11월 9일부터 2027년 2월 26일까지 지방정부와 함께 진행한다. 생굴의 노로바이러스와 과메기의 식중독균 등을 검사하고, 부적합 제품은 즉시 유통을 차단할 방침이다.",
+        "facts": [
+          {
+            "text": "11월 10일 보도에 따르면 식약처는 전날부터 이듬해 2월 26일까지 온·오프라인에서 유통되는 굴·과메기 등 수산물 720건을 집중 검사한다.",
+            "refs": [
+              "566ae0e94fe6821d"
+            ]
+          },
+          {
+            "text": "검사 항목에는 생굴의 노로바이러스와 과메기의 식중독균이 포함되며, 부적합 제품은 회수하고 유통을 차단한다는 계획이다.",
+            "refs": [
+              "566ae0e94fe6821d"
+            ]
+          },
+          {
+            "text": "11월 13일 중앙이코노미뉴스는 11번가가 대방어와 햇과메기 등을 대상으로 겨울 제철 먹거리 할인전을 진행한다고 소개했다.",
+            "refs": [
+              "181129a8d0b13dc5"
+            ]
+          }
+        ],
+        "market_change": "과메기를 온라인 장보기 행사에 내세우는 시기와 정부의 겨울철 집중검사 기간이 겹쳤다. 점검은 판매 초기에 끝나지 않고 이듬해 2월 말까지 이어진다.",
+        "mechanism": [
+          "온라인 할인전에서 판매되는 과메기도 검사 대상에 포함될 수 있다. 부적합 판정이 나오면 행사 진행 여부와 관계없이 해당 제품의 판매 차단과 회수로 이어진다. 판촉에 따른 주문 확보 이후에도 검사 결과가 판매 지속 여부에 직접 영향을 주는 구조다."
+        ],
+        "structural_insight": "이번 집중점검의 직접적인 시장 영향은 수산물 전체의 공급 축소보다 부적합 상품의 개별 유통 중단에 있다. 온라인 과메기 판매업체 역시 겨울 행사 출고분에 대한 회수 책임을 함께 부담한다.",
+        "what_changes": "",
+        "one_sentence": "햇과메기 온라인 판촉이 겨울 내내 이어지는 안전점검과 맞물리면서, 부적합 상품의 판매 차단이 행사 판매분에도 적용된다.",
+        "limitations": "공개 소개문에 근거한 분석이며, 실제 부적합률과 회수 실적은 제공 자료에 포함되지 않았다.",
+        "article_ids": [
+          "566ae0e94fe6821d",
+          "181129a8d0b13dc5"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "마트",
+          "매장",
+          "온라인"
+        ],
+        "impact": "",
+        "followup": "",
+        "outlook": {
+          "direction": "확대",
+          "horizon": "2026년 11월~2027년 2월 26일",
+          "judgment": "겨울철 굴·과메기 안전점검은 온라인 유통까지 포괄해 집중 집행될 전망이다.",
+          "basis": "식약처가 온·오프라인 수산물 720건에 대한 검사 일정과 부적합 제품의 유통 차단 방침을 발표했고, 과메기는 같은 시기 온라인 제철 할인전의 판매 품목으로 등장했다.",
+          "revision_trigger": "식약처가 집중검사 대상이나 종료 일정을 축소하는 공식 계획 변경.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "566ae0e94fe6821d",
+            "181129a8d0b13dc5"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 853,
+        "length_tier": "간결",
+        "archived_source": false,
+        "published_at": "2026-11-15T09:32+09:00"
+      },
+      "sources": [
+        {
+          "id": "566ae0e94fe6821d",
+          "title": "겨울철 굴·과메기 식중독 주의…식약처, 수산물 720건 집중 검사",
+          "url": "https://www.msn.com/ko-kr/news/other/겨울철-굴-과메기-식중독-주의-식약처-수산물-720건-집중-검사/ar-AA2h6SZl",
+          "source": "Bing 뉴스 검색·식품안전/소비심리·수산물 수입 검사 부적합",
+          "published": "2026-11-10T14:39+09:00",
+          "timestamp": 1794289140,
+          "category": "식품안전/소비심리",
+          "tags": [
+            "식품안전/소비심리",
+            "원물 수급/시세",
+            "시즌/트렌드"
+          ],
+          "score": 17.1,
+          "summary": "내년 2월 26일까지 온·오프라인 유통 수산물 안전성 점검 생굴 노로바이러스·과메기 식중독균 검사…부적합 제품 회수 식품의약품안전처가 겨울철 소비가 늘어나는 굴과 과메기 등 수산물의 식중독 예방을 위해 집중 안전점검에 나선다. 노로바이러스와 식중독균 등 위해 요소를 검사하고 부적합 제품은 즉시 유통을 차단할 방침이다. 식약처는 지방정부와 함께 전일부터 내년 ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+          "official": false,
+          "channels": [],
+          "impact": "정책·식품안전 변화",
+          "followup": "공식 검사 결과·기준 시행일·소비조사",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        },
+        {
+          "id": "181129a8d0b13dc5",
+          "title": "대방어부터 햇과메기까지…11번가, 겨울 제철 먹거리 할인전",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1WRm9VZUl3MGx6ZTF6WGFFUnpzY04xVFlCTDc4TnhTaWsxODAySUtPa0dFYks1LVFOeVJIUklSYVlXWGIwZWVkaDRxOHExQlpKUHFyeEZMRk16NjQxZlJncUxleUtXcm05c2VOdTQzMnl3Zw?oc=5",
+          "source": "중앙이코노미뉴스",
+          "published": "2026-11-13T17:00+09:00",
+          "timestamp": 1794556800,
+          "category": "시즌/트렌드",
+          "tags": [
+            "시즌/트렌드",
+            "원물 수급/시세"
+          ],
+          "score": 16.9,
+          "summary": "대방어부터 햇과메기까지…11번가, 겨울 제철 먹거리 할인전 중앙이코노미뉴스",
+          "summary_type": "공개 RSS 소개문",
+          "question": "제철 수산물 소비가 전년 같은 기간 및 대체 어종과 비교해 어떻게 달라졌는가",
+          "official": false,
+          "channels": [],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "전년 동기 수산물 판매·행사·가계 구매자료",
+          "collection_status": "이번 실행 재수집"
+        }
+      ],
+      "features": []
+    },
     {
       "id": "report-0846c3049968a2b4b4d8",
       "published_at": "2026-11-14T10:08+09:00",
