@@ -1,6 +1,245 @@
 {
-  "updated_at": "2026-11-15T09:32+09:00",
+  "updated_at": "2026-11-16T09:33+09:00",
   "reports": [
+    {
+      "id": "report-de7d5f3936a1b09ea459",
+      "published_at": "2026-11-16T09:33+09:00",
+      "headline": "강원 방어 어획 전주 대비 2.5배…11번가 대방어 할인전 22일까지",
+      "kind": "시즌/트렌드",
+      "report": {
+        "depth": "보조",
+        "kind": "시즌/트렌드",
+        "time_frame": "2026년 11월 13~16일 관측, 11월 22일까지 행사 예정",
+        "headline": "강원 방어 어획 전주 대비 2.5배…11번가 대방어 할인전 22일까지",
+        "thesis": "강원 동해안의 방어 어획 증가와 온라인 대방어 할인전이 겹쳤다. 초겨울 방어 시장에서는 공급 증가에 맞춰 판매 기회도 넓어지고 있으며, 당분간 온라인 제철 행사가 대방어 판촉을 뒷받침할 전망이다.",
+        "lead": "11번가는 11월 13일 대방어·과메기·홍합 등을 포함한 겨울 먹거리 행사를 발표했다. 이틀 뒤에는 강원 동해안 방어 어획량이 전주 대비 2.5배로 늘었다는 보도가 나왔다.",
+        "facts": [
+          {
+            "text": "강원신문은 2026년 11월 15일 보도 제목에서 강원 동해안 방어 어획량이 전주 대비 2.5배로 늘었다고 전했다. 제공된 공개 소개문에는 어획 중량과 크기별 구성은 제시되지 않았다.",
+            "refs": [
+              "064e3f47ddd4c1b6"
+            ]
+          },
+          {
+            "text": "뉴스핌의 2026년 11월 13일 보도에 따르면 11번가는 겨울 먹거리 ‘마트대전’을 11월 22일까지 진행하며, 대방어·과메기·홍합을 행사 품목에 포함했다.",
+            "refs": [
+              "web-80cabb8ab0f9"
+            ]
+          }
+        ],
+        "market_change": "산지에서는 방어 반입 여력이 커졌고, 소비자 접점에서는 대방어가 겨울 먹거리 할인 품목으로 편입됐다. 공급과 판매 양쪽에서 제철 시장이 본격화하는 모습이다.",
+        "mechanism": [
+          "온라인 할인행사는 소비자의 구매 부담을 낮추고 행사 상품의 판매를 촉진하는 장치다. 방어 어획이 늘어난 시기에 이런 판촉이 진행되면 계절 물량을 소화하는 데 도움이 될 수 있다. 다만 강원에서 늘어난 어획물이 이번 대방어 행사에 공급된다는 연결 관계까지 공개된 것은 아니다."
+        ],
+        "structural_insight": "현재 판매 지원이 구체적으로 잡힌 곳은 행사에 편입된 온라인 대방어 상품이다. 어획 증가가 방어 시장 전체의 가격 인하로 이어진다고 보기보다는, 우선 할인 상품을 통한 소비자 접근성이 높아지는 국면으로 판단한다.",
+        "what_changes": "11월 22일까지 대방어를 다른 겨울 수산물과 함께 판매하는 온라인 판촉이 이어질 예정이다.",
+        "one_sentence": "방어 공급이 늘어난 가운데 온라인 할인전이 가세해, 대방어의 단기 판매 기회가 확대되고 있다.",
+        "limitations": "기사 전문은 제공되지 않았다. 어획 증가분의 대방어 비중과 행사 상품의 산지가 없어, 공급 증가가 해당 행사의 조달이나 가격에 미친 영향은 판단하기 어렵다.",
+        "article_ids": [
+          "064e3f47ddd4c1b6",
+          "web-80cabb8ab0f9"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "낮음",
+        "channels": [
+          "온라인"
+        ],
+        "impact": "대방어 행사 판매자는 겨울 먹거리 판촉을 통한 추가 노출 기회를 확보했다. 실제 판매량 증가나 산지 가격 하락은 아직 확인된 변화가 아니다.",
+        "followup": "",
+        "outlook": {
+          "direction": "확대",
+          "horizon": "2026년 11월 22일까지",
+          "judgment": "대방어의 온라인 판촉 기회는 행사 기간 동안 확대된 상태를 이어갈 전망이다.",
+          "basis": "11번가가 대방어를 겨울 먹거리 행사 품목에 포함하고 종료일을 11월 22일로 제시했다. 전망 대상은 판매량이나 시세가 아닌 판촉 기회다.",
+          "revision_trigger": "행사 종료 전 대방어 상품의 판매 중단",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "web-80cabb8ab0f9"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 943,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-16T09:33+09:00"
+      },
+      "sources": [
+        {
+          "id": "064e3f47ddd4c1b6",
+          "title": "강원 동해안 어황 살아났다…방어 어획량 전주보다 2.5배 급증",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9sdUhRc1FNSGFSVmNPekJDaTY4RkVfVG1Zc1VaTFpDcHNSVmNpUUljdkNYdUVqeHFZd0FoY09oUDc4NDUwNTgwbGRsMmRQaXZFa0VkcE1BaGtzT2ZWc1lKR2Q4T2JXbm1z?oc=5",
+          "source": "강원신문",
+          "published": "2026-11-15T00:41+09:00",
+          "timestamp": 1794670904,
+          "category": "원물 수급/시세",
+          "tags": [
+            "원물 수급/시세"
+          ],
+          "score": 23.6,
+          "summary": "강원 동해안 어황 살아났다…방어 어획량 전주보다 2.5배 급증 강원신문",
+          "summary_type": "공개 RSS 소개문",
+          "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+          "official": false,
+          "channels": [],
+          "impact": "수급·물량 변화 보도",
+          "followup": "산지가·위판량·어종별 규격·수출입 물량",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 21
+        },
+        {
+          "id": "web-80cabb8ab0f9",
+          "url": "https://www.newspim.com/news/view/20261113000092?utm_source=openai",
+          "source": "newspim.com",
+          "title": "대방어·과메기 싸게 담는다…11번가, 겨울 식탁 공략",
+          "summary": "- **⑤ 최근 사건·유통 발표:** **2026년 11월 13일** 11번가는 겨울 먹거리 ‘마트대전’을 **11월 22일까지** 진행한다고 밝혔다. 뉴스핌의 당일 **오전 8시 37분 보도**에는 대방어·과메기·홍합이 행사 품목으로 제시됐다. 이는 **판매행사 개시 근거**이며, 판매량 증가나 소비 수요 확대를 입증하는 실적은 아니다. ([newspim.com](https://www.newspim.com/news/view/20261113000092?utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 7
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-6ebf54ec792efce267a5",
+      "published_at": "2026-11-16T09:33+09:00",
+      "headline": "노르웨이 고등어 10월 수출 50% 감소…연말 수출단가 강세 이어질 듯",
+      "kind": "원물 수급/시세",
+      "report": {
+        "depth": "보조",
+        "kind": "원물 수급/시세",
+        "time_frame": "2026년 10월 수출 실적·44주 누계, 2025년 국내 생산",
+        "headline": "노르웨이 고등어 10월 수출 50% 감소…연말 수출단가 강세 이어질 듯",
+        "thesis": "노르웨이산 고등어는 수출물량이 반으로 줄었는데도 평균 수출단가가 전년보다 10% 올랐다. 연말까지 전년 대비 높은 단가가 이어지면서 한국의 노르웨이산 취급업체에도 조달 부담이 지속될 가능성이 크다.",
+        "lead": "노르웨이수산물위원회가 11월 4일 발표한 10월 실적에서 고등어 주요 수출시장은 한국·일본·베트남이었다. 한국이 주요 구매국에 포함된 만큼 이번 수출 감소는 국내 노르웨이산 고등어 거래에도 직접 영향을 주는 변화다.",
+        "facts": [
+          {
+            "text": "2026년 10월 노르웨이의 전 세계 고등어 수출은 13,787톤, 7억5,800만 NOK로 전년 동월보다 각각 50%, 45% 감소했다. 평균 수출가격은 10% 상승했고, 냉동 통고등어 가격은 54 NOK/kg으로 집계됐다.",
+            "refs": [
+              "web-48eb0ad57a1d"
+            ]
+          },
+          {
+            "text": "노르웨이수산물위원회의 2026년 44주 누계 자료에서 600g 미만 냉동 고등어 품목의 한국행 수출은 14,512톤으로 집계됐다.",
+            "refs": [
+              "web-6656ecd2aa68"
+            ]
+          },
+          {
+            "text": "해양수산부의 2026년 2월 26일 발표에 따르면 2025년 국내 연근해 고등어 생산량은 20.2만 톤으로 전년보다 62.1% 증가했다.",
+            "refs": [
+              "web-0c765c7e153c"
+            ]
+          }
+        ],
+        "market_change": "국산 고등어는 2025년 큰 폭의 증산을 기록했지만, 최근 노르웨이산 거래에서는 수출물량 감소와 단가 상승이 동시에 나타났다. 당장의 가격 부담은 노르웨이산 원산지를 유지해야 하는 거래에 집중될 전망이다.",
+        "mechanism": [
+          "노르웨이의 수출액 감소는 평균 단가 하락을 동반하지 않았다. 판매 부진을 가격 할인으로 해소하는 흐름보다는 거래 가능한 물량이 줄면서도 높은 단가가 유지되는 모습에 가깝다. 따라서 한국 수입업체가 수출액 감소를 근거로 노르웨이산 원물의 조기 가격 인하를 기대하기는 어렵다."
+        ],
+        "structural_insight": "국산으로 조달원을 바꿀 수 있는 거래에는 대체 여지가 있지만, 노르웨이산을 지정한 거래는 국내 생산 확대와 별개로 해외 원물 확보 부담을 떠안는다. 연말에는 고등어 전체의 일률적인 가격 상승보다 노르웨이산 거래의 가격 인하 여지가 좁아지는 변화가 더 뚜렷할 것으로 판단된다.",
+        "what_changes": "",
+        "one_sentence": "노르웨이산 고등어는 수출 감소에도 할인 여력이 생기지 않아 연말 조달 부담이 이어질 전망이다.",
+        "limitations": "제공된 공개 소개문을 바탕으로 작성했으며 원문 전문은 열람하지 않았다. 2026년 국내 생산·재고와 노르웨이 어획계획이 없어 국산의 대체 가능 물량과 향후 수출 회복 속도는 판단하기 어렵다.",
+        "article_ids": [
+          "web-48eb0ad57a1d",
+          "web-6656ecd2aa68",
+          "web-0c765c7e153c"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "낮음",
+        "channels": [
+          "B2B"
+        ],
+        "impact": "노르웨이산 고등어를 지정해 매입하는 수입·유통 거래의 가격 인하 여력 제한",
+        "followup": "",
+        "outlook": {
+          "direction": "상승",
+          "horizon": "2026년 11~12월, 전년 동기 대비",
+          "judgment": "노르웨이산 고등어의 평균 수출단가는 연말까지 전년보다 높은 수준을 유지할 가능성이 크다.",
+          "basis": "최근 10월 수출물량이 전년 동월보다 50% 감소했는데도 평균 수출단가는 10% 상승해, 물량 감소가 가격 할인으로 이어지는 흐름은 나타나지 않았다.",
+          "revision_trigger": "노르웨이의 11월 고등어 수출물량이 전년 동월 수준으로 회복하는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "web-48eb0ad57a1d"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 1029,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-16T09:33+09:00"
+      },
+      "sources": [
+        {
+          "id": "web-48eb0ad57a1d",
+          "url": "https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/",
+          "source": "en.seafood.no",
+          "title": "Norwegian seafood exports remained stable in October",
+          "summary": "- **⑤ 최근 사건·수출액과 물량 분리:** 노르웨이수산물위원회가 **2026년 11월 4일 발표한 10월 실적**에서 노르웨이의 전 세계 고등어 수출은 **13,787톤·7억5,800만 NOK**로 전년 동월 대비 **물량 50% 감소·금액 45% 감소**했지만, 평균 수출가격은 **10% 상승**했고 **냉동 통고등어 가격은 54 NOK/kg**으로 집계됐으며, 주요 수출시장은 한국·일본·베트남이었다. ([en.seafood.no](https://en.seafood.no/news-and-media/news-archive/norwegian-seafood-exports-remained-stable-in-october/))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 7
+        },
+        {
+          "id": "web-6656ecd2aa68",
+          "url": "https://en.seafood.no/globalassets/markedsinnsikt/apne-rapporter/ukestatistikk/2026/uke-44/ukestat-sild-og-makrell-uke-44.pdf?utm_source=openai",
+          "source": "en.seafood.no",
+          "title": "(anonymous)",
+          "summary": "- **⑥ 한국행 물량·규격 주의:** 노르웨이수산물위원회의 **2026년 44주 누계**에서 해당 냉동 고등어 품목의 한국행 수출은 **14,512톤·52.64 NOK/kg**, 전년 같은 누계는 **24,186톤·39.09 NOK/kg**이나, 표 제목에 **2026년 600g 미만·2025년 400g 미만**으로 규격 경계가 다르게 표기돼 있어 이를 동일 규격의 순수 가격 상승률로 계산하지 않았으며 가격 기준도 **노르웨이 국경 FOB**로 한국 수입 CIF·소매가격과 다르다. ([en.seafood.no](https://en.seafood.no/globalassets/markedsinnsikt/apne-rapporter/ukestatistikk/2026/uke-44/ukestat-sild-og-makrell-uke-44.pdf?utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 7
+        },
+        {
+          "id": "web-0c765c7e153c",
+          "url": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2026-01-05++10%3A00&menuSeq=971&utm_source=openai",
+          "source": "mof.go.kr",
+          "title": "보도자료 2025년 우리나라 수산물생산량은전년보다 8.7%, 연근해생산량은 16.3% 증가 해양수산부",
+          "summary": "- **⑧ 국내 공급·최근 5년 평균 비교:** 해양수산부의 **2026년 2월 26일 발표**에서 **2025년 국내 연근해 고등어 생산량은 20.2만 톤으로 전년 대비 62.1% 증가**했고, 연근해 전체 생산량은 **97.8만 톤으로 최근 5년 평균 91.2만 톤보다 7.2% 증가**했으므로, 노르웨이산 수출 감소를 곧바로 국내 수산물 전체 공급 감소로 일반화할 수 없다. ([mof.go.kr](https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=65372&listUpdtDt=2026-01-05++10%3A00&menuSeq=971&utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 24
+        }
+      ],
+      "features": []
+    },
     {
       "id": "report-e8af52a076c3c53d8bd4",
       "published_at": "2026-11-15T09:32+09:00",
