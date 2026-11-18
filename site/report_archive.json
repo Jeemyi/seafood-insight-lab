@@ -1,6 +1,274 @@
 {
-  "updated_at": "2026-11-17T12:19+09:00",
+  "updated_at": "2026-11-18T11:40+09:00",
   "reports": [
+    {
+      "id": "report-bd4ba7c95a257f13c747",
+      "published_at": "2026-11-18T11:40+09:00",
+      "headline": "홈플러스 마산점, 계약 남은 입점업체도 휴업…단전 예고에 잔여 영업 위축",
+      "kind": "매장 운영",
+      "report": {
+        "depth": "핵심",
+        "kind": "매장 운영",
+        "time_frame": "2026년 10월 27일~11월 18일",
+        "headline": "홈플러스 마산점, 계약 남은 입점업체도 휴업…단전 예고에 잔여 영업 위축",
+        "thesis": "홈플러스 마산점에서 마트 폐점 이후에도 남아 있던 입점영업이 단전 예고 속에 위축되고 있다. 직원 휴업과 시설 운영 축소까지 추진돼 잔여 입점영업은 단기적으로 더 줄어들 가능성이 높다.",
+        "lead": "11월 16일 현장 보도에 따르면 홈플러스 마산점은 지난 5월 마트 영업을 중단한 뒤 입점업체를 위해 개방돼 있었지만, 당시에는 대부분의 업체가 영업을 멈춘 상태였다. 전기료 미납에 따른 단전이 예고되면서 계약기간이 남은 업체도 손해를 감수하고 문을 닫고 있다고 보도됐다.",
+        "facts": [
+          {
+            "text": "11월 16일 공개된 현장 보도는 홈플러스 마산점이 5월 마트 영업 중단 이후에도 입점업체 운영을 위해 개방됐으나, 취재 당시 대부분의 업체가 영업을 중단했다고 전했다. 전기료 미납에 따른 단전 예고와 계약기간이 남은 입점업체의 휴업도 함께 보도했다.",
+            "refs": [
+              "5b9563584ce53fc9"
+            ]
+          },
+          {
+            "text": "10월 27일 뉴스1 보도에 따르면 홈플러스는 단전 예고 점포 직원에 대한 11월 16일자 휴업 발령을 추진하고, 도시가스 공급 중지와 출입시설 보강을 지시했다.",
+            "refs": [
+              "web-9f6dabcfce54"
+            ]
+          }
+        ],
+        "market_change": "영업 중단의 영향이 마트 본체에 그치지 않고, 임대계약이 남아 있는 별도 사업자의 판매·서비스 공간까지 미치고 있다.",
+        "mechanism": [
+          "입점업체가 영업을 계속하려면 임대공간뿐 아니라 전력 공급과 점포 개방도 유지돼야 한다. 앞선 직원 휴업 발령 추진과 가스 공급 중지 지시는 운영사가 이 기반을 축소하려는 움직임이며, 뒤이은 현장 보도에서는 실제 입점업체 휴업이 드러났다. 시설 운영 문제가 해소되지 않으면 남은 업체도 임대계약만으로 영업을 이어가기 어려운 상황이다."
+        ],
+        "structural_insight": "홈플러스의 시설 유지 문제가 임차인의 잔여 계약기간을 실제 영업기간으로 활용하지 못하게 하는 부담으로 번지고 있다. 마트 본체가 철수한 뒤에도 입점업체만으로 판매거점을 유지하던 방식이 흔들리는 것이다.",
+        "what_changes": "",
+        "one_sentence": "홈플러스 폐점 점포의 공공요금 문제가 남아 있던 임대매장까지 영업 중단 압력에 노출시키고 있다.",
+        "limitations": "공개 소개문 기준이며 실제 단전 여부와 업체별 휴업 시점은 제시되지 않아, 기존 마트 폐점과 단전 예고가 각각 미친 영향을 분리하기 어렵다.",
+        "article_ids": [
+          "5b9563584ce53fc9",
+          "web-9f6dabcfce54"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "마트",
+          "매장"
+        ],
+        "impact": "입점업체는 계약 만료 전부터 영업 중단에 따른 손실을 부담하고 있다.",
+        "followup": "",
+        "outlook": {
+          "direction": "축소",
+          "horizon": "2026년 11월 하순~12월",
+          "judgment": "단전 예고 점포의 잔여 입점영업은 회복보다 추가 축소 쪽이 유력하다.",
+          "basis": "직원 휴업 발령과 가스 공급 중지 등 시설 운영 축소가 추진된 가운데, 마산점에서는 계약기간이 남은 입점업체도 이미 휴업하고 있다는 별도 현장 보도가 나왔다.",
+          "revision_trigger": "전기요금 정산으로 해당 점포의 단전 예고가 철회되는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "5b9563584ce53fc9",
+            "web-9f6dabcfce54"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 958,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-18T11:40+09:00"
+      },
+      "sources": [
+        {
+          "id": "5b9563584ce53fc9",
+          "title": "홈플 폐점점포 단전 예고… 입점업체 '눈물의 휴업'",
+          "url": "https://www.msn.com/ko-kr/money/경제/홈플-폐점점포-단전-예고-입점업체-눈물의-휴업/ar-AA2hxagk",
+          "source": "Bing 뉴스 검색·대형마트/SSM·대형마트 영업 점포 폐점",
+          "published": "2026-11-16T12:43+09:00",
+          "timestamp": 1794800637,
+          "category": "매장 운영",
+          "tags": [
+            "매장 운영",
+            "대형마트/SSM"
+          ],
+          "score": 16.2,
+          "summary": "경남지역 홈플러스 8곳 중 6곳이 마트 영업 중단을 결정한 데 이어 전기세 미납에 따른 단전이 예고되면서 계약 기간이 남은 입점업체들이 손해를 감수하고 문을 닫고 있다. 16일 오전 찾은 창원시 마산회원구 홈플러스 마산점. 지난 5월 마트는 영업 중단 후 입점업체 운영을 위해 개방돼 있지만, 대부분의 업체는 이미 영업을 중단한 모습이었다. 키즈카페와 서점, ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+          "official": false,
+          "channels": [],
+          "impact": "유통시장 구조 변화",
+          "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 21
+        },
+        {
+          "id": "web-9f6dabcfce54",
+          "url": "https://www.fnnews.com/news/202610271145212166?utm_source=openai",
+          "source": "fnnews.com",
+          "title": "[단독] 홈플러스, 단전 점포 직원 휴업 발령 추진…도시가스 중단도 지시",
+          "summary": "11. **[다른 사건·선행 보도]** 검색에서 확인한 **2026년 10월 27일 뉴스1의 내부 공지 확인 보도**에 따르면, 홈플러스는 단전 예고 점포 직원에 대해 **11월 16일 자 휴업 발령을 추진**하고 도시가스 공급 중지와 출입시설 보강을 지시했다. 다만 해당 보도는 **정확한 휴업 일정과 실제 단전이 확정되지 않았음**을 명시하므로, 이를 ‘11월 16일 일괄 폐점 완료’로 표현할 수 없다. ([fnnews.com](https://www.fnnews.com/news/202610271145212166?utm_source=openai))",
+          "summary_type": "검색 결과의 출처 표기 · 원문 확인 권장",
+          "published": "발행일 별도 확인",
+          "timestamp": 0,
+          "category": "대형마트/SSM",
+          "channels": [],
+          "tags": [],
+          "score": 0,
+          "official": false,
+          "impact": "외부 원문 근거",
+          "followup": "해당 원문·통계 기준일 확인",
+          "editorial_score": 18
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-2c110d4907c4ce39c42d",
+      "published_at": "2026-11-18T11:40+09:00",
+      "headline": "노르웨이 연어 수출량 17.3% 늘어도 가격 3% 상승…내년 증산 정체 전망",
+      "kind": "원물 수급/시세",
+      "report": {
+        "depth": "보조",
+        "kind": "원물 수급/시세",
+        "time_frame": "2026년 45주 수출 실적·11월 16일 전망 보도, 2027년 수급 전망",
+        "headline": "노르웨이 연어 수출량 17.3% 늘어도 가격 3% 상승…내년 증산 정체 전망",
+        "thesis": "연어는 수출 물량 확대가 가격 하락으로 이어지지 않은 가운데 2027년 증산도 정체될 것이라는 전망이 나왔다. 내년에는 추가 공급에 따른 가격 하락 압력이 약해질 가능성이 크다.",
+        "lead": "2026년 45주 노르웨이 신선·냉장 연어 수출량은 2만8277톤, 평균 수출가격은 kg당 7.90달러였다. 전년 같은 주보다 물량과 달러 기준 단가가 함께 올랐다.",
+        "facts": [
+          {
+            "text": "노르웨이 통계청 수출 통계와 ECB 환율을 적용한 공식 시계열에 따르면, 2026년 45주 신선·냉장 연어 수출량은 전년 동주 대비 17.3%, 달러 기준 수출가격은 3.0% 증가했다.",
+            "refs": [
+              "salmon_price_volume"
+            ]
+          },
+          {
+            "text": "2026년 11월 16일 SeafoodSource의 기사 제목과 공개 소개문은 라보뱅크가 2027년 세계 양식 생산의 성장을 예상하면서도 연어 생산 확대는 정체될 것으로 내다봤다고 전했다. 추가 생산은 상대적으로 저가인 어종에 집중될 것이라는 전망이다.",
+            "refs": [
+              "df5085e30743f9f4"
+            ]
+          }
+        ],
+        "market_change": "현재 노르웨이에서 관측된 수출 물량 확대와 달리, 내년 세계 연어 생산에서는 추가 공급이 크게 늘어나는 흐름을 기대하기 어려워졌다.",
+        "mechanism": [
+          "노르웨이의 수출 물량 증가는 당장 시장에 공급되는 연어를 늘리지만, 내년 생산 확대가 정체되면 그 뒤를 이을 추가 물량은 제한된다. 최근 주간 수출단가가 물량 증가에도 오른 상황에서 이러한 공급 전망은 증산을 통한 가격 약세보다 가격 지지 쪽에 무게를 싣는다."
+        ],
+        "structural_insight": "연어 구매업체에는 세계 양식업의 생산 증가가 구매단가 하락으로 이어지는 통로가 좁아진다. 추가 생산이 다른 어종에 집중될 경우 연어 공급업체가 받는 증산 경쟁 압력은 제한되기 때문이다.",
+        "what_changes": "",
+        "one_sentence": "최근 연어 수출단가의 견조함에 내년 증산 정체 전망이 겹치면서, 공급 확대에 기대는 가격 인하 여지가 줄어들고 있다.",
+        "limitations": "라보뱅크 전망은 기사 제목·공개 소개문에 근거하며, 연어의 지역별 생산량과 증가율 수치는 제공되지 않았다.",
+        "article_ids": [
+          "df5085e30743f9f4"
+        ],
+        "feature_ids": [
+          "salmon_price_volume"
+        ],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "수출"
+        ],
+        "impact": "연어 수출시장에서는 추가 공급 확대에 따른 단가 하락 부담이 완화될 가능성이 있다.",
+        "followup": "",
+        "outlook": {
+          "direction": "축소",
+          "horizon": "2027년 연어 생산 증가세와 공급 확대에 따른 가격 하락 압력",
+          "judgment": "2027년에는 연어 생산 증가세가 둔화하고, 증산이 가격을 끌어내리는 힘도 약해질 가능성이 크다.",
+          "basis": "라보뱅크는 내년 연어 생산 확대의 정체를 예상했다. 최근 공식 관측에서도 노르웨이 연어는 수출량이 전년 동주보다 17.3% 늘었지만 달러 기준 수출단가는 3.0% 상승했다.",
+          "revision_trigger": "주요 생산국의 2027년 생산 전망이 상향돼 세계 연어 증산 정체 예상이 해소되는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "salmon_price_volume",
+            "df5085e30743f9f4"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 889,
+        "length_tier": "간결",
+        "archived_source": false,
+        "published_at": "2026-11-18T11:40+09:00"
+      },
+      "sources": [
+        {
+          "id": "df5085e30743f9f4",
+          "title": "Rabobank: Aquaculture growth expected in 2027, but salmon expansion set to stall",
+          "url": "https://www.seafoodsource.com/news/rabobank-aquaculture-growth-expected-in-2027-but-salmon-expansion-set-to-stall",
+          "source": "Bing 뉴스 검색·원물 수급/시세·aquaculture seafood prices",
+          "published": "2026-11-16T11:45+09:00",
+          "timestamp": 1794797100,
+          "category": "원물 수급/시세",
+          "tags": [
+            "원물 수급/시세"
+          ],
+          "score": 19.2,
+          "summary": "Global aquaculture output is expected to keep growing in 2027, but according to Rabobank’s latest sector outlook, that additional production will be increasingly concentrated in lower-value species ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+          "official": false,
+          "channels": [],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "산지가·위판량·어종별 규격·수출입 물량",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        }
+      ],
+      "features": [
+        {
+          "id": "salmon_price_volume",
+          "name": "노르웨이 연어 수출가격·물량",
+          "title": "노르웨이 연어 수출가 +3.0% · 물량 +17.3%",
+          "subtitle": "노르웨이 통계청 SSB · ECB 달러 환산",
+          "period_start": "2025년 45주",
+          "period_end": "2026년 45주",
+          "facts": [
+            {
+              "label": "연어 수출가 · 달러 환산",
+              "value": "$7.90/kg",
+              "detail": "2026년 45주 · ECB 주간 환율 적용"
+            },
+            {
+              "label": "달러 기준 전년 동기 대비",
+              "value": "+3.0%",
+              "detail": "2025년 45주"
+            },
+            {
+              "label": "연어 수출량",
+              "value": "28,277톤",
+              "detail": "2026년 45주"
+            },
+            {
+              "label": "수출물량 전년 동기 대비",
+              "value": "+17.3%",
+              "detail": "2025년 45주"
+            }
+          ],
+          "observed": "2026년 45주 신선·냉장 연어 수출가 $7.90/kg(전년 동주 +3.0%) · 수출량 28,277톤(+17.3%). SSB 가격을 ECB 동일 주차 일별 환율 평균으로 달러 환산.",
+          "data_links": [
+            {
+              "url": "https://www.ssb.no/en/statbank/table/03024/",
+              "label": "노르웨이 통계청 · 연어 수출 통계"
+            },
+            {
+              "url": "https://data.ecb.europa.eu/data/datasets/EXR",
+              "label": "유럽중앙은행(ECB) · 일별 환율"
+            }
+          ],
+          "article_ids": [
+            "96cdcd9d32721294",
+            "f651bce86c69cc60",
+            "25446e757d188f8f",
+            "f90fe50e8d832c9e"
+          ],
+          "category": "원물 수급/시세",
+          "channels": [],
+          "impact": "수출물량 +17.3% · 달러 가격 +3.0%",
+          "source_type": "공식 공개 API",
+          "series_type": "salmon_joint",
+          "limitations": "가격은 SSB 수출가격의 ECB 환율 환산값이며 계약·국내 소비자가격은 아니다.",
+          "measurements": {
+            "species": "연어",
+            "tonnes": 28277.0,
+            "yoy_qty_pct": 17.27842063788312,
+            "price_usd_kg": 7.8984,
+            "yoy_price_pct": 2.98
+          },
+          "significance": 21.86510360312691,
+          "related_observations": []
+        }
+      ]
+    },
     {
       "id": "report-159bafd90d2d55232d33",
       "published_at": "2026-11-17T12:19+09:00",
