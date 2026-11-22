@@ -1,6 +1,242 @@
 {
-  "updated_at": "2026-11-21T10:53+09:00",
+  "updated_at": "2026-11-22T09:48+09:00",
   "reports": [
+    {
+      "id": "report-55d9ba1b92494bf8ee59",
+      "published_at": "2026-11-22T09:48+09:00",
+      "headline": "이마트·롯데마트 3분기 매출·영업익 동반 증가…홈플러스 공백 수혜 4분기도 이어질 듯",
+      "kind": "대형마트/SSM",
+      "report": {
+        "depth": "핵심",
+        "kind": "대형마트/SSM",
+        "time_frame": "2026년 3분기 실적·11월 영업 상황",
+        "headline": "이마트·롯데마트 3분기 매출·영업익 동반 증가…홈플러스 공백 수혜 4분기도 이어질 듯",
+        "thesis": "홈플러스의 상품 공급·영업 차질이 11월까지 이어지면서 이마트·롯데마트가 대체 구매 수요를 흡수하는 흐름은 4분기에도 지속될 가능성이 높다.",
+        "lead": "올해 3분기 대형마트 실적에는 추석이 앞당겨진 효과가 겹쳤다. 그러나 명절 이후에도 홈플러스의 판매 공백이 남아 있어, 경쟁 두 회사의 매출을 뒷받침할 요인은 연말에도 이어지고 있다.",
+        "facts": [
+          {
+            "text": "메트로신문은 2026년 11월 16일 이마트와 롯데마트의 3분기 매출과 영업이익이 모두 증가했다고 보도했다. 보도는 홈플러스의 영업 공백을 흡수한 반사이익을 실적 개선 요인으로 들었으며, 홈플러스에서는 상품 공급 차질과 임금 체불이 이어졌다고 전했다.",
+            "refs": [
+              "a8b68e8f65927c2d"
+            ]
+          },
+          {
+            "text": "별도의 11월 16일 현장 보도에 따르면 경남 홈플러스 8곳 중 6곳이 마트 영업 중단을 결정했다. 지난 5월 마트 영업을 중단한 마산점에서는 전기요금 미납에 따른 단전 예고로 계약 기간이 남은 입점업체들도 문을 닫고 있었다.",
+            "refs": [
+              "d66cab64c55b6608"
+            ]
+          },
+          {
+            "text": "산업통상부가 10월 28일 발표한 유통업체 매출 동향에서 2026년 9월 대형마트 매출은 전년 동월 대비 4.0% 증가했다. 산업부는 추석 연휴가 2025년 10월 3~9일에서 2026년 9월 24~27일로 이동한 영향을 설명했다.",
+            "refs": [
+              "web-688f77d8c96f"
+            ]
+          }
+        ],
+        "market_change": "홈플러스의 경쟁력 약화는 상품 공급 차질과 점포 영업 중단이 겹친 형태로 나타나고 있다. 경쟁사가 흡수하는 판매 공백이 단기적인 상품 부족에 그치지 않고 있다.",
+        "mechanism": [
+          "추석 시점 이동에 따른 매출 효과는 3분기에 집중됐지만, 홈플러스의 영업 공백은 명절 이후에도 해소되지 않았다. 이미 경쟁사 실적 개선 요인으로 지목된 대체 구매 수요가 연말에도 남을 가능성이 높아, 이마트·롯데마트의 수혜를 일회성 명절 특수만으로 보기는 어렵다."
+        ],
+        "structural_insight": "이마트·롯데마트는 대형마트 전체 수요가 더 강해지지 않더라도 기존 장보기 수요를 추가로 확보할 여지가 생겼다. 연말 두 회사의 상대적 매출 우위를 뒷받침하는 것은 홈플러스가 회복하지 못한 판매 기능이다.",
+        "what_changes": "",
+        "one_sentence": "명절 효과가 지난 뒤에도 경쟁사의 영업 공백이 남아 있어 이마트·롯데마트의 매출 기반 확대가 이어질 가능성이 높다.",
+        "limitations": "기사 전문은 제공되지 않았으며, 공개 소개문에는 두 회사의 실적 증가액과 홈플러스 반사이익의 기여도가 제시되지 않았다.",
+        "article_ids": [
+          "a8b68e8f65927c2d",
+          "d66cab64c55b6608"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "중간",
+        "channels": [
+          "마트"
+        ],
+        "impact": "이마트·롯데마트의 대체 구매 수요 흡수와 상대적 매출 우위 지속",
+        "followup": "",
+        "outlook": {
+          "direction": "확대",
+          "horizon": "2026년 4분기",
+          "judgment": "이마트·롯데마트는 4분기에도 홈플러스의 판매 공백을 흡수하며 매출 기반을 넓힐 가능성이 높다.",
+          "basis": "3분기 실적 보도에서 홈플러스 공백의 수혜가 명시됐고, 독립된 11월 현장 보도에서도 점포 영업 중단 결정과 단전 예고가 이어졌다. 추석 수요의 분기 이동과 별도로 작동하는 경쟁 요인이 남아 있다.",
+          "revision_trigger": "홈플러스 영업점의 상품 공급 정상화.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "a8b68e8f65927c2d",
+            "d66cab64c55b6608",
+            "web-688f77d8c96f"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 900,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-22T09:48+09:00"
+      },
+      "sources": [
+        {
+          "id": "a8b68e8f65927c2d",
+          "title": "홈플러스 위기에 웃은 이마트·롯데마트…대형마트 3사 희비 교차",
+          "url": "https://www.metroseoul.co.kr/article/20261116500405",
+          "source": "Bing 뉴스 검색·대형마트/SSM·대형마트 영업 점포 폐점",
+          "published": "2026-11-16T16:50+09:00",
+          "timestamp": 1794815400,
+          "category": "대형마트/SSM",
+          "tags": [
+            "대형마트/SSM"
+          ],
+          "score": 23.8,
+          "summary": "기업회생절차를 밟고 있는 홈플러스의 경영난이 장기화하면서 대형마트 3사의 희비가 엇갈리고 있다. 이마트와 롯데마트는 홈플러스의 영업 공백에 따른 반사이익을 흡수하며 지난 3분기 매출과 영업이익을 동시에 끌어올렸다. 반면 홈플러스는 임금 체불과 상품 공급 차질에 이어 전 ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "대형마트와 SSM 간 소비 이동을 확인할 수 있는 매출·점포·점유율 근거는 무엇인가",
+          "official": false,
+          "channels": [
+            "마트"
+          ],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "점포 수·동일점 매출·PB 상품 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        },
+        {
+          "id": "d66cab64c55b6608",
+          "title": "홈플 폐점점포 단전 예고… 입점업체 '눈물의 휴업'",
+          "url": "https://www.msn.com/ko-kr/news/other/홈플-폐점점포-단전-예고-입점업체-눈물의-휴업/ar-AA2hxagk",
+          "source": "Bing 뉴스 검색·대형마트/SSM·대형마트 영업 점포 폐점",
+          "published": "2026-11-16T12:43+09:00",
+          "timestamp": 1794800637,
+          "category": "매장 운영",
+          "tags": [
+            "매장 운영",
+            "대형마트/SSM"
+          ],
+          "score": 13.7,
+          "summary": "경남지역 홈플러스 8곳 중 6곳이 마트 영업 중단을 결정한 데 이어 전기세 미납에 따른 단전이 예고되면서 계약 기간이 남은 입점업체들이 손해를 감수하고 문을 닫고 있다. 16일 오전 찾은 창원시 마산회원구 홈플러스 마산점. 지난 5월 마트는 영업 중단 후 입점업체 운영을 위해 개방돼 있지만, 대부분의 업체는 이미 영업을 중단한 모습이었다. 키즈카페와 서점, ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "점포 확장·폐점과 노동·위생 기준 변화가 수산 유통 형태를 어떻게 바꾸는가",
+          "official": false,
+          "channels": [],
+          "impact": "유통시장 구조 변화",
+          "followup": "출점·폐점 일정·영업 규정·인건비 변화",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 21
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "report-bc74a8d0fc9196c5e452",
+      "published_at": "2026-11-22T09:48+09:00",
+      "headline": "베트남 빈롱성, 새우 입식 일시 중단 권고…차기 출하 물량 축소 압력",
+      "kind": "원물 수급/시세",
+      "report": {
+        "depth": "보조",
+        "kind": "원물 수급/시세",
+        "time_frame": "2026년 11월 19~20일 보도 기준",
+        "headline": "베트남 빈롱성, 새우 입식 일시 중단 권고…차기 출하 물량 축소 압력",
+        "thesis": "베트남 빈롱성 일부 지역의 입식 중단 권고로 후속 새우 출하가 늦어질 가능성이 커졌다. 까마우의 5000ha 이상 첨단양식 사업은 투자자 모집 단계여서 단기 대체 공급원으로 작동하기 어렵다.",
+        "lead": "이번 권고의 영향은 현재 사육 중인 새우보다 다음 생산 주기에 집중될 전망이다. 권고 대상 양식장에서 입식이 미뤄지면, 그에 대응하는 출하 시기도 뒤로 밀리면서 당초 생산 일정에 공백이 생긴다.",
+        "facts": [
+          {
+            "text": "Vietnam.vn은 2026년 11월 19일 빈롱성이 일부 지역에서 새우·어류 양식을 위한 입식을 일시 중단하도록 권고했다고 보도했다.",
+            "refs": [
+              "a0a7796d46fe2713"
+            ]
+          },
+          {
+            "text": "Laodong.vn은 2026년 11월 20일 까마우가 5000ha 이상 규모의 첨단기술 새우 양식 프로젝트에 참여할 투자자를 찾고 있다고 보도했다.",
+            "refs": [
+              "e22df43a894b0fae"
+            ]
+          }
+        ],
+        "market_change": "기존 양식장의 다음 생산 착수가 제한되는 가운데, 다른 산지의 대규모 신규 사업은 아직 자금 유치 단계에 있다. 두 사건은 베트남 새우 공급에 영향을 주는 시점이 다르다.",
+        "mechanism": [
+          "입식 중단 권고가 이행되면 해당 기간에 시작했어야 할 양식 물량의 출하가 늦어진다. 반면 까마우 사업이 실제 공급을 늘리려면 투자 확보와 시설 조성, 입식·사육을 거쳐야 한다. 따라서 신규 개발 계획만으로 빈롱성의 가까운 생산 공백을 상쇄하기는 어렵다."
+        ],
+        "structural_insight": "빈롱성 권고 대상 양식장에는 다음 출하 시기의 생산 차질 위험이 생겼다. 까마우 신규 단지에서 추가 물량이 나오기 전까지는 기존 생산지의 출하가 단기 공급을 담당하게 된다.",
+        "what_changes": "",
+        "one_sentence": "빈롱성의 입식 지연은 후속 출하기 공급을 압박하지만, 까마우의 신규 양식 투자는 이를 바로 보완할 단계가 아니다.",
+        "limitations": "공개 RSS 소개문에는 권고 대상 면적·기간과 실제 이행 규모가 없어, 생산 공백의 크기와 지속 기간은 판단하기 어렵다.",
+        "article_ids": [
+          "a0a7796d46fe2713",
+          "e22df43a894b0fae"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "낮음",
+        "channels": [],
+        "impact": "빈롱성 권고 대상지의 후속 출하 일정 지연과 해당 출하기 공급 축소 압력이 예상된다.",
+        "followup": "",
+        "outlook": {
+          "direction": "축소",
+          "horizon": "입식 중단 권고 대상지의 다음 예정 출하 구간",
+          "judgment": "빈롱성 권고 대상지에서는 입식 지연에 따라 다음 예정 출하기에 공급되는 새우 물량이 줄어들 가능성이 높다.",
+          "basis": "일부 지역에 입식 일시 중단 권고가 내려졌으며, 별도로 추진되는 까마우의 5000ha 이상 신규 양식 사업은 아직 투자자를 모집하고 있다.",
+          "revision_trigger": "빈롱성의 중단 권고가 조기에 해제돼 해당 양식장들이 기존 입식 일정을 유지하는 경우.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "a0a7796d46fe2713",
+            "e22df43a894b0fae"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 909,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-22T09:48+09:00"
+      },
+      "sources": [
+        {
+          "id": "a0a7796d46fe2713",
+          "title": "빈롱성은 일부 지역에 새우와 물고기 양식용 방류를 일시적으로 중단할 것을 권고했습니다.",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOOGFLMEEydmY1T3pjcElXY25paFBNMFZ5V2JINzQ5dDZUR2ZOa3hQVnV3T2dWbG1HN2xiZU92dnFnVXIya0Q2cEg5NFZWcEFXQm5yMFZOTXVla3RZNUdncGZqOXRJVzA3NHJRZFNBZS1sMkxoUDBDb2pJdlpuZTQ3RlQxUGdOLWJaSGtnelZLbEFRLThuM21jZQ?oc=5",
+          "source": "Vietnam.vn",
+          "published": "2026-11-19T06:12+09:00",
+          "timestamp": 1795036365,
+          "category": "원물 수급/시세",
+          "tags": [
+            "원물 수급/시세"
+          ],
+          "score": 17.4,
+          "summary": "빈롱성은 일부 지역에 새우와 물고기 양식용 방류를 일시적으로 중단할 것을 권고했습니다. Vietnam.vn",
+          "summary_type": "공개 RSS 소개문",
+          "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+          "official": false,
+          "channels": [],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "산지가·위판량·어종별 규격·수출입 물량",
+          "collection_status": "이전 수집 보존",
+          "editorial_score": 18
+        },
+        {
+          "id": "e22df43a894b0fae",
+          "title": "까마우, 5,000ha 이상의 첨단 기술 새우 양식 프로젝트 투자자 찾기",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOODRPOUN6c0RFVU00dE1EN0RHV2NPYnBTZ013SGFjQVZJZS1YcTUzYlhvSV94N3I1Z1otZ0tDcVBmTlZWaGwwaVVMTmhGUkhZNFp5SW9FdkhCdFZyYW42SDFxVDRXV09hUWlIN0swNElXNG5FWHJPNEo4WWhNTkRoQTlEenltYjdmV1RTZXJEWV9OSjFuUWs5VzNidmdmb2dCa2Y2ZGk0LWRsQQ?oc=5",
+          "source": "Laodong.vn",
+          "published": "2026-11-20T19:21+09:00",
+          "timestamp": 1795170090,
+          "category": "원물 수급/시세",
+          "tags": [
+            "원물 수급/시세"
+          ],
+          "score": 19.9,
+          "summary": "까마우, 5,000ha 이상의 첨단 기술 새우 양식 프로젝트 투자자 찾기 Laodong.vn",
+          "summary_type": "공개 RSS 소개문",
+          "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+          "official": false,
+          "channels": [],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "산지가·위판량·어종별 규격·수출입 물량",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 7
+        }
+      ],
+      "features": []
+    },
     {
       "id": "report-d137ea6bf2f592589f7e",
       "published_at": "2026-11-21T10:53+09:00",
