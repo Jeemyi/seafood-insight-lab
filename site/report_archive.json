@@ -1,6 +1,119 @@
 {
-  "updated_at": "2026-11-22T09:48+09:00",
+  "updated_at": "2026-11-23T10:15+09:00",
   "reports": [
+    {
+      "id": "report-ccbdf7b934a9b34b6bd1",
+      "published_at": "2026-11-23T10:15+09:00",
+      "headline": "울릉 오징어 어획 25년 새 99% 감소 보도…수입 냉동품, 연말 공급 보완할 듯",
+      "kind": "원물 수급/시세",
+      "report": {
+        "depth": "보조",
+        "kind": "원물 수급/시세",
+        "time_frame": "2026년 11월 보도·연말 전망",
+        "headline": "울릉 오징어 어획 25년 새 99% 감소 보도…수입 냉동품, 연말 공급 보완할 듯",
+        "thesis": "울릉산 오징어의 장기 어획 부진이 보도된 가운데 냉동 오징어는 올해 수입량이 많은 품목으로 원산지 특별점검 대상에 올랐다. 냉동 원료를 사용할 수 있는 수요처에서는 연말에도 수입품이 공급 공백을 보완할 가능성이 크다.",
+        "lead": "해양수산부의 이번 점검은 김장용 천일염·젓갈류에 그치지 않고 냉동 오징어 등 수입 유통량이 많은 품목까지 포함한다. 점검 기간은 11월 23일부터 12월 4일까지다.",
+        "facts": [
+          {
+            "text": "서울일보는 2026년 11월 16일 공개 기사 제목에서 울릉도 오징어 어획량이 25년 새 99% 감소했다고 보도했다.",
+            "refs": [
+              "bdc567b66ebe19e9"
+            ]
+          },
+          {
+            "text": "11월 22일 미디어인천신문이 전한 해수부 발표에 따르면, 냉동 오징어는 올해 수입량이 많은 품목으로 분류돼 11월 23일~12월 4일 원산지 표시 특별점검 대상에 포함됐다.",
+            "refs": [
+              "90eea31df79a6c23"
+            ]
+          }
+        ],
+        "market_change": "서울일보는 2026년 11월 16일 공개 기사 제목에서 울릉도 오징어 어획량이 25년 새 99% 감소했다고 보도했다. 11월 22일 미디어인천신문이 전한 해수부 발표에 따르면, 냉동 오징어는 올해 수입량이 많은 품목으로 분류돼 11월 23일~12월 4일 원산지 표시 특별점검 대상에 포함됐다.",
+        "mechanism": [
+          "울릉산 어획 위축은 해당 산지에서 확보할 수 있는 물량을 제한한다. 이미 수입 유통이 이뤄지는 냉동 오징어는 냉동 원료로 대체할 수 있는 수요에 별도의 조달 경로를 제공한다. 이 때문에 울릉산 공급 부진의 영향은 수입품 대체가 가능한 냉동 제품과 산지를 지정해 판매하는 상품에 다르게 나타날 수 있다."
+        ],
+        "structural_insight": "울릉산을 지정해 판매하는 업체보다 수입 냉동품을 함께 취급하는 업체가 연말 공급물량을 확보할 여지가 크다. 수입품의 보완 효과는 산지 자체가 상품 가치인 울릉산 판매보다 원산지 대체가 가능한 냉동 제품에서 먼저 나타날 전망이다.",
+        "what_changes": "",
+        "one_sentence": "울릉산 어획 부진이 이어지는 시장에서 수입 냉동품을 활용할 수 있는지가 공급 대응의 차이를 만들 전망이다.",
+        "limitations": "공개 기사 제목·소개문에 근거했다. 울릉 지역의 감소율 산정에 쓰인 연도별 물량과 전국 생산·수입·재고 수치가 없어 수입 대체 규모나 가격 방향은 판단하지 않았다.",
+        "article_ids": [
+          "bdc567b66ebe19e9",
+          "90eea31df79a6c23"
+        ],
+        "feature_ids": [],
+        "policy_ids": [],
+        "confidence": "낮음",
+        "channels": [],
+        "impact": "수입 냉동품으로 대체할 수 있는 수요처는 울릉산 어획 부진에 따른 조달 부담을 일부 줄일 수 있다.",
+        "followup": "",
+        "outlook": {
+          "direction": "횡보",
+          "horizon": "2026년 12월까지",
+          "judgment": "연말까지 냉동 오징어 수요에서 수입품의 공급 보완 역할은 유지될 가능성이 크다.",
+          "basis": "울릉 산지의 장기 어획 감소 보도와 함께, 냉동 오징어가 올해 수입량이 많은 품목으로 정부 점검 대상에 포함됐다.",
+          "revision_trigger": "국내 주요 산지의 월별 오징어 어획량이 전년 동기보다 뚜렷하게 회복되는 경우다.",
+          "numeric_estimate": "",
+          "forecast_method": "",
+          "backtest": "",
+          "evidence_ids": [
+            "bdc567b66ebe19e9",
+            "90eea31df79a6c23"
+          ]
+        },
+        "status": "공개 자료 기반 AI 분석 · 관측 사실과 해석 구분",
+        "character_count": 1029,
+        "length_tier": "충실",
+        "archived_source": false,
+        "published_at": "2026-11-23T10:15+09:00"
+      },
+      "sources": [
+        {
+          "id": "bdc567b66ebe19e9",
+          "title": "오징어 사라진 울릉 바다…25년 새 어획량 99% 급감",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9tRlprblNvSnNhWngxam1fSkpFbm5ucDBjdzc5aEVoaDNCOGxJdTd5Ymt1WnVnZDFxaDJ1dmhMUV9hU09BZzV0bUQ5UmlFdFJqY1dzaFd6OVVTOXlEWVhpVmZuWi1mcmY0OU1zNmlR?oc=5",
+          "source": "https://www.seoulilbo.co.kr/",
+          "published": "2026-11-16T16:20+09:00",
+          "timestamp": 1794813600,
+          "category": "원물 수급/시세",
+          "tags": [
+            "원물 수급/시세"
+          ],
+          "score": 17.4,
+          "summary": "오징어 사라진 울릉 바다…25년 새 어획량 99% 급감 https://www.seoulilbo.co.kr/",
+          "summary_type": "공개 RSS 소개문",
+          "question": "어획량·양식 생산·수입량 변화 가운데 무엇이 최근 시세 변화를 설명하는가",
+          "official": false,
+          "channels": [],
+          "impact": "수급·물량 변화 보도",
+          "followup": "산지가·위판량·어종별 규격·수출입 물량",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 25
+        },
+        {
+          "id": "90eea31df79a6c23",
+          "title": "정부, 김장철 수산물 안전성 강화...원산지 표시 특별점검",
+          "url": "https://www.mediaic.co.kr/news/articleView.html?idxno=85861",
+          "source": "Bing 뉴스 검색·식품안전/소비심리·수산물 안전 검역",
+          "published": "2026-11-22T12:12+09:00",
+          "timestamp": 1795317120,
+          "category": "식품안전/소비심리",
+          "tags": [
+            "식품안전/소비심리",
+            "시즌/트렌드"
+          ],
+          "score": 18.9,
+          "summary": "[미디어인천신문 문종권 기자] 정부가 김장철 수산물 안전성 강화에 나선다.해양수산부는 오는 23일부터 12월 4일까지 김장철 수산물 원산지 표시 특별점검을 시행한다고 22일 밝혔다.점검 품목은 천일염과 젓갈류 외에도 올해 수입량이 많은 냉동 오징어, 냉동 고등어, 냉동 아귀와 고수온 폐사로 최근 수입량이 증가한 우렁쉥이 등이다.아울러 횟감으로 소비가 많은 ...",
+          "summary_type": "공개 RSS 소개문",
+          "question": "안전성 통계와 제도 변화가 실제 소비 행동·유통 가능 품목에 어떤 영향을 주는가",
+          "official": false,
+          "channels": [],
+          "impact": "시장 동향 · 후속 근거 확인",
+          "followup": "공식 검사 결과·기준 시행일·소비조사",
+          "collection_status": "이번 실행 재수집",
+          "editorial_score": 9
+        }
+      ],
+      "features": []
+    },
     {
       "id": "report-55d9ba1b92494bf8ee59",
       "published_at": "2026-11-22T09:48+09:00",
